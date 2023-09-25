@@ -1,9 +1,0 @@
-Image Resource
- - Pixels Per Unit : 32
-
-Sprite Order In Layer
- - Tile : 0
- - Door backGround - 1
- - Door - 2~3
- - Door Frame - 3~4
-

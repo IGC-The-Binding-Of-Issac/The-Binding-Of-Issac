@@ -1,0 +1,1732 @@
+fileFormatVersion: 2
+guid: ea83d5e8ff7ffce4daa05219823adab7
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Issac_sprite_1
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 417
+        width: 28
+        height: 25
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de1583db7ed0c2e43a5eb306767bc60f
+      internalID: -929346730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Issac_sprite_2
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 416
+        width: 28
+        height: 24
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1349662ce41dfa245b16a11bcee63191
+      internalID: 1797490774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Issac_sprite_3
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 417
+        width: 28
+        height: 25
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f474733f7e6cff43a7ab6c7defe1073
+      internalID: -1576746250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Issac_sprite_4
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 417
+        width: 28
+        height: 24
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb3253fa87f4d864f8f3d495434119da
+      internalID: 146508784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Issac_sprite_5
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 417
+        width: 28
+        height: 25
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a006fa45186faa4439a06fc3bcddf092
+      internalID: -884184465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Issac_sprite_6
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 417
+        width: 28
+        height: 24
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8b0240b8bbf61b4ea3884964fac56b6
+      internalID: 1330677461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Issac_sprite_7
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 417
+        width: 28
+        height: 25
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff3f9c5020dd09540a91f968c55c0474
+      internalID: 70973221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Issac_sprite_8
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 417
+        width: 28
+        height: 24
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0d4d23ab344cb747837a79ca43ae0a0
+      internalID: 422650691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Issac_sprite_16
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 374
+        width: 18
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 338f68817bb75664d9f9a7aba4b0dc22
+      internalID: -2104234157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Issac_sprite_17
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 374
+        width: 18
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a9009fc6bfef3241a8c6a855990ca89
+      internalID: -66541018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Issac_sprite_18
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 374
+        width: 18
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b551429a47c870749bd2de123bec2d37
+      internalID: -467144211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Issac_sprite_19
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 372
+        width: 18
+        height: 15
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fef7d7b72ba00c84eba51e3c8ad05e2a
+      internalID: 482481839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Issac_sprite_20
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 373
+        width: 18
+        height: 14
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 297fe3799e1ead9428b8fbbfc44da568
+      internalID: -1089917011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Issac_sprite_21
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 374
+        width: 18
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a491f440f4483e4b83dfd0cfcc3cb4b
+      internalID: -490479088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Issac_sprite_22
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 374
+        width: 18
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a96b2d945db4c74daf309c399e35de9
+      internalID: -743956278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Issac_sprite_23
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 374
+        width: 18
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4528d9bf0d3fb65479ae284515832301
+      internalID: 1200566054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Issac_sprite_24
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 372
+        width: 18
+        height: 15
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cffb1f633eda354f8eca40f08e5e5c5
+      internalID: 1435431056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Issac_sprite_25
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 373
+        width: 18
+        height: 14
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66dbc7611260dee4db764bca12726088
+      internalID: 1933199303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Issac_sprite_31
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 331
+        width: 16
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98817e787fe894c45ae077f9b2b791dc
+      internalID: -711781992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Issac_sprite_32
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 331
+        width: 15
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74e4cc330f241004580fb2b5c64da7e7
+      internalID: -591210354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Issac_sprite_33
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 331
+        width: 16
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef3820aae133b54498c19dca114920ca
+      internalID: -1473475252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Issac_sprite_34
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 331
+        width: 17
+        height: 14
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae341c87c80feab438065a6f9e303c97
+      internalID: 2068015224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Issac_sprite_35
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 331
+        width: 17
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa4a8a3f8e8c1674eaf6fdc0596dff59
+      internalID: 177021929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Issac_sprite_36
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 331
+        width: 15
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf20aa08d28ceab4d85033be1b53e9d0
+      internalID: 1907323658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Issac_sprite_37
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 331
+        width: 15
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a272e1f57fd17042bb8b490ac32eb8d
+      internalID: 1745295476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Issac_sprite_38
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 331
+        width: 18
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57ef1f84593a1284e84a3f7f6f732de9
+      internalID: -2101963100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Issac_sprite_39
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 331
+        width: 18
+        height: 14
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 414e6b650eee4bd49bb3150045536f3c
+      internalID: -1784625251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Issac_sprite_40
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 331
+        width: 18
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 657416676a49e4c488d242fdc8350a3c
+      internalID: -1383506340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Issac_sprite_43
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 268
+        width: 28
+        height: 33
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0c5c7ec53761044f929079a1cd5d106
+      internalID: -239417661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Issac_sprite_44
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 271
+        width: 28
+        height: 30
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 318037b7ad507dd41a23ffff1cc0af95
+      internalID: 366346505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Issac_sprite_45
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 269
+        width: 28
+        height: 33
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca775ef2656f72a46acdca392adf1d22
+      internalID: 2085146582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Issac_sprite_46
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 270
+        width: 30
+        height: 29
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d8f7e619daef9c449a3d7d37f042ef2
+      internalID: 242707966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Issac_sprite_63
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 205
+        width: 30
+        height: 33
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 673a0b708ce35ac4fa4ea98767154b24
+      internalID: -571592405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Issac_sprite_64
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 205
+        width: 34
+        height: 33
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5e9857520cb8c34794596f2132c2f32
+      internalID: -1383284054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Issac_sprite_65
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 203
+        width: 28
+        height: 30
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c41e21e234560a44fb011bb6e8870495
+      internalID: -881399374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Issac_sprite_66
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 205
+        width: 28
+        height: 31
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ecfe0647cbe2a4449cc4bc462a4b91f
+      internalID: 862033876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Issac_sprite_68
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 144
+        width: 28
+        height: 33
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cb01bae478689d4eb84c5c2ff920f40
+      internalID: 291584045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Issac_sprite_69
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 146
+        width: 28
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3894dca76f85e44c9550b86a5398653
+      internalID: 678732275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Issac_sprite_70
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 140
+        width: 36
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fceed37230c862240b0915c63c5f346c
+      internalID: 297969203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Issac_sprite_74
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 87
+        width: 28
+        height: 25
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b01bdc9ca42aab64683f1d353a99a9c3
+      internalID: 400133368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Issac_sprite_75
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 87
+        width: 27
+        height: 25
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10ba915e7b1070a40859a6830d4d6a5a
+      internalID: -1397177574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Issac_sprite_76
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 87
+        width: 30
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54c659f99a04bff42a863df36f2e9e3c
+      internalID: 78024404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Issac_sprite_77
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 103
+        width: 14
+        height: 11
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb5c85e3fb6481744b3bcef3ed922725
+      internalID: 16115427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Issac_sprite_78
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 98
+        width: 14
+        height: 14
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf265b920bd885a4dbd9432c3ab0df38
+      internalID: -1056288226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Issac_sprite_79
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 103
+        width: 14
+        height: 11
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8aafd00e576d011488526a007e4f1aa8
+      internalID: 1238129146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Issac_sprite_80
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 87
+        width: 14
+        height: 25
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfe01c266babe8b49b2d1f4930437548
+      internalID: -47781748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Issac_sprite_81
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 84
+        width: 28
+        height: 28
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65e04b30be8c68849aa6f896a9005e32
+      internalID: 993355426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Issac_sprite_82
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 102
+        width: 22
+        height: 14
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0ba3ce41ea14e24580a832238f73443
+      internalID: 1535629589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Issac_sprite_83
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 82
+        width: 28
+        height: 11
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d85cc60dbb69caa4a99434eeb0b0923a
+      internalID: 1769872827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Issac_sprite_84
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 82
+        width: 14
+        height: 11
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6ef4b4677812fd49baed65694fd0544
+      internalID: -1911139686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Issac_sprite_85
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 84
+        width: 28
+        height: 14
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e7fa62d7683ecb47a4ac4bc44e25389
+      internalID: -1778040993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Issac_sprite_89
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 43
+        width: 18
+        height: 14
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25102dc5d04680e4f89724c253fcc15d
+      internalID: -1018684335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Issac_sprite_90
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 42
+        width: 18
+        height: 15
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abb21980c853427489cce7bdec4f9314
+      internalID: 623065768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Issac_sprite_91
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 44
+        width: 18
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58b065a3c94905741ae9572f14eda7ef
+      internalID: -498440071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Issac_sprite_92
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 44
+        width: 18
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5735bd9760a2b524ebb85dbd64b8c377
+      internalID: 1398780023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Issac_sprite_93
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 44
+        width: 18
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca45cd86748c22b4ab66e2624e09435f
+      internalID: -526225499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Issac_sprite_94
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 43
+        width: 18
+        height: 14
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb68538d3f3954b4a87b56cb77222871
+      internalID: -1755213102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Issac_sprite_95
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 42
+        width: 18
+        height: 15
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6afd5b785c0d68c49a4074a894d8c822
+      internalID: 317241735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Issac_sprite_96
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 44
+        width: 18
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc17bdd019adced48a147c666205a79b
+      internalID: -1409337877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Issac_sprite_97
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 44
+        width: 18
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c70ab7073678d14cb5deeb0343888cd
+      internalID: -1772945409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Issac_sprite_98
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 44
+        width: 18
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7ea763ce987b0b4298ae21b8c972b65
+      internalID: 1966147223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Issac_sprite_104
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 1
+        width: 16
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00baa2be670b2d24f9eb7cc7d65d44bc
+      internalID: -2007337984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Issac_sprite_105
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 1
+        width: 15
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e23a178551750994fb0a7967ee3b7211
+      internalID: -618899562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Issac_sprite_106
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 1
+        width: 16
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c802dd6dcdcdac4f9540207a9acbe34
+      internalID: 1192473404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Issac_sprite_107
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 0
+        width: 17
+        height: 14
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3be21948ac95956488c5825ad52a829c
+      internalID: -144768480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Issac_sprite_108
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 1
+        width: 17
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd33b40567120644c8e62560ff4c5f3e
+      internalID: 1689437305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Issac_sprite_109
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 1
+        width: 15
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2af13db7c0989c46aa64ab6d900c30a
+      internalID: 1408848326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Issac_sprite_110
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 1
+        width: 15
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef6c84988051fb54c960ede059548ba3
+      internalID: -947340649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Issac_sprite_111
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 1
+        width: 18
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3cf08d35fd4e834d8cb4e3f6f318ebe
+      internalID: 1432495953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Issac_sprite_112
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 0
+        width: 18
+        height: 14
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76c5083cf80ad0f419bdd9b74414965b
+      internalID: 420685685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Issac_sprite_113
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 1
+        width: 18
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ec92c9fba266ae4689e3ebdaf06fd97
+      internalID: -1758700593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: a5816771ce8e0be4592de4963669d91e
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Issac_sprite_0: -95629121
+      Issac_sprite_1: -929346730
+      Issac_sprite_10: -1612264389
+      Issac_sprite_100: 107188850
+      Issac_sprite_101: 966258249
+      Issac_sprite_102: 971957886
+      Issac_sprite_103: 918420828
+      Issac_sprite_104: -2007337984
+      Issac_sprite_105: -618899562
+      Issac_sprite_106: 1192473404
+      Issac_sprite_107: -144768480
+      Issac_sprite_108: 1689437305
+      Issac_sprite_109: 1408848326
+      Issac_sprite_11: -360819536
+      Issac_sprite_110: -947340649
+      Issac_sprite_111: 1432495953
+      Issac_sprite_112: 420685685
+      Issac_sprite_113: -1758700593
+      Issac_sprite_12: -1772122906
+      Issac_sprite_13: 547967302
+      Issac_sprite_14: 227622207
+      Issac_sprite_15: -1185559657
+      Issac_sprite_16: -2104234157
+      Issac_sprite_17: -66541018
+      Issac_sprite_18: -467144211
+      Issac_sprite_19: 482481839
+      Issac_sprite_2: 1797490774
+      Issac_sprite_20: -1089917011
+      Issac_sprite_21: -490479088
+      Issac_sprite_22: -743956278
+      Issac_sprite_23: 1200566054
+      Issac_sprite_24: 1435431056
+      Issac_sprite_25: 1933199303
+      Issac_sprite_26: 663613968
+      Issac_sprite_27: -2000491514
+      Issac_sprite_28: 960356369
+      Issac_sprite_29: 2006233634
+      Issac_sprite_3: -1576746250
+      Issac_sprite_30: 992836335
+      Issac_sprite_31: -711781992
+      Issac_sprite_32: -591210354
+      Issac_sprite_33: -1473475252
+      Issac_sprite_34: 2068015224
+      Issac_sprite_35: 177021929
+      Issac_sprite_36: 1907323658
+      Issac_sprite_37: 1745295476
+      Issac_sprite_38: -2101963100
+      Issac_sprite_39: -1784625251
+      Issac_sprite_4: 146508784
+      Issac_sprite_40: -1383506340
+      Issac_sprite_41: 1236896060
+      Issac_sprite_42: 2045174829
+      Issac_sprite_43: -239417661
+      Issac_sprite_44: 366346505
+      Issac_sprite_45: 2085146582
+      Issac_sprite_46: 242707966
+      Issac_sprite_47: 857526568
+      Issac_sprite_48: -1084407528
+      Issac_sprite_49: 730593450
+      Issac_sprite_5: -884184465
+      Issac_sprite_50: 2107564283
+      Issac_sprite_51: -368680183
+      Issac_sprite_52: -930683755
+      Issac_sprite_53: -1998384653
+      Issac_sprite_54: 2032136615
+      Issac_sprite_55: 702693387
+      Issac_sprite_56: -459244944
+      Issac_sprite_57: -66017268
+      Issac_sprite_58: -1117472550
+      Issac_sprite_59: -1673698687
+      Issac_sprite_6: 1330677461
+      Issac_sprite_60: 1911910392
+      Issac_sprite_61: 1257000638
+      Issac_sprite_62: -1054388384
+      Issac_sprite_63: -571592405
+      Issac_sprite_64: -1383284054
+      Issac_sprite_65: -881399374
+      Issac_sprite_66: 862033876
+      Issac_sprite_67: -55685758
+      Issac_sprite_68: 291584045
+      Issac_sprite_69: 678732275
+      Issac_sprite_7: 70973221
+      Issac_sprite_70: 297969203
+      Issac_sprite_71: -1722918372
+      Issac_sprite_72: -1951883001
+      Issac_sprite_73: 458219400
+      Issac_sprite_74: 400133368
+      Issac_sprite_75: -1397177574
+      Issac_sprite_76: 78024404
+      Issac_sprite_77: 16115427
+      Issac_sprite_78: -1056288226
+      Issac_sprite_79: 1238129146
+      Issac_sprite_8: 422650691
+      Issac_sprite_80: -47781748
+      Issac_sprite_81: 993355426
+      Issac_sprite_82: 1535629589
+      Issac_sprite_83: 1769872827
+      Issac_sprite_84: -1911139686
+      Issac_sprite_85: -1778040993
+      Issac_sprite_86: -947153719
+      Issac_sprite_87: -1541680142
+      Issac_sprite_88: 1611082060
+      Issac_sprite_89: -1018684335
+      Issac_sprite_9: 1898448737
+      Issac_sprite_90: 623065768
+      Issac_sprite_91: -498440071
+      Issac_sprite_92: 1398780023
+      Issac_sprite_93: -526225499
+      Issac_sprite_94: -1755213102
+      Issac_sprite_95: 317241735
+      Issac_sprite_96: -1409337877
+      Issac_sprite_97: -1772945409
+      Issac_sprite_98: 1966147223
+      Issac_sprite_99: 392940112
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
