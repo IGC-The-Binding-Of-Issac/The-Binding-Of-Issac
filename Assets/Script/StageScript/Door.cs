@@ -42,13 +42,28 @@ public class Door : MonoBehaviour
         openDoor.SetActive(false);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if(roomInfo.GetComponent<Room>().isClear) // 방이 클리어된상태 일때
         {
             if(collision.gameObject.CompareTag("Player") && doorKey) // 문에 부딪힌 대상이 플레이어라면
             {
-                collision.transform.position = movePosition.transform.position; // 플레이어를 이동
+                if (Input.GetKey(KeyCode.W) && doorDir == 0)
+                {
+                    collision.transform.position = movePosition.transform.position; // 플레이어를 이동
+                }
+                else if (Input.GetKey(KeyCode.D) && doorDir == 1)
+                {
+                    collision.transform.position = movePosition.transform.position; // 플레이어를 이동
+                }
+                else if (Input.GetKey(KeyCode.S) && doorDir == 2)
+                {
+                    collision.transform.position = movePosition.transform.position; // 플레이어를 이동
+                }
+                else if (Input.GetKey(KeyCode.A) && doorDir == 3)
+                {
+                    collision.transform.position = movePosition.transform.position; // 플레이어를 이동
+                }
             }
         }
     }
