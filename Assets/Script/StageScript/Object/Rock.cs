@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class Rock : MonoBehaviour
 {
+    [SerializeField] Sprite destoryRock;
     // ∆¯≈∫ø° ««∞›¿Ã DestoryRock()¿ª »£√‚.
     public void DestroyRock()
     {
         dropItem();
-        Destroy(gameObject);
+        gameObject.GetComponent<SpriteRenderer>().sprite = destoryRock;
+        gameObject.GetComponent<BoxCollider2D>().enabled = false;
     }
 
     void dropItem()

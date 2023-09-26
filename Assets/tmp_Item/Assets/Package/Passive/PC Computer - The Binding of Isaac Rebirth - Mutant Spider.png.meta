@@ -1,0 +1,897 @@
+fileFormatVersion: 2
+guid: e87804c6c4c0d174b805757e25435f8a
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Mutant Spider_0
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 83
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bc9397d12f72404f82f95d31030ec89
+      internalID: -1980437570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Mutant Spider_1
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 83
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a26b741c5ed27d4fb5a946a01b8d9d4
+      internalID: -659666158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Mutant Spider_2
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 84
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ae6a0dedd5731a4e918fe3b47b15459
+      internalID: -593253080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Mutant Spider_3
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 84
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75c078ebd47d1e844ae0519f3031a420
+      internalID: 870323777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Mutant Spider_4
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 76
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 933a86168c39f314c834e2c20b729fac
+      internalID: 664274737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Mutant Spider_5
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 36
+        width: 28
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09ec951c612f0694da57d8ad8fbc0126
+      internalID: 811723711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Mutant Spider_6
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 76
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57888305f8e330f419900be5ca7c352e
+      internalID: -384075225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Mutant Spider_7
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 75
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fac4da0430544584eb847be39b1063f1
+      internalID: -750695809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Mutant Spider_8
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 76
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d632b2fd0241634ab4c8ff89b7eee59
+      internalID: 465663963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Mutant Spider_9
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 75
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8eed6736dc7132e4b92c01318a1036c5
+      internalID: 1363512122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Mutant Spider_10
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 37
+        width: 28
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cadbf07f1f9b38a4793e15c063c9e629
+      internalID: 837269456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Mutant Spider_11
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 37
+        width: 28
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 847c9c56e43db6644800fdc5dbae013b
+      internalID: 2053536927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Mutant Spider_12
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 36
+        width: 28
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fc6a72f7d1532b4da0e224900d6aec0
+      internalID: -649174297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Mutant Spider_13
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 37
+        width: 28
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef05e30a8a6ce624e92614f87706e9da
+      internalID: 654431807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Mutant Spider_14
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 36
+        width: 28
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a76e04717b39d542b47af463940f2de
+      internalID: -66242673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Mutant Spider_15
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 37
+        width: 28
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f2b82e4e8087694d93054aa28bc076e
+      internalID: 1848702577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Mutant Spider_16
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 36
+        width: 28
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a897db4eb42d30409caee37390e6ee7
+      internalID: -1172195769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Mutant Spider_17
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2
+        width: 32
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b1e67f526a33c44c8b1bafe86edc156
+      internalID: 1689040817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Mutant Spider_18
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 16
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48914870b942ef74b9426b887242a9fb
+      internalID: -1816111297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Mutant Spider_19
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 14
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fda7502ecda273b43916aaa4b67cd46b
+      internalID: -2090998533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Mutant Spider_20
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 14
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b375acddda2bcf6499679edbf97d4789
+      internalID: 909112712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Mutant Spider_21
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 16
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7dd213c7604552e4ab8936f616860418
+      internalID: 2063342838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Mutant Spider_22
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 16
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 069e6cb7343b5ea4992cd407aa94853c
+      internalID: 774710380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Mutant Spider_23
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 16
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 411fe4249f1dd83469e5184e132a4de8
+      internalID: -669432270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Mutant Spider_24
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 14
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b616f4e68ca40104993ca3ae2c9e70ef
+      internalID: -1741815624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Mutant Spider_25
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 1
+        width: 30
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4414527ac16060749b2de28ce918a225
+      internalID: 1035623715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Mutant Spider_26
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 3
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63ef9eae1832ade478081eb3b8e08cc9
+      internalID: -1031837393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Mutant Spider_27
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 3
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 225c776f472556e4d819c523a0fc4ca2
+      internalID: 748239669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Mutant Spider_28
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 1
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38f4e93ab572d04418aafe229f05a66e
+      internalID: -719806448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Mutant Spider_29
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 3
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29d1be006da33b941b3fd5a694c7150b
+      internalID: -912451120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Mutant Spider_30
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 3
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 341ea3547e2790a4faafbac86bdbfbff
+      internalID: 404270805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Mutant Spider_31
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 3
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0442d8bced28ff649a3b9098f50c0ab9
+      internalID: -1675665348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Mutant Spider_32
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 3
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efc567f9781a47d4e87de75c8cc6cf47
+      internalID: 1125197263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Mutant Spider_33
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 3
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3847cf8487c49e744bea6976415b6313
+      internalID: -1120944337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Mutant Spider_34
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 3
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa315b97ac8b9de4b8fc41a6b34f3a46
+      internalID: -550176164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 0cf07fcae93393949806db9f42064e77
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      PC Computer - The Binding of Isaac Rebirth - Mutant Spider_0: -1980437570
+      PC Computer - The Binding of Isaac Rebirth - Mutant Spider_1: -659666158
+      PC Computer - The Binding of Isaac Rebirth - Mutant Spider_10: 837269456
+      PC Computer - The Binding of Isaac Rebirth - Mutant Spider_11: 2053536927
+      PC Computer - The Binding of Isaac Rebirth - Mutant Spider_12: -649174297
+      PC Computer - The Binding of Isaac Rebirth - Mutant Spider_13: 654431807
+      PC Computer - The Binding of Isaac Rebirth - Mutant Spider_14: -66242673
+      PC Computer - The Binding of Isaac Rebirth - Mutant Spider_15: 1848702577
+      PC Computer - The Binding of Isaac Rebirth - Mutant Spider_16: -1172195769
+      PC Computer - The Binding of Isaac Rebirth - Mutant Spider_17: 1689040817
+      PC Computer - The Binding of Isaac Rebirth - Mutant Spider_18: -1816111297
+      PC Computer - The Binding of Isaac Rebirth - Mutant Spider_19: -2090998533
+      PC Computer - The Binding of Isaac Rebirth - Mutant Spider_2: -593253080
+      PC Computer - The Binding of Isaac Rebirth - Mutant Spider_20: 909112712
+      PC Computer - The Binding of Isaac Rebirth - Mutant Spider_21: 2063342838
+      PC Computer - The Binding of Isaac Rebirth - Mutant Spider_22: 774710380
+      PC Computer - The Binding of Isaac Rebirth - Mutant Spider_23: -669432270
+      PC Computer - The Binding of Isaac Rebirth - Mutant Spider_24: -1741815624
+      PC Computer - The Binding of Isaac Rebirth - Mutant Spider_25: 1035623715
+      PC Computer - The Binding of Isaac Rebirth - Mutant Spider_26: -1031837393
+      PC Computer - The Binding of Isaac Rebirth - Mutant Spider_27: 748239669
+      PC Computer - The Binding of Isaac Rebirth - Mutant Spider_28: -719806448
+      PC Computer - The Binding of Isaac Rebirth - Mutant Spider_29: -912451120
+      PC Computer - The Binding of Isaac Rebirth - Mutant Spider_3: 870323777
+      PC Computer - The Binding of Isaac Rebirth - Mutant Spider_30: 404270805
+      PC Computer - The Binding of Isaac Rebirth - Mutant Spider_31: -1675665348
+      PC Computer - The Binding of Isaac Rebirth - Mutant Spider_32: 1125197263
+      PC Computer - The Binding of Isaac Rebirth - Mutant Spider_33: -1120944337
+      PC Computer - The Binding of Isaac Rebirth - Mutant Spider_34: -550176164
+      PC Computer - The Binding of Isaac Rebirth - Mutant Spider_4: 664274737
+      PC Computer - The Binding of Isaac Rebirth - Mutant Spider_5: 811723711
+      PC Computer - The Binding of Isaac Rebirth - Mutant Spider_6: -384075225
+      PC Computer - The Binding of Isaac Rebirth - Mutant Spider_7: -750695809
+      PC Computer - The Binding of Isaac Rebirth - Mutant Spider_8: 465663963
+      PC Computer - The Binding of Isaac Rebirth - Mutant Spider_9: 1363512122
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

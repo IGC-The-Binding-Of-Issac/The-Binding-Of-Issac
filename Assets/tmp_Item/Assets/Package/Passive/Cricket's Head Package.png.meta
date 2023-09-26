@@ -1,0 +1,1579 @@
+fileFormatVersion: 2
+guid: 87007fdc075b4ca4a885815c9f555ee8
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Cricket's Head_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 197
+        width: 24
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1719820d538520142bb7a586804cfe3d
+      internalID: 997999898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cricket's Head_1
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 210
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c0fd6305a785894ca7bed4962d25c0b
+      internalID: 804784347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cricket's Head_2
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 208
+        width: 5
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10585097dba58b24fa961e01c1a7dff5
+      internalID: -172510513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cricket's Head_3
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 208
+        width: 5
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc30495d8b9c66a43ba1d490b78d9292
+      internalID: -30953309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cricket's Head_4
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 210
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d511c2be87c84ca41908fcfd93e54522
+      internalID: -1898613355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cricket's Head_5
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 210
+        width: 5
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c176947f5171e904dbca89d1707dd9b4
+      internalID: 972373567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cricket's Head_6
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 210
+        width: 5
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e086583db9ce7e34eb55317dfc23a17d
+      internalID: 548458820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cricket's Head_7
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 208
+        width: 5
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a541aa7d613404f4fabef24b168921ef
+      internalID: -2049111874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cricket's Head_8
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 195
+        width: 30
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88632ac9236dd8c459c6ac612ed5bbe2
+      internalID: 1034203321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cricket's Head_9
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 196
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b31c72c287d61642b42dbc273d78ba7
+      internalID: 571007354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cricket's Head_10
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 196
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c515eea3aa850e94f898a3ccf5e1cdc6
+      internalID: 855285266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cricket's Head_11
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 194
+        width: 5
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 291f0ccb584afa1439dee50e8046a995
+      internalID: 1124389496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cricket's Head_12
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 196
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4098bf988b61d174ea7a54ea002d4d89
+      internalID: 1550501642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cricket's Head_13
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 196
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbc6006bdb5570c43834c8a7c0cac443
+      internalID: 240948586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cricket's Head_14
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 196
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f7f68bf0c278d24290a7895f9d190e6
+      internalID: 127038779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cricket's Head_15
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 196
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c8a01506402db24986e9e371a2e1505
+      internalID: -1708232448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cricket's Head_16
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 196
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49ff42999793c5c4a870efe7c2496a69
+      internalID: 1075250459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cricket's Head_17
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 196
+        width: 5
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3fd0b70e68adee48991e0b6cbd2a4f3
+      internalID: 697358406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cricket's Head_18
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 165
+        width: 28
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c62d6366be4e8e44a99f82c43bb355aa
+      internalID: 1197946830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cricket's Head_19
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 164
+        width: 28
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67d5aa7667795054eb143d3fbc82cf7a
+      internalID: 270245013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cricket's Head_20
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 165
+        width: 28
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc717712610647c42b3ea8ff08df39d2
+      internalID: 993522887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cricket's Head_21
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 164
+        width: 28
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d11fe1cfc7ed58449b9fc96b1cd9aa2
+      internalID: 361462826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cricket's Head_22
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 165
+        width: 28
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd4ffc04309c5a147af235a93af69f62
+      internalID: 166702578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cricket's Head_23
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 164
+        width: 28
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22f5e5b14d1a76c498a624b1c6f45d81
+      internalID: -1452591745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cricket's Head_24
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 165
+        width: 28
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc0f026734fc2724d997a7590a50c965
+      internalID: 1851398038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cricket's Head_25
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 164
+        width: 28
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e268924bc2330946a177a2d30ff10fa
+      internalID: -565122148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cricket's Head_26
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 133
+        width: 28
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58f87d5ed0b2bfb44b95b4fec48319c9
+      internalID: 2030403332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cricket's Head_27
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 132
+        width: 28
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21660b2c408d15041aa0d8d4b84e0a9b
+      internalID: -220042432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cricket's Head_28
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 133
+        width: 28
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ca58317296be2943b3380e30057636d
+      internalID: 1292590426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cricket's Head_29
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 132
+        width: 28
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd4ea4997cd1577438bea2351023293b
+      internalID: -1200300291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cricket's Head_30
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 133
+        width: 28
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c03f87dcb0d19e4aadff98357cb25f9
+      internalID: -1271691226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cricket's Head_31
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 132
+        width: 28
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e98ab4393938d6438b3f56c380f9ec5
+      internalID: 1531594364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cricket's Head_32
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 133
+        width: 28
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92d61c56e85d5c24899bddf60bbb2bea
+      internalID: 203945643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cricket's Head_33
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 132
+        width: 28
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c27197d0ba298074495a65278ba0a6a0
+      internalID: 2047433867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cricket's Head_34
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 101
+        width: 28
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3221b8537d4e634494879302c087ae7
+      internalID: 1099876729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cricket's Head_35
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 100
+        width: 28
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bf1b1a5fb3566649af42457e32f5760
+      internalID: -512450199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cricket's Head_36
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 101
+        width: 28
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc7feab588242f645ac9e3d7f72df7ce
+      internalID: -183405294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cricket's Head_37
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 100
+        width: 28
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33095bfb8d858f346947533e38fa02a8
+      internalID: 881705106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cricket's Head_38
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 101
+        width: 28
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 970011894350bd041a64e25b5f5db4e7
+      internalID: 1770149305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cricket's Head_39
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 100
+        width: 28
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 064ee0a55276ed04b9e724171e65f9c1
+      internalID: 2107063475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cricket's Head_40
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 101
+        width: 28
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1eed29ee4fa3dc4d852204877988202
+      internalID: -1690008473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cricket's Head_41
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 100
+        width: 28
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8969b27bdb1a074893685653e9bad9b
+      internalID: 1390701380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cricket's Head_42
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 69
+        width: 28
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad29af1a88abe904ca95e2b44bd8b2f6
+      internalID: 2042882514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cricket's Head_43
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 68
+        width: 28
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe19b9b658ffde7429f26118cfa0ca79
+      internalID: 957057968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cricket's Head_44
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 69
+        width: 28
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 309cdd9efd5533d4794a8f0c4aab3af7
+      internalID: 239500647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cricket's Head_45
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 68
+        width: 28
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e37af428c910e2c4ba22922df7bd7c8d
+      internalID: -1883341830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cricket's Head_46
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 69
+        width: 28
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 579899d464cc9c4408fa8f5f69e5e84d
+      internalID: -1970165671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cricket's Head_47
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 68
+        width: 28
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 157374681bcbc4e498b2d65c208ac058
+      internalID: 54663091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cricket's Head_48
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 69
+        width: 28
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 496509c2fa463c24692ab81fa233ef3a
+      internalID: -1824499633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cricket's Head_49
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 68
+        width: 28
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e684f56f2c003f4d90687562b09ef4b
+      internalID: -781029560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cricket's Head_50
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 37
+        width: 28
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b93f44c526f3cf843ae6d2f811899785
+      internalID: 1399163363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cricket's Head_51
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 36
+        width: 28
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 238bd19ebdf4fc541963335305f3591c
+      internalID: 1352456396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cricket's Head_52
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 37
+        width: 28
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f24cd1be4479e94a96294799c7ee777
+      internalID: -871318122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cricket's Head_53
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 36
+        width: 28
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 547f30fefd637654f85fef618a49647b
+      internalID: 2079052829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cricket's Head_54
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 37
+        width: 28
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8ef1f2b1ca954a4fb7b0c4c604f9832
+      internalID: 613290291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cricket's Head_55
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 36
+        width: 28
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c06c0a4e3c3d7b4c8b3ec95c4e97de3
+      internalID: -1953814215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cricket's Head_56
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 37
+        width: 28
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa941b8707c07324b911da8b91598f71
+      internalID: 1122765540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cricket's Head_57
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 36
+        width: 28
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3cb0cd3e56e37b42b005951fdcda92d
+      internalID: -94760118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cricket's Head_58
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 5
+        width: 28
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 571c909581a488f48a6b38fdb98962d8
+      internalID: 838014274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cricket's Head_59
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 4
+        width: 28
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56846558665118148ac588e079ba4754
+      internalID: -2009377920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cricket's Head_60
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 5
+        width: 28
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60e4444effafec14bb3d948403b25d26
+      internalID: -582674370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cricket's Head_61
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 4
+        width: 28
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fc4440c24067a34f8976aef586fe8ff
+      internalID: 771898530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cricket's Head_62
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 5
+        width: 28
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac6f21217eaa2bb40a83a705cb02e085
+      internalID: -1977285519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cricket's Head_63
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 4
+        width: 28
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e8aa29d286d14549822fc59ff124e3c
+      internalID: -1486363230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cricket's Head_64
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 5
+        width: 28
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2682a719bc938645aa4370bb7412f34
+      internalID: 1339939017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cricket's Head_65
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 4
+        width: 28
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3140c5ff6fa27a54fbecd96b60ec099a
+      internalID: 751535884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Cricket's Head_0: 997999898
+      Cricket's Head_1: 804784347
+      Cricket's Head_10: 855285266
+      Cricket's Head_11: 1124389496
+      Cricket's Head_12: 1550501642
+      Cricket's Head_13: 240948586
+      Cricket's Head_14: 127038779
+      Cricket's Head_15: -1708232448
+      Cricket's Head_16: 1075250459
+      Cricket's Head_17: 697358406
+      Cricket's Head_18: 1197946830
+      Cricket's Head_19: 270245013
+      Cricket's Head_2: -172510513
+      Cricket's Head_20: 993522887
+      Cricket's Head_21: 361462826
+      Cricket's Head_22: 166702578
+      Cricket's Head_23: -1452591745
+      Cricket's Head_24: 1851398038
+      Cricket's Head_25: -565122148
+      Cricket's Head_26: 2030403332
+      Cricket's Head_27: -220042432
+      Cricket's Head_28: 1292590426
+      Cricket's Head_29: -1200300291
+      Cricket's Head_3: -30953309
+      Cricket's Head_30: -1271691226
+      Cricket's Head_31: 1531594364
+      Cricket's Head_32: 203945643
+      Cricket's Head_33: 2047433867
+      Cricket's Head_34: 1099876729
+      Cricket's Head_35: -512450199
+      Cricket's Head_36: -183405294
+      Cricket's Head_37: 881705106
+      Cricket's Head_38: 1770149305
+      Cricket's Head_39: 2107063475
+      Cricket's Head_4: -1898613355
+      Cricket's Head_40: -1690008473
+      Cricket's Head_41: 1390701380
+      Cricket's Head_42: 2042882514
+      Cricket's Head_43: 957057968
+      Cricket's Head_44: 239500647
+      Cricket's Head_45: -1883341830
+      Cricket's Head_46: -1970165671
+      Cricket's Head_47: 54663091
+      Cricket's Head_48: -1824499633
+      Cricket's Head_49: -781029560
+      Cricket's Head_5: 972373567
+      Cricket's Head_50: 1399163363
+      Cricket's Head_51: 1352456396
+      Cricket's Head_52: -871318122
+      Cricket's Head_53: 2079052829
+      Cricket's Head_54: 613290291
+      Cricket's Head_55: -1953814215
+      Cricket's Head_56: 1122765540
+      Cricket's Head_57: -94760118
+      Cricket's Head_58: 838014274
+      Cricket's Head_59: -2009377920
+      Cricket's Head_6: 548458820
+      Cricket's Head_60: -582674370
+      Cricket's Head_61: 771898530
+      Cricket's Head_62: -1977285519
+      Cricket's Head_63: -1486363230
+      Cricket's Head_64: 1339939017
+      Cricket's Head_65: 751535884
+      Cricket's Head_7: -2049111874
+      Cricket's Head_8: 1034203321
+      Cricket's Head_9: 571007354
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

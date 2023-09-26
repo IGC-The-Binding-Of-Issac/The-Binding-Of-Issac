@@ -1,0 +1,1579 @@
+fileFormatVersion: 2
+guid: ed57717cfee64ef4a989f736c6d6237b
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Shoop da whoop!_0
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 197
+        width: 23
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19bcfa88114135643a16ac48a2df2634
+      internalID: -470163367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoop da whoop!_1
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 210
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17c8b946b5c2963468aa02eb80859234
+      internalID: -1898773632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoop da whoop!_2
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 208
+        width: 5
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 730466b9fb3d98a438311e0383abf45e
+      internalID: -888537341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoop da whoop!_3
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 208
+        width: 5
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4aec432e3f5aa7a4487572d465692fe1
+      internalID: -2095121755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoop da whoop!_4
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 210
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c27d5c8c004001843850d8bcd4af1f8c
+      internalID: -580999026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoop da whoop!_5
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 210
+        width: 5
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7827f92287b6392468bcbf651532d900
+      internalID: -1887676644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoop da whoop!_6
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 210
+        width: 5
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cb1e1c28173f7a4d88f76f3564ce2ec
+      internalID: 1489594002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoop da whoop!_7
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 208
+        width: 5
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd18d91e709ecf947924619b7a93b7a5
+      internalID: -1633127297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoop da whoop!_8
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 195
+        width: 30
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6dfbd0ee03bc9b043946bf6f63542a05
+      internalID: 60103031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoop da whoop!_9
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 196
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c097e06a517d6a542854efdb27c93903
+      internalID: 1238278265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoop da whoop!_10
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 196
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10b75cf0e2620214bafb2e727dae3e61
+      internalID: 772854443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoop da whoop!_11
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 194
+        width: 5
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dde2a2c3570bc2242b28aac892284871
+      internalID: 2006323519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoop da whoop!_12
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 196
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f81d1b0d3f75514a93d1784bd26f0be
+      internalID: -1629807738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoop da whoop!_13
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 196
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0dab8966add2b344ba4189380b9c76a3
+      internalID: -1072193435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoop da whoop!_14
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 196
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa4e0917070abc249b6fcf809e000f81
+      internalID: 2069276574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoop da whoop!_15
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 196
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2de33b1e9e9d9ca4b8fdbee9ecd16027
+      internalID: 29778098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoop da whoop!_16
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 196
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ffc0505b6cbf2a4c81a64a9c1147a9f
+      internalID: -1377089490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoop da whoop!_17
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 196
+        width: 5
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 414bb797b839b9549b657bb7dc1d558b
+      internalID: -932254209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoop da whoop!_18
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 165
+        width: 28
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbf928a83b2d1a44d9bde4364e32039e
+      internalID: 1236029213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoop da whoop!_19
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 163
+        width: 30
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae7dd65704ded0642946d2a57127cb47
+      internalID: 1135394207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoop da whoop!_20
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 165
+        width: 30
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5a0b433f683f9d4692ae2bdb2ae694e
+      internalID: -2125280728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoop da whoop!_21
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 164
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0675d293d7e60a941bd4c17e2cf0e753
+      internalID: 1231495402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoop da whoop!_22
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 165
+        width: 28
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4dc5cc8c7094d82408108a71d0d134a8
+      internalID: -746919626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoop da whoop!_23
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 165
+        width: 30
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72fe4bdd50a976c47b1060b59fa820ef
+      internalID: -1836429340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoop da whoop!_24
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 165
+        width: 30
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21b8a40bc3d59cc4fbe496a5474c4c03
+      internalID: 1150159385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoop da whoop!_25
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 164
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a85b5f7db9725ab449864905b141ca0a
+      internalID: 829026566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoop da whoop!_26
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 133
+        width: 28
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db68d6ec405d9614799c56ca7c199d6d
+      internalID: -270241711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoop da whoop!_27
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 131
+        width: 30
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e5ca5661653024468617806b39eba09
+      internalID: 147099455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoop da whoop!_28
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 133
+        width: 30
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e500c2e2e326c214598e208bfb485060
+      internalID: -69876842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoop da whoop!_29
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 132
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afb9b4f3724829548a37261991d2b564
+      internalID: -820682244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoop da whoop!_30
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 133
+        width: 28
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 012db832db9a8084b965547ab5d3e6cb
+      internalID: -1710922447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoop da whoop!_31
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 133
+        width: 30
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e0c0edb76cba7643a9e709c398d35f2
+      internalID: 1450763380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoop da whoop!_32
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 133
+        width: 30
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7edf8d824f82c74bb0f30490ac2ede9
+      internalID: -708454738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoop da whoop!_33
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 132
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02854177844103e428b3200022370302
+      internalID: 1243742944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoop da whoop!_34
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 101
+        width: 28
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f194480c62e7406498a856b80ae6dc4b
+      internalID: 2002809592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoop da whoop!_35
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 99
+        width: 30
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bf2f1b65b856c14186a899b272a4e8b
+      internalID: 1240496922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoop da whoop!_36
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 101
+        width: 30
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb89308797b7b164fba983a8597c1388
+      internalID: -434019928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoop da whoop!_37
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 100
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e61c31eddf844884189b1c9aecc92d54
+      internalID: 785419096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoop da whoop!_38
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 101
+        width: 28
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c56e28316219f9342b9efabe763890c0
+      internalID: -674165353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoop da whoop!_39
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 101
+        width: 30
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 854b6a88cc64eb341beda4e454b1bf2d
+      internalID: 2040953172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoop da whoop!_40
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 101
+        width: 30
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1e42db02ca098e43bbbd1d21e10bb1b
+      internalID: -31951296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoop da whoop!_41
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 100
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 396ee3c58c351ff40926bf7cf4ed55ce
+      internalID: 1032578312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoop da whoop!_42
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 69
+        width: 28
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c498f42fcc310d44a92c583413d7983
+      internalID: 1443247754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoop da whoop!_43
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 67
+        width: 30
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33ecc6221ad21284e84f7f5874bad636
+      internalID: 174163383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoop da whoop!_44
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 69
+        width: 30
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f80a11403091ca42ba8c8f4a47149d4
+      internalID: 1084941369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoop da whoop!_45
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 68
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c6a67ac6d4074647bedd23e68bf4947
+      internalID: -443878629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoop da whoop!_46
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 69
+        width: 28
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5df889478ca261c4391a9c803844ac9a
+      internalID: -240499619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoop da whoop!_47
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 69
+        width: 30
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a1f368d07e93234aaf046ba592f096c
+      internalID: -1235673869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoop da whoop!_48
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 69
+        width: 30
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf0e3cfb98ded1340bbc588c8f3b9100
+      internalID: -1253465394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoop da whoop!_49
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 68
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4154870d8fec74b4cbbc7f93d9142540
+      internalID: 943118637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoop da whoop!_50
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 37
+        width: 28
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffd75c2efbdd27f48872af5a17ccd84f
+      internalID: -380413259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoop da whoop!_51
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 35
+        width: 30
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cc004b941c27cd4ba36735c2141caf2
+      internalID: -413728928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoop da whoop!_52
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 37
+        width: 30
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd04b053ab1c7d3498083c3ff0dd38b3
+      internalID: 162706375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoop da whoop!_53
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 36
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3edd4256607e3ae4a84816fa21bbd6c4
+      internalID: -300995895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoop da whoop!_54
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 37
+        width: 28
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6d2ae247f6f5e9468f04813d6045456
+      internalID: 736489368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoop da whoop!_55
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 37
+        width: 30
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6e40d9fff3bddf4098cee6facbe2552
+      internalID: 1639080907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoop da whoop!_56
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 37
+        width: 30
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7327ca47da5eae84c8da84d775c11fd4
+      internalID: -1201983507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoop da whoop!_57
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 36
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47e3b44c389342f44b7c6707ad719722
+      internalID: 456915097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoop da whoop!_58
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 5
+        width: 28
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1fff2dced6b5fb41a1f0142337d33a9
+      internalID: -737789681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoop da whoop!_59
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 3
+        width: 30
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7ee5deb91f71544c9e5a17a6ed44601
+      internalID: 938426540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoop da whoop!_60
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 5
+        width: 30
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d2a73b145db02a489a345721d9f45b3
+      internalID: -1585038654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoop da whoop!_61
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 4
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 326065dbd44fb494fb604aec653f4a9a
+      internalID: 1277997263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoop da whoop!_62
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 5
+        width: 28
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7331fd9c50bbb744aa82adbfb92f7eb6
+      internalID: 608882487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoop da whoop!_63
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 5
+        width: 30
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f285ea7b68980364e8f12ecc90bd3858
+      internalID: 736323050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoop da whoop!_64
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 5
+        width: 30
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e27b24bdfaf10942926656d2a6572a2
+      internalID: -1912180295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoop da whoop!_65
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 4
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9043cf94f1ca524fb671b9a729ece8a
+      internalID: 579743190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Shoop da whoop!_0: -470163367
+      Shoop da whoop!_1: -1898773632
+      Shoop da whoop!_10: 772854443
+      Shoop da whoop!_11: 2006323519
+      Shoop da whoop!_12: -1629807738
+      Shoop da whoop!_13: -1072193435
+      Shoop da whoop!_14: 2069276574
+      Shoop da whoop!_15: 29778098
+      Shoop da whoop!_16: -1377089490
+      Shoop da whoop!_17: -932254209
+      Shoop da whoop!_18: 1236029213
+      Shoop da whoop!_19: 1135394207
+      Shoop da whoop!_2: -888537341
+      Shoop da whoop!_20: -2125280728
+      Shoop da whoop!_21: 1231495402
+      Shoop da whoop!_22: -746919626
+      Shoop da whoop!_23: -1836429340
+      Shoop da whoop!_24: 1150159385
+      Shoop da whoop!_25: 829026566
+      Shoop da whoop!_26: -270241711
+      Shoop da whoop!_27: 147099455
+      Shoop da whoop!_28: -69876842
+      Shoop da whoop!_29: -820682244
+      Shoop da whoop!_3: -2095121755
+      Shoop da whoop!_30: -1710922447
+      Shoop da whoop!_31: 1450763380
+      Shoop da whoop!_32: -708454738
+      Shoop da whoop!_33: 1243742944
+      Shoop da whoop!_34: 2002809592
+      Shoop da whoop!_35: 1240496922
+      Shoop da whoop!_36: -434019928
+      Shoop da whoop!_37: 785419096
+      Shoop da whoop!_38: -674165353
+      Shoop da whoop!_39: 2040953172
+      Shoop da whoop!_4: -580999026
+      Shoop da whoop!_40: -31951296
+      Shoop da whoop!_41: 1032578312
+      Shoop da whoop!_42: 1443247754
+      Shoop da whoop!_43: 174163383
+      Shoop da whoop!_44: 1084941369
+      Shoop da whoop!_45: -443878629
+      Shoop da whoop!_46: -240499619
+      Shoop da whoop!_47: -1235673869
+      Shoop da whoop!_48: -1253465394
+      Shoop da whoop!_49: 943118637
+      Shoop da whoop!_5: -1887676644
+      Shoop da whoop!_50: -380413259
+      Shoop da whoop!_51: -413728928
+      Shoop da whoop!_52: 162706375
+      Shoop da whoop!_53: -300995895
+      Shoop da whoop!_54: 736489368
+      Shoop da whoop!_55: 1639080907
+      Shoop da whoop!_56: -1201983507
+      Shoop da whoop!_57: 456915097
+      Shoop da whoop!_58: -737789681
+      Shoop da whoop!_59: 938426540
+      Shoop da whoop!_6: 1489594002
+      Shoop da whoop!_60: -1585038654
+      Shoop da whoop!_61: 1277997263
+      Shoop da whoop!_62: 608882487
+      Shoop da whoop!_63: 736323050
+      Shoop da whoop!_64: -1912180295
+      Shoop da whoop!_65: 579743190
+      Shoop da whoop!_7: -1633127297
+      Shoop da whoop!_8: 60103031
+      Shoop da whoop!_9: 1238278265
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
