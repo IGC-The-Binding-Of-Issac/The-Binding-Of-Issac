@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 106464213330526232}
   - component: {fileID: 8572517472700572829}
   - component: {fileID: -2593688523653703239}
+  - component: {fileID: 940873197451349488}
   m_Layer: 0
   m_Name: splikes
   m_TagString: Untagged
@@ -130,3 +131,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.779026, y: 0.9261316}
   m_EdgeRadius: 0
+--- !u!114 &940873197451349488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3860274308870984225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3bba9ce331c3da4582a8b46a25207fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
