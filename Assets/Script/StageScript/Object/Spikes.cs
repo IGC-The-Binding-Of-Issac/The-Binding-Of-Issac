@@ -4,5 +4,12 @@ using UnityEngine;
 
 public class Spikes : MonoBehaviour
 {
-    // 플레이어 및 몬스터에게 데미지 주는 코드 추가 필요합니다.
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if(collision.gameObject.CompareTag("Player"))
+        {
+            PlayerManager.instance.GetDamage();
+        }
+        // 몬스터에게 데미지주기 작성 필요.
+    }
 }
