@@ -7,6 +7,7 @@ public class Room : MonoBehaviour
     public bool isClear = false;
     public bool playerInRoom = false;
     public Transform[] roomObjects;
+    public List<GameObject> enemis = new List<GameObject>();
 
     [Header("Unity Setup")]
     public Transform roomGrid;
@@ -20,6 +21,18 @@ public class Room : MonoBehaviour
         {
             CameraSetting();
         }
+
+        CheckRoom();
+    }
+    void CheckRoom()
+    {
+        bool flag = true;
+        for(int i = 0; i < enemis.Count; i++)
+        {
+            if (enemis[i] != null)
+                flag = false;
+        }
+        isClear = flag;
     }
 
     void CameraSetting()
