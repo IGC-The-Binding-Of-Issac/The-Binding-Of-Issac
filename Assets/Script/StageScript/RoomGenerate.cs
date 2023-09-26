@@ -175,15 +175,30 @@ public class RoomGenerate : MonoBehaviour
                     idx++;
                     continue;
                 }
-                GameObject obstacle = Instantiate(objectPrefabs[rdPattern[i, j] - 1]) as GameObject;
-                obstacle.transform.SetParent(roomList[y, x].GetComponent<Room>().roomObjects[idx]);
-                obstacle.transform.localPosition = new Vector3(0, 0, 0);
-                idx++;
 
-                if (rdPattern[i, j] == 10) // 플레이어 오브젝트일때
+                if (rdPattern[i, j] == 5) // 몬스터 오브젝트일때
                 {
-                    obstacle.transform.SetParent(null);
-                    GameManager.instance.playerObject = obstacle;
+                    GameObject enemy = Instantiate(objectPrefabs[rdPattern[i, j] - 1]) as GameObject;
+                    enemy.transform.SetParent(roomList[y, x].GetComponent<Room>().roomObjects[idx]);
+                    enemy.transform.localPosition = new Vector3(0, 0, 0);
+                    idx++;
+                    // 위 코드 삭제후  몬스터 랜덤생성 작성해주기.
+
+                    Debug.Log("enemy add");
+                    roomList[y, x].GetComponent<Room>().enemis.Add(enemy); // 해당 방의 몬스터리스트에 추가
+                }
+                else
+                {
+                    GameObject obstacle = Instantiate(objectPrefabs[rdPattern[i, j] - 1]) as GameObject;
+                    obstacle.transform.SetParent(roomList[y, x].GetComponent<Room>().roomObjects[idx]);
+                    obstacle.transform.localPosition = new Vector3(0, 0, 0);
+                    idx++;
+
+                    if (rdPattern[i, j] == 10) // 플레이어 오브젝트일때
+                    {
+                        obstacle.transform.SetParent(null);
+                        GameManager.instance.playerObject = obstacle;
+                    }
                 }
             }
         }    
