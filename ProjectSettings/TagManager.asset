@@ -11,6 +11,7 @@ TagManager:
   - Object_Rock
   - Object_Fire
   - Object_Spikes
+  - Enemy
   layers:
   - Default
   - TransparentFX

@@ -33,7 +33,14 @@ public class FirePlace : MonoBehaviour
         // ItemManage에서 구현후 실행 고민해봅시다.
         //코인,체력 등 드랍아이템 확률드랍. 구현 필요.
     }
-    
 
-    // 플레이어 및 몬스터에게 데미지 주는 코드 추가 필요합니다.
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            PlayerManager.instance.GetDamage();
+        }
+        // 몬스터에게 데미지주기 작성 필요.
+    }
 }
