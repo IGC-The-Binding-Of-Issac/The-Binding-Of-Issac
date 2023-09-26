@@ -524,6 +524,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1251611851}
+  - component: {fileID: 1251611852}
   m_Layer: 0
   m_Name: ItemManager
   m_TagString: Untagged
@@ -546,6 +547,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 234069467}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1251611852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1251611850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aefcb61391e21c14aa37ac9bfb496005, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item_Activated_Count: 0
+  inventory: 0
+  coinCount: 0
+  bombCount: 5
+  bombPrefab: {fileID: 9152286902886193127, guid: 7fce7d28537db664aaca9ad6d71bd9c4, type: 3}
 --- !u!1 &1704551913
 GameObject:
   m_ObjectHideFlags: 0

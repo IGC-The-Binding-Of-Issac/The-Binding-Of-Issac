@@ -25,7 +25,6 @@ public class PlayerController : MonoBehaviour
 
     private float lastshot;
 
-    // Start is called before the first frame update
     void Start()
     {
         playerRB = GetComponent<Rigidbody2D>();
@@ -34,8 +33,7 @@ public class PlayerController : MonoBehaviour
         shotDelay = PlayerManager.instance.playerShotDelay;
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         float hori = Input.GetAxis("Horizontal");
         float verti = Input.GetAxis("Vertical");
@@ -46,7 +44,7 @@ public class PlayerController : MonoBehaviour
         //총알 발사 딜레이
         if ((shootHor != 0 || shootVer != 0) && Time.time > lastshot + shotDelay)
         {
-            if(shootHor != 0 && shootVer != 0)
+            if (shootHor != 0 && shootVer != 0)
             {
                 //대각 발사 X
                 shootHor = 0;
@@ -60,6 +58,8 @@ public class PlayerController : MonoBehaviour
         MoveAnim();
 
         ShotAnim();
+
+        InstallBomb();
     }
 
     //발사 기능 구현
@@ -70,7 +70,7 @@ public class PlayerController : MonoBehaviour
         tear.GetComponent<Rigidbody2D>().velocity = new Vector3(
             (x < 0) ? Mathf.Floor(x) * tearSpeed : Mathf.Ceil(x) * tearSpeed,
             (y < 0) ? Mathf.Floor(y) * tearSpeed : Mathf.Ceil(y) * tearSpeed, 0);
-        
+
         //총알이 대각으로 나가게 옆으로 힘을 줌
         if (Input.GetKey(KeyCode.W))
         {
@@ -155,6 +155,20 @@ public class PlayerController : MonoBehaviour
         else
         {
             PlayerShotAnim.SetBool("playerDownShot", false);
+        }
+    }
+
+    void InstallBomb()
+    {
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            // 필드에 설치된 폭탄이없을때 && 보유중인 폭탄 개수가 1개 이상일때
+            if(GameObject.Find("Putbomb") == null && ItemManager.instance.bombCount > 0)
+            {
+                ItemManager.instance.bombCount--;
+                GameObject bomb = Instantiate(ItemManager.instance.bombPrefab, transform.position, Quaternion.identity) as GameObject;
+                bomb.name = "Putbomb"; // 생성된 폭탄 오브젝트 이름 변경
+            }
         }
     }
 

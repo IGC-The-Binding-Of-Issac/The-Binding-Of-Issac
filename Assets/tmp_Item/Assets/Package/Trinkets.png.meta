@@ -1,0 +1,4835 @@
+fileFormatVersion: 2
+guid: c138abb55a13ca34ebd869e4fd87d781
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_0
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 475
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 269a70492cf927d41bfd803e1317de5f
+      internalID: 1189600740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_1
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 471
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b37b12ccc6119b4abb1603d05ce126b
+      internalID: 30982065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_2
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 452
+        width: 20
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1362c23a2b1f1643a1a7e19f5c77018
+      internalID: -1939177140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_3
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 453
+        width: 12
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 565414c566696f7488b50908836d763f
+      internalID: -314932401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_4
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 448
+        width: 25
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d98160688c6ec434c886a8981b95941a
+      internalID: 1654142220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_5
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 453
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2636170e9819009408cab8f3d8efb467
+      internalID: 1130376422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_6
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 452
+        width: 22
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 207e05d885053154bae186eb111b4a97
+      internalID: 1879203500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_7
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 459
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ba4fab111b9ab546a296d580b5190ec
+      internalID: -972290661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_8
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 453
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1506fafd3ab0ecc44b2f31f1a6e588f8
+      internalID: 571400192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_9
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 452
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99a43ffc3f1a75146bd3d2ade8f6e370
+      internalID: -1525402522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_10
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 452
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1424cdf9b0d92d54c8189bfc962129dc
+      internalID: 174988019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_11
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 454
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef4310b3c667a004eba19fb6424c04de
+      internalID: 1202586280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_12
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 453
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3389519d0ef5ed84b9a96411e098ae1c
+      internalID: -47357602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_13
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 452
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 608b645fd66fad14085d08383b68eb60
+      internalID: 1118690856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_14
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 452
+        width: 20
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a2cb6793924f1848af426380510ca2f
+      internalID: 1247316553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_15
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 452
+        width: 22
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10b06e9c25ecf214e965bd2e10f87113
+      internalID: 353739624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_16
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 452
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1411774f80c6c574ea0fd17446a58b82
+      internalID: 1107366023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_17
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 452
+        width: 19
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 434e30b1fe5f0a9459bf753d02434249
+      internalID: 1729577010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_18
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 453
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c64ab011a15efe4987a97c4ad421984
+      internalID: 469182008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_19
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 453
+        width: 22
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87aa8c4e98762ec42a290cbc0ba24693
+      internalID: -1356298429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_20
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 453
+        width: 22
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 024f8047e067d22469090e1eedde6fda
+      internalID: 142080670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_21
+      rect:
+        serializedVersion: 2
+        x: 581
+        y: 453
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cca8ef0cd69a18b468ef47497237377f
+      internalID: -954280552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_22
+      rect:
+        serializedVersion: 2
+        x: 614
+        y: 452
+        width: 19
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15373b7b5ad841c4686a293c37d2e42a
+      internalID: 1936443317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_23
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 420
+        width: 20
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad77723169051b642a7009955557d330
+      internalID: 452041035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_24
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 420
+        width: 21
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e628ade214e2994b9cb37f7f9406aa0
+      internalID: -803316568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_25
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 421
+        width: 23
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aef3774b5690de246a8ff0f064f465fe
+      internalID: 397024799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_26
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 420
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41950551809debd4da1ef859e9cd641d
+      internalID: -1790209693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_27
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 420
+        width: 18
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53da8845fb04540419ada8e144787cbf
+      internalID: 366880959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_28
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 443
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f3772a0d780bd747963a897b5a3db67
+      internalID: -52028297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_29
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 420
+        width: 17
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06a85e44ee99dee48b9cbe8696439ec8
+      internalID: 127125215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_30
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 421
+        width: 19
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ae5a67b37949524c85ae015c9b239b8
+      internalID: 152045222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_31
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 421
+        width: 20
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89c245b026d88784990048a75fc54bd5
+      internalID: 788293498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_32
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 420
+        width: 18
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 017b114bc306ac14cac28d57575f0ffe
+      internalID: -1239211675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_33
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 420
+        width: 18
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2911f606d73f0534cbf4dbbf43a0d512
+      internalID: 1546688927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_34
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 421
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea9af8d82201c5e418e501e4be45c7cd
+      internalID: 1671012810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_35
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 420
+        width: 21
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de8c856969410e5498eddb5b4da14863
+      internalID: 254310662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_36
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 422
+        width: 25
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77a1bf54596a33948a8e0da021d551f6
+      internalID: -1908589500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_37
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 421
+        width: 20
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab3cebadc6811214e9bfc37fe9288e17
+      internalID: -1017080410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_38
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 421
+        width: 21
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2a71bed6f811ea4eaaefcf638b2b99f
+      internalID: 798472752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_39
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 421
+        width: 20
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba751ce585f566e49819cb7695254c19
+      internalID: 1658737475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_40
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 438
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9dfcbedebafa1d4e85bc9ace3d8323c
+      internalID: 1347984746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_41
+      rect:
+        serializedVersion: 2
+        x: 487
+        y: 424
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 465fc0c85db880e4ba202736b8262345
+      internalID: 1391458853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_42
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 420
+        width: 20
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90b3dd6c481950a418e7c175dd5a8e1f
+      internalID: 2047059025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_43
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 420
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33ffb02801f82444f82c31bdd1d3f6f6
+      internalID: 1915863641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_44
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 422
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa1b8db13b3ec2c4096f28f1e72cc313
+      internalID: -1143781737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_45
+      rect:
+        serializedVersion: 2
+        x: 617
+        y: 423
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c30b41bb0d883784e805dbfdd97dd27c
+      internalID: -274456921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_46
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 389
+        width: 21
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af01df149a0727f4b8fadfcc480f4133
+      internalID: -946559552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_47
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 388
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e845a58ede532a4496d8dcdcbe5366f
+      internalID: 1668717160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_48
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 389
+        width: 12
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3037360264cf09c43b5ff76051a1e125
+      internalID: 339202515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_49
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 388
+        width: 19
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9a846e07993bbc449e7728c75b76345
+      internalID: -490339742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_50
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 389
+        width: 21
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 110ce92efde83084e8b8fb4c86603301
+      internalID: -386077844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_51
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 389
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64b736721d2707a4dbd9f441da82cc28
+      internalID: 589830843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_52
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 390
+        width: 17
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3508f517d0b9b4a4188f0fbdcb29a47b
+      internalID: -1519238805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_53
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 389
+        width: 18
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8af74eb9cb0c51f448b97b79b346cb3a
+      internalID: -311274085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_54
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 389
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b220b36bcac3c4444a895b55badf2294
+      internalID: -1378767604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_55
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 389
+        width: 20
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68ca41d2b1f97374c8ed161cbd594567
+      internalID: 24195938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_56
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 388
+        width: 20
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7eddcf6854dbcf74a88dd2c99ce7a417
+      internalID: -1177898955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_57
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 387
+        width: 27
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df1476e77d2b7794ab998de112d49eb3
+      internalID: -482393539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_58
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 400
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16f6376a511798e43a31a43a22475f19
+      internalID: 649439965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_59
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 389
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1324c51427c0bdd4684e96ba0dafd392
+      internalID: 1123120081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_60
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 389
+        width: 21
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6898e3388b14a84ba3d5569ee280547
+      internalID: -1699263013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_61
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 385
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4264ab284164cf842bbddbe4fe2914cb
+      internalID: -451498715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_62
+      rect:
+        serializedVersion: 2
+        x: 551
+        y: 386
+        width: 22
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fda4d81e704f61469339f48f8749367
+      internalID: 782102778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_63
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 389
+        width: 20
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7dee48275cdf2fa4b81a4e0434f11809
+      internalID: -1185184390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_64
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 389
+        width: 17
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5e12565b8ea7494db5d25c529d29cd6
+      internalID: 1328123990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_65
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 384
+        width: 30
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5f5938126bb72b41bd51b0cea7574bf
+      internalID: 1270261903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_66
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 388
+        width: 26
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19902aec55e53fb46820c96fccb4707e
+      internalID: 166623834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_67
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 359
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4cb30211a79e9f43b25489cbf3085fb
+      internalID: 935092063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_68
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 357
+        width: 16
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cae684f16511f9e479edd1af736e71cb
+      internalID: 1630862406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_69
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 354
+        width: 20
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c12f51b259b6c454aa2551d5e7e31d46
+      internalID: 1742229949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_70
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 359
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7a686893b0c2f14daea1f1c84e181df
+      internalID: -1346594546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_71
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 358
+        width: 17
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97fe03e65c5514e4a942e4c8eb58d3ff
+      internalID: 1303289228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_72
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 357
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4e9e70a37cb89a42a175ee8c3f77bfe
+      internalID: -801531333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_73
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 357
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e379448bd3dad6e4a8dc4837e5d53dfc
+      internalID: 1256441999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_74
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 357
+        width: 19
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccc79ebc205994642bac22c056ab2e6f
+      internalID: 192891265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_75
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 357
+        width: 21
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8601b57b89a281a499576032088dff63
+      internalID: -942093963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_76
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 357
+        width: 25
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9516a4454f38a44a8c881ba8fac7690
+      internalID: -1406029892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_77
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 357
+        width: 25
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61e84a56a912c754ea30aa3bcc17d390
+      internalID: 721912734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_78
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 357
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56b8e7ff097f96d4d81620ced1162939
+      internalID: 1475259053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_79
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 357
+        width: 21
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cdbd5939091a4d4ca1d513447d4e67e
+      internalID: 1040770859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_80
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 358
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 189150445b8a73d45beb04e0cf308812
+      internalID: -1222890379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_81
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 357
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dec3a0dde6a6b34ebad31d0d27ed3b6
+      internalID: -900620655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_82
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 357
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4555140bd625b3f4d968467564631978
+      internalID: 1071446062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_83
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 359
+        width: 23
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e329a4133c27a4b44a354d1fc51d23e6
+      internalID: 855263005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_84
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 357
+        width: 19
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69a5efa6c799b414aa444673c7ffc6c2
+      internalID: 537039084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_85
+      rect:
+        serializedVersion: 2
+        x: 581
+        y: 357
+        width: 21
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 799cf144f85a0a243ae2a0e5b2bc6909
+      internalID: -1000993248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_86
+      rect:
+        serializedVersion: 2
+        x: 615
+        y: 357
+        width: 20
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ba94a008b323f343818ad5f5f88db12
+      internalID: 2135631495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_87
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 325
+        width: 16
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7707ca4e18b77ef42a2ce8da8078d68e
+      internalID: -478403928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_88
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 324
+        width: 23
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71d6e44f57bc8fe4d9310ec32ee44b02
+      internalID: -1592418947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_89
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 326
+        width: 20
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a023e44b91d3fd41b1b77a6e2b323e5
+      internalID: -2141547403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_90
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 325
+        width: 13
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85c97f2470d1654478a9ae00203fbaf5
+      internalID: -1351177754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_91
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 325
+        width: 21
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a4f9a70c5e5058428a447afa0888a32
+      internalID: 841430969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_92
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 326
+        width: 21
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1e32a0b514005646a720584b2e3d453
+      internalID: 397432291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_93
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 325
+        width: 23
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad9e6114a32c8c74f9fac3644059e378
+      internalID: 590352175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_94
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 325
+        width: 22
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aaa34b91969e26643a132c3310a51c63
+      internalID: -384729987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_95
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 343
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b935c33116e43c4da05090058fe768d
+      internalID: -2092767486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_96
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 325
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cfb513a5e400cc458f5b79ff38848cb
+      internalID: 1842835911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_97
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 325
+        width: 21
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ded86b0250bfda4b86fa146db3b5421
+      internalID: -407852650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_98
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 326
+        width: 14
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dce5a47863422a43b22850a5b4dcc37
+      internalID: 512892523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_99
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 326
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d0f748003ece3840a2cd30a91d1dfe7
+      internalID: -1124775527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_100
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 327
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2373b7b002fbe8e4b8fcd370f4974ca2
+      internalID: -1127886374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_101
+      rect:
+        serializedVersion: 2
+        x: 614
+        y: 326
+        width: 21
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7932230f9e5744649941659b70a7115d
+      internalID: 945943008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_102
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 322
+        width: 26
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd9b31f3b0908d549b97f084e8673848
+      internalID: 263893571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_103
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 325
+        width: 24
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83864a4258fc28b46aa195de45d60d37
+      internalID: -2135544633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_104
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 324
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 704e99871e68eaa418e218b784a8bfc5
+      internalID: 1446997791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_105
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 325
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51c4824119e99d446ae07186cf97cd02
+      internalID: 2090540178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_106
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 325
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5006e5ea22a31b64f9f27cce50b4b7f8
+      internalID: 1815077565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_107
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 326
+        width: 19
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 810da438437f4c942a2674b98f3acb9c
+      internalID: -801131042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_108
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 294
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f39b845732acbe14a8d538ab269ef552
+      internalID: -1711330960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_109
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 293
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cd7428d3eaa6c04f8e37404df5044a3
+      internalID: 548338912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_110
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 293
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 651a14108cf859141ae40d393c3ac978
+      internalID: -43628688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_111
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 302
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79fb0c74bcbe24b4d831e1d7aa1ab196
+      internalID: 1187647523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_112
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 292
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbe9efbca05fab64797a0d1c79dad857
+      internalID: 572954041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_113
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 295
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75d5bd624e10c1b489d131f836296497
+      internalID: -217456132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_114
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 294
+        width: 19
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dce3ddf7078729748864470678b18acf
+      internalID: 2007835758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_115
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 294
+        width: 21
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f03e73055c4d2f43bd48559c7861314
+      internalID: 1808982599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_116
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 294
+        width: 18
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c1b3ea715dc0a24bb2e26808368def4
+      internalID: 245306302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_117
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 291
+        width: 19
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7cd0afe038bd0a418d3c6df985589a7
+      internalID: 1817278029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_118
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 294
+        width: 21
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de9649936a85d71409ecd949bec817b5
+      internalID: 794519740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_119
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 292
+        width: 21
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f70b55a20e0d05d43a3f7951fd47b4f8
+      internalID: 1676891675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_120
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 295
+        width: 19
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 103b2c43f538fd442a9d5e1eab92272a
+      internalID: -1801696046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_121
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 288
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36eea3c79aa4a3742b083d9e6d894828
+      internalID: -1075007166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_122
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 295
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da724037b090aec44820e6c46b1680e7
+      internalID: -523288592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_123
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 295
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48f4c98bf55a3e94f8d9e2ed75994692
+      internalID: 1822034743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_124
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 295
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f300f8a3e0318fd41844f89808ba7449
+      internalID: -2005225160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_125
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 295
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7be9d24943349a944a28b244ebebb7d9
+      internalID: -2021419307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_126
+      rect:
+        serializedVersion: 2
+        x: 549
+        y: 295
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e30a2fc0823fde743b9fbe55d79242e0
+      internalID: -85380676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_127
+      rect:
+        serializedVersion: 2
+        x: 581
+        y: 295
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7eb9d060f3be32e44a1c6ad8d0d81a39
+      internalID: 1607980381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_128
+      rect:
+        serializedVersion: 2
+        x: 613
+        y: 294
+        width: 23
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4556a2a3586c47489034030e6f7999f
+      internalID: 1411965295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_129
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 296
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: faa26b14b85c8cb408cc9f4650692bd4
+      internalID: -894444371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_130
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 262
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84650fb19590cf14da0b412414cb9f44
+      internalID: 2095260049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_131
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 260
+        width: 18
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d76bb4aa3132204588b083e5a5e7c8a
+      internalID: 1831467766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_132
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 261
+        width: 17
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edee0af0424e9c74bb214926cdad0ffe
+      internalID: 45361425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_133
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 260
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e38843a2a88f4c940995b81874f57578
+      internalID: 722687099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_134
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 261
+        width: 16
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e80a8e4735e02042834bc23fa1a0fb1
+      internalID: 1376200421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_135
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 261
+        width: 24
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37e516f7747ff1240b677da894b533cb
+      internalID: -1528985943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_136
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 258
+        width: 29
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54392ffbb88ef4b49b38db4e532a96d1
+      internalID: 471720650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_137
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 273
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f078e84e27388944a18d219467959f6
+      internalID: -416953389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_138
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 260
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 535718851ec5a7345a5821ad2a5b8deb
+      internalID: 493737875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_139
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 134
+        width: 271
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 129a595eb5e1c394289c22b535bc84be
+      internalID: -162876897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_140
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 259
+        width: 26
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b9731466fa8805419274c8691c5e575
+      internalID: -580687247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_141
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 260
+        width: 21
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d19b708ee8cf36444ac5eff0cee70543
+      internalID: -1507049713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_142
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 102
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69c99d2328f3cff4a853014f452a4621
+      internalID: -417634822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_143
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 101
+        width: 30
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b36a52499dba56540917ee2109050e8f
+      internalID: -1800348810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_144
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 99
+        width: 23
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd4867b290154574da1c5bfe4f85649f
+      internalID: -1356401949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_145
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 97
+        width: 28
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac40e79769c21424193abc04ef58aa44
+      internalID: -716880849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_146
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 100
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38b0b295c98c36b4ab6aa1f302c90cba
+      internalID: 775039009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_147
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 100
+        width: 21
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 725d7ec7e82c58b4ebd2b5fd471f39b6
+      internalID: 645153015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_148
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 101
+        width: 22
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56cdfeea37ce06c45ae789137eac3bf4
+      internalID: 1405556900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_149
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 101
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bc31bebdf01c114796d7de0d2302ec8
+      internalID: -1408999602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_150
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 100
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c5b31e4aa413b34cbef3d814ce0f51d
+      internalID: -1093090539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_151
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 100
+        width: 18
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a351ea46e7cd95a44ad7bb81f46b9460
+      internalID: -1001502441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_152
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 99
+        width: 26
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61b2e2247b2e74049bef6efa1370f2ba
+      internalID: 1372395149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_153
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 99
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8e6bdde95985dd478908feedbfa2f0c
+      internalID: -706006925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_154
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 100
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b9ef65039bdf454e9456151d138a85a
+      internalID: -371484968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_155
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 97
+        width: 25
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba519203158665342a929b3de8685ce2
+      internalID: 191071610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_156
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 98
+        width: 15
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81d72b3d8cbbd8c42aa206d48d938a06
+      internalID: 298716338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_157
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 101
+        width: 25
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0558c318907f40b4991027260b809a56
+      internalID: 268626716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_158
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 99
+        width: 19
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c5a9b73921a83e4e964f4e96ed9823c
+      internalID: 63214766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_159
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 100
+        width: 25
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fce10315b449e5448b9bd61977f325b
+      internalID: -125197239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_160
+      rect:
+        serializedVersion: 2
+        x: 579
+        y: 102
+        width: 25
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bef981edb4ede884db6f8d7c65af1ce8
+      internalID: 1467676291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_161
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 99
+        width: 26
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b05ad6b5056dd3438ea20f5415680ba
+      internalID: -357967002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_162
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 67
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c18aaec422161d4081b9a723d7f246c
+      internalID: -1715446716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_163
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 67
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac4120804a2da494989a1fc4f9a3864b
+      internalID: 406268132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_164
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 67
+        width: 27
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 246a302d65aed6947bd3f1e372b228b4
+      internalID: 1030498440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_165
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 69
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cedfe2263b5e664f966a5c279262f2c
+      internalID: 2096043386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_166
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 66
+        width: 19
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e8173328a763894bb2af16cdc007736
+      internalID: -443851460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_167
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 67
+        width: 22
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b59fe6b45ab81034ea4623c65ee2bc41
+      internalID: -1471058743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_168
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 67
+        width: 21
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70c0adb036455d14d971353b2cfc0c80
+      internalID: -98816445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_169
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 68
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42b174918f5b9104384f71d829353d92
+      internalID: 1054984353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_170
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 67
+        width: 18
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3332085663d9eb340b319619ceb0a0cf
+      internalID: -1438344299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_171
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 76
+        width: 19
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cb470e59a28fed4d80c51f81b2018c7
+      internalID: -270822833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_172
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 66
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e270f592ac455d4e9729a683dc378e2
+      internalID: 998706486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_173
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 68
+        width: 22
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 216b0025f95112c46875501119394c82
+      internalID: 2023759514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_174
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 67
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e1de329ffb971048aaaa26c987aa063
+      internalID: -1131521543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_175
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 67
+        width: 19
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f021054ed15bc9242ad5c90221b54495
+      internalID: 75708422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_176
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 68
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4fdef001539ef949bcd3e9d8dd67b6a
+      internalID: -1125238398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_177
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 69
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2ae0773af57f4d42921efb7bda3ef81
+      internalID: 61328188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_178
+      rect:
+        serializedVersion: 2
+        x: 487
+        y: 68
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9811ec8199c32674196071ded601e6ff
+      internalID: -1200559772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_179
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 69
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4927a0ec1feeee4eb88787bc7ddd5e0
+      internalID: 468336666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_180
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 67
+        width: 20
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ce52fa40db62d64191a024ee49004c5
+      internalID: -660380541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_181
+      rect:
+        serializedVersion: 2
+        x: 583
+        y: 67
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78b86cfdccde8bb4c9fb0f1205f1f6ce
+      internalID: 1670203547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_182
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 72
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88791ebc373bca04385f4ec116b4a2ea
+      internalID: 2120255309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_183
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 69
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90fec32b3a82c1f4ba57d64d8785ecc9
+      internalID: -271680631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_184
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 36
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f54da555eef5a804e9d78e6a796f52cc
+      internalID: 1005254604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_185
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 34
+        width: 20
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 097af7a2dca1a5649a967c245c2629dd
+      internalID: 991049301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_186
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 36
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e44188433529e24dae5eeadc8069f03
+      internalID: 148751668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_187
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 34
+        width: 22
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9df0d1ff0e373484f991e68d2442d7a5
+      internalID: -407919260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_188
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 50
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86f6a5b10f87a6f41a895b62aa914a96
+      internalID: -39688561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_189
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 35
+        width: 17
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4426a6df308877b489c72ca6a576c8bc
+      internalID: 853367597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_190
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 36
+        width: 15
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d40e490c3950cc43859374b580c4e28
+      internalID: 376682806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_191
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 35
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55955b450124fdd4f96dd7c8e19e13a4
+      internalID: -158618188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_192
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 36
+        width: 20
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 265a3731bd7df90419e91407e271d232
+      internalID: 791059618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_193
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 35
+        width: 28
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1e42cb6da9578c449ecad164150a727
+      internalID: 932824274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_194
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 34
+        width: 29
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62db9040f9bcdec4d8e77de9bb0adefc
+      internalID: 304772427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_195
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 35
+        width: 21
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2babdab1eb2ba2a4bb7d99e85bebf507
+      internalID: 273665062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_196
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 34
+        width: 19
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e91fc609edd64549855501f7a589777
+      internalID: -1258597920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_197
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 35
+        width: 24
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c85b67132edc542409cb0c92011e4971
+      internalID: 1186861038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_198
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 34
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d550cffa6fac4b9428ed4863f6da657b
+      internalID: 482575202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_199
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 35
+        width: 23
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1c96aeeaa08b574496569917005880d
+      internalID: 1890257722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_200
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 35
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fbccfc8a2270ba4eb3f54d743952a8b
+      internalID: -325578040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_201
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 36
+        width: 19
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ce23a834934d78478ae896b232e4628
+      internalID: 132180524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_202
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 37
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17e57211131b3604f991a9dc61088df2
+      internalID: 285513649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_203
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 36
+        width: 22
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69f686cc1bbf1004fabce2e6751d5321
+      internalID: 581033355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_204
+      rect:
+        serializedVersion: 2
+        x: 615
+        y: 36
+        width: 18
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ceb1a18dbabf5a40a92f16d694dce15
+      internalID: 907696426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_205
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 4
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d4a576c853dcc74db5b1985efd0a3ab
+      internalID: 956157532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_206
+      rect:
+        serializedVersion: 2
+        x: 555
+        y: 8
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 466dd7d23b3c2a5409004ae61fa1eca1
+      internalID: -1100836066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_207
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 9
+        width: 8
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b220bcc0fd70a3429a451fedda9035b
+      internalID: 114128311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_208
+      rect:
+        serializedVersion: 2
+        x: 579
+        y: 9
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e75ef3421271a3a4bb1abdeca72dd4c0
+      internalID: 934633050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_209
+      rect:
+        serializedVersion: 2
+        x: 587
+        y: 9
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a9043c345a446c4f8aba82cd956ca55
+      internalID: -441077151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_210
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 5
+        width: 5
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f28b0b9e12027ce40af05442c6450f99
+      internalID: 2083115102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_211
+      rect:
+        serializedVersion: 2
+        x: 601
+        y: 9
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee3e064e68ef9d143ae961e40db9a28c
+      internalID: -830729209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_212
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 5
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e59774f402e51464a90f22579598bc03
+      internalID: -716999171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_213
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 5
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d26d2906b4248e94a9efb65591ae862d
+      internalID: 1939653145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_0: 1189600740
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_1: 30982065
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_10: 174988019
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_100: -1127886374
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_101: 945943008
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_102: 263893571
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_103: -2135544633
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_104: 1446997791
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_105: 2090540178
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_106: 1815077565
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_107: -801131042
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_108: -1711330960
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_109: 548338912
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_11: 1202586280
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_110: -43628688
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_111: 1187647523
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_112: 572954041
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_113: -217456132
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_114: 2007835758
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_115: 1808982599
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_116: 245306302
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_117: 1817278029
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_118: 794519740
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_119: 1676891675
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_12: -47357602
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_120: -1801696046
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_121: -1075007166
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_122: -523288592
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_123: 1822034743
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_124: -2005225160
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_125: -2021419307
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_126: -85380676
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_127: 1607980381
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_128: 1411965295
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_129: -894444371
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_13: 1118690856
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_130: 2095260049
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_131: 1831467766
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_132: 45361425
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_133: 722687099
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_134: 1376200421
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_135: -1528985943
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_136: 471720650
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_137: -416953389
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_138: 493737875
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_139: -162876897
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_14: 1247316553
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_140: -580687247
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_141: -1507049713
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_142: -417634822
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_143: -1800348810
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_144: -1356401949
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_145: -716880849
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_146: 775039009
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_147: 645153015
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_148: 1405556900
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_149: -1408999602
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_15: 353739624
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_150: -1093090539
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_151: -1001502441
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_152: 1372395149
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_153: -706006925
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_154: -371484968
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_155: 191071610
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_156: 298716338
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_157: 268626716
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_158: 63214766
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_159: -125197239
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_16: 1107366023
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_160: 1467676291
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_161: -357967002
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_162: -1715446716
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_163: 406268132
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_164: 1030498440
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_165: 2096043386
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_166: -443851460
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_167: -1471058743
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_168: -98816445
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_169: 1054984353
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_17: 1729577010
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_170: -1438344299
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_171: -270822833
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_172: 998706486
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_173: 2023759514
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_174: -1131521543
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_175: 75708422
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_176: -1125238398
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_177: 61328188
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_178: -1200559772
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_179: 468336666
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_18: 469182008
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_180: -660380541
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_181: 1670203547
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_182: 2120255309
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_183: -271680631
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_184: 1005254604
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_185: 991049301
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_186: 148751668
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_187: -407919260
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_188: -39688561
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_189: 853367597
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_19: -1356298429
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_190: 376682806
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_191: -158618188
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_192: 791059618
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_193: 932824274
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_194: 304772427
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_195: 273665062
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_196: -1258597920
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_197: 1186861038
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_198: 482575202
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_199: 1890257722
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_2: -1939177140
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_20: 142080670
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_200: -325578040
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_201: 132180524
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_202: 285513649
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_203: 581033355
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_204: 907696426
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_205: 956157532
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_206: -1100836066
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_207: 114128311
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_208: 934633050
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_209: -441077151
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_21: -954280552
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_210: 2083115102
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_211: -830729209
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_212: -716999171
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_213: 1939653145
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_22: 1936443317
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_23: 452041035
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_24: -803316568
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_25: 397024799
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_26: -1790209693
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_27: 366880959
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_28: -52028297
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_29: 127125215
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_3: -314932401
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_30: 152045222
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_31: 788293498
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_32: -1239211675
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_33: 1546688927
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_34: 1671012810
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_35: 254310662
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_36: -1908589500
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_37: -1017080410
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_38: 798472752
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_39: 1658737475
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_4: 1654142220
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_40: 1347984746
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_41: 1391458853
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_42: 2047059025
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_43: 1915863641
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_44: -1143781737
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_45: -274456921
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_46: -946559552
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_47: 1668717160
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_48: 339202515
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_49: -490339742
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_5: 1130376422
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_50: -386077844
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_51: 589830843
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_52: -1519238805
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_53: -311274085
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_54: -1378767604
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_55: 24195938
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_56: -1177898955
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_57: -482393539
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_58: 649439965
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_59: 1123120081
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_6: 1879203500
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_60: -1699263013
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_61: -451498715
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_62: 782102778
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_63: -1185184390
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_64: 1328123990
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_65: 1270261903
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_66: 166623834
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_67: 935092063
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_68: 1630862406
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_69: 1742229949
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_7: -972290661
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_70: -1346594546
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_71: 1303289228
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_72: -801531333
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_73: 1256441999
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_74: 192891265
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_75: -942093963
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_76: -1406029892
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_77: 721912734
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_78: 1475259053
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_79: 1040770859
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_8: 571400192
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_80: -1222890379
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_81: -900620655
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_82: 1071446062
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_83: 855263005
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_84: 537039084
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_85: -1000993248
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_86: 2135631495
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_87: -478403928
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_88: -1592418947
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_89: -2141547403
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_9: -1525402522
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_90: -1351177754
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_91: 841430969
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_92: 397432291
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_93: 590352175
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_94: -384729987
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_95: -2092767486
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_96: 1842835911
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_97: -407852650
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_98: 512892523
+      PC Computer - The Binding of Isaac Rebirth - Trinkets Repentance_99: -1124775527
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
