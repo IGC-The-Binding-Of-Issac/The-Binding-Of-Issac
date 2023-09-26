@@ -6,6 +6,11 @@ TagManager:
   tags:
   - Wall
   - Obstacle
+  - Tears
+  - Object_Poop
+  - Object_Rock
+  - Object_Fire
+  - Object_Spikes
   layers:
   - Default
   - TransparentFX

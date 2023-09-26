@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TearController : MonoBehaviour
+public class Tear : MonoBehaviour
 {
 
     PlayerController playerController;
@@ -12,20 +12,12 @@ public class TearController : MonoBehaviour
     Vector3 playerPosition;
 
     float betweenDistance;
-
-    // Start is called before the first frame update
-
-    private void Awake()
+    void Start()
     {
         playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         tearBoomAnim = GetComponent<Animator>();
     }
-    void Start()
-    {
 
-    }
-
-    // Update is called once per frame
     void Update()
     {
         //플레이어 위치
@@ -36,7 +28,7 @@ public class TearController : MonoBehaviour
         betweenDistance = Vector3.Distance(tearPosition, playerPosition);
 
         //둘 사이의 거리가 플레이어 사거리보다 커지면
-        if (betweenDistance >= GameController.instance.playerRange)
+        if (betweenDistance >= PlayerManager.instance.playerRange)
         {
             //눈물 터지는 애니메이션 실행
             tearBoomAnim.SetTrigger("BoomTear");
@@ -53,5 +45,32 @@ public class TearController : MonoBehaviour
     {
         //총알 파괴
         Destroy(gameObject);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        //벽에 박으면
+        if(collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Object_Rock"))
+        {
+            tearBoomAnim.SetTrigger("BoomTear");
+        }
+
+        else if(collision.gameObject.CompareTag("Object_Poop"))
+        {
+            tearBoomAnim.SetTrigger("BoomTear");
+            collision.GetComponent<Poop>().GetDamage();
+        }
+
+        else if (collision.gameObject.CompareTag("Object_Fire"))
+        {
+            tearBoomAnim.SetTrigger("BoomTear");
+            collision.GetComponent<FirePlace>().GetDamage();
+        }
+        
+        //else if(collision.gameObject.CompareTag("Enemy"))
+        //{
+        //    tearBoomAnim.SetTrigger("BoomTear");
+        //    // 대충 적에게 데미지 주기 코드 작성 바람.
+        //}
     }
 }

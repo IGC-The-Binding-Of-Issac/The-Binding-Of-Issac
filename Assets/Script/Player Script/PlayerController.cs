@@ -29,9 +29,9 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         playerRB = GetComponent<Rigidbody2D>();
-        moveSpeed = GameController.instance.playerMoveSpeed;
-        tearSpeed = GameController.instance.playerTearSpeed;
-        shotDelay = GameController.instance.playerShotDelay;
+        moveSpeed = PlayerManager.instance.playerMoveSpeed;
+        tearSpeed = PlayerManager.instance.playerTearSpeed;
+        shotDelay = PlayerManager.instance.playerShotDelay;
     }
 
     // Update is called once per frame
@@ -157,11 +157,13 @@ public class PlayerController : MonoBehaviour
             PlayerShotAnim.SetBool("playerDownShot", false);
         }
     }
+
+    // 데미지 관련 새로 구현 필요.
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == ("Enemy"))
         {
-            GameController.instance.playerHp--;
+            PlayerManager.instance.playerHp--;
         }
     }
 }
