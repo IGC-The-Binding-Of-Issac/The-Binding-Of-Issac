@@ -14,6 +14,7 @@ public class RoomGenerate : MonoBehaviour
     public GameObject[,] roomPrefabs; // 방생성에 사용할 프래핍
 
     [Header("Unity Setup")]
+    public EnemyGenerate enemyGenerate;
     public RoomPattern pattern; // 오브젝트 패턴
     public Transform roomPool; // 방 한곳에 모아둘 오브젝트
     public GameObject[] rooms; // room prefabs에 스테이지별로 담아줄 오브젝트
@@ -162,6 +163,7 @@ public class RoomGenerate : MonoBehaviour
         return doorNum;
     }
 
+
     void CreateObstacle(int y, int x, int roomNumber)
     {
         int idx = 0;
@@ -178,13 +180,10 @@ public class RoomGenerate : MonoBehaviour
 
                 if (rdPattern[i, j] == 5) // 몬스터 오브젝트일때
                 {
-                    GameObject enemy = Instantiate(objectPrefabs[rdPattern[i, j] - 1]) as GameObject;
+                    // 랜덤한 일반몬스터를 반환받음.
+                    GameObject enemy = enemyGenerate.GetEnemy();
                     enemy.transform.SetParent(roomList[y, x].GetComponent<Room>().roomObjects[idx]);
                     enemy.transform.localPosition = new Vector3(0, 0, 0);
-                    idx++;
-                    // 위 코드 삭제후  몬스터 랜덤생성 작성해주기.
-
-                    Debug.Log("enemy add");
                     roomList[y, x].GetComponent<Room>().enemis.Add(enemy); // 해당 방의 몬스터리스트에 추가
                 }
                 else
@@ -192,17 +191,17 @@ public class RoomGenerate : MonoBehaviour
                     GameObject obstacle = Instantiate(objectPrefabs[rdPattern[i, j] - 1]) as GameObject;
                     obstacle.transform.SetParent(roomList[y, x].GetComponent<Room>().roomObjects[idx]);
                     obstacle.transform.localPosition = new Vector3(0, 0, 0);
-                    idx++;
-
                     if (rdPattern[i, j] == 10) // 플레이어 오브젝트일때
                     {
                         obstacle.transform.SetParent(null);
                         GameManager.instance.playerObject = obstacle;
                     }
                 }
+                idx++;
             }
         }    
     }
+
 
 
     private void Update()

@@ -11,7 +11,7 @@ public class Door : MonoBehaviour
     [Header("Unity Setup")]
     public GameObject closeDoor;
     public GameObject openDoor;
-    public bool doorKey;
+    public bool doorKey; // 열쇠가 필요한문은 체크 해제 ( false )  열쇠가 필요없는 문은 체크 ( true )
 
     public void CheckedClear()
     {
@@ -63,6 +63,32 @@ public class Door : MonoBehaviour
                 else if (Input.GetKey(KeyCode.A) && doorDir == 3)
                 {
                     collision.transform.position = movePosition.transform.position; // 플레이어를 이동
+                }
+            }
+
+            // 열쇠를 사용해야하는 문일때
+            else if(collision.gameObject.CompareTag("Player") && !doorKey && ItemManager.instance.keyCount > 0)
+            {
+                    // 해당방향으로 방향키를 한번더 누르면 키 사용.
+                if (Input.GetKey(KeyCode.W) && doorDir == 0)
+                {
+                     UsingKey();
+                    ItemManager.instance.keyCount--;
+                }
+                else if (Input.GetKey(KeyCode.D) && doorDir == 1)
+                {
+                    UsingKey();
+                    ItemManager.instance.keyCount--;
+                }
+                else if (Input.GetKey(KeyCode.S) && doorDir == 2)
+                {
+                    UsingKey();
+                    ItemManager.instance.keyCount--;
+                }
+                else if (Input.GetKey(KeyCode.A) && doorDir == 3)
+                {
+                    UsingKey();
+                    ItemManager.instance.keyCount--;
                 }
             }
         }
