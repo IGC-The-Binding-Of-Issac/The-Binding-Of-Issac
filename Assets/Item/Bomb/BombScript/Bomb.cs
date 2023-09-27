@@ -10,8 +10,7 @@ public class PutBomb : MonoBehaviour
     public SpriteRenderer bombSpr;
     public Rigidbody2D rb;
     public BoxCollider2D bc;
-    
-    private int fieldbombCount = 0;
+   
     private float duration = 2;
     private float smoothness = 0.01f;
 

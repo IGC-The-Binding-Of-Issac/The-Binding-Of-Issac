@@ -251,7 +251,7 @@ GameObject:
   - component: {fileID: 351783602}
   - component: {fileID: 351783603}
   m_Layer: 0
-  m_Name: RoomGenerator
+  m_Name: RoomGenerate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -284,6 +284,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2262bec6349c4d544aa1e4837dc2c26b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyGenerate: {fileID: 1875132346}
   pattern: {fileID: 1704551915}
   roomPool: {fileID: 2595639}
   rooms:
@@ -482,7 +483,7 @@ GameObject:
   - component: {fileID: 1043015903}
   - component: {fileID: 1043015904}
   m_Layer: 0
-  m_Name: StageGenerator
+  m_Name: StageGenerate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -608,6 +609,54 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6eaae989450062847b3ccc7b0e0c7635, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1875132344
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1875132345}
+  - component: {fileID: 1875132346}
+  m_Layer: 0
+  m_Name: EnemyGenerate
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1875132345
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1875132344}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1991369605}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1875132346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1875132344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1dc9bcf0b1df8643b8074058290c55e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefabs:
+  - {fileID: 5973453183993415052, guid: bf63ffe6cd56cd94dba681923193ee52, type: 3}
+  - {fileID: 8399986438939697368, guid: a233af9eb6284a54eaa9e4ae30fa9c98, type: 3}
+  - {fileID: 1165827737780579961, guid: 75966932efecf284dad0d155b7ff25d7, type: 3}
 --- !u!1 &1975172985
 GameObject:
   m_ObjectHideFlags: 0
@@ -733,6 +782,7 @@ Transform:
   m_Children:
   - {fileID: 1043015903}
   - {fileID: 351783602}
+  - {fileID: 1875132345}
   - {fileID: 2595639}
   - {fileID: 1704551914}
   m_Father: {fileID: 234069467}

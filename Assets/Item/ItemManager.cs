@@ -19,6 +19,7 @@ public class ItemManager : MonoBehaviour
     public int inventory = 0; // 비트로 변환 필요. 
     public int coinCount = 0; // 코인 보유 개수 
     public int bombCount = 0; // 폭탄 보유 개수
+    public int keyCount = 0; // 열쇠 보유 개수
 
 
     [Header("Unity Setup")]
