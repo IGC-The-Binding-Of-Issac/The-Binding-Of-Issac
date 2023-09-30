@@ -20,6 +20,11 @@ public class Tear : MonoBehaviour
 
     void Update()
     {
+        TearRange();
+    }
+
+    void TearRange()
+    {
         //플레이어 위치
         playerPosition = playerController.transform.position;
         //총알 위치
