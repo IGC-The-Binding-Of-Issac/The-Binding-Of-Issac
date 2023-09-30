@@ -25,7 +25,7 @@ public class PlayerManager : MonoBehaviour
     public float playerRange = 5f; // 사거리
 
 
-    bool CanGetDamage = true; // 데미지받을수있는지 확인.
+    bool CanGetDamage = true; // 데미지를 받을 수 있는지 확인.
     float hitDelay = 1f; // 피격 딜레이
     public void GetDamage()
     {
@@ -34,11 +34,11 @@ public class PlayerManager : MonoBehaviour
             playerHp--;
             CanGetDamage = false;
             StartCoroutine(HitDelay());
-            
             if(playerHp <= 0) // 데미지를 받았을때 HP가 0이하가 되면 사망함수 실행.
             {
                 Dead();
             }
+            HitAnim();
         }
     }
     IEnumerator HitDelay()
@@ -46,11 +46,21 @@ public class PlayerManager : MonoBehaviour
         yield return new WaitForSeconds(hitDelay);
         CanGetDamage = true;
     }
+    void HitAnim()
+    {
+        // 피격 애니메이션 작성
+    }
 
     // 사망 함수
     void Dead()
     {
         // 사망애니메이션 작성
+        //player head, player body 오브젝트 끄고 사망 애니메이션 실행
         // 사망애니메이션 이후 사망아웃트로 씬으로 이동 작성
+    }
+    
+    void GetItemAnim()
+    {
+        //아이템 먹는 애니메이션
     }
 }

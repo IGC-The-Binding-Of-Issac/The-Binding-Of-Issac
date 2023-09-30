@@ -24,4 +24,12 @@ public class ItemManager : MonoBehaviour
 
     [Header("Unity Setup")]
     public GameObject bombPrefab;
+
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    if (collision.gameObject.CompareTag("Player"))
+    //    {
+    //      대충 플레이어가 아이템 먹는 기능
+    //    }
+    //}
 }

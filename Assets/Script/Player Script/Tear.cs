@@ -49,24 +49,23 @@ public class Tear : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //벽에 박으면
+        //벽에 박으면 총알 터트리기
         if(collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Object_Rock"))
         {
             tearBoomAnim.SetTrigger("BoomTear");
         }
-
-        else if(collision.gameObject.CompareTag("Object_Poop"))
+        //똥에 박으면
+        else if (collision.gameObject.CompareTag("Object_Poop"))
         {
             tearBoomAnim.SetTrigger("BoomTear");
             collision.GetComponent<Poop>().GetDamage();
         }
-
+        //불에 박으면
         else if (collision.gameObject.CompareTag("Object_Fire"))
         {
             tearBoomAnim.SetTrigger("BoomTear");
             collision.GetComponent<FirePlace>().GetDamage();
         }
-        
         //else if(collision.gameObject.CompareTag("Enemy"))
         //{
         //    tearBoomAnim.SetTrigger("BoomTear");
