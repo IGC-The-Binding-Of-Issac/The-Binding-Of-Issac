@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour
 
     public Animator PlayerShotAnim;
 
+    public Animator PlayerDieAnim;
+
     public SpriteRenderer flip;
 
     Rigidbody2D playerRB;
@@ -60,6 +62,7 @@ public class PlayerController : MonoBehaviour
         ShotAnim();
 
         InstallBomb();
+
     }
 
     //발사 기능 구현
@@ -170,6 +173,13 @@ public class PlayerController : MonoBehaviour
                 bomb.name = "Putbomb"; // 생성된 폭탄 오브젝트 이름 변경
             }
         }
+    }
+
+    public void DieAnim()
+    {
+        //왜 안댐?
+        PlayerDieAnim.SetTrigger("PlayerDeath");
+        Debug.Log("hi");
     }
 
     // 데미지 관련 새로 구현 필요.

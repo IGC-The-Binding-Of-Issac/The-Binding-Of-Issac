@@ -24,7 +24,7 @@ public class PlayerManager : MonoBehaviour
     public float playerDamage = 1f; // 데미지
     public float playerRange = 5f; // 사거리
 
-
+    public GameObject playerGameObj;
     bool CanGetDamage = true; // 데미지를 받을 수 있는지 확인.
     float hitDelay = 1f; // 피격 딜레이
     public void GetDamage()
@@ -51,11 +51,23 @@ public class PlayerManager : MonoBehaviour
         // 피격 애니메이션 작성
     }
 
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Dead();
+        }
+    }
+
     // 사망 함수
     void Dead()
     {
-        // 사망애니메이션 작성
-        //player head, player body 오브젝트 끄고 사망 애니메이션 실행
+        //player head, player body 오브젝트 찾아서 끄기
+        playerGameObj = GameObject.FindGameObjectWithTag("Player");
+        playerGameObj.transform.GetChild(0).gameObject.SetActive(false);
+        playerGameObj.transform.GetChild(1).gameObject.SetActive(false);
+        // 사망애니메이션 실행
+        playerGameObj.GetComponent<PlayerController>().DieAnim();
         // 사망애니메이션 이후 사망아웃트로 씬으로 이동 작성
     }
     
