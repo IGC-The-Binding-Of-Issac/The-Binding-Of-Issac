@@ -37,6 +37,18 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        Movement();
+
+        MoveAnim();
+
+        ShotAnim();
+
+        InstallBomb();
+    }
+
+    //이동 기능
+    void Movement()
+    {
         float hori = Input.GetAxis("Horizontal");
         float verti = Input.GetAxis("Vertical");
 
@@ -56,18 +68,12 @@ public class PlayerController : MonoBehaviour
         }
         //플레이어 움직임
         playerRB.velocity = new Vector3(hori * moveSpeed, verti * moveSpeed, 0);
-
-        MoveAnim();
-
-        ShotAnim();
-
-        InstallBomb();
-
     }
 
-    //발사 기능 구현
+    //발사 기능
     void Shoot(float x, float y)
     {
+        //발사 기능 구현
         tear = Instantiate(tearPrefab, transform.position + Vector3.up * 0.4f, transform.rotation) as GameObject;
         tear.AddComponent<Rigidbody2D>().gravityScale = 0;
         tear.GetComponent<Rigidbody2D>().velocity = new Vector3(
@@ -97,6 +103,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    //이동 애니메이션
     void MoveAnim()
     {
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S))
@@ -107,6 +114,7 @@ public class PlayerController : MonoBehaviour
         {
             PlayerMoveAnim.SetBool("playerFrontWalk", false);
         }
+
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
         {
             if (Input.GetKey(KeyCode.A))
@@ -123,8 +131,89 @@ public class PlayerController : MonoBehaviour
             }
             PlayerMoveAnim.SetBool("playerSideWalk", false);
         }
+        if (Input.GetKey(KeyCode.W))
+        {
+            PlayerShotAnim.SetBool("UpLook", true);
+            if (Input.GetKey(KeyCode.LeftArrow))
+            {
+                PlayerShotAnim.SetBool("UpLook", false);
+            }
+            if (Input.GetKey(KeyCode.DownArrow))
+            {
+                PlayerShotAnim.SetBool("UpLook", false);
+            }
+            if (Input.GetKey(KeyCode.RightArrow))
+            {
+                PlayerShotAnim.SetBool("UpLook", false);
+            }
+        }
+        else
+        {
+            PlayerShotAnim.SetBool("UpLook", false);
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            PlayerShotAnim.SetBool("DownLook", true);
+            if (Input.GetKey(KeyCode.LeftArrow))
+            {
+                PlayerShotAnim.SetBool("DownLook", false);
+            }
+            if (Input.GetKey(KeyCode.UpArrow))
+            {
+                PlayerShotAnim.SetBool("DownLook", false);
+            }
+            if (Input.GetKey(KeyCode.RightArrow))
+            {
+                PlayerShotAnim.SetBool("DownLook", false);
+            }
+        }
+        else
+        {
+            PlayerShotAnim.SetBool("DownLook", false);
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            PlayerShotAnim.SetBool("LeftLook", true);
+            if (Input.GetKey(KeyCode.DownArrow))
+            {
+                PlayerShotAnim.SetBool("LeftLook", false);
+            }
+            if (Input.GetKey(KeyCode.UpArrow))
+            {
+                PlayerShotAnim.SetBool("LeftLook", false);
+            }
+            if (Input.GetKey(KeyCode.RightArrow))
+            {
+                PlayerShotAnim.SetBool("LeftLook", false);
+            }
+        }
+        else
+        {
+            PlayerShotAnim.SetBool("LeftLook", false);
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            PlayerShotAnim.SetBool("RightLook", true);
+            if (Input.GetKey(KeyCode.DownArrow))
+            {
+                PlayerShotAnim.SetBool("RightLook", false);
+            }
+            if (Input.GetKey(KeyCode.UpArrow))
+            {
+                PlayerShotAnim.SetBool("RightLook", false);
+            }
+            if (Input.GetKey(KeyCode.LeftArrow))
+            {
+                PlayerShotAnim.SetBool("RightLook", false);
+            }
+        }
+        else
+        {
+            PlayerShotAnim.SetBool("RightLook", false);
+        }
     }
 
+    //발사 애니메이션
     void ShotAnim()
     {
         if (Input.GetKey(KeyCode.LeftArrow))
@@ -161,6 +250,14 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    //사망 애니메이션
+    public void DieAnim() 
+    {        
+        PlayerDieAnim.SetTrigger("Death");
+        Debug.Log("hi");
+    }
+
+    //폭탄 설치 기능
     void InstallBomb()
     {
         if(Input.GetKeyDown(KeyCode.E))
@@ -173,13 +270,6 @@ public class PlayerController : MonoBehaviour
                 bomb.name = "Putbomb"; // 생성된 폭탄 오브젝트 이름 변경
             }
         }
-    }
-
-    public void DieAnim()
-    {
-        //왜 안댐?
-        PlayerDieAnim.SetTrigger("PlayerDeath");
-        Debug.Log("hi");
     }
 
     // 데미지 관련 새로 구현 필요.
