@@ -256,6 +256,15 @@ public class PlayerController : MonoBehaviour
         PlayerDieAnim.SetTrigger("Death");
     }
 
+    public void HitAnim()
+    {
+        PlayerDieAnim.SetTrigger("Hit");
+    }
+    void HitMotion()
+    {
+        transform.localScale += new Vector3(-0.3f, 0.3f, 0);
+    }
+
     //ÆøÅº ¼³Ä¡ ±â´É
     void InstallBomb()
     {
