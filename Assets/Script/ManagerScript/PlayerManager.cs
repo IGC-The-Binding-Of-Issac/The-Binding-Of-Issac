@@ -38,7 +38,9 @@ public class PlayerManager : MonoBehaviour
             {
                 Dead();
             }
-            HitAnim();
+            Hit();
+            playerObj.transform.GetChild(0).gameObject.SetActive(true);
+            playerObj.transform.GetChild(1).gameObject.SetActive(true);
         }
     }
     IEnumerator HitDelay()
@@ -46,17 +48,20 @@ public class PlayerManager : MonoBehaviour
         yield return new WaitForSeconds(hitDelay);
         CanGetDamage = true;
     }
-    void HitAnim()
-    {
-        // 피격 애니메이션 작성
-    }
 
-    public void Update()
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Dead();
+        Dead();
         }
+    }
+    void Hit()
+    {
+        playerObj = GameObject.FindGameObjectWithTag("Player");
+        playerObj.transform.GetChild(0).gameObject.SetActive(false);
+        playerObj.transform.GetChild(1).gameObject.SetActive(false);
+        playerObj.GetComponent<PlayerController>().HitAnim();        
     }
 
     // 사망 함수
