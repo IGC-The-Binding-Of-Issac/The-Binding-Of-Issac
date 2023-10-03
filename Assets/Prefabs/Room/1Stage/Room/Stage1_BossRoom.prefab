@@ -1920,6 +1920,7 @@ GameObject:
   - component: {fileID: 4734430799116946843}
   - component: {fileID: 8154595976707751125}
   - component: {fileID: 7138355695579768375}
+  - component: {fileID: 5540188593762636781}
   m_Layer: 0
   m_Name: Stage1_BossRoom
   m_TagString: Untagged
@@ -2006,6 +2007,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isClear: 0
   playerInRoom: 0
+  roomObjects: []
+  enemis: []
   roomGrid: {fileID: 7395212727213204603}
   cameraPosition: {fileID: 3773388444329201286}
   doorPosition:
@@ -2018,6 +2021,21 @@ MonoBehaviour:
   - {fileID: 2977132205515424735}
   - {fileID: 6468857855219003179}
   - {fileID: 5734878955467990888}
+--- !u!114 &5540188593762636781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4319019123534098621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64cb84f26a6eb39469185b853ce3d98c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bossSpawnPoint: {fileID: 3113713642290789278}
+  boss: {fileID: 0}
+  nextStageDoor: {fileID: 0}
 --- !u!1 &4321189746998328984
 GameObject:
   m_ObjectHideFlags: 0
