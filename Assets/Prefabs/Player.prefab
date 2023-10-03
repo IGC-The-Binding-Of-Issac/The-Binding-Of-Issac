@@ -52,7 +52,6 @@ MonoBehaviour:
   PlayerMoveAnim: {fileID: 3640945508840410133}
   PlayerShotAnim: {fileID: 9217049801228990111}
   PlayerAnim: {fileID: 8517082362525743426}
-  flip: {fileID: 3252551391157072484}
   tearPrefab: {fileID: 5114894525887414092, guid: ba1b1ea4a7a80f44185689dfb5626760, type: 3}
 --- !u!50 &5123890859065688872
 Rigidbody2D:
@@ -62,7 +61,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3456105446347801266}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0

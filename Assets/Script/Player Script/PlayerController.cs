@@ -11,8 +11,6 @@ public class PlayerController : MonoBehaviour
 
     public Animator PlayerAnim;
 
-    public SpriteRenderer flip;
-
     Rigidbody2D playerRB;
 
     public GameObject tearPrefab;
@@ -67,6 +65,7 @@ public class PlayerController : MonoBehaviour
             Shoot(shootHor, shootVer);
             lastshot = Time.time;
         }
+
         //플레이어 움직임
         playerRB.velocity = new Vector3(hori * moveSpeed, verti * moveSpeed, 0);
     }
@@ -81,7 +80,7 @@ public class PlayerController : MonoBehaviour
             (x < 0) ? Mathf.Floor(x) * tearSpeed : Mathf.Ceil(x) * tearSpeed,
             (y < 0) ? Mathf.Floor(y) * tearSpeed : Mathf.Ceil(y) * tearSpeed, 0);
 
-        //총알이 대각으로 나가게 옆으로 힘을 줌
+        //총알이 대각으로 밀려서 발사되게 옆으로 힘을 줌
         if (Input.GetKey(KeyCode.W))
         {
             Rigidbody2D rigid_bullet = tear.GetComponent<Rigidbody2D>();
@@ -115,22 +114,21 @@ public class PlayerController : MonoBehaviour
         {
             PlayerMoveAnim.SetBool("playerFrontWalk", false);
         }
-
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.A))
         {
-            if (Input.GetKey(KeyCode.A))
-            {
-                flip.flipX = true;
-            }
-            PlayerMoveAnim.SetBool("playerSideWalk", true);
+            PlayerMoveAnim.SetBool("playerLeftWalk", true);
         }
         else
         {
-            if (Input.GetKeyUp(KeyCode.A))
-            {
-                flip.flipX = false;
-            }
-            PlayerMoveAnim.SetBool("playerSideWalk", false);
+            PlayerMoveAnim.SetBool("playerLeftWalk", false);
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            PlayerMoveAnim.SetBool("playerRightWalk", true);
+        }
+        else
+        {
+            PlayerMoveAnim.SetBool("playerRightWalk", false);
         }
         if (Input.GetKey(KeyCode.W))
         {
