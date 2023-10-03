@@ -7,7 +7,7 @@ public class BossRoom : MonoBehaviour
     [Header("unity Setup")]
     [SerializeField] Transform bossSpawnPoint;
     [SerializeField] GameObject boss;
-    [SerializeField] GameObject nextStageDoor;
+    //[SerializeField] GameObject nextStageDoor;
 
     private void Update()
     {
@@ -36,7 +36,7 @@ public class BossRoom : MonoBehaviour
     void openNextStage()
     {
         // 다음 스테이지문 열기
-        nextStageDoor.SetActive(true);
+        //nextStageDoor.SetActive(true);
 
         // 보스 HP바 삭제해주기
     }

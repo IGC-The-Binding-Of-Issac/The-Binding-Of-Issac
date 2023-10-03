@@ -28,13 +28,15 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         playerRB = GetComponent<Rigidbody2D>();
-        moveSpeed = PlayerManager.instance.playerMoveSpeed;
-        tearSpeed = PlayerManager.instance.playerTearSpeed;
-        shotDelay = PlayerManager.instance.playerShotDelay;
     }
 
     void Update()
     {
+        // 이부분 조금 수정해야할듯
+        moveSpeed = PlayerManager.instance.playerMoveSpeed;
+        tearSpeed = PlayerManager.instance.playerTearSpeed;
+        shotDelay = PlayerManager.instance.playerShotDelay;
+
         Movement();
 
         MoveAnim();
