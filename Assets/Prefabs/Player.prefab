@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6112443422463000892}
   - component: {fileID: 4797782401064755294}
   - component: {fileID: 5123890859065688872}
-  - component: {fileID: 5884139344597202165}
+  - component: {fileID: 2782523265263768803}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -51,7 +51,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerMoveAnim: {fileID: 3640945508840410133}
   PlayerShotAnim: {fileID: 9217049801228990111}
-  PlayerDieAnim: {fileID: 8517082362525743426}
+  PlayerAnim: {fileID: 8517082362525743426}
   flip: {fileID: 3252551391157072484}
   tearPrefab: {fileID: 5114894525887414092, guid: ba1b1ea4a7a80f44185689dfb5626760, type: 3}
 --- !u!50 &5123890859065688872
@@ -81,8 +81,8 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!70 &5884139344597202165
-CapsuleCollider2D:
+--- !u!61 &2782523265263768803
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -113,9 +113,19 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.4}
-  m_Size: {x: 0.8, y: 0.8}
-  m_Direction: 0
+  m_Offset: {x: 0.0066903085, y: 0.1820302}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.491564, y: 0.3503828}
+  m_EdgeRadius: 0
 --- !u!1 &6648732191227041327
 GameObject:
   m_ObjectHideFlags: 0
@@ -340,7 +350,7 @@ GameObject:
   - component: {fileID: 8466526588264720456}
   - component: {fileID: 8517082362525743426}
   m_Layer: 0
-  m_Name: DieObject
+  m_Name: Object
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

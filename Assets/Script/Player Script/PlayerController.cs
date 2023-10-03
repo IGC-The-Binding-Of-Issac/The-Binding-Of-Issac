@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
 
     public Animator PlayerShotAnim;
 
-    public Animator PlayerDieAnim;
+    public Animator PlayerAnim;
 
     public SpriteRenderer flip;
 
@@ -44,6 +44,7 @@ public class PlayerController : MonoBehaviour
         ShotAnim();
 
         InstallBomb();
+
     }
 
     //이동 기능
@@ -253,16 +254,18 @@ public class PlayerController : MonoBehaviour
     //사망 애니메이션
     public void DieAnim() 
     {        
-        PlayerDieAnim.SetTrigger("Death");
+        PlayerAnim.SetTrigger("Death");
     }
 
+    //피격 애니메이션
     public void HitAnim()
     {
-        PlayerDieAnim.SetTrigger("Hit");
+        PlayerAnim.SetTrigger("Hit");
     }
-    void HitMotion()
+    void OnHit()
     {
-        transform.localScale += new Vector3(-0.3f, 0.3f, 0);
+        transform.GetChild(0).gameObject.SetActive(true);
+        transform.GetChild(1).gameObject.SetActive(true);
     }
 
     //폭탄 설치 기능
