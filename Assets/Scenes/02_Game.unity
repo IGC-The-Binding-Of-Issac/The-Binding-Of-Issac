@@ -561,10 +561,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item_Activated_Count: 0
-  inventory: 0
   coinCount: 0
   bombCount: 5
   keyCount: 0
+  PassiveItems: 
+  ActiveItem: {fileID: 0}
+  TrinketItem: {fileID: 0}
   bombPrefab: {fileID: 9152286902886193127, guid: 7fce7d28537db664aaca9ad6d71bd9c4, type: 3}
 --- !u!1 &1704551913
 GameObject:
@@ -657,6 +659,11 @@ MonoBehaviour:
   enemyPrefabs:
   - {fileID: 5973453183993415052, guid: bf63ffe6cd56cd94dba681923193ee52, type: 3}
   - {fileID: 8399986438939697368, guid: a233af9eb6284a54eaa9e4ae30fa9c98, type: 3}
+  - {fileID: 1165827737780579961, guid: 75966932efecf284dad0d155b7ff25d7, type: 3}
+  bossPrefabs:
+  - {fileID: 5973453183993415052, guid: bf63ffe6cd56cd94dba681923193ee52, type: 3}
+  - {fileID: 8399986438939697368, guid: a233af9eb6284a54eaa9e4ae30fa9c98, type: 3}
+  - {fileID: 1165827737780579961, guid: 75966932efecf284dad0d155b7ff25d7, type: 3}
   - {fileID: 1165827737780579961, guid: 75966932efecf284dad0d155b7ff25d7, type: 3}
 --- !u!1 &1975172985
 GameObject:
