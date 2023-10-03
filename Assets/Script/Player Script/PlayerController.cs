@@ -262,11 +262,6 @@ public class PlayerController : MonoBehaviour
     {
         PlayerAnim.SetTrigger("Hit");
     }
-    void OnHit()
-    {
-        transform.GetChild(0).gameObject.SetActive(true);
-        transform.GetChild(1).gameObject.SetActive(true);
-    }
 
     //폭탄 설치 기능
     void InstallBomb()
@@ -280,15 +275,6 @@ public class PlayerController : MonoBehaviour
                 GameObject bomb = Instantiate(ItemManager.instance.bombPrefab, transform.position, Quaternion.identity) as GameObject;
                 bomb.name = "Putbomb"; // 생성된 폭탄 오브젝트 이름 변경
             }
-        }
-    }
-
-    // 데미지 관련 새로 구현 필요.
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == ("Enemy"))
-        {
-            PlayerManager.instance.playerHp--;
         }
     }
 }
