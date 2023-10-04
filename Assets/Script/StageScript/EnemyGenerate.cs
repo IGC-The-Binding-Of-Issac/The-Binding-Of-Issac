@@ -22,7 +22,7 @@ public class EnemyGenerate : MonoBehaviour
     public GameObject GetBoss()
     {
         // 스테이지별 보스를 생성후 리턴
-        GameObject boss = Instantiate(bossPrefabs[GameManager.instance.stageLevel]) as GameObject;  
+        GameObject boss = Instantiate(bossPrefabs[GameManager.instance.stageLevel-1]) as GameObject;  
         return boss;
     }
 }

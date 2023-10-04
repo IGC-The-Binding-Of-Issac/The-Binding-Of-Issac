@@ -37,16 +37,17 @@ public class GameManager : MonoBehaviour
         // R키 누르기 -> 스테이지 시작시로 변경 할것. 
         if(Input.GetKeyDown(KeyCode.R)) 
         {
-            if (playerObject != null)
-                Destroy(playerObject);
-            myCamera.transform.SetParent(null);
             StageStart();
         }
     }
-
-    void StageStart()
+    public void StageStart()
     {
         // Create stage/room
+
+        if (playerObject != null)
+            Destroy(playerObject);
+        myCamera.transform.SetParent(null);
+
         int cnt = 10;
         while (cnt-- > 0)
         {
@@ -59,7 +60,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void SetStage(int stage)
+    public void SetStage(int stage)
     {
         stageLevel = stage;
         switch(stageLevel)

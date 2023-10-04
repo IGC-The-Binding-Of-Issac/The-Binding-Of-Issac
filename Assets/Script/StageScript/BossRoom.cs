@@ -4,16 +4,23 @@ using UnityEngine;
 
 public class BossRoom : MonoBehaviour
 {
+    [Header("Room info")]
+    [SerializeField] GameObject boss;
+
     [Header("unity Setup")]
     [SerializeField] Transform bossSpawnPoint;
-    [SerializeField] GameObject boss;
-    //[SerializeField] GameObject nextStageDoor;
+    [SerializeField] GameObject nextStageDoor;
 
+    [SerializeField] bool spawnBoss = true;
     private void Update()
     {
-        if(gameObject.GetComponent<Room>().isClear)
+        if (gameObject.GetComponent<Room>().isClear)
         {
-            openNextStage();
+            nextStageDoor.SetActive(true);
+        }
+        else 
+        {
+            nextStageDoor.SetActive(false);
         }
     }
 
@@ -22,22 +29,26 @@ public class BossRoom : MonoBehaviour
         // 플레이어 보스방 입장시
         if(collision.gameObject.CompareTag("Player"))
         {
-            // 보스생성
-            boss = GameObject.Find("EnemyGenerate").GetComponent<EnemyGenerate>().GetBoss();
-            // 보스오브젝트를 보스방 자식오브젝트로 설정
-            boss.transform.SetParent(gameObject.transform); 
-            // 보스오브젝트를 보스방의 Room 스크립트의 enemis에 추가.
-            gameObject.GetComponent<Room>().enemis.Add(boss);
+            if(spawnBoss)
+            {
+                // 보스 재생성 방지
+                spawnBoss = false;
 
-            // 보스HP바 생성
+                // 보스생성
+                boss = GameObject.Find("EnemyGenerate").GetComponent<EnemyGenerate>().GetBoss();
+
+                // 보스오브젝트를 보스방 자식오브젝트로 설정
+                boss.transform.SetParent(gameObject.transform);
+
+                // 보스 오브젝트 위치를 0 0 0 으로 초기화
+                boss.transform.localPosition = new Vector3(0, 0, 0);
+
+                // 보스오브젝트를 보스방의 Room 스크립트의 enemis에 추가.
+                gameObject.GetComponent<Room>().enemis.Add(boss);
+
+                // 보스HP바 생성
+                // 구현 필요.
+            }
         }
-    }
-
-    void openNextStage()
-    {
-        // 다음 스테이지문 열기
-        //nextStageDoor.SetActive(true);
-
-        // 보스 HP바 삭제해주기
     }
 }
