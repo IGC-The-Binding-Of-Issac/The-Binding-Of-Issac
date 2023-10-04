@@ -10,7 +10,7 @@ public class FirePlace : MonoBehaviour
     [Header("Unity SetUp")]
     [SerializeField] Sprite woodSprite;
     [SerializeField] GameObject eft;
-
+    [SerializeField] GameObject boxCollider;
     public void GetDamage()
     {
         fireIndex++;
@@ -21,6 +21,7 @@ public class FirePlace : MonoBehaviour
             eft.SetActive(false);
             gameObject.GetComponent<SpriteRenderer>().sprite = woodSprite;
             gameObject.GetComponent<BoxCollider2D>().enabled = false;
+            boxCollider.SetActive(false);
         }
     }
 
