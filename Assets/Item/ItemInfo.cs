@@ -17,4 +17,21 @@ public class ItemInfo : MonoBehaviour
     public float item_MoveSpeed; //이동속도 증가 (+, -)
     public float item_ShotSpeed; //눈물속도 증가 (+, -)
     public float item_Luck; //행운 증가 (+, -)
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.CompareTag("Player"))
+        {
+            // 아이템을 가지고있지않을때.
+            if(!ItemManager.instance.PassiveItems[itemCode])
+            {
+                // 플레이어 아이템 획득 애니메이션실행하는 코드 추가해주기.
+                ItemManager.instance.PassiveItems[itemCode] = true; // 미보유 -> 보유 로 변경 
+                UseItem();
+            }
+                
+        }
+    }
+
+    public virtual void UseItem() { Debug.Log("재정의 해줘!"); }
 }
