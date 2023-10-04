@@ -12,6 +12,9 @@ public class Tear : MonoBehaviour
     Vector3 playerPosition;
 
     float betweenDistance;
+
+    float playerTearSize;
+
     void Start()
     {
         playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
@@ -20,7 +23,9 @@ public class Tear : MonoBehaviour
 
     void Update()
     {
+        playerTearSize = PlayerManager.instance.playerTearSize;
         TearRange();
+        TearSize();
     }
 
     void TearRange()
@@ -44,6 +49,11 @@ public class Tear : MonoBehaviour
     {
         //총알 오브젝트 속도를 zero로 만듬
         gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+    }
+
+    public void TearSize()
+    {   
+        gameObject.transform.localScale = new Vector3(playerTearSize, playerTearSize, playerTearSize);
     }
 
     public void DestoryTear()

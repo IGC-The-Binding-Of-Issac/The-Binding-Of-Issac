@@ -24,6 +24,7 @@ public class PlayerManager : MonoBehaviour
     public float playerShotDelay = 0.5f; // 공격딜레이
     public float playerDamage = 1f; // 데미지
     public float playerRange = 5f; // 사거리
+    public float playerTearSize = 1f; //눈물 크기
 
     GameObject playerObj;
     bool CanGetDamage = true; // 데미지를 받을 수 있는지 확인.
@@ -42,14 +43,19 @@ public class PlayerManager : MonoBehaviour
             StartCoroutine(HitDelay());
             if(playerHp <= 0) // 데미지를 받았을때 HP가 0이하가 되면 사망함수 실행.
             {
-                Dead();
-            }else
-                Hit();
+                GameManager.instance.playerObject.GetComponent<PlayerController>().Dead();
+            }
+            else
+            {
+                GameManager.instance.playerObject.GetComponent<PlayerController>().Hit();
+            }
         }            
     }
 
     IEnumerator HitDelay()
     {
+        playerObj = GameManager.instance.playerObject;
+
         yield return new WaitForSeconds(hitDelay);
 
         int countTime = 0;
@@ -75,32 +81,4 @@ public class PlayerManager : MonoBehaviour
 
         CanGetDamage = true;
     }        
-
-    void Hit()
-    {
-        playerObj = GameObject.FindGameObjectWithTag("Player");
-        playerObj.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
-        playerObj.transform.GetChild(1).gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
-        playerObj.GetComponent<PlayerController>().HitAnim();
-
-        //playerObj.transform.GetChild(0).gameObject.SetActive(false);
-        //playerObj.transform.GetChild(1).gameObject.SetActive(false);
-    }
-
-    // 사망 함수
-    void Dead()
-    {
-        //player head, player body 오브젝트 찾아서 끄기
-        playerObj = GameObject.FindGameObjectWithTag("Player");
-        playerObj.transform.GetChild(0).gameObject.SetActive(false);
-        playerObj.transform.GetChild(1).gameObject.SetActive(false);
-        // 사망애니메이션 실행
-        playerObj.GetComponent<PlayerController>().DieAnim();
-        // 사망애니메이션 이후 사망아웃트로 씬으로 이동 작성
-    }
-    
-    void GetItemAnim()
-    {
-        //아이템 먹는 애니메이션
-    }
 }
