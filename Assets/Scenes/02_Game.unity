@@ -402,6 +402,7 @@ MonoBehaviour:
   playerShotDelay: 0.5
   playerDamage: 1
   playerRange: 5
+  playerTearSize: 1
 --- !u!1 &351783601
 GameObject:
   m_ObjectHideFlags: 0

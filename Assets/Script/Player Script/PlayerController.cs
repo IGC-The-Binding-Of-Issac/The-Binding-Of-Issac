@@ -5,10 +5,10 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-    public Animator PlayerMoveAnim;
-    public Animator PlayerShotAnim;
-    public Animator PlayerAnim;
-    public Animator GetItem;
+    public Animator playerMoveAnim;
+    public Animator playerShotAnim;
+    public Animator playerAnim;
+    public Animator getItem;
     public Transform itemPosition;
 
     Rigidbody2D playerRB;
@@ -29,6 +29,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         // 이부분 조금 수정해야할듯
+        //매 프레임 실행되니까 자원낭비임 암튼 낭비임
         moveSpeed = PlayerManager.instance.playerMoveSpeed;
         tearSpeed = PlayerManager.instance.playerTearSpeed;
         shotDelay = PlayerManager.instance.playerShotDelay;
@@ -106,107 +107,107 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S))
         {
-            PlayerMoveAnim.SetBool("playerFrontWalk", true);
+            playerMoveAnim.SetBool("playerFrontWalk", true);
         }
         else
         {
-            PlayerMoveAnim.SetBool("playerFrontWalk", false);
+            playerMoveAnim.SetBool("playerFrontWalk", false);
         }
         if (Input.GetKey(KeyCode.A))
         {
-            PlayerMoveAnim.SetBool("playerLeftWalk", true);
+            playerMoveAnim.SetBool("playerLeftWalk", true);
         }
         else
         {
-            PlayerMoveAnim.SetBool("playerLeftWalk", false);
+            playerMoveAnim.SetBool("playerLeftWalk", false);
         }
         if (Input.GetKey(KeyCode.D))
         {
-            PlayerMoveAnim.SetBool("playerRightWalk", true);
+            playerMoveAnim.SetBool("playerRightWalk", true);
         }
         else
         {
-            PlayerMoveAnim.SetBool("playerRightWalk", false);
+            playerMoveAnim.SetBool("playerRightWalk", false);
         }
         if (Input.GetKey(KeyCode.W))
         {
-            PlayerShotAnim.SetBool("UpLook", true);
+            playerShotAnim.SetBool("UpLook", true);
             if (Input.GetKey(KeyCode.LeftArrow))
             {
-                PlayerShotAnim.SetBool("UpLook", false);
+                playerShotAnim.SetBool("UpLook", false);
             }
             if (Input.GetKey(KeyCode.DownArrow))
             {
-                PlayerShotAnim.SetBool("UpLook", false);
+                playerShotAnim.SetBool("UpLook", false);
             }
             if (Input.GetKey(KeyCode.RightArrow))
             {
-                PlayerShotAnim.SetBool("UpLook", false);
+                playerShotAnim.SetBool("UpLook", false);
             }
         }
         else
         {
-            PlayerShotAnim.SetBool("UpLook", false);
+            playerShotAnim.SetBool("UpLook", false);
         }
         if (Input.GetKey(KeyCode.S))
         {
-            PlayerShotAnim.SetBool("DownLook", true);
+            playerShotAnim.SetBool("DownLook", true);
             if (Input.GetKey(KeyCode.LeftArrow))
             {
-                PlayerShotAnim.SetBool("DownLook", false);
+                playerShotAnim.SetBool("DownLook", false);
             }
             if (Input.GetKey(KeyCode.UpArrow))
             {
-                PlayerShotAnim.SetBool("DownLook", false);
+                playerShotAnim.SetBool("DownLook", false);
             }
             if (Input.GetKey(KeyCode.RightArrow))
             {
-                PlayerShotAnim.SetBool("DownLook", false);
+                playerShotAnim.SetBool("DownLook", false);
             }
         }
         else
         {
-            PlayerShotAnim.SetBool("DownLook", false);
+            playerShotAnim.SetBool("DownLook", false);
         }
         if (Input.GetKey(KeyCode.A))
         {
-            PlayerShotAnim.SetBool("LeftLook", true);
+            playerShotAnim.SetBool("LeftLook", true);
             if (Input.GetKey(KeyCode.DownArrow))
             {
-                PlayerShotAnim.SetBool("LeftLook", false);
+                playerShotAnim.SetBool("LeftLook", false);
             }
             if (Input.GetKey(KeyCode.UpArrow))
             {
-                PlayerShotAnim.SetBool("LeftLook", false);
+                playerShotAnim.SetBool("LeftLook", false);
             }
             if (Input.GetKey(KeyCode.RightArrow))
             {
-                PlayerShotAnim.SetBool("LeftLook", false);
+                playerShotAnim.SetBool("LeftLook", false);
             }
         }
         else
         {
-            PlayerShotAnim.SetBool("LeftLook", false);
+            playerShotAnim.SetBool("LeftLook", false);
         }
         if (Input.GetKey(KeyCode.D))
         {
-            PlayerShotAnim.SetBool("RightLook", true);
+            playerShotAnim.SetBool("RightLook", true);
             if (Input.GetKey(KeyCode.DownArrow))
             {
-                PlayerShotAnim.SetBool("RightLook", false);
+                playerShotAnim.SetBool("RightLook", false);
             }
             if (Input.GetKey(KeyCode.UpArrow))
             {
-                PlayerShotAnim.SetBool("RightLook", false);
+                playerShotAnim.SetBool("RightLook", false);
             }
             if (Input.GetKey(KeyCode.LeftArrow))
             {
-                PlayerShotAnim.SetBool("RightLook", false);
+                playerShotAnim.SetBool("RightLook", false);
             }
         }
         else
         {
-            PlayerShotAnim.SetBool("RightLook", false);
+            playerShotAnim.SetBool("RightLook", false);
         }
     }
 
@@ -215,59 +216,63 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            PlayerShotAnim.SetBool("playerLeftShot", true);
+            playerShotAnim.SetBool("playerLeftShot", true);
         }
         else
         {
-            PlayerShotAnim.SetBool("playerLeftShot", false);
+            playerShotAnim.SetBool("playerLeftShot", false);
         }
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            PlayerShotAnim.SetBool("playerRightShot", true);
+            playerShotAnim.SetBool("playerRightShot", true);
         }
         else
         {
-            PlayerShotAnim.SetBool("playerRightShot", false);
+            playerShotAnim.SetBool("playerRightShot", false);
         }
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            PlayerShotAnim.SetBool("playerUpShot", true);
+            playerShotAnim.SetBool("playerUpShot", true);
         }
         else
         {
-            PlayerShotAnim.SetBool("playerUpShot", false);
+            playerShotAnim.SetBool("playerUpShot", false);
         }
         if (Input.GetKey(KeyCode.DownArrow))
         {
-            PlayerShotAnim.SetBool("playerDownShot", true);
+            playerShotAnim.SetBool("playerDownShot", true);
         }
         else
         {
-            PlayerShotAnim.SetBool("playerDownShot", false);
+            playerShotAnim.SetBool("playerDownShot", false);
         }
     }
 
-    //사망 애니메이션
-    public void DieAnim() 
-    {        
-        PlayerAnim.SetTrigger("Death");
+    //피격 애니메이션
+    public void Hit()
+    {
+        gameObject.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
+        gameObject.transform.GetChild(1).gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
+        playerAnim.SetTrigger("Hit");
     }
 
-    //피격 애니메이션
-    public void HitAnim()
+    // 사망 애니메이션
+    public void Dead()
     {
-        PlayerAnim.SetTrigger("Hit");
+        //player head, player body 오브젝트 찾아서 끄기
+        gameObject.transform.GetChild(0).gameObject.SetActive(false);
+        gameObject.transform.GetChild(1).gameObject.SetActive(false);
+        playerAnim.SetTrigger("Death");
+
+        // 사망애니메이션 이후 사망아웃트로 씬으로 이동 작성
     }
 
     //아이템 획득 애니메이션
-
     public IEnumerator GetItemTime()
     {
         gameObject.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
         gameObject.transform.GetChild(1).gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
-        GetItem.SetTrigger("GetItem");
-        //머리위에 해당 오브젝트 스프라이트 가져오기
-
+        getItem.SetTrigger("GetItem");
         yield return new WaitForSeconds(1f);
         gameObject.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
         gameObject.transform.GetChild(1).gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
@@ -277,8 +282,6 @@ public class PlayerController : MonoBehaviour
             Destroy(itemPosition.GetChild(0).gameObject);
         }
     }
-
-
 
     //폭탄 설치 기능
     void InstallBomb()
