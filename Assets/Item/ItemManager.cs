@@ -25,10 +25,11 @@ public class ItemManager : MonoBehaviour
     [Header("Passive Item State")]
     public bool[] PassiveItems; // 패시브 아이템 보유 현황
     /*
-     * 1. 보유하고있을시 해당 아이템의 효과를 저장해줄 데이터를 만들어야함.
-     * 2. 보유 현황에 따른 추가 능력치를 PlayerManager에 더해줘야함.
+     * 1. 보유하고 있을 시 해당 아이템의 효과를 저장해줄 데이터를 만들어야함.
+     * 2. 보유 현황에 따른 추가 능력치를 PlayerManager 스탯에 더해줘야함.
      * 3. 보유 현황에 따른 시너지 효과를 작성해줘야함.
-     * 4. 보유 현황에 따른 플레이어의 이미지 리소스를 변경해줘야함.
+     * 4. 보유 현황에 따른 플레이어의 이미지 리소스를 변경해줘야함.(보류)
+     * 5. 보유 현황에 따른 아이템 중복 드랍 방지
     */
 
     [Header("unique Item State")]
