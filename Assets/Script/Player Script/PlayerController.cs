@@ -6,23 +6,19 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     public Animator PlayerMoveAnim;
-
     public Animator PlayerShotAnim;
-
     public Animator PlayerAnim;
+    public Animator GetItem;
+    public Transform itemPosition;
 
     Rigidbody2D playerRB;
 
     public GameObject tearPrefab;
-
     GameObject tear;
 
     float tearSpeed;
-
     float moveSpeed;
-
     float shotDelay;
-
     private float lastshot;
 
     void Start()
@@ -77,7 +73,7 @@ public class PlayerController : MonoBehaviour
     {
         //발사 기능 구현
         tear = Instantiate(tearPrefab, transform.position + Vector3.up * 0.4f, transform.rotation) as GameObject;
-        tear.AddComponent<Rigidbody2D>().gravityScale = 0;
+        tear.AddComponent<Rigidbody2D>().gravityScale = 0.01f;
         tear.GetComponent<Rigidbody2D>().velocity = new Vector3(
             (x < 0) ? Mathf.Floor(x) * tearSpeed : Mathf.Ceil(x) * tearSpeed,
             (y < 0) ? Mathf.Floor(y) * tearSpeed : Mathf.Ceil(y) * tearSpeed, 0);
@@ -262,6 +258,27 @@ public class PlayerController : MonoBehaviour
     {
         PlayerAnim.SetTrigger("Hit");
     }
+
+    //아이템 획득 애니메이션
+
+    public IEnumerator GetItemTime()
+    {
+        gameObject.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
+        gameObject.transform.GetChild(1).gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
+        GetItem.SetTrigger("GetItem");
+        //머리위에 해당 오브젝트 스프라이트 가져오기
+
+        yield return new WaitForSeconds(1f);
+        gameObject.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
+        gameObject.transform.GetChild(1).gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
+
+        if(itemPosition.childCount != 0)
+        {
+            Destroy(itemPosition.GetChild(0).gameObject);
+        }
+    }
+
+
 
     //폭탄 설치 기능
     void InstallBomb()

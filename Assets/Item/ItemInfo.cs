@@ -25,11 +25,15 @@ public class ItemInfo : MonoBehaviour
             // 아이템을 가지고있지않을때.
             if(!ItemManager.instance.PassiveItems[itemCode])
             {
-                // 플레이어 아이템 획득 애니메이션실행하는 코드 추가해주기.
                 ItemManager.instance.PassiveItems[itemCode] = true; // 미보유 -> 보유 로 변경 
                 UseItem();
+
+                gameObject.transform.SetParent(collision.gameObject.GetComponent<PlayerController>().itemPosition);
+                gameObject.transform.localPosition = new Vector3(0, 0, 0);
+                Destroy(gameObject.GetComponent<Rigidbody2D>());
+
+                StartCoroutine(collision.gameObject.GetComponent<PlayerController>().GetItemTime());
             }
-                
         }
     }
 
