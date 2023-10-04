@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5e6fedc2472449cead18ef23b5cb30d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Library:
+  - m_Name: New Category
+    m_Hash: 259530823
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: Isaac's Green Tear_0
+      m_Hash: 56958114
+      m_Sprite: {fileID: 1369703319, guid: 13909fd86a5360e45845f0bc0bd08936, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1369703319, guid: 13909fd86a5360e45845f0bc0bd08936, type: 3}
+    - m_Name: "effect_fart - \uBCF5\uC0AC\uBCF8_1"
+      m_Hash: 718624463
+      m_Sprite: {fileID: 182128491, guid: be90189ca17b9e14c9a36b708d0ba034, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 182128491, guid: be90189ca17b9e14c9a36b708d0ba034, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 2
+  m_PrimaryLibraryGUID: 
+  m_ModificationHash: 638320929740197588
+  m_Version: 1
