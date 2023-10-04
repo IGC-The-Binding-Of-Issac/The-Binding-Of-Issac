@@ -91,11 +91,11 @@ public class PutBomb : MonoBehaviour
 
     public void BombAttack()
     {
-        transform.position += new Vector3(0, 1.3f, 0);
+        transform.position += new Vector3(0, 1f, 0);
 
         bc.isTrigger = true;
         CanAttack = true;
-        bc.offset = new Vector2(0, -0.25f);
-        bc.size = new Vector2(1.81f, 2.31f);
+        bc.offset = new Vector2(0, -0.2f);
+        bc.size = new Vector2(3f, 3.15f);
     }
 }
