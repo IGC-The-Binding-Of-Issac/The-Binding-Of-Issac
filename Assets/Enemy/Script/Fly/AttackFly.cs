@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AttackFly : Fly
+public class AttackFly : Top_Fly
 {
     void Start()
     {
-        InitialIze();
+        Fly_Move_InitialIze();
+
+        playerInRoom = false;
+        dieParameter = "isDie";
 
         hp = 5f;
         sight = 5f;

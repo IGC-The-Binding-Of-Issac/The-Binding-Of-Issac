@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Fly : Enemy
+public class Top_Fly : Enemy
 {
     //Fly 이동
     [HideInInspector] 
@@ -14,10 +14,8 @@ public class Fly : Enemy
     protected float fTime; //랜덤이동 시간
     protected Transform justTrackingPlayerPosi; // 무조건 추적 위한 update문에서 player 실시간 받아오기
 
-    protected void InitialIze()
+    protected void Fly_Move_InitialIze()
     { 
-        playerInRoom = false;
-        dieParameter = "isDie";
 
         // enemy 초기 위치
         x = gameObject.transform.position.x;

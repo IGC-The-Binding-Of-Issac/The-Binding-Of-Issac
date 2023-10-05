@@ -16,8 +16,9 @@ public class Enemy : MonoBehaviour
     protected float bulletSpeed;
     protected float attaackSpeed;
     protected float waitforSecond;
+    protected bool isInRange;
 
-    protected Transform playerPos; //범위 내 플레이어 위치
+    [SerializeField] protected Transform playerPos; //범위 내 플레이어 위치
     // Move 하위 스크립트에서 구현
     public virtual void Move() { }
 
