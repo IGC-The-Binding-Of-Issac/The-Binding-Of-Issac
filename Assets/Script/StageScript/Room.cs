@@ -30,7 +30,10 @@ public class Room : MonoBehaviour
         for(int i = 0; i < enemis.Count; i++)
         {
             if (enemis[i] != null)
+            {
                 flag = false;
+                enemis[i].GetComponent<Enemy>().playerInRoom = playerInRoom;
+            }
         }
         isClear = flag;
     }
