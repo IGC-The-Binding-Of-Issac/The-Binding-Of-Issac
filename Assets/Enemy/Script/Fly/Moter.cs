@@ -2,15 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Moter : Fly
+public class Moter : Top_Fly
 {
     void Start()
     {
-        InitialIze();
+        Fly_Move_InitialIze();
+
+        playerInRoom = false;
+        dieParameter = "isDie";
 
         hp = 5f;
         sight = 5f;
-        moveSpeed = 1.5f;
+        moveSpeed = 0.5f;
         waitforSecond = 0.5f;
     }
 
