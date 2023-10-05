@@ -658,9 +658,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefabs:
-  - {fileID: 5973453183993415052, guid: bf63ffe6cd56cd94dba681923193ee52, type: 3}
-  - {fileID: 8399986438939697368, guid: a233af9eb6284a54eaa9e4ae30fa9c98, type: 3}
-  - {fileID: 1165827737780579961, guid: 75966932efecf284dad0d155b7ff25d7, type: 3}
+  - {fileID: 7229639532422697358, guid: 3913fec5d6b5d5e4ea56aca55f44a03e, type: 3}
   bossPrefabs:
   - {fileID: 5973453183993415052, guid: bf63ffe6cd56cd94dba681923193ee52, type: 3}
   - {fileID: 8399986438939697368, guid: a233af9eb6284a54eaa9e4ae30fa9c98, type: 3}

@@ -81,10 +81,10 @@ public class Tear : MonoBehaviour
             tearBoomAnim.SetTrigger("BoomTear");
             collision.GetComponent<FirePlace>().GetDamage();
         }
-        //else if(collision.gameObject.CompareTag("Enemy"))
-        //{
-        //    tearBoomAnim.SetTrigger("BoomTear");
-        //    // 대충 적에게 데미지 주기 코드 작성 바람.
-        //}
+        else if (collision.gameObject.CompareTag("Enemy"))
+        {
+            tearBoomAnim.SetTrigger("boomtear");
+            collision.gameObject.GetComponent<Enemy>().GetDamage(PlayerManager.instance.playerDamage);
+        }
     }
 }

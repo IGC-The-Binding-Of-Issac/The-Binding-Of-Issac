@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5dc64b3cf534e0141aaf74a877ea16ac
+guid: 831de2f9828b1814a8b2e68004a97a18
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,12 +110,285 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: test_0
+      name: fly_Animation_0
       rect:
         serializedVersion: 2
-        x: 12
-        y: 116
-        width: 24
+        x: 35
+        y: 200
+        width: 23
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 615bd3bfbd5fde440989b66566e7eefd
+      internalID: -1776940229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fly_Animation_2
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 152
+        width: 30
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0fb39ef8518a0a438cd5c173e6e3481
+      internalID: 1172416171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fly_Animation_3
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 143
+        width: 48
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aea0e4004408e664bbb0c4d92f948e4b
+      internalID: 1839989155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fly_Animation_4
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 139
+        width: 45
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37a0faa7979f74944aa033deb169213b
+      internalID: 996867921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fly_Animation_5
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 130
+        width: 62
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2f738512dbfb2640b32ec34ec69b0ac
+      internalID: 905631213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fly_Animation_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 69
+        width: 63
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9da3dd9ed2d8f2447b353220307131ea
+      internalID: -487607632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fly_Animation_7
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 56
+        width: 62
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6511d6c2657ec844597fdd91cb799c1c
+      internalID: 1022356965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fly_Animation_8
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 59
+        width: 61
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba2bf4d2b96a60344a0e6ee82b170ec0
+      internalID: -645677262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fly_Animation_9
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 58
+        width: 60
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d8171434cb5a1b42b9ad0509e72e135
+      internalID: -785779229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fly_Animation_10
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 11
+        width: 58
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01aeb4496e99aa348a71365c7e685511
+      internalID: -1782542855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fly_Animation_11
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 6
+        width: 60
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b87697553267554faf5bb9c83390c10
+      internalID: -1026997418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fly_Animation_12
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 6
+        width: 52
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6436ee6b172a114eac3d0053c539139
+      internalID: 638041804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fly_Animation_13
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 7
+        width: 55
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f6b38bf3e1069543ae74de91fa2a925
+      internalID: 1360560745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fly_Animation_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 197
+        width: 30
         height: 29
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -124,155 +397,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 82c3e0e33d4202e40b3f17d00426b327
-      internalID: 1803876515
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: test_1
-      rect:
-        serializedVersion: 2
-        x: 60
-        y: 115
-        width: 24
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 81ea2671b60d6394b9a1149fe7977e49
-      internalID: -1992815550
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: test_2
-      rect:
-        serializedVersion: 2
-        x: 106
-        y: 115
-        width: 30
-        height: 27
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5a1f801da0bcdce42ba992db60237a3a
-      internalID: 1237872063
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: test_3
-      rect:
-        serializedVersion: 2
-        x: 60
-        y: 68
-        width: 24
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d21a51e4d787ea74ca9a9f1a7450eb65
-      internalID: -2088384593
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: test_4
-      rect:
-        serializedVersion: 2
-        x: 105
-        y: 68
-        width: 30
-        height: 27
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a248d90ba922b724c8701b2a4c803c55
-      internalID: 1856176896
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: test_5
-      rect:
-        serializedVersion: 2
-        x: 13
-        y: 20
-        width: 22
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b0f23512377c97848b35ad5823606c7b
-      internalID: -1364252586
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: test_6
-      rect:
-        serializedVersion: 2
-        x: 57
-        y: 18
-        width: 30
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a7de21a2b710a364596ad0834a721039
-      internalID: 287849860
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: test_7
-      rect:
-        serializedVersion: 2
-        x: 106
-        y: 18
-        width: 28
-        height: 21
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e821560dc9c0e044a95d902c0c5dea5c
-      internalID: -29059304
+      spriteID: d36a13c336105fe4d8338ee00badeb57
+      internalID: 1572826627
       vertices: []
       indices: 
       edges: []
@@ -280,7 +406,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 25cff70dac5ccfb4b854f20f5e7cf766
     internalID: 0
     vertices: []
     indices: 
@@ -288,14 +414,21 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      test_0: 1803876515
-      test_1: -1992815550
-      test_2: 1237872063
-      test_3: -2088384593
-      test_4: 1856176896
-      test_5: -1364252586
-      test_6: 287849860
-      test_7: -29059304
+      fly_Animation_0: 448783990
+      fly_Animation_1: -645163864
+      fly_Animation_10: -480552374
+      fly_Animation_11: 1022356965
+      fly_Animation_12: -645677262
+      fly_Animation_13: -785779229
+      fly_Animation_14: 1572826627
+      fly_Animation_2: 67070069
+      fly_Animation_3: -1776940229
+      fly_Animation_4: -259579227
+      fly_Animation_5: 1172416171
+      fly_Animation_6: 1839989155
+      fly_Animation_7: 996867921
+      fly_Animation_8: 905631213
+      fly_Animation_9: -487607632
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
