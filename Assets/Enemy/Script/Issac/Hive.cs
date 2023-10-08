@@ -4,20 +4,25 @@ using UnityEngine;
 
 public class Hive : Enemy
 {
-    [SerializeField] Transform hiveMovePosi;
+    [SerializeField] protected float x;
+    [SerializeField] protected float y;
+
+    [SerializeField] float hiveMoveToX;
+    [SerializeField] float hiveMoveToY;
 
     void Start()
     {
-        hiveMovePosi = gameObject.transform;
-
         playerInRoom = false;
         dieParameter = "isDie";
 
-        hp = 20f;
+        hp = 10f;
         sight = 3f;
-        moveSpeed = 3f;
+        moveSpeed = 5f;
         waitforSecond = 0.5f;
-        isInRange = false;
+
+
+        x = gameObject.transform.position.x;
+        y = gameObject.transform.position.y;
     }
 
     void Update()
@@ -28,6 +33,19 @@ public class Hive : Enemy
 
     public override void Move()
     {
+
+        //플레이어가 범위 안에 들어오면
+        if (PlayerSearch()) 
+        {
+
+            x = gameObject.transform.position.x;
+            y = gameObject.transform.position.y;
+            hiveMoveToX = (x - playerPos.transform.position.x) * 2; // hive 위치 - 플레이어 x
+            hiveMoveToY = (y - playerPos.transform.position.y) * 2; // hive 위치 - 플레이어 y
+
+            Vector3 vector3 = new Vector3(hiveMoveToX, hiveMoveToY, 0);
+            transform.position = Vector3.MoveTowards(transform.position, vector3, moveSpeed * Time.deltaTime);
+        }
 
     }
 

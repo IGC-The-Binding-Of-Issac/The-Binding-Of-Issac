@@ -35,7 +35,9 @@ public class Top_Fly : Enemy
         transform.position = Vector3.MoveTowards(transform.position, fp.transform.position, moveSpeed * Time.deltaTime);
     }
 
+
     //랜덤 움직임
+    /*
     protected void Prwol()
     {
         Vector3 moveRan = new Vector3(xRan, yRan, transform.position.z);
@@ -55,5 +57,5 @@ public class Top_Fly : Enemy
             yRan = Random.Range(y + randRange, y - randRange);
         }
     }
-
+    */
 }

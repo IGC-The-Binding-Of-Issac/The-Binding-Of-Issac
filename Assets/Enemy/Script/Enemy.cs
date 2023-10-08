@@ -10,13 +10,12 @@ public class Enemy : MonoBehaviour
     [Header("Enemy State")]
     public bool playerInRoom;
     [SerializeField] protected float hp;
-    protected float sight;
-    protected float searchDelay;
-    protected float moveSpeed;
-    protected float bulletSpeed;
-    protected float attaackSpeed;
-    protected float waitforSecond;
-    protected bool isInRange;
+    protected float sight; //시야 범위  
+    protected float searchDelay; // 일정 시간 두고 search
+    protected float moveSpeed; 
+    protected float bulletSpeed; // 총알속도
+    protected float attaackSpeed; // 공격속도
+    protected float waitforSecond; // 죽기전 wait
 
     [SerializeField] protected Transform playerPos; //범위 내 플레이어 위치
     // Move 하위 스크립트에서 구현
