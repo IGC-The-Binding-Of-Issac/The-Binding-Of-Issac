@@ -17,7 +17,6 @@ public class Spider : Top_Spider
         sight = 3f;
         moveSpeed = 10f;
         waitforSecond = 0.5f;
-        isInRange = false;
 
         //ªÛ¿ß Top_Spider
         randRange = 5f;

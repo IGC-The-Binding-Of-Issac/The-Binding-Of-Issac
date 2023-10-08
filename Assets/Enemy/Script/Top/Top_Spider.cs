@@ -43,7 +43,7 @@ public class Top_Spider : Enemy
     }
 
     //랜덤 움직임 검사
-    protected IEnumerator checkPosi()
+    protected IEnumerator CheckPosi()
     {
         while (true)
         {
