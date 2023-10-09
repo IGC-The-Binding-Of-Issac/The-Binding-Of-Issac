@@ -7,7 +7,8 @@ public class Ipecac : ItemInfo
     private float time = 0f;
     private void Start()
     {
-        SetItemCode(10);
+        itemCode = 10;
+        // SetItemCode(10);
     }
 
     public override void UseItem()

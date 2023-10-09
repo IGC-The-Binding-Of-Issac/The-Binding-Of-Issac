@@ -83,7 +83,7 @@ public class Tear : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("Enemy"))
         {
-            tearBoomAnim.SetTrigger("boomtear");
+            tearBoomAnim.SetTrigger("BoomTear");
             collision.gameObject.GetComponent<Enemy>().GetDamage(PlayerManager.instance.playerDamage);
         }
     }

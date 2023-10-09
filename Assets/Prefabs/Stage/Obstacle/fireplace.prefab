@@ -89,6 +89,7 @@ GameObject:
   - component: {fileID: 732518287160572332}
   - component: {fileID: -7078074605174863188}
   - component: {fileID: 336576323085331828}
+  - component: {fileID: 545498563490721372}
   m_Layer: 0
   m_Name: fireplace
   m_TagString: Object_Fire
@@ -197,7 +198,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0011332035, y: 0.08539507}
+  m_Offset: {x: 0, y: 0.08}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -208,7 +209,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.78069854, y: 0.6473115}
+  m_Size: {x: 0.8, y: 0.65}
   m_EdgeRadius: 0
 --- !u!114 &336576323085331828
 MonoBehaviour:
@@ -225,6 +226,33 @@ MonoBehaviour:
   woodSprite: {fileID: -209297631, guid: 0903dd2eb5fec5749b838ee1be76cd20, type: 3}
   eft: {fileID: 7076980663986299382}
   boxCollider: {fileID: 1368629504134227966}
+--- !u!50 &545498563490721372
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5460904561417292347}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &7076980663986299382
 GameObject:
   m_ObjectHideFlags: 0

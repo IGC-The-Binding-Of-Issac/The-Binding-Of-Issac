@@ -325,6 +325,7 @@ GameObject:
   - component: {fileID: 6241848402336311792}
   - component: {fileID: 2709452366821644637}
   - component: {fileID: 3353983527279662583}
+  - component: {fileID: 3721558818895263736}
   m_Layer: 0
   m_Name: tile2
   m_TagString: Wall
@@ -444,6 +445,33 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.5950506, y: 9.6335335}
   m_EdgeRadius: 0
+--- !u!50 &3721558818895263736
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 600910851198438223}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &709636783400300998
 GameObject:
   m_ObjectHideFlags: 0
@@ -738,6 +766,7 @@ GameObject:
   - component: {fileID: 829059582110354311}
   - component: {fileID: 8147168566545792575}
   - component: {fileID: 5691272008676278679}
+  - component: {fileID: 3143160873787879647}
   m_Layer: 0
   m_Name: tile1
   m_TagString: Wall
@@ -857,6 +886,33 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 14.538961, y: 1.5973978}
   m_EdgeRadius: 0
+--- !u!50 &3143160873787879647
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1497600099064740105}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1817228426731222433
 GameObject:
   m_ObjectHideFlags: 0
@@ -930,6 +986,7 @@ GameObject:
   - component: {fileID: 2106639644157365349}
   - component: {fileID: 5333905273687178033}
   - component: {fileID: 8087061776515521488}
+  - component: {fileID: 8015112139782778294}
   m_Layer: 0
   m_Name: tile3
   m_TagString: Wall
@@ -1049,6 +1106,33 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.6116974, y: 9.580874}
   m_EdgeRadius: 0
+--- !u!50 &8015112139782778294
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2032177717276141623}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &2529164665737780977
 GameObject:
   m_ObjectHideFlags: 0
@@ -1363,6 +1447,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isClear: 0
   playerInRoom: 0
+  roomObjects: []
+  enemis: []
   roomGrid: {fileID: 4627591322442126050}
   cameraPosition: {fileID: 5735667962967816540}
   doorPosition:
@@ -2719,6 +2805,7 @@ GameObject:
   - component: {fileID: 6180494652906721303}
   - component: {fileID: 2293681966665840964}
   - component: {fileID: 6580733898809094536}
+  - component: {fileID: 7532073555894771873}
   m_Layer: 0
   m_Name: tile4
   m_TagString: Wall
@@ -2838,6 +2925,33 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 14.528648, y: 1.6098106}
   m_EdgeRadius: 0
+--- !u!50 &7532073555894771873
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6128583373297819384}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &6266367477279502455
 GameObject:
   m_ObjectHideFlags: 0
