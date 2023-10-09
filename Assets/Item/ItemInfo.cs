@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ItemInfo : MonoBehaviour
 {
-    public int itemCode;
+    protected int itemCode;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

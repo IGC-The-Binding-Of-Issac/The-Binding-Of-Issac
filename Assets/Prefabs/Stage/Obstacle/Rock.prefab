@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2908351567012774387}
   - component: {fileID: 2109555886834622227}
   - component: {fileID: 7097412552677560843}
+  - component: {fileID: -4617627916438326653}
   m_Layer: 0
   m_Name: Rock
   m_TagString: Object_Rock
@@ -144,3 +145,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destoryRock: {fileID: -1675786335, guid: 427bdd0cb418db443a4274c6b7c62df7, type: 3}
+--- !u!50 &-4617627916438326653
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3639913079786544235}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
