@@ -11,6 +11,7 @@ public class Moter : Top_Fly
         playerInRoom = false;
         dieParameter = "isDie";
 
+        //Enemy
         hp = 5f;
         sight = 5f;
         moveSpeed = 0.5f;

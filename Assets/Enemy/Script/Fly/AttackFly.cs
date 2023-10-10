@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AttackFly : Top_Fly
 {
+    // 플레이어 추적
     void Start()
     {
         Fly_Move_InitialIze();
@@ -11,6 +12,7 @@ public class AttackFly : Top_Fly
         playerInRoom = false;
         dieParameter = "isDie";
 
+        // Enemy
         hp = 5f;
         sight = 5f;
         moveSpeed = 1.5f;
