@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -29,10 +28,15 @@ public class FirePlace : MonoBehaviour
     {
         eft.transform.localScale = new Vector3(eft.transform.localScale.x - 0.2f, eft.transform.localScale.y - 0.2f, 0);
     }
-    private void ItemDrop()
+    void ItemDrop()
     {
-        // ItemManage에서 구현후 실행 고민해봅시다.
-        //코인,체력 등 드랍아이템 확률드랍. 구현 필요.
+        Debug.Log("itemDrop()");
+        int rd = Random.Range(0, 3);
+        Debug.Log("rd : " + rd);
+        if (rd == 0)
+        {
+            Instantiate(ItemManager.instance.itemTable.ObjectBreak(), transform.position, Quaternion.identity);
+        }
     }
 
 

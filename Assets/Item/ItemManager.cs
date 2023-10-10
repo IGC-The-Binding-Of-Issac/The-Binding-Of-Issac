@@ -38,7 +38,7 @@ public class ItemManager : MonoBehaviour
     
     [Header("Unity Setup")]
     public GameObject bombPrefab; // 설치하는 폭탄 오브젝트 프리팹
-
+    public ItemTable itemTable; // 아이템 드랍관련 스크립트
 
     private void Start()
     {

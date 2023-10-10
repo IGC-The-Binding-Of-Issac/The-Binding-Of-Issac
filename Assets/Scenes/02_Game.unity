@@ -154,6 +154,56 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1991369605}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &141580502
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 141580503}
+  - component: {fileID: 141580504}
+  m_Layer: 0
+  m_Name: ItemTable
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &141580503
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 141580502}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 234069467}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &141580504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 141580502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36e6b3c44521fa34898cea99dfe87e64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DropItems:
+  - {fileID: 5916068298817973355, guid: f7c857810b34f77439c8133e63cf7985, type: 3}
+  - {fileID: 4559314198158077400, guid: be43edb373b26174d996fb2a485b4985, type: 3}
+  - {fileID: 2916814476264063245, guid: 7386d769531f4ea45bcd5423a59f36a4, type: 3}
+  - {fileID: 6670499893774829232, guid: 53d4fe3bf0e16934eb61a115bcc3d89c, type: 3}
+  PassiveItems: []
 --- !u!1 &234069466
 GameObject:
   m_ObjectHideFlags: 0
@@ -186,6 +236,7 @@ Transform:
   - {fileID: 488147274}
   - {fileID: 288396949}
   - {fileID: 1251611851}
+  - {fileID: 141580503}
   - {fileID: 1991369605}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -295,21 +346,21 @@ MonoBehaviour:
   - {fileID: 6916186502092149318, guid: f6bff1dbec4dba243be0d82e693ae73d, type: 3}
   - {fileID: 2939042935250214586, guid: 2e2e47c9575c73345b3c7f4a427d7c23, type: 3}
   - {fileID: 6318551211771143073, guid: c283c6ef2cecf0e4b87a35f679d18e17, type: 3}
-  - {fileID: 1326510930403732595, guid: ba9bec4188c856f488202c5501784014, type: 3}
-  - {fileID: 4131885377452477906, guid: f0aaeaa92ac990d4eab3a6b393abe680, type: 3}
-  - {fileID: 4319019123534098621, guid: c94e6776c3e662842b1a797d16415caf, type: 3}
+  - {fileID: 6591847126562986514, guid: 76e1c53e1a78ec44e912d98a88234ffc, type: 3}
+  - {fileID: 4568543078339632559, guid: 04723c46a9717d84b9a7554fbfcd269a, type: 3}
+  - {fileID: 8531993416212779823, guid: 328ea5cf8b538e74290b95a3ebbe5ea7, type: 3}
   - {fileID: 6916186502092149318, guid: f6bff1dbec4dba243be0d82e693ae73d, type: 3}
   - {fileID: 2939042935250214586, guid: 2e2e47c9575c73345b3c7f4a427d7c23, type: 3}
   - {fileID: 6318551211771143073, guid: c283c6ef2cecf0e4b87a35f679d18e17, type: 3}
-  - {fileID: 1326510930403732595, guid: ba9bec4188c856f488202c5501784014, type: 3}
-  - {fileID: 4131885377452477906, guid: f0aaeaa92ac990d4eab3a6b393abe680, type: 3}
-  - {fileID: 4319019123534098621, guid: c94e6776c3e662842b1a797d16415caf, type: 3}
+  - {fileID: 5492085652446188837, guid: 6244789bedf5d8540b9297900c27f452, type: 3}
+  - {fileID: 2322871285108013650, guid: d284906c46519ab42a2f4ceb8e467854, type: 3}
+  - {fileID: 1129068252793212066, guid: 133b37a90f9adaf47a66c8c7eca7e4bf, type: 3}
   - {fileID: 6916186502092149318, guid: f6bff1dbec4dba243be0d82e693ae73d, type: 3}
   - {fileID: 2939042935250214586, guid: 2e2e47c9575c73345b3c7f4a427d7c23, type: 3}
   - {fileID: 6318551211771143073, guid: c283c6ef2cecf0e4b87a35f679d18e17, type: 3}
-  - {fileID: 1326510930403732595, guid: ba9bec4188c856f488202c5501784014, type: 3}
-  - {fileID: 4131885377452477906, guid: f0aaeaa92ac990d4eab3a6b393abe680, type: 3}
-  - {fileID: 4319019123534098621, guid: c94e6776c3e662842b1a797d16415caf, type: 3}
+  - {fileID: 6109695621822969886, guid: e803cf0b0fa07b34588707a81a120a8b, type: 3}
+  - {fileID: 3219036113762686436, guid: 88a9aeb87dd1262408dd104fb87b320b, type: 3}
+  - {fileID: 2005278590316562919, guid: 9f545b4330195c74294a67e0eaa99bdc, type: 3}
   - {fileID: 6916186502092149318, guid: f6bff1dbec4dba243be0d82e693ae73d, type: 3}
   - {fileID: 2939042935250214586, guid: 2e2e47c9575c73345b3c7f4a427d7c23, type: 3}
   - {fileID: 6318551211771143073, guid: c283c6ef2cecf0e4b87a35f679d18e17, type: 3}
@@ -569,6 +620,7 @@ MonoBehaviour:
   ActiveItem: {fileID: 0}
   TrinketItem: {fileID: 0}
   bombPrefab: {fileID: 9152286902886193127, guid: 7fce7d28537db664aaca9ad6d71bd9c4, type: 3}
+  itemTable: {fileID: 141580504}
 --- !u!1 &1704551913
 GameObject:
   m_ObjectHideFlags: 0
