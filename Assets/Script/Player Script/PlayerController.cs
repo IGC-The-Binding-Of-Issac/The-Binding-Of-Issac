@@ -271,18 +271,21 @@ public class PlayerController : MonoBehaviour
     }
 
     //아이템 획득 애니메이션
-    public IEnumerator GetItemTime()
+    public IEnumerator GetItemTime(bool isTrinket)
     {
-        //원래
+        //원래 모습은 가려둠
         gameObject.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
         gameObject.transform.GetChild(1).gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
+        //아이템 획득 애니메이션 실행
         getItem.SetTrigger("GetItem");
+        //애니메이션 1초간 유지
         yield return new WaitForSeconds(1f);
+        //플레이어 모습 보이게 함
         gameObject.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
         gameObject.transform.GetChild(1).gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
 
         //itemPosition 자식이 생기고 isTrinket=false면 삭제
-        if(itemPosition.childCount != 0)
+        if (itemPosition.childCount != 0)
         {
             Destroy(itemPosition.GetChild(0).gameObject);
         }

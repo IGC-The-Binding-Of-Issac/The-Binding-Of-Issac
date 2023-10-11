@@ -19,6 +19,8 @@ public class Enemy : MonoBehaviour
     protected float waitforSecond; // 죽기전 wait
 
     [SerializeField] protected Transform playerPos; //범위 내 플레이어 위치
+
+    [SerializeField] protected bool knockBackState = false;
     // Move 하위 스크립트에서 구현
     public virtual void Move() { }
 
@@ -50,6 +52,7 @@ public class Enemy : MonoBehaviour
         {
             //플레이어랑 부딪히면 플레이어의 hp감소
             PlayerManager.instance.GetDamage();
+
         }
     }
 
@@ -95,5 +98,11 @@ public class Enemy : MonoBehaviour
         Destroy(gameObject , waitforSecond);
     }
 
-
+    public IEnumerator knockBack()
+    {
+        knockBackState = true;
+        yield return new WaitForSeconds(0.2f);
+        knockBackState = false;
+        gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+    }
 }
