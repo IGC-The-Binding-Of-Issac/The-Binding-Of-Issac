@@ -34,7 +34,6 @@ public class PlayerController : MonoBehaviour
         tearSpeed = PlayerManager.instance.playerTearSpeed;
         shotDelay = PlayerManager.instance.playerShotDelay;
 
-        Movement();
 
         MoveAnim();
 
@@ -42,6 +41,10 @@ public class PlayerController : MonoBehaviour
 
         InstallBomb();
 
+    }
+    void FixedUpdate()
+    {
+        Movement();
     }
 
     //이동 기능
@@ -73,8 +76,8 @@ public class PlayerController : MonoBehaviour
     void Shoot(float x, float y)
     {
         //발사 기능 구현
+        //게임 중 눈물 생성 눈물 프리펩, 발사 시작위치, 회전
         tear = Instantiate(tearPrefab, transform.position + Vector3.up * 0.4f, transform.rotation) as GameObject;
-        tear.AddComponent<Rigidbody2D>().gravityScale = 0.01f;
         tear.GetComponent<Rigidbody2D>().velocity = new Vector3(
             (x < 0) ? Mathf.Floor(x) * tearSpeed : Mathf.Ceil(x) * tearSpeed,
             (y < 0) ? Mathf.Floor(y) * tearSpeed : Mathf.Ceil(y) * tearSpeed, 0);

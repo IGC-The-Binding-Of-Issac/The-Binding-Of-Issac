@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class Tear : MonoBehaviour
 {
@@ -62,10 +63,16 @@ public class Tear : MonoBehaviour
         Destroy(gameObject);
     }
 
+    public void KnockBack()
+    {
+        Vector2 a = transform.GetComponent<Rigidbody2D>().velocity;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
+
         //벽에 박으면 총알 터트리기
-        if(collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Object_Rock"))
+        if (collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Object_Rock"))
         {
             tearBoomAnim.SetTrigger("BoomTear");
         }
@@ -85,6 +92,7 @@ public class Tear : MonoBehaviour
         {
             tearBoomAnim.SetTrigger("BoomTear");
             collision.gameObject.GetComponent<Enemy>().GetDamage(PlayerManager.instance.playerDamage);
+            collision.gameObject.GetComponent<Rigidbody2D>();
         }
     }
 }
