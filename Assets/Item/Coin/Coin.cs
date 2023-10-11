@@ -6,6 +6,7 @@ public class Coin : MonoBehaviour
 {
     Animator coin_animator;
     private Rigidbody2D rb;
+    private CapsuleCollider2D cl;
     public void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -14,6 +15,8 @@ public class Coin : MonoBehaviour
         float randomForce = Random.Range(50f, 70f);
         rb.AddForce(new Vector2(randomX, randomY) * randomForce);
         coin_animator = GetComponent<Animator>();
+        cl = GetComponent<CapsuleCollider2D>();
+        cl.enabled = false;
     }
 
     public void OnTriggerEnter2D(Collider2D Collision)
@@ -32,5 +35,6 @@ public class Coin : MonoBehaviour
     public void DropCoinEnd()
     {
         coin_animator.SetBool("DropCoin", false);
+        cl.enabled = true;
     }
 }
