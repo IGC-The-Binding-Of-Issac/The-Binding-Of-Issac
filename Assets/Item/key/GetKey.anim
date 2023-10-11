@@ -82,7 +82,7 @@ AnimationClip:
   - time: 0.1
     functionName: GetKey
     data: 
-    objectReferenceParameter: {fileID: 0}
+    objectReferenceParameter: {fileID: 6670499893774829232, guid: 53d4fe3bf0e16934eb61a115bcc3d89c, type: 3}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
