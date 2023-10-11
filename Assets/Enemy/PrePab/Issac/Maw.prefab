@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1230173364204199161}
   - component: {fileID: 5665590121307899421}
   - component: {fileID: 9074828901140206504}
+  - component: {fileID: 2397041631909331138}
   m_Layer: 0
   m_Name: Maw
   m_TagString: Enemy
@@ -99,7 +100,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 50
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -180,3 +181,22 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2397041631909331138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1950736854895267324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e58b215e4c2536f43898b6a925fcaa41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInRoom: 0
+  hp: 0
+  moveSpeed: 0
+  playerPos: {fileID: 0}
+  knockBackState: 0
+  state: 0
+  enemyBullet: {fileID: 5075845781784470873, guid: badefd297090b9f4098457860dee0ecc, type: 3}
