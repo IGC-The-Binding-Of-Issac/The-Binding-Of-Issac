@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Data.Common;
 using UnityEngine;
 
-public class Footer : Top_Fly
+public class Maw : Top_IssacMonster
 {
     // 범위 안에 들어오면 추적 + 촣알 발싸
     // 범위 안에 없으면 랜덤 움직임
-   
-    enum FooterState 
+    // Pooter와 코드 같음
+
+    enum MawState
     {
         // Idle
         PooterProwl,
@@ -16,7 +18,7 @@ public class Footer : Top_Fly
         //추적
         PooteTracking
     }
-    [SerializeField] FooterState state;
+    [SerializeField] MawState state;
     [SerializeField] GameObject enemyBullet; //총알 프리팹
     float currTime;
     float oriMoveSpeed;
@@ -25,7 +27,6 @@ public class Footer : Top_Fly
     // 작은 범위 랜덤 움직임 + 플레이어가 안에 들어오면 추적
     void Start()
     {
-        Fly_Move_InitialIze();
 
         playerInRoom = false;
         dieParameter = "isDie";
@@ -39,13 +40,14 @@ public class Footer : Top_Fly
         attaackSpeed = 3f; // idle <-> Shoot
 
         //TopFly
-        randRange = 1f;
+        randRange = 0.5f;
         fTime = 0.5f;
         StartCoroutine(checkPosi(randRange));
 
         //Footer
         currTime = attaackSpeed;
         oriMoveSpeed = moveSpeed;
+       
     }
 
     private void Update()
@@ -53,21 +55,20 @@ public class Footer : Top_Fly
         if (playerInRoom)
         {
             Move();
-
             //플레이어가 범위 안에 없을 때
             if (!PlayerSearch())
             {
-                state = FooterState.PooterProwl;
+                state = MawState.PooterProwl;
                 return;
             }
 
             //플레이어가 범위 안에 있을 때, 시간 별로 총 쏘고 , 이동하고
-            else if (PlayerSearch()) 
+            else if (PlayerSearch())
             {
                 currTime -= Time.deltaTime;
                 if (currTime > 0)
                 {
-                    state = FooterState.PooteTracking;
+                    state = MawState.PooteTracking;
                     Lookplayer();
                     moveSpeed = oriMoveSpeed;
                     return;
@@ -75,9 +76,9 @@ public class Footer : Top_Fly
 
                 else if (currTime <= 0)
                 {
-                    state = FooterState.PooteShoot;
+                    state = MawState.PooteShoot;
                     //moveSpeed = 0;
-                    animator.SetTrigger("isShoot");
+                    //animator.SetTrigger("isShoot");
                     currTime = attaackSpeed;
                 }
             }
@@ -88,25 +89,25 @@ public class Footer : Top_Fly
 
     override public void Move()
     {
-        switch (state) 
+        switch (state)
         {
-            case FooterState.PooterProwl:
+            case MawState.PooterProwl:
                 Prwol();
                 break;
-            case FooterState.PooteShoot:
+            case MawState.PooteShoot:
                 PooterShoot();
                 break;
-            case FooterState.PooteTracking:
+            case MawState.PooteTracking:
                 Tracking(playerPos);
                 break;
         }
-        
+
     }
 
     // 공격
-    void PooterShoot() 
+    void PooterShoot()
     {
-        GameObject bulletobj = Instantiate(enemyBullet , transform.position , Quaternion.identity);
+        GameObject bulletobj = Instantiate(enemyBullet, transform.position, Quaternion.identity);
     }
 
     private void OnDrawGizmos()
