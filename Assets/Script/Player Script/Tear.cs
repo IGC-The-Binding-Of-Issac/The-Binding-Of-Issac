@@ -65,7 +65,11 @@ public class Tear : MonoBehaviour
 
     public void KnockBack()
     {
-        Vector2 a = transform.GetComponent<Rigidbody2D>().velocity;
+        Vector2 a = gameObject.transform.GetComponent<Rigidbody2D>().velocity;
+        a.y = a.y* -1f;
+        a.x = a.x * -1f;
+        Debug.Log(a.x);
+        Debug.Log(a.y);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -88,11 +92,16 @@ public class Tear : MonoBehaviour
             tearBoomAnim.SetTrigger("BoomTear");
             collision.GetComponent<FirePlace>().GetDamage();
         }
+        //적과 박으면
         else if (collision.gameObject.CompareTag("Enemy"))
         {
             tearBoomAnim.SetTrigger("BoomTear");
             collision.gameObject.GetComponent<Enemy>().GetDamage(PlayerManager.instance.playerDamage);
-            collision.gameObject.GetComponent<Rigidbody2D>();
+            if (collision.gameObject.GetComponent<Enemy>())
+            {
+
+            }
+            KnockBack();
         }
     }
 }

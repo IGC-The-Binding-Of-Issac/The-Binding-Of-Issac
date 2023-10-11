@@ -273,6 +273,7 @@ public class PlayerController : MonoBehaviour
     //아이템 획득 애니메이션
     public IEnumerator GetItemTime()
     {
+        //원래
         gameObject.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
         gameObject.transform.GetChild(1).gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
         getItem.SetTrigger("GetItem");
@@ -280,6 +281,7 @@ public class PlayerController : MonoBehaviour
         gameObject.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
         gameObject.transform.GetChild(1).gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
 
+        //itemPosition 자식이 생기고 isTrinket=false면 삭제
         if(itemPosition.childCount != 0)
         {
             Destroy(itemPosition.GetChild(0).gameObject);

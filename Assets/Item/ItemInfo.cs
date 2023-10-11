@@ -6,15 +6,17 @@ using UnityEngine;
 public class ItemInfo : MonoBehaviour
 {
     protected int itemCode;
+
     public bool isTrinket;
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.CompareTag("Player"))
         {
-            // æ∆¿Ã≈€¿ª ∞°¡ˆ∞Ì¿÷¡ˆæ ¿ª∂ß.
+            // ÏïÑÏù¥ÌÖúÏùÑ Í∞ÄÏßÄÍ≥†ÏûàÏßÄÏïäÏùÑÎïå.
             if(!ItemManager.instance.PassiveItems[itemCode])
             {
-                ItemManager.instance.PassiveItems[itemCode] = true; // πÃ∫∏¿Ø -> ∫∏¿Ø ∑Œ ∫Ø∞Ê 
+                ItemManager.instance.PassiveItems[itemCode] = true; // ÎØ∏Î≥¥Ïú† -> Î≥¥Ïú† Î°ú Î≥ÄÍ≤Ω 
                 UseItem();
 
                 gameObject.transform.SetParent(collision.gameObject.GetComponent<PlayerController>().itemPosition);
@@ -26,7 +28,7 @@ public class ItemInfo : MonoBehaviour
         }
     }
 
-    public virtual void UseItem() { Debug.Log("¿Á¡§¿« «ÿ¡‡!"); }
+    public virtual void UseItem() { Debug.Log("Ïû¨Ï†ïÏùò Ìï¥Ï§ò!"); }
 
     public void SetItemCode(int code)
     {
