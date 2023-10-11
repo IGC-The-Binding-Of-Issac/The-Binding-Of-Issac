@@ -6,7 +6,7 @@ using UnityEngine;
 public class ItemInfo : MonoBehaviour
 {
     protected int itemCode;
-
+    public bool isTrinket;
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.CompareTag("Player"))
@@ -20,7 +20,7 @@ public class ItemInfo : MonoBehaviour
                 gameObject.transform.SetParent(collision.gameObject.GetComponent<PlayerController>().itemPosition);
                 gameObject.transform.localPosition = new Vector3(0, 0, 0);
                 Destroy(gameObject.GetComponent<Rigidbody2D>());
-
+                
                 StartCoroutine(collision.gameObject.GetComponent<PlayerController>().GetItemTime());
             }
         }

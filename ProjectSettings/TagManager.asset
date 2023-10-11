@@ -12,6 +12,7 @@ TagManager:
   - Object_Fire
   - Object_Spikes
   - Enemy
+  - Trinket
   layers:
   - Default
   - TransparentFX
