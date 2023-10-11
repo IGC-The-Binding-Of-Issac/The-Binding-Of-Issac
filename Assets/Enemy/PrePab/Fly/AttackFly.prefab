@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8075978181479366049}
   - component: {fileID: 3030247053543377799}
   m_Layer: 0
-  m_Name: AttackFly_
+  m_Name: AttackFly
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
