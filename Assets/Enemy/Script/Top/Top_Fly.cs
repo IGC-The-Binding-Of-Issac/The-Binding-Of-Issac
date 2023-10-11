@@ -10,6 +10,7 @@ public class Top_Fly : Enemy
     protected float y;
     protected float xRan;
     protected float yRan;
+    // 랜덤 움직임 넣을 때 꼭 필요함! + 
     protected float randRange; //랜덤으로 이동할 범위 
     protected float fTime; //랜덤이동 시간
     protected Transform justTrackingPlayerPosi; // 무조건 추적 위한 update문에서 player 실시간 받아오기
@@ -25,7 +26,7 @@ public class Top_Fly : Enemy
     }
 
     // 플레이어 추적
-    // 1. 범위안에 들어왔을 때 searching 후 tracking -> fp : enemy에서 검사한 enemyPosi
+    // 1. 범위안에 들어왔을 때 searching 후 tracking -> fp : enemy에서 검사한 playerPosi
     // 2. 그냥 무조건 tracking -> fp : 하위에서 update문에 있는 justTrackingPlayerPosi
     protected void Tracking(Transform fp)
     {
@@ -37,7 +38,7 @@ public class Top_Fly : Enemy
 
 
     //랜덤 움직임
-    /*
+    
     protected void Prwol()
     {
         Vector3 moveRan = new Vector3(xRan, yRan, transform.position.z);
@@ -46,7 +47,7 @@ public class Top_Fly : Enemy
 
     //랜덤 움직임 검사
     protected IEnumerator checkPosi(float randRange)
-    {
+    {        
         while (true)
         {
             yield return new WaitForSeconds(fTime);
@@ -57,5 +58,5 @@ public class Top_Fly : Enemy
             yRan = Random.Range(y + randRange, y - randRange);
         }
     }
-    */
+    
 }

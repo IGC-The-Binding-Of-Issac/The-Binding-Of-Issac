@@ -6,6 +6,7 @@ public class Enemy : MonoBehaviour
 {
     [HideInInspector]
     protected string dieParameter;
+    protected Animator animator;
 
     [Header("Enemy State")]
     public bool playerInRoom;
