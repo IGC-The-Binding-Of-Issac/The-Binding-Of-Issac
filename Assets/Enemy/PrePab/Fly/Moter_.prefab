@@ -120,7 +120,7 @@ GameObject:
   - component: {fileID: -7885813503397330244}
   - component: {fileID: 830135226742380364}
   m_Layer: 0
-  m_Name: Moter
+  m_Name: Moter_
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
