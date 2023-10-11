@@ -33,7 +33,7 @@ public class FirePlace : MonoBehaviour
         int rd = Random.Range(0, 3);
         if (rd == 0)
         {
-            Instantiate(ItemManager.instance.itemTable.ObjectBreak(), transform.position, Quaternion.identity);
+            GameObject it = Instantiate(ItemManager.instance.itemTable.ObjectBreak(), transform.position, Quaternion.identity) as GameObject;
         }
     }
 

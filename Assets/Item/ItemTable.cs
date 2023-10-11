@@ -12,6 +12,7 @@ public class ItemTable : MonoBehaviour
     GameObject[] PassiveItems; // 패시브 아이템
 
 
+
     public GameObject ObjectBreak() // 오브젝트 부쉈을때
     {
         int rd = Random.Range(0, DropItems.Length-1);
