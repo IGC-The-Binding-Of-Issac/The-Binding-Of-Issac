@@ -30,9 +30,7 @@ public class FirePlace : MonoBehaviour
     }
     void ItemDrop()
     {
-        Debug.Log("itemDrop()");
         int rd = Random.Range(0, 3);
-        Debug.Log("rd : " + rd);
         if (rd == 0)
         {
             Instantiate(ItemManager.instance.itemTable.ObjectBreak(), transform.position, Quaternion.identity);

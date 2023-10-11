@@ -17,4 +17,9 @@ public class ItemTable : MonoBehaviour
         int rd = Random.Range(0, DropItems.Length-1);
         return DropItems[rd]; // 랜텀 아이템 반환 ( 열쇠 제외 )
     }
+
+    public GameObject OpenNormalChest(int rd)
+    {
+        return DropItems[rd];
+    }
 }
