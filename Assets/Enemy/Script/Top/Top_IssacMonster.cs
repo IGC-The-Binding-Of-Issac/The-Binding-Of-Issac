@@ -2,22 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Top_Fly : Enemy
+public class Top_IssacMonster : Enemy
 {
-    //Fly 이동
-    [HideInInspector] 
+    //Issac 이동
+    [HideInInspector]
     protected float x;
     protected float y;
     protected float xRan;
     protected float yRan;
-    // 랜덤 움직임 넣을 때 꼭 필요함! + 
+    // 랜덤 움직임 넣을 때 꼭 필요함! + 코두틴 실행
     protected float randRange; //랜덤으로 이동할 범위 
     protected float fTime; //랜덤이동 시간
     protected Transform justTrackingPlayerPosi; // 무조건 추적 위한 update문에서 player 실시간 받아오기
     protected bool isFlipped;
 
-    protected void Fly_Move_InitialIze()
-    { 
+    protected void Issac_Move_InitialIze()
+    {
 
         // enemy 초기 위치
         x = gameObject.transform.position.x;
@@ -41,7 +41,7 @@ public class Top_Fly : Enemy
 
 
     //랜덤 움직임
-    
+
     protected void Prwol()
     {
         Vector3 moveRan = new Vector3(xRan, yRan, transform.position.z);
@@ -50,11 +50,11 @@ public class Top_Fly : Enemy
 
     //랜덤 움직임 검사
     protected IEnumerator checkPosi(float randRange)
-    {        
+    {
         while (true)
         {
             yield return new WaitForSeconds(fTime);
-            //Debug.Log("top_fly : checkPosi실행");
+            Debug.Log("checkPosi실행");
             // x위치는 현재 위치 randRange부터 , 현재위치 -randRange까지
             // y위치 동일
             xRan = Random.Range(x + randRange, x - randRange);
@@ -63,9 +63,9 @@ public class Top_Fly : Enemy
     }
 
     // 몬스터 플립
-    public void Lookplayer() 
+    public void Lookplayer()
     {
-        if (transform.position.x > playerPos.position.x && isFlipped) 
+        if (transform.position.x > playerPos.position.x && isFlipped)
         {
             transform.Rotate(0f, 180f, 0f);
             isFlipped = false;
@@ -76,5 +76,4 @@ public class Top_Fly : Enemy
             isFlipped = true;
         }
     }
-    
 }
