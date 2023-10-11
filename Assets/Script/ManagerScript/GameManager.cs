@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
             Destroy(playerObject);
         myCamera.transform.SetParent(null);
 
-        int cnt = 10;
+        int cnt = 20;
         while (cnt-- > 0)
         {
             if (stageGenerate.CreateStage(stageSize, stageMinimunRoom))

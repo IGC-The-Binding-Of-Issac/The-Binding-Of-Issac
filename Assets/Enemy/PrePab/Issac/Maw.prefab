@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 8813060316829061490}
   - component: {fileID: 1230173364204199161}
   - component: {fileID: 5665590121307899421}
-  - component: {fileID: 2104468493467777978}
   - component: {fileID: 9074828901140206504}
   m_Layer: 0
   m_Name: Maw
@@ -160,24 +159,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &2104468493467777978
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1950736854895267324}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e58b215e4c2536f43898b6a925fcaa41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerInRoom: 0
-  hp: 0
-  moveSpeed: 0
-  playerPos: {fileID: 0}
-  state: 0
-  enemyBullet: {fileID: 5075845781784470873, guid: badefd297090b9f4098457860dee0ecc, type: 3}
 --- !u!95 &9074828901140206504
 Animator:
   serializedVersion: 5

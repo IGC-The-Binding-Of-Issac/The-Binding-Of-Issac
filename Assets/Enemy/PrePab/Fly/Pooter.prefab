@@ -100,7 +100,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 50
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -174,8 +174,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerInRoom: 0
   hp: 0
-  moveSpeed: 0
   playerPos: {fileID: 0}
+  knockBackState: 0
   state: 0
   enemyBullet: {fileID: 5075845781784470873, guid: badefd297090b9f4098457860dee0ecc, type: 3}
 --- !u!95 &1817730275653660254

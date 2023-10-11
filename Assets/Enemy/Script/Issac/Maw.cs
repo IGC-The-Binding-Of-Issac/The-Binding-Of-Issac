@@ -47,7 +47,7 @@ public class Maw : Top_IssacMonster
         //Footer
         currTime = attaackSpeed;
         oriMoveSpeed = moveSpeed;
-       
+
     }
 
     private void Update()

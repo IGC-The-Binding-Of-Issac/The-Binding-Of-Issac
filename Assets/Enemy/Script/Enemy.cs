@@ -1,4 +1,4 @@
-using System.Collections;
+ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -20,6 +20,8 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] protected Transform playerPos; //범위 내 플레이어 위치
     // Move 하위 스크립트에서 구현
+
+    [SerializeField] protected bool knockBackState = false;
     public virtual void Move() { }
 
     // 초기화
@@ -95,5 +97,11 @@ public class Enemy : MonoBehaviour
         Destroy(gameObject , waitforSecond);
     }
 
-
+    public IEnumerator knockBack()
+    {
+        knockBackState = true;
+        yield return new WaitForSeconds(0.2f);
+        knockBackState = false;
+        gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+    }
 }

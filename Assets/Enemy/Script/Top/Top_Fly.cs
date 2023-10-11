@@ -36,6 +36,9 @@ public class Top_Fly : Enemy
         if (fp == null)
             return;
 
+        if (knockBackState) // ณหน้ ป๓ลย
+            return;
+
         transform.position = Vector3.MoveTowards(transform.position, fp.transform.position, moveSpeed * Time.deltaTime);
     }
 
