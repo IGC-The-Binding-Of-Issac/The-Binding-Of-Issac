@@ -619,7 +619,7 @@ MonoBehaviour:
   - {fileID: 5916068298817973355, guid: f7c857810b34f77439c8133e63cf7985, type: 3}
   - {fileID: 4559314198158077400, guid: be43edb373b26174d996fb2a485b4985, type: 3}
   - {fileID: 2916814476264063245, guid: 7386d769531f4ea45bcd5423a59f36a4, type: 3}
-  - {fileID: 6670499893774829232, guid: 53d4fe3bf0e16934eb61a115bcc3d89c, type: 3}
+  - {fileID: 1497092268128608226, guid: 3a86222d34cf6a7449991bfee53ecf0c, type: 3}
   PassiveItems: []
 --- !u!1 &1704551913
 GameObject:
