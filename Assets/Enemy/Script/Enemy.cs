@@ -13,7 +13,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] protected float hp;
     protected float sight; //시야 범위  
     protected float searchDelay; // 일정 시간 두고 search
-    [SerializeField] protected float moveSpeed; 
+    protected float moveSpeed; 
     protected float bulletSpeed; // 총알속도
     protected float attaackSpeed; // 공격속도
     protected float waitforSecond; // 죽기전 wait

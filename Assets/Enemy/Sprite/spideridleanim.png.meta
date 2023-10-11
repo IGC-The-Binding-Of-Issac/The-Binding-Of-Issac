@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3713fbe86f4232343a465295d35d11a0
+guid: a6f625cbe76d9784d9968c584377defb
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: spidermoveanim_0
+      name: spideridleanim_0
       rect:
         serializedVersion: 2
         x: 0
@@ -124,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0a118e50109284f48a1e83acc94122cb
-      internalID: -1203584803
+      spriteID: dbbc4c42c37f09f4f8a7d046bf3e2f5f
+      internalID: 1695588589
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spidermoveanim_1
+      name: spideridleanim_1
       rect:
         serializedVersion: 2
         x: 75
@@ -145,14 +145,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e9c0d746634a2c940b043822b0670169
-      internalID: 907796171
+      spriteID: f45694d2a1cd49e4a86d1edbfa438689
+      internalID: -1457179732
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spidermoveanim_2
+      name: spideridleanim_2
       rect:
         serializedVersion: 2
         x: 150
@@ -166,14 +166,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e8c0755fa41b9d8458e0cba3d60f6dcd
-      internalID: -2032924968
+      spriteID: e1103b6fe5f60b44d92bc6586b938c0a
+      internalID: -455703273
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spidermoveanim_3
+      name: spideridleanim_3
       rect:
         serializedVersion: 2
         x: 225
@@ -187,8 +187,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 66df4b33839d37641977b8d3fac359fe
-      internalID: 627055724
+      spriteID: 580e06ee74e0bf649a59b93849dd124b
+      internalID: 745058223
       vertices: []
       indices: 
       edges: []
@@ -196,7 +196,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: f98c9c9d462e94041bd599d991bfe517
     internalID: 0
     vertices: []
     indices: 
@@ -204,10 +204,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      spidermoveanim_0: -1203584803
-      spidermoveanim_1: 907796171
-      spidermoveanim_2: -2032924968
-      spidermoveanim_3: 627055724
+      spideridleanim_0: 1695588589
+      spideridleanim_1: -1457179732
+      spideridleanim_2: -455703273
+      spideridleanim_3: 745058223
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

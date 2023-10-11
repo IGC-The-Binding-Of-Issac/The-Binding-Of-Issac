@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class Footer : Top_Fly
 {
-    // 범위 안에 들어오면 추적 + 촣알 발싸
-    // 범위 안에 없으면 랜덤 움직임
-   
     enum FooterState 
     {
         // Idle
@@ -21,7 +18,6 @@ public class Footer : Top_Fly
     float currTime;
     float oriMoveSpeed;
 
-
     // 작은 범위 랜덤 움직임 + 플레이어가 안에 들어오면 추적
     void Start()
     {
@@ -33,15 +29,15 @@ public class Footer : Top_Fly
         //Enemy
         animator = GetComponent<Animator>();
         hp = 5f;
-        sight = 4f;
+        sight = 5f;
         moveSpeed = 1.5f;
         waitforSecond = 0.5f;
         attaackSpeed = 3f; // idle <-> Shoot
 
         //TopFly
-        randRange = 1f;
+        randRange = 2f;
         fTime = 0.5f;
-        StartCoroutine(checkPosi(randRange));
+
 
         //Footer
         currTime = attaackSpeed;
@@ -53,7 +49,7 @@ public class Footer : Top_Fly
         if (playerInRoom)
         {
             Move();
-
+            StartCoroutine(checkPosi(randRange));
             //플레이어가 범위 안에 없을 때
             if (!PlayerSearch())
             {
@@ -68,15 +64,12 @@ public class Footer : Top_Fly
                 if (currTime > 0)
                 {
                     state = FooterState.PooteTracking;
-                    Lookplayer();
-                    moveSpeed = oriMoveSpeed;
                     return;
                 }
 
                 else if (currTime <= 0)
                 {
                     state = FooterState.PooteShoot;
-                    //moveSpeed = 0;
                     animator.SetTrigger("isShoot");
                     currTime = attaackSpeed;
                 }
@@ -107,11 +100,5 @@ public class Footer : Top_Fly
     void PooterShoot() 
     {
         GameObject bulletobj = Instantiate(enemyBullet , transform.position , Quaternion.identity);
-    }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, sight);
     }
 }

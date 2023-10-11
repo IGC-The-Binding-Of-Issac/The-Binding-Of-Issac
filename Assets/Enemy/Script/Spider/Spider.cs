@@ -4,17 +4,7 @@ using UnityEngine;
 
 public class Spider : Top_Spider
 {
-    //  랜덤 움직임 + 플레이어 감지하면 플레이어한테 지그재그로 따라가기(?)
-    enum SpiderState
-    {
-        iDle , //가만히
-        Move , // 움직임
-        Tracking // 추적
-
-    }
-    [SerializeField] SpiderState state;
-    float currTime;
-
+    // Start is called before the first frame update
     void Start()
     {
         Spider_Move_InitialIze();
@@ -29,31 +19,20 @@ public class Spider : Top_Spider
         waitforSecond = 0.5f;
 
         //상위 Top_Spider
-        randRange = 2f;
-        fTime = 0.5f; 
-        StartCoroutine(checkPosi(randRange));
-        
-        currTime = fTime;
+        randRange = 5f;
+        fTime = 0.5f;
     }
 
     void Update()
     {
         if (playerInRoom)
-        {
             Move();
-
-
-        }
-
-
     }
 
     public override void Move()
     {
-        Prwol();
+
     }
-
-
 
     // 범위보기
     private void OnDrawGizmos()
