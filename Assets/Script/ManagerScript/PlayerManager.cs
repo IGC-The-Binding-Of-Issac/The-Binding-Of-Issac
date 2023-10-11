@@ -52,21 +52,25 @@ public class PlayerManager : MonoBehaviour
         }            
     }
 
+    //피격 딜레이
     IEnumerator HitDelay()
     {
         playerObj = GameManager.instance.playerObject;
 
+        //피격 숫자만큼 딜레이
         yield return new WaitForSeconds(hitDelay);
 
         int countTime = 0;
 
         while(countTime < 10)
         {
+            //countTIme%2 == 0이면 플레이어 모습이 보임
             if (countTime%2 == 0)
             {
                 playerObj.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
                 playerObj.transform.GetChild(1).gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
             }
+            //countTIme%2 != 0이면 플레이어 모습이 안보임
             else
             {
                 playerObj.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
@@ -76,9 +80,11 @@ public class PlayerManager : MonoBehaviour
 
             yield return new WaitForSeconds(0.1f);
         }
+        //while문 실행 후 모습이 보임
         playerObj.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
         playerObj.transform.GetChild(1).gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
-
+        
+        //피격 판정 됨
         CanGetDamage = true;
     }        
 }
