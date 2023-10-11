@@ -15,14 +15,12 @@ public class Hive : Enemy
         playerInRoom = false;
         dieParameter = "isDie";
 
+        //Enemy
         hp = 10f;
         sight = 3f;
         moveSpeed = 5f;
         waitforSecond = 0.5f;
 
-
-        x = gameObject.transform.position.x;
-        y = gameObject.transform.position.y;
     }
 
     void Update()
@@ -35,17 +33,7 @@ public class Hive : Enemy
     {
 
         //플레이어가 범위 안에 들어오면
-        if (PlayerSearch()) 
-        {
-
-            x = gameObject.transform.position.x;
-            y = gameObject.transform.position.y;
-            hiveMoveToX = (x - playerPos.transform.position.x) * 2; // hive 위치 - 플레이어 x
-            hiveMoveToY = (y - playerPos.transform.position.y) * 2; // hive 위치 - 플레이어 y
-
-            Vector3 vector3 = new Vector3(hiveMoveToX, hiveMoveToY, 0);
-            transform.position = Vector3.MoveTowards(transform.position, vector3, moveSpeed * Time.deltaTime);
-        }
+        
 
     }
 

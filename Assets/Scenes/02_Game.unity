@@ -188,6 +188,7 @@ Transform:
   - {fileID: 1251611851}
   - {fileID: 1662163138}
   - {fileID: 1991369605}
+  - {fileID: 926169543}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &288396948
@@ -472,7 +473,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 234069467}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1043015902
 GameObject:
@@ -710,8 +711,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefabs:
+  - {fileID: 4487783121691819913, guid: 7b81fc2038c0a1d49a5fb4450c995b69, type: 3}
+  - {fileID: 1950736854895267324, guid: 6dd011548e2be7040b01c46cf573648c, type: 3}
   - {fileID: 7229639532422697358, guid: 3913fec5d6b5d5e4ea56aca55f44a03e, type: 3}
-  - {fileID: 1720860795533406565, guid: d880814457f8d394f83e055f7df6f14e, type: 3}
   bossPrefabs:
   - {fileID: 7229639532422697358, guid: 3913fec5d6b5d5e4ea56aca55f44a03e, type: 3}
   - {fileID: 7229639532422697358, guid: 3913fec5d6b5d5e4ea56aca55f44a03e, type: 3}
@@ -852,5 +854,4 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1975172987}
-  - {fileID: 926169543}
   - {fileID: 234069467}
