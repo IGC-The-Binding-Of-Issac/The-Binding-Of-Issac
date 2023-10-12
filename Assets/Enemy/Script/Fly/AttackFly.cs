@@ -33,6 +33,4 @@ public class AttackFly : Top_Fly
     {
         Tracking(justTrackingPlayerPosi);
     }
-
-
 }
