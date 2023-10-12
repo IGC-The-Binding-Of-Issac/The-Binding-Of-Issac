@@ -44,6 +44,9 @@ public class FirePlace : MonoBehaviour
         {
             PlayerManager.instance.GetDamage();
         }
-        // 몬스터에게 데미지주기 작성 필요.
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            collision.gameObject.GetComponent<Enemy>().GetDamage(1);
+        }
     }
 }
