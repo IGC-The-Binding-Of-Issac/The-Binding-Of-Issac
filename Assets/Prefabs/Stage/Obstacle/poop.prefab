@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -6694399141595281698}
   - component: {fileID: 5272254017419331566}
   - component: {fileID: -1548540098735816166}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: poop
   m_TagString: Object_Poop
   m_Icon: {fileID: 0}

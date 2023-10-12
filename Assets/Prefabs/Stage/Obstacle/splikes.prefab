@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8572517472700572829}
   - component: {fileID: -2593688523653703239}
   - component: {fileID: 940873197451349488}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: splikes
   m_TagString: Object_Spikes
   m_Icon: {fileID: 0}

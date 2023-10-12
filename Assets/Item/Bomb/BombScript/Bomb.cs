@@ -1,4 +1,4 @@
-using System;
+ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
@@ -74,7 +74,7 @@ public class PutBomb : MonoBehaviour
             }
             if(collision.CompareTag("Enemy"))
             {
-                // 터졌을때 적에게 데미지 100 죽기.
+                collision.GetComponent<Enemy>().GetDamage(100);
             }
             if(collision.CompareTag("Player"))
             {
