@@ -32,7 +32,7 @@ public class Footer : Top_Fly
 
         //Enemy
         animator = GetComponent<Animator>();
-        hp = 5f;
+        hp = 1f;
         sight = 4f;
         moveSpeed = 1.5f;
         waitforSecond = 0.5f;
