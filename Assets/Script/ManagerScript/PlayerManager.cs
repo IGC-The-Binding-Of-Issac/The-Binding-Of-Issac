@@ -29,7 +29,6 @@ public class PlayerManager : MonoBehaviour
     GameObject playerObj;
     bool CanGetDamage = true; // 데미지를 받을 수 있는지 확인.
     float hitDelay = .5f; // 피격 딜레이
-
     public void Start()
     {
 
@@ -52,6 +51,8 @@ public class PlayerManager : MonoBehaviour
         }            
     }
 
+
+
     //피격 딜레이
     IEnumerator HitDelay()
     {
@@ -62,7 +63,7 @@ public class PlayerManager : MonoBehaviour
 
         int countTime = 0;
 
-        while(countTime < 10)
+        while(countTime < 14)
         {
             //countTIme%2 == 0이면 플레이어 모습이 보임
             if (countTime%2 == 0)

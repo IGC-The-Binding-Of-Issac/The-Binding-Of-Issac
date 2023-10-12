@@ -102,7 +102,7 @@ public class Tear : MonoBehaviour
             //ÃÑ¾Ë ¹æÇâ
             Vector2 direction = gameObject.transform.GetComponent<Rigidbody2D>().velocity;
             StartCoroutine(collision.gameObject.GetComponent<Enemy>().knockBack());
-            collision.gameObject.GetComponent<Rigidbody2D>().AddForce(direction*300);
+            collision.gameObject.GetComponent<Rigidbody2D>().AddForce(direction*200);
         }
     }
 }
