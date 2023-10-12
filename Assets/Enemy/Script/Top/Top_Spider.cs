@@ -5,17 +5,23 @@ using UnityEngine;
 
 public class Top_Spider : Enemy
 {
-    //Issac 이동
+    //Spider 이동
     [HideInInspector]
     protected float x;
     protected float y;
     protected float xRan;
     protected float yRan;
+
     // 랜덤 움직임 넣을 때 꼭 필요함! + 코두틴 실행
     protected float randRange; //랜덤으로 이동할 범위 
     protected float fTime; //랜덤이동 시간
+    
+    // 무조건 Tracking!
     protected Transform justTrackingPlayerPosi; // 무조건 추적 위한 update문에서 player 실시간 받아오기
     protected bool isFlipped;
+
+    // Top_issac , Top_Fly 의 public void Lookplayer()
+    // Spider에 특수 public void Lookplayer(Transform fp) : fp를 받아옴
 
     protected void Spider_Move_InitialIze()
     {
@@ -64,14 +70,14 @@ public class Top_Spider : Enemy
     }
 
     // 몬스터 플립
-    public void Lookplayer()
+    public void Lookplayer(Transform fp)
     {
-        if (transform.position.x > playerPos.position.x && isFlipped)
+        if (transform.position.x > fp.position.x && isFlipped)
         {
             transform.Rotate(0f, 180f, 0f);
             isFlipped = false;
         }
-        else if (transform.position.x < playerPos.position.x && !isFlipped)
+        else if (transform.position.x < fp.position.x && !isFlipped)
         {
             transform.Rotate(0f, 180f, 0f);
             isFlipped = true;
