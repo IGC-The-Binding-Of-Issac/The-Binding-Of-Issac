@@ -82,7 +82,7 @@ public class Enemy : MonoBehaviour
     }
 
     // hp°Ë»ç
-    bool IsDead()
+    protected bool IsDead()
     {
         if (hp <= 0)
         {

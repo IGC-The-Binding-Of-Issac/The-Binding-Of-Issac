@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Moter : Top_Fly
 {
+    [SerializeField ]GameObject attackFly;
+
     void Start()
     {
         Fly_Move_InitialIze();
@@ -12,7 +14,7 @@ public class Moter : Top_Fly
         dieParameter = "isDie";
 
         //Enemy
-        hp = 5f;
+        hp = 8f;
         sight = 5f;
         moveSpeed = 0.5f;
         waitforSecond = 0.5f;
@@ -28,11 +30,24 @@ public class Moter : Top_Fly
         {
             Move();
         }
+
+
+    }
+    void OnDestroy()
+    {
+        GenerateAttackFly();
+        GenerateAttackFly();
     }
 
     override public void Move()
     {
         Tracking(justTrackingPlayerPosi);
+    }
+
+    void GenerateAttackFly() 
+    {
+        GameObject obj = Instantiate(attackFly, transform.position, Quaternion.identity);
+
     }
 
 }

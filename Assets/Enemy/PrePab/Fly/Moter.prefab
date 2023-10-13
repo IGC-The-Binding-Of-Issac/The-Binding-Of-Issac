@@ -119,6 +119,7 @@ GameObject:
   - component: {fileID: 6279052219715307882}
   - component: {fileID: -7885813503397330244}
   - component: {fileID: 830135226742380364}
+  - component: {fileID: 2804457331011717979}
   m_Layer: 0
   m_Name: Moter
   m_TagString: Enemy
@@ -229,8 +230,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerInRoom: 0
   hp: 0
+  moveSpeed: 0
   playerPos: {fileID: 0}
   knockBackState: 0
+  attackFly: {fileID: 7229639532422697358, guid: 3913fec5d6b5d5e4ea56aca55f44a03e, type: 3}
 --- !u!212 &830135226742380364
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -283,6 +286,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &2804457331011717979
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7809647596073497508}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f677dc06d6b47f0499854772ce555db6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8975933746982286286
 GameObject:
   m_ObjectHideFlags: 0
