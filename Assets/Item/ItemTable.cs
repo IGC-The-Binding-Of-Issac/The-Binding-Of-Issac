@@ -23,4 +23,6 @@ public class ItemTable : MonoBehaviour
     {
         return DropItems[rd];
     }
+
+    //* 보유 현황에 따른 아이템 중복 드랍 방지
 }
