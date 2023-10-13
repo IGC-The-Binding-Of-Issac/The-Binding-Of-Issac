@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 98157da08f213ce4db1f7361cdfeb61e
+guid: a8013822653b91142a84fbb55c81a828
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sucker_0
+      name: monster_014_moterfly_0
       rect:
         serializedVersion: 2
-        x: 7
-        y: 8
-        width: 19
-        height: 18
+        x: 4
+        y: 43
+        width: 23
+        height: 11
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9b70a57e16e93c148bc54998bbe396e0
-      internalID: -2097901785
+      spriteID: d97139e7f6aea0e4da3bce7deaa95bfd
+      internalID: -1631101895
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sucker_1
+      name: monster_014_moterfly_1
       rect:
         serializedVersion: 2
-        x: 41
-        y: 8
-        width: 15
-        height: 23
+        x: 35
+        y: 44
+        width: 25
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,8 +145,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9725512f32d3a6b42912c24e7e95a805
-      internalID: 790914379
+      spriteID: e0cf2f7bb36db6849a458f7fad011c74
+      internalID: 1564028378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_014_moterfly_2
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 11
+        width: 23
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2191122666422849955d79bb7d47f73
+      internalID: 749585780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_014_moterfly_3
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 12
+        width: 25
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b89d1bb1a2dc724488c5851907e5320
+      internalID: -442896988
       vertices: []
       indices: 
       edges: []
@@ -154,7 +196,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 32c91d9927a521a4983fb148fdd8117f
+    spriteID: aec1d4e8b985d0e4d8672dd7b7a17ff3
     internalID: 0
     vertices: []
     indices: 
@@ -162,8 +204,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Sucker_0: -2097901785
-      Sucker_1: 790914379
+      monster_014_moterfly_0: -1631101895
+      monster_014_moterfly_1: 1564028378
+      monster_014_moterfly_2: 749585780
+      monster_014_moterfly_3: -442896988
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
