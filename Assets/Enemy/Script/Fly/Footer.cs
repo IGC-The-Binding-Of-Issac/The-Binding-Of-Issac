@@ -32,7 +32,7 @@ public class Footer : Top_Fly
 
         //Enemy
         animator = GetComponent<Animator>();
-        hp = 1f;
+        hp = 8f;
         sight = 4f;
         moveSpeed = 1.5f;
         waitforSecond = 0.5f;
@@ -106,7 +106,7 @@ public class Footer : Top_Fly
     // АјАн
     void PooterShoot() 
     {
-        GameObject bulletobj = Instantiate(enemyBullet , transform.position , Quaternion.identity);
+        GameObject bulletobj = Instantiate(enemyBullet , transform.position + new Vector3(0,-0.1f,0) , Quaternion.identity);
     }
 
     private void OnDrawGizmos()
