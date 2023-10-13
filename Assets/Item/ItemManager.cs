@@ -26,7 +26,7 @@ public class ItemManager : MonoBehaviour
     public bool[] PassiveItems; // 패시브 아이템 보유 현황
     /*
      * 3. 보유 현황에 따른 시너지 효과를 작성해줘야함.
-     * 4. 보유 현황에 따른 플레이어의 이미지 리소스를 변경해줘야함.(보류)
+     * 4. 현재 보유중인 아이템만 적용되는 플레이어의 이미지 리소스 변경
     */
 
     [Header("unique Item State")]

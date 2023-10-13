@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 6682325379063074225}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: 0.7071068, w: -0.7071068}
-  m_LocalPosition: {x: 0.15, y: 0, z: 0}
+  m_LocalPosition: {x: 0.15, y: -0.122, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -229,6 +229,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerInRoom: 0
   hp: 0
+  moveSpeed: 0
   playerPos: {fileID: 0}
   knockBackState: 0
 --- !u!212 &830135226742380364
@@ -310,7 +311,7 @@ Transform:
   m_GameObject: {fileID: 8975933746982286286}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: -0.7071068, z: 0, w: 0}
-  m_LocalPosition: {x: -0.3, y: 0, z: 0}
+  m_LocalPosition: {x: -0.3, y: -0.122, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

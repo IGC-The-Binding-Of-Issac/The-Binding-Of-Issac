@@ -96,8 +96,6 @@ GameObject:
   - component: {fileID: 4797782401064755294}
   - component: {fileID: 5123890859065688872}
   - component: {fileID: 2782523265263768803}
-  - component: {fileID: -7019429795273586630}
-  - component: {fileID: 4223058166343553064}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -142,6 +140,7 @@ MonoBehaviour:
   getItem: {fileID: 8517082362525743426}
   itemPosition: {fileID: 2012892397273447166}
   tearPrefab: {fileID: 5114894525887414092, guid: ba1b1ea4a7a80f44185689dfb5626760, type: 3}
+  bloodOfTheMartyr: {fileID: 5781859088273593804, guid: f826411f526a7f541a7cd79900e56261, type: 3}
 --- !u!50 &5123890859065688872
 Rigidbody2D:
   serializedVersion: 4
@@ -214,36 +213,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.491564, y: 0.3503828}
   m_EdgeRadius: 0
---- !u!114 &-7019429795273586630
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3456105446347801266}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed8b1ae4e4e52b34ea557c1c11e076fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_CategoryHash: 0
-  m_labelHash: 0
-  m_SpriteKey: 0
-  m_SpriteHash: 0
---- !u!114 &4223058166343553064
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3456105446347801266}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c29cff538c195c249b69c6f2236de67b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Library: []
-  m_SpriteLibraryAsset: {fileID: 0}
 --- !u!1 &6648732191227041327
 GameObject:
   m_ObjectHideFlags: 0

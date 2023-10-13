@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D playerRB;
 
     public GameObject tearPrefab;
+    public GameObject bloodOfTheMartyr;
     GameObject tear;
 
     float tearSpeed;
@@ -41,6 +42,10 @@ public class PlayerController : MonoBehaviour
 
         InstallBomb();
 
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            GetItem();
+        }
     }
     void FixedUpdate()
     {
@@ -304,5 +309,11 @@ public class PlayerController : MonoBehaviour
                 bomb.name = "Putbomb"; // 생성된 폭탄 오브젝트 이름 변경
             }
         }
+    }
+
+    void GetItem()
+    {
+        bloodOfTheMartyr = Instantiate(bloodOfTheMartyr, this.transform.position, Quaternion.identity);
+        bloodOfTheMartyr.transform.parent = this.transform;
     }
 }

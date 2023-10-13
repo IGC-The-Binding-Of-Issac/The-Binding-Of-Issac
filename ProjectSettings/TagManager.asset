@@ -50,3 +50,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Player
+    uniqueID: 64056851
+    locked: 0
+  - name: Enemy
+    uniqueID: 4230773343
+    locked: 0
+  - name: New Layer 3
+    uniqueID: 529871533
+    locked: 0
