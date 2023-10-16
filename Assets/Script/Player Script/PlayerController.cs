@@ -34,13 +34,9 @@ public class PlayerController : MonoBehaviour
         tearSpeed = PlayerManager.instance.playerTearSpeed;
         shotDelay = PlayerManager.instance.playerShotDelay;
 
-
         MoveAnim();
-
         ShotAnim();
-
         InstallBomb();
-
     }
     void FixedUpdate()
     {
