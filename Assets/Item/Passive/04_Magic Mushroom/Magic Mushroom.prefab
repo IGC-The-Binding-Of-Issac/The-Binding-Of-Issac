@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4076223611060604299}
   - component: {fileID: 6331391738702669073}
   - component: {fileID: 733245267633416692}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Magic Mushroom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -161,3 +161,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16950f862fc453e4cb2e4a45c98c3935, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isTrinket: 0

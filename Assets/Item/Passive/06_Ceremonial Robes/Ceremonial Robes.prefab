@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1029854940541786844}
   - component: {fileID: 4611945782098229908}
   - component: {fileID: 2989604024850751628}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Ceremonial Robes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -161,4 +161,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec0f63165c2a3af459d56a9463c9bcec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemCode: 0
+  isTrinket: 0

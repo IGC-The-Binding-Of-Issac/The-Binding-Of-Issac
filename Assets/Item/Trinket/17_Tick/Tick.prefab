@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4352718659159912720}
   - component: {fileID: 3489673822463460715}
   - component: {fileID: 4195770833123922289}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Tick
   m_TagString: Trinket
   m_Icon: {fileID: 0}

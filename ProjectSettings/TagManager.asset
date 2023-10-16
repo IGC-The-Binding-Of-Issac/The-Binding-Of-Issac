@@ -25,6 +25,12 @@ TagManager:
   - Rock
   - Spike
   - FlyEnemy
+  - SpiderEnemy
+  - IsaacEnemy
+  - Player
+  - Item
+  - Chest
+  - OpenChest
   - 
   - 
   - 
@@ -39,13 +45,7 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - NoCollision
   m_SortingLayers:
   - name: Default
     uniqueID: 0

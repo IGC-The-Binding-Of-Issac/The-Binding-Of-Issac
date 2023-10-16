@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7281538339318096752}
   - component: {fileID: 6229121299887379996}
   - component: {fileID: 3053127381778333685}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: The Wafer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cc294c50d6229743b1374c5a704ae67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemCode: 0
+  isTrinket: 0
 --- !u!50 &6229121299887379996
 Rigidbody2D:
   serializedVersion: 4

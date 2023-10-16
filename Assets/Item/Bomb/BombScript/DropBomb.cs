@@ -22,10 +22,11 @@ public class DropBomb : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
+            gameObject.layer = 31; // 플레이어와 충돌하지않는 레이어
             gb.SetTrigger("GetBomb");
             ItemManager.instance.bombCount++;
         }

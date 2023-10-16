@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4104633589512449799}
   - component: {fileID: 477901000661842131}
   - component: {fileID: 1877576689829643484}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Pentagram
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -161,4 +161,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a31d122ec8142604b951ecb380f8c8c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemCode: 0
+  isTrinket: 0

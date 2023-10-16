@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5654579256834057814}
   - component: {fileID: 4669690670962847372}
   - component: {fileID: 1406084078137110132}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Blood Of The Martyr
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 112b8d7bbc588724d9bfedb948d8910d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isTrinket: 0
 --- !u!58 &4669690670962847372
 CircleCollider2D:
   m_ObjectHideFlags: 0

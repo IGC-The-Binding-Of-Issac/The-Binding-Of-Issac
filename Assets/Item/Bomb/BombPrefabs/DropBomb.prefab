@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5485564635957782400}
   - component: {fileID: -1458440500996308547}
   - component: {fileID: -8409140499837694631}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: DropBomb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -150,7 +150,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

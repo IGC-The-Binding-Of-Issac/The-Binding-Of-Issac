@@ -74,8 +74,8 @@ public class Tear : MonoBehaviour
         {
             gameObject.GetComponent<CircleCollider2D>().enabled = false;
             tearBoomAnim.SetTrigger("BoomTear");
-
         }
+
         //¶Ë¿¡ ¹ÚÀ¸¸é
         else if (collision.gameObject.CompareTag("Object_Poop"))
         {

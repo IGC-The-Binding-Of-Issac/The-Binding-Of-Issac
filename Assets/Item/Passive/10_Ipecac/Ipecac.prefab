@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4737012437220600149}
   - component: {fileID: 6122738717171956169}
   - component: {fileID: 6447035642172312633}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Ipecac
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -161,4 +161,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1ca4becdf468954da266ab6144d1189, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemCode: 0
+  isTrinket: 0

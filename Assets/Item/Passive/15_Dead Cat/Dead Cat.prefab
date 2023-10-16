@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6410911578560142730}
   - component: {fileID: 5423778057102287881}
   - component: {fileID: 851959445593579559}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Dead Cat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d32600aeec7fb7408bfa3032e985488, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isTrinket: 0
 --- !u!50 &5423778057102287881
 Rigidbody2D:
   serializedVersion: 4
