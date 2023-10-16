@@ -8,7 +8,6 @@ public class Tear : MonoBehaviour
 
     PlayerController playerController;
     Animator tearBoomAnim;
-    Enemy enemy;
 
     Vector3 tearPosition;
     Vector3 playerPosition;
@@ -21,14 +20,11 @@ public class Tear : MonoBehaviour
     {
         playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         tearBoomAnim = GetComponent<Animator>();
-        enemy = GetComponent<Enemy>();
     }
 
     void Update()
     {
         playerTearSize = PlayerManager.instance.playerTearSize;
-        TearRange();
-        TearSize();
     }
 
     void TearRange()
@@ -56,7 +52,7 @@ public class Tear : MonoBehaviour
 
     public void TearSize()
     {   
-        gameObject.transform.localScale = new Vector3(playerTearSize, playerTearSize, playerTearSize);
+        gameObject.transform.localScale = new Vector3(playerTearSize, playerTearSize, 0);
     }
 
     public void DestoryTear()
