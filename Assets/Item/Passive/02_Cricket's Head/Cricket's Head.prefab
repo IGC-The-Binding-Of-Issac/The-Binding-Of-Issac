@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7939695460836858144}
   - component: {fileID: 959626094009868778}
   - component: {fileID: 3975037570293189376}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Cricket's Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -161,4 +161,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 237d48c638f77de429f684f826814fd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemCode: 0
+  isTrinket: 0

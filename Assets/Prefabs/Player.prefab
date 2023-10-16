@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2012892397273447166}
   - component: {fileID: 7299434260732497174}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: ItemPosition
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 2782523265263768803}
   - component: {fileID: -7019429795273586630}
   - component: {fileID: 4223058166343553064}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -255,7 +255,7 @@ GameObject:
   - component: {fileID: 2584859350573509448}
   - component: {fileID: 3252551391157072484}
   - component: {fileID: 3640945508840410133}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: PlayerBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -361,7 +361,7 @@ GameObject:
   - component: {fileID: 2148879390031114040}
   - component: {fileID: 7669416739643823232}
   - component: {fileID: 9217049801228990111}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: PlayerHead
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -467,7 +467,7 @@ GameObject:
   - component: {fileID: 8065862828676616956}
   - component: {fileID: 8466526588264720456}
   - component: {fileID: 8517082362525743426}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: WholeBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}

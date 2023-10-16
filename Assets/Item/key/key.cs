@@ -15,11 +15,16 @@ public class key : MonoBehaviour
         rb.AddForce(new Vector2(randomX, randomY) * randomForce);
         keyAni = GetComponent<Animator>();
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player")) keyAni.SetTrigger("GetKey");
-        
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            gameObject.layer = 31;
+            keyAni.SetTrigger("GetKey");
+        }
     }
+
     public void GetKey()
     {
         ItemManager.instance.keyCount++;

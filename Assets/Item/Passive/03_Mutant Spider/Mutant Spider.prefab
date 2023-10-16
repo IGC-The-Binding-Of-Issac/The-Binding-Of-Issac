@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2193339841415844612}
   - component: {fileID: 3802197552400937877}
   - component: {fileID: 8118951098704865184}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Mutant Spider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -161,4 +161,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99c4e76f74412834c9ee79238cfa5c93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemCode: 0
+  isTrinket: 0

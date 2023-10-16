@@ -23,8 +23,8 @@ public class Heart : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player") && PlayerManager.instance.playerHp < PlayerManager.instance.playerMaxHp)
-        {       
-            cl.enabled = false;
+        {
+            gameObject.layer = 31;
             PlayerManager.instance.playerHp++;
             StartCoroutine(getHeart());
         }

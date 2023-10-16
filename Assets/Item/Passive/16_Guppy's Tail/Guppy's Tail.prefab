@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1247748040832671269}
   - component: {fileID: 7536248068810989597}
   - component: {fileID: 1032659174732676501}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Guppy's Tail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -161,3 +161,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 826813a55dacf2f48a8076ac4af7f329, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isTrinket: 0

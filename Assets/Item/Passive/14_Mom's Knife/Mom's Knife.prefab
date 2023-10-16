@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8574479928509860221}
   - component: {fileID: 7676037171539303172}
   - component: {fileID: 6905956332746166231}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Mom's Knife
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 524c99ccf51ab954e9a863725cec8bf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isTrinket: 0
 --- !u!50 &7676037171539303172
 Rigidbody2D:
   serializedVersion: 4

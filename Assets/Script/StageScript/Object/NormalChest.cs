@@ -7,18 +7,21 @@ public class NormalChest : MonoBehaviour
     [Header("Unity Setup")]
     [SerializeField] Sprite openChestSprite;
 
-    bool chestState = true;
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.CompareTag("Player")) // 풀래아와 충돌시
-        {
-            if(chestState) // 이미 열린상자인지 체크 
+            if(collision.gameObject.CompareTag("Player")) // 풀래아와 충돌시
             {
                 gameObject.GetComponent<SpriteRenderer>().sprite = openChestSprite; // 열린상자 이미지로 변경
-                chestState = false; // 열린상태로 전환
                 OpenChest(); // 드랍 아이템 생성
+                StartCoroutine(StopChest());
             }
-        }
+    }
+
+    IEnumerator StopChest()
+    {
+        gameObject.layer = 16;
+        yield return new WaitForSeconds(0.8f);
+        gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
     }
 
     void OpenChest()

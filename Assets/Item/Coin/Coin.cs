@@ -19,10 +19,11 @@ public class Coin : MonoBehaviour
         cl.enabled = false;
     }
 
-    public void OnTriggerEnter2D(Collider2D Collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (Collision.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
+            gameObject.layer = 31; // 플레이어와 충돌하지않는 레이어
             coin_animator.SetTrigger("GetCoin");
             ItemManager.instance.coinCount++;
         }
