@@ -13,7 +13,8 @@ public class Top_IssacMonster : Enemy
     // 랜덤 움직임 넣을 때 꼭 필요함! + 코두틴 실행
     protected float randRange; //랜덤으로 이동할 범위 
     protected float fTime; //랜덤이동 시간
-    protected Transform justTrackingPlayerPosi; // 무조건 추적 위한 update문에서 player 실시간 받아오기
+
+    [SerializeField] protected Transform justTrackingPlayerPosi; // 무조건 추적 위한 update문에서 player 실시간 받아오기
     protected bool isFlipped;
 
     protected void Issac_Move_InitialIze()

@@ -22,6 +22,11 @@ public class Enemy : MonoBehaviour
     // Move 하위 스크립트에서 구현
 
     [SerializeField] protected bool knockBackState = false;
+
+
+    // 방 정보 오브젝트
+    public GameObject roomInfo;
+
     public virtual void Move() { }
 
     // 초기화

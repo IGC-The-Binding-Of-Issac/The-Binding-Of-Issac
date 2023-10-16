@@ -5,9 +5,9 @@ using UnityEngine.Playables;
 
 public enum TrideState 
 {
-    Idle,
-    Tracking, // 추적
-    Jump // 점프
+    TrideIdle,
+    TrideTracking, // 추적
+    TrideJump // 점프
 }
 
 
@@ -25,10 +25,13 @@ public class Tride : Top_Spider
     float jumpCoolTIme;
     float oriSpeed;
     float jumpSpeed;
+    float trideX;
+    float trideY;
+    float trideZ;
 
     void Start()
     {
-        ChageState(TrideState.Idle); //초기 상태는 가만히 있는, 
+        ChageState(TrideState.TrideIdle); //초기 상태는 가만히 있는, 
         Spider_Move_InitialIze();
 
         playerInRoom = false;
@@ -68,19 +71,19 @@ public class Tride : Top_Spider
         currTime += Time.deltaTime;
         if (currTime < attaackSpeed)
         {
-            ChageState(TrideState.Tracking);
+            ChageState(TrideState.TrideTracking);
         }
         else if (currTime <attaackSpeed + jumpCoolTIme)
         {
 
-            ChageState(TrideState.Jump);
+            ChageState(TrideState.TrideJump);
         }
         else
         {
             // 타이머를 재설정하고 "Tracking" 상태로 돌아감
             animator.SetBool("isJump", false);
             currTime = 0;
-            ChageState(TrideState.Tracking);
+            ChageState(TrideState.TrideTracking);
         }
 
 
@@ -124,7 +127,20 @@ public class Tride : Top_Spider
             //Tride가 점프하는 코드
             yield return null;
 
-
         }
+    }
+
+    void TrideJump() 
+    {
+        // 목표 위치 받아옴 (플레이어 위치)
+
+        trideX = justTrackingPlayerPosi.position.x;
+        trideY = justTrackingPlayerPosi.position.y;
+        trideZ = justTrackingPlayerPosi.position.z;
+
+        // x축 , y축 플레이어 방향으로 tracking하듯이
+        // z측 : 그냥 바로 1로 만들었다가 끝나면 0으로 바꾸기
+
+
     }
 }

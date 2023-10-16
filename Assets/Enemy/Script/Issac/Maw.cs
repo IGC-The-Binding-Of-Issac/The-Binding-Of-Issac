@@ -3,21 +3,23 @@ using System.Collections.Generic;
 using System.Data.Common;
 using UnityEngine;
 
+enum MawState
+{
+    // Idle
+    MawProwl,
+    // 총 쏘는
+    MawShoot,
+    //추적
+    MawTracking
+}
+
 public class Maw : Top_IssacMonster
 {
     // 범위 안에 들어오면 추적 + 촣알 발싸
     // 범위 안에 없으면 랜덤 움직임
     // Pooter와 코드 같음
 
-    enum MawState
-    {
-        // Idle
-        PooterProwl,
-        // 총 쏘는
-        PooteShoot,
-        //추적
-        PooteTracking
-    }
+
     [SerializeField] MawState state;
     [SerializeField] GameObject enemyBullet; //총알 프리팹
     float currTime;
@@ -36,7 +38,7 @@ public class Maw : Top_IssacMonster
         hp = 5f;
         sight = 4f;
         moveSpeed = 1.5f;
-        waitforSecond = 0.5f;
+        waitforSecond = 1f;
         attaackSpeed = 3f; // idle <-> Shoot
 
         //TopFly
@@ -58,7 +60,7 @@ public class Maw : Top_IssacMonster
             //플레이어가 범위 안에 없을 때
             if (!PlayerSearch())
             {
-                state = MawState.PooterProwl;
+                state = MawState.MawProwl;
                 return;
             }
 
@@ -68,15 +70,15 @@ public class Maw : Top_IssacMonster
                 currTime -= Time.deltaTime;
                 if (currTime > 0)
                 {
-                    state = MawState.PooteTracking;
+                    state = MawState.MawTracking;
                     Lookplayer();
-                    moveSpeed = oriMoveSpeed;
+                    //moveSpeed = oriMoveSpeed;
                     return;
                 }
 
                 else if (currTime <= 0)
                 {
-                    state = MawState.PooteShoot;
+                    state = MawState.MawShoot;
                     //moveSpeed = 0;
                     //animator.SetTrigger("isShoot");
                     currTime = attaackSpeed;
@@ -91,13 +93,13 @@ public class Maw : Top_IssacMonster
     {
         switch (state)
         {
-            case MawState.PooterProwl:
+            case MawState.MawProwl:
                 Prwol();
                 break;
-            case MawState.PooteShoot:
-                PooterShoot();
+            case MawState.MawShoot:
+                MawShoot();
                 break;
-            case MawState.PooteTracking:
+            case MawState.MawTracking:
                 Tracking(playerPos);
                 break;
         }
@@ -105,7 +107,7 @@ public class Maw : Top_IssacMonster
     }
 
     // 공격
-    void PooterShoot()
+    void MawShoot()
     {
         GameObject bulletobj = Instantiate(enemyBullet, transform.position, Quaternion.identity);
     }

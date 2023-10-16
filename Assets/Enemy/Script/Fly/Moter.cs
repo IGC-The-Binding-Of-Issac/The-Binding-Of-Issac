@@ -46,8 +46,8 @@ public class Moter : Top_Fly
 
     void GenerateAttackFly() 
     {
-        GameObject obj = Instantiate(attackFly, transform.position, Quaternion.identity);
-
+        GameObject obj = Instantiate(attackFly, transform.position, Quaternion.identity) as GameObject;
+        roomInfo.GetComponent<Room>().enemis.Add(obj);
     }
 
 }
