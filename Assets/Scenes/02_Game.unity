@@ -242,6 +242,8 @@ MonoBehaviour:
   playerDamage: 1
   playerRange: 5
   playerTearSize: 1
+  playerSize: 1
+  tearObj: {fileID: 5114894525887414092, guid: ba1b1ea4a7a80f44185689dfb5626760, type: 3}
 --- !u!1 &351783601
 GameObject:
   m_ObjectHideFlags: 0
