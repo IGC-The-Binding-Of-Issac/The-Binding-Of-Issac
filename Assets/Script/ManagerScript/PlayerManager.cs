@@ -18,15 +18,17 @@ public class PlayerManager : MonoBehaviour
 
     [Header("Player Stat")]
     public int playerHp = 6; // 현재 체력
-    public int playerMaxHp = 6; // 최대체력
-    public float playerMoveSpeed = 5f; // 이동속도
-    public float playerTearSpeed = 6f; // 투사체속도
-    public float playerShotDelay = 0.5f; // 공격딜레이
+    public int playerMaxHp = 6; // 최대 체력
+    public float playerMoveSpeed = 5f; // 이동 속도
+    public float playerTearSpeed = 6f; // 투사체 속도
+    public float playerShotDelay = 0.5f; // 공격 딜레이
     public float playerDamage = 1f; // 데미지
     public float playerRange = 5f; // 사거리
     public float playerTearSize = 1f; //눈물 크기
+    public float playerSize = 1f; //캐릭터 크기
 
     GameObject playerObj;
+    public GameObject tearObj;
     bool CanGetDamage = true; // 데미지를 받을 수 있는지 확인.
     float hitDelay = .5f; // 피격 딜레이
 
@@ -34,7 +36,7 @@ public class PlayerManager : MonoBehaviour
 
     public void Start()
     {
-
+        
     }
     public void GetDamage()
     {
@@ -53,8 +55,6 @@ public class PlayerManager : MonoBehaviour
             }
         }            
     }
-
-
 
     //피격 딜레이
     IEnumerator HitDelay()
@@ -90,5 +90,15 @@ public class PlayerManager : MonoBehaviour
         
         //피격 판정 됨
         CanGetDamage = true;
-    }        
+    }
+    public void ChgTearSize()
+    {
+        tearObj.transform.localScale = new Vector3(playerTearSize, playerTearSize, 0);
+    }
+
+    public void ChgPlayerSize()
+    {
+        playerObj.transform.localScale = new Vector3(playerSize, playerSize, 0);
+    }
+
 }

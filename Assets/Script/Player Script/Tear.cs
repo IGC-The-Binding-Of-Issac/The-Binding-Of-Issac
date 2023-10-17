@@ -25,6 +25,7 @@ public class Tear : MonoBehaviour
     void Update()
     {
         playerTearSize = PlayerManager.instance.playerTearSize;
+        TearRange();
     }
 
     void TearRange()
