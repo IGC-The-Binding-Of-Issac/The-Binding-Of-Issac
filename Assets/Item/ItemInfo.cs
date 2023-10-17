@@ -22,7 +22,7 @@ public class ItemInfo : MonoBehaviour
                 gameObject.transform.localPosition = new Vector3(0, 0, 0);
                 Destroy(gameObject.GetComponent<Rigidbody2D>());
                 
-                StartCoroutine(collision.gameObject.GetComponent<PlayerController>().GetItemTime());
+                StartCoroutine(collision.gameObject.GetComponent<PlayerController>().GetItemTime(isTrinket));
             }
         }
     }

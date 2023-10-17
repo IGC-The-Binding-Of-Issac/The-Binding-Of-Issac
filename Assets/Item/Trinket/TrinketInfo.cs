@@ -7,33 +7,29 @@ using UnityEngine;
 
 public class TrinketInfo : MonoBehaviour
 {
+    public bool isTrinket;
+   
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player") && ItemManager.instance.TrinketItem == null)
-        // 1. 장신구 아이템을 장착하고 있지 않을 시
         {
+            isTrinket = true;
             ItemManager.instance.TrinketItem = this.gameObject;
             gameObject.transform.SetParent(collision.gameObject.GetComponent<PlayerController>().itemPosition);
             gameObject.transform.localPosition = new Vector3(0, 0, 0);
             Destroy(gameObject.GetComponent<Rigidbody2D>());
-            StartCoroutine(collision.gameObject.GetComponent<PlayerController>().GetAcTrItem());
+            gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
+
+            StartCoroutine(collision.gameObject.GetComponent<PlayerController>().GetItemTime(isTrinket));
+            //아이템 습득하는 코루틴/애니메이션 끝난 후 transform을 아래의 카메라의 localPosition으로 옮겨야함.
+            GetItem();
+            transform.SetParent(GameManager.instance.myCamera.transform);
+            transform.localPosition = new Vector3(-6, -4, 0);
+            
         }
-
-
-        //else if (collision.gameObject.CompareTag("Player") && ItemManager.instance.TrinketItem != null)
-        //// 2. 장신구 아이템을 장착하고 있을 시
-        //{
-
-        //}
-
     }
 
-    public void KeepItem()
-    {
-        transform.position = ItemManager.instance.itemStorage.position;
-        transform.SetParent(ItemManager.instance.itemStorage);
-    }
     public virtual void GetItem() { 
         Debug.Log("재정의 해줘!"); 
-    }      
+    }
 }
