@@ -286,6 +286,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2262bec6349c4d544aa1e4837dc2c26b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemList: []
   enemyGenerate: {fileID: 1875132346}
   pattern: {fileID: 1704551915}
   roomPool: {fileID: 2595639}
