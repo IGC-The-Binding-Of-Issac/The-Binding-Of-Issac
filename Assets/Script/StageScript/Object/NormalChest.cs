@@ -35,11 +35,13 @@ public class NormalChest : MonoBehaviour
                 for (int j = 0; j < coin; j++)
                 {
                     GameObject it = Instantiate(ItemManager.instance.itemTable.OpenNormalChest(rd), transform.position, Quaternion.identity) as GameObject;
+                    GameManager.instance.roomGenerate.itemList.Add(it);
                 }
             }
             else
             {
                 GameObject it = Instantiate(ItemManager.instance.itemTable.OpenNormalChest(rd), transform.position, Quaternion.identity) as GameObject;
+                GameManager.instance.roomGenerate.itemList.Add(it);
             }
         }
     }

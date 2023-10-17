@@ -13,6 +13,8 @@ public class RoomGenerate : MonoBehaviour
     
     public GameObject[,] roomPrefabs; // 방생성에 사용할 프래핍
 
+    public List<GameObject> itemList; // 생성된 아이템 오브젝트들
+
     [Header("Unity Setup")]
     public EnemyGenerate enemyGenerate;
     public RoomPattern pattern; // 오브젝트 패턴
@@ -51,6 +53,20 @@ public class RoomGenerate : MonoBehaviour
         for(int i = 0; i < roomPool.childCount; i++)
         {
             Destroy(roomPool.GetChild(i).gameObject);
+        }
+
+
+        if (itemList == null)
+        {
+            itemList = new List<GameObject>();
+        }
+        else
+        {
+            for(int i = 0; i < itemList.Count; i++)
+            {
+                Destroy(itemList[i]);
+            }
+            itemList = new List<GameObject>();
         }
     }
     public void CreateRoom(int stage, int size)
