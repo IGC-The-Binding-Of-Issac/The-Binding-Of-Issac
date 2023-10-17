@@ -32,10 +32,11 @@ public class ItemManager : MonoBehaviour
     [Header("unique Item State")]
     public GameObject ActiveItem; // 현재 보유중인 액티브 아이템
     public GameObject TrinketItem; // 현재 보유중인 장신구 아이템
-    
+        
     [Header("Unity Setup")]
     public GameObject bombPrefab; // 설치하는 폭탄 오브젝트 프리팹
     public ItemTable itemTable; // 아이템 드랍관련 스크립트
+    public Transform itemStorage; //아이템 오브젝트를 보관할 창고 위치 (Active / Trinket 전용)
 
     private void Start()
     {

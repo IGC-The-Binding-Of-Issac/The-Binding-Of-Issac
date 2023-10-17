@@ -244,6 +244,37 @@ MonoBehaviour:
   playerTearSize: 1
   playerSize: 1
   tearObj: {fileID: 5114894525887414092, guid: ba1b1ea4a7a80f44185689dfb5626760, type: 3}
+--- !u!1 &327006021
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 327006022}
+  m_Layer: 0
+  m_Name: ItemStorage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &327006022
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 327006021}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 300, y: 300, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &351783601
 GameObject:
   m_ObjectHideFlags: 0
@@ -288,6 +319,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2262bec6349c4d544aa1e4837dc2c26b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemList: []
   enemyGenerate: {fileID: 1875132346}
   pattern: {fileID: 1704551915}
   roomPool: {fileID: 2595639}
@@ -573,6 +605,7 @@ MonoBehaviour:
   TrinketItem: {fileID: 0}
   bombPrefab: {fileID: 9152286902886193127, guid: 7fce7d28537db664aaca9ad6d71bd9c4, type: 3}
   itemTable: {fileID: 1662163139}
+  itemStorage: {fileID: 327006022}
 --- !u!1 &1662163137
 GameObject:
   m_ObjectHideFlags: 0
@@ -866,3 +899,4 @@ SceneRoots:
   - {fileID: 1975172987}
   - {fileID: 926169543}
   - {fileID: 234069467}
+  - {fileID: 327006022}
