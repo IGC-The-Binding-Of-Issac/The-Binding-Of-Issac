@@ -2,20 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum FooterState
+{
+    // Idle
+    PooterProwl,
+    // 총 쏘는
+    PooteShoot,
+    //추적
+    PooteTracking
+}
 public class Footer : Top_Fly
 {
     // 범위 안에 들어오면 추적 + 촣알 발싸
     // 범위 안에 없으면 랜덤 움직임
    
-    enum FooterState 
-    {
-        // Idle
-        PooterProwl,
-        // 총 쏘는
-        PooteShoot,
-        //추적
-        PooteTracking
-    }
+
     [SerializeField] FooterState state;
     [SerializeField] GameObject enemyBullet; //총알 프리팹
     float currTime;

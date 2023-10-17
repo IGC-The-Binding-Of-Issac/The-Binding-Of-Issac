@@ -82,6 +82,7 @@ public class Spider : Top_Spider
         StartCoroutine(state.ToString());
     }
 
+    //ป๓ลย 
     IEnumerator SpiderStay()
     {
         while (true)
