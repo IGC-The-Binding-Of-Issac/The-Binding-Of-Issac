@@ -28,7 +28,7 @@ public class Tride : Top_Spider
     float oriSpeed;
     float jumpSpeed;
 
-    float jumpAiPlayTime;
+    [SerializeField] float jumpAiPlayTime;
 
     bool trackingStarted;
     bool jumpStarted;
@@ -102,6 +102,7 @@ public class Tride : Top_Spider
         }
         else
         {
+
             // 타이머를 재설정하고 "Tracking" 상태로 돌아감
             //Debug.Log("상태를 바꿔요~");
             trackingStarted = false;
@@ -135,6 +136,7 @@ public class Tride : Top_Spider
     {
         // z축을 0 으로
         transform.position = new Vector3(transform.position.x, transform.position.y, 0);
+
         while (true)
         {
             moveSpeed = oriSpeed;
