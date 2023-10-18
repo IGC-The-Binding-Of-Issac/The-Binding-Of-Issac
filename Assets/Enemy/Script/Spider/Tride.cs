@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,17 +22,22 @@ public class Tride : Top_Spider
 
     [Header("Tride")]
     [SerializeField] TrideState trideState;
+    [SerializeField] Vector3 jumpDesti; //점프 할 목표 위치
+    [SerializeField] Vector3 tridePosi; //점프 할 목표 위치
     float currTime;
     float jumpCoolTIme;
     float oriSpeed;
     float jumpSpeed;
-    float trideX;
-    float trideY;
-    float trideZ;
+
+    float jumpAiPlayTime;
+
+    bool trackingStarted;
+    bool jumpStarted;
 
     void Start()
     {
-        ChageState(TrideState.TrideIdle); //초기 상태는 가만히 있는, 
+        trideState = TrideState.TrideIdle;
+
         Spider_Move_InitialIze();
 
         playerInRoom = false;
@@ -39,17 +45,20 @@ public class Tride : Top_Spider
         animator = GetComponent<Animator>();
 
         //Enemy
-        hp = 1f;
+        hp = 3f;
         sight = 3f;
         moveSpeed = 2f;
-        waitforSecond = 0.8f;
+        waitforSecond = 0.4f;
         attaackSpeed = 2f;
 
         //Tride
         currTime = 0;
         jumpCoolTIme = 1f;
         oriSpeed = moveSpeed;
-        jumpSpeed = 7f;
+        jumpSpeed = 4f;
+
+        trackingStarted = false; //추적 코루틴 실행
+        jumpStarted = false; //점프 코루틴 실행
     }
 
     private void Update()
@@ -58,7 +67,7 @@ public class Tride : Top_Spider
         if (justTrackingPlayerPosi == null)
             return;
 
-        if (playerInRoom) 
+        if (playerInRoom)
         {
             Move();
             Lookplayer(justTrackingPlayerPosi);
@@ -71,17 +80,36 @@ public class Tride : Top_Spider
         currTime += Time.deltaTime;
         if (currTime < attaackSpeed)
         {
-            ChageState(TrideState.TrideTracking);
-        }
-        else if (currTime <attaackSpeed + jumpCoolTIme)
-        {
+            if (!trackingStarted)
+            {
+                // state변환을 단 한번 실행
+                ChageState(TrideState.TrideTracking);
 
-            ChageState(TrideState.TrideJump);
+                trackingStarted = true;
+                jumpStarted = false;
+
+                getJumpTime(); 
+                // tracnking 상태가 끝나기 직전에 / 점프 할 시간 (jumpAiPlayTime)구함
+            }
+        }
+        else if (currTime < attaackSpeed + (jumpAiPlayTime * 5) ) // jumpAiPlayTime 만큼 실행
+        {
+            if (!jumpStarted)
+            {
+                // state변환을 단 한번 실행
+                ChageState(TrideState.TrideJump); 
+                jumpStarted = true;
+            }
+
         }
         else
         {
+
             // 타이머를 재설정하고 "Tracking" 상태로 돌아감
-            animator.SetBool("isJump", false);
+            //Debug.Log("상태를 바꿔요~");
+            trackingStarted = false;
+            jumpStarted = true;
+
             currTime = 0;
             ChageState(TrideState.TrideTracking);
         }
@@ -91,7 +119,7 @@ public class Tride : Top_Spider
 
 
     // 플레이어의 행동을 newState로 변환
-    void ChageState(TrideState newState) 
+    void ChageState(TrideState newState)
     {
         // 이전 상태 종료
         StopCoroutine(trideState.ToString());
@@ -101,46 +129,52 @@ public class Tride : Top_Spider
         StartCoroutine(trideState.ToString());
     }
 
-    
-    IEnumerator Idle() 
+
+    IEnumerator Idle()
     {
         //상태 초기화
         yield return null;
     }
 
-    IEnumerator Tracking()
+    IEnumerator TrideTracking()
     {
-        while (true) 
+        // z축을 0 으로
+        transform.position = new Vector3(transform.position.x, transform.position.y, 0);
+        while (true)
         {
             moveSpeed = oriSpeed;
             Tracking(justTrackingPlayerPosi);
             yield return null;
         }
     }
-    IEnumerator Jump()
+
+    IEnumerator TrideJump()
     {
-        animator.SetBool("isJump", true);
+        // 구한 jumpAiPlayTime만큼 jump 애니메이션 실행
+        animator.SetFloat("isJump", jumpAiPlayTime);
+        // z축으로 1올리기
+        transform.position = transform.position + new Vector3(0, 0, 1);
+
         while (true) 
         {
             moveSpeed = jumpSpeed;
             Tracking(justTrackingPlayerPosi);
-            //Tride가 점프하는 코드
             yield return null;
 
         }
     }
 
-    void TrideJump() 
+    //jump애니메이션을 실행 할 시간 구하기
+    void getJumpTime() 
     {
-        // 목표 위치 받아옴 (플레이어 위치)
+        // 점프 위치 받아옴
+        jumpDesti = new Vector3(justTrackingPlayerPosi.position.x, justTrackingPlayerPosi.position.y, 0);
+        // tride위치 1회 받아옴
+        tridePosi = new Vector3(transform.position.x, transform.position.y, 0);
 
-        trideX = justTrackingPlayerPosi.position.x;
-        trideY = justTrackingPlayerPosi.position.y;
-        trideZ = justTrackingPlayerPosi.position.z;
-
-        // x축 , y축 플레이어 방향으로 tracking하듯이
-        // z측 : 그냥 바로 1로 만들었다가 끝나면 0으로 바꾸기
-
-
+        //거리, 속력(jumpSpeed), 시간 공식 사용, 시간 구하기
+        float plyerTotride = Vector3.Distance(jumpDesti, tridePosi);
+        jumpAiPlayTime = plyerTotride / jumpSpeed; // (점프)시간 = 플레이어와 tride거리 / 점프 속도
     }
+
 }

@@ -100,7 +100,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 20
+  m_Mass: 50
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -177,7 +177,10 @@ MonoBehaviour:
   moveSpeed: 0
   playerPos: {fileID: 0}
   knockBackState: 0
+  roomInfo: {fileID: 0}
   trideState: 0
+  jumpDesti: {x: 0, y: 0, z: 0}
+  tridePosi: {x: 0, y: 0, z: 0}
 --- !u!95 &7464292041553662188
 Animator:
   serializedVersion: 5
