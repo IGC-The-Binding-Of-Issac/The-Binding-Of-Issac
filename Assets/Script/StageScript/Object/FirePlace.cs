@@ -35,6 +35,10 @@ public class FirePlace : MonoBehaviour
         {
             GameObject it = Instantiate(ItemManager.instance.itemTable.ObjectBreak(), transform.position, Quaternion.identity) as GameObject;
         }
+
+#if UNITY_EDITOR && TEST_MODE
+        Debug.Log("dddd");
+#endif
     }
 
 
