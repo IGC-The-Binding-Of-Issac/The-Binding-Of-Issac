@@ -22,6 +22,7 @@ public class Moter : Top_Fly
 
     private void Update()
     {
+
         justTrackingPlayerPosi = GameObject.FindWithTag("Player").transform;
         if (justTrackingPlayerPosi == null)
             return;
@@ -30,18 +31,17 @@ public class Moter : Top_Fly
         {
             Move();
         }
-
-
-    }
-    void OnDestroy()
-    {
-        GenerateAttackFly();
-        GenerateAttackFly();
     }
 
-    override public void Move()
+    public override void Move()
     {
         Tracking(justTrackingPlayerPosi);
+    }
+
+    private void OnDestroy()
+    {
+        GenerateAttackFly();
+        GenerateAttackFly();
     }
 
     void GenerateAttackFly() 

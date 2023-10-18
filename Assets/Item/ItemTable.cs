@@ -25,9 +25,24 @@ public class ItemTable : MonoBehaviour
         return DropItems[rd];
     }
 
+
+    public GameObject OpenGoldChest()
+    {
+        // 드랍확률 : 장신구 60% / 패시브 20% / 액티브 20%
+        // 패시브 : 이미 보유중인 아이템 중복드랍 X
+        // 액티브/장신구 : 한번이라도 먹은아이템은 드랍X
+        // 장신구 아이템이 전부 나왔으면, 패시브아이템 드랍
+        // 패시브 아이템이 전부 나왔으면, 액티브아이템 드랍
+        // 액티브 아이템이 전부 나왔으면, 열쇠드랍  
+
+        // 장신구 -> 패시브 -> 액티브 -> 열쇠
+        return PassiveItems[1];
+    }
+
+
+
     public GameObject TrinketChange(int itemCode)
     {
         return TrinketItems[itemCode];
     }
-    //* 보유 현황에 따른 아이템 중복 드랍 방지
 }
