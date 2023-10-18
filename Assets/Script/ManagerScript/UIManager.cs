@@ -12,6 +12,11 @@ public class UIManager : MonoBehaviour
     [SerializeField] Text BombText; // ÆøÅº
     [SerializeField] Text KeyText;  // ¿­¼è
 
-    //  UI ¾÷µ¥ÀÌÆ® Ãß°¡ÇØ¾ßÇÔ.
-    //  
+    private void Update()
+    {
+        if(ItemManager.instance.TrinketItem != null)
+        {
+            trinket.sprite = ItemManager.instance.TrinketItem.GetComponent<SpriteRenderer>().sprite;
+        }
+    }
 }

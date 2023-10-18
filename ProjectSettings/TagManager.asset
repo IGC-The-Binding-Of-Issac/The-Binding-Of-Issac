@@ -44,7 +44,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - miniMap
   - NoCollision
   m_SortingLayers:
   - name: Default
