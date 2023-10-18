@@ -49,17 +49,21 @@ public class RoomGenerate : MonoBehaviour
     public void ClearRoom()
     {
         roomList = null;
-        doors = new List<GameObject>();
+        doors = new List<GameObject>(); // 문 초기화 
+
+        // 방 삭제
         for(int i = 0; i < roomPool.childCount; i++)
         {
             Destroy(roomPool.GetChild(i).gameObject);
         }
 
 
+        // 생성된 아이템 삭제
         if (itemList == null)
         {
             itemList = new List<GameObject>();
         }
+
         else
         {
             for(int i = 0; i < itemList.Count; i++)

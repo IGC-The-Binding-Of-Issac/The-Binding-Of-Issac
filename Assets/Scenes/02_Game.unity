@@ -526,7 +526,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 1
-  m_FillAmount: 0.431
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -1288,7 +1288,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1056556175}
   - component: {fileID: 1056556177}
-  - component: {fileID: 1056556176}
   m_Layer: 0
   m_Name: minimapCamera
   m_TagString: Untagged
@@ -1311,14 +1310,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 926169543}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!81 &1056556176
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1056556174}
-  m_Enabled: 1
 --- !u!20 &1056556177
 Camera:
   m_ObjectHideFlags: 0
@@ -1496,6 +1487,8 @@ MonoBehaviour:
   bombCount: 5
   keyCount: 0
   PassiveItems: 
+  TrinketItems: 
+  ActiveItems: 
   ActiveItem: {fileID: 0}
   TrinketItem: {fileID: 0}
   bombPrefab: {fileID: 9152286902886193127, guid: 7fce7d28537db664aaca9ad6d71bd9c4, type: 3}
@@ -1558,8 +1551,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -2010,8 +2003,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4

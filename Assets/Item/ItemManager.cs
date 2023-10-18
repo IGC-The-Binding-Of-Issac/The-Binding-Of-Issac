@@ -24,6 +24,8 @@ public class ItemManager : MonoBehaviour
 
     [Header("Passive Item State")]
     public bool[] PassiveItems; // 패시브 아이템 보유 현황
+    public bool[] TrinketItems; // 장신구 아이템 획득 현황
+    public bool[] ActiveItems; // 액티브 아이템 획득 현황
     /*
      * 3. 보유 현황에 따른 시너지 효과를 작성해줘야함.
      * 4. 보유 현황에 따른 플레이어의 이미지 리소스를 변경해줘야함.(보류)
@@ -41,6 +43,8 @@ public class ItemManager : MonoBehaviour
     private void Start()
     {
         PassiveItems = new bool[100];
+        TrinketItems = new bool[100];
+        ActiveItems = new bool[100];
     }
     /*
      * 하나의 delegate로 여러 함수들에 접근해 실행
