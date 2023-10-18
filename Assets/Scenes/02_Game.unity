@@ -1797,6 +1797,9 @@ MonoBehaviour:
   - {fileID: 4733578911474098046, guid: a8ab27e0e85b0a24a92ccdf88a4499c7, type: 3}
   - {fileID: 2224291892743795063, guid: 2b16369be2c1db9498cc1c7f1ce88c27, type: 3}
   - {fileID: 1939503092496380227, guid: 5e4ff7a3eb839f34f85e8b5255fb4036, type: 3}
+  TrinketItems:
+  - {fileID: 3858725772182881322, guid: 65e8522bd1de3b54e853c0ab74388f34, type: 3}
+  - {fileID: 6604932927728474701, guid: c76b66f3caaccb54ba7e74289a3093eb, type: 3}
 --- !u!1 &1704551913
 GameObject:
   m_ObjectHideFlags: 0

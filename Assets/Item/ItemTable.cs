@@ -11,7 +11,8 @@ public class ItemTable : MonoBehaviour
     [SerializeField]
     GameObject[] PassiveItems; // 패시브 아이템
 
-
+    [SerializeField]
+    GameObject[] TrinketItems; // 장신구 아이템
 
     public GameObject ObjectBreak() // 오브젝트 부쉈을때
     {
@@ -24,5 +25,9 @@ public class ItemTable : MonoBehaviour
         return DropItems[rd];
     }
 
+    public GameObject TrinketChange(int itemCode)
+    {
+        return TrinketItems[itemCode];
+    }
     //* 보유 현황에 따른 아이템 중복 드랍 방지
 }
