@@ -40,8 +40,9 @@ public class Room : MonoBehaviour
 
     void CameraSetting()
     {
+        float cameraMoveSpeed = 0.3f;
         GameManager.instance.myCamera.transform.SetParent(cameraPosition);
-        GameManager.instance.myCamera.transform.localPosition = new Vector3(0, 0, 0); 
+        GameManager.instance.myCamera.transform.localPosition = Vector3.MoveTowards(GameManager.instance.myCamera.transform.localPosition, new Vector3(0, 0, 0), cameraMoveSpeed);
     }
 
     public void SetGrid()
