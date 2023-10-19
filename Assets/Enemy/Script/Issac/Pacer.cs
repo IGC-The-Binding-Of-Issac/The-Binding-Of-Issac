@@ -30,8 +30,10 @@ public class Pacer : Top_IssacMonster
     void Update()
     {
         if (playerInRoom)
+        {
             justTrackingPlayerPosi = GameObject.FindWithTag("Player").transform;
             Move();
+        }
     }
 
     public override void Move()

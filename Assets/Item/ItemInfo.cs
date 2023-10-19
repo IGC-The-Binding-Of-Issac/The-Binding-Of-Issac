@@ -7,7 +7,8 @@ public class ItemInfo : MonoBehaviour
 {
     protected int itemCode;
 
-    public bool isTrinket;
+    // 사용하지않는 변수입니다 확인후 지워봅시다
+    //public bool isTrinket;
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.CompareTag("Player"))
