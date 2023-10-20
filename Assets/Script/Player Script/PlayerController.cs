@@ -11,8 +11,10 @@ public class PlayerController : MonoBehaviour
     public Animator getItem;
     public Transform itemPosition;
 
-    Rigidbody2D playerRB;
+    public Transform body;
 
+    Rigidbody2D playerRB;
+    SpriteRenderer bodyRenderer;
     public GameObject tearPrefab;
     GameObject tear;
 
@@ -21,9 +23,11 @@ public class PlayerController : MonoBehaviour
     float shotDelay;
     private float lastshot;
 
+    Vector2 moveInput;
     void Start()
     {
         playerRB = GetComponent<Rigidbody2D>();
+        bodyRenderer = body.GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -48,7 +52,12 @@ public class PlayerController : MonoBehaviour
     {
         float hori = Input.GetAxis("Horizontal");
         float verti = Input.GetAxis("Vertical");
-
+        moveInput = hori * Vector2.right + verti * Vector2.up;
+        //대각 속도 1 넘기지 않기
+        if(moveInput.magnitude > 1f)
+        {
+            moveInput.Normalize();
+        }
         float shootHor = Input.GetAxis("ShootHorizontal");
         float shootVer = Input.GetAxis("ShootVertical");
 
@@ -65,7 +74,7 @@ public class PlayerController : MonoBehaviour
         }
 
         //플레이어 움직임
-        playerRB.velocity = new Vector3(hori * moveSpeed, verti * moveSpeed, 0);
+        playerRB.velocity = moveInput * moveSpeed;
     }
 
     //발사 기능
@@ -104,30 +113,10 @@ public class PlayerController : MonoBehaviour
     //이동 애니메이션
     void MoveAnim()
     {
-        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S))
-        {
-            playerMoveAnim.SetBool("playerFrontWalk", true);
-        }
-        else
-        {
-            playerMoveAnim.SetBool("playerFrontWalk", false);
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            playerMoveAnim.SetBool("playerLeftWalk", true);
-        }
-        else
-        {
-            playerMoveAnim.SetBool("playerLeftWalk", false);
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            playerMoveAnim.SetBool("playerRightWalk", true);
-        }
-        else
-        {
-            playerMoveAnim.SetBool("playerRightWalk", false);
-        }
+        if (moveInput.x < 0) { bodyRenderer.flipX = true; }
+        if (moveInput.x > 0) { bodyRenderer.flipX = false; }
+        playerMoveAnim.SetFloat("Up&Down", Mathf.Abs(moveInput.y));
+        playerMoveAnim.SetFloat("Left&Right", Mathf.Abs(moveInput.x));
         if (Input.GetKey(KeyCode.W))
         {
             playerShotAnim.SetBool("UpLook", true);

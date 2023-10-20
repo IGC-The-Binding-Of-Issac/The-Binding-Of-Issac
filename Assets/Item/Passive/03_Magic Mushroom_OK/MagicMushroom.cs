@@ -23,8 +23,6 @@ public class MagicMushroom : ItemInfo
         PlayerManager.instance.playerTearSize *= 1.1f;
         PlayerManager.instance.playerSize *= 1.1f;
         PlayerManager.instance.ChgTearSize();
-
-        // 해당 기능 오류납니다 수정바람
-        // PlayerManager.instance.ChgPlayerSize(); 
+        PlayerManager.instance.ChgPlayerSize();
     }
 }
