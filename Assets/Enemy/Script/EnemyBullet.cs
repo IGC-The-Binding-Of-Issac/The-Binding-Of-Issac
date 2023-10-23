@@ -11,6 +11,8 @@ public class EnemyBullet : MonoBehaviour
     float bulletSpeed;
     float waitForDest;
 
+
+    bool isMoving = true;
     private void Start()
     {
         ani = GetComponent<Animator>();
@@ -23,23 +25,44 @@ public class EnemyBullet : MonoBehaviour
 
     private void Update()
     {
-
-        transform.position = Vector3.MoveTowards(transform.position, bulletDesti, bulletSpeed * Time.deltaTime); //총알 움직임
-        bulletDestroy(); // 도착하면 destory
+        if(isMoving)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, bulletDesti, bulletSpeed * Time.deltaTime); //총알 움직임
+            bulletDestroy(); // 도착하면 destory
+        }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player")) // 플레이어랑 닿이면 삭제
         {
-            ani.SetBool("bulletDestroy" , true);
+            isMoving = false;
+            ani.SetBool("bulletDestroy", true);
             PlayerManager.instance.GetDamage(); //플레이어랑 데미지
-            Destroy(gameObject , waitForDest);
+            Destroy(gameObject, waitForDest);
         }
-        if (collision.gameObject.CompareTag("Wall")) // 벽 닿이면 삭제
+        else if (collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Object_Rock")) // 벽 닿이면 삭제
         {
+            isMoving = false;
             ani.SetBool("bulletDestroy", true);
             Destroy(gameObject, waitForDest);
+        }
+
+        //똥에 박으면
+        else if (collision.gameObject.CompareTag("Object_Poop"))
+        {
+            isMoving = false;
+            ani.SetBool("bulletDestroy", true);
+            Destroy(gameObject, waitForDest);
+            collision.gameObject.GetComponent<Poop>().GetDamage();
+        }
+        //불에 박으면
+        else if (collision.gameObject.CompareTag("Object_Fire"))
+        {
+            isMoving = false;
+            ani.SetBool("bulletDestroy", true);
+            Destroy(gameObject, waitForDest);
+            collision.gameObject.GetComponent<FirePlace>().GetDamage();
         }
     }
 
@@ -52,5 +75,4 @@ public class EnemyBullet : MonoBehaviour
             Destroy(gameObject, waitForDest);
         }
     }
-
 }

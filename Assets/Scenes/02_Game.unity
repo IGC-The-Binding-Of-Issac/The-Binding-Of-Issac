@@ -1275,9 +1275,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trinket: {fileID: 1276774955}
   active: {fileID: 1410106757}
-  CoinText: {fileID: 1362639914}
-  BombText: {fileID: 1401842131}
-  KeyText: {fileID: 2068630430}
+  coinText: {fileID: 1362639914}
+  bombText: {fileID: 1401842131}
+  keyText: {fileID: 2068630430}
 --- !u!1 &1056556174
 GameObject:
   m_ObjectHideFlags: 0
@@ -2401,6 +2401,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefabs:
+  - {fileID: 7229639532422697358, guid: 3913fec5d6b5d5e4ea56aca55f44a03e, type: 3}
+  - {fileID: 7809647596073497508, guid: 646a6a30b0f3eec49b4c530b4d2a1a7a, type: 3}
+  - {fileID: 4487783121691819913, guid: 7b81fc2038c0a1d49a5fb4450c995b69, type: 3}
+  - {fileID: 1950736854895267324, guid: 6dd011548e2be7040b01c46cf573648c, type: 3}
+  - {fileID: 2523532608436158748, guid: ee390189111fafe44b4f9735b86b059e, type: 3}
+  - {fileID: 1921601911043370482, guid: df32c1c393446664dadd1e36748679af, type: 3}
   - {fileID: 8121270031479538464, guid: 790d21798bb1011438e28300740a4ad7, type: 3}
   bossPrefabs:
   - {fileID: 7229639532422697358, guid: 3913fec5d6b5d5e4ea56aca55f44a03e, type: 3}

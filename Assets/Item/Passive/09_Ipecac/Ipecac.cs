@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Ipecac : ItemInfo
 {
-    private float time = 0f;
     private void Start()
     {
         itemCode = 10;
