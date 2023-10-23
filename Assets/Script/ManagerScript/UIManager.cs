@@ -8,15 +8,23 @@ public class UIManager : MonoBehaviour
     [Header("Unity Setup")]
     [SerializeField] Image trinket; // Àå½Å±¸
     [SerializeField] Image active;  // ¾×Æ¼ºê
-    [SerializeField] Text CoinText; // ÄÚÀÎ
-    [SerializeField] Text BombText; // ÆøÅº
-    [SerializeField] Text KeyText;  // ¿­¼è
+    [SerializeField] Text coinText; // ÄÚÀÎ
+    [SerializeField] Text bombText; // ÆøÅº
+    [SerializeField] Text keyText;  // ¿­¼è
 
     private void Update()
     {
-        if(ItemManager.instance.TrinketItem != null)
+        UpdateUI();
+    }
+
+    public void UpdateUI()
+    {
+        if (ItemManager.instance.TrinketItem != null)
         {
             trinket.sprite = ItemManager.instance.TrinketItem.GetComponent<SpriteRenderer>().sprite;
         }
+        coinText.text = ItemManager.instance.coinCount.ToString();
+        bombText.text = ItemManager.instance.bombCount.ToString();
+        keyText.text = ItemManager.instance.keyCount.ToString();
     }
 }

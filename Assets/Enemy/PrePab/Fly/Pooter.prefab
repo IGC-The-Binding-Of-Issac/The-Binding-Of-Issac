@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3758858023940486549}
   - component: {fileID: 4495370900868006276}
   - component: {fileID: 1817730275653660254}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Pooter
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -174,8 +174,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerInRoom: 0
   hp: 0
+  moveSpeed: 0
   playerPos: {fileID: 0}
   knockBackState: 0
+  roomInfo: {fileID: 0}
   state: 0
   enemyBullet: {fileID: 5075845781784470873, guid: badefd297090b9f4098457860dee0ecc, type: 3}
 --- !u!95 &1817730275653660254

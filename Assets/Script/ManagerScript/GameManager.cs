@@ -55,6 +55,7 @@ public class GameManager : MonoBehaviour
             {
                 roomGenerate.ClearRoom(); // room reset -> create
                 roomGenerate.CreateRoom(stageLevel, stageSize); // room create
+                myCamera.transform.position = playerObject.transform.position;
                 break;
             }
         }

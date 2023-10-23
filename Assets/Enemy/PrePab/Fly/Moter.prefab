@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4415524426833768779}
   - component: {fileID: 7017524494675596416}
   - component: {fileID: 8556774892424582168}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: AttackFly (1)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -120,7 +120,7 @@ GameObject:
   - component: {fileID: -7885813503397330244}
   - component: {fileID: 830135226742380364}
   - component: {fileID: 2804457331011717979}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Moter
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -233,6 +233,7 @@ MonoBehaviour:
   moveSpeed: 0
   playerPos: {fileID: 0}
   knockBackState: 0
+  roomInfo: {fileID: 0}
   attackFly: {fileID: 7229639532422697358, guid: 3913fec5d6b5d5e4ea56aca55f44a03e, type: 3}
 --- !u!212 &830135226742380364
 SpriteRenderer:
@@ -318,7 +319,7 @@ GameObject:
   - component: {fileID: 3002931845657593550}
   - component: {fileID: 156337710340976729}
   - component: {fileID: 8379687793247182487}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: AttackFly
   m_TagString: Enemy
   m_Icon: {fileID: 0}

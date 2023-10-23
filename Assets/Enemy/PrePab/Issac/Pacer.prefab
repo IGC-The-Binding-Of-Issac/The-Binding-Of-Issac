@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 932008530241407610}
   - component: {fileID: 8600641441910113001}
   - component: {fileID: 2930521368282382690}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Pacer
   m_TagString: Enemy
   m_Icon: {fileID: 0}

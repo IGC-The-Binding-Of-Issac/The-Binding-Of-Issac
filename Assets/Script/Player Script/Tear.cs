@@ -41,7 +41,6 @@ public class Tear : MonoBehaviour
         tearPosition = this.transform.position;
         //둘 사이의 거리
         betweenDistance = Vector3.Distance(tearPosition, playerPosition);
-        Debug.Log(PlayerManager.instance.playerRange);
         if(betweenDistance >= PlayerManager.instance.playerRange-0.4f && tmp)
         {
             tmp = false;

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6340468225587534011}
   - component: {fileID: 6592539807907487236}
   - component: {fileID: 7464292041553662188}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Tride
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -179,7 +179,9 @@ MonoBehaviour:
   knockBackState: 0
   roomInfo: {fileID: 0}
   trideState: 0
-  currTime: 0
+  jumpDesti: {x: 0, y: 0, z: 0}
+  tridePosi: {x: 0, y: 0, z: 0}
+  jumpAiPlayTime: 0
 --- !u!95 &7464292041553662188
 Animator:
   serializedVersion: 5

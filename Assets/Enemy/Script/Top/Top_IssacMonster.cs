@@ -55,7 +55,6 @@ public class Top_IssacMonster : Enemy
         while (true)
         {
             yield return new WaitForSeconds(fTime);
-            Debug.Log("checkPosi실행");
             // x위치는 현재 위치 randRange부터 , 현재위치 -randRange까지
             // y위치 동일
             xRan = Random.Range(x + randRange, x - randRange);
