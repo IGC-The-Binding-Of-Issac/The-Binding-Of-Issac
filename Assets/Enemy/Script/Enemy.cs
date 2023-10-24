@@ -1,6 +1,7 @@
  using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class Enemy : MonoBehaviour
 
     [Header("Enemy State")]
     public bool playerInRoom;
+    public Image hpBarSlider;
+    protected float maxhp;
     [SerializeField] protected float hp;
     protected float sight; //시야 범위  
     protected float searchDelay; // 일정 시간 두고 search
@@ -76,10 +79,15 @@ public class Enemy : MonoBehaviour
         gameObject.GetComponent<SpriteRenderer>().color = oriColor;
     }
 
+    public void CheckHp()
+    {
+        hpBarSlider.fillAmount = hp / maxhp;
+    }
     // 데미지
     public void GetDamage(float damage) //Tears 에서 사용 (player대미지 만큼 피 깎음)
     {
         hp -= damage;
+        CheckHp();
         if (IsDead())
         {
             DeadAction(dieParameter);

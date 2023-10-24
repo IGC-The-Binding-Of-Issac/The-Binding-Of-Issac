@@ -17,6 +17,8 @@ public class AttackFly : Top_Fly
         sight = 5f;
         moveSpeed = 1.5f;
         waitforSecond = 0.5f;
+
+        maxhp = hp;
     }
 
     private void Update()
