@@ -1485,7 +1485,7 @@ MonoBehaviour:
   item_Activated_Count: 0
   coinCount: 0
   bombCount: 5
-  keyCount: 0
+  keyCount: 5
   PassiveItems: 
   TrinketItems: 
   ActiveItems: 
@@ -2162,6 +2162,10 @@ MonoBehaviour:
   TrinketItems:
   - {fileID: 3858725772182881322, guid: 65e8522bd1de3b54e853c0ab74388f34, type: 3}
   - {fileID: 6604932927728474701, guid: c76b66f3caaccb54ba7e74289a3093eb, type: 3}
+  ActiveItems: []
+  passive: 
+  trinket: 
+  active: 
 --- !u!1 &1704551913
 GameObject:
   m_ObjectHideFlags: 0
@@ -2256,7 +2260,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.5707547, b: 0.5707547, a: 0.392}
+  m_Color: {r: 1, g: 0.5707547, b: 0.5707547, a: 0.07058824}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

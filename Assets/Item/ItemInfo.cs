@@ -14,6 +14,7 @@ public class ItemInfo : MonoBehaviour
             // 아이템을 가지고있지않을때.
             if(!ItemManager.instance.PassiveItems[itemCode])
             {
+                gameObject.layer = 31;
                 ItemManager.instance.PassiveItems[itemCode] = true; // 미보유 -> 보유 로 변경 
                 UseItem();
 

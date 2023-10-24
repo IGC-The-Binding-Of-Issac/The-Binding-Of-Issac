@@ -33,15 +33,19 @@ public class Moter : Top_Fly
         }
     }
 
-    public override void Move()
-    {
-        Tracking(justTrackingPlayerPosi);
-    }
 
     private void OnDestroy()
     {
-        GenerateAttackFly();
-        GenerateAttackFly();
+        if(hp <= 0.1f) // 오브젝트가 Destory가 될때 그냥 Destory가 되는건지. HP를 전부 잃어 Destory되는건지 확인.
+        {
+            GenerateAttackFly();
+            GenerateAttackFly();
+        }
+    }
+
+    public override void Move()
+    {
+        Tracking(justTrackingPlayerPosi);
     }
 
     void GenerateAttackFly() 
