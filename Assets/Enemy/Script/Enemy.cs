@@ -98,7 +98,10 @@ public class Enemy : MonoBehaviour
 
     void DeadAction(string ani)
     {
+        
         gameObject.GetComponent<Animator>().SetBool(ani, true);
+        gameObject.layer = 31;
+        gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         Destroy(gameObject , waitforSecond);
     }
 

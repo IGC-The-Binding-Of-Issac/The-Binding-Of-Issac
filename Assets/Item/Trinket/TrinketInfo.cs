@@ -20,7 +20,8 @@ public class TrinketInfo : MonoBehaviour
             gameObject.layer = 31;
 
             // 1. 장신구 아이템을 장착하고 있지 않을 시
-            if (ItemManager.instance.TrinketItem == null) TrinketChange(collision);
+            if (ItemManager.instance.TrinketItem == null) 
+                TrinketChange(collision);
             
             // 2. 장신구 아이템을 장착하고 있을 시
             else if(ItemManager.instance.TrinketItem != null)
@@ -57,16 +58,36 @@ public class TrinketInfo : MonoBehaviour
     private void TrinketChange(Collision2D collision)
     {
         ItemManager.instance.TrinketItem = this.gameObject;
+        DisconnectTrinket();
         gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+
         gameObject.transform.SetParent(collision.gameObject.GetComponent<PlayerController>().itemPosition);
         gameObject.transform.localPosition = new Vector3(0, 0, 0);
+
         Destroy(gameObject.GetComponent<Rigidbody2D>());
         StartCoroutine(collision.gameObject.GetComponent<PlayerController>().GetAcTrItem());
+    }
+
+    void DisconnectTrinket()
+    {
+        /*
+         방이 새로 생성될때 보유중인 Trinket도 같이 삭제되는현상을 해결하기위해
+         현재 보유중인 Trinket은 방 생성 스크립트의 itemList에서 제외함으로써 ( 방에 드랍되는 모든 아이템들은 ItemList로 들어감 )
+         방이 재 생성될때 ( 스테이지 넘어갈때 )  보유중인 장신구에 아무런 영향이 가지못하도록 수정함.
+        */
+        // roomGenerete의 itemList에서 제외시킴.
+        for (int i = 0; i < GameManager.instance.roomGenerate.itemList.Count; i++)
+        {
+            if (ItemManager.instance.TrinketItem.Equals(GameManager.instance.roomGenerate.itemList[i]))
+            {
+                GameManager.instance.roomGenerate.itemList.RemoveAt(i);
+            }
+        }
     }
 
     private void Update()
     {
         if(!canCollision)
-            Invoke("SetDelay", 1.2f);
+            Invoke("SetDelay", 0.8f);
     }
 }

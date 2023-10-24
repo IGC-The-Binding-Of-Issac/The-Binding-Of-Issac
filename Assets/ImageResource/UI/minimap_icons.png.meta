@@ -1,0 +1,269 @@
+fileFormatVersion: 2
+guid: c24dd581b4832cf48964e5da3f67b31d
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: minimap_icons_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 118
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ba210e8c26fb234eafc86bf17c75b9b
+      internalID: -1602834683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimap_icons_4
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 119
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9c056d3db075564c9b69b7d3a5bc72f
+      internalID: -1039668080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimap_icons_13
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 103
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56e767d4d91eb884f892190cfd9101ec
+      internalID: -155439624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minimap_icons_1
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 101
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0da48a7e7789c648ae2cdb8b7891887
+      internalID: 707791669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 940c9d9c5f9559c4ab57b18a5ef52ed4
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      minimap_icons_0: -1602834683
+      minimap_icons_1: 707791669
+      minimap_icons_10: -511739961
+      minimap_icons_11: 1994263339
+      minimap_icons_12: 1479746783
+      minimap_icons_13: -155439624
+      minimap_icons_14: 617409534
+      minimap_icons_15: 1436589926
+      minimap_icons_16: -531796131
+      minimap_icons_17: -1587215221
+      minimap_icons_18: -1415657107
+      minimap_icons_19: -406308832
+      minimap_icons_2: -1650820287
+      minimap_icons_20: -122833881
+      minimap_icons_21: -1020227801
+      minimap_icons_22: 349703052
+      minimap_icons_23: 1498053540
+      minimap_icons_24: -617931665
+      minimap_icons_25: 2052721873
+      minimap_icons_26: 2021072927
+      minimap_icons_27: 1343935234
+      minimap_icons_28: 2003577842
+      minimap_icons_29: 1783891184
+      minimap_icons_3: 435392965
+      minimap_icons_30: -2111846802
+      minimap_icons_31: 14152100
+      minimap_icons_32: -2056353988
+      minimap_icons_33: -1036435463
+      minimap_icons_34: -842077213
+      minimap_icons_35: -1728607037
+      minimap_icons_36: -1813286432
+      minimap_icons_37: -2099279388
+      minimap_icons_38: 1458480458
+      minimap_icons_39: -1436884015
+      minimap_icons_4: -1039668080
+      minimap_icons_40: 1579762881
+      minimap_icons_41: 153617296
+      minimap_icons_42: -285867297
+      minimap_icons_43: -1083685405
+      minimap_icons_44: -1077474108
+      minimap_icons_45: 1156604219
+      minimap_icons_46: -2141374737
+      minimap_icons_47: 1643755106
+      minimap_icons_48: 888027398
+      minimap_icons_49: -1730105753
+      minimap_icons_5: -847073265
+      minimap_icons_50: -51355509
+      minimap_icons_51: -1585548777
+      minimap_icons_52: -1904437035
+      minimap_icons_53: -1137521386
+      minimap_icons_54: -2047503997
+      minimap_icons_55: 2036522175
+      minimap_icons_56: -863118071
+      minimap_icons_57: 827510435
+      minimap_icons_6: -2136931280
+      minimap_icons_7: 692700962
+      minimap_icons_8: 1445022916
+      minimap_icons_9: -156352969
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
