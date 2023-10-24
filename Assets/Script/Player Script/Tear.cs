@@ -18,10 +18,8 @@ public class Tear : MonoBehaviour
 
     float playerTearSize;
 
-    bool tmp;
     void Start()
     {
-        tmp = true;
         playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         tearBoomAnim = GetComponent<Animator>();
         tearRB = GetComponent<Rigidbody2D>();
@@ -41,10 +39,8 @@ public class Tear : MonoBehaviour
         tearPosition = this.transform.position;
         //둘 사이의 거리
         betweenDistance = Vector3.Distance(tearPosition, playerPosition);
-        if(betweenDistance >= PlayerManager.instance.playerRange-0.4f && tmp)
+        if(betweenDistance >= PlayerManager.instance.playerRange)
         {
-            tmp = false;
-            tearRB.gravityScale = 10f;
         }
         //둘 사이의 거리가 플레이어 사거리보다 커지면
         if (betweenDistance >= PlayerManager.instance.playerRange)
@@ -57,7 +53,6 @@ public class Tear : MonoBehaviour
     public void StopTear()
     {
         tearRB.velocity = Vector2.zero;
-        tearRB.gravityScale = 0.01f;
         //총알 오브젝트 속도를 zero로 만듬
 
     }
