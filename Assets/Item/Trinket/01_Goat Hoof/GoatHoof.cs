@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class GoatHoof : TrinketInfo
 {
-    // Start is called before the first frame update
+    float beforeMoveSpeed;
+    float beforeShotDelay;
     void Start()
     {
         SetTrinketItemCode(1);
@@ -12,8 +13,15 @@ public class GoatHoof : TrinketInfo
 
     public override void GetItem()
     {
+        beforeMoveSpeed = PlayerManager.instance.playerMoveSpeed;
+        beforeShotDelay = PlayerManager.instance.playerShotDelay;
         PlayerManager.instance.playerMoveSpeed += 0.16f;
         PlayerManager.instance.playerShotDelay += 0.16f;
-
+    }
+    public override void DropTrinket()
+    {
+        PlayerManager.instance.playerMoveSpeed = beforeMoveSpeed;
+        PlayerManager.instance.playerShotDelay = beforeShotDelay;
     }
 }
+
