@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D playerRB;
     SpriteRenderer bodyRenderer;
     public GameObject tearPrefab;
-    GameObject tear;
+    public GameObject tear;
 
     float tearSpeed;
     float moveSpeed;
@@ -24,6 +24,8 @@ public class PlayerController : MonoBehaviour
     private float lastshot;
 
     Vector2 moveInput;
+
+
     void Start()
     {
         playerRB = GetComponent<Rigidbody2D>();
@@ -83,6 +85,7 @@ public class PlayerController : MonoBehaviour
         //발사 기능 구현
         //게임 중 눈물 생성 눈물 프리펩, 발사 시작위치, 회전
         tear = Instantiate(tearPrefab, transform.position + Vector3.up * 0.4f, transform.rotation) as GameObject;
+        tear.GetComponent<SpriteRenderer>().sprite = PlayerManager.instance.tearImage;
         tear.GetComponent<Rigidbody2D>().velocity = new Vector3(
             (x < 0) ? Mathf.Floor(x) * tearSpeed : Mathf.Ceil(x) * tearSpeed,
             (y < 0) ? Mathf.Floor(y) * tearSpeed : Mathf.Ceil(y) * tearSpeed, 0);
