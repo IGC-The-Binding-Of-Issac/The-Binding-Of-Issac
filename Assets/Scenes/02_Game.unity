@@ -454,8 +454,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f73782e154c99d499fad34cf1162281, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHp: 5
-  playerMaxHp: 10
+  playerHp: 6
+  playerMaxHp: 6
   playerMoveSpeed: 5
   playerTearSpeed: 6
   playerShotDelay: 0.5
@@ -463,7 +463,6 @@ MonoBehaviour:
   playerRange: 5
   playerTearSize: 1
   playerSize: 1
-  tearImage: {fileID: 1837185413, guid: 64f0cce7912310a489ab219e28d20338, type: 3}
   tearObj: {fileID: 5114894525887414092, guid: ba1b1ea4a7a80f44185689dfb5626760, type: 3}
 --- !u!1 &307357200
 GameObject:
