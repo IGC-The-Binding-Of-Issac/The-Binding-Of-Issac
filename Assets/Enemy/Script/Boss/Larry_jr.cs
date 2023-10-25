@@ -54,14 +54,22 @@ public class Larry_jr : Enemy
         currTime -= Time.deltaTime;
         if (currTime >= 0 && chageState)
         {
-            randomStateNum();
-
+            randomStateNum(); //랜덤 숫자 구하기 (1~4)
+            if (stateNum == 1)
+                ChageState(LarryState.Up);
+            else if (stateNum == 2)
+                ChageState(LarryState.Down);
+            else if (stateNum == 3)
+                ChageState(LarryState.Left);
+            else if (stateNum == 4)
+                ChageState(LarryState.Right);
             chageState = false;
         }
         else if (currTime <= 0) 
         {
-            randTime();
-            currTime = stateTime;
+            randTime(); // 랜덤 타임 구하기
+            stateNum = 0; //랜덤 숫자 초기화
+            currTime = stateTime; //시간 초기화
             chageState = true;
         }
         
@@ -99,6 +107,7 @@ public class Larry_jr : Enemy
         while (true) 
         {
             Debug.Log("위");
+            transform.position += new Vector3(0 , 1, 0) * Time.deltaTime * moveSpeed;
             yield return null;
         }
     }
@@ -111,7 +120,8 @@ public class Larry_jr : Enemy
         // 상태 변환 전 까지 실행
         while (true)
         {
-            Debug.Log("아리");
+            transform.position += new Vector3(0, -1, 0) * Time.deltaTime * moveSpeed;
+
             yield return null;
         }
     }
@@ -123,7 +133,7 @@ public class Larry_jr : Enemy
         // 상태 변환 전 까지 실행
         while (true)
         {
-            Debug.Log("오른");
+            transform.position += new Vector3(1, 0, 0) * Time.deltaTime * moveSpeed;
             yield return null;
         }
     }
@@ -136,7 +146,7 @@ public class Larry_jr : Enemy
         // 상태 변환 전 까지 실행
         while (true)
         {
-            Debug.Log("왼");
+            transform.position += new Vector3(-1, 0, 0) * Time.deltaTime * moveSpeed;
             yield return null;
         }
     }
