@@ -32,6 +32,7 @@ public class Spider : Top_Spider
         waitforSecond = 1f;
         attaackSpeed = 0.5f; // stay <-> move
 
+        maxhp = hp;
         //TopFly
         randRange = 3f;
         fTime = 0.5f;

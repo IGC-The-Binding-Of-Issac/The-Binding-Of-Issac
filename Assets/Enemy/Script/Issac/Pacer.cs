@@ -18,6 +18,7 @@ public class Pacer : Top_IssacMonster
         moveSpeed = 1.5f;
         waitforSecond = 0.5f;
 
+        maxhp = hp;
         // Top_IssacMonster
         randRange = 3f;
         fTime = 2f;
