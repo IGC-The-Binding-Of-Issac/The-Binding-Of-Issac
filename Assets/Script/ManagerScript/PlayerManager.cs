@@ -27,19 +27,18 @@ public class PlayerManager : MonoBehaviour
     public float playerTearSize = 1f; //눈물 크기
     public float playerSize = 1f; //캐릭터 크기
 
-    GameObject playerObj;
     bool CanGetDamage = true; // 데미지를 받을 수 있는지 확인.
     float hitDelay = .5f; // 피격 딜레이
 
     [Header("unity setup")]
-    public Sprite tearImage;
     public GameObject tearObj;
+    GameObject playerObj;
 
     //delegate 선언 위치
 
     public void Start()
     {
-        
+
     }
     public void GetDamage()
     {

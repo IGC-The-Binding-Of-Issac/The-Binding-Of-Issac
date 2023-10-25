@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Animations;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.Animations;
 using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class Tear : MonoBehaviour
@@ -18,35 +20,31 @@ public class Tear : MonoBehaviour
 
     float playerTearSize;
 
+
     void Start()
     {
         playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         tearBoomAnim = GetComponent<Animator>();
         tearRB = GetComponent<Rigidbody2D>();
+        //플레이어 발사 시작위치
+        playerPosition = playerController.transform.position;
     }
 
     void Update()
     {
-        playerTearSize = PlayerManager.instance.playerTearSize;
         TearRange();
     }
 
     void TearRange()
     {
-        //플레이어 위치
-        playerPosition = playerController.transform.position;
         //총알 위치
         tearPosition = this.transform.position;
         //둘 사이의 거리
         betweenDistance = Vector3.Distance(tearPosition, playerPosition);
-        if(betweenDistance >= PlayerManager.instance.playerRange)
-        {
-        }
         //둘 사이의 거리가 플레이어 사거리보다 커지면
         if (betweenDistance >= PlayerManager.instance.playerRange)
         {
-            //눈물 터지는 애니메이션 실행
-            tearBoomAnim.SetTrigger("BoomTear");
+            BoomTear();
         }
     }
 
@@ -54,11 +52,24 @@ public class Tear : MonoBehaviour
     {
         tearRB.velocity = Vector2.zero;
         //총알 오브젝트 속도를 zero로 만듬
+    }
 
+    public void BoomTear()
+    {
+        if (ItemManager.instance.PassiveItems[0] == true)
+        {
+            tearBoomAnim.SetTrigger("RedBoomTear");
+        }
+        else
+        {
+            //눈물 터지는 애니메이션 실행
+            tearBoomAnim.SetTrigger("BoomTear");
+        }
     }
 
     public void TearSize()
-    {   
+    {
+        playerTearSize = PlayerManager.instance.playerTearSize;
         gameObject.transform.localScale = new Vector3(playerTearSize, playerTearSize, 0);
     }
 
@@ -76,28 +87,28 @@ public class Tear : MonoBehaviour
         if (collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Object_Rock"))
         {
             gameObject.GetComponent<CircleCollider2D>().enabled = false;
-            tearBoomAnim.SetTrigger("BoomTear");
+            BoomTear();
         }
 
         //똥에 박으면
         else if (collision.gameObject.CompareTag("Object_Poop"))
         {
             gameObject.GetComponent<CircleCollider2D>().enabled = false;
-            tearBoomAnim.SetTrigger("BoomTear");
+            BoomTear();
             collision.GetComponent<Poop>().GetDamage();
         }
         //불에 박으면
         else if (collision.gameObject.CompareTag("Object_Fire"))
         {
             gameObject.GetComponent<CircleCollider2D>().enabled = false;
-            tearBoomAnim.SetTrigger("BoomTear");
+            BoomTear();
             collision.GetComponent<FirePlace>().GetDamage();
         }
         //적과 박으면
         else if (collision.gameObject.CompareTag("Enemy"))
         {
             gameObject.GetComponent<CircleCollider2D>().enabled = false;
-            tearBoomAnim.SetTrigger("BoomTear");
+            BoomTear();
             collision.gameObject.GetComponent<Enemy>().GetDamage(PlayerManager.instance.playerDamage);
 
             //Rigidbody2D enemyRB = collision.gameObject.GetComponent<Rigidbody2D>();
