@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class no : TrinketInfo
 {
+    public float beforeMoveSpeed;
+    public float beforeShotDelay;
 
-    float beforeMoveSpeed;
-    float beforeShotDelay;
     private void Start()
     {
         SetTrinketItemCode(7);
@@ -15,9 +15,14 @@ public class no : TrinketInfo
     public override void GetItem()
     {
         beforeMoveSpeed = PlayerManager.instance.playerMoveSpeed;
-        Debug.Log("기존 스피드 : " + beforeMoveSpeed);
-        beforeShotDelay = PlayerManager.instance.playerShotDelay;
+        beforeShotDelay = PlayerManager.instance.playerShotDelay; 
         PlayerManager.instance.playerMoveSpeed /= 2f;
         PlayerManager.instance.playerShotDelay *= 2f;
+    }
+
+    public override void DropTrinket()
+    {
+        PlayerManager.instance.playerMoveSpeed = beforeMoveSpeed; 
+        PlayerManager.instance.playerShotDelay = beforeShotDelay;
     }
 }

@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class WhipWorm : TrinketInfo
 {
-    // Start is called before the first frame update
+    float beforeRange;
+    float beforeShotDelay;
     private void Start()
     {
         SetTrinketItemCode(5);
@@ -12,7 +13,15 @@ public class WhipWorm : TrinketInfo
 
     public override void GetItem()
     {
+        beforeRange = PlayerManager.instance.playerRange;
+        beforeShotDelay = PlayerManager.instance.playerShotDelay;
         PlayerManager.instance.playerRange += 2f;
         PlayerManager.instance.playerShotDelay += 0.3f;
+    }
+
+    public override void DropTrinket()
+    {
+        PlayerManager.instance.playerRange = beforeRange;
+        PlayerManager.instance.playerShotDelay = beforeShotDelay;
     }
 }

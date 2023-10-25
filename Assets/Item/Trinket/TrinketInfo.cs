@@ -20,8 +20,10 @@ public class TrinketInfo : MonoBehaviour
             gameObject.layer = 31;
 
             // 1. 장신구 아이템을 장착하고 있지 않을 시
-            if (ItemManager.instance.TrinketItem == null) 
-                TrinketChange(collision);
+            if (ItemManager.instance.TrinketItem == null)
+            {
+                TrinketGet(collision);
+            }
             
             // 2. 장신구 아이템을 장착하고 있을 시
             else if(ItemManager.instance.TrinketItem != null)
@@ -29,9 +31,9 @@ public class TrinketInfo : MonoBehaviour
                 GameObject obj = ItemManager.instance.itemTable.TrinketChange(ItemManager.instance.TrinketItem.GetComponent<TrinketInfo>().trinketItemCode);
                 Transform dropPosition = GameManager.instance.playerObject.GetComponent<PlayerController>().itemPosition;
                 GameObject beforeTrinket = Instantiate(obj, new Vector3(dropPosition.position.x, (dropPosition.position.y - 1f), 0),Quaternion.identity) as GameObject;
+                ItemManager.instance.TrinketItem.GetComponent<TrinketInfo>().DropTrinket();
                 Destroy(ItemManager.instance.TrinketItem);
-                
-                TrinketChange(collision);
+                TrinketGet(collision);
             }
         }
     }
@@ -55,6 +57,10 @@ public class TrinketInfo : MonoBehaviour
         Debug.Log("재정의 해줘!"); 
     }
 
+    public virtual void DropTrinket()
+    {
+        Debug.Log("응애");
+    }
     private void TrinketChange(Collision2D collision)
     {
         ItemManager.instance.TrinketItem = this.gameObject;
@@ -66,6 +72,11 @@ public class TrinketInfo : MonoBehaviour
 
         Destroy(gameObject.GetComponent<Rigidbody2D>());
         StartCoroutine(collision.gameObject.GetComponent<PlayerController>().GetAcTrItem());
+    }
+    private void TrinketGet(Collision2D collision)
+    {
+        TrinketChange(collision);
+        GetItem();
     }
 
     void DisconnectTrinket()
