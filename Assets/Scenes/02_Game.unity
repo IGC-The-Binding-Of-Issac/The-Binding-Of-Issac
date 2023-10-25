@@ -454,8 +454,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f73782e154c99d499fad34cf1162281, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHp: 6
-  playerMaxHp: 6
+  playerHp: 5
+  playerMaxHp: 10
   playerMoveSpeed: 5
   playerTearSpeed: 6
   playerShotDelay: 0.5
@@ -526,7 +526,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 1
-  m_FillAmount: 0
+  m_FillAmount: 0.471
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -1278,6 +1278,8 @@ MonoBehaviour:
   coinText: {fileID: 1362639914}
   bombText: {fileID: 1401842131}
   keyText: {fileID: 2068630430}
+  heartUI: {fileID: 1830796578}
+  emptyHeart: {fileID: 791864245383955477, guid: dc527b45882552442be8f35ce57cc4d3, type: 3}
 --- !u!1 &1056556174
 GameObject:
   m_ObjectHideFlags: 0
@@ -2221,6 +2223,7 @@ GameObject:
   - component: {fileID: 1830796578}
   - component: {fileID: 1830796580}
   - component: {fileID: 1830796579}
+  - component: {fileID: 1830796581}
   m_Layer: 5
   m_Name: HPPanel
   m_TagString: Untagged
@@ -2285,6 +2288,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1830796577}
   m_CullTransparentMesh: 1
+--- !u!114 &1830796581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1830796577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 0
+  m_StartCorner: 0
+  m_StartAxis: 0
+  m_CellSize: {x: 40, y: 40}
+  m_Spacing: {x: 0, y: 0}
+  m_Constraint: 0
+  m_ConstraintCount: 2
 --- !u!1 &1861889042
 GameObject:
   m_ObjectHideFlags: 0
