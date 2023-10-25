@@ -143,7 +143,7 @@ MonoBehaviour:
   getItem: {fileID: 8517082362525743426}
   itemPosition: {fileID: 2012892397273447166}
   body: {fileID: 2584859350573509448}
-  tearPrefab: {fileID: 5114894525887414092, guid: ba1b1ea4a7a80f44185689dfb5626760, type: 3}
+  defaultTearImg: {fileID: 1837185413, guid: 64f0cce7912310a489ab219e28d20338, type: 3}
 --- !u!50 &5123890859065688872
 Rigidbody2D:
   serializedVersion: 4

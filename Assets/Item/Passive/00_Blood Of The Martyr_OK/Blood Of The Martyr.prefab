@@ -100,12 +100,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 112b8d7bbc588724d9bfedb948d8910d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isTrinket: 0
-  tearPrf: {fileID: 5114894525887414092, guid: ba1b1ea4a7a80f44185689dfb5626760, type: 3}
-  playerPrf: {fileID: 3456105446347801266, guid: bd7bba857dafcb445942b9d8ab6968a0, type: 3}
   redTearImg: {fileID: 1814297148, guid: 09c04784cbb310846b889e82311c5862, type: 3}
-  defaultTearImg: {fileID: 1837185413, guid: 64f0cce7912310a489ab219e28d20338, type: 3}
   MartyrImg: {fileID: 21300000, guid: a059a87cfaee73a4682d03434a0a23f8, type: 3}
+  clips:
+  - {fileID: 7400000, guid: 1947f765c4d8fc84daa1df6978bb317c, type: 2}
 --- !u!58 &4669690670962847372
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -12,11 +12,10 @@ public class PlayerController : MonoBehaviour
     public Transform itemPosition;
 
     public Transform body;
+    public Sprite defaultTearImg;
 
     Rigidbody2D playerRB;
     SpriteRenderer bodyRenderer;
-    public GameObject tearPrefab;
-    public GameObject tear;
 
     float tearSpeed;
     float moveSpeed;
@@ -30,8 +29,9 @@ public class PlayerController : MonoBehaviour
     {
         playerRB = GetComponent<Rigidbody2D>();
         bodyRenderer = body.GetComponent<SpriteRenderer>();
+        //PlayerManager.instance.tearObj.GetComponent<SpriteRenderer>().sprite = defaultTearImg;
     }
-
+    
     void Update()
     {
         // 이부분 조금 수정해야할듯
@@ -84,8 +84,7 @@ public class PlayerController : MonoBehaviour
     {
         //발사 기능 구현
         //게임 중 눈물 생성 눈물 프리펩, 발사 시작위치, 회전
-        tear = Instantiate(tearPrefab, transform.position + Vector3.up * 0.4f, transform.rotation) as GameObject;
-        tear.GetComponent<SpriteRenderer>().sprite = PlayerManager.instance.tearImage;
+        GameObject tear = Instantiate(PlayerManager.instance.tearObj, transform.position + Vector3.up * 0.4f, transform.rotation) as GameObject;
         tear.GetComponent<Rigidbody2D>().velocity = new Vector3(
             (x < 0) ? Mathf.Floor(x) * tearSpeed : Mathf.Ceil(x) * tearSpeed,
             (y < 0) ? Mathf.Floor(y) * tearSpeed : Mathf.Ceil(y) * tearSpeed, 0);
