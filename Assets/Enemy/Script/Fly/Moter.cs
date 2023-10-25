@@ -18,6 +18,8 @@ public class Moter : Top_Fly
         sight = 5f;
         moveSpeed = 0.5f;
         waitforSecond = 0.5f;
+
+        maxhp = hp;
     }
 
     private void Update()

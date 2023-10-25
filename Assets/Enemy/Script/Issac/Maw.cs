@@ -41,6 +41,7 @@ public class Maw : Top_IssacMonster
         waitforSecond = 1f;
         attaackSpeed = 3f; // idle <-> Shoot
 
+        maxhp = hp;
         //TopFly
         randRange = 0.5f;
         fTime = 0.5f;

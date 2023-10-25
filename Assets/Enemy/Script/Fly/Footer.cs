@@ -39,6 +39,7 @@ public class Footer : Top_Fly
         waitforSecond = 0.5f;
         attaackSpeed = 3f; // idle <-> Shoot
 
+        maxhp = hp;
         //TopFly
         randRange = 1f;
         fTime = 0.5f;

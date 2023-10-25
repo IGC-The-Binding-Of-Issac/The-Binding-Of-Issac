@@ -50,6 +50,7 @@ public class Tride : Top_Spider
         waitforSecond = 0.4f;
         attaackSpeed = 2f;
 
+        maxhp = hp;
         //Tride
         currTime = 0;
         oriSpeed = moveSpeed;
