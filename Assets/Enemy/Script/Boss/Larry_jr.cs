@@ -26,9 +26,9 @@ public class Larry_jr : Enemy
 
     [Header("몸통")]
     [SerializeField] Transform larryBody;
-    [SerializeField] int spawnObj; //머리 포함
+    [SerializeField] int spawnObj; //머리 포함 갯수
     [SerializeField] List<Transform> segments = new List<Transform>();
-    [SerializeField] Vector3 MoveDir; //움직일 위치
+    [SerializeField] Vector3 MoveDir; //움직일 방향 (위, 아래, 오,  왼)
 
     void Start()
     {
@@ -100,7 +100,7 @@ public class Larry_jr : Enemy
         segments.Add(transform);
 
         // 머리를 따라 다니는 꼬리 (larryBody)를 생성, segment 리스트에 저장하기
-        for (int i = 0; i < spawnObj - 1; i++) 
+        for (int i = 1; i < spawnObj; i++) 
         {
             AddSegment();
         }
@@ -112,7 +112,7 @@ public class Larry_jr : Enemy
     {
         // position 사용해서 연결된거 뒤에 연결되게
         Transform seg = Instantiate(larryBody);
-        seg.position = segments[segments.Count - 1].position + new Vector3(0.8f , 0 , 0); 
+        seg.position += segments[segments.Count - 1].position; 
         // set위치 , 전에 있는 세그 위치 + x위치 1만큼
         segments.Add(seg);
     }
@@ -122,11 +122,18 @@ public class Larry_jr : Enemy
     {
         //본인(머리)움직임
         transform.position += MoveDir * Time.deltaTime * moveSpeed;
+        Vector3 desti;
+        desti = new Vector3(transform.position.x, transform.position.y, 0);
 
         //몸통 움직임
         for (int i = 1; i < segments.Count; i++)
         {
-            segments[i].position = Vector3.MoveTowards(segments[i].transform.position,  segments[i-1].transform.position , moveSpeed * Time.deltaTime);
+            //현재 tramsfom 저장
+            Vector3 now = new Vector3(segments[i].position.x, segments[i].position.y, 0);
+            //현재 위치를 저장 해놓은 desti로 이동
+            segments[i].position = Vector3.MoveTowards(segments[i].transform.position, desti, moveSpeed * Time.deltaTime);
+            //desti를 현재 위치로 저장
+            desti = now;
         }
 
     }
@@ -150,7 +157,7 @@ public class Larry_jr : Enemy
         }
         else 
         {
-            rand = Random.Range(1, 5); // 1~4중
+            rand = Random.Range(1, 3); // 1~4중
             stateNum = rand;
         }
     }
