@@ -212,6 +212,7 @@ public class RoomGenerate : MonoBehaviour
                     GameObject obstacle = Instantiate(objectPrefabs[rdPattern[i, j] - 1]) as GameObject;
                     obstacle.transform.SetParent(roomList[y, x].GetComponent<Room>().roomObjects[idx]);
                     obstacle.transform.localPosition = new Vector3(0, 0, 0);
+
                     if (rdPattern[i, j] == 10) // 플레이어 오브젝트일때
                     {
                         obstacle.transform.SetParent(null);

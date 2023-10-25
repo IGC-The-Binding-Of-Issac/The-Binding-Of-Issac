@@ -7,9 +7,10 @@ public class ItemInfo : MonoBehaviour
 {
     protected int itemCode;
 
+    public bool canCollision = false;
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.CompareTag("Player"))
+        if(collision.gameObject.CompareTag("Player") && canCollision)
         {
             // 아이템을 가지고있지않을때.
             if(!ItemManager.instance.PassiveItems[itemCode])
@@ -32,5 +33,14 @@ public class ItemInfo : MonoBehaviour
     public void SetItemCode(int code)
     {
         itemCode = code;
+    }
+    void SetDelay()
+    {
+        canCollision = true;
+    }
+    private void Update()
+    {
+        if (!canCollision)
+            Invoke("SetDelay", 0.8f);
     }
 }
