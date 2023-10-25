@@ -26,6 +26,8 @@ public class Heart : MonoBehaviour
         {
             gameObject.layer = 31;
             PlayerManager.instance.playerHp+=2;
+            if (PlayerManager.instance.playerHp > PlayerManager.instance.playerMaxHp)
+                PlayerManager.instance.playerHp = PlayerManager.instance.playerMaxHp;
             StartCoroutine(getHeart());
         }
         else if (collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Object_Fire")

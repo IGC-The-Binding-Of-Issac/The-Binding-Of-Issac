@@ -44,8 +44,12 @@ public class GameManager : MonoBehaviour
     {
         // Create stage/room
 
-        if (playerObject != null)
-            Destroy(playerObject);
+        if (playerObject == null)
+        {
+            GameObject obj = Instantiate(roomGenerate.objectPrefabs[9]) as GameObject;
+            playerObject = obj;
+        }
+
         myCamera.transform.SetParent(null);
 
         int cnt = 20;
