@@ -2162,6 +2162,12 @@ MonoBehaviour:
   TrinketItems:
   - {fileID: 3858725772182881322, guid: 65e8522bd1de3b54e853c0ab74388f34, type: 3}
   - {fileID: 6604932927728474701, guid: c76b66f3caaccb54ba7e74289a3093eb, type: 3}
+  - {fileID: 7035222655098294408, guid: a1be42c1f86796f439d380a35bb0fa7d, type: 3}
+  - {fileID: 3929018578920803387, guid: fc7418ca14a760340b6519694bfaf1bf, type: 3}
+  - {fileID: 4340937208976659829, guid: a8479824c329b954eb54636be995bc2c, type: 3}
+  - {fileID: 2102287193622278474, guid: cd3d11d5ccc867447adc121881f0692d, type: 3}
+  - {fileID: 614331957449721662, guid: 87a0b11d70e7a5241a1d4f1e6ce20cbe, type: 3}
+  - {fileID: 14252728285204051, guid: da9061496e556694d92bfc2e038dd6dc, type: 3}
   ActiveItems: []
   passive: 
   trinket: 
