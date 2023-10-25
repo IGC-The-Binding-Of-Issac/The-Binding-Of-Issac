@@ -34,6 +34,7 @@ public class FirePlace : MonoBehaviour
         if (rd == 0)
         {
             GameObject it = Instantiate(ItemManager.instance.itemTable.ObjectBreak(), transform.position, Quaternion.identity) as GameObject;
+            GameManager.instance.roomGenerate.itemList.Add(it); 
         }
     }
 
@@ -43,10 +44,6 @@ public class FirePlace : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             PlayerManager.instance.GetDamage();
-        }
-        if (collision.gameObject.CompareTag("Enemy"))
-        {
-            collision.gameObject.GetComponent<Enemy>().GetDamage(1);
         }
     }
 }

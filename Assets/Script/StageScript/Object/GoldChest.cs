@@ -30,7 +30,5 @@ public class GoldChest : MonoBehaviour
     {
         GameObject it = Instantiate(ItemManager.instance.itemTable.OpenGoldChest(), transform.position, Quaternion.identity) as GameObject;
         GameManager.instance.roomGenerate.itemList.Add(it);
-        // 해당코드로는 스테이지 재 시작시
-        // Item Storage에 들어가는 장신구/액티브 아이템도 같이 사라지게됨.
     }
 }

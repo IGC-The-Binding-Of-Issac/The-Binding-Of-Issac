@@ -30,6 +30,7 @@ public class Poop : MonoBehaviour
         if (rd == 0)
         {
             GameObject it = Instantiate(ItemManager.instance.itemTable.ObjectBreak(), transform.position, Quaternion.identity) as GameObject;
+            GameManager.instance.roomGenerate.itemList.Add(it);
         }
     }
 }
