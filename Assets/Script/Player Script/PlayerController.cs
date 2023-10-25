@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
     {
         playerRB = GetComponent<Rigidbody2D>();
         bodyRenderer = body.GetComponent<SpriteRenderer>();
-        //PlayerManager.instance.tearObj.GetComponent<SpriteRenderer>().sprite = defaultTearImg;
+        PlayerManager.instance.tearObj.GetComponent<SpriteRenderer>().sprite = defaultTearImg;
     }
     
     void Update()
