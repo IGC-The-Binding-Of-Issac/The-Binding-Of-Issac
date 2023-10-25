@@ -10,9 +10,5 @@ public class Spikes : MonoBehaviour
         {
             PlayerManager.instance.GetDamage();
         }
-        if(collision.gameObject.CompareTag("Enemy"))
-        {
-            collision.GetComponent<Enemy>().GetDamage(1);
-        }
     }
 }
