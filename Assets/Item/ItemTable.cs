@@ -142,26 +142,8 @@ public class ItemTable : MonoBehaviour
         // 패시브 아이템이 전부 나왔으면, 액티브아이템 드랍
         // 액티브 아이템이 전부 나왔으면, 열쇠드랍  
         // 장신구 -> 패시브 -> 액티브 -> 열쇠
-
-        return DropTrinket();
-        //int rd = Random.Range(0, 100000);
-        //int num = rd % 100;
-
-        //if (0 <= num && num <= 50) // 장신구 드랍
-        //{
-        //    return DropTrinket();
-        //}
-
-        //if (51 <= num && num <= 75) // 패시브 드랍
-        //{
-        //    return DropPssive();
-        //}
-
-        //if (75 <= num && num <= 100) // 액티브 드랍 
-        //{
-        //    return DropActive();
-        //}
-        //return DropItems[3];
+        return PassiveItems[0];
+        //return DropTrinket();
     }
 
     public GameObject TrinketChange(int itemCode)
