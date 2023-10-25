@@ -142,7 +142,7 @@ public class ItemTable : MonoBehaviour
         // 패시브 아이템이 전부 나왔으면, 액티브아이템 드랍
         // 액티브 아이템이 전부 나왔으면, 열쇠드랍  
         // 장신구 -> 패시브 -> 액티브 -> 열쇠
-        return DropTrinket();
+        return PassiveItems[0];
 
         //return DropTrinket();
     }

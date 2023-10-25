@@ -46,13 +46,13 @@ public class PlayerManager : MonoBehaviour
         {
             playerHp--;
             CanGetDamage = false;
-            StartCoroutine(HitDelay());
             if(playerHp <= 0) // 데미지를 받았을때 HP가 0이하가 되면 사망함수 실행.
             {
                 GameManager.instance.playerObject.GetComponent<PlayerController>().Dead();
             }
             else
             {
+                StartCoroutine(HitDelay());
                 GameManager.instance.playerObject.GetComponent<PlayerController>().Hit();
             }
         }            
@@ -75,12 +75,14 @@ public class PlayerManager : MonoBehaviour
             {
                 playerObj.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
                 playerObj.transform.GetChild(1).gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
+                playerObj.transform.GetChild(4).gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
             }
             //countTIme%2 != 0이면 플레이어 모습이 안보임
             else
             {
                 playerObj.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
                 playerObj.transform.GetChild(1).gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
+                playerObj.transform.GetChild(4).gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
             }
             countTime++;
 
@@ -89,6 +91,7 @@ public class PlayerManager : MonoBehaviour
         //while문 실행 후 모습이 보임
         playerObj.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
         playerObj.transform.GetChild(1).gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
+        playerObj.transform.GetChild(4).gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
         
         //피격 판정 됨
         CanGetDamage = true;
