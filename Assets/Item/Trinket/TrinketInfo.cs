@@ -10,7 +10,7 @@ public class TrinketInfo : MonoBehaviour
 {
     public int trinketItemCode;
 
-    public bool canCollision;
+    public bool canCollision = false;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -28,10 +28,18 @@ public class TrinketInfo : MonoBehaviour
             // 2. 장신구 아이템을 장착하고 있을 시
             else if(ItemManager.instance.TrinketItem != null)
             {
+                // 현재 보유중인 아이템의 효과를 제거.
+                ItemManager.instance.TrinketItem.GetComponent<TrinketInfo>().DropTrinket();
+
+                // 현재 보유중인 아이템을 생성
                 GameObject obj = ItemManager.instance.itemTable.TrinketChange(ItemManager.instance.TrinketItem.GetComponent<TrinketInfo>().trinketItemCode);
                 Transform dropPosition = GameManager.instance.playerObject.GetComponent<PlayerController>().itemPosition;
                 GameObject beforeTrinket = Instantiate(obj, new Vector3(dropPosition.position.x, (dropPosition.position.y - 1f), 0),Quaternion.identity) as GameObject;
-                ItemManager.instance.TrinketItem.GetComponent<TrinketInfo>().DropTrinket();
+
+                // 현재 드랍된 아이템 리스트에 등록.
+                GameManager.instance.roomGenerate.itemList.Add(beforeTrinket);
+
+                // 원래있던 아이템 제거.
                 Destroy(ItemManager.instance.TrinketItem);
                 TrinketGet(collision);
             }
@@ -43,10 +51,6 @@ public class TrinketInfo : MonoBehaviour
         trinketItemCode = code;
     }
 
-    void SetDelay()
-    { 
-        canCollision = true;
-    }
     public void KeepItem() 
     {
         transform.position = ItemManager.instance.itemStorage.position;
@@ -96,9 +100,13 @@ public class TrinketInfo : MonoBehaviour
         }
     }
 
+    void SetDelay()
+    {
+        canCollision = true;
+    }
     private void Update()
     {
-        if(!canCollision)
+        if (!canCollision)
             Invoke("SetDelay", 0.8f);
     }
 }
