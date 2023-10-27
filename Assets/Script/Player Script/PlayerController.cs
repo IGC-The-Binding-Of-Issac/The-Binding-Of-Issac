@@ -5,25 +5,34 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
+    [Header("Animation")]
     public Animator playerMoveAnim;
     public Animator playerShotAnim;
     public Animator playerAnim;
     public Animator getItem;
+
+    [Header("Object")]
     public Transform itemPosition;
-
     public Transform body;
-    public Sprite defaultTearImg;
 
-    Rigidbody2D playerRB;
+    [Header("Sprite")]
+    public Sprite defaultTearImg;
     SpriteRenderer bodyRenderer;
 
+    Rigidbody2D playerRB;
+
+    [Header("PlayerStats")]
     float tearSpeed;
     float moveSpeed;
     float shotDelay;
-    private float lastshot;
 
+    [Header("Function")]
+    private float lastshot;
     Vector2 moveInput;
 
+    float shootHor;
+    float shootVer;
+    public GameObject tear;
 
     void Start()
     {
@@ -55,13 +64,13 @@ public class PlayerController : MonoBehaviour
         float hori = Input.GetAxis("Horizontal");
         float verti = Input.GetAxis("Vertical");
         moveInput = hori * Vector2.right + verti * Vector2.up;
-        //대각 속도 1 넘기지 않기
+        //대각 이동속도 1 넘기지 않기
         if(moveInput.magnitude > 1f)
         {
             moveInput.Normalize();
         }
-        float shootHor = Input.GetAxis("ShootHorizontal");
-        float shootVer = Input.GetAxis("ShootVertical");
+        shootHor = Input.GetAxis("ShootHorizontal");
+        shootVer = Input.GetAxis("ShootVertical");
 
         //총알 발사 딜레이
         if ((shootHor != 0 || shootVer != 0) && Time.time > lastshot + shotDelay)
@@ -80,14 +89,15 @@ public class PlayerController : MonoBehaviour
     }
 
     //발사 기능
-    void Shoot(float x, float y)
+    public void Shoot(float x, float y)
     {
         //발사 기능 구현
         //게임 중 눈물 생성 눈물 프리펩, 발사 시작위치, 회전
-        GameObject tear = Instantiate(PlayerManager.instance.tearObj, transform.position + Vector3.up * 0.4f, transform.rotation) as GameObject;
-        tear.GetComponent<Rigidbody2D>().velocity = new Vector3(
-            (x < 0) ? Mathf.Floor(x) * tearSpeed : Mathf.Ceil(x) * tearSpeed,
-            (y < 0) ? Mathf.Floor(y) * tearSpeed : Mathf.Ceil(y) * tearSpeed, 0);
+        tear = Instantiate(PlayerManager.instance.tearObj, transform.position + Vector3.up * 0.5f, transform.rotation) as GameObject;
+        tear.GetComponent<Rigidbody2D>().velocity = new Vector3(x * tearSpeed, y * tearSpeed, 0);
+            //floor = 내림, ceil = 올림
+            //(x < 0) ? Mathf.Floor(x) * tearSpeed : Mathf.Ceil(x) * tearSpeed,
+            //(y < 0) ? Mathf.Floor(y) * tearSpeed : Mathf.Ceil(y) * tearSpeed, 0);
 
         //총알이 대각으로 밀려서 발사되게 옆으로 힘을 줌
         if (Input.GetKey(KeyCode.W))
@@ -159,7 +169,7 @@ public class PlayerController : MonoBehaviour
         {
             playerShotAnim.SetBool("DownLook", false);
         }
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.A))
         {
             playerShotAnim.SetBool("LeftLook", true);
             if (Input.GetKey(KeyCode.DownArrow))
