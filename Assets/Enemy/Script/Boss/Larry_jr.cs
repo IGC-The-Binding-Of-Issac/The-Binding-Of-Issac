@@ -25,14 +25,16 @@ public class Larry_jr : Enemy
     [SerializeField] bool chageState;
 
     [Header("몸통")]
-    [SerializeField] Transform larryBody;
     [SerializeField] int spawnObj; //머리 포함 갯수
-    [SerializeField] List<Transform> segments = new List<Transform>();
+    [SerializeField] int gap;
+    [SerializeField] GameObject larryBody;
     [SerializeField] Vector3 MoveDir; //움직일 방향 (위, 아래, 오,  왼)
+    [SerializeField] List<GameObject> segments = new List<GameObject>(); // 몸통 오브젝트를 담을 배열
+    [SerializeField] List<Vector3> PositionHistory = new List<Vector3>(); // 몸통 위치를 저장하는 배열 -> 뒤의 오브젝트가 앞에 따라가게 
+
 
     void Start()
     {
-
 
         playerInRoom = false;
         dieParameter = "isDie";
@@ -51,17 +53,19 @@ public class Larry_jr : Enemy
         chageState = true;
 
         randTime(); //초기에 진행할 시간 한번 구해놓기
-
         currTime = stateTime; // 초기에 구한 시간
         spawnObj = 13; //머리 포함 초기 생성 갯수
+        gap = 70; // 게임 오브젝트들 사이에 움직임 수정할때 : 작으면 촘촘히 붙어서 움직임
 
         Setup(); //larry의 몸 만들기
+
     }
 
     private void Update()
     {
         if (playerInRoom)
             Move();
+
     }
 
     override public void Move()
@@ -96,25 +100,21 @@ public class Larry_jr : Enemy
     // 머리 + 몸통 만들기
     private void Setup()
     {
-        // 머리(본인)를 segment 리스트에 저장
-        segments.Add(transform);
+        // Snake 본체를 segments 리스트에 저장
+        segments.Add(larryBody);
 
-        // 머리를 따라 다니는 꼬리 (larryBody)를 생성, segment 리스트에 저장하기
-        for (int i = 1; i < spawnObj; i++) 
+        // Snake를 쫓아다니는 꼬리(segment 오브젝트)를 생성하고, segments 리스트에 저장
+        for (int i = 0; i < spawnObj-1; ++i)
         {
             AddSegment();
         }
-
     }
 
-    // 머리에 몸통 붙이기
-    private void AddSegment() 
+    private void AddSegment()
     {
-        // position 사용해서 연결된거 뒤에 연결되게
-        Transform seg = Instantiate(larryBody);
-        seg.position += segments[segments.Count - 1].position; 
-        // set위치 , 전에 있는 세그 위치 + x위치 1만큼
-        segments.Add(seg);
+        GameObject segment = Instantiate(larryBody);
+        segment.transform.position = segments[segments.Count - 1].transform.position;
+        segments.Add(segment);
     }
 
     //몸통까지 움직임
@@ -122,18 +122,18 @@ public class Larry_jr : Enemy
     {
         //본인(머리)움직임
         transform.position += MoveDir * Time.deltaTime * moveSpeed;
-        Vector3 desti;
-        desti = new Vector3(transform.position.x, transform.position.y, 0);
 
         //몸통 움직임
-        for (int i = 1; i < segments.Count; i++)
+        PositionHistory.Insert(0, transform.position); //위치 담아놓는 배열-> 0번째 index에 머리위치 담기
+        int index = 0;
+        foreach (var body in segments)
         {
-            //현재 tramsfom 저장
-            Vector3 now = new Vector3(segments[i].position.x, segments[i].position.y, 0);
-            //현재 위치를 저장 해놓은 desti로 이동
-            segments[i].position = Vector3.MoveTowards(segments[i].transform.position, desti, moveSpeed * Time.deltaTime);
-            //desti를 현재 위치로 저장
-            desti = now;
+            Vector3 posi = PositionHistory[Mathf.Min(index * gap, PositionHistory.Count - 1)];
+            // index : 머리가 움직이고 얼마뒤에 (gap * 0)만큼 움직임
+            // gap : 게임 오브젝트 사이들 끼리 움직임?
+            Vector3 posiforwad = posi - body.transform.position;
+            body.transform.position += posiforwad;
+            index++;
         }
 
     }
@@ -143,8 +143,12 @@ public class Larry_jr : Enemy
     {
         // state 1.up , 2. down , 3.left , 4. right 상태 중에 하나를 랜덤으로 고름
         int rand = 0;
+        rand = Random.Range(1, 5); // 1~4중
+        stateNum = rand;
+
         // 좌우 방향은 전환 x
         // 위아래 방향은 전환 x
+        /*
         if (stateNum == 1 || stateNum == 2) 
         {
             rand = Random.Range(3,5); // 3~4중
@@ -160,6 +164,7 @@ public class Larry_jr : Enemy
             rand = Random.Range(1, 3); // 1~4중
             stateNum = rand;
         }
+        */
     }
     void randTime() 
     {
