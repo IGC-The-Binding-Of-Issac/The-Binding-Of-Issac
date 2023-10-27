@@ -1,8 +1,5 @@
-using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 /*
 public enum LarryState 
@@ -38,6 +35,7 @@ public class Larry_jr : Enemy
 
         playerInRoom = false;
         dieParameter = "isDie";
+        animator = GetComponent<Animator>();
 
         // Enemy
         hp = 50f;
@@ -55,7 +53,7 @@ public class Larry_jr : Enemy
         randTime(); //초기에 진행할 시간 한번 구해놓기
         currTime = stateTime; // 초기에 구한 시간
         spawnObj = 13; //머리 포함 초기 생성 갯수
-        gap = 70; // 게임 오브젝트들 사이에 움직임 수정할때 : 작으면 촘촘히 붙어서 움직임
+        gap = 50; // 게임 오브젝트들 사이에 움직임 수정할때 : 작으면 촘촘히 붙어서 움직임
 
         Setup(); //larry의 몸 만들기
 
@@ -72,6 +70,8 @@ public class Larry_jr : Enemy
     {
         // 움직임
         MoveSegment();
+        // 머리 애니메이션
+        chageHeadAni();
 
         //방향 정하기
         currTime -= Time.deltaTime;
@@ -138,13 +138,38 @@ public class Larry_jr : Enemy
 
     }
 
+    // 방향에 따라 Head 애니메이션 바뀌게
+    void chageHeadAni() 
+    {
+        // state 1.up , 2. down , 3.left , 4. right 상태 
+        if (stateNum == 1)
+            animator.SetTrigger("isLarryTop");
+        else if (stateNum == 2)
+            animator.SetTrigger("isLarryDown");
+        else if (stateNum == 3)
+            animator.SetTrigger("isLarryLeft");
+        else if (stateNum == 4)
+            animator.SetTrigger("isLarryRight");
+
+
+    }
+
     // 랜덤 시간 마다, 랜덤 상태로 변환
     void randNum() 
     {
         // state 1.up , 2. down , 3.left , 4. right 상태 중에 하나를 랜덤으로 고름
         int rand = 0;
-        rand = Random.Range(1, 5); // 1~4중
-        stateNum = rand;
+
+        //맨 처음에는 무조건 오른쪽으로
+        if (stateNum == 0)
+        {
+            stateNum = 4;
+        }
+        else
+        {
+            rand = Random.Range(1, 5); // 1~4중
+            stateNum = rand;
+        }
 
         // 좌우 방향은 전환 x
         // 위아래 방향은 전환 x
