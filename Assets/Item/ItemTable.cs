@@ -136,15 +136,21 @@ public class ItemTable : MonoBehaviour
 
     public GameObject OpenGoldChest()
     {
+        //return PassiveItems[0]; // 테스트용
         // 드랍확률 : 장신구 50% / 패시브 25% / 액티브 25%
-        // 패시브/액티브/장신구 : 한번이라도 드랍된아이템은 드랍X
-        // 장신구 아이템이 전부 나왔으면, 패시브아이템 드랍
-        // 패시브 아이템이 전부 나왔으면, 액티브아이템 드랍
-        // 액티브 아이템이 전부 나왔으면, 열쇠드랍  
-        // 장신구 -> 패시브 -> 액티브 -> 열쇠
-        return PassiveItems[0];
 
-        //return DropTrinket();
+        // 테스트 할때는 이코드들 주석처리 해주셈
+        int rd = Random.Range(0, 10000);
+        int n = rd % 100;
+
+        if (0 <= n && n >= 49)
+            return DropTrinket();
+
+        else if (50 <= n && n >= 75)
+            return DropPssive();
+
+        else
+            return DropActive();
     }
 
     public GameObject TrinketChange(int itemCode)

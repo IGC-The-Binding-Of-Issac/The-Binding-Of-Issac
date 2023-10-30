@@ -29,9 +29,6 @@ public class RoomGenerate : MonoBehaviour
          * roomPrefabs[ 스테이지 - 1 , 방번호 - 1 ]
          * (-1 : 생성X)  (0 : 시작방)  (1 : 일반방)  (2 : 보스방)  (3 : 상점방)  (4 : 황금방) (5 : 저주방)
          * 
-         * objects[]
-         * (0 : 돌)  (1 : 똥)  (2 : 모닥불)  (3 : 구덩이)
-         * 
          * doorPrefabs[]
          * (0 : 일반방)  (1 : 보스방)  (2 : 상점방)  (3 : 골드방)  (4 : 저주방)
          */
@@ -207,6 +204,8 @@ public class RoomGenerate : MonoBehaviour
                     enemy.GetComponent<Enemy>().roomInfo = roomList[y, x];
                     roomList[y, x].GetComponent<Room>().enemis.Add(enemy); // 해당 방의 몬스터리스트에 추가
                 }
+
+                // 그 외
                 else
                 {
                     if (rdPattern[i, j] == 10) // 플레이어 오브젝트일때
@@ -214,11 +213,18 @@ public class RoomGenerate : MonoBehaviour
                         Transform pos = roomList[y, x].GetComponent<Room>().roomObjects[idx].transform;
                         GameManager.instance.playerObject.transform.position = pos.position;
                     }
+
+                    // 그외
                     else
                     {
-                        GameObject obstacle = Instantiate(objectPrefabs[rdPattern[i, j] - 1]) as GameObject;
-                        obstacle.transform.SetParent(roomList[y, x].GetComponent<Room>().roomObjects[idx]);
-                        obstacle.transform.localPosition = new Vector3(0, 0, 0);
+                        GameObject obstacle = Instantiate(objectPrefabs[rdPattern[i, j] - 1]) as GameObject; // 오브젝트 생성
+                        obstacle.transform.SetParent(roomList[y, x].GetComponent<Room>().roomObjects[idx]); // 오브젝트 위치 설정
+                        obstacle.transform.localPosition = new Vector3(0, 0, 0); // 오브젝트 위치 설정
+
+                        if (rdPattern[i, j] == 7) // 황금방 아이템 테이블
+                        {
+                            obstacle.GetComponent<GoldTable>().SetRoomInfo(roomList[y,x]);
+                        }
                     }
 
                 }
