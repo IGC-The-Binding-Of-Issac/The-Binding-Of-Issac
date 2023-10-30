@@ -7,7 +7,6 @@ public class LogoMove : MonoBehaviour
 {
     //UD_Floor
     float initPositionY;
-    float initPositionX;
     public float distance;
     public float turningPoint;
     //UD_Floor & LR_Floor
