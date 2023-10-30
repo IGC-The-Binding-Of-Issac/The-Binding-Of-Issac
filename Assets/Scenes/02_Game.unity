@@ -695,8 +695,8 @@ MonoBehaviour:
   - {fileID: 5460904561417292347, guid: d7d2e073f4b07ee4cbe478b953773a49, type: 3}
   - {fileID: 3860274308870984225, guid: de61851bcaa335c4a91904e452ca2058, type: 3}
   - {fileID: 5973453183993415052, guid: bf63ffe6cd56cd94dba681923193ee52, type: 3}
-  - {fileID: 3860274308870984225, guid: de61851bcaa335c4a91904e452ca2058, type: 3}
-  - {fileID: 3860274308870984225, guid: de61851bcaa335c4a91904e452ca2058, type: 3}
+  - {fileID: 6143473432452218451, guid: ddafa4daf85fdf44e90e472672e42be5, type: 3}
+  - {fileID: 6143473432452218451, guid: ddafa4daf85fdf44e90e472672e42be5, type: 3}
   - {fileID: 5095112347888592539, guid: 08fcaa6a3d3936041a80036ea8c3b7bf, type: 3}
   - {fileID: 7416306667401352027, guid: eaffd6b108d89a9429dfebb47b6b2ce9, type: 3}
   - {fileID: 3456105446347801266, guid: bd7bba857dafcb445942b9d8ab6968a0, type: 3}
@@ -3269,7 +3269,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1591679255498439134
 GameObject:
   m_ObjectHideFlags: 0
