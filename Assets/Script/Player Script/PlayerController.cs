@@ -288,7 +288,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public IEnumerator GetAcTrItem()
+    public IEnumerator GetTrinketItem()
     {
         //원래 모습은 가려둠
         gameObject.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
@@ -300,8 +300,33 @@ public class PlayerController : MonoBehaviour
         //플레이어 모습 보이게 함
         gameObject.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
         gameObject.transform.GetChild(1).gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
-
         ItemManager.instance.TrinketItem.GetComponent<TrinketInfo>().KeepItem();
+    }
+
+    public IEnumerator GetActiveItem()
+    {
+        gameObject.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
+        gameObject.transform.GetChild(1).gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
+
+        getItem.SetTrigger("GetItem");
+        yield return new WaitForSeconds(1f);
+
+        gameObject.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
+        gameObject.transform.GetChild(1).gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
+
+        ItemManager.instance.ActiveItem.GetComponent<ActiveInfo>().KeepItem();
+    }
+
+    public IEnumerator UseActiveItem()
+    {
+        gameObject.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
+        gameObject.transform.GetChild(1).gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
+
+        getItem.SetTrigger("GetItem");
+        yield return new WaitForSeconds(0.4f);
+
+        gameObject.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
+        gameObject.transform.GetChild(1).gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
     }
 
     //폭탄 설치 기능
