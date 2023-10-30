@@ -56,7 +56,7 @@ public class Tear : MonoBehaviour
 
     public void BoomTear()
     {
-        if (ItemManager.instance.PassiveItems[0] == true || (ItemManager.instance.ActiveItem.name == "The Nail(Clone)" && ItemManager.instance.ActiveItem.GetComponent<ActiveInfo>().activated))
+        if (ItemManager.instance.PassiveItems[0] == true || (ItemManager.instance.ActiveItem != null && ItemManager.instance.ActiveItem.name == "The Nail(Clone)" && ItemManager.instance.ActiveItem.GetComponent<ActiveInfo>().activated))
         {
             tearBoomAnim.SetTrigger("RedBoomTear");
         }
