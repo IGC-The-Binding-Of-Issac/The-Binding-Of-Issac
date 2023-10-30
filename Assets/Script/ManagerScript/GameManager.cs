@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     public int stageSize;  // 스테이지 크기
     public int stageMinimunRoom; // 스테이지 방 최소개수
     public GameObject playerObject; // 생성된 플레이어
+    public int maxStage;
 
     [Header("Unity Setup")]
     public StageGenerate stageGenerate;
@@ -29,6 +30,9 @@ public class GameManager : MonoBehaviour
     {
         SetStage(1); // 1stage create
         roomGenerate.SetPrefabs(); // room Prefabs Setting
+
+        // 게임 시작 ( 스테이지 생성 )
+        Invoke("StageStart", 0.3f);
     }
 
     void Update()
@@ -52,7 +56,7 @@ public class GameManager : MonoBehaviour
 
         myCamera.transform.SetParent(null);
 
-        int cnt = 20;
+        int cnt = 15;
         while (cnt-- > 0)
         {
             if (stageGenerate.CreateStage(stageSize, stageMinimunRoom))
@@ -63,6 +67,12 @@ public class GameManager : MonoBehaviour
                 break;
             }
         }
+    }
+
+    public void NextStage()
+    {
+        SetStage(++stageLevel); // 스테이지 세팅
+        StageStart(); // 스테이지 생성
     }
 
     public void SetStage(int stage)
