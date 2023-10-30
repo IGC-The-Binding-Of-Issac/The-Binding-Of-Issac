@@ -100,7 +100,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 1
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -161,5 +161,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16950f862fc453e4cb2e4a45c98c3935, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isTrinket: 0
+  canCollision: 0
   playerObj: {fileID: 3456105446347801266, guid: bd7bba857dafcb445942b9d8ab6968a0, type: 3}

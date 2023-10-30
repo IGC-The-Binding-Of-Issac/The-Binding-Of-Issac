@@ -63,7 +63,7 @@ public class TrinketInfo : MonoBehaviour
 
     public virtual void DropTrinket()
     {
-        Debug.Log("응애");
+        Debug.Log("장신구 떨어뜨릴 때 재정의");
     }
     private void TrinketChange(Collision2D collision)
     {
@@ -75,7 +75,8 @@ public class TrinketInfo : MonoBehaviour
         gameObject.transform.localPosition = new Vector3(0, 0, 0);
 
         Destroy(gameObject.GetComponent<Rigidbody2D>());
-        StartCoroutine(collision.gameObject.GetComponent<PlayerController>().GetAcTrItem());
+        StartCoroutine(collision.gameObject.GetComponent<PlayerController>().GetTrinketItem());
+
     }
     private void TrinketGet(Collision2D collision)
     {

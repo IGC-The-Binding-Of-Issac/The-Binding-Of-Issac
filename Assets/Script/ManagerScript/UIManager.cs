@@ -34,6 +34,10 @@ public class UIManager : MonoBehaviour
         {
             trinket.sprite = ItemManager.instance.TrinketItem.GetComponent<SpriteRenderer>().sprite;
         }
+        if (ItemManager.instance.ActiveItem != null)
+        {
+            active.sprite = ItemManager.instance.ActiveItem.GetComponent<SpriteRenderer>().sprite;
+        }
         coinText.text = ItemManager.instance.coinCount.ToString();
         bombText.text = ItemManager.instance.bombCount.ToString();
         keyText.text = ItemManager.instance.keyCount.ToString();
