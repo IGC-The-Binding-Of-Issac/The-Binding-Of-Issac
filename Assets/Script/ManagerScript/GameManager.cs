@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
         roomGenerate.SetPrefabs(); // room Prefabs Setting
 
         // 게임 시작 ( 스테이지 생성 )
-        //Invoke("StageStart", 0.3f);
+        Invoke("StageStart", 0.3f);
     }
 
     void Update()
