@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6442093877400942050}
   - component: {fileID: 8677732189698642898}
-  m_Layer: 0
+  m_Layer: 25
   m_Name: SnakeManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,10 +44,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a9dc5cada2d22c4fb4d3f52295ba299, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerInRoom: 0
+  hpBarSlider: {fileID: 0}
+  hp: 0
+  moveSpeed: 0
+  playerPos: {fileID: 0}
+  knockBackState: 0
+  roomInfo: {fileID: 0}
   distanceBetween: 0.2
-  speed: 280
-  turnSpeed: 180
   bodyParts:
   - {fileID: 5600537940808364053, guid: 3fa04f53a8bc9c24e90fe9bc692d5c4a, type: 3}
   - {fileID: 683869812595379796, guid: 9cd8917b6afe1f447866dc80472c1e07, type: 3}
+  - {fileID: 683869812595379796, guid: 9cd8917b6afe1f447866dc80472c1e07, type: 3}
+  - {fileID: 683869812595379796, guid: 9cd8917b6afe1f447866dc80472c1e07, type: 3}
+  - {fileID: 683869812595379796, guid: 9cd8917b6afe1f447866dc80472c1e07, type: 3}
+  - {fileID: 683869812595379796, guid: 9cd8917b6afe1f447866dc80472c1e07, type: 3}
+  - {fileID: 683869812595379796, guid: 9cd8917b6afe1f447866dc80472c1e07, type: 3}
+  - {fileID: 683869812595379796, guid: 9cd8917b6afe1f447866dc80472c1e07, type: 3}
+  - {fileID: 683869812595379796, guid: 9cd8917b6afe1f447866dc80472c1e07, type: 3}
+  - {fileID: 683869812595379796, guid: 9cd8917b6afe1f447866dc80472c1e07, type: 3}
   snakeBody: []
+  MoveDir: {x: 0, y: 0, z: 0}
+  stateNum: 0
+  stateTime: 0
+  currTime: 0
+  chageState: 0

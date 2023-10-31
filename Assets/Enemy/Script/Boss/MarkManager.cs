@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MarkManager : MonoBehaviour
 {
+    // Larry의 Body에 들어가는 스크립트
    public class Marker 
    {
         public Vector3 position;

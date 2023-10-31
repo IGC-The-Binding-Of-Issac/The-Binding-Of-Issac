@@ -13,6 +13,7 @@ TagManager:
   - Object_Spikes
   - Enemy
   - Trinket
+  - Boss
   layers:
   - Default
   - TransparentFX
@@ -39,7 +40,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - LarryJr
   - 
   - 
   - 
