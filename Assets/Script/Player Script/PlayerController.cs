@@ -11,20 +11,16 @@ public class PlayerController : MonoBehaviour
     public Animator playerAnim;
     public Animator getItem;
 
-    [Header("Object")]
+    [Header("Transform")]
     public Transform itemPosition;
     public Transform body;
+    public Transform head;
 
     [Header("Sprite")]
     public Sprite defaultTearImg;
     SpriteRenderer bodyRenderer;
-
+    SpriteRenderer headRenderer;
     Rigidbody2D playerRB;
-
-    [Header("PlayerStats")]
-    float tearSpeed;
-    float moveSpeed;
-    float shotDelay;
 
     [Header("Function")]
     private float lastshot;
@@ -33,22 +29,22 @@ public class PlayerController : MonoBehaviour
     float shootHor;
     float shootVer;
     public GameObject tear;
+    Vector3 TearPoint;
 
+    private void Awake()
+    {
+    }
     void Start()
     {
+        gameObject.transform.localScale = new Vector3(1, 1, 1);
         playerRB = GetComponent<Rigidbody2D>();
         bodyRenderer = body.GetComponent<SpriteRenderer>();
+        headRenderer = head.GetComponent<SpriteRenderer>();
         PlayerManager.instance.tearObj.GetComponent<SpriteRenderer>().sprite = defaultTearImg;
     }
     
     void Update()
     {
-        // 이부분 조금 수정해야할듯
-        //매 프레임 실행되니까 자원낭비임 암튼 낭비임
-        moveSpeed = PlayerManager.instance.playerMoveSpeed;
-        tearSpeed = PlayerManager.instance.playerTearSpeed;
-        shotDelay = PlayerManager.instance.playerShotDelay;
-
         MoveAnim();
         ShotAnim();
         InstallBomb();
@@ -61,6 +57,9 @@ public class PlayerController : MonoBehaviour
     //이동 기능
     void Movement()
     {
+        float moveSpeed = PlayerManager.instance.playerMoveSpeed;
+        float shotDelay = PlayerManager.instance.playerShotDelay;
+
         float hori = Input.GetAxis("Horizontal");
         float verti = Input.GetAxis("Vertical");
         moveInput = hori * Vector2.right + verti * Vector2.up;
@@ -91,13 +90,13 @@ public class PlayerController : MonoBehaviour
     //발사 기능
     public void Shoot(float x, float y)
     {
+        float tearSpeed = PlayerManager.instance.playerTearSpeed;
+        TearPoint = transform.GetChild(5).transform.position;
+
         //발사 기능 구현
         //게임 중 눈물 생성 눈물 프리펩, 발사 시작위치, 회전
-        tear = Instantiate(PlayerManager.instance.tearObj, transform.position + Vector3.up * 0.5f, transform.rotation) as GameObject;
+        tear = Instantiate(PlayerManager.instance.tearObj, TearPoint, transform.rotation) as GameObject;
         tear.GetComponent<Rigidbody2D>().velocity = new Vector3(x * tearSpeed, y * tearSpeed, 0);
-            //floor = 내림, ceil = 올림
-            //(x < 0) ? Mathf.Floor(x) * tearSpeed : Mathf.Ceil(x) * tearSpeed,
-            //(y < 0) ? Mathf.Floor(y) * tearSpeed : Mathf.Ceil(y) * tearSpeed, 0);
 
         //총알이 대각으로 밀려서 발사되게 옆으로 힘을 줌
         if (Input.GetKey(KeyCode.W))
@@ -251,8 +250,8 @@ public class PlayerController : MonoBehaviour
     //피격 애니메이션
     public void Hit()
     {
-        gameObject.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
-        gameObject.transform.GetChild(1).gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
+        headRenderer.color = new Color(1, 1, 1, 0);
+        bodyRenderer.color = new Color(1, 1, 1, 0);
         playerAnim.SetTrigger("Hit");
     }
 
@@ -260,8 +259,8 @@ public class PlayerController : MonoBehaviour
     public void Dead()
     {
         //player head, player body 오브젝트 찾아서 끄기
-        gameObject.transform.GetChild(0).gameObject.SetActive(false);
-        gameObject.transform.GetChild(1).gameObject.SetActive(false);
+        head.gameObject.SetActive(false);
+        body.gameObject.SetActive(false);
         playerAnim.SetTrigger("Death");
 
         // 사망애니메이션 이후 사망아웃트로 씬으로 이동 작성
@@ -271,15 +270,15 @@ public class PlayerController : MonoBehaviour
     public IEnumerator GetItemTime()
     {
         //원래 모습은 가려둠
-        gameObject.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
-        gameObject.transform.GetChild(1).gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
+        headRenderer.color = new Color(1, 1, 1, 0);
+        bodyRenderer.color = new Color(1, 1, 1, 0);
         //아이템 획득 애니메이션 실행
         getItem.SetTrigger("GetItem");
         //애니메이션 1초간 유지
         yield return new WaitForSeconds(1f);
         //플레이어 모습 보이게 함
-        gameObject.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
-        gameObject.transform.GetChild(1).gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
+        headRenderer.color = new Color(1, 1, 1, 1);
+        bodyRenderer.color = new Color(1, 1, 1, 1);
 
         //itemPosition 자식이 생기고
         if (itemPosition.childCount != 0)
@@ -291,42 +290,42 @@ public class PlayerController : MonoBehaviour
     public IEnumerator GetTrinketItem()
     {
         //원래 모습은 가려둠
-        gameObject.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
-        gameObject.transform.GetChild(1).gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
+        headRenderer.color = new Color(1, 1, 1, 0);
+        bodyRenderer.color = new Color(1, 1, 1, 0);
         //아이템 획득 애니메이션 실행
         getItem.SetTrigger("GetItem");
         //애니메이션 1초간 유지
         yield return new WaitForSeconds(1f);
         //플레이어 모습 보이게 함
-        gameObject.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
-        gameObject.transform.GetChild(1).gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
+        headRenderer.color = new Color(1, 1, 1, 1);
+        bodyRenderer.color = new Color(1, 1, 1, 1);
         ItemManager.instance.TrinketItem.GetComponent<TrinketInfo>().KeepItem();
     }
 
     public IEnumerator GetActiveItem()
     {
-        gameObject.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
-        gameObject.transform.GetChild(1).gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
+        headRenderer.color = new Color(1, 1, 1, 0);
+        bodyRenderer.color = new Color(1, 1, 1, 0);
 
         getItem.SetTrigger("GetItem");
         yield return new WaitForSeconds(1f);
 
-        gameObject.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
-        gameObject.transform.GetChild(1).gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
+        headRenderer.color = new Color(1, 1, 1, 1);
+        bodyRenderer.color = new Color(1, 1, 1, 1);
 
         ItemManager.instance.ActiveItem.GetComponent<ActiveInfo>().KeepItem();
     }
 
     public IEnumerator UseActiveItem()
     {
-        gameObject.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
-        gameObject.transform.GetChild(1).gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
+        headRenderer.color = new Color(1, 1, 1, 0);
+        bodyRenderer.color = new Color(1, 1, 1, 0);
 
         getItem.SetTrigger("GetItem");
         yield return new WaitForSeconds(0.4f);
 
-        gameObject.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
-        gameObject.transform.GetChild(1).gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
+        headRenderer.color = new Color(1, 1, 1, 1);
+        bodyRenderer.color = new Color(1, 1, 1, 1);
     }
 
     //폭탄 설치 기능

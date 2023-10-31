@@ -34,8 +34,13 @@ public class PlayerManager : MonoBehaviour
     public GameObject tearObj;
     GameObject playerObj;
 
-    //delegate 선언 위치
+    [Header("Player Sprite")]
+    SpriteRenderer playerHead;
+    SpriteRenderer playerBody;
+    SpriteRenderer headItem;
 
+    //delegate 선언 위치
+    
     public void Start()
     {
 
@@ -62,7 +67,9 @@ public class PlayerManager : MonoBehaviour
     IEnumerator HitDelay()
     {
         playerObj = GameManager.instance.playerObject;
-
+        playerHead = playerObj.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>();
+        playerBody = playerObj.transform.GetChild(1).gameObject.GetComponent<SpriteRenderer>();
+        headItem = playerObj.transform.GetChild(4).gameObject.GetComponent<SpriteRenderer>();
         //피격 숫자만큼 딜레이
         yield return new WaitForSeconds(hitDelay);
 
@@ -73,26 +80,26 @@ public class PlayerManager : MonoBehaviour
             //countTIme%2 == 0이면 플레이어 모습이 보임
             if (countTime%2 == 0)
             {
-                playerObj.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
-                playerObj.transform.GetChild(1).gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
-                playerObj.transform.GetChild(4).gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
+                playerHead.color = new Color(1, 1, 1, 1);
+                playerBody.color = new Color(1, 1, 1, 1);
+                headItem.color = new Color(1, 1, 1, 1);
             }
             //countTIme%2 != 0이면 플레이어 모습이 안보임
             else
             {
-                playerObj.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
-                playerObj.transform.GetChild(1).gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
-                playerObj.transform.GetChild(4).gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
+                playerHead.color = new Color(1, 1, 1, 0);
+                playerBody.color = new Color(1, 1, 1, 0);
+                headItem.color = new Color(1, 1, 1, 0);
             }
             countTime++;
 
             yield return new WaitForSeconds(0.1f);
         }
         //while문 실행 후 모습이 보임
-        playerObj.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
-        playerObj.transform.GetChild(1).gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
-        playerObj.transform.GetChild(4).gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
-        
+        playerHead.color = new Color(1, 1, 1, 1);
+        playerBody.color = new Color(1, 1, 1, 1);
+        headItem.color = new Color(1, 1, 1, 1);
+
         //피격 판정 됨
         CanGetDamage = true;
     }
