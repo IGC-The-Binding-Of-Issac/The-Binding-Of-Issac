@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor.Tilemaps;
 using UnityEngine;
+using UnityEngine.Assertions.Must;
 using UnityEngine.Timeline;
 
 public class SnakeManager : Enemy
@@ -11,7 +12,7 @@ public class SnakeManager : Enemy
     /// <Larry J>
     /// 1. player가 방에 들어오면 몬스터 생성 , isPlayerInRoom 변수 필요없음
     /// 2. 움직임은 FIxedUpdate에서 관리
-    /// 3. Head와 body에는 Enemy 태그 
+    /// 3. 
     /// </summary>
 
     [SerializeField] float distanceBetween;
@@ -62,7 +63,19 @@ public class SnakeManager : Enemy
     
     private void Update()
     {
+        
+    }
 
+    //데미지를 입는
+    public void getDamageLarry() 
+    {
+        base.GetDamage(PlayerManager.instance.playerDamage);
+    }
+    //데미지를 주는
+    public void hitDamagePlayer() 
+    {
+        //플레이어랑 부딪히면 플레이어의 hp감소
+        PlayerManager.instance.GetDamage();
     }
 
     // 움직이는 최종 로직
@@ -133,7 +146,7 @@ public class SnakeManager : Enemy
     void randTime()
     {
         //1f ~ 10f 사이에서 시간
-        stateTime = Random.Range(0.5f, 2f);
+        stateTime = Random.Range(0.3f, 1f);
     }
 
     // 움직임
@@ -177,11 +190,14 @@ public class SnakeManager : Enemy
             // MarkManager컴포넌트 , Rigidbody2D컴포넌트 (Rigidbody2D는 지금 안쓰지만 미리 넣어놓는다고 생각하자) 
             if (!temp1.GetComponent<MarkManager>())
                 temp1.AddComponent<MarkManager>();
+            /*
             if (!temp1.GetComponent<Rigidbody2D>())
             {
                 temp1.AddComponent<Rigidbody2D>();
                 temp1.GetComponent<Rigidbody2D>().gravityScale = 0;
             }
+            */
+
 
             // snakeBody에 instance화 된 오브젝트 추가
             snakeBody.Add(temp1);
@@ -205,16 +221,20 @@ public class SnakeManager : Enemy
         {
             // bodyParts에 첫번째가 전에 생성된 오브젝트의 위치에 생성
             GameObject temp = Instantiate(bodyParts[0], markM.markerList[0].position, markM.markerList[0].rotation, transform);
+            temp.transform.SetParent(snakeBody[0].transform);
             // 컴포넌트 추가
             if (!temp.GetComponent<MarkManager>())
             {
                 temp.AddComponent<MarkManager>();
             }
+            /*
             if (!temp.GetComponent<Rigidbody2D>())
             {
                 temp.AddComponent<Rigidbody2D>();
                 temp.GetComponent<Rigidbody2D>().gravityScale = 0;
             }
+            */
+
 
             // snakeBody에 추가
             snakeBody.Add(temp);
@@ -227,5 +247,4 @@ public class SnakeManager : Enemy
         }
 
     }
-
 }
