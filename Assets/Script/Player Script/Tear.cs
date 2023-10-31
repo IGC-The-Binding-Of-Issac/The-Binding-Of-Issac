@@ -17,7 +17,7 @@ public class Tear : MonoBehaviour
     float betweenDistance;
     float playerTearSize;
     void Start()
-    { 
+    {
         playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         tearBoomAnim = GetComponent<Animator>();
         tearRB = GetComponent<Rigidbody2D>();
