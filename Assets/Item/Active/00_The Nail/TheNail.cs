@@ -8,8 +8,8 @@ public class TheNail : ActiveInfo
 
     private void Start()
     {
-        //1번 아이템, 6칸 필요함
-        SetActiveItem(1, 6);
+        //0번 아이템, 6칸 필요함
+        SetActiveItem(0, 6);
     }
 
     public override void UseActiveItem()

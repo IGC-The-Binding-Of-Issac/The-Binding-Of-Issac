@@ -17,19 +17,14 @@ public class Tear : MonoBehaviour
     Vector3 playerPosition;
 
     float betweenDistance;
-
     float playerTearSize;
-
-    private void Awake()
-    {
-    }
     void Start()
     {
         gameObject.transform.localScale = new Vector3(1, 1, 1);
         playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         tearBoomAnim = GetComponent<Animator>();
         tearRB = GetComponent<Rigidbody2D>();
-        //ÇÃ·¹ÀÌ¾î ¹ß»ç ½ÃÀÛÀ§Ä¡
+        //í”Œë ˆì´ì–´ ë°œì‚¬ ì‹œì‘ìœ„ì¹˜
         playerPosition = playerController.transform.position;
     }
 
@@ -40,11 +35,11 @@ public class Tear : MonoBehaviour
 
     void TearRange()
     {
-        //ÃÑ¾Ë À§Ä¡
+        //ì´ì•Œ ìœ„ì¹˜
         tearPosition = this.transform.position;
-        //µÑ »çÀÌÀÇ °Å¸®
+        //ë‘˜ ì‚¬ì´ì˜ ê±°ë¦¬
         betweenDistance = Vector3.Distance(tearPosition, playerPosition);
-        //µÑ »çÀÌÀÇ °Å¸®°¡ ÇÃ·¹ÀÌ¾î »ç°Å¸®º¸´Ù Ä¿Áö¸é
+        //ë‘˜ ì‚¬ì´ì˜ ê±°ë¦¬ê°€ í”Œë ˆì´ì–´ ì‚¬ê±°ë¦¬ë³´ë‹¤ ì»¤ì§€ë©´
         if (betweenDistance >= PlayerManager.instance.playerRange)
         {
             BoomTear();
@@ -54,7 +49,7 @@ public class Tear : MonoBehaviour
     public void StopTear()
     {
         tearRB.velocity = Vector2.zero;
-        //ÃÑ¾Ë ¿ÀºêÁ§Æ® ¼Óµµ¸¦ zero·Î ¸¸µë
+        //ì´ì•Œ ì˜¤ë¸Œì íŠ¸ ì†ë„ë¥¼ zeroë¡œ ë§Œë“¬
     }
 
     public void BoomTear()
@@ -65,11 +60,10 @@ public class Tear : MonoBehaviour
         }
         else
         {
-            //´«¹° ÅÍÁö´Â ¾Ö´Ï¸ŞÀÌ¼Ç ½ÇÇà
+            //ëˆˆë¬¼ í„°ì§€ëŠ” ì• ë‹ˆë©”ì´ì…˜ ì‹¤í–‰
             tearBoomAnim.SetTrigger("BoomTear");
         }
     }
-
     public void TearSize()
     {
         playerTearSize = PlayerManager.instance.playerTearSize;
@@ -78,7 +72,7 @@ public class Tear : MonoBehaviour
 
     public void DestoryTear()
     {
-        //ÃÑ¾Ë ÆÄ±«
+        //ì´ì•Œ íŒŒê´´
         Destroy(gameObject);
     }
 
@@ -86,39 +80,37 @@ public class Tear : MonoBehaviour
     private void OnTriggerStay2D(Collider2D collision)
     {
 
-        //º®¿¡ ¹ÚÀ¸¸é ÃÑ¾Ë ÅÍÆ®¸®±â
+        //ë²½ì— ë°•ìœ¼ë©´ ì´ì•Œ í„°íŠ¸ë¦¬ê¸°
         if (collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Object_Rock"))
         {
             gameObject.GetComponent<CircleCollider2D>().enabled = false;
             BoomTear();
         }
 
-        //¶Ë¿¡ ¹ÚÀ¸¸é
+        //ë˜¥ì— ë°•ìœ¼ë©´
         else if (collision.gameObject.CompareTag("Object_Poop"))
         {
             gameObject.GetComponent<CircleCollider2D>().enabled = false;
             BoomTear();
             collision.GetComponent<Poop>().GetDamage();
         }
-        //ºÒ¿¡ ¹ÚÀ¸¸é
+        //ë¶ˆì— ë°•ìœ¼ë©´
         else if (collision.gameObject.CompareTag("Object_Fire"))
         {
             gameObject.GetComponent<CircleCollider2D>().enabled = false;
             BoomTear();
             collision.GetComponent<FirePlace>().GetDamage();
         }
-        //Àû°ú ¹ÚÀ¸¸é
+        //ì ê³¼ ë°•ìœ¼ë©´
         else if (collision.gameObject.CompareTag("Enemy"))
         {
             gameObject.GetComponent<CircleCollider2D>().enabled = false;
             BoomTear();
             collision.gameObject.GetComponent<Enemy>().GetDamage(PlayerManager.instance.playerDamage);
-
             //Rigidbody2D enemyRB = collision.gameObject.GetComponent<Rigidbody2D>();
-
-            //ÃÑ¾Ë ¹æÇâ
+            //ì´ì•Œ ë°©í–¥
             Vector2 direction = gameObject.transform.GetComponent<Rigidbody2D>().velocity;
-            //³Ë¹é
+            //ë„‰ë°±
             StartCoroutine(collision.gameObject.GetComponent<Enemy>().knockBack());
             collision.gameObject.GetComponent<Rigidbody2D>().AddForce(direction*200);
         }

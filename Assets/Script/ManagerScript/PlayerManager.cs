@@ -113,5 +113,4 @@ public class PlayerManager : MonoBehaviour
         playerObj = GameManager.instance.playerObject;
         playerObj.transform.localScale = new Vector3(playerSize, playerSize, 0);
     }
-
 }
