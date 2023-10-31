@@ -20,8 +20,9 @@ public class NormalChest : MonoBehaviour
     IEnumerator StopChest()
     {
         gameObject.layer = 16;
-        yield return new WaitForSeconds(0.8f);
+        yield return new WaitForSeconds(1.0f);
         gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+        Destroy(gameObject.GetComponent<Rigidbody2D>());
     }
 
     void OpenChest()
