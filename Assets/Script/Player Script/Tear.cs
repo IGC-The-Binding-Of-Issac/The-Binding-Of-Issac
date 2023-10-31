@@ -79,7 +79,7 @@ public class Tear : MonoBehaviour
         GameObject tmp = GameManager.instance.playerObject.GetComponent<PlayerController>().CheckedObject;
         
         //벽에 박으면 총알 터트리기
-        if (tmp != collision.gameObject)
+        if (tmp != collision.gameObject) 
         {
 
             if (collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Object_Rock"))
