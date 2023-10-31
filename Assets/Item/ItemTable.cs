@@ -158,6 +158,10 @@ public class ItemTable : MonoBehaviour
         return TrinketItems[itemCode];
     }
 
+    public GameObject ActiveChange(int itemCode)
+    {
+        return ActiveItems[itemCode];
+    }
     private void ShuffleList(ref List<int> list)
     {
         int rd1, rd2;

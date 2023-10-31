@@ -10,7 +10,7 @@ public class MagicFingers : ActiveInfo
         SetActiveItem(1, 0);    
     }
 
-    public override void UseActiveItem()
+    public override void UseActive()
     {
         if(ItemManager.instance.coinCount > 0)
         {

@@ -12,7 +12,7 @@ public class TammyHead : ActiveInfo
         beforeDamage = PlayerManager.instance.playerDamage;
     }
 
-    public override void UseActiveItem()
+    public override void UseActive()
     {
         PlayerManager.instance.playerDamage += 25f;
         GameManager.instance.playerObject.GetComponent<PlayerController>().Shoot(1, 1);
