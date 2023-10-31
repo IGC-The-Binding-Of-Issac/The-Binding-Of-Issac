@@ -9,7 +9,7 @@ public class ActiveInfo : MonoBehaviour
     private bool canCollision;
     public bool activated;
     public int needEnergy;
-    public int currentEnergy = 0;
+    public int currentEnergy;
 
     [SerializeField]
     public GameObject player;
@@ -32,15 +32,15 @@ public class ActiveInfo : MonoBehaviour
                 ActiveGet(collision);
             }
 
-            else if (ItemManager.instance.TrinketItem != null)
+            else if (ItemManager.instance.ActiveItem != null)
             {
 
-                GameObject obj = ItemManager.instance.itemTable.TrinketChange(ItemManager.instance.ActiveItem.GetComponent<ActiveInfo>().activeItemCode);
+                GameObject obj = ItemManager.instance.itemTable.ActiveChange(ItemManager.instance.ActiveItem.GetComponent<ActiveInfo>().activeItemCode);
                 Transform dropPosition = GameManager.instance.playerObject.GetComponent<PlayerController>().itemPosition;
-                GameObject beforeTrinket = Instantiate(obj, new Vector3(dropPosition.position.x, (dropPosition.position.y - 1f), 0), Quaternion.identity) as GameObject;
+                GameObject beforeActive = Instantiate(obj, new Vector3(dropPosition.position.x, (dropPosition.position.y - 1f), 0), Quaternion.identity) as GameObject;
 
-                // 현재 드랍된 아이템 리스트에 등록.
-                //GameManager.instance.roomGenerate.itemList.Add(beforeTrinket);
+               // 현재 드랍된 아이템 리스트에 등록.
+               GameManager.instance.roomGenerate.itemList.Add(beforeActive);
 
                 Destroy(ItemManager.instance.ActiveItem);
 
@@ -68,37 +68,48 @@ public class ActiveInfo : MonoBehaviour
 
     public virtual void afterActiveAttack()
     {
-        Debug.Log("재정의");
+        Debug.Log("액티브 사용 후 재정의");
     }
 
-    public virtual void UseActiveItem()
+    public virtual void UseActive()
     {
-        Debug.Log("재정의");
+        Debug.Log("액티브 사용 시 재정의");
     }
 
     public virtual void CheckedItem()
     {
-        Debug.Log("재정의");
+        Debug.Log("눈물이 남아 있는 지 재정의");
     }
 
     void SetDelay()
     {
         canCollision = true;
     }
+    void SetActiveDelay()
+    {
+        activated = false;
+    }
     private void Update()
     {
+        //액티브 아이템 테스트용, 테스트 끝나면 지워줘야 함
+        currentEnergy = needEnergy;
+        if (ItemManager.instance.ActiveItem != null)
+        {
+        ItemManager.instance.ActiveItem.GetComponent<ActiveInfo>().CheckedItem();
+        }
+
         if (!canCollision)
         {
             Invoke("SetDelay", 0.8f);
         }
-        //액티브 아이템이 있고 현재 게이지가 필요한 게이지만큼 찼을 때 스페이스바를 누르면 + currentEnergy == needEnergy 조건에 추가해줘야 함!
-        if (ItemManager.instance.ActiveItem != null && Input.GetKeyDown(KeyCode.Space))
+        //액티브 아이템이 있고 현재 게이지가 필요한 게이지만큼 찼을 때 스페이스바를 누르면
+        if (ItemManager.instance.ActiveItem != null && Input.GetKeyDown(KeyCode.Space) && currentEnergy == needEnergy && 
+            !ItemManager.instance.ActiveItem.GetComponent<ActiveInfo>().activated)
         {
             StartCoroutine(player.GetComponent<PlayerController>().UseActiveItem());
-            UseActiveItem();
+            ItemManager.instance.ActiveItem.GetComponent<ActiveInfo>().UseActive();
             ItemManager.instance.ActiveItem.GetComponent<ActiveInfo>().activated = true;
+            Invoke("SetActiveDelay", 0.5f);
         }
-
-        CheckedItem();
     }
 }

@@ -19,8 +19,7 @@ public class Tear : MonoBehaviour
     float betweenDistance;
     float playerTearSize;
     void Start()
-    {
-        gameObject.transform.localScale = new Vector3(1, 1, 1);
+    { 
         playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         tearBoomAnim = GetComponent<Animator>();
         tearRB = GetComponent<Rigidbody2D>();
@@ -54,7 +53,7 @@ public class Tear : MonoBehaviour
 
     public void BoomTear()
     {
-        if (ItemManager.instance.PassiveItems[0] == true || (ItemManager.instance.ActiveItem != null && ItemManager.instance.ActiveItem.name == "The Nail(Clone)" && ItemManager.instance.ActiveItem.GetComponent<ActiveInfo>().activated))
+        if (ItemManager.instance.PassiveItems[0] == true || (ItemManager.instance.ActiveItem != null && ItemManager.instance.ActiveItem.name == "The Nail(Clone)"))
         {
             tearBoomAnim.SetTrigger("RedBoomTear");
         }
