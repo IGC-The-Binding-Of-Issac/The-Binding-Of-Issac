@@ -12,11 +12,11 @@ public class TheNail : ActiveInfo
         SetActiveItem(0, 6);
     }
 
-    public override void UseActiveItem()
+    public override void UseActive()
     {
         PlayerManager.instance.playerMaxHp += 1;
-        PlayerManager.instance.playerMoveSpeed -= 0.18f;
-        PlayerManager.instance.playerDamage += 2.0f;
+        PlayerManager.instance.playerMoveSpeed -= 0.08f;
+        PlayerManager.instance.playerDamage += 0.5f;
 
         PlayerManager.instance.tearObj.GetComponent<SpriteRenderer>().sprite = redTearImg;
     }

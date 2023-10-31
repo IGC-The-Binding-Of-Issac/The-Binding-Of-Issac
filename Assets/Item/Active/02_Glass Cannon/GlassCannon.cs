@@ -14,7 +14,7 @@ public class GlassCannon : ActiveInfo
         beforeDamage = PlayerManager.instance.playerDamage;
     }
 
-    public override void UseActiveItem()
+    public override void UseActive()
     {
         float shootHor = Input.GetAxis("Horizontal");
         float shootVer = Input.GetAxis("Vertical");
@@ -25,7 +25,10 @@ public class GlassCannon : ActiveInfo
         {
             GameManager.instance.playerObject.GetComponent<PlayerController>().Shoot(1, shootVer);
         }
-        else GameManager.instance.playerObject.GetComponent<PlayerController>().Shoot(shootHor, shootVer);
+        else
+        {
+            GameManager.instance.playerObject.GetComponent<PlayerController>().Shoot(shootHor, shootVer);
+        }
         tear = GameObject.Find("Tear(Clone)");
         afterActiveAttack();
     }
@@ -38,6 +41,10 @@ public class GlassCannon : ActiveInfo
 
     public override void CheckedItem()
     {
-        if (tear == null) PlayerManager.instance.playerDamage = beforeDamage;
+        if (tear == null)
+        {
+            PlayerManager.instance.playerDamage = beforeDamage;
+        }
     }
 }
+

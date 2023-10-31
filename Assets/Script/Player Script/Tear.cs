@@ -8,11 +8,9 @@ using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class Tear : MonoBehaviour
 {
-
     PlayerController playerController;
     Animator tearBoomAnim;
     Rigidbody2D tearRB;
-
     Vector3 tearPosition;
     Vector3 playerPosition;
 
@@ -53,7 +51,7 @@ public class Tear : MonoBehaviour
 
     public void BoomTear()
     {
-        if (ItemManager.instance.PassiveItems[0] == true || (ItemManager.instance.ActiveItem != null && ItemManager.instance.ActiveItem.name == "The Nail(Clone)" && ItemManager.instance.ActiveItem.GetComponent<ActiveInfo>().activated))
+        if (ItemManager.instance.PassiveItems[0] == true || (ItemManager.instance.ActiveItem != null && ItemManager.instance.ActiveItem.name == "The Nail(Clone)"))
         {
             tearBoomAnim.SetTrigger("RedBoomTear");
         }
@@ -78,7 +76,7 @@ public class Tear : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-
+        
         //벽에 박으면 총알 터트리기
         if (collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Object_Rock"))
         {

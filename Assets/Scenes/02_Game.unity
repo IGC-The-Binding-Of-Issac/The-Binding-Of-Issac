@@ -464,6 +464,7 @@ MonoBehaviour:
   playerTearSize: 1
   playerSize: 1
   tearObj: {fileID: 5114894525887414092, guid: ba1b1ea4a7a80f44185689dfb5626760, type: 3}
+  playerObj: {fileID: 3456105446347801266, guid: bd7bba857dafcb445942b9d8ab6968a0, type: 3}
 --- !u!1 &307357200
 GameObject:
   m_ObjectHideFlags: 0
@@ -2171,7 +2172,11 @@ MonoBehaviour:
   - {fileID: 2102287193622278474, guid: cd3d11d5ccc867447adc121881f0692d, type: 3}
   - {fileID: 614331957449721662, guid: 87a0b11d70e7a5241a1d4f1e6ce20cbe, type: 3}
   - {fileID: 14252728285204051, guid: da9061496e556694d92bfc2e038dd6dc, type: 3}
-  ActiveItems: []
+  ActiveItems:
+  - {fileID: 3346920137597509701, guid: 57dd7517adc13f24c84dd9d7ca6766c3, type: 3}
+  - {fileID: 5309894634445981800, guid: bbd70cf7ef5318c489534ffe2d9cdc34, type: 3}
+  - {fileID: 6955041228229607089, guid: 1b085ae4a9210c542b791ec3a3e4502d, type: 3}
+  - {fileID: 8555260261154332446, guid: 6b90f4f32ffd8964db2aa6187ab289cc, type: 3}
   passive: 
   trinket: 
   active: 
