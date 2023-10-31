@@ -35,8 +35,13 @@ public class PlayerController : MonoBehaviour
 
     [Header("State")]
     public GameObject CheckedObject;
+
+    public AudioClip[] audioClips;
+    private AudioSource audioSource;
+
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         playerRB = GetComponent<Rigidbody2D>();
         bodyRenderer = body.GetComponent<SpriteRenderer>();
         headRenderer = head.GetComponent<SpriteRenderer>();
@@ -260,6 +265,10 @@ public void Shoot(float x, float y)
         headRenderer.color = new Color(1, 1, 1, 0);
         bodyRenderer.color = new Color(1, 1, 1, 0);
         playerAnim.SetTrigger("Hit");
+        int randomIndex = Random.Range(0, audioClips.Length);
+
+        audioSource.clip = audioClips[randomIndex];
+        audioSource.Play();
     }
 
     // 사망 애니메이션
