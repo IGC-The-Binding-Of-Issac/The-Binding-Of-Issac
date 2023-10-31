@@ -17,6 +17,7 @@ public class ActiveInfo : MonoBehaviour
 
     public void SetActiveItem(int code, int energy)
     {
+        player = GameManager.instance.playerObject;
         activeItemCode = code;
         needEnergy = energy;
     }
@@ -63,32 +64,41 @@ public class ActiveInfo : MonoBehaviour
 
         Destroy(gameObject.GetComponent<Rigidbody2D>());
         StartCoroutine(collision.gameObject.GetComponent<PlayerController>().GetActiveItem());
-
     }
 
+    public virtual void afterActiveAttack()
+    {
+        Debug.Log("재정의");
+    }
 
     public virtual void UseActiveItem()
     {
         Debug.Log("재정의");
     }
+
+    public virtual void CheckedItem()
+    {
+        Debug.Log("재정의");
+    }
+
     void SetDelay()
     {
         canCollision = true;
     }
     private void Update()
     {
-        //Start로 해봤는데 안돼서 Update로 옮겨서 하니까 된다.
-        player = GameObject.FindWithTag("Player");
-
         if (!canCollision)
+        {
             Invoke("SetDelay", 0.8f);
-
+        }
         //액티브 아이템이 있고 현재 게이지가 필요한 게이지만큼 찼을 때 스페이스바를 누르면 + currentEnergy == needEnergy 조건에 추가해줘야 함!
         if (ItemManager.instance.ActiveItem != null && Input.GetKeyDown(KeyCode.Space))
         {
+            StartCoroutine(player.GetComponent<PlayerController>().UseActiveItem());
             UseActiveItem();
             ItemManager.instance.ActiveItem.GetComponent<ActiveInfo>().activated = true;
-            StartCoroutine(player.GetComponent<PlayerController>().UseActiveItem());
         }
+
+        CheckedItem();
     }
 }

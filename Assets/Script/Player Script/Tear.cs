@@ -17,9 +17,7 @@ public class Tear : MonoBehaviour
     Vector3 playerPosition;
 
     float betweenDistance;
-
     float playerTearSize;
-
 
     void Start()
     {
@@ -66,7 +64,6 @@ public class Tear : MonoBehaviour
             tearBoomAnim.SetTrigger("BoomTear");
         }
     }
-
     public void TearSize()
     {
         playerTearSize = PlayerManager.instance.playerTearSize;
@@ -110,9 +107,7 @@ public class Tear : MonoBehaviour
             gameObject.GetComponent<CircleCollider2D>().enabled = false;
             BoomTear();
             collision.gameObject.GetComponent<Enemy>().GetDamage(PlayerManager.instance.playerDamage);
-
             //Rigidbody2D enemyRB = collision.gameObject.GetComponent<Rigidbody2D>();
-
             //ÃÑ¾Ë ¹æÇâ
             Vector2 direction = gameObject.transform.GetComponent<Rigidbody2D>().velocity;
             //³Ë¹é
