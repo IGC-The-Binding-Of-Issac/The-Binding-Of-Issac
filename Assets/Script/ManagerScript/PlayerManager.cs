@@ -43,7 +43,7 @@ public class PlayerManager : MonoBehaviour
     
     public void Start()
     {
-
+        tearObj.transform.localScale = new Vector3(1, 1, 1);
     }
     public void GetDamage()
     {

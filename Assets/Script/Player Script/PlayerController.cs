@@ -29,14 +29,9 @@ public class PlayerController : MonoBehaviour
     float shootHor;
     float shootVer;
     public GameObject tear;
-    Vector3 TearPoint;
 
-    private void Awake()
-    {
-    }
     void Start()
     {
-        gameObject.transform.localScale = new Vector3(1, 1, 1);
         playerRB = GetComponent<Rigidbody2D>();
         bodyRenderer = body.GetComponent<SpriteRenderer>();
         headRenderer = head.GetComponent<SpriteRenderer>();
@@ -87,22 +82,21 @@ public class PlayerController : MonoBehaviour
         playerRB.velocity = moveInput * moveSpeed;
     }
 
-    //발사 기능
-    public void Shoot(float x, float y)
+//발사 기능
+public void Shoot(float x, float y)
     {
         float tearSpeed = PlayerManager.instance.playerTearSpeed;
-        TearPoint = transform.GetChild(5).transform.position;
-
+        Vector3 tearPoint = gameObject.transform.GetChild(5).transform.position;
         //발사 기능 구현
         //게임 중 눈물 생성 눈물 프리펩, 발사 시작위치, 회전
-        tear = Instantiate(PlayerManager.instance.tearObj, TearPoint, transform.rotation) as GameObject;
+        tear = Instantiate(PlayerManager.instance.tearObj, tearPoint, transform.rotation) as GameObject;
         tear.GetComponent<Rigidbody2D>().velocity = new Vector3(x * tearSpeed, y * tearSpeed, 0);
-
         //총알이 대각으로 밀려서 발사되게 옆으로 힘을 줌
         if (Input.GetKey(KeyCode.W))
         {
             Rigidbody2D rigid_bullet = tear.GetComponent<Rigidbody2D>();
             rigid_bullet.AddForce(Vector2.up * 1.5f, ForceMode2D.Impulse);
+            //위로 발사할 땐 눈물 레이어 높이기
         }
         if (Input.GetKey(KeyCode.S))
         {
@@ -342,4 +336,6 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+
+
 }
