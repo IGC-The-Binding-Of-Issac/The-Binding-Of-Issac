@@ -20,7 +20,6 @@ public class Tear : MonoBehaviour
     float playerTearSize;
     void Start()
     {
-        gameObject.transform.localScale = new Vector3(1, 1, 1);
         playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         tearBoomAnim = GetComponent<Animator>();
         tearRB = GetComponent<Rigidbody2D>();
