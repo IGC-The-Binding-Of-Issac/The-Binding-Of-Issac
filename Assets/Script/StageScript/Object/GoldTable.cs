@@ -15,12 +15,12 @@ public class GoldTable : MonoBehaviour
 
     private void FixedUpdate()
     {
+
         if(roomInfo != null)
         {
             if(roomInfo.playerInRoom)
             {
                 SpawnItem();
-                item.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
                 Destroy(this);
             }
         }
@@ -29,8 +29,8 @@ public class GoldTable : MonoBehaviour
     void SpawnItem()
     {
         item = Instantiate(ItemManager.instance.itemTable.OpenGoldChest()) as GameObject;
-        item.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
 
+        item.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
         item.transform.SetParent(itemPosition);
         item.transform.localPosition = new Vector3(0, 0, 0);
     }

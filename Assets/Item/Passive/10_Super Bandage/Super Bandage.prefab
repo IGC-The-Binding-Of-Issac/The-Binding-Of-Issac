@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 1865710564884954050}
   - component: {fileID: 4154582555457159052}
   - component: {fileID: 4287155262729503609}
-  - component: {fileID: 6231594620879655976}
   m_Layer: 14
   m_Name: Super Bandage
   m_TagString: Untagged
@@ -76,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 21
   m_Sprite: {fileID: -651787549, guid: b2209e2c29aa42547a794c20df1f8fbd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -151,19 +150,6 @@ Rigidbody2D:
   m_CollisionDetection: 0
   m_Constraints: 4
 --- !u!114 &4287155262729503609
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1939503092496380227}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2a20b31637658d43899a0476a3f3c1c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canCollision: 0
---- !u!114 &6231594620879655976
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
