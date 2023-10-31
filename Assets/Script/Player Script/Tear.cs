@@ -76,40 +76,45 @@ public class Tear : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
+        GameObject tmp = GameManager.instance.playerObject.GetComponent<PlayerController>().CheckedObject;
         
         //벽에 박으면 총알 터트리기
-        if (collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Object_Rock"))
+        if (tmp != collision.gameObject)
         {
-            gameObject.GetComponent<CircleCollider2D>().enabled = false;
-            BoomTear();
-        }
 
-        //똥에 박으면
-        else if (collision.gameObject.CompareTag("Object_Poop"))
-        {
-            gameObject.GetComponent<CircleCollider2D>().enabled = false;
-            BoomTear();
-            collision.GetComponent<Poop>().GetDamage();
-        }
-        //불에 박으면
-        else if (collision.gameObject.CompareTag("Object_Fire"))
-        {
-            gameObject.GetComponent<CircleCollider2D>().enabled = false;
-            BoomTear();
-            collision.GetComponent<FirePlace>().GetDamage();
-        }
-        //적과 박으면
-        else if (collision.gameObject.CompareTag("Enemy"))
-        {
-            gameObject.GetComponent<CircleCollider2D>().enabled = false;
-            BoomTear();
-            collision.gameObject.GetComponent<Enemy>().GetDamage(PlayerManager.instance.playerDamage);
-            //Rigidbody2D enemyRB = collision.gameObject.GetComponent<Rigidbody2D>();
-            //총알 방향
-            Vector2 direction = gameObject.transform.GetComponent<Rigidbody2D>().velocity;
-            //넉백
-            StartCoroutine(collision.gameObject.GetComponent<Enemy>().knockBack());
-            collision.gameObject.GetComponent<Rigidbody2D>().AddForce(direction*200);
+            if (collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Object_Rock"))
+            {
+                gameObject.GetComponent<CircleCollider2D>().enabled = false;
+                BoomTear();
+            }
+
+            //똥에 박으면
+            else if (collision.gameObject.CompareTag("Object_Poop"))
+            {
+                gameObject.GetComponent<CircleCollider2D>().enabled = false;
+                BoomTear();
+                collision.GetComponent<Poop>().GetDamage();
+            }
+            //불에 박으면
+            else if (collision.gameObject.CompareTag("Object_Fire"))
+            {
+                gameObject.GetComponent<CircleCollider2D>().enabled = false;
+                BoomTear();
+                collision.GetComponent<FirePlace>().GetDamage();
+            }
+            //적과 박으면
+            else if (collision.gameObject.CompareTag("Enemy"))
+            {
+                gameObject.GetComponent<CircleCollider2D>().enabled = false;
+                BoomTear();
+                collision.gameObject.GetComponent<Enemy>().GetDamage(PlayerManager.instance.playerDamage);
+                //Rigidbody2D enemyRB = collision.gameObject.GetComponent<Rigidbody2D>();
+                //총알 방향
+                Vector2 direction = gameObject.transform.GetComponent<Rigidbody2D>().velocity;
+                //넉백
+                StartCoroutine(collision.gameObject.GetComponent<Enemy>().knockBack());
+                collision.gameObject.GetComponent<Rigidbody2D>().AddForce(direction * 200);
+            }
         }
     }
 }
