@@ -225,6 +225,10 @@ public class RoomGenerate : MonoBehaviour
                         {
                             obstacle.GetComponent<GoldTable>().SetRoomInfo(roomList[y,x]);
                         }
+                        else if(rdPattern[i,j] == 6) // 상점방 아이템 테이블
+                        {
+                            obstacle.GetComponent<ShopTable>().SetRoomInfo(roomList[y, x]);
+                        }
                     }
 
                 }
