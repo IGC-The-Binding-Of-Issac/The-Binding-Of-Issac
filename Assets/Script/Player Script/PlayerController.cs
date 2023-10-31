@@ -18,13 +18,7 @@ public class PlayerController : MonoBehaviour
     [Header("Sprite")]
     public Sprite defaultTearImg;
     SpriteRenderer bodyRenderer;
-
     Rigidbody2D playerRB;
-
-    [Header("PlayerStats")]
-    float tearSpeed;
-    float moveSpeed;
-    float shotDelay;
 
     [Header("Function")]
     private float lastshot;
@@ -43,12 +37,6 @@ public class PlayerController : MonoBehaviour
     
     void Update()
     {
-        // 이부분 조금 수정해야할듯
-        //매 프레임 실행되니까 자원낭비임 암튼 낭비임
-        moveSpeed = PlayerManager.instance.playerMoveSpeed;
-        tearSpeed = PlayerManager.instance.playerTearSpeed;
-        shotDelay = PlayerManager.instance.playerShotDelay;
-
         MoveAnim();
         ShotAnim();
         InstallBomb();
@@ -63,6 +51,8 @@ public class PlayerController : MonoBehaviour
     {
         float hori = Input.GetAxis("Horizontal");
         float verti = Input.GetAxis("Vertical");
+        float shotDelay = PlayerManager.instance.playerShotDelay;
+
         moveInput = hori * Vector2.right + verti * Vector2.up;
         //대각 이동속도 1 넘기지 않기
         if(moveInput.magnitude > 1f)
@@ -85,12 +75,13 @@ public class PlayerController : MonoBehaviour
         }
 
         //플레이어 움직임
-        playerRB.velocity = moveInput * moveSpeed;
+        playerRB.velocity = moveInput * PlayerManager.instance.playerMoveSpeed;
     }
 
     //발사 기능
     public void Shoot(float x, float y)
     {
+        float tearSpeed = PlayerManager.instance.playerTearSpeed;
         //발사 기능 구현
         //게임 중 눈물 생성 눈물 프리펩, 발사 시작위치, 회전
         tear = Instantiate(PlayerManager.instance.tearObj, transform.position + Vector3.up * 0.5f, transform.rotation) as GameObject;
