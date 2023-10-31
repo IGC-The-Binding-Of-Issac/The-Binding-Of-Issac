@@ -7,7 +7,7 @@ public class MagicFingers : ActiveInfo
     
     void Start()
     {
-        SetActiveItem(2, 0);    
+        SetActiveItem(1, 0);    
     }
 
     public override void UseActiveItem()
