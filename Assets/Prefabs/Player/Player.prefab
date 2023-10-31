@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4001859056857480359}
   - component: {fileID: 1531580061087410967}
-  - component: {fileID: 2642374490128640981}
+  - component: {fileID: 5568952421786363066}
   m_Layer: 13
   m_Name: TearPoint
   m_TagString: Untagged
@@ -68,7 +68,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.1633669
---- !u!114 &2642374490128640981
+--- !u!114 &5568952421786363066
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -77,10 +77,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 470656782235582334}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 885b8bad8f33c614d823948c383e4bab, type: 3}
+  m_Script: {fileID: 11500000, guid: 43852dd922ddfd1418368477fc5f1d0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turnOn: 0
 --- !u!1 &3329186093963780833
 GameObject:
   m_ObjectHideFlags: 0
@@ -227,6 +226,7 @@ MonoBehaviour:
   head: {fileID: 2148879390031114040}
   defaultTearImg: {fileID: 1837185413, guid: 64f0cce7912310a489ab219e28d20338, type: 3}
   tear: {fileID: 0}
+  tearPoint: {fileID: 5568952421786363066}
 --- !u!50 &5123890859065688872
 Rigidbody2D:
   serializedVersion: 4
