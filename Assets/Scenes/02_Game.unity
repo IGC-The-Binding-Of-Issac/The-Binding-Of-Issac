@@ -464,6 +464,7 @@ MonoBehaviour:
   playerTearSize: 1
   playerSize: 1
   tearObj: {fileID: 5114894525887414092, guid: ba1b1ea4a7a80f44185689dfb5626760, type: 3}
+  playerObj: {fileID: 3456105446347801266, guid: bd7bba857dafcb445942b9d8ab6968a0, type: 3}
 --- !u!1 &307357200
 GameObject:
   m_ObjectHideFlags: 0
@@ -1079,7 +1080,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 2147614711
+    m_Bits: 2181169143
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -2451,7 +2452,7 @@ MonoBehaviour:
   - {fileID: 1921601911043370482, guid: df32c1c393446664dadd1e36748679af, type: 3}
   - {fileID: 8121270031479538464, guid: 790d21798bb1011438e28300740a4ad7, type: 3}
   bossPrefabs:
-  - {fileID: 7229639532422697358, guid: 3913fec5d6b5d5e4ea56aca55f44a03e, type: 3}
+  - {fileID: 1775137408243754433, guid: 6f6f03e5385c3374ab52c21dc1879b38, type: 3}
   - {fileID: 7229639532422697358, guid: 3913fec5d6b5d5e4ea56aca55f44a03e, type: 3}
   - {fileID: 7229639532422697358, guid: 3913fec5d6b5d5e4ea56aca55f44a03e, type: 3}
   - {fileID: 7229639532422697358, guid: 3913fec5d6b5d5e4ea56aca55f44a03e, type: 3}
