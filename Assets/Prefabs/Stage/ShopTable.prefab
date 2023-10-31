@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 188141653082797801}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.351, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -160,6 +160,7 @@ GameObject:
   - component: {fileID: 9111524120663714486}
   - component: {fileID: 2959955075487951847}
   - component: {fileID: 1529786788540508582}
+  - component: {fileID: 3895097660356958751}
   m_Layer: 0
   m_Name: ShopTable
   m_TagString: Untagged
@@ -264,6 +265,41 @@ MonoBehaviour:
   - {fileID: 482716956, guid: 248efb29bf3040e49b3e3b20dada9bbb, type: 3}
   - {fileID: -1852000963, guid: 248efb29bf3040e49b3e3b20dada9bbb, type: 3}
   - {fileID: -1621941827, guid: 248efb29bf3040e49b3e3b20dada9bbb, type: 3}
+--- !u!58 &3895097660356958751
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3163088476841697488}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.15
 --- !u!1 &3163578450487185319
 GameObject:
   m_ObjectHideFlags: 0
