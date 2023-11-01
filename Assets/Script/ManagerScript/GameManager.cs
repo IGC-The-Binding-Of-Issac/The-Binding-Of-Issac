@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     #region singleTon
@@ -101,20 +101,5 @@ public class GameManager : MonoBehaviour
                 stageMinimunRoom = 8;
                 break;
         }
-    }
-
-    // 사망시 호출
-    // 플레이어 사망함수에 추가해줄것
-    void GameOver()
-    {
-        // 게임 오버 UI 출력후 
-        // 버튼 클릭시 인트로씬으로 돌아가거나, 현재 씬을 다시 로드해야함.
-    }
-    
-    // 게임 클리어시 호출
-    // 4스테이지일때 보스방 클리어시 
-    void Endding()
-    {
-        // 아웃트로 씬 로드해야함.
     }
 }

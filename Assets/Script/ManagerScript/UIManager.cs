@@ -30,14 +30,16 @@ public class UIManager : MonoBehaviour
 
     [Header("Active")]
     [SerializeField] Image activeEnergy;
+    [SerializeField] Sprite nullImage;
 
     [Header("UI")]
     [SerializeField] GameObject pauseUI;
     [SerializeField] GameObject gameoverUI;
-
+    [SerializeField] GameObject loadingImage;
     private void Start()
     {
         SetPlayerMaxHP(); // 하트HP 초기세팅
+        OnLoading();
     }
 
     private void Update()
@@ -49,6 +51,25 @@ public class UIManager : MonoBehaviour
 
         PauseUIOnOff(); // Pause UI
         UpdateUI(); // 각종 UI 업데이트
+    }
+
+    void OnLoading()
+    {
+        loadingImage.SetActive(true);
+        StartCoroutine(FadeOutStart());
+    }
+    public IEnumerator FadeOutStart()
+    {
+        yield return new WaitForSeconds(0.2f);
+        for (float f = 1f; f > 0; f -= 0.005f)
+        {
+            Color c = loadingImage.GetComponent<Image>().color;
+            c.a = f;
+            loadingImage.GetComponent<Image>().color = c;
+            yield return null;
+        }
+        yield return new WaitForSeconds(1);
+        loadingImage.SetActive(false);
     }
 
     #region PauseUI
@@ -155,7 +176,14 @@ public class UIManager : MonoBehaviour
         if(ItemManager.instance.ActiveItem != null)
         {
             ActiveInfo active = ItemManager.instance.ActiveItem.GetComponent<ActiveInfo>();
-            activeEnergy.fillAmount = active.currentEnergy / active.needEnergy;
+            if(active.needEnergy == 0)
+            {
+                activeEnergy.fillAmount = 1;
+            }
+            else
+            {
+                activeEnergy.fillAmount = active.currentEnergy / active.needEnergy;
+            }
         }
     }
 
@@ -165,10 +193,21 @@ public class UIManager : MonoBehaviour
         {
             trinket.sprite = ItemManager.instance.TrinketItem.GetComponent<SpriteRenderer>().sprite;
         }
+        else
+        {
+            trinket.sprite = nullImage;
+        }
+
         if (ItemManager.instance.ActiveItem != null)
         {
             active.sprite = ItemManager.instance.ActiveItem.GetComponent<SpriteRenderer>().sprite;
         }
+        else
+        {
+            active.sprite = nullImage;
+        }
+
+
         coinText.text = ItemManager.instance.coinCount.ToString();
         bombText.text = ItemManager.instance.bombCount.ToString();
         keyText.text = ItemManager.instance.keyCount.ToString();
