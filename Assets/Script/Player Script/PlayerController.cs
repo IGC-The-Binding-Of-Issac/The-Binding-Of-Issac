@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public Transform itemPosition;
     public Transform body;
     public Transform head;
+    public Transform useActiveItemImage;
 
     [Header("Sprite")]
     public Sprite defaultTearImg;
@@ -29,6 +30,8 @@ public class PlayerController : MonoBehaviour
     float shootHor;
     float shootVer;
     public GameObject tear;
+    public bool nailActivated; // 대못 아이템을 사용했을 때
+    public bool canUseActive = true; //액티브 아이템 개갈김을 방지하기 위한
 
     [Header("Unity Setup")]
     public TearPoint tearPoint;
@@ -65,21 +68,32 @@ public class PlayerController : MonoBehaviour
     {
 
         // 아이템이 있고, 스페이스바 눌렀을때
-        if (ItemManager.instance.ActiveItem != null)
+        if (ItemManager.instance.ActiveItem != null && canUseActive)
         {
             ItemManager.instance.ActiveItem.GetComponent<ActiveInfo>().CheckedItem();
-
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 ActiveInfo active = ItemManager.instance.ActiveItem.GetComponent<ActiveInfo>();
+              
                 if(active.currentEnergy >= active.needEnergy) // 필요 에너지 넘었을때.
                 {
                     StartCoroutine(UseActiveItem()); // 아이템 사용 애니메이션
-                    active.UseActive();  // 아이템 기능 실행
+                        active.UseActive();  // 아이템 기능 실행
+                        if (active.activeItemCode == 0)
+                        {
+                            nailActivated = true;
+                        }
                     active.currentEnergy = 0;
+                    canUseActive = false;
+                    Invoke("SetActiveDelay", 1f);
                 }
             }
         }
+    }
+
+    void SetActiveDelay()
+    {
+        canUseActive = true;
     }
 
     //이동 기능
@@ -155,7 +169,6 @@ public void Shoot(float x, float y)
             rigid_bullet.AddForce(Vector2.right * 1.5f, ForceMode2D.Impulse);
         }
     }
-
     //이동 애니메이션
     void MoveAnim()
     {
@@ -351,20 +364,22 @@ public void Shoot(float x, float y)
 
         headRenderer.color = new Color(1, 1, 1, 1);
         bodyRenderer.color = new Color(1, 1, 1, 1);
-
         ItemManager.instance.ActiveItem.GetComponent<ActiveInfo>().KeepItem();
     }
 
     public IEnumerator UseActiveItem()
     {
+        Sprite activeSpr = ItemManager.instance.ActiveItem.GetComponent<SpriteRenderer>().sprite;
+        useActiveItemImage.GetComponent<SpriteRenderer>().sprite = activeSpr;
         headRenderer.color = new Color(1, 1, 1, 0);
         bodyRenderer.color = new Color(1, 1, 1, 0);
 
         getItem.SetTrigger("GetItem");
-        yield return new WaitForSeconds(0.4f);
+        yield return new WaitForSeconds(1f);
 
         headRenderer.color = new Color(1, 1, 1, 1);
         bodyRenderer.color = new Color(1, 1, 1, 1);
+        useActiveItemImage.GetComponent<SpriteRenderer>().sprite = null;
     }
 
     //폭탄 설치 기능

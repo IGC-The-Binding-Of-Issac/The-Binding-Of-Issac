@@ -38,11 +38,10 @@ public class ActiveInfo : MonoBehaviour
                 Transform dropPosition = GameManager.instance.playerObject.GetComponent<PlayerController>().itemPosition;
                 GameObject beforeActive = Instantiate(obj, new Vector3(dropPosition.position.x, (dropPosition.position.y - 1f), 0), Quaternion.identity) as GameObject;
 
-               // 현재 드랍된 아이템 리스트에 등록.
-               GameManager.instance.roomGenerate.itemList.Add(beforeActive);
+                // 현재 드랍된 아이템 리스트에 등록.
+                GameManager.instance.roomGenerate.itemList.Add(beforeActive);
 
                 Destroy(ItemManager.instance.ActiveItem);
-
                 ActiveGet(collision);
             }
         }
@@ -55,7 +54,7 @@ public class ActiveInfo : MonoBehaviour
     private void ActiveGet(Collision2D collision)
     {
         ItemManager.instance.ActiveItem = this.gameObject;
-        //DisconnectTrinket();
+        DisconnectActive();
         gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
 
         gameObject.transform.SetParent(collision.gameObject.GetComponent<PlayerController>().itemPosition);
@@ -67,17 +66,17 @@ public class ActiveInfo : MonoBehaviour
 
     public virtual void afterActiveAttack()
     {
-        Debug.Log("액티브 사용 후 재정의");
+        //Debug.Log("액티브 사용 후 재정의");
     }
 
     public virtual void UseActive()
     {
-        Debug.Log("액티브 사용 시 재정의");
+        //Debug.Log("액티브 사용 시 재정의");
     }
 
     public virtual void CheckedItem()
     {
-        Debug.Log("눈물이 남아 있는 지 재정의");
+        //Debug.Log("눈물이 남아 있는 지 재정의");
     }
 
     void SetDelay()
@@ -92,7 +91,16 @@ public class ActiveInfo : MonoBehaviour
         }
     }
 
-
+    void DisconnectActive()
+    {
+        for (int i = 0; i < GameManager.instance.roomGenerate.itemList.Count; i++)
+        {
+            if (ItemManager.instance.ActiveItem.Equals(GameManager.instance.roomGenerate.itemList[i]))
+            {
+                GameManager.instance.roomGenerate.itemList.RemoveAt(i);
+            }
+        }
+    }
     public void GetEnergy()
     {
         if (currentEnergy >= needEnergy)
