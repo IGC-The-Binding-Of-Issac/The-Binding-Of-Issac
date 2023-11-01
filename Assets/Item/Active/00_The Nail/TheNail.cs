@@ -20,4 +20,8 @@ public class TheNail : ActiveInfo
 
         PlayerManager.instance.tearObj.GetComponent<SpriteRenderer>().sprite = redTearImg;
     }
+    public override void CheckedItem()
+    {
+       
+    }
 }
