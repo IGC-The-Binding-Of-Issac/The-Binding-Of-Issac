@@ -219,8 +219,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 1.178, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 8591384693438208543}
+  m_Children: []
   m_Father: {fileID: 5782382362621316817}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2435228017434858118
@@ -419,6 +418,7 @@ Transform:
   - {fileID: 7152328079427505730}
   - {fileID: 8341695315768728083}
   - {fileID: 6711306316167842221}
+  - {fileID: 8591384693438208543}
   - {fileID: 6126203666920312593}
   - {fileID: 4903051384914692604}
   m_Father: {fileID: 0}
@@ -445,7 +445,6 @@ MonoBehaviour:
   useActiveItemImage: {fileID: 8591384693438208543}
   defaultTearImg: {fileID: 1837185413, guid: 64f0cce7912310a489ab219e28d20338, type: 3}
   tear: {fileID: 0}
-  lazer: {fileID: 2706338626363011376, guid: 699f8547d1f55624cb9d564856571d90, type: 3}
   nailActivated: 0
   canUseActive: 1
   tearPoint: {fileID: 4903488415990779368}
@@ -886,12 +885,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8746126639892159799}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.1779995, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6711306316167842221}
+  m_Father: {fileID: 5782382362621316817}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8635835528898608769
 SpriteRenderer:

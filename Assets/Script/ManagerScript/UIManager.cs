@@ -155,7 +155,7 @@ public class UIManager : MonoBehaviour
         if(ItemManager.instance.ActiveItem != null)
         {
             ActiveInfo active = ItemManager.instance.ActiveItem.GetComponent<ActiveInfo>();
-            activeEnergy.fillAmount = active.currentEnergy / active.needEnergy;
+            //activeEnergy.fillAmount = active.currentEnergy / active.needEnergy;
         }
     }
 
@@ -167,6 +167,7 @@ public class UIManager : MonoBehaviour
         }
         if (ItemManager.instance.ActiveItem != null)
         {
+            Debug.Log("현재 아이템 : " + ItemManager.instance.ActiveItem);
             active.sprite = ItemManager.instance.ActiveItem.GetComponent<SpriteRenderer>().sprite;
         }
         coinText.text = ItemManager.instance.coinCount.ToString();
