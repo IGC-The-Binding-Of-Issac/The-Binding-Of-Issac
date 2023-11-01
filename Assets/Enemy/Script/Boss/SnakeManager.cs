@@ -15,17 +15,19 @@ public class SnakeManager : Enemy
     /// 3. 
     /// </summary>
 
+    [Header("Larry")]
     [SerializeField] float distanceBetween;
 
     [SerializeField] List<GameObject> bodyParts = new List<GameObject>(); // Larry의 얼굴, 몸통 오브젝트
-    [SerializeField] List<GameObject> snakeBody = new List<GameObject>();
+    public List<GameObject> snakeBody = new List<GameObject>();
 
     float countUp = 0;
     [SerializeField] Vector3 MoveDir; //움직일 방향 (위, 아래, 오,  왼)
-    [SerializeField] int stateNum; //현재 상태의 번호
+    public int stateNum; //현재 상태의 번호
     [SerializeField] float stateTime; //현재 상태의 시간
     [SerializeField] float currTime; //현재 상태의 시간
     [SerializeField] bool chageState; // 상태변환 
+    public bool isdetecWall;
 
     private void Start()
     {
@@ -35,7 +37,7 @@ public class SnakeManager : Enemy
         CreateBodyParts(); //초기 몸 생성 
 
         // Enemy
-        hp = 50f;
+        hp = 70f;
         sight = 5f;
         moveSpeed = 5f; // 이거 바꾸면 distanceBetween도 바꿔서 생성 하는 타이밍 맞춰야함!!!
         waitforSecond = 0.5f;
@@ -43,12 +45,14 @@ public class SnakeManager : Enemy
         maxhp = hp;
 
         //Snake
+    
         stateNum = 0; //상태 번호
         stateTime = 3f;
         chageState = true;
 
         randTime(); //초기에 진행할 시간 한번 구해놓기
         currTime = stateTime; // 초기에 구한 시간
+        isdetecWall = false;
     }
 
     
@@ -63,7 +67,7 @@ public class SnakeManager : Enemy
     
     private void Update()
     {
-        
+
     }
 
     //데미지를 입는
@@ -93,10 +97,16 @@ public class SnakeManager : Enemy
         }
         else if (currTime <= 0)
         {
-            randTime(); // 랜덤 타임 구하기
-            currTime = stateTime; //시간 초기화
-            chageState = true;
+            stateReset();
         }
+    }
+
+    public void stateReset() 
+    {  
+        randTime(); // 랜덤 타임 구하기
+        currTime = stateTime; //시간 초기화
+        chageState = true;
+
     }
 
     // 상태에 따른 애니메이션과 방향 전환
@@ -130,6 +140,7 @@ public class SnakeManager : Enemy
     {
         // state 1.up , 2. down , 3.left , 4. right 상태 중에 하나를 랜덤으로 고름
         int rand = 0;
+        bool isreturn = true;
 
         //맨 처음에는 무조건 오른쪽으로
         if (stateNum == 0)
@@ -138,9 +149,21 @@ public class SnakeManager : Enemy
         }
         else
         {
-            rand = Random.Range(1, 5); // 1~4중
-            stateNum = rand;
+            while (true) 
+            {
+                rand = Random.Range(1, 5); // 1~4중
+                if (rand != stateNum) //같은 상태가 아니면
+                {
+                    stateNum = rand;
+
+                    isreturn = true;
+                    break;
+                }
+            }
+            if (isreturn)
+                return;
         }
+
     }
     //랜덤 시간
     void randTime()
@@ -154,6 +177,8 @@ public class SnakeManager : Enemy
     {
         //snakeBody[0]은 머리 , 머리의 움직임을 MoveDir방향으로 이동
         snakeBody[0].transform.position += MoveDir * moveSpeed * Time.deltaTime;
+
+
 
         // snakeBody의 몸통이 있으면 ( = 머리를 제외하고 몸통의 움직임)
         // 몸통이 움직이게 조건 걸어놓은듯!
@@ -185,6 +210,9 @@ public class SnakeManager : Enemy
             GameObject temp1 = Instantiate(bodyParts[0], transform.position, transform.rotation, transform);
             //첫번째 요소 (머리)의 애니메이터 가져오기
             animator = temp1.GetComponent<Animator>();
+            
+            // 충돌 감지하는 빈 오브젝트 생성
+            //Instantiate(detec , transform.position, transform.rotation, transform);
 
             // 컴포넌트 추가
             // MarkManager컴포넌트 , Rigidbody2D컴포넌트 (Rigidbody2D는 지금 안쓰지만 미리 넣어놓는다고 생각하자) 
@@ -221,7 +249,10 @@ public class SnakeManager : Enemy
         {
             // bodyParts에 첫번째가 전에 생성된 오브젝트의 위치에 생성
             GameObject temp = Instantiate(bodyParts[0], markM.markerList[0].position, markM.markerList[0].rotation, transform);
+            
+            //LarryHeadParent밑의 첫번재 오브젝트의 자식으로
             temp.transform.SetParent(snakeBody[0].transform);
+
             // 컴포넌트 추가
             if (!temp.GetComponent<MarkManager>())
             {
@@ -245,6 +276,7 @@ public class SnakeManager : Enemy
             // count 초기화
             countUp = 0;
         }
-
     }
+
+
 }
