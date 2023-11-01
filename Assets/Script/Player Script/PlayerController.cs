@@ -168,7 +168,52 @@ public void Shoot(float x, float y)
             Rigidbody2D rigid_bullet = tear.GetComponent<Rigidbody2D>();
             rigid_bullet.AddForce(Vector2.right * 1.5f, ForceMode2D.Impulse);
         }
+        if (ItemManager.instance.PassiveItems[2])
+        {
+            for (int i = 0; i < 3; i++)
+                MutantShoot(x, y);
+        }
     }
+    public void MutantShoot(float x, float y)
+    {
+        float tearSpeed = PlayerManager.instance.playerTearSpeed;
+        Vector3 firePoint = gameObject.transform.GetChild(5).transform.position + new Vector3(Random.Range(-0.5f, 0.5f), Random.Range(-0.5f, 0.5f), 0);
+        //발사 기능 구현
+        //게임 중 눈물 생성 눈물 프리펩, 발사 시작위치, 회전
+        tear = Instantiate(PlayerManager.instance.tearObj, firePoint, transform.rotation) as GameObject;
+        tear.GetComponent<Rigidbody2D>().velocity = new Vector3(x * tearSpeed, y * tearSpeed, 0);
+
+
+        CheckedObject = null;
+        if (y != 1) // 위 공격이 아닐때
+        {
+            CheckedObject = tearPoint.overLapObject;
+        }
+
+        //총알이 대각으로 밀려서 발사되게 옆으로 힘을 줌
+        if (Input.GetKey(KeyCode.W))
+        {
+            Rigidbody2D rigid_bullet = tear.GetComponent<Rigidbody2D>();
+            rigid_bullet.AddForce(Vector2.up * 1.5f, ForceMode2D.Impulse);
+            //위로 발사할 땐 눈물 레이어 높이기
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            Rigidbody2D rigid_bullet = tear.GetComponent<Rigidbody2D>();
+            rigid_bullet.AddForce(Vector2.down * 1.5f, ForceMode2D.Impulse);
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            Rigidbody2D rigid_bullet = tear.GetComponent<Rigidbody2D>();
+            rigid_bullet.AddForce(Vector2.left * 1.5f, ForceMode2D.Impulse);
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            Rigidbody2D rigid_bullet = tear.GetComponent<Rigidbody2D>();
+            rigid_bullet.AddForce(Vector2.right * 1.5f, ForceMode2D.Impulse);
+        }
+    }
+
     //이동 애니메이션
     void MoveAnim()
     {
