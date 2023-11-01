@@ -2,10 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
-    [Header("Unity Setup")]
+    #region 싱글톤
+    public static UIManager instance;
+    private void Awake()
+    {
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(this);
+    }
+    #endregion
+
+    [Header("Text")]
     [SerializeField] Image trinket; // 장신구
     [SerializeField] Image active;  // 액티브
     [SerializeField] Text coinText; // 코인
@@ -16,39 +28,102 @@ public class UIManager : MonoBehaviour
     [SerializeField] Transform heartUI; // 하트 UI 
     [SerializeField] GameObject emptyHeart; // 빈하트
 
+    [Header("Active")]
+    [SerializeField] Image activeEnergy;
+
+    [Header("UI")]
+    [SerializeField] GameObject pauseUI;
+    [SerializeField] GameObject gameoverUI;
+
     private void Start()
     {
-        SetPlayerMaxHP(); // 최대체력 늘려야하는곳에서 호출해주기.
-        SetPlayerCurrentHP(); // 현재 체력이 바뀌었을때 호출해주기 ( ex) 데미지 입었을때 )
+        SetPlayerMaxHP(); // 하트HP 초기세팅
     }
 
     private void Update()
     {
-        UpdateUI();
-        SetPlayerCurrentHP();
+        AddHeart(); // 최대체력 증가하는곳에서 호출해주세요
+        DelHeart(); // 최대체력 감소하는곳에서 호출해주세요
+        SetPlayerCurrentHP(); // 현재 체력이 감소 또는 증가할때 호출해주세요 ( GetDamage / GetHeart  등등 )
+        UpdateActiveEnergy(); // 액티브 아이템 게이지 증가또는 감소(사용)할때 호출해주세요.
+
+        PauseUIOnOff(); // Pause UI
+        UpdateUI(); // 각종 UI 업데이트
     }
 
-    public void UpdateUI()
+    #region PauseUI
+    public void PauseUIOnOff()
     {
-        if (ItemManager.instance.TrinketItem != null)
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            trinket.sprite = ItemManager.instance.TrinketItem.GetComponent<SpriteRenderer>().sprite;
+            if (!pauseUI.activeSelf)
+            {
+                pauseUI.SetActive(true);
+                Time.timeScale = 0;
+            }
+
+            else if(pauseUI.activeSelf)
+            {
+                pauseUI.SetActive(false);
+                Time.timeScale = 1;
+            }
         }
-        if (ItemManager.instance.ActiveItem != null)
-        {
-            active.sprite = ItemManager.instance.ActiveItem.GetComponent<SpriteRenderer>().sprite;
-        }
-        coinText.text = ItemManager.instance.coinCount.ToString();
-        bombText.text = ItemManager.instance.bombCount.ToString();
-        keyText.text = ItemManager.instance.keyCount.ToString();
     }
 
+    public void PauseExitBtn()
+    {
+        pauseUI.SetActive(false);
+        Time.timeScale = 1;
+        SceneManager.LoadScene("01_Intro");
+    }
+
+    public void PauseResumeBtn()
+    {
+        Time.timeScale = 1;
+        pauseUI.SetActive(false);
+    }
+
+    #endregion
+
+    #region GameOverUI
+    public void GameOver()
+    {
+        gameoverUI.SetActive(true);
+        Time.timeScale = 0;
+    }
+
+    public void GameOverRestart()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("02_Game");
+    }
+    #endregion
+
+    #region HP
     public void SetPlayerMaxHP()
     {
         for (int i = 0; i < PlayerManager.instance.playerMaxHp/2; i++)
         {
             GameObject eheart = Instantiate(emptyHeart) as GameObject;
             eheart.transform.SetParent(heartUI);
+        }
+    }
+
+    public void AddHeart() // 최대체력 증가
+    {
+        int addCount = (PlayerManager.instance.playerMaxHp / 2) - heartUI.childCount;
+        for (int i = 0; i < addCount; i++)
+        {
+            GameObject eheart = Instantiate(emptyHeart) as GameObject;
+            eheart.transform.SetParent(heartUI);
+        }
+    }
+    public void DelHeart() // 최대 체력 감소
+    {
+        int delCount = -((PlayerManager.instance.playerMaxHp / 2) - heartUI.childCount);
+        for (int i = 0; i < delCount; i++)
+        {
+            Destroy(heartUI.GetChild(0).gameObject);
         }
     }
 
@@ -72,5 +147,30 @@ public class UIManager : MonoBehaviour
                 heartUI.GetChild(i).GetComponent<UIHeart>().SetHeart(0);
             }
         }
+    }
+    #endregion
+
+    public void UpdateActiveEnergy()
+    {
+        if(ItemManager.instance.ActiveItem != null)
+        {
+            ActiveInfo active = ItemManager.instance.ActiveItem.GetComponent<ActiveInfo>();
+            activeEnergy.fillAmount = active.currentEnergy / active.needEnergy;
+        }
+    }
+
+    public void UpdateUI()
+    {
+        if (ItemManager.instance.TrinketItem != null)
+        {
+            trinket.sprite = ItemManager.instance.TrinketItem.GetComponent<SpriteRenderer>().sprite;
+        }
+        if (ItemManager.instance.ActiveItem != null)
+        {
+            active.sprite = ItemManager.instance.ActiveItem.GetComponent<SpriteRenderer>().sprite;
+        }
+        coinText.text = ItemManager.instance.coinCount.ToString();
+        bombText.text = ItemManager.instance.bombCount.ToString();
+        keyText.text = ItemManager.instance.keyCount.ToString();
     }
 }

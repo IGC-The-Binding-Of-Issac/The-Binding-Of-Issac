@@ -55,6 +55,7 @@ public class PlayerManager : MonoBehaviour
             if(playerHp <= 0) // 데미지를 받았을때 HP가 0이하가 되면 사망함수 실행.
             {
                 GameManager.instance.playerObject.GetComponent<PlayerController>().Dead();
+                Invoke("GameOver", 0.7f);
             }
             else
             {
@@ -62,6 +63,11 @@ public class PlayerManager : MonoBehaviour
                 GameManager.instance.playerObject.GetComponent<PlayerController>().Hit();
             }
         }            
+    }
+
+    void GameOver()
+    {
+        UIManager.instance.GameOver();
     }
 
     //피격 딜레이
