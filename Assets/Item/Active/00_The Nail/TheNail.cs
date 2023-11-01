@@ -6,7 +6,7 @@ public class TheNail : ActiveInfo
 {
     public Sprite redTearImg;
 
-    private void Start()
+    private void Awake()
     {
         //0번 아이템, 6칸 필요함
         SetActiveItem(0, 6);

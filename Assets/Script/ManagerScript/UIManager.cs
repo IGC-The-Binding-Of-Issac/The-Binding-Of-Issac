@@ -200,7 +200,6 @@ public class UIManager : MonoBehaviour
 
         if (ItemManager.instance.ActiveItem != null)
         {
-            Debug.Log("현재 아이템 : " + ItemManager.instance.ActiveItem);
             active.sprite = ItemManager.instance.ActiveItem.GetComponent<SpriteRenderer>().sprite;
         }
         else

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BlackPill : ActiveInfo
 {
-    private void Start()
+    private void Awake()
     {
         SetActiveItem(12, 0);
     }

@@ -2266,9 +2266,9 @@ MonoBehaviour:
   - {fileID: 583903011229732005, guid: 39365ec944a5f254cbd7013349bdbe0a, type: 3}
   - {fileID: 1940590644864988899, guid: 5a864c321e20c554891383acd1026cc8, type: 3}
   - {fileID: 3910346934095368454, guid: 890afcbf0a04eb5498462f864cd2a31d, type: 3}
-  - {fileID: 2253735129361149663, guid: 016858977bffa0847b2978f232d7bb8e, type: 3}
-  - {fileID: 8527995557409362598, guid: 36b47a2d283116b4793eceac43a00c3d, type: 3}
-  - {fileID: 7160196254266652913, guid: 61d9b79514bd5284b8a2bbc5d32c621c, type: 3}
+  - {fileID: 4655165872744482137, guid: 05b69eb2310be834da7ca2c85d40a270, type: 3}
+  - {fileID: 2060743678576865454, guid: 2a034dbd94f8b3345894857ae3376ffd, type: 3}
+  - {fileID: 31294614900301510, guid: b4cb4baeae8bd3d4b847b83c2625192c, type: 3}
   passive: 
   trinket: 
   active: 

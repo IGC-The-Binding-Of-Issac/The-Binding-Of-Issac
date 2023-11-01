@@ -2,17 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RedPill : ActiveInfo
+public class HalfYellowPill : ActiveInfo
 {
+
     private void Awake()
     {
-        SetActiveItem(11, 0);
+        SetActiveItem(14, 0);
     }
 
     public override void UseActive()
     {
-        PlayerManager.instance.playerHp += 1;
-        PlayerManager.instance.playerMaxHp += 1;
+        PlayerManager.instance.playerRange += 0.15f;
         Destroy(gameObject);
     }
 }

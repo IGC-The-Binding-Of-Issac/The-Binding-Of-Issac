@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SkyWhitePill : ActiveInfo
 {
-    private void Start()
+    private void Awake()
     {
         SetActiveItem(8, 0);
     }

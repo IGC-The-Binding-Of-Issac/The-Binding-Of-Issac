@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class YellowPill : ActiveInfo
 {
-    private void Start()
+    private void Awake()
     {
         SetActiveItem(7, 0);
     }
