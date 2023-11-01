@@ -77,12 +77,17 @@ public class PlayerController : MonoBehaviour
               
                 if(active.currentEnergy >= active.needEnergy) // 필요 에너지 넘었을때.
                 {
-                    StartCoroutine(UseActiveItem()); // 아이템 사용 애니메이션
+                    if (active.activeItemCode == 1 && ItemManager.instance.coinCount <= 0) return;
+                    else
+                    {
+                        StartCoroutine(UseActiveItem()); // 아이템 사용 애니메이션
                         active.UseActive();  // 아이템 기능 실행
                         if (active.activeItemCode == 0)
                         {
                             nailActivated = true;
                         }
+                    }
+                    
                     active.currentEnergy = 0;
                     canUseActive = false;
                     Invoke("SetActiveDelay", 1f);

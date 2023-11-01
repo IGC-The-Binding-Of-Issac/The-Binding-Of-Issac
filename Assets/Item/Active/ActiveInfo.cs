@@ -19,6 +19,7 @@ public class ActiveInfo : MonoBehaviour
         player = GameManager.instance.playerObject;
         activeItemCode = code;
         needEnergy = energy;
+        currentEnergy = needEnergy;
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -36,6 +37,7 @@ public class ActiveInfo : MonoBehaviour
 
                 GameObject obj = ItemManager.instance.itemTable.ActiveChange(ItemManager.instance.ActiveItem.GetComponent<ActiveInfo>().activeItemCode);
                 Transform dropPosition = GameManager.instance.playerObject.GetComponent<PlayerController>().itemPosition;
+                Debug.Log(obj);
                 GameObject beforeActive = Instantiate(obj, new Vector3(dropPosition.position.x, (dropPosition.position.y - 1f), 0), Quaternion.identity) as GameObject;
 
                 // 현재 드랍된 아이템 리스트에 등록.
