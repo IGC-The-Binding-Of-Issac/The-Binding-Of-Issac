@@ -133,7 +133,7 @@ public class PlayerController : MonoBehaviour
 public void Shoot(float x, float y)
     {
         float tearSpeed = PlayerManager.instance.playerTearSpeed;
-        Vector3 firePoint = gameObject.transform.GetChild(5).transform.position;
+        Vector3 firePoint = tearPoint.transform.position;
         //발사 기능 구현
         //게임 중 눈물 생성 눈물 프리펩, 발사 시작위치, 회전
         tear = Instantiate(PlayerManager.instance.tearObj, firePoint, transform.rotation) as GameObject;
@@ -177,7 +177,7 @@ public void Shoot(float x, float y)
     public void MutantShoot(float x, float y)
     {
         float tearSpeed = PlayerManager.instance.playerTearSpeed;
-        Vector3 firePoint = gameObject.transform.GetChild(5).transform.position + new Vector3(Random.Range(-0.5f, 0.5f), Random.Range(-0.5f, 0.5f), 0);
+        Vector3 firePoint = tearPoint.transform.position + new Vector3(Random.Range(-0.5f, 0.5f), Random.Range(-0.5f, 0.5f), 0);
         //발사 기능 구현
         //게임 중 눈물 생성 눈물 프리펩, 발사 시작위치, 회전
         tear = Instantiate(PlayerManager.instance.tearObj, firePoint, transform.rotation) as GameObject;
