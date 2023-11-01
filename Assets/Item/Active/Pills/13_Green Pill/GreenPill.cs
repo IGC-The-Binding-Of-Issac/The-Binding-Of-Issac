@@ -2,17 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HalfRedPill : ActiveInfo
+public class GreenPill : ActiveInfo
 {
-
+    
     private void Start()
     {
-        SetActiveItem(10, 0);
+        SetActiveItem(13, 0);
     }
 
     public override void UseActive()
     {
-        PlayerManager.instance.playerDamage -= 0.15f;
+        PlayerManager.instance.playerHp -= 1;
         Destroy(gameObject);
     }
 }
