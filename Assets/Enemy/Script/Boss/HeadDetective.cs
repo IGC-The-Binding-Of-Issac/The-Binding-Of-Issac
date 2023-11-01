@@ -24,7 +24,6 @@ public class HeadDetective : MonoBehaviour
         {
             //벽이랑 충돌하면 리셋
             parent.stateReset();
-            Debug.Log("벽충돌");
 
         }
     }

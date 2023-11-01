@@ -53,27 +53,15 @@ MonoBehaviour:
   knockBackState: 0
   roomInfo: {fileID: 0}
   distanceBetween: 0.2
-  bodyParts:
-  - {fileID: 5600537940808364053, guid: 3fa04f53a8bc9c24e90fe9bc692d5c4a, type: 3}
-  - {fileID: 683869812595379796, guid: 9cd8917b6afe1f447866dc80472c1e07, type: 3}
-  - {fileID: 683869812595379796, guid: 9cd8917b6afe1f447866dc80472c1e07, type: 3}
-  - {fileID: 683869812595379796, guid: 9cd8917b6afe1f447866dc80472c1e07, type: 3}
-  - {fileID: 683869812595379796, guid: 9cd8917b6afe1f447866dc80472c1e07, type: 3}
-  - {fileID: 683869812595379796, guid: 9cd8917b6afe1f447866dc80472c1e07, type: 3}
-  - {fileID: 683869812595379796, guid: 9cd8917b6afe1f447866dc80472c1e07, type: 3}
-  - {fileID: 683869812595379796, guid: 9cd8917b6afe1f447866dc80472c1e07, type: 3}
-  - {fileID: 683869812595379796, guid: 9cd8917b6afe1f447866dc80472c1e07, type: 3}
-  - {fileID: 683869812595379796, guid: 9cd8917b6afe1f447866dc80472c1e07, type: 3}
-  - {fileID: 683869812595379796, guid: 9cd8917b6afe1f447866dc80472c1e07, type: 3}
-  - {fileID: 683869812595379796, guid: 9cd8917b6afe1f447866dc80472c1e07, type: 3}
-  - {fileID: 683869812595379796, guid: 9cd8917b6afe1f447866dc80472c1e07, type: 3}
+  larryHead_: {fileID: 5600537940808364053, guid: 3fa04f53a8bc9c24e90fe9bc692d5c4a, type: 3}
+  larryBody_: {fileID: 683869812595379796, guid: 9cd8917b6afe1f447866dc80472c1e07, type: 3}
+  bodyParts: []
   snakeBody: []
   MoveDir: {x: 0, y: 0, z: 0}
   stateNum: 0
   stateTime: 0
   currTime: 0
   chageState: 1
-  isdetecWall: 0
 --- !u!1 &7446213380561490163
 GameObject:
   m_ObjectHideFlags: 0
