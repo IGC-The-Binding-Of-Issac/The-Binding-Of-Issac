@@ -7,7 +7,6 @@ public class ActiveInfo : MonoBehaviour
 {
     public int activeItemCode;
     private bool canCollision;
-    public bool activated;
     public int needEnergy;
     public int currentEnergy;
 
@@ -85,31 +84,20 @@ public class ActiveInfo : MonoBehaviour
     {
         canCollision = true;
     }
-    void SetActiveDelay()
-    {
-        activated = false;
-    }
     private void Update()
     {
-        //액티브 아이템 테스트용, 테스트 끝나면 지워줘야 함
-        currentEnergy = needEnergy;
-        if (ItemManager.instance.ActiveItem != null)
-        {
-        ItemManager.instance.ActiveItem.GetComponent<ActiveInfo>().CheckedItem();
-        }
-
         if (!canCollision)
         {
             Invoke("SetDelay", 0.8f);
         }
-        //액티브 아이템이 있고 현재 게이지가 필요한 게이지만큼 찼을 때 스페이스바를 누르면
-        if (ItemManager.instance.ActiveItem != null && Input.GetKeyDown(KeyCode.Space) && currentEnergy == needEnergy && 
-            !ItemManager.instance.ActiveItem.GetComponent<ActiveInfo>().activated)
-        {
-            StartCoroutine(player.GetComponent<PlayerController>().UseActiveItem());
-            ItemManager.instance.ActiveItem.GetComponent<ActiveInfo>().UseActive();
-            ItemManager.instance.ActiveItem.GetComponent<ActiveInfo>().activated = true;
-            Invoke("SetActiveDelay", 0.5f);
-        }
+    }
+
+
+    public void GetEnergy()
+    {
+        if (currentEnergy >= needEnergy)
+            return;
+
+        currentEnergy++;
     }
 }

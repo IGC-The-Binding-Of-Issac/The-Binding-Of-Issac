@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,7 +10,7 @@ public class Room : MonoBehaviour
     public Transform[] roomObjects;
     public List<GameObject> enemis = new List<GameObject>();
 
-    [Header("Unity Setup")]
+    [Header("Unity Setup")] 
     public Transform roomGrid;
     public Transform cameraPosition;
     public Transform[] doorPosition;
@@ -22,7 +23,10 @@ public class Room : MonoBehaviour
             CameraSetting();
         }
 
-        CheckRoom();
+        if(!isClear)
+        {
+            CheckRoom();
+        }
     }
     void CheckRoom()
     {
@@ -36,6 +40,14 @@ public class Room : MonoBehaviour
             }
         }
         isClear = flag;
+
+        if(isClear && playerInRoom) // 방이 클리어 + 방에 플레이어 존재
+        {
+            if(ItemManager.instance.ActiveItem != null) // 보유한 액티브 아이템이 존재할때.
+            {
+                ItemManager.instance.ActiveItem.GetComponent<ActiveInfo>().GetEnergy();
+            }
+        }
     }
 
     void CameraSetting()

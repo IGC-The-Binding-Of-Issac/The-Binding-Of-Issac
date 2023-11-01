@@ -53,10 +53,33 @@ public class PlayerController : MonoBehaviour
         MoveAnim();
         ShotAnim();
         InstallBomb();
+        UseActive();
     }
     void FixedUpdate()
     {
         Movement();
+    }
+
+    //액티브 아이템 사용
+    void UseActive()
+    {
+
+        // 아이템이 있고, 스페이스바 눌렀을때
+        if (ItemManager.instance.ActiveItem != null)
+        {
+            ItemManager.instance.ActiveItem.GetComponent<ActiveInfo>().CheckedItem();
+
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                ActiveInfo active = ItemManager.instance.ActiveItem.GetComponent<ActiveInfo>();
+                if(active.currentEnergy >= active.needEnergy) // 필요 에너지 넘었을때.
+                {
+                    StartCoroutine(UseActiveItem()); // 아이템 사용 애니메이션
+                    active.UseActive();  // 아이템 기능 실행
+                    active.currentEnergy = 0;
+                }
+            }
+        }
     }
 
     //이동 기능
