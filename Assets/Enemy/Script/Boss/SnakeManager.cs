@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor.Tilemaps;
 using UnityEngine;
+using UnityEngine.Analytics;
 using UnityEngine.Assertions.Must;
 using UnityEngine.Timeline;
 
@@ -17,6 +18,9 @@ public class SnakeManager : Enemy
 
     [Header("Larry")]
     [SerializeField] float distanceBetween;
+    [SerializeField] int larryLength; // body 길이 만
+    [SerializeField] GameObject larryHead_;
+    [SerializeField] GameObject larryBody_;
 
     [SerializeField] List<GameObject> bodyParts = new List<GameObject>(); // Larry의 얼굴, 몸통 오브젝트
     public List<GameObject> snakeBody = new List<GameObject>();
@@ -27,17 +31,21 @@ public class SnakeManager : Enemy
     [SerializeField] float stateTime; //현재 상태의 시간
     [SerializeField] float currTime; //현재 상태의 시간
     [SerializeField] bool chageState; // 상태변환 
-    public bool isdetecWall;
 
     private void Start()
     {
         //SnakeManager
+        // bodyParts배열에 값 넣어주기
+        larryLength = 12; //head 포함 12 개 
+        createBodyParts();
+
+        // 값 초기화
         countUp = 0;
         distanceBetween = 0.2f;
         CreateBodyParts(); //초기 몸 생성 
 
         // Enemy
-        hp = 70f;
+        hp = 110f;
         sight = 5f;
         moveSpeed = 5f; // 이거 바꾸면 distanceBetween도 바꿔서 생성 하는 타이밍 맞춰야함!!!
         waitforSecond = 0.5f;
@@ -52,7 +60,7 @@ public class SnakeManager : Enemy
 
         randTime(); //초기에 진행할 시간 한번 구해놓기
         currTime = stateTime; // 초기에 구한 시간
-        isdetecWall = false;
+
     }
 
     
@@ -67,7 +75,8 @@ public class SnakeManager : Enemy
     
     private void Update()
     {
-
+        //죽음
+        larryDie();
     }
 
     //데미지를 입는
@@ -75,6 +84,7 @@ public class SnakeManager : Enemy
     {
         base.GetDamage(PlayerManager.instance.playerDamage);
     }
+
     //데미지를 주는
     public void hitDamagePlayer() 
     {
@@ -101,12 +111,32 @@ public class SnakeManager : Enemy
         }
     }
 
+    //초기화
     public void stateReset() 
     {  
         randTime(); // 랜덤 타임 구하기
         currTime = stateTime; //시간 초기화
         chageState = true;
 
+    }
+
+    //스크립트로 bodyParts배열에 오브젝트 넣기 (start에서 한번 실행)
+    public void createBodyParts() 
+    {
+        bodyParts.Add(larryHead_);
+        for(int i= 1;i<larryLength; i++) 
+        {
+            bodyParts.Add(larryBody_);
+        }
+    }
+
+    // 죽음
+    public void larryDie() 
+    {
+        if (hp <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     // 상태에 따른 애니메이션과 방향 전환
