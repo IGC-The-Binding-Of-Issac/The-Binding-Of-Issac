@@ -67,6 +67,7 @@ public class PlayerManager : MonoBehaviour
 
     void GameOver()
     {
+        Invoke("GameOver", 0.7f);
         UIManager.instance.GameOver();
     }
 

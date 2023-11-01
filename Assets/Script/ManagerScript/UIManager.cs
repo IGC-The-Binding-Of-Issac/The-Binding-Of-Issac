@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
-    #region ½Ì±ÛÅæ
+    #region ì‹±ê¸€í†¤
     public static UIManager instance;
     private void Awake()
     {
@@ -18,37 +18,58 @@ public class UIManager : MonoBehaviour
     #endregion
 
     [Header("Text")]
-    [SerializeField] Image trinket; // Àå½Å±¸
-    [SerializeField] Image active;  // ¾×Æ¼ºê
-    [SerializeField] Text coinText; // ÄÚÀÎ
-    [SerializeField] Text bombText; // ÆøÅº
-    [SerializeField] Text keyText;  // ¿­¼è
+    [SerializeField] Image trinket; // ì¥ì‹ êµ¬
+    [SerializeField] Image active;  // ì•¡í‹°ë¸Œ
+    [SerializeField] Text coinText; // ì½”ì¸
+    [SerializeField] Text bombText; // í­íƒ„
+    [SerializeField] Text keyText;  // ì—´ì‡ 
 
     [Header("Hearts")]
-    [SerializeField] Transform heartUI; // ÇÏÆ® UI 
-    [SerializeField] GameObject emptyHeart; // ºóÇÏÆ®
+    [SerializeField] Transform heartUI; // í•˜íŠ¸ UI 
+    [SerializeField] GameObject emptyHeart; // ë¹ˆí•˜íŠ¸
 
     [Header("Active")]
     [SerializeField] Image activeEnergy;
+    [SerializeField] Sprite nullImage;
 
     [Header("UI")]
     [SerializeField] GameObject pauseUI;
     [SerializeField] GameObject gameoverUI;
-
+    [SerializeField] GameObject loadingImage;
     private void Start()
     {
-        SetPlayerMaxHP(); // ÇÏÆ®HP ÃÊ±â¼¼ÆÃ
+        SetPlayerMaxHP(); // í•˜íŠ¸HP ì´ˆê¸°ì„¸íŒ…
+        OnLoading();
     }
 
     private void Update()
     {
-        AddHeart(); // ÃÖ´ëÃ¼·Â Áõ°¡ÇÏ´Â°÷¿¡¼­ È£ÃâÇØÁÖ¼¼¿ä
-        DelHeart(); // ÃÖ´ëÃ¼·Â °¨¼ÒÇÏ´Â°÷¿¡¼­ È£ÃâÇØÁÖ¼¼¿ä
-        SetPlayerCurrentHP(); // ÇöÀç Ã¼·ÂÀÌ °¨¼Ò ¶Ç´Â Áõ°¡ÇÒ¶§ È£ÃâÇØÁÖ¼¼¿ä ( GetDamage / GetHeart  µîµî )
-        UpdateActiveEnergy(); // ¾×Æ¼ºê ¾ÆÀÌÅÛ °ÔÀÌÁö Áõ°¡¶Ç´Â °¨¼Ò(»ç¿ë)ÇÒ¶§ È£ÃâÇØÁÖ¼¼¿ä.
+        AddHeart(); // ìµœëŒ€ì²´ë ¥ ì¦ê°€í•˜ëŠ”ê³³ì—ì„œ í˜¸ì¶œí•´ì£¼ì„¸ìš”
+        DelHeart(); // ìµœëŒ€ì²´ë ¥ ê°ì†Œí•˜ëŠ”ê³³ì—ì„œ í˜¸ì¶œí•´ì£¼ì„¸ìš”
+        SetPlayerCurrentHP(); // í˜„ì¬ ì²´ë ¥ì´ ê°ì†Œ ë˜ëŠ” ì¦ê°€í• ë•Œ í˜¸ì¶œí•´ì£¼ì„¸ìš” ( GetDamage / GetHeart  ë“±ë“± )
+        UpdateActiveEnergy(); // ì•¡í‹°ë¸Œ ì•„ì´í…œ ê²Œì´ì§€ ì¦ê°€ë˜ëŠ” ê°ì†Œ(ì‚¬ìš©)í• ë•Œ í˜¸ì¶œí•´ì£¼ì„¸ìš”.
 
         PauseUIOnOff(); // Pause UI
-        UpdateUI(); // °¢Á¾ UI ¾÷µ¥ÀÌÆ®
+        UpdateUI(); // ê°ì¢… UI ì—…ë°ì´íŠ¸
+    }
+
+    void OnLoading()
+    {
+        loadingImage.SetActive(true);
+        StartCoroutine(FadeOutStart());
+    }
+    public IEnumerator FadeOutStart()
+    {
+        yield return new WaitForSeconds(0.2f);
+        for (float f = 1f; f > 0; f -= 0.005f)
+        {
+            Color c = loadingImage.GetComponent<Image>().color;
+            c.a = f;
+            loadingImage.GetComponent<Image>().color = c;
+            yield return null;
+        }
+        yield return new WaitForSeconds(1);
+        loadingImage.SetActive(false);
     }
 
     #region PauseUI
@@ -109,7 +130,7 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    public void AddHeart() // ÃÖ´ëÃ¼·Â Áõ°¡
+    public void AddHeart() // ìµœëŒ€ì²´ë ¥ ì¦ê°€
     {
         int addCount = (PlayerManager.instance.playerMaxHp / 2) - heartUI.childCount;
         for (int i = 0; i < addCount; i++)
@@ -118,7 +139,7 @@ public class UIManager : MonoBehaviour
             eheart.transform.SetParent(heartUI);
         }
     }
-    public void DelHeart() // ÃÖ´ë Ã¼·Â °¨¼Ò
+    public void DelHeart() // ìµœëŒ€ ì²´ë ¥ ê°ì†Œ
     {
         int delCount = -((PlayerManager.instance.playerMaxHp / 2) - heartUI.childCount);
         for (int i = 0; i < delCount; i++)
@@ -155,7 +176,14 @@ public class UIManager : MonoBehaviour
         if(ItemManager.instance.ActiveItem != null)
         {
             ActiveInfo active = ItemManager.instance.ActiveItem.GetComponent<ActiveInfo>();
-            //activeEnergy.fillAmount = active.currentEnergy / active.needEnergy;
+            if(active.needEnergy == 0)
+            {
+                activeEnergy.fillAmount = 1;
+            }
+            else
+            {
+                activeEnergy.fillAmount = active.currentEnergy / active.needEnergy;
+            }
         }
     }
 
@@ -165,11 +193,22 @@ public class UIManager : MonoBehaviour
         {
             trinket.sprite = ItemManager.instance.TrinketItem.GetComponent<SpriteRenderer>().sprite;
         }
+        else
+        {
+            trinket.sprite = nullImage;
+        }
+
         if (ItemManager.instance.ActiveItem != null)
         {
-            Debug.Log("ÇöÀç ¾ÆÀÌÅÛ : " + ItemManager.instance.ActiveItem);
+            Debug.Log("í˜„ì¬ ì•„ì´í…œ : " + ItemManager.instance.ActiveItem);
             active.sprite = ItemManager.instance.ActiveItem.GetComponent<SpriteRenderer>().sprite;
         }
+        else
+        {
+            active.sprite = nullImage;
+        }
+
+
         coinText.text = ItemManager.instance.coinCount.ToString();
         bombText.text = ItemManager.instance.bombCount.ToString();
         keyText.text = ItemManager.instance.keyCount.ToString();
