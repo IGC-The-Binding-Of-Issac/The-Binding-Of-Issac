@@ -115,6 +115,12 @@ public class Tear : MonoBehaviour
                 StartCoroutine(collision.gameObject.GetComponent<Enemy>().knockBack());
                 collision.gameObject.GetComponent<Rigidbody2D>().AddForce(direction * 200);
             }
+
+            //boss와 충돌하면
+            else if (collision.gameObject.CompareTag("Boss"))
+            {
+                BoomTear();
+            }
         }
     }
 }

@@ -53,7 +53,7 @@ public class Enemy : MonoBehaviour
         return false;
     }
 
-    //collider검사
+    // 일반 몬스터 collider검사
     private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -63,6 +63,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    // 일반 몬스터 색 변화
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Tears"))

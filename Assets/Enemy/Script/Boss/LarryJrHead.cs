@@ -11,16 +11,26 @@ public class LarryJrHead : MonoBehaviour
         parent = transform.parent.GetComponent<SnakeManager>();
     }
 
-    // 눈물충돌
+    /// <summary>
+    /// 눈물, player 충돌
+    /// 
+    /// 1. 부모에 rigidbody를 들고옴
+    /// 2. 자식이 충돌해도 밑의 충돌처리로 해결 가능
+    /// 
+    /// </summary>
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        // Larry 몸 + 머리 , 눈물 충돌
         if (collision.gameObject.CompareTag("Tears"))
         {
             parent.getDamageLarry();
         }
     }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        //플레이어와 충돌 했을 때 (자식포함)
         if (collision.gameObject.CompareTag("Player"))
         {
             parent.hitDamagePlayer();
