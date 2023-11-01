@@ -67,17 +67,17 @@ public class ActiveInfo : MonoBehaviour
 
     public virtual void afterActiveAttack()
     {
-        Debug.Log("액티브 사용 후 재정의");
+        //Debug.Log("액티브 사용 후 재정의");
     }
 
     public virtual void UseActive()
     {
-        Debug.Log("액티브 사용 시 재정의");
+        //Debug.Log("액티브 사용 시 재정의");
     }
 
     public virtual void CheckedItem()
     {
-        Debug.Log("눈물이 남아 있는 지 재정의");
+        //Debug.Log("눈물이 남아 있는 지 재정의");
     }
 
     void SetDelay()
