@@ -30,7 +30,6 @@ public class PlayerController : MonoBehaviour
     float shootHor;
     float shootVer;
     public GameObject tear;
-    public GameObject lazer;
     public bool nailActivated; // 대못 아이템을 사용했을 때
     public bool canUseActive = true; //액티브 아이템 개갈김을 방지하기 위한
 
@@ -79,18 +78,11 @@ public class PlayerController : MonoBehaviour
                 if(active.currentEnergy >= active.needEnergy) // 필요 에너지 넘었을때.
                 {
                     StartCoroutine(UseActiveItem()); // 아이템 사용 애니메이션
-                    if (active.activeItemCode == 5)
-                    {
-                        shotLazer();
-                    }
-                    else
-                    {
                         active.UseActive();  // 아이템 기능 실행
                         if (active.activeItemCode == 0)
                         {
                             nailActivated = true;
                         }
-                    }
                     active.currentEnergy = 0;
                     canUseActive = false;
                     Invoke("SetActiveDelay", 1f);
@@ -176,13 +168,6 @@ public void Shoot(float x, float y)
             Rigidbody2D rigid_bullet = tear.GetComponent<Rigidbody2D>();
             rigid_bullet.AddForce(Vector2.right * 1.5f, ForceMode2D.Impulse);
         }
-    }
-
-    public void shotLazer()
-    {
-        Vector3 firePoint = gameObject.transform.GetChild(5).transform.position;
-        GameObject lazerShoot = Instantiate(lazer, firePoint, Quaternion.identity) as GameObject;
-        lazerShoot.transform.SetParent(gameObject.transform.GetChild(5).transform);
     }
     //이동 애니메이션
     void MoveAnim()
