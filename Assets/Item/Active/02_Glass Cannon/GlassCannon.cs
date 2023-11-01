@@ -7,7 +7,7 @@ public class GlassCannon : ActiveInfo
     float beforeTearSize;
     float beforeDamage;
     private GameObject tear;
-    void Start()
+    void Awake()
     {
         SetActiveItem(2, 1);
         beforeTearSize = PlayerManager.instance.playerTearSize;

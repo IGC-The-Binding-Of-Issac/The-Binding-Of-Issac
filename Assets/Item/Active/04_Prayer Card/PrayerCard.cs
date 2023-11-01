@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PrayerCard : ActiveInfo
 {
-    void Start()
+    void Awake()
     {
         SetActiveItem(4, 4);
     }

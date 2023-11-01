@@ -6,7 +6,7 @@ public class TammyHead : ActiveInfo
 {
     float beforeDamage;
     private GameObject activeTear;
-    void Start()
+    void Awake()
     {
         SetActiveItem(3, 1);
         beforeDamage = PlayerManager.instance.playerDamage;

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BluePill : ActiveInfo
 {
-    private void Start()
+    private void Awake()
     {
         SetActiveItem(5, 0);
     }
