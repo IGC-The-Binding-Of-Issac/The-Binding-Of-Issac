@@ -21,14 +21,14 @@ public class TheNail : ActiveInfo
 
     public override void UseActive()
     {
+        if(canUse)
+        {
         PlayerManager.instance.playerMaxHp += 1;
         PlayerManager.instance.playerMoveSpeed -= 0.08f;
         PlayerManager.instance.playerDamage += 0.5f;
 
         PlayerManager.instance.tearObj.GetComponent<SpriteRenderer>().sprite = redTearImg;
-    }
-    public override void CheckedItem()
-    {
-       
+        Invoke("SetCanUse", 1f);
+        }
     }
 }

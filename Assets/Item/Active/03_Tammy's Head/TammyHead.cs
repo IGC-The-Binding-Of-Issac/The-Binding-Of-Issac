@@ -17,6 +17,8 @@ public class TammyHead : ActiveInfo
 
     public override void UseActive()
     {
+        if(canUse)
+        {
         PlayerManager.instance.playerDamage += 25f;
         GameManager.instance.playerObject.GetComponent<PlayerController>().Shoot(1, 1);
         GameManager.instance.playerObject.GetComponent<PlayerController>().Shoot(1, 0);
@@ -27,6 +29,9 @@ public class TammyHead : ActiveInfo
         GameManager.instance.playerObject.GetComponent<PlayerController>().Shoot(-1, 0);
         GameManager.instance.playerObject.GetComponent<PlayerController>().Shoot(-1, -1);
         activeTear = GameObject.Find("Tear(Clone)");
+            canUse = false;
+            Invoke("SetCanUse", 1f);
+        }
     }
 
     public override void CheckedItem()

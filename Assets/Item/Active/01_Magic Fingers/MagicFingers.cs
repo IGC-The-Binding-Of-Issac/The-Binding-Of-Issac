@@ -15,10 +15,13 @@ public class MagicFingers : ActiveInfo
 
     public override void UseActive()
     {
-        if(ItemManager.instance.coinCount > 0)
+        if(ItemManager.instance.coinCount > 0 && canUse)
         {
         ItemManager.instance.coinCount--;
         PlayerManager.instance.playerDamage += 0.13f;
         }
+        canUse = false;
+        Invoke("SetCanUse", 1f);
+        
     }
 }

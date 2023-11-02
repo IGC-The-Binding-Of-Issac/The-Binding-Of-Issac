@@ -12,7 +12,7 @@ public class ActiveInfo : MonoBehaviour
     public string itemTitle; //아이템 이름
     public string itemDescription; //아이템 요약 설명 [습득 시 중앙 UI 밑에 텍스트 한줄]
     public string itemInformation; // 아이템 설명 [습득 전 왼쪽 UI에 설명들]
-
+    public bool canUse;
     [SerializeField]
     public GameObject player;
 
@@ -40,12 +40,13 @@ public class ActiveInfo : MonoBehaviour
 
             if (ItemManager.instance.ActiveItem == null)
             {
+                canUse = false;
                 ActiveGet(collision);
             }
 
             else if (ItemManager.instance.ActiveItem != null)
             {
-
+                canUse = false;
                 GameObject obj = ItemManager.instance.itemTable.ActiveChange(ItemManager.instance.ActiveItem.GetComponent<ActiveInfo>().activeItemCode);
                 Transform dropPosition = GameManager.instance.playerObject.GetComponent<PlayerController>().itemPosition;
                 GameObject beforeActive = Instantiate(obj, new Vector3(dropPosition.position.x, (dropPosition.position.y - 1f), 0), Quaternion.identity) as GameObject;
@@ -78,6 +79,7 @@ public class ActiveInfo : MonoBehaviour
 
         Destroy(gameObject.GetComponent<Rigidbody2D>());
         StartCoroutine(collision.gameObject.GetComponent<PlayerController>().GetActiveItem());
+        Invoke("SetCanUse", 1f);
     }
 
     public virtual void afterActiveAttack()
@@ -98,6 +100,11 @@ public class ActiveInfo : MonoBehaviour
     void SetDelay()
     {
         canCollision = true;
+    }
+
+    void SetCanUse()
+    {
+        canUse = true;
     }
     private void Update()
     {
