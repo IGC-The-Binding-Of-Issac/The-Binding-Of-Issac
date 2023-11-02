@@ -6,9 +6,13 @@ public class GoatHoof : TrinketInfo
 {
     float beforeMoveSpeed;
     float beforeShotDelay;
-    void Start()
+    void Awake()
     {
         SetTrinketItemCode(1);
+        SetTrinketString("염소 발굽",
+            "이동 속도 증가, 공격 속도 감소",
+            "습득 시 이동속도 + 0.16" +
+            "\n 공격속도 - 0.16");
     }
 
     public override void GetItem()

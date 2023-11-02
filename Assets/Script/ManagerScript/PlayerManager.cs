@@ -27,7 +27,7 @@ public class PlayerManager : MonoBehaviour
     public float playerTearSize = 1f; //눈물 크기
     public float playerSize = 1f; //캐릭터 크기
 
-    bool CanGetDamage = true; // 데미지를 받을 수 있는지 확인.
+    public bool CanGetDamage = true; // 데미지를 받을 수 있는지 확인.
     float hitDelay = .5f; // 피격 딜레이
 
     [Header("unity setup")]
@@ -71,7 +71,12 @@ public class PlayerManager : MonoBehaviour
     }
     public void GetDamage()
     {
-        if(CanGetDamage)
+        if (ItemManager.instance.PassiveItems[6] && CanGetDamage)
+        {
+            StartCoroutine(HitDelay());
+            CanGetDamage = false;
+        }
+        else if (CanGetDamage)
         {
             playerHp--;
             CanGetDamage = false;
@@ -85,7 +90,8 @@ public class PlayerManager : MonoBehaviour
                 StartCoroutine(HitDelay());
                 GameManager.instance.playerObject.GetComponent<PlayerController>().Hit();
             }
-        }            
+        }
+
     }
 
     void GameOver()
@@ -95,7 +101,7 @@ public class PlayerManager : MonoBehaviour
     }
 
     //피격 딜레이
-    IEnumerator HitDelay()
+    public IEnumerator HitDelay()
     {
         playerObj = GameManager.instance.playerObject;
         playerHead = playerObj.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>();

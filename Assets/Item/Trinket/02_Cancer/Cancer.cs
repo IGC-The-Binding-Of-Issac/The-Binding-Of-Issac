@@ -10,6 +10,11 @@ public class Cancer : TrinketInfo
     private void Start()
     {
         SetTrinketItemCode(2);
+        SetTrinketString("암세포",
+            "와, 암이다!",
+            "습득 시 공격속도 + 0.3" +
+            "\n 공격력 - 0.2" +
+            "\n 이동 속도 - 0.34");
     }
 
     public override void GetItem()

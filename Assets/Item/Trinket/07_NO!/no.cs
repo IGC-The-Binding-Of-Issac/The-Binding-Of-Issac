@@ -10,6 +10,10 @@ public class no : TrinketInfo
     private void Start()
     {
         SetTrinketItemCode(7);
+        SetTrinketString("¾ÈµÅ!",
+            "¸ØÃç!",
+            "½Àµæ ½Ã ÀÌµ¿¼Óµµ * 0.5" +
+            "\n °ø°Ý¼Óµµ * 0.5");
     }
 
     public override void GetItem()

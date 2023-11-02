@@ -9,6 +9,10 @@ public class CeremonialRobes : ItemInfo
     private void Start()
     {
         SetItemCode(5);
+        SetItemString("의식용 예복",
+            "어두운 두건",
+            "습득 시 최대 체력 + 2칸" +
+            "\n 공격력 + 1");
     }
 
     public override void UseItem()

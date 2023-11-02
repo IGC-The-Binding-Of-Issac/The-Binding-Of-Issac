@@ -9,6 +9,10 @@ public class aaaBattery : TrinketInfo
     private void Start()
     {
         SetTrinketItemCode(4);
+        SetTrinketString("AAA 건전지",
+            "충전 효율 증가",
+            "습득 시 방 클리어 시 액티브 아이템 충전 효율이 2배가 되며" +
+            "이동속도 + 0.1");
     }
 
     public override void GetItem()
