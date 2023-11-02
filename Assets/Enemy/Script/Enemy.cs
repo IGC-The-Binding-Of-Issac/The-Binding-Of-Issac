@@ -80,6 +80,7 @@ public class Enemy : MonoBehaviour
         gameObject.GetComponent<SpriteRenderer>().color = oriColor;
     }
 
+    // 일반몬스터 hp바
     public void CheckHp()
     {
         hpBarSlider.fillAmount = hp / maxhp;

@@ -144,7 +144,7 @@ public class SnakeManager : Enemy
     public void larryDie() 
     {
         //피가 90 이하이고
-        if (hp <= 90f && hp > 80f)
+        if (hp <= 90)
         {
             // 스네이크 배열이 12개 이면 (다 있으면), snakeBody에 있는거 하나 지우기
             if (snakeBody.Count == larryLength) 
@@ -156,7 +156,7 @@ public class SnakeManager : Enemy
             }
         }
         // 피가 80 이하이고
-        if (hp <= 80f&& hp > 70f)
+        if (hp <= 80f)
         {
             // 스네이크 배열이 11개 이면, snakeBody에 있는거 하나 지우기
             if (snakeBody.Count == larryLength-1 )
@@ -168,7 +168,7 @@ public class SnakeManager : Enemy
             }
         }
         // 피가 70 이하이고
-        if (hp <= 70f && hp > 60f)
+        if (hp <= 70f )
         {
             // 스네이크 배열이 10개 이면, snakeBody에 있는거 하나 지우기
             if (snakeBody.Count == larryLength - 2)
@@ -179,7 +179,7 @@ public class SnakeManager : Enemy
                 Destroy(deleSnake, waitforSecond);
             }
         }
-        if (hp <= 60f && hp > 50f)
+        if (hp <= 60f )
         {
             // 스네이크 배열이 9개 이면, snakeBody에 있는거 하나 지우기
             if (snakeBody.Count == larryLength - 3)
@@ -190,7 +190,7 @@ public class SnakeManager : Enemy
                 Destroy(deleSnake, waitforSecond);
             }
         }
-        if (hp <= 50f && hp > 40f)
+        if (hp <= 50f )
         {
             // 스네이크 배열이 8개 이면, snakeBody에 있는거 하나 지우기
             if (snakeBody.Count == larryLength - 4)
@@ -201,7 +201,7 @@ public class SnakeManager : Enemy
                 Destroy(deleSnake, waitforSecond);
             }
         }
-        if (hp <= 40f && hp > 30f)
+        if (hp <= 40f )
         {
             // 스네이크 배열이 7개 이면, snakeBody에 있는거 하나 지우기
             if (snakeBody.Count == larryLength - 5)
@@ -212,7 +212,7 @@ public class SnakeManager : Enemy
                 Destroy(deleSnake, waitforSecond);
             }
         }
-        if (hp <= 30f && hp > 20f)
+        if (hp <= 30f )
         {
             // 스네이크 배열이 6개 이면, snakeBody에 있는거 하나 지우기
             if (snakeBody.Count == larryLength - 6)
@@ -223,7 +223,7 @@ public class SnakeManager : Enemy
                 Destroy(deleSnake, waitforSecond);
             }
         }
-        if (hp <= 20f && hp > 10f)
+        if (hp <= 20f )
         {
             // 스네이크 배열이 4개 이면, snakeBody에 있는거 1 + 1 지우기
             if (snakeBody.Count == larryLength - 7)
