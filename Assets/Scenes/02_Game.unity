@@ -4290,6 +4290,14 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 21dacb87704d25a4bb4039c01ed4df27, type: 3}
   - {fileID: 8300000, guid: dfc65a335c28b7e4293bfc18bf380b8d, type: 3}
   bgmObject: {fileID: 209403519}
+  playerObject: {fileID: 0}
+  enemyObject: []
+  stageObject: []
+  volumeBGM: 0
+  volumePlayer: 0
+  volumeEffect: 0
+  volumeObject: 0
+  volumeEnemy: 0
 --- !u!1 &2042181454
 GameObject:
   m_ObjectHideFlags: 0
