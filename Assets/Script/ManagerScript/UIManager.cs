@@ -24,6 +24,13 @@ public class UIManager : MonoBehaviour
     [SerializeField] Text bombText; // 폭탄
     [SerializeField] Text keyText;  // 열쇠
 
+    [Header("Player Stat")]
+    [SerializeField] Text damageText;
+    [SerializeField] Text moveSpeedText;
+    [SerializeField] Text attackSpeedText;
+    [SerializeField] Text attackRangeText;
+    [SerializeField] Text tearSpeedText;
+
     [Header("Hearts")]
     [SerializeField] Transform heartUI; // 하트 UI 
     [SerializeField] GameObject emptyHeart; // 빈하트
@@ -53,6 +60,7 @@ public class UIManager : MonoBehaviour
         UpdateUI(); // 각종 UI 업데이트
     }
 
+    #region Loading
     public void OnLoading()
     {
         loadingImage.SetActive(true);
@@ -71,6 +79,7 @@ public class UIManager : MonoBehaviour
         yield return new WaitForSeconds(1);
         loadingImage.SetActive(false);
     }
+    #endregion
 
     #region PauseUI
     public void PauseUIOnOff()
@@ -194,7 +203,24 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    // UI 업데이트 
     public void UpdateUI()
+    {
+        ItemUpdate();
+        DropItemUpdate();
+        PlayerStatUpdate();
+    }
+
+    // 드랍 아이템 현황 업데이트
+    public void DropItemUpdate()
+    {
+        coinText.text = ItemManager.instance.coinCount.ToString();
+        bombText.text = ItemManager.instance.bombCount.ToString();
+        keyText.text = ItemManager.instance.keyCount.ToString();
+    }
+
+    // 보유 아이템 현황 업데이트
+    public void ItemUpdate()
     {
         if (ItemManager.instance.TrinketItem != null)
         {
@@ -213,10 +239,15 @@ public class UIManager : MonoBehaviour
         {
             active.sprite = nullImage;
         }
+    }
 
-
-        coinText.text = ItemManager.instance.coinCount.ToString();
-        bombText.text = ItemManager.instance.bombCount.ToString();
-        keyText.text = ItemManager.instance.keyCount.ToString();
+    // 플레이어 스탯 업데이트
+    public void PlayerStatUpdate()
+    {
+        damageText.text = PlayerManager.instance.playerDamage.ToString();
+        moveSpeedText.text = PlayerManager.instance.playerMoveSpeed.ToString();
+        attackSpeedText.text = (1 / PlayerManager.instance.playerShotDelay).ToString();
+        attackRangeText.text = PlayerManager.instance.playerRange.ToString();
+        tearSpeedText.text = PlayerManager.instance.playerTearSpeed.ToString();
     }
 }
