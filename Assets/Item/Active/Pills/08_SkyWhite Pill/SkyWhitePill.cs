@@ -10,6 +10,7 @@ public class SkyWhitePill : ActiveInfo
         SetActiveString("???",
         "???",
         "???");
+        Invoke("SetCanChangeItem", 1f);
     }
 
     public override void UseActive()

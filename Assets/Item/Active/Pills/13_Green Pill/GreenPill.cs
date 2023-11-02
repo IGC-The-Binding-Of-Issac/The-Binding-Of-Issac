@@ -11,6 +11,7 @@ public class GreenPill : ActiveInfo
         SetActiveString("???",
         "???",
         "???");
+        Invoke("SetCanChangeItem", 1f);
     }
 
     public override void UseActive()

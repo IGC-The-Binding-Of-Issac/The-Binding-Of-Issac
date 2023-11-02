@@ -10,6 +10,7 @@ public class YellowPill : ActiveInfo
         SetActiveString("???",
         "???",
         "???");
+        Invoke("SetCanChangeItem", 1f);
     }
 
     public override void UseActive()

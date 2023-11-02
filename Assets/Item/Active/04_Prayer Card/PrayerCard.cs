@@ -10,6 +10,7 @@ public class PrayerCard : ActiveInfo
         SetActiveString("기도자 카드",
             "재사용가능한 영원",
             "사용 시 최대 체력 + 1칸");
+        Invoke("SetCanChangeItem", 1f);
     }
 
     public override void UseActive()

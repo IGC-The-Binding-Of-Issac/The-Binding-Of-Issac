@@ -13,6 +13,7 @@ public class TammyHead : ActiveInfo
             "충전식 눈물 폭발",
             "사용 시 8방향으로 데미지가 25 더 높은 눈물을 동시에 발사한다.");
         beforeDamage = PlayerManager.instance.playerDamage;
+        Invoke("SetCanChangeItem", 1f);
     }
 
     public override void UseActive()

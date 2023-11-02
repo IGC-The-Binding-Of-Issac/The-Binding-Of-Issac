@@ -28,7 +28,7 @@ public class PlayerManager : MonoBehaviour
     public float playerSize = 1f; //캐릭터 크기
 
     public bool CanGetDamage = true; // 데미지를 받을 수 있는지 확인.
-    public int CanBlockDamage =0; // Holy Mantle 습득 시 데미지를 5회 방어해준다.
+    public int CanBlockDamage = 0; // Holy Mantle 습득 시 데미지를 5회 방어해준다.
     float hitDelay = .5f; // 피격 딜레이
 
     [Header("unity setup")]
