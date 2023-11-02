@@ -1,26 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BossRoom : MonoBehaviour
 {
     [Header("Room info")]
-    [SerializeField] GameObject boss;
+    [SerializeField] Enemy bossComponent;
+    [SerializeField] bool spawnBoss = true;
+    private Enemy bossObject;
 
     [Header("unity Setup")]
     [SerializeField] Transform bossSpawnPoint;
     [SerializeField] GameObject nextStageDoor;
+    [SerializeField] GameObject bossHpUI;
+    [SerializeField] Image bossHP;
 
-    [SerializeField] bool spawnBoss = true;
     private void Update()
     {
         if (gameObject.GetComponent<Room>().isClear)
         {
             nextStageDoor.SetActive(true);
+            bossHpUI.SetActive(false);
         }
         else 
         {
             nextStageDoor.SetActive(false);
+            bossHpUI.SetActive(true);
         }
     }
 
@@ -34,6 +40,7 @@ public class BossRoom : MonoBehaviour
                 // 보스 재생성 방지
                 spawnBoss = false;
 
+                GameObject boss;
                 // 보스생성
                 boss = GameObject.Find("EnemyGenerate").GetComponent<EnemyGenerate>().GetBoss();
 
@@ -45,10 +52,10 @@ public class BossRoom : MonoBehaviour
 
                 // 보스오브젝트를 보스방의 Room 스크립트의 enemis에 추가.
                 gameObject.GetComponent<Room>().enemis.Add(boss);
+                bossComponent = boss.GetComponent<Enemy>();
+                bossComponent.hpBarSlider = bossHP;
 
                 gameObject.GetComponent<Room>().isClear = false;
-                // 보스HP바 생성
-                // 구현 필요.
             }
         }
     }
