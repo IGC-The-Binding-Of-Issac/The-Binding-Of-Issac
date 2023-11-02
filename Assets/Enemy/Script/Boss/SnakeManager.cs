@@ -65,7 +65,6 @@ public class SnakeManager : Enemy
         currTime = stateTime; // 초기에 구한 시간
 
     }
-
     
     private void FixedUpdate()
     {
