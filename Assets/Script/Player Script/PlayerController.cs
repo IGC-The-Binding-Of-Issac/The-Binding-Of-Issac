@@ -355,11 +355,18 @@ public void Shoot(float x, float y)
         bodyRenderer.color = new Color(1, 1, 1, 0);
         headItem.color = new Color(1, 1, 1, 0);
         playerAnim.SetTrigger("Hit");
+
+        HitSound();
+    }
+
+    public void HitSound()
+    {
         int randomIndex = Random.Range(0, audioClips.Length);
 
         audioSource.clip = audioClips[randomIndex];
         audioSource.Play();
     }
+
 
     // 사망 애니메이션
     public void Dead()
@@ -368,8 +375,6 @@ public void Shoot(float x, float y)
         head.gameObject.SetActive(false);
         body.gameObject.SetActive(false);
         playerAnim.SetTrigger("Death");
-
-        // 사망애니메이션 이후 사망아웃트로 씬으로 이동 작성
     }
 
     //아이템 획득 애니메이션
