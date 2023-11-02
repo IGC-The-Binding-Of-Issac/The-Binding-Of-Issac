@@ -15,10 +15,13 @@ public class HalfRedPill : ActiveInfo
 
     public override void UseActive()
     {
+        if(canUse)
+        {
         PlayerManager.instance.playerDamage -= 0.15f;
         SetActiveString("나는 멸치야..",
         "공격력 감소",
         "사용 시 공격력이 감소한다.");
         Destroy(gameObject);
+        }
     }
 }

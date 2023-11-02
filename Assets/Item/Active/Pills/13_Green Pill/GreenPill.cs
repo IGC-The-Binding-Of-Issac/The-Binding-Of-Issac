@@ -15,10 +15,13 @@ public class GreenPill : ActiveInfo
 
     public override void UseActive()
     {
+        if(canUse)
+        {
         PlayerManager.instance.playerHp -= 1;
         SetActiveString("진통제인 줄 알았는데..",
         "체력 감소",
         "사용 시 현재 체력이 감소한다.");
         Destroy(gameObject);
+        }
     }
 }

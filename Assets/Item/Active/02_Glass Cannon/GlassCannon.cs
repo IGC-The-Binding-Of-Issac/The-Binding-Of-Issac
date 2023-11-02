@@ -21,8 +21,10 @@ public class GlassCannon : ActiveInfo
 
     public override void UseActive()
     {
-        float shootHor = Input.GetAxis("ShootHorizontal");
-        float shootVer = Input.GetAxis("ShootVertical");
+        if (canUse)
+        {
+        float shootHor = Input.GetAxis("Horizontal");
+        float shootVer = Input.GetAxis("Vertical");
         PlayerManager.instance.playerTearSize *= 8f;
         PlayerManager.instance.ChgTearSize();
         PlayerManager.instance.playerDamage *= 10f;
@@ -40,6 +42,9 @@ public class GlassCannon : ActiveInfo
         }
         tear = GameObject.Find("Tear(Clone)");
         afterActiveAttack();
+        canUse = false;
+            Invoke("SetCanUse", 1f);
+        }
     }
 
     public override void afterActiveAttack()

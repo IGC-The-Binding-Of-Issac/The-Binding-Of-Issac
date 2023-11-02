@@ -14,11 +14,11 @@ public class PrayerCard : ActiveInfo
 
     public override void UseActive()
     {
+        if (canUse)
+        {
         PlayerManager.instance.playerMaxHp += 1;
-    }
-
-    public override void CheckedItem()
-    {
-        
+        canUse = false;
+        Invoke("SetCanUse", 1f);
+        }
     }
 }

@@ -48,6 +48,12 @@ public class Room : MonoBehaviour
             {
                 ItemManager.instance.ActiveItem.GetComponent<ActiveInfo>().GetEnergy();
             }
+
+            if (ItemManager.instance.PassiveItems[6])
+            {
+                PlayerManager.instance.CanBlockDamage++;
+            }
+
         }
     }
 

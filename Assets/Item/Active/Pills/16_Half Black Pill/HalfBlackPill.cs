@@ -14,6 +14,8 @@ public class HalfBlackPill : ActiveInfo
 
     public override void UseActive()
     {
+        if(canUse)
+        {
         PlayerManager.instance.playerHp -= 1;
         PlayerManager.instance.playerMoveSpeed += 0.08f;
         PlayerManager.instance.playerDamage += 0.15f;
@@ -21,5 +23,6 @@ public class HalfBlackPill : ActiveInfo
         "체력 감소, 이동속도와 공격력 증가",
         "사용 시 현재 체력이 감소하지만, 이동속도와 공격력이 증가한다.");
         Destroy(gameObject);
+        }
     }
 }
