@@ -7,7 +7,10 @@ public class MagicFingers : ActiveInfo
     
     void Awake()
     {
-        SetActiveItem(1, 0);    
+        SetActiveItem(1, 0);
+        SetActiveString("유료 안마기",
+            "1원을 넣어주세요",
+            "사용 시 1원을 소모하여 공격력 + 0.13");
     }
 
     public override void UseActive()

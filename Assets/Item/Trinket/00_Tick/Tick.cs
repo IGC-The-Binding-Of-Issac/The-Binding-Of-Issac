@@ -9,7 +9,13 @@ public class Tick : TrinketInfo
     float beforeShotDelay;
     private void Start()
     {
-           SetTrinketItemCode(0);  
+           SetTrinketItemCode(0);
+            SetTrinketString("진드기",
+            "으, 징그러워",
+            "습득 시 공격력 + 0.3" +
+            "\n 이동속도 - 0.24" +
+            "\n 현재 체력 - 2칸" +
+            "\n 공격 속도 - 0.2");
     }
     public override void GetItem()
     {

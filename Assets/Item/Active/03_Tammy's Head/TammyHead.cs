@@ -9,6 +9,9 @@ public class TammyHead : ActiveInfo
     void Awake()
     {
         SetActiveItem(3, 1);
+        SetActiveString("태미의 머리",
+            "충전식 눈물 폭발",
+            "사용 시 8방향으로 데미지가 25 더 높은 눈물을 동시에 발사한다.");
         beforeDamage = PlayerManager.instance.playerDamage;
     }
 
