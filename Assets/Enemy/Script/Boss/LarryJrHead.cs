@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class LarryJrHead : MonoBehaviour
@@ -26,6 +27,14 @@ public class LarryJrHead : MonoBehaviour
         {
             parent.getDamageLarry();
         }
+        if (collision.gameObject.CompareTag("AttackBomb")) 
+        {
+            // 충돌한 오브젝트 (폭탄)의 데미지를 가져옴
+            float damage;
+            damage = collision.gameObject.GetComponent<PutBomb>().retunbossBombDamage();
+            parent.getBombDamage(damage);
+
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -36,5 +45,6 @@ public class LarryJrHead : MonoBehaviour
             parent.hitDamagePlayer();
         }
     }
+
 
 }

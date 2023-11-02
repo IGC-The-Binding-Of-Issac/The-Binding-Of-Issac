@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PutBomb : MonoBehaviour
@@ -13,6 +14,7 @@ public class PutBomb : MonoBehaviour
    
     private float duration = 2;
     private float smoothness = 0.01f;
+    private float bossBombDamage = 7f;
 
     bool CanAttack;
     void Awake()
@@ -97,5 +99,11 @@ public class PutBomb : MonoBehaviour
         CanAttack = true;
         bc.offset = new Vector2(0, -0.2f);
         bc.size = new Vector2(3f, 3.15f);
+    }
+
+    //메서드 추가
+    public float retunbossBombDamage() 
+    {
+        return bossBombDamage;
     }
 }

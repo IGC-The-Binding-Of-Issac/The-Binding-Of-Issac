@@ -87,6 +87,13 @@ public class SnakeManager : Enemy
         base.GetDamage(PlayerManager.instance.playerDamage);
     }
 
+
+    //폭탄에 데미지를 입는
+    public void getBombDamage(float bombDamage) 
+    {
+        base.GetDamage(bombDamage);
+    }
+
     //데미지를 주는
     public void hitDamagePlayer() 
     {
