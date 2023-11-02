@@ -13,7 +13,7 @@ public class Pacer : Top_IssacMonster
         dieParameter = "isDie";
 
         // Enemy
-        hp = 5f;
+        hp = 3f;
         sight = 5f;
         moveSpeed = 1.5f;
         waitforSecond = 0.5f;

@@ -14,7 +14,7 @@ public class Moter : Top_Fly
         dieParameter = "isDie";
 
         //Enemy
-        hp = 8f;
+        hp = 3f;
         sight = 5f;
         moveSpeed = 0.5f;
         waitforSecond = 0.5f;

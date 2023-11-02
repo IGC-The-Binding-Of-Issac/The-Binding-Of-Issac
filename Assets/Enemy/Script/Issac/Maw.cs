@@ -35,7 +35,7 @@ public class Maw : Top_IssacMonster
 
         //Enemy
         animator = GetComponent<Animator>();
-        hp = 5f;
+        hp = 6f;
         sight = 4f;
         moveSpeed = 1.5f;
         waitforSecond = 1f;
