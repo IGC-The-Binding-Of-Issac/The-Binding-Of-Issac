@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class maggysfaith : TrinketInfo
 {
-    float beforeTearSpeed;
-    float beforeRange;
+    float beforeDropTearSpeed;
+    float beforeDropRange;
 
     private void Start()
     {
@@ -17,15 +17,15 @@ public class maggysfaith : TrinketInfo
     }
     public override void GetItem()
     {
-        beforeTearSpeed = PlayerManager.instance.playerTearSpeed;
-        beforeRange = PlayerManager.instance.playerRange;
         PlayerManager.instance.playerTearSpeed += 0.12f;
         PlayerManager.instance.playerRange += 0.12f;
     }
 
     public override void DropTrinket()
     {
-        PlayerManager.instance.playerTearSpeed = beforeTearSpeed;
-        PlayerManager.instance.playerRange = beforeRange;
+        beforeDropTearSpeed = PlayerManager.instance.playerTearSpeed;
+        beforeDropRange = PlayerManager.instance.playerRange;
+        PlayerManager.instance.playerTearSpeed = beforeDropTearSpeed - 0.12f;
+        PlayerManager.instance.playerRange = beforeDropRange - 0.12f;
     }
 }

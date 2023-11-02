@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class Blindrange : TrinketInfo
 {
-    float beforeRange;
-    float beforeDamage;
-    float beforeMoveSpeed;
+    float beforeDropRange;
+    float beforeDropDamage;
+    float beforeDropMoveSpeed;
+    float beforeDropShotDelay;
     private void Start()
     {
         SetTrinketItemCode(6);
@@ -19,19 +20,22 @@ public class Blindrange : TrinketInfo
 
     public override void GetItem()
     {
-        beforeRange = PlayerManager.instance.playerRange;
-        beforeDamage = PlayerManager.instance.playerDamage;
-        beforeMoveSpeed = PlayerManager.instance.playerMoveSpeed;
         if (PlayerManager.instance.playerRange > 3) PlayerManager.instance.playerRange *= 0.25f;
         PlayerManager.instance.playerDamage += 5f;
         PlayerManager.instance.playerShotDelay -= 0.25f;
         PlayerManager.instance.playerMoveSpeed -= 1.2f;
+        PlayerManager.instance.CheckedShotDelay();
     }
 
     public override void DropTrinket()
     {
-        PlayerManager.instance.playerRange = beforeRange;
-        PlayerManager.instance.playerDamage = beforeDamage;
-        PlayerManager.instance.playerMoveSpeed = beforeMoveSpeed;
+        beforeDropRange = PlayerManager.instance.playerRange;
+        beforeDropDamage = PlayerManager.instance.playerDamage;
+        beforeDropMoveSpeed = PlayerManager.instance.playerMoveSpeed;
+        beforeDropShotDelay = PlayerManager.instance.playerShotDelay;
+        PlayerManager.instance.playerRange = beforeDropRange /= 0.25f;
+        PlayerManager.instance.playerDamage = beforeDropDamage -= 5f;
+        PlayerManager.instance.playerMoveSpeed = beforeDropMoveSpeed += 1.2f;
+        PlayerManager.instance.playerShotDelay = beforeDropShotDelay += 0.25f;
     }
 }

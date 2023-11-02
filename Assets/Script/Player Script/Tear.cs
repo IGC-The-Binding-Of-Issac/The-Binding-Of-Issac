@@ -51,7 +51,7 @@ public class Tear : MonoBehaviour
 
     public void BoomTear()
     {
-        if (ItemManager.instance.PassiveItems[0] == true || (ItemManager.instance.ActiveItem != null && playerController.nailActivated))
+        if (ItemManager.instance.PassiveItems[0] == true || (playerController.nailActivated))
         {
             tearBoomAnim.SetTrigger("RedBoomTear");
         }

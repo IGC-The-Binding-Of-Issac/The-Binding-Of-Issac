@@ -43,6 +43,14 @@ public class PlayerManager : MonoBehaviour
     public SpriteLibraryAsset[] head;
     public SpriteLibraryAsset[] body;
 
+    public void CheckedShotDelay()
+    {
+        if(playerShotDelay < 0.025)
+        {
+            playerShotDelay = 0.025f;
+        }
+    }
+
     public void SetHeadSkin(int index)
     {
         ChangeHead(head[index]);

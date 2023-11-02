@@ -17,5 +17,6 @@ public class MutantSpider : ItemInfo
     {
         PlayerManager.instance.playerShotDelay /= 0.42f;
         PlayerManager.instance.SetHeadSkin(2);
+        PlayerManager.instance.CheckedShotDelay();
     }
 }

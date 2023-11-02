@@ -19,7 +19,7 @@ public class SoyMilk : ItemInfo
         PlayerManager.instance.playerShotDelay /= 5.5f;
         PlayerManager.instance.playerTearSize *= 0.4f;
         PlayerManager.instance.ChgTearSize();
-        
+        PlayerManager.instance.CheckedShotDelay();
         //눈물 크기 0.3배로 변경
         //충전이 필요한 아이템 충전 기능 제거, 누르면 지속 발동 (혈사포 등)
     }

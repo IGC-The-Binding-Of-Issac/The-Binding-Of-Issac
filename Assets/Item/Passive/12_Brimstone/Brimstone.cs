@@ -12,6 +12,7 @@ public class Brimstone : ItemInfo
     public override void UseItem()
     {
         PlayerManager.instance.playerShotDelay /= 0.33f;
+        PlayerManager.instance.CheckedShotDelay();
         //눈물 및 캐릭터 외모 변경
         //공격이 차징으로 바뀜
         //키를 3초이상 누르면 조건을 만족하고 키를 뗏을 때 입에서 해당 방향으로 발사
