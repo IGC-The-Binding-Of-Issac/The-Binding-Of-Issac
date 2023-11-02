@@ -6,10 +6,11 @@ using UnityEngine;
 public class LarryJrHead : MonoBehaviour
 {
     SnakeManager parent;
-
+    bool canBombDamage;
     void Start()
     {
         parent = transform.parent.GetComponent<SnakeManager>();
+        canBombDamage = true;
     }
 
     /// <summary>
@@ -29,12 +30,25 @@ public class LarryJrHead : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("AttackBomb")) 
         {
-            // 충돌한 오브젝트 (폭탄)의 데미지를 가져옴
-            float damage;
-            damage = collision.gameObject.GetComponent<PutBomb>().retunbossBombDamage();
-            parent.getBombDamage(damage);
+            if (canBombDamage) 
+            {
+                // 충돌한 오브젝트 (폭탄)의 데미지를 가져옴
+                float damage;
+                damage = collision.gameObject.GetComponent<PutBomb>().retunbossBombDamage();
+                parent.getBombDamage(damage);
 
+                // 중첩데미지를 안 받게
+                canBombDamage = false;
+                StartCoroutine("chageCanBombDamage");
+
+            }
         }
+    }
+
+    IEnumerator chageCanBombDamage() 
+    {
+        yield return new WaitForSeconds(1f);
+        canBombDamage = true;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

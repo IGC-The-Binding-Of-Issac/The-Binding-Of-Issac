@@ -14,7 +14,7 @@ public class PutBomb : MonoBehaviour
    
     private float duration = 2;
     private float smoothness = 0.01f;
-    private float bossBombDamage = 7f;
+    private float bossBombDamage = 30f;
 
     bool CanAttack;
     void Awake()
