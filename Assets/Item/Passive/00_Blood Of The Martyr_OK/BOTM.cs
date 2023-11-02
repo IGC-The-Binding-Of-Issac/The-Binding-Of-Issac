@@ -32,6 +32,7 @@ public class BOTM : ItemInfo
     public void getBOTM()
     {
         //먹으면 캐릭터 위에 월계관 달림
-        GameManager.instance.playerObject.transform.Find("HeadItem").GetComponent<SpriteRenderer>().sprite = MartyrImg;
+        //GameManager.instance.playerObject.transform.Find("HeadItem").GetComponent<SpriteRenderer>().sprite = MartyrImg;
+        GameManager.instance.playerObject.GetComponent<PlayerController>().HeadItem.GetComponent<SpriteRenderer>().sprite = MartyrImg;
     }
 }

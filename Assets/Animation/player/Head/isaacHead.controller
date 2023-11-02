@@ -669,13 +669,13 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
-  - m_Name: RightLook
+  - m_Name: UpLook
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
-  - m_Name: UpLook
+  - m_Name: RightLook
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -683,12 +683,6 @@ AnimatorController:
     m_Controller: {fileID: 0}
   - m_Name: DownLook
     m_Type: 4
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 0}
-  - m_Name: LeftLook 0
-    m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
@@ -1433,16 +1427,16 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 1670366656672703201}
-    m_Position: {x: 470, y: -140, z: 0}
+    m_Position: {x: 470, y: -170, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 6210533149875597344}
-    m_Position: {x: 30, y: 60, z: 0}
+    m_Position: {x: 30, y: 30, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 235382707245897522}
-    m_Position: {x: 570, y: 60, z: 0}
+    m_Position: {x: 570, y: 30, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -6187692961133166195}
-    m_Position: {x: 130, y: -140, z: 0}
+    m_Position: {x: 130, y: -170, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 6006639023364919014}
     m_Position: {x: 300, y: 180, z: 0}

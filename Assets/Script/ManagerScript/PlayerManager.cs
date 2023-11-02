@@ -39,6 +39,11 @@ public class PlayerManager : MonoBehaviour
     SpriteRenderer playerBody;
     SpriteRenderer headItem;
 
+    [Header("Player OutFit")]
+    public SpriteRenderer bodyPart;
+
+    public List<Sprite> options = new List<Sprite>();
+
     //delegate 선언 위치
     
     public void Start()

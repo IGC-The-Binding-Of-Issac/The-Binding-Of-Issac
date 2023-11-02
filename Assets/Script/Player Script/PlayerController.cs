@@ -41,6 +41,7 @@ public class PlayerController : MonoBehaviour
 
     public AudioClip[] audioClips;
     private AudioSource audioSource;
+    public GameObject HeadItem;
 
     void Start()
     {
