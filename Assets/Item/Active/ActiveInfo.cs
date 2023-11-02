@@ -9,6 +9,9 @@ public class ActiveInfo : MonoBehaviour
     private bool canCollision;
     public int needEnergy;
     public int currentEnergy;
+    public string itemTitle; //아이템 이름
+    public string itemDescription; //아이템 요약 설명 [습득 시 중앙 UI 밑에 텍스트 한줄]
+    public string itemInformation; // 아이템 설명 [습득 전 왼쪽 UI에 설명들]
 
     [SerializeField]
     public GameObject player;
@@ -20,6 +23,13 @@ public class ActiveInfo : MonoBehaviour
         activeItemCode = code;
         needEnergy = energy;
         currentEnergy = needEnergy;
+    }
+
+    public void SetActiveString(string title, string description, string information)
+    {
+        itemTitle = title;
+        itemDescription = description;
+        itemInformation = information;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

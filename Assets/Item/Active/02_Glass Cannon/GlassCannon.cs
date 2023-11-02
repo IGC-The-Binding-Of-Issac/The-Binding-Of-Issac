@@ -10,6 +10,11 @@ public class GlassCannon : ActiveInfo
     void Awake()
     {
         SetActiveItem(2, 1);
+        SetActiveString("유리 대포",
+            "조심해서 다루세요.",
+            "사용 시 캐릭터가 유리 대포를 머리 위로 들며" +
+            "\n 해당 방향으로 엄청나게 거대한 눈물을 발사한다." +
+            "\n 공격력은 현재 공격력 * 10이다.");
         beforeTearSize = PlayerManager.instance.playerTearSize;
         beforeDamage = PlayerManager.instance.playerDamage;
     }

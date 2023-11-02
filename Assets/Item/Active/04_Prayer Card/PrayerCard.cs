@@ -7,6 +7,9 @@ public class PrayerCard : ActiveInfo
     void Awake()
     {
         SetActiveItem(4, 4);
+        SetActiveString("기도자 카드",
+            "재사용가능한 영원",
+            "사용 시 최대 체력 + 1칸");
     }
 
     public override void UseActive()
