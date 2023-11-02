@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.U2D.Animation;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -40,12 +40,30 @@ public class PlayerManager : MonoBehaviour
     SpriteRenderer headItem;
 
     [Header("Player OutFit")]
-    public SpriteRenderer bodyPart;
+    public SpriteLibraryAsset[] head;
+    public SpriteLibraryAsset[] body;
 
-    public List<Sprite> options = new List<Sprite>();
+    public void SetHeadSkin(int index)
+    {
+        ChangeHead(head[index]);
+    }
+    public void SetBodySkin(int index) 
+    { 
+        ChangeBody(body[index]);
+    }
+
+    public void ChangeHead(SpriteLibraryAsset head)
+    {
+        GameManager.instance.playerObject.GetComponent<PlayerController>().head.GetComponent<SpriteLibrary>().spriteLibraryAsset = head;
+    }
+
+    public void ChangeBody(SpriteLibraryAsset body)
+    {
+        GameManager.instance.playerObject.GetComponent<PlayerController>().body.GetComponent<SpriteLibrary>().spriteLibraryAsset = body;
+    }
 
     //delegate 선언 위치
-    
+
     public void Start()
     {
         tearObj.transform.localScale = new Vector3(1, 1, 1);
@@ -82,7 +100,7 @@ public class PlayerManager : MonoBehaviour
         playerObj = GameManager.instance.playerObject;
         playerHead = playerObj.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>();
         playerBody = playerObj.transform.GetChild(1).gameObject.GetComponent<SpriteRenderer>();
-        headItem = playerObj.transform.GetChild(4).gameObject.GetComponent<SpriteRenderer>();
+        headItem = playerObj.transform.GetChild(6).gameObject.GetComponent<SpriteRenderer>();
         //피격 숫자만큼 딜레이
         yield return new WaitForSeconds(hitDelay);
 

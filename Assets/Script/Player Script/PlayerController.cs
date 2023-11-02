@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
     public Sprite defaultTearImg;
     SpriteRenderer bodyRenderer;
     SpriteRenderer headRenderer;
+    SpriteRenderer headItem;
     Rigidbody2D playerRB;
 
     [Header("Function")]
@@ -49,6 +50,7 @@ public class PlayerController : MonoBehaviour
         playerRB = GetComponent<Rigidbody2D>();
         bodyRenderer = body.GetComponent<SpriteRenderer>();
         headRenderer = head.GetComponent<SpriteRenderer>();
+        headItem = GameManager.instance.playerObject.transform.GetChild(6).gameObject.GetComponent<SpriteRenderer>();
         PlayerManager.instance.tearObj.GetComponent<SpriteRenderer>().sprite = defaultTearImg;
     }
 
@@ -351,6 +353,7 @@ public void Shoot(float x, float y)
     {
         headRenderer.color = new Color(1, 1, 1, 0);
         bodyRenderer.color = new Color(1, 1, 1, 0);
+        headItem.color = new Color(1, 1, 1, 0);
         playerAnim.SetTrigger("Hit");
         int randomIndex = Random.Range(0, audioClips.Length);
 
@@ -375,6 +378,7 @@ public void Shoot(float x, float y)
         //원래 모습은 가려둠
         headRenderer.color = new Color(1, 1, 1, 0);
         bodyRenderer.color = new Color(1, 1, 1, 0);
+        headItem.color = new Color(1, 1, 1, 0);
         //아이템 획득 애니메이션 실행
         getItem.SetTrigger("GetItem");
         //애니메이션 1초간 유지
@@ -382,6 +386,7 @@ public void Shoot(float x, float y)
         //플레이어 모습 보이게 함
         headRenderer.color = new Color(1, 1, 1, 1);
         bodyRenderer.color = new Color(1, 1, 1, 1);
+        headItem.color = new Color(1, 1, 1, 1);
 
         //itemPosition 자식이 생기고
         if (itemPosition.childCount != 0)
@@ -395,6 +400,7 @@ public void Shoot(float x, float y)
         //원래 모습은 가려둠
         headRenderer.color = new Color(1, 1, 1, 0);
         bodyRenderer.color = new Color(1, 1, 1, 0);
+        headItem.color = new Color(1, 1, 1, 0);
         //아이템 획득 애니메이션 실행
         getItem.SetTrigger("GetItem");
         //애니메이션 1초간 유지
@@ -402,6 +408,7 @@ public void Shoot(float x, float y)
         //플레이어 모습 보이게 함
         headRenderer.color = new Color(1, 1, 1, 1);
         bodyRenderer.color = new Color(1, 1, 1, 1);
+        headItem.color = new Color(1, 1, 1, 1);
         ItemManager.instance.TrinketItem.GetComponent<TrinketInfo>().KeepItem();
     }
 
@@ -409,12 +416,14 @@ public void Shoot(float x, float y)
     {
         headRenderer.color = new Color(1, 1, 1, 0);
         bodyRenderer.color = new Color(1, 1, 1, 0);
+        headItem.color = new Color(1, 1, 1, 0);
 
         getItem.SetTrigger("GetItem");
         yield return new WaitForSeconds(1f);
 
         headRenderer.color = new Color(1, 1, 1, 1);
         bodyRenderer.color = new Color(1, 1, 1, 1);
+        headItem.color = new Color(1, 1, 1, 1);
         ItemManager.instance.ActiveItem.GetComponent<ActiveInfo>().KeepItem();
     }
 
@@ -424,12 +433,14 @@ public void Shoot(float x, float y)
         useActiveItemImage.GetComponent<SpriteRenderer>().sprite = activeSpr;
         headRenderer.color = new Color(1, 1, 1, 0);
         bodyRenderer.color = new Color(1, 1, 1, 0);
+        headItem.color = new Color(1, 1, 1, 0);
 
         getItem.SetTrigger("GetItem");
         yield return new WaitForSeconds(1f);
 
         headRenderer.color = new Color(1, 1, 1, 1);
         bodyRenderer.color = new Color(1, 1, 1, 1);
+        headItem.color = new Color(1, 1, 1, 1);
         useActiveItemImage.GetComponent<SpriteRenderer>().sprite = null;
     }
 
