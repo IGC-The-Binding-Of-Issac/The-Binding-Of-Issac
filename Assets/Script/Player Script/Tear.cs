@@ -1,10 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Animations;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
-using UnityEngine.Animations;
-using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class Tear : MonoBehaviour
 {

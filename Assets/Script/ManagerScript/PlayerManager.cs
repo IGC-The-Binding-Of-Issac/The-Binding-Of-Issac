@@ -44,6 +44,22 @@ public class PlayerManager : MonoBehaviour
     public SpriteLibraryAsset[] head;
     public SpriteLibraryAsset[] body;
 
+    void PlayerInitialization()
+    {
+        playerHp = 6; // 현재 체력
+        playerMaxHp = 6; // 최대 체력
+        playerMoveSpeed = 5f; // 이동 속도
+        playerTearSpeed = 6f; // 투사체 속도
+        playerShotDelay = 0.5f; // 공격 딜레이
+        playerDamage = 1f; // 데미지
+        playerRange = 5f; // 사거리
+        playerTearSize = 1f; //눈물 크기
+        playerSize = 1f; //캐릭터 크기
+        CanBlockDamage = 0;
+        CanGetDamage = true;
+        hitDelay = 0.5f; // 피격 딜레이
+    }
+
     public void CheckedShotDelay()
     {
         if(playerShotDelay < 0.025)
@@ -77,7 +93,10 @@ public class PlayerManager : MonoBehaviour
     {
         tearObj.transform.localScale = new Vector3(1, 1, 1);
         gameObject.AddComponent<AudioSource>();
+        PlayerInitialization();
     }
+
+
     public void GetDamage()
     {
         if (ItemManager.instance.PassiveItems[6] && CanGetDamage && CanBlockDamage > 0)

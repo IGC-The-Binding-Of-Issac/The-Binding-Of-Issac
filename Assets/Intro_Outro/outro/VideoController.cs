@@ -11,8 +11,13 @@ public class VideoController : MonoBehaviour
 
     private Coroutine fadeCoroutine;
 
+    public ImageController imageCon;
+
     void Start()
     {
+        imageCon.ImageInvisible();
+        videoPlayer.Play();
+
         // 동영상이 끝나면 호출되는 이벤트를 설정합니다.
         videoPlayer.loopPointReached += EndReached;
     }
@@ -20,6 +25,7 @@ public class VideoController : MonoBehaviour
     void EndReached(VideoPlayer vp)
     {
         // 동영상을 멈추고 이미지의 불투명도를 0으로 만듭니다.
+        imageCon.ImageVisible();
         vp.Stop();
         if (fadeCoroutine != null)
         {
@@ -33,6 +39,7 @@ public class VideoController : MonoBehaviour
         // 사용자가 화면을 클릭하면 동영상을 멈추고 이미지의 불투명도를 즉시 0으로 만듭니다.
         if (Input.GetMouseButtonDown(0))
         {
+            imageCon.ImageVisible();
             videoPlayer.Stop();
             if (fadeCoroutine != null)
             {

@@ -665,6 +665,7 @@ MonoBehaviour:
   videoPlayer: {fileID: 2106030784}
   rawImage: {fileID: 17493611}
   fadeDuration: 4
+  imageCon: {fileID: 728472325}
 --- !u!114 &728472325
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1744,7 +1745,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2106030782}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 56ad4a40a9404fe49982825856e8f0b8, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: a6e735fc7e135b74c82dc3baaa1ebaab, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}

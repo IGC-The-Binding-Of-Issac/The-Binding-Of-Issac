@@ -31,15 +31,17 @@ public class PlayerController : MonoBehaviour
     float shootHor;
     float shootVer;
     public GameObject tear;
-    public bool nailActivated; // 대못 아이템을 사용했을 때
-    public bool canUseActive = true; //액티브 아이템 개갈김을 방지하기 위한
-    public bool canChangeItem = false; //액티브 아이템 변경 과부하를 위한
+
     [Header("Unity Setup")]
     public TearPoint tearPoint;
 
     [Header("State")]
     public GameObject CheckedObject;
+    public bool nailActivated; // 대못 아이템을 사용했을 때
+    public bool canUseActive = true; //액티브 아이템 개갈김을 방지하기 위한
+    public bool canChangeItem = false; //액티브 아이템 변경 과부하를 위한
 
+    // 아래 정리 필요.
     public AudioClip[] audioClips;
     private AudioSource audioSource;
     public GameObject HeadItem;
@@ -52,6 +54,10 @@ public class PlayerController : MonoBehaviour
         headRenderer = head.GetComponent<SpriteRenderer>();
         headItem = GameManager.instance.playerObject.transform.GetChild(6).gameObject.GetComponent<SpriteRenderer>();
         PlayerManager.instance.tearObj.GetComponent<SpriteRenderer>().sprite = defaultTearImg;
+
+        canUseActive = true; // 액티브 아이템 개갈김을 방지하기 위한
+        canChangeItem = true; // 액티브 아이템 변경 과부하를 위한
+        nailActivated = false;
     }
 
     void Update()

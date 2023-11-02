@@ -22,7 +22,6 @@ public class ImageController : MonoBehaviour
 
     void Start()
     {
-
         waitTime = 8;
         fadeDuration = 10;
 
@@ -39,6 +38,34 @@ public class ImageController : MonoBehaviour
         StartCoroutine(WaitAndFadeOut(image10, waitTime, fadeDuration));
 
         Invoke("ReturnIntro", waitTime + fadeDuration + 2f);
+    }
+
+    public void ImageInvisible()
+    {
+        image1.color = new Color(image1.color.r, image1.color.g, image1.color.b, 0);
+        image2.color = new Color(image2.color.r, image2.color.g, image2.color.b, 0);
+        image3.color = new Color(image3.color.r, image3.color.g, image3.color.b, 0);
+        image4.color = new Color(image4.color.r, image4.color.g, image4.color.b, 0);
+        image5.color = new Color(image5.color.r, image5.color.g, image5.color.b, 0);
+        image6.color = new Color(image6.color.r, image6.color.g, image6.color.b, 0);
+        image7.color = new Color(image7.color.r, image7.color.g, image7.color.b, 0);
+        image8.color = new Color(image8.color.r, image8.color.g, image8.color.b, 0);
+        image9.color = new Color(image9.color.r, image9.color.g, image9.color.b, 0);
+        image10.color = new Color(image10.color.r, image10.color.g, image10.color.b, 0);
+    }
+
+    public void ImageVisible()
+    {
+        image1.color = new Color(image1.color.r, image1.color.g, image1.color.b, 1);
+        image2.color = new Color(image2.color.r, image2.color.g, image2.color.b, 1);
+        image3.color = new Color(image3.color.r, image3.color.g, image3.color.b, 1);
+        image4.color = new Color(image4.color.r, image4.color.g, image4.color.b, 1);
+        image5.color = new Color(image5.color.r, image5.color.g, image5.color.b, 1);
+        image6.color = new Color(image6.color.r, image6.color.g, image6.color.b, 1);
+        image7.color = new Color(image7.color.r, image7.color.g, image7.color.b, 1);
+        image8.color = new Color(image8.color.r, image8.color.g, image8.color.b, 1);
+        image9.color = new Color(image9.color.r, image9.color.g, image9.color.b, 1);
+        image10.color = new Color(image10.color.r, image10.color.g, image10.color.b, 1);
     }
 
     IEnumerator WaitAndFadeOut(Image targetImage, float waitTime, float duration)

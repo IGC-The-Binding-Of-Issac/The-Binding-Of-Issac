@@ -1,12 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Data.Common;
-using Unity.VisualScripting;
-using UnityEditor.Tilemaps;
 using UnityEngine;
-using UnityEngine.Analytics;
-using UnityEngine.Assertions.Must;
-using UnityEngine.Timeline;
 
 public class SnakeManager : Enemy
 {
