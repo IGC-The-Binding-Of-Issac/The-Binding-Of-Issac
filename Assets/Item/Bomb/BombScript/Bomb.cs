@@ -15,7 +15,7 @@ public class PutBomb : MonoBehaviour
     private float smoothness = 0.01f;
 
     bool CanAttack;
-    void Start()
+    void Awake()
     {
         CanAttack = false;
         bombAnimator = GetComponent<Animator>();
@@ -74,7 +74,7 @@ public class PutBomb : MonoBehaviour
             }
             if(collision.CompareTag("Enemy"))
             {
-                collision.GetComponent<Enemy>().GetDamage(100);
+                collision.GetComponent<Enemy>().GetDamage(100);   
             }
             if(collision.CompareTag("Player"))
             {
