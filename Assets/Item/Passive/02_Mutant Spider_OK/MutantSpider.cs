@@ -13,8 +13,8 @@ public class MutantSpider : ItemInfo
     public override void UseItem()
     {
         PlayerManager.instance.playerShotDelay /= 0.42f;
+        PlayerManager.instance.SetHeadSkin(2);
         //이마에 눈이 두 개 더 생긴다.
         //캐릭터의 모든 눈에서 눈물을 발사한다. [4발]
-
     }
 }
