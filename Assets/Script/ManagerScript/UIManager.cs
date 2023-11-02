@@ -244,10 +244,10 @@ public class UIManager : MonoBehaviour
     // 플레이어 스탯 업데이트
     public void PlayerStatUpdate()
     {
-        damageText.text = PlayerManager.instance.playerDamage.ToString();
-        moveSpeedText.text = PlayerManager.instance.playerMoveSpeed.ToString();
-        attackSpeedText.text = (1 / PlayerManager.instance.playerShotDelay).ToString();
-        attackRangeText.text = PlayerManager.instance.playerRange.ToString();
-        tearSpeedText.text = PlayerManager.instance.playerTearSpeed.ToString();
+        damageText.text = PlayerManager.instance.playerDamage.ToString("0.00");
+        moveSpeedText.text = PlayerManager.instance.playerMoveSpeed.ToString("0.00");
+        attackSpeedText.text = (1 / PlayerManager.instance.playerShotDelay).ToString("0.00");
+        attackRangeText.text = PlayerManager.instance.playerRange.ToString("0.00");
+        tearSpeedText.text = PlayerManager.instance.playerTearSpeed.ToString("0.00");
     }
 }
