@@ -7,6 +7,12 @@ public class CricketsHead : ItemInfo
     private void Start()
     {
         SetItemCode(1);
+        SetItemString("크리켓의 머리",
+            "공격력 증가",
+            "습득 시 눈이 더 커진다." +
+            "\n 공격력 + 0.5" +
+            "\n 공격력 * 1.5" +
+            "\n 눈물 크기 * 1.1배");
     }
     public override void UseItem()
     {

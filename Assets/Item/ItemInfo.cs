@@ -6,6 +6,9 @@ using UnityEngine;
 public class ItemInfo : MonoBehaviour
 {
     protected int itemCode;
+    public string itemTitle;
+    public string itemDescription;
+    public string itemInformation;
 
     public bool canCollision = false;
     private void OnCollisionEnter2D(Collision2D collision)
@@ -33,6 +36,13 @@ public class ItemInfo : MonoBehaviour
     public void SetItemCode(int code)
     {
         itemCode = code;
+    }
+
+    public void SetItemString(string title, string description, string information)
+    {
+        itemTitle = title;
+        itemDescription = description;
+        itemInformation = information;
     }
     void SetDelay()
     {

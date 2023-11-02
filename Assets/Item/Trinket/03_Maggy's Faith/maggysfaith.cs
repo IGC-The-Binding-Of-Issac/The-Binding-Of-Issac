@@ -10,6 +10,10 @@ public class maggysfaith : TrinketInfo
     private void Start()
     {
         SetTrinketItemCode(3);
+        SetTrinketString("매기의 믿음",
+            "믿음의 대가",
+            "습득 시 눈물 속도 + 0.12" +
+            "\n 사거리 + 0.12");
     }
     public override void GetItem()
     {

@@ -9,6 +9,10 @@ public class WhipWorm : TrinketInfo
     private void Start()
     {
         SetTrinketItemCode(5);
+        SetTrinketString("Ã¤Âï ¹ú·¹",
+            "ÈªÄ¡!",
+            "½Àµæ ½Ã »ç°Å¸® + 0.2" +
+            "\n °ø°Ý ¼Óµµ - 0.3");
     }
 
     public override void GetItem()

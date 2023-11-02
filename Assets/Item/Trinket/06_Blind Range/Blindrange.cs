@@ -10,6 +10,11 @@ public class Blindrange : TrinketInfo
     private void Start()
     {
         SetTrinketItemCode(6);
+        SetTrinketString("눈 먼 분노",
+            "마음의 눈으로 보시오",
+            "습득 시 사거리 - 0.99"
+            + "\n 공격력 + 3"
+            + "\n 이동속도 - 1.2");
     }
 
     public override void GetItem()
@@ -17,8 +22,9 @@ public class Blindrange : TrinketInfo
         beforeRange = PlayerManager.instance.playerRange;
         beforeDamage = PlayerManager.instance.playerDamage;
         beforeMoveSpeed = PlayerManager.instance.playerMoveSpeed;
-        PlayerManager.instance.playerRange -= 0.99f;
-        PlayerManager.instance.playerDamage += 3f;
+        if (PlayerManager.instance.playerRange > 3) PlayerManager.instance.playerRange *= 0.25f;
+        PlayerManager.instance.playerDamage += 5f;
+        PlayerManager.instance.playerShotDelay -= 0.25f;
         PlayerManager.instance.playerMoveSpeed -= 1.2f;
     }
 
