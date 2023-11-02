@@ -76,7 +76,7 @@ public class Enemy : MonoBehaviour
     IEnumerator Hit(Color oriColor)
     {
         gameObject.GetComponent<SpriteRenderer>().color = Color.red;
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.1f);
         gameObject.GetComponent<SpriteRenderer>().color = oriColor;
     }
 
