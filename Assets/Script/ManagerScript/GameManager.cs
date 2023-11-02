@@ -41,6 +41,7 @@ public class GameManager : MonoBehaviour
         // R키 누르기 -> 스테이지 시작시로 변경 할것. 
         if(Input.GetKeyDown(KeyCode.R)) 
         {
+            UIManager.instance.OnLoading();
             StageStart();
         }
     }
@@ -72,6 +73,7 @@ public class GameManager : MonoBehaviour
     public void NextStage()
     {
         SetStage(++stageLevel); // 스테이지 세팅
+        UIManager.instance.OnLoading();
         StageStart(); // 스테이지 생성
     }
 

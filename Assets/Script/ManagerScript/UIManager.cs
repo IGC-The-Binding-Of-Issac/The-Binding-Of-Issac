@@ -53,12 +53,12 @@ public class UIManager : MonoBehaviour
         UpdateUI(); // 각종 UI 업데이트
     }
 
-    void OnLoading()
+    public void OnLoading()
     {
         loadingImage.SetActive(true);
         StartCoroutine(FadeOutStart());
     }
-    public IEnumerator FadeOutStart()
+    IEnumerator FadeOutStart()
     {
         yield return new WaitForSeconds(0.2f);
         for (float f = 1f; f > 0; f -= 0.005f)
