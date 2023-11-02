@@ -14,5 +14,6 @@ public class MomsKnife : ItemInfo
         //눈물이 사라지고 눈물 대신 칼이 부메랑처럼 나간다.
         PlayerManager.instance.playerDamage *= 4f;
         PlayerManager.instance.playerShotDelay *= 2.5f;
+        PlayerManager.instance.CheckedShotDelay();
     }
 }

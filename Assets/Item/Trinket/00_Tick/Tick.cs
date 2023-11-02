@@ -19,25 +19,24 @@ public class Tick : TrinketInfo
     }
     public override void GetItem()
     {
-        beforeDamage = PlayerManager.instance.playerDamage;
-        beforeMoveSpeed = PlayerManager.instance.playerMoveSpeed;
-        beforeShotDelay = PlayerManager.instance.playerShotDelay;
         PlayerManager.instance.playerDamage += 0.3f;
         PlayerManager.instance.playerMoveSpeed -= 0.24f;
         PlayerManager.instance.playerHp -= 2;
         PlayerManager.instance.playerShotDelay += 0.2f;
         if(PlayerManager.instance.playerHp <= 0)
         {
-
             GameManager.instance.playerObject.GetComponent<PlayerController>().Dead();
-
         }
+        PlayerManager.instance.CheckedShotDelay();
     }
 
     public override void DropTrinket()
     {
-        PlayerManager.instance.playerDamage = beforeDamage;
-        PlayerManager.instance.playerMoveSpeed = beforeMoveSpeed;
-        PlayerManager.instance.playerShotDelay = beforeShotDelay;
+        beforeDamage = PlayerManager.instance.playerDamage;
+        beforeMoveSpeed = PlayerManager.instance.playerMoveSpeed;
+        beforeShotDelay = PlayerManager.instance.playerShotDelay;
+        PlayerManager.instance.playerDamage = beforeDamage - 0.3f;
+        PlayerManager.instance.playerMoveSpeed = beforeMoveSpeed + 0.24f;
+        PlayerManager.instance.playerShotDelay = beforeShotDelay - 0.2f;
     }
 }

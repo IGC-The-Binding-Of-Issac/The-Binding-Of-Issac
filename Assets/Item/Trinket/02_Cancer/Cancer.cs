@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class Cancer : TrinketInfo
 {
-    float beforeShotDelay;
-    float beforeDamage;
-    float beforeMoveSpeed;
+    float beforeDropShotDelay;
+    float beforeDropDamage;
+    float beforeDropMoveSpeed;
+
     private void Start()
     {
         SetTrinketItemCode(2);
@@ -19,18 +20,19 @@ public class Cancer : TrinketInfo
 
     public override void GetItem()
     {
-        beforeShotDelay = PlayerManager.instance.playerShotDelay;
-        beforeDamage = PlayerManager.instance.playerDamage;
-        beforeMoveSpeed = PlayerManager.instance.playerMoveSpeed;
         PlayerManager.instance.playerShotDelay -= 0.3f;
         PlayerManager.instance.playerDamage -= 0.2f;
         PlayerManager.instance.playerMoveSpeed -= 0.34f;
+        PlayerManager.instance.CheckedShotDelay();
     }
 
     public override void DropTrinket()
     {
-        PlayerManager.instance.playerShotDelay = beforeShotDelay;
-        PlayerManager.instance.playerDamage = beforeDamage;
-        PlayerManager.instance.playerMoveSpeed = beforeMoveSpeed;
+        beforeDropShotDelay = PlayerManager.instance.playerShotDelay;
+        beforeDropDamage = PlayerManager.instance.playerDamage;
+        beforeDropMoveSpeed = PlayerManager.instance.playerMoveSpeed;
+        PlayerManager.instance.playerShotDelay = beforeDropShotDelay + 0.3f;
+        PlayerManager.instance.playerDamage = beforeDropDamage +  0.2f;
+        PlayerManager.instance.playerMoveSpeed = beforeDropMoveSpeed + 0.34f;
     }
 }
