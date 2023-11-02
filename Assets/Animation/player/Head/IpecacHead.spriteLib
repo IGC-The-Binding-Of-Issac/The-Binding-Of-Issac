@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5e6fedc2472449cead18ef23b5cb30d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Library:
+  - m_Name: UpShot
+    m_Hash: 1042423985
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: Isaac_16
+      m_Hash: 773778768
+      m_Sprite: {fileID: 1037299125, guid: 6b8e8ffe9180cfe4bac030ebb1e0d0bb, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1037299125, guid: 6b8e8ffe9180cfe4bac030ebb1e0d0bb, type: 3}
+    - m_Name: Isaac_17
+      m_Hash: 421125574
+      m_Sprite: {fileID: -1170571667, guid: 6b8e8ffe9180cfe4bac030ebb1e0d0bb, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -1170571667, guid: 6b8e8ffe9180cfe4bac030ebb1e0d0bb, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 2
+  - m_Name: DownShot
+    m_Hash: 794764222
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: Isaac_12
+      m_Hash: 695413065
+      m_Sprite: {fileID: 1271618486, guid: 6b8e8ffe9180cfe4bac030ebb1e0d0bb, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1271618486, guid: 6b8e8ffe9180cfe4bac030ebb1e0d0bb, type: 3}
+    - m_Name: Isaac_13
+      m_Hash: 510925279
+      m_Sprite: {fileID: -244450413, guid: 6b8e8ffe9180cfe4bac030ebb1e0d0bb, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -244450413, guid: 6b8e8ffe9180cfe4bac030ebb1e0d0bb, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 2
+  - m_Name: LeftShot
+    m_Hash: 974141784
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: Isaac_18
+      m_Hash: 161923159
+      m_Sprite: {fileID: 1187147071, guid: 6b8e8ffe9180cfe4bac030ebb1e0d0bb, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1187147071, guid: 6b8e8ffe9180cfe4bac030ebb1e0d0bb, type: 3}
+    - m_Name: Isaac_19
+      m_Hash: 1050800321
+      m_Sprite: {fileID: -241615474, guid: 6b8e8ffe9180cfe4bac030ebb1e0d0bb, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -241615474, guid: 6b8e8ffe9180cfe4bac030ebb1e0d0bb, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 2
+  - m_Name: RightShot
+    m_Hash: 966559492
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: Isaac_14
+      m_Hash: 1084540
+      m_Sprite: {fileID: -40725397, guid: 6b8e8ffe9180cfe4bac030ebb1e0d0bb, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -40725397, guid: 6b8e8ffe9180cfe4bac030ebb1e0d0bb, type: 3}
+    - m_Name: Isaac_15
+      m_Hash: 924302570
+      m_Sprite: {fileID: 150666394, guid: 6b8e8ffe9180cfe4bac030ebb1e0d0bb, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 150666394, guid: 6b8e8ffe9180cfe4bac030ebb1e0d0bb, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 2
+  m_PrimaryLibraryGUID: fc8a5af4a10fb9b4ba21a6c6c4c25e0f
+  m_ModificationHash: 638345222665373365
+  m_Version: 1

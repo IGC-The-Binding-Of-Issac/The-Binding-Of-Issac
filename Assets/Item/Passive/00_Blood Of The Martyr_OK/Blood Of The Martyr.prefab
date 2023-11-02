@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 21
-  m_Sprite: {fileID: 21300000, guid: a059a87cfaee73a4682d03434a0a23f8, type: 3}
+  m_Sprite: {fileID: 2021427982, guid: 3546f2a1a4b7bb545a1215e028b9cc0d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -102,7 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canCollision: 0
   redTearImg: {fileID: 1814297148, guid: 09c04784cbb310846b889e82311c5862, type: 3}
-  MartyrImg: {fileID: 21300000, guid: a059a87cfaee73a4682d03434a0a23f8, type: 3}
+  MartyrImg: {fileID: 2021427982, guid: 3546f2a1a4b7bb545a1215e028b9cc0d, type: 3}
 --- !u!58 &4669690670962847372
 CircleCollider2D:
   m_ObjectHideFlags: 0
