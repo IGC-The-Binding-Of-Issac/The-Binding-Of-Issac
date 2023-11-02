@@ -13,7 +13,7 @@ public class AttackFly : Top_Fly
         dieParameter = "isDie";
 
         // Enemy
-        hp = 5f;
+        hp = 2f;
         sight = 5f;
         moveSpeed = 1.5f;
         waitforSecond = 0.5f;

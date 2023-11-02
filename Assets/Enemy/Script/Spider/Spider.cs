@@ -26,7 +26,7 @@ public class Spider : Top_Spider
 
         //Enemy
         animator = GetComponent<Animator>();
-        hp = 5f;
+        hp = 3f;
         sight = 4f;
         moveSpeed = 2f;
         waitforSecond = 1f;
