@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Data.Common;
 using Unity.VisualScripting;
 using UnityEditor.Tilemaps;
 using UnityEngine;
@@ -13,7 +14,8 @@ public class SnakeManager : Enemy
     /// <Larry J>
     /// 1. player가 방에 들어오면 몬스터 생성 , isPlayerInRoom 변수 필요없음
     /// 2. 움직임은 FIxedUpdate에서 관리
-    /// 3. 
+    /// 3. animator은 머리를 생성할 때 head의 애니이션으로 설정함 
+    /// 
     /// </summary>
 
     [Header("Larry")]
@@ -48,7 +50,8 @@ public class SnakeManager : Enemy
         hp = 110f;
         sight = 5f;
         moveSpeed = 5f; // 이거 바꾸면 distanceBetween도 바꿔서 생성 하는 타이밍 맞춰야함!!!
-        waitforSecond = 0.5f;
+        waitforSecond = 0.3f;
+        dieParameter = "isEmpty"; // 오류 방지용 파라미터 
 
         maxhp = hp;
 
@@ -130,13 +133,130 @@ public class SnakeManager : Enemy
         }
     }
 
-    // 죽음
+    // 일단 하드코딩 해놓고, 나중에 수정해보자!
+    // 피가 10 줄어들면 몸통 하나씩 없어짐
     public void larryDie() 
     {
-        if (hp <= 0)
+        //피가 90 이하이고
+        if (hp <= 90f && hp > 80f)
         {
-            Destroy(gameObject);
+            // 스네이크 배열이 12개 이면 (다 있으면), snakeBody에 있는거 하나 지우기
+            if (snakeBody.Count == larryLength) 
+            {
+                GameObject deleSnake = snakeBody[larryLength - 1];
+                deleSnake.GetComponent<Animator>().SetBool("isLarryBodyDie" , true);
+                snakeBody.Remove(deleSnake);
+                Destroy(deleSnake , waitforSecond);
+            }
         }
+        // 피가 80 이하이고
+        if (hp <= 80f&& hp > 70f)
+        {
+            // 스네이크 배열이 11개 이면, snakeBody에 있는거 하나 지우기
+            if (snakeBody.Count == larryLength-1 )
+            {
+                GameObject deleSnake = snakeBody[larryLength - 2];
+                deleSnake.GetComponent<Animator>().SetBool("isLarryBodyDie", true);
+                snakeBody.Remove(deleSnake);
+                Destroy(deleSnake, waitforSecond);
+            }
+        }
+        // 피가 70 이하이고
+        if (hp <= 70f && hp > 60f)
+        {
+            // 스네이크 배열이 10개 이면, snakeBody에 있는거 하나 지우기
+            if (snakeBody.Count == larryLength - 2)
+            {
+                GameObject deleSnake = snakeBody[larryLength - 3];
+                deleSnake.GetComponent<Animator>().SetBool("isLarryBodyDie", true);
+                snakeBody.Remove(deleSnake);
+                Destroy(deleSnake, waitforSecond);
+            }
+        }
+        if (hp <= 60f && hp > 50f)
+        {
+            // 스네이크 배열이 9개 이면, snakeBody에 있는거 하나 지우기
+            if (snakeBody.Count == larryLength - 3)
+            {
+                GameObject deleSnake = snakeBody[larryLength - 4];
+                deleSnake.GetComponent<Animator>().SetBool("isLarryBodyDie", true);
+                snakeBody.Remove(deleSnake);
+                Destroy(deleSnake, waitforSecond);
+            }
+        }
+        if (hp <= 50f && hp > 40f)
+        {
+            // 스네이크 배열이 8개 이면, snakeBody에 있는거 하나 지우기
+            if (snakeBody.Count == larryLength - 4)
+            {
+                GameObject deleSnake = snakeBody[larryLength - 5];
+                deleSnake.GetComponent<Animator>().SetBool("isLarryBodyDie", true);
+                snakeBody.Remove(deleSnake);
+                Destroy(deleSnake, waitforSecond);
+            }
+        }
+        if (hp <= 40f && hp > 30f)
+        {
+            // 스네이크 배열이 7개 이면, snakeBody에 있는거 하나 지우기
+            if (snakeBody.Count == larryLength - 5)
+            {
+                GameObject deleSnake = snakeBody[larryLength - 6];
+                deleSnake.GetComponent<Animator>().SetBool("isLarryBodyDie", true);
+                snakeBody.Remove(deleSnake);
+                Destroy(deleSnake, waitforSecond);
+            }
+        }
+        if (hp <= 30f && hp > 20f)
+        {
+            // 스네이크 배열이 6개 이면, snakeBody에 있는거 하나 지우기
+            if (snakeBody.Count == larryLength - 6)
+            {
+                GameObject deleSnake = snakeBody[larryLength - 7];
+                deleSnake.GetComponent<Animator>().SetBool("isLarryBodyDie", true);
+                snakeBody.Remove(deleSnake);
+                Destroy(deleSnake, waitforSecond);
+            }
+        }
+        if (hp <= 20f && hp > 10f)
+        {
+            // 스네이크 배열이 4개 이면, snakeBody에 있는거 1 + 1 지우기
+            if (snakeBody.Count == larryLength - 7)
+            {
+                GameObject deleSnake = snakeBody[larryLength - 8];
+                deleSnake.GetComponent<Animator>().SetBool("isLarryBodyDie", true);
+                snakeBody.Remove(deleSnake);
+                Destroy(deleSnake, waitforSecond);
+                // 하나 더 지우기
+                GameObject deleSnake2 = snakeBody[larryLength - 9];
+                deleSnake.GetComponent<Animator>().SetBool("isLarryBodyDie", true);
+                snakeBody.Remove(deleSnake2);
+                Destroy(deleSnake2 , waitforSecond);
+            }
+        }
+
+        //피가 10 남았을 떄, 머리 1 + 몸통이 1개
+        if (hp <= 10f)
+        {
+            // 스네이크 배열이 4개 이면, snakeBody에 있는거 1지우기
+            if (snakeBody.Count == larryLength - 9)
+            {
+                GameObject deleSnake = snakeBody[larryLength - 10];
+                deleSnake.GetComponent<Animator>().SetBool("isLarryBodyDie", true);
+                snakeBody.Remove(deleSnake);
+                Destroy(deleSnake, waitforSecond);
+            }
+        }
+
+        // 죽으면
+        if(hp <= 0) 
+        {
+            // 죽는 애니메이션 실행
+           animator.SetBool("isLarryDie", true);
+
+            // Destory
+            Destroy(gameObject , waitforSecond);
+        }
+
     }
 
     // 상태에 따른 애니메이션과 방향 전환
