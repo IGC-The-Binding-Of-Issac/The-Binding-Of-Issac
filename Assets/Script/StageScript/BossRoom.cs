@@ -46,6 +46,7 @@ public class BossRoom : MonoBehaviour
                 // 보스오브젝트를 보스방의 Room 스크립트의 enemis에 추가.
                 gameObject.GetComponent<Room>().enemis.Add(boss);
 
+                gameObject.GetComponent<Room>().isClear = false;
                 // 보스HP바 생성
                 // 구현 필요.
             }

@@ -41,6 +41,7 @@ public class Room : MonoBehaviour
         }
         isClear = flag;
 
+        //방이 클리어됐을때 플레이어가 방에 있으면.
         if(isClear && playerInRoom) // 방이 클리어 + 방에 플레이어 존재
         {
             if(ItemManager.instance.ActiveItem != null) // 보유한 액티브 아이템이 존재할때.

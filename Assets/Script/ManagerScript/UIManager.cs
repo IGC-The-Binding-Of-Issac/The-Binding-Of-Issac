@@ -176,14 +176,21 @@ public class UIManager : MonoBehaviour
         if(ItemManager.instance.ActiveItem != null)
         {
             ActiveInfo active = ItemManager.instance.ActiveItem.GetComponent<ActiveInfo>();
+            // 필요한 게이지가 없을때 액티브아이템 게이지를 꽉 채워줌.
             if(active.needEnergy == 0)
             {
                 activeEnergy.fillAmount = 1;
             }
             else
             {
-                activeEnergy.fillAmount = active.currentEnergy / active.needEnergy;
+                activeEnergy.fillAmount = (float)active.currentEnergy / (float)active.needEnergy;
             }
+        }
+        // 보유중인 액티브 아이템이 없을때 
+        // 액티브 아이템 게이지를 0으로 설정
+        else
+        {
+            activeEnergy.fillAmount = 0;
         }
     }
 
