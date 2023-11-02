@@ -17,6 +17,7 @@ public class GlassCannon : ActiveInfo
             "\n 공격력은 현재 공격력 * 10이다.");
         beforeTearSize = PlayerManager.instance.playerTearSize;
         beforeDamage = PlayerManager.instance.playerDamage;
+        Invoke("SetCanChangeItem", 1f);
     }
 
     public override void UseActive()

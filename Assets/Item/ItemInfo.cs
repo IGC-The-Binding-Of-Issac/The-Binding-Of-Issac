@@ -13,10 +13,12 @@ public class ItemInfo : MonoBehaviour
     public bool canCollision = false;
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.CompareTag("Player") && canCollision)
-        {
+        if(collision.gameObject.CompareTag("Player") && canCollision
+            && GameManager.instance.playerObject.GetComponent<PlayerController>().canChangeItem)
+             {
+            GameManager.instance.playerObject.GetComponent<PlayerController>().canChangeItem = false;
             // 아이템을 가지고있지않을때.
-            if(!ItemManager.instance.PassiveItems[itemCode])
+            if (!ItemManager.instance.PassiveItems[itemCode])
             {
                 gameObject.layer = 31;
                 ItemManager.instance.PassiveItems[itemCode] = true; // 미보유 -> 보유 로 변경 
@@ -28,6 +30,7 @@ public class ItemInfo : MonoBehaviour
                 
                 StartCoroutine(collision.gameObject.GetComponent<PlayerController>().GetItemTime());
             }
+            Invoke("SetCanChangeItem", 1f);
         }
     }
 
@@ -37,7 +40,10 @@ public class ItemInfo : MonoBehaviour
     {
         itemCode = code;
     }
-
+    void SetCanChangeItem()
+    {
+        GameManager.instance.playerObject.GetComponent<PlayerController>().canChangeItem = true;
+    }
     public void SetItemString(string title, string description, string information)
     {
         itemTitle = title;

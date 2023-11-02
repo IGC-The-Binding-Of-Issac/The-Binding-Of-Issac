@@ -17,6 +17,7 @@ public class TheNail : ActiveInfo
             + "\n 이동 속도 - 0.08" 
             + "\n 공격력 + 0.5"
             + "\n 캐릭터의 눈물이 빨갛게 변한다.");
+        Invoke("SetCanChangeItem", 1f);
     }
 
     public override void UseActive()

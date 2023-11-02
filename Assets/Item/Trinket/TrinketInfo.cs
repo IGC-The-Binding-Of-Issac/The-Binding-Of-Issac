@@ -17,19 +17,22 @@ public class TrinketInfo : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // 충돌 대상이 플레이어일때
-        if(collision.gameObject.CompareTag("Player") && canCollision)
+        if(collision.gameObject.CompareTag("Player") && canCollision
+            && GameManager.instance.playerObject.GetComponent<PlayerController>().canChangeItem)
         {
             gameObject.layer = 31;
 
             // 1. 장신구 아이템을 장착하고 있지 않을 시
             if (ItemManager.instance.TrinketItem == null)
             {
+                GameManager.instance.playerObject.GetComponent<PlayerController>().canChangeItem = false;
                 TrinketGet(collision);
             }
             
             // 2. 장신구 아이템을 장착하고 있을 시
             else if(ItemManager.instance.TrinketItem != null)
             {
+                GameManager.instance.playerObject.GetComponent<PlayerController>().canChangeItem = false;
                 // 현재 보유중인 아이템의 효과를 제거.
                 ItemManager.instance.TrinketItem.GetComponent<TrinketInfo>().DropTrinket();
 
@@ -45,6 +48,7 @@ public class TrinketInfo : MonoBehaviour
                 Destroy(ItemManager.instance.TrinketItem);
                 TrinketGet(collision);
             }
+            Invoke("SetCanChangeItem", 1f);
         }
     }
 
@@ -53,6 +57,10 @@ public class TrinketInfo : MonoBehaviour
         trinketItemCode = code;
     }
 
+    public void SetCanChangeItem()
+    {
+        GameManager.instance.playerObject.GetComponent<PlayerController>().canChangeItem = true;
+    }
     public void SetTrinketString(string title, string description, string information)
     {
         itemTitle = title;

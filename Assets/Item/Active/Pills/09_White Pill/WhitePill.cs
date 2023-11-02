@@ -10,6 +10,7 @@ public class WhitePill : ActiveInfo
         SetActiveString("???",
         "???",
         "???");
+        Invoke("SetCanChangeItem", 1f);
     }
 
     public override void UseActive()
