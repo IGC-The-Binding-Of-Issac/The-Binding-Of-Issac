@@ -1465,8 +1465,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -64}
-  m_SizeDelta: {x: 350, y: 80}
+  m_AnchoredPosition: {x: -3.1894, y: -62.36998}
+  m_SizeDelta: {x: 325.3962, y: 76.74}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &746231948
 MonoBehaviour:
@@ -1511,7 +1511,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 746231949}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1044374822}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: OptionUIOn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &746231949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2292,8 +2304,24 @@ MonoBehaviour:
   activeEnergy: {fileID: 307357202}
   nullImage: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
   pauseUI: {fileID: 2111176133374058762}
+  optionUI: {fileID: 0}
   gameoverUI: {fileID: 6735250857741032334}
   loadingImage: {fileID: 1644572520}
+  volumeNum:
+  - {fileID: -158646428, guid: 0c428618677dd4b46bc4fd5f8e5bffa7, type: 3}
+  - {fileID: 1630298039, guid: 0c428618677dd4b46bc4fd5f8e5bffa7, type: 3}
+  - {fileID: 1911576234, guid: 0c428618677dd4b46bc4fd5f8e5bffa7, type: 3}
+  - {fileID: -1771963938, guid: 0c428618677dd4b46bc4fd5f8e5bffa7, type: 3}
+  - {fileID: -2106075870, guid: 0c428618677dd4b46bc4fd5f8e5bffa7, type: 3}
+  - {fileID: 1483383460, guid: 0c428618677dd4b46bc4fd5f8e5bffa7, type: 3}
+  - {fileID: 1001977599, guid: 0c428618677dd4b46bc4fd5f8e5bffa7, type: 3}
+  - {fileID: -1161057230, guid: 0c428618677dd4b46bc4fd5f8e5bffa7, type: 3}
+  - {fileID: -172313394, guid: 0c428618677dd4b46bc4fd5f8e5bffa7, type: 3}
+  - {fileID: -930893254, guid: 0c428618677dd4b46bc4fd5f8e5bffa7, type: 3}
+  volumeObj:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &1049656372
 GameObject:
   m_ObjectHideFlags: 0
@@ -4738,8 +4766,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -5.6752, y: -142.4779}
-  m_SizeDelta: {x: 387.627, y: 64.4573}
+  m_AnchoredPosition: {x: -5.6752, y: -140.30453}
+  m_SizeDelta: {x: 387.627, y: 68.804}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &163538526640811724
 MonoBehaviour:
