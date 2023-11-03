@@ -41,9 +41,12 @@ public class PlayerController : MonoBehaviour
     public bool canUseActive = true; //액티브 아이템 개갈김을 방지하기 위한
     public bool canChangeItem = false; //액티브 아이템 변경 과부하를 위한
 
-    // 아래 정리 필요.
+    
+    [Header("Audio")]
     public AudioClip[] audioClips;
     private AudioSource audioSource;
+
+    [Header("equipment")]
     public GameObject HeadItem;
 
     void Start()
