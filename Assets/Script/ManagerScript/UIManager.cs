@@ -41,8 +41,14 @@ public class UIManager : MonoBehaviour
 
     [Header("UI")]
     [SerializeField] GameObject pauseUI;
+    [SerializeField] GameObject optionUI;
     [SerializeField] GameObject gameoverUI;
     [SerializeField] GameObject loadingImage;
+    [SerializeField] Sprite[] volumeNum;
+    [SerializeField] GameObject[] volumeObj;
+    int master = 1;
+    int bgm = 1;
+    int sfx = 1;
     private void Start()
     {
         SetPlayerMaxHP(); // 하트HP 초기세팅
@@ -94,10 +100,21 @@ public class UIManager : MonoBehaviour
 
             else if(pauseUI.activeSelf)
             {
-                pauseUI.SetActive(false);
-                Time.timeScale = 1;
+                if (optionUI.activeSelf)
+                {
+                    optionUI.SetActive(false);
+                }
+                else
+                {
+                    pauseUI.SetActive(false);
+                    Time.timeScale = 1;
+                }
             }
         }
+    }
+    public void PauseOptionBtn()
+    {
+
     }
 
     public void PauseExitBtn()
@@ -113,6 +130,81 @@ public class UIManager : MonoBehaviour
         pauseUI.SetActive(false);
     }
 
+    #endregion
+
+    #region optionUI
+    public void OptionUIOn()
+    {
+        optionUI.SetActive(true);
+    }
+    public void MasterVolumeUp()
+    {
+        master++;
+        if(master > 9)
+        {
+            master = 9;
+            return;
+        }
+        else
+            volumeObj[0].GetComponent<Image>().sprite = volumeNum[master];
+
+        Debug.Log(master);
+    }
+    public void BGMVolumeUp()
+    {
+        bgm++;
+        if (bgm > 9)
+        {
+            bgm = 9;
+            return;
+        }
+        else
+            volumeObj[1].GetComponent<Image>().sprite = volumeNum[bgm];
+    }
+    public void SFXVolumeUp()
+    {
+        sfx++;
+        if (sfx > 9)
+        {
+            sfx = 9;
+            return;
+        }
+        else
+            volumeObj[2].GetComponent<Image>().sprite = volumeNum[sfx];
+    }
+    public void MasterVolumeDown()
+    {
+        master--;
+        if (master < 0)
+        {
+            master = 0;
+            return;
+        }
+        else
+            volumeObj[0].GetComponent<Image>().sprite = volumeNum[master];
+        Debug.Log(master);
+    }
+    public void BGMVolumeDown()
+    {
+        bgm--;
+        if (bgm < 0)
+        {
+            bgm = 0;
+            return;
+        }
+        else
+            volumeObj[1].GetComponent<Image>().sprite = volumeNum[bgm];
+    }
+    public void SFXVolumeDown()
+    {
+        sfx--;
+        if (sfx < 0)
+        {
+            return;
+        }
+        else
+            volumeObj[2].GetComponent<Image>().sprite = volumeNum[sfx];
+    }
     #endregion
 
     #region GameOverUI

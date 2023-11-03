@@ -285,7 +285,7 @@ public void Shoot(float x, float y)
         {
             playerShotAnim.SetBool("DownLook", false);
         }
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKey(KeyCode.A))
         {
             playerShotAnim.SetBool("LeftLook", true);
             if (Input.GetKey(KeyCode.DownArrow))
