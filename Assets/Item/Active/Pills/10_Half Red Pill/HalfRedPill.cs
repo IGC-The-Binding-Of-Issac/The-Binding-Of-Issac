@@ -22,6 +22,8 @@ public class HalfRedPill : ActiveInfo
         SetActiveString("나는 멸치야..",
         "공격력 감소",
         "사용 시 공격력이 감소한다.");
+        GameManager.instance.playerObject.GetComponent<PlayerController>().canChangeItem = false;
+        Invoke("SetCanChangeItem", 1f);
         Destroy(gameObject);
         }
     }

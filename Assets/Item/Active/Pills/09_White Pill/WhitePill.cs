@@ -21,7 +21,9 @@ public class WhitePill : ActiveInfo
         SetActiveString("우는 것마저 느리구나",
         "눈물 속도 감소",
         "사용 시 눈물이 날아가는 속도가 감소한다.");
-        Destroy(gameObject);
+        GameManager.instance.playerObject.GetComponent<PlayerController>().canChangeItem = false;
+        Invoke("SetCanChangeItem", 1f);
+            Destroy(gameObject);
         }
     }
 }

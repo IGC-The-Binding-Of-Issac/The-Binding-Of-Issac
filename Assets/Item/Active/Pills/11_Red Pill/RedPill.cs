@@ -22,6 +22,8 @@ public class RedPill : ActiveInfo
         SetActiveString("단단해지기",
         "체력 증가",
         "사용 시 최대 체력 및 체력이 증가한다.");
+        GameManager.instance.playerObject.GetComponent<PlayerController>().canChangeItem = false;
+        Invoke("SetCanChangeItem", 1f);
         Destroy(gameObject);
         }
     }

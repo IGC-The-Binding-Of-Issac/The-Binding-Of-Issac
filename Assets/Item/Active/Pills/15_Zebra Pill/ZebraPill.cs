@@ -24,6 +24,8 @@ public class ZebraPill : ActiveInfo
         SetActiveString("느리지만 빠르다고.",
         "이동속도 감소, 공격속도 증가",
         "사용 시 이동속도가 감소하지만, 공격속도가 증가한다.");
+        GameManager.instance.playerObject.GetComponent<PlayerController>().canChangeItem = false;
+        Invoke("SetCanChangeItem", 1f);
         Destroy(gameObject);
         }
     }
