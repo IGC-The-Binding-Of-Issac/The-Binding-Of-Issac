@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -349,6 +350,8 @@ public void Shoot(float x, float y)
         if (Input.GetKey(KeyCode.UpArrow))
         {
             playerShotAnim.SetBool("playerUpShot", true);
+            if(tear != null)
+                tear.GetComponent<SpriteRenderer>().sortingOrder = 102;
         }
         else
         {

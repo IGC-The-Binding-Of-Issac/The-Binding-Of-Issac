@@ -265,7 +265,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 102
+  m_SortingOrder: 103
   m_Sprite: {fileID: -99040560, guid: 3c377f6263ae5d44e80c80c2f17334db, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -400,7 +400,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 103
+  m_SortingOrder: 102
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -478,10 +478,11 @@ MonoBehaviour:
   useActiveItemImage: {fileID: 8591384693438208543}
   defaultTearImg: {fileID: 1837185413, guid: 64f0cce7912310a489ab219e28d20338, type: 3}
   tear: {fileID: 0}
-  nailActivated: 0
-  canUseActive: 1
   tearPoint: {fileID: 4903488415990779368}
   CheckedObject: {fileID: 0}
+  nailActivated: 0
+  canUseActive: 1
+  canChangeItem: 0
   audioClips:
   - {fileID: 8300000, guid: 8c4bfa44717c99b4fb5609740648d91c, type: 3}
   - {fileID: 8300000, guid: 2b8c743b666e32b49850c0ed0a428c1a, type: 3}
@@ -546,7 +547,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.18}
+  m_Offset: {x: 0, y: -0.03}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
