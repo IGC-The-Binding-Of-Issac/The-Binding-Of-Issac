@@ -112,10 +112,6 @@ public class UIManager : MonoBehaviour
             }
         }
     }
-    public void PauseOptionBtn()
-    {
-
-    }
 
     public void PauseExitBtn()
     {
@@ -136,74 +132,31 @@ public class UIManager : MonoBehaviour
     public void OptionUIOn()
     {
         optionUI.SetActive(true);
+        InitVolumeImage();
     }
-    public void MasterVolumeUp()
-    {
-        master++;
-        if(master > 9)
-        {
-            master = 9;
-            return;
-        }
-        else
-            volumeObj[0].GetComponent<Image>().sprite = volumeNum[master];
 
-        Debug.Log(master);
-    }
-    public void BGMVolumeUp()
+    void InitVolumeImage()
     {
-        bgm++;
-        if (bgm > 9)
-        {
-            bgm = 9;
-            return;
-        }
-        else
-            volumeObj[1].GetComponent<Image>().sprite = volumeNum[bgm];
+        int[] volumes = SoundManager.instance.GetVolumes();
+        volumeObj[0].GetComponent<Image>().sprite = volumeNum[volumes[0]];
+        volumeObj[1].GetComponent<Image>().sprite = volumeNum[volumes[1]];
+        volumeObj[2].GetComponent<Image>().sprite = volumeNum[volumes[2]];
     }
-    public void SFXVolumeUp()
+
+    public void MasterVolume(int increase)
     {
-        sfx++;
-        if (sfx > 9)
-        {
-            sfx = 9;
-            return;
-        }
-        else
-            volumeObj[2].GetComponent<Image>().sprite = volumeNum[sfx];
+        int volume = SoundManager.instance.VolumeControl(0, increase);
+        volumeObj[0].GetComponent<Image>().sprite = volumeNum[volume];
     }
-    public void MasterVolumeDown()
+    public void BGMVolume(int increase)
     {
-        master--;
-        if (master < 0)
-        {
-            master = 0;
-            return;
-        }
-        else
-            volumeObj[0].GetComponent<Image>().sprite = volumeNum[master];
-        Debug.Log(master);
+        int volume = SoundManager.instance.VolumeControl(1, increase);
+        volumeObj[1].GetComponent<Image>().sprite = volumeNum[volume];
     }
-    public void BGMVolumeDown()
+    public void SFXVolume(int increase)
     {
-        bgm--;
-        if (bgm < 0)
-        {
-            bgm = 0;
-            return;
-        }
-        else
-            volumeObj[1].GetComponent<Image>().sprite = volumeNum[bgm];
-    }
-    public void SFXVolumeDown()
-    {
-        sfx--;
-        if (sfx < 0)
-        {
-            return;
-        }
-        else
-            volumeObj[2].GetComponent<Image>().sprite = volumeNum[sfx];
+        int volume = SoundManager.instance.VolumeControl(2, increase);
+        volumeObj[2].GetComponent<Image>().sprite = volumeNum[volume];
     }
     #endregion
 

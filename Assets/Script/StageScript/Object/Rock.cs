@@ -11,5 +11,12 @@ public class Rock : MonoBehaviour
     {
         gameObject.GetComponent<SpriteRenderer>().sprite = destoryRock;
         gameObject.GetComponent<BoxCollider2D>().enabled = false;
+
+        DestorySound();
+    }
+
+    void DestorySound()
+    {
+        gameObject.GetComponent<AudioSource>().Play();
     }
 }

@@ -68,6 +68,7 @@ public class GameManager : MonoBehaviour
                 myCamera.transform.position = playerObject.transform.position;
 
                 SoundManager.instance.OnStageBGM();
+                roomGenerate.Soundinitialization();
                 break;
             }
         }
