@@ -27,6 +27,8 @@ public class SnakeManager : Enemy
     [SerializeField] float stateTime; //현재 상태의 시간
     [SerializeField] float currTime; //현재 상태의 시간
     [SerializeField] bool chageState; // 상태변환 
+    [SerializeField] bool isReadyDie; //몸통이 다 생성 되었으면 true
+    float iniHp; // 초기 hp 설정
 
     private void Start()
     {
@@ -57,6 +59,9 @@ public class SnakeManager : Enemy
 
         randTime(); //초기에 진행할 시간 한번 구해놓기
         currTime = stateTime; // 초기에 구한 시간
+        isReadyDie = false;
+
+        iniHp = hp;
 
     }
     
@@ -71,6 +76,12 @@ public class SnakeManager : Enemy
     
     private void Update()
     {
+        //몸통이 다 만들어졌는지 검사
+        if (!isReadyDie)
+            hp = iniHp;
+        if (snakeBody.Count == larryLength)
+            isReadyDie = true;
+
         //죽음
         larryDie();
     }
@@ -237,7 +248,7 @@ public class SnakeManager : Enemy
         //피가 10 남았을 떄, 머리 1 + 몸통이 1개
         if (hp <= 10f)
         {
-            // 스네이크 배열이 4개 이면, snakeBody에 있는거 1지우기
+            // 스네이크 배열이 3개 이면, snakeBody에 있는거 1지우기
             if (snakeBody.Count == larryLength - 9)
             {
                 GameObject deleSnake = snakeBody[larryLength - 10];
@@ -250,9 +261,17 @@ public class SnakeManager : Enemy
         // 죽으면
         if(hp <= 0) 
         {
-            // 죽는 애니메이션 실행
-           animator.SetBool("isLarryDie", true);
+            //마지막에 남아있는 body 지우기
+            if (snakeBody.Count == larryLength - 10)
+            {
+                GameObject deleSnake = snakeBody[snakeBody.Count -1];
+                deleSnake.GetComponent<Animator>().SetBool("isLarryBodyDie", true);
+                snakeBody.Remove(deleSnake);
+                Destroy(deleSnake, waitforSecond);
+            }
 
+            // 죽는 애니메이션 실행
+            animator.SetBool("isLarryDie", true);
             // Destory
             Destroy(gameObject , waitforSecond);
         }
