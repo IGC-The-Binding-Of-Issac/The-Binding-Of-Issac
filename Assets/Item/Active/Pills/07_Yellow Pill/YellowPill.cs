@@ -21,7 +21,10 @@ public class YellowPill : ActiveInfo
         SetActiveString("힘에는 힘!",
         "공격력 증가",
         "사용 시 공격력이 증가한다.");
-        Destroy(gameObject);
+        GameManager.instance.playerObject.GetComponent<PlayerController>().canChangeItem = false;
+        Invoke("SetCanChangeItem", 1f);
+            Destroy(gameObject);
+
         }
     }
 }

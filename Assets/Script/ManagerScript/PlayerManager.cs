@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml;
 using UnityEngine;
 using UnityEngine.U2D.Animation;
 
@@ -99,11 +101,37 @@ public class PlayerManager : MonoBehaviour
 
     public void GetDamage()
     {
-        if (ItemManager.instance.PassiveItems[6] && CanGetDamage && CanBlockDamage > 0)
+        if (ItemManager.instance.PassiveItems[6] && CanGetDamage && CanBlockDamage > 0) //홀리 맨틀 먹었을 때
         {
             StartCoroutine(HitDelay());
             CanGetDamage = false;
             CanBlockDamage--;
+        }
+        else if (ItemManager.instance.PassiveItems[14] && CanGetDamage && CanBlockDamage == 0) // Dead Cat 먹었을 때
+        {
+            playerHp--;
+            CanGetDamage = false;
+            if (playerHp > 0)
+            {
+                StartCoroutine(HitDelay());
+                GameManager.instance.playerObject.GetComponent<PlayerController>().Hit();
+            }
+            else //체력이 0일 때
+            {
+            int[] liveOrDeath = { 0, 1 }; 
+            int randomNum = UnityEngine.Random.Range(0, 2);
+            if (liveOrDeath[randomNum] == 0) 
+                 {
+                    playerHp = playerMaxHp; //최대 체력만큼 채워줌
+                    StartCoroutine(HitDelay());
+                    GameManager.instance.playerObject.GetComponent<PlayerController>().Hit();
+                 }
+            else
+                 {
+                    GameManager.instance.playerObject.GetComponent<PlayerController>().Dead(); //그냥 죽음
+                    Invoke("GameOver", 0.7f);
+                 }
+            }
         }
         else if (CanGetDamage && CanBlockDamage == 0)
         {

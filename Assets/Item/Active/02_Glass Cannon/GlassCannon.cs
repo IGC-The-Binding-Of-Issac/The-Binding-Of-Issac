@@ -44,7 +44,9 @@ public class GlassCannon : ActiveInfo
         tear = GameObject.Find("Tear(Clone)");
         afterActiveAttack();
         canUse = false;
-            Invoke("SetCanUse", 1f);
+        Invoke("SetCanUse", 1f);
+        GameManager.instance.playerObject.GetComponent<PlayerController>().canChangeItem = false;
+        Invoke("SetCanChangeItem", 1f);
         }
     }
 

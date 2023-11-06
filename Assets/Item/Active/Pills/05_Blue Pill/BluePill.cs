@@ -21,7 +21,9 @@ public class BluePill : ActiveInfo
         SetActiveString("발에 붙 붙었어!",
             "이동 속도 증가",
             "사용 시 이동 속도가 증가한다.");
-        Destroy(gameObject);
+        GameManager.instance.playerObject.GetComponent<PlayerController>().canChangeItem = false;
+        Invoke("SetCanChangeItem", 1f);
+            Destroy(gameObject);
         }
     }
 }

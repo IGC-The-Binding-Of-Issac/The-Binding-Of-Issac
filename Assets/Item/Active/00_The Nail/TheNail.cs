@@ -29,6 +29,8 @@ public class TheNail : ActiveInfo
         PlayerManager.instance.playerDamage += 0.5f;
 
         PlayerManager.instance.tearObj.GetComponent<SpriteRenderer>().sprite = redTearImg;
+        GameManager.instance.playerObject.GetComponent<PlayerController>().canChangeItem = false;
+        Invoke("SetCanChangeItem", 1f);
         Invoke("SetCanUse", 1f);
         }
     }

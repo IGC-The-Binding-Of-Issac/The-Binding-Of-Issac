@@ -22,6 +22,8 @@ public class HalfYellowPill : ActiveInfo
         SetActiveString("난 기린이야.",
         "사거리 증가",
         "사용 시 눈물의 사거리가 증가한다.");
+        GameManager.instance.playerObject.GetComponent<PlayerController>().canChangeItem = false;
+        Invoke("SetCanChangeItem", 1f);
         Destroy(gameObject);
         }
     }
