@@ -184,18 +184,19 @@ public class RoomGenerate : MonoBehaviour
     void CreateObstacle(int y, int x, int roomNumber)
     {
         int idx = 0;
-        int[,] rdPattern = pattern.GetPattern(roomNumber); 
-        for(int i = 0; i < rdPattern.GetLength(0); i++)
+        int[,] rdPattern = pattern.GetPattern(roomNumber);
+        for (int i = 0; i < rdPattern.GetLength(0); i++)
         {
             for(int j = 0; j < rdPattern.GetLength(1); j++)
             {
-                if (rdPattern[i, j] == 0)
+                int pNum = rdPattern[i, j]; ;
+                if (pNum == 0)
                 {
                     idx++;
                     continue;
                 }
 
-                if (rdPattern[i, j] == 5) // 몬스터 오브젝트일때
+                if (pNum == 5) // 몬스터 오브젝트일때
                 {
                     // 랜덤한 일반몬스터를 반환받음.
                     GameObject enemy = enemyGenerate.GetEnemy();
@@ -208,7 +209,7 @@ public class RoomGenerate : MonoBehaviour
                 // 그 외
                 else
                 {
-                    if (rdPattern[i, j] == 10) // 플레이어 오브젝트일때
+                    if (pNum == 10) // 플레이어 오브젝트일때
                     {
                         Transform pos = roomList[y, x].GetComponent<Room>().roomObjects[idx].transform;
                         GameManager.instance.playerObject.transform.position = pos.position;
@@ -217,18 +218,21 @@ public class RoomGenerate : MonoBehaviour
                     // 그외
                     else
                     {
-                        GameObject obstacle = Instantiate(objectPrefabs[rdPattern[i, j] - 1]) as GameObject; // 오브젝트 생성
+                        GameObject obstacle = Instantiate(objectPrefabs[pNum - 1]) as GameObject; // 오브젝트 생성
                         obstacle.transform.SetParent(roomList[y, x].GetComponent<Room>().roomObjects[idx]); // 오브젝트 위치 설정
                         obstacle.transform.localPosition = new Vector3(0, 0, 0); // 오브젝트 위치 설정
 
-                        if (rdPattern[i, j] == 7) // 황금방 아이템 테이블
+                        if (pNum == 7) // 황금방 아이템 테이블
                         {
                             obstacle.GetComponent<GoldTable>().SetRoomInfo(roomList[y,x]);
                         }
-                        else if(rdPattern[i,j] == 6) // 상점방 아이템 테이블
+                        else if(pNum == 6) // 상점방 아이템 테이블
                         {
                             obstacle.GetComponent<ShopTable>().SetRoomInfo(roomList[y, x]);
                         }
+
+                        if(obstacle.GetComponent<AudioSource>() != null)
+                            roomList[y, x].GetComponent<Room>().soundObjects.Add(obstacle); 
                     }
 
                 }
@@ -237,7 +241,20 @@ public class RoomGenerate : MonoBehaviour
         }    
     }
 
-
+    public void Soundinitialization()
+    {
+        for(int i = 0; i < roomPool.childCount; i++)
+        {
+            if (roomPool.GetChild(i).GetComponent<Room>().playerInRoom)
+            {
+                roomPool.GetChild(i).GetComponent<Room>().SoundUnMute();
+            }
+            else
+            {
+                roomPool.GetChild(i).GetComponent<Room>().SoundMute();
+            }
+        }
+    }
 
     private void Update()
     {

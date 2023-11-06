@@ -22,30 +22,82 @@ public class SoundManager : MonoBehaviour
     [Header("Sound Object")]
     public AudioSource bgmObject; // BGM 사운드 오브젝트
     public AudioSource playerObject;  // 플레이어 사운드 오브젝트
-    public List<AudioSource> enemyObject; // 몬스터 사운드 오브젝트 
-    public List<AudioSource> stageObject; // 맵 오브젝트 사운드 오브젝트 
+    public List<AudioSource> sfxObjects;
     // 이펙트 사운드는 해당 오브젝트 생성할때 여기서 값을 가져가서 사용해줍시다.
 
     [Header("Sound State")]
-    [SerializeField] private float volumeMaster; // 사운드
-    [SerializeField] private float volumeBGM; // 사운드
-    [SerializeField] private float volumeSFX; // 사운드
-
+    [SerializeField] private int[] volumes;
+    // [0] master   [1] BGM   [2] SFX
     private void Start()
     {
         SoundInit();
+        ObjectInit();
+    }
 
-        bgmObject.volume = volumeBGM;
+    public int[] GetVolumes()
+    {
+        return volumes;
+    }
+    public int VolumeControl(int mode, int increase)
+    {
+        // mode 0 : master  1 : bgm  2: sfx
+        switch(increase)
+        {
+            // 사운드 증가
+            case 1:
+                if (volumes[mode] < 9)
+                {
+                    volumes[mode]++;
+                    ObjectVolumeControl(mode);
+                }
+                return volumes[mode];
+
+            // 사운드 감소
+            case 2:
+                if (volumes[mode] > 0)
+                {
+                    volumes[mode]--;
+                    ObjectVolumeControl(mode);
+                }
+                return volumes[mode];
+        }
+        return 0;
+    }
+    void ObjectVolumeControl(int mode)
+    {
+        switch(mode)
+        {
+            // master volume
+            case 0:
+                bgmObject.volume = (volumes[1] / 9.0f) * (volumes[0] / 9.0f);
+                
+                break;
+
+            // bgm volume
+            case 1:
+                bgmObject.volume = (volumes[1] / 9.0f) * (volumes[0] / 9.0f);
+                break;
+
+            // sfx volume
+            case 2:
+
+                break;
+
+        }
+    }
+    void ObjectInit()
+    {
+        bgmObject.volume = volumes[1] / 9.0f;
+        // 1.오브젝트 사운드 초기화 넣어주기.
     }
 
     void SoundInit()
     {
-        volumeMaster = 1.0f;
-        volumeBGM = 0.5f;
-        volumeSFX = 0.5f;
+        volumes = new int[3];
+        volumes[0] = 9;
+        volumes[1] = 3;
+        volumes[2] = 5;
 
-        enemyObject = new List<AudioSource>();
-        stageObject = new List<AudioSource>();
     }
 
     public void OnStageBGM()
@@ -63,7 +115,9 @@ public class SoundManager : MonoBehaviour
         // bgm 실행
         bgmObject.Play();
     }
-    /*
+
+
+/*
 Master Volume 
   -
 Music Volume 

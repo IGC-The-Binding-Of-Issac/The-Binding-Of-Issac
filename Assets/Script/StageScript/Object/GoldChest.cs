@@ -15,6 +15,7 @@ public class GoldChest : MonoBehaviour
 
             gameObject.GetComponent<SpriteRenderer>().sprite = openChestSprite; // 열린상자 이미지로 변경
             OpenChest(); // 드랍 아이템 생성
+            openChestSound();
             StartCoroutine(StopChest());
         }
     }
@@ -31,5 +32,9 @@ public class GoldChest : MonoBehaviour
     {
         GameObject it = Instantiate(ItemManager.instance.itemTable.OpenGoldChest(), transform.position, Quaternion.identity) as GameObject;
         GameManager.instance.roomGenerate.itemList.Add(it);
+    }
+    void openChestSound()
+    {
+        gameObject.GetComponent<AudioSource>().Play();
     }
 }
