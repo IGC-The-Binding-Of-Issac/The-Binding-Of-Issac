@@ -3537,6 +3537,7 @@ MonoBehaviour:
   - {fileID: 4655165872744482137, guid: 05b69eb2310be834da7ca2c85d40a270, type: 3}
   - {fileID: 2060743678576865454, guid: 2a034dbd94f8b3345894857ae3376ffd, type: 3}
   - {fileID: 31294614900301510, guid: b4cb4baeae8bd3d4b847b83c2625192c, type: 3}
+  - {fileID: 2046796384671521941, guid: 54c7ceb7e7826304fb855e9b5df01950, type: 3}
   passive: 
   trinket: 
   active: 
