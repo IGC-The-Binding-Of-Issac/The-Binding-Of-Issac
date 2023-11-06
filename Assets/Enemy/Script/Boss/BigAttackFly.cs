@@ -30,13 +30,13 @@ public class BigAttackFly : Top_Fly
         Fly_Move_InitialIze();
 
         playerInRoom = false;
-        dieParameter = "isDie";
+        dieParameter = "isBigFlyDie";
 
         // Enemy
         hp = 30f;
         sight = 5f;
         moveSpeed = 1f;
-        waitforSecond = 0.5f;
+        waitforSecond = 0.4f;
         attaackSpeed = 4f;
         bulletSpeed = 6f;
 
@@ -126,5 +126,6 @@ public class BigAttackFly : Top_Fly
             yield return new WaitForSeconds(0.05f);
         }
     }
+
 
 }
