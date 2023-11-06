@@ -204,6 +204,10 @@ public class RoomGenerate : MonoBehaviour
                     enemy.transform.localPosition = new Vector3(0, 0, 0);
                     enemy.GetComponent<Enemy>().roomInfo = roomList[y, x];
                     roomList[y, x].GetComponent<Room>().enemis.Add(enemy); // 해당 방의 몬스터리스트에 추가
+
+                    // sfx 사운드 조절을 위한 오브젝트 저장
+                    if (enemy.GetComponent<AudioSource>() != null)
+                        SoundManager.instance.sfxObjects.Add(enemy.GetComponent<AudioSource>());
                 }
 
                 // 그 외
@@ -231,8 +235,9 @@ public class RoomGenerate : MonoBehaviour
                             obstacle.GetComponent<ShopTable>().SetRoomInfo(roomList[y, x]);
                         }
 
-                        if(obstacle.GetComponent<AudioSource>() != null)
-                            roomList[y, x].GetComponent<Room>().soundObjects.Add(obstacle); 
+                        // sfx 사운드 조절을 위한 오브젝트 저장
+                        if (obstacle.GetComponent<AudioSource>() != null)
+                            SoundManager.instance.sfxObjects.Add(obstacle.GetComponent<AudioSource>());
                     }
 
                 }
@@ -240,22 +245,6 @@ public class RoomGenerate : MonoBehaviour
             }
         }    
     }
-
-    public void Soundinitialization()
-    {
-        for(int i = 0; i < roomPool.childCount; i++)
-        {
-            if (roomPool.GetChild(i).GetComponent<Room>().playerInRoom)
-            {
-                roomPool.GetChild(i).GetComponent<Room>().SoundUnMute();
-            }
-            else
-            {
-                roomPool.GetChild(i).GetComponent<Room>().SoundMute();
-            }
-        }
-    }
-
     private void Update()
     {
         if(doors != null)
