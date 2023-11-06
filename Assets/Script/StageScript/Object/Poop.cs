@@ -12,7 +12,7 @@ public class Poop : MonoBehaviour
     public void GetDamage()
     {
         poopIndex++;
-        ChangeSprite();
+        ChangeSprite(poopIndex);
         if(poopIndex >= 3) // 체력이 전부 깍이면
         {
             DestorySound();
@@ -21,9 +21,9 @@ public class Poop : MonoBehaviour
         }
     }
 
-    void ChangeSprite()
+    void ChangeSprite(int index)
     {
-        gameObject.GetComponent<SpriteRenderer>().sprite = poopSprite[poopIndex];
+        gameObject.GetComponent<SpriteRenderer>().sprite = poopSprite[index];
     }
 
     void ItemDrop()
