@@ -9,7 +9,6 @@ public class Room : MonoBehaviour
     public bool playerInRoom = false;
     public Transform[] roomObjects;
     public List<GameObject> enemis = new List<GameObject>();
-    public List<GameObject> soundObjects = new List<GameObject>();
 
     [Header("Unity Setup")] 
     public Transform roomGrid;
@@ -74,52 +73,11 @@ public class Room : MonoBehaviour
         }
     }
 
-    public void SoundMute()
-    {
-        for (int i = 0; i < soundObjects.Count; i++)
-        {
-            if (soundObjects[i] != null)
-            {
-                if (soundObjects[i].GetComponent<AudioSource>() != null)
-                    soundObjects[i].GetComponent<AudioSource>().mute = true;
-            }
-        }
-        for (int i = 0; i < enemis.Count; i++)
-        {
-            if (enemis[i] != null)
-            {
-                if (enemis[i].GetComponent<AudioSource>())
-                    enemis[i].GetComponent<AudioSource>().mute = true;
-            }
-        }
-    }
-
-    public void SoundUnMute()
-    {
-        for (int i = 0; i < soundObjects.Count; i++)
-        {
-            if (soundObjects[i] != null)
-            {
-                if (soundObjects[i].GetComponent<AudioSource>() != null)
-                    soundObjects[i].GetComponent<AudioSource>().mute = false;
-            }
-        }
-        for (int i = 0; i < enemis.Count; i++)
-        {
-            if(enemis[i] != null)
-            {
-                if (enemis[i].GetComponent<AudioSource>())
-                    enemis[i].GetComponent<AudioSource>().mute = false;
-            }
-        }
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.CompareTag("Player"))
         {
             playerInRoom = true;
-            SoundUnMute();
         }
     }
 
@@ -128,7 +86,6 @@ public class Room : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             playerInRoom = false;
-            SoundMute();
         }
     }
 }

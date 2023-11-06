@@ -22,8 +22,7 @@ public class SoundManager : MonoBehaviour
     [Header("Sound Object")]
     public AudioSource bgmObject; // BGM 사운드 오브젝트
     public AudioSource playerObject;  // 플레이어 사운드 오브젝트
-    public List<AudioSource> sfxObjects;
-    // 이펙트 사운드는 해당 오브젝트 생성할때 여기서 값을 가져가서 사용해줍시다.
+    public List<AudioSource> sfxObjects; // 그 외 SFX 사운드 적용 오브젝트.
 
     [Header("Sound State")]
     [SerializeField] private int[] volumes;
@@ -31,7 +30,7 @@ public class SoundManager : MonoBehaviour
     private void Start()
     {
         SoundInit();
-        ObjectInit();
+        BGMInit();
     }
 
     public int[] GetVolumes()
@@ -69,26 +68,30 @@ public class SoundManager : MonoBehaviour
         {
             // master volume
             case 0:
-                bgmObject.volume = (volumes[1] / 9.0f) * (volumes[0] / 9.0f);
-                
+                BGMInit();
+                SFXInit();
                 break;
 
             // bgm volume
             case 1:
-                bgmObject.volume = (volumes[1] / 9.0f) * (volumes[0] / 9.0f);
+                BGMInit();
                 break;
 
             // sfx volume
             case 2:
-
+                SFXInit();
                 break;
 
         }
     }
-    void ObjectInit()
+    void BGMInit()
     {
-        bgmObject.volume = volumes[1] / 9.0f;
-        // 1.오브젝트 사운드 초기화 넣어주기.
+        bgmObject.volume = (volumes[1] / 9.0f) * (volumes[0] / 9.0f);
+    }
+
+    void SFXInit()
+    {
+        // sfxObjects 에 담겨있는 오브젝트들 사운드 조절해주기,
     }
 
     void SoundInit()
@@ -97,7 +100,6 @@ public class SoundManager : MonoBehaviour
         volumes[0] = 9;
         volumes[1] = 3;
         volumes[2] = 5;
-
     }
 
     public void OnStageBGM()
