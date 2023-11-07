@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 733245267633416692}
   m_Layer: 14
   m_Name: Magic Mushroom
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -161,5 +161,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16950f862fc453e4cb2e4a45c98c3935, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemTitle: 
+  itemDescription: 
+  itemInformation: 
   canCollision: 0
   playerObj: {fileID: 3456105446347801266, guid: bd7bba857dafcb445942b9d8ab6968a0, type: 3}

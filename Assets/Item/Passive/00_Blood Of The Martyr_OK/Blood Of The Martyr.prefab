@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1406084078137110132}
   m_Layer: 14
   m_Name: Blood Of The Martyr
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100,6 +100,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 112b8d7bbc588724d9bfedb948d8910d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemTitle: 
+  itemDescription: 
+  itemInformation: 
   canCollision: 0
   redTearImg: {fileID: 1814297148, guid: 09c04784cbb310846b889e82311c5862, type: 3}
   MartyrImg: {fileID: 2021427982, guid: 3546f2a1a4b7bb545a1215e028b9cc0d, type: 3}

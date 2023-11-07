@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4287155262729503609}
   m_Layer: 14
   m_Name: Super Bandage
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -161,4 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2a20b31637658d43899a0476a3f3c1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemTitle: 
+  itemDescription: 
+  itemInformation: 
   canCollision: 0
