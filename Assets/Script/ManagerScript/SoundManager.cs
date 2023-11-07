@@ -17,7 +17,7 @@ public class SoundManager : MonoBehaviour
 
     [Header("Audio Cilps")]
     [SerializeField] AudioClip[] stageBGM;
-    [SerializeField] AudioClip[] stageIntroBGM;
+    [SerializeField] AudioClip[] doorClip;
 
     [Header("Sound Object")]
     public AudioSource bgmObject; // BGM 사운드 오브젝트
@@ -33,6 +33,8 @@ public class SoundManager : MonoBehaviour
         BGMInit();
     }
 
+
+    #region volume Control
     public int[] GetVolumes()
     {
         return volumes;
@@ -89,9 +91,15 @@ public class SoundManager : MonoBehaviour
         bgmObject.volume = (volumes[1] / 9.0f) * (volumes[0] / 9.0f);
     }
 
-    void SFXInit()
+    public void SFXInit()
     {
-        // sfxObjects 에 담겨있는 오브젝트들 사운드 조절해주기,
+        for(int i = 0; i < sfxObjects.Count; i++)
+        {
+            if(sfxObjects[i] != null)
+            {
+                sfxObjects[i].volume = (volumes[2] / 9.0f) * (volumes[0] / 9.0f);
+            }
+        }
     }
 
     void SoundInit()
@@ -101,6 +109,7 @@ public class SoundManager : MonoBehaviour
         volumes[1] = 3;
         volumes[2] = 5;
     }
+    #endregion
 
     public void OnStageBGM()
     {
@@ -118,7 +127,17 @@ public class SoundManager : MonoBehaviour
         bgmObject.Play();
     }
 
-
+    public AudioClip GetDoorClip(int mode)
+    {
+        switch(mode)
+        {
+            case 0:
+                return doorClip[0];
+            case 1:
+                return doorClip[1];
+        }
+        return null;
+    }
 /*
 Master Volume 
   -

@@ -9,12 +9,18 @@ public class Room : MonoBehaviour
     public bool playerInRoom = false;
     public Transform[] roomObjects;
     public List<GameObject> enemis = new List<GameObject>();
+    AudioSource roomAudio;
 
     [Header("Unity Setup")] 
     public Transform roomGrid;
     public Transform cameraPosition;
     public Transform[] doorPosition;
     public Transform[] movePosition;
+
+    private void Start()
+    {
+        roomAudio = GetComponent<AudioSource>();
+    }
 
     private void Update()
     {
@@ -49,6 +55,7 @@ public class Room : MonoBehaviour
                 ItemManager.instance.ActiveItem.GetComponent<ActiveInfo>().GetEnergy();
             }
 
+            // 쉴드 추가.
             if (ItemManager.instance.PassiveItems[6])
             {
                 PlayerManager.instance.CanBlockDamage++;
@@ -71,6 +78,14 @@ public class Room : MonoBehaviour
         {
             roomObjects[i] = roomGrid.GetChild(i);
         }
+    }
+
+    void DoorSound(int mode)
+    {
+
+        AudioClip doorAudio =  SoundManager.instance.GetDoorClip(mode); // 오디오클립 받아오기.
+        roomAudio.clip = doorAudio; // 오디오클립 적용
+        roomAudio.Play(); // 재생
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
