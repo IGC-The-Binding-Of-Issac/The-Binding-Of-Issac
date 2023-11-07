@@ -100,6 +100,7 @@ public class SoundManager : MonoBehaviour
                 sfxObjects[i].volume = (volumes[2] / 9.0f) * (volumes[0] / 9.0f);
             }
         }
+        playerObject.volume = (volumes[2] / 9.0f) * (volumes[0] / 9.0f);
     }
 
     void SoundInit()
@@ -131,10 +132,12 @@ public class SoundManager : MonoBehaviour
     {
         switch(mode)
         {
-            case 0:
+            case 0: // close
                 return doorClip[0];
-            case 1:
+            case 1: // open
                 return doorClip[1];
+            case 2: // using key
+                return doorClip[2];
         }
         return null;
     }

@@ -54,6 +54,8 @@ public class GameManager : MonoBehaviour
         {
             GameObject obj = Instantiate(roomGenerate.objectPrefabs[9]) as GameObject;
             playerObject = obj;
+
+            SoundManager.instance.playerObject = playerObject.GetComponent<AudioSource>();
         }
 
         myCamera.transform.SetParent(null);

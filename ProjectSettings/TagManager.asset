@@ -12,9 +12,10 @@ TagManager:
   - Object_Fire
   - Object_Spikes
   - Enemy
-  - Trinket
   - Boss
   - AttackBomb
+  - door
+  - Item
   layers:
   - Default
   - TransparentFX
