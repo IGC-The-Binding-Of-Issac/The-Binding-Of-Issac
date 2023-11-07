@@ -54,6 +54,8 @@ public class GameManager : MonoBehaviour
         {
             GameObject obj = Instantiate(roomGenerate.objectPrefabs[9]) as GameObject;
             playerObject = obj;
+
+            SoundManager.instance.playerObject = playerObject.GetComponent<AudioSource>();
         }
 
         myCamera.transform.SetParent(null);
@@ -68,6 +70,7 @@ public class GameManager : MonoBehaviour
                 myCamera.transform.position = playerObject.transform.position;
 
                 SoundManager.instance.OnStageBGM();
+                SoundManager.instance.SFXInit();
                 break;
             }
         }

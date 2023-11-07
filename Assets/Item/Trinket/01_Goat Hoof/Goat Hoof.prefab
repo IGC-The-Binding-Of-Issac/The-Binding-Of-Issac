@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5711453213761290577}
   m_Layer: 14
   m_Name: Goat Hoof
-  m_TagString: Trinket
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100,6 +100,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trinketItemCode: 0
+  itemTitle: 
+  itemDescription: 
+  itemInformation: 
   canCollision: 0
 --- !u!70 &1797746242673299803
 CapsuleCollider2D:

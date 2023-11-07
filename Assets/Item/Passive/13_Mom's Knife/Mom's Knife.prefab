@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6905956332746166231}
   m_Layer: 14
   m_Name: Mom's Knife
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,7 +99,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 524c99ccf51ab954e9a863725cec8bf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemTitle: 
+  itemDescription: 
+  itemInformation: 
   canCollision: 0
+  knifeImg: {fileID: -1071734423, guid: b2209e2c29aa42547a794c20df1f8fbd, type: 3}
 --- !u!50 &7676037171539303172
 Rigidbody2D:
   serializedVersion: 4

@@ -22,6 +22,8 @@ public class GreenPill : ActiveInfo
         SetActiveString("진통제인 줄 알았는데..",
         "체력 감소",
         "사용 시 현재 체력이 감소한다.");
+        GameManager.instance.playerObject.GetComponent<PlayerController>().canChangeItem = false;
+        Invoke("SetCanChangeItem", 1f);
         Destroy(gameObject);
         }
     }

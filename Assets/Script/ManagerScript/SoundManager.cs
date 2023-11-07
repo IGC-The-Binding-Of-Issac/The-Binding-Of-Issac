@@ -17,36 +17,100 @@ public class SoundManager : MonoBehaviour
 
     [Header("Audio Cilps")]
     [SerializeField] AudioClip[] stageBGM;
-    [SerializeField] AudioClip[] stageIntroBGM;
+    [SerializeField] AudioClip[] doorClip;
 
     [Header("Sound Object")]
     public AudioSource bgmObject; // BGM 사운드 오브젝트
     public AudioSource playerObject;  // 플레이어 사운드 오브젝트
-    public List<AudioSource> enemyObject; // 몬스터 사운드 오브젝트 
-    public List<AudioSource> stageObject; // 맵 오브젝트 사운드 오브젝트 
-    // 이펙트 사운드는 해당 오브젝트 생성할때 여기서 값을 가져가서 사용해줍시다.
+    public List<AudioSource> sfxObjects; // 그 외 SFX 사운드 적용 오브젝트.
 
     [Header("Sound State")]
-    [SerializeField] private float volumeMaster; // 사운드
-    [SerializeField] private float volumeBGM; // 사운드
-    [SerializeField] private float volumeSFX; // 사운드
-
+    [SerializeField] private int[] volumes;
+    // [0] master   [1] BGM   [2] SFX
     private void Start()
     {
         SoundInit();
+        BGMInit();
+    }
 
-        bgmObject.volume = volumeBGM;
+
+    #region volume Control
+    public int[] GetVolumes()
+    {
+        return volumes;
+    }
+    public int VolumeControl(int mode, int increase)
+    {
+        // mode 0 : master  1 : bgm  2: sfx
+        switch(increase)
+        {
+            // 사운드 증가
+            case 1:
+                if (volumes[mode] < 9)
+                {
+                    volumes[mode]++;
+                    ObjectVolumeControl(mode);
+                }
+                return volumes[mode];
+
+            // 사운드 감소
+            case 2:
+                if (volumes[mode] > 0)
+                {
+                    volumes[mode]--;
+                    ObjectVolumeControl(mode);
+                }
+                return volumes[mode];
+        }
+        return 0;
+    }
+    void ObjectVolumeControl(int mode)
+    {
+        switch(mode)
+        {
+            // master volume
+            case 0:
+                BGMInit();
+                SFXInit();
+                break;
+
+            // bgm volume
+            case 1:
+                BGMInit();
+                break;
+
+            // sfx volume
+            case 2:
+                SFXInit();
+                break;
+
+        }
+    }
+    void BGMInit()
+    {
+        bgmObject.volume = (volumes[1] / 9.0f) * (volumes[0] / 9.0f);
+    }
+
+    public void SFXInit()
+    {
+        for(int i = 0; i < sfxObjects.Count; i++)
+        {
+            if(sfxObjects[i] != null)
+            {
+                sfxObjects[i].volume = (volumes[2] / 9.0f) * (volumes[0] / 9.0f);
+            }
+        }
+        playerObject.volume = (volumes[2] / 9.0f) * (volumes[0] / 9.0f);
     }
 
     void SoundInit()
     {
-        volumeMaster = 1.0f;
-        volumeBGM = 0.5f;
-        volumeSFX = 0.5f;
-
-        enemyObject = new List<AudioSource>();
-        stageObject = new List<AudioSource>();
+        volumes = new int[3];
+        volumes[0] = 9;
+        volumes[1] = 3;
+        volumes[2] = 5;
     }
+    #endregion
 
     public void OnStageBGM()
     {
@@ -63,7 +127,21 @@ public class SoundManager : MonoBehaviour
         // bgm 실행
         bgmObject.Play();
     }
-    /*
+
+    public AudioClip GetDoorClip(int mode)
+    {
+        switch(mode)
+        {
+            case 0: // close
+                return doorClip[0];
+            case 1: // open
+                return doorClip[1];
+            case 2: // using key
+                return doorClip[2];
+        }
+        return null;
+    }
+/*
 Master Volume 
   -
 Music Volume 

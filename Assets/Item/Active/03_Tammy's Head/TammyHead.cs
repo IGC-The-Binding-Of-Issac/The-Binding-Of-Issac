@@ -30,8 +30,10 @@ public class TammyHead : ActiveInfo
         GameManager.instance.playerObject.GetComponent<PlayerController>().Shoot(-1, 0);
         GameManager.instance.playerObject.GetComponent<PlayerController>().Shoot(-1, -1);
         activeTear = GameObject.Find("Tear(Clone)");
-            canUse = false;
-            Invoke("SetCanUse", 1f);
+        canUse = false;
+        Invoke("SetCanUse", 1f);
+        GameManager.instance.playerObject.GetComponent<PlayerController>().canChangeItem = false;
+        Invoke("SetCanChangeItem", 1f);
         }
     }
 

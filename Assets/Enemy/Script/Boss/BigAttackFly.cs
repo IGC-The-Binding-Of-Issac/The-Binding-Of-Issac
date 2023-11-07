@@ -6,12 +6,6 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.Playables;
 
-public enum bigAttackFlyState 
-{
-    Tracking,
-    Shoot
-}
-
 public class BigAttackFly : Top_Fly
 {
     /// <summary>
@@ -22,34 +16,38 @@ public class BigAttackFly : Top_Fly
     /// </summary>
 
     [Header("BigAttackFly")]
-    [SerializeField] bigAttackFlyState state;
     [SerializeField] float currTime; //현재 상태의 시간
     [SerializeField] bool chageState; // 상태변환 
     [SerializeField]  float rotSpeed;
-    [SerializeField] GameObject shootSpace;
     [SerializeField] GameObject bigShootBullet;
 
+    float z = 0;
+    bool coruState;
+    Coroutine runningCoroutine = null;
+
     void Start()
-    {
+    {         
         Fly_Move_InitialIze();
 
         playerInRoom = false;
-        dieParameter = "isDie";
+        dieParameter = "isBigFlyDie";
 
         // Enemy
         hp = 30f;
         sight = 5f;
         moveSpeed = 1f;
-        waitforSecond = 0.5f;
-        attaackSpeed = 2f;
-        bulletSpeed = 3f;
+        waitforSecond = 0.4f;
+        attaackSpeed = 4f;
+        bulletSpeed = 6f;
 
         maxhp = hp;
 
         //BigAttackFly
         chageState = true;
         currTime = attaackSpeed;
-        rotSpeed = 100f;
+        rotSpeed = 600f;
+        chageState = true;
+        coruState = true;
     }
 
     private void Update()
@@ -64,29 +62,70 @@ public class BigAttackFly : Top_Fly
 
     override public void Move()
     {
-
         currTime -= Time.deltaTime;
-        if (currTime > 0)
+        if (currTime > 0 && chageState)
         {
-            Tracking(justTrackingPlayerPosi);
+            Tracking(justTrackingPlayerPosi); //추적
+        }
+        else if (currTime <= 0) 
+        {
+            chageState = false;
+            bigAttackFlyRotation();
+        }
+    }
+
+    public void bigAttackFlyRotation()
+    {
+        if (coruState)
+        {
+            // StopCoroutine이 안돌아가요 ->
+            // 코루틴 변수 runnungCorutine을 만들어서 실행과 동시에 저장 
+            runningCoroutine = StartCoroutine(ShootBullets());
+            coruState = false;
         }
 
-        else if (currTime <= 0)
+        //회전
+        // 회전값이 음수가 돼요 -> 유니티에서  일정 회전값이 지나면 음수가됨
+        // 오일러 방식 : 짐벌락 현상때문 -> 각도는 쿼터니언 방식으로 (출력하면 소숫점)
+        // 오일러 방식으로 출력하고싶어요 -> transform.rotation.eulerAngles
+
+        z += rotSpeed * Time.deltaTime; //일정 시간 (Time.deltaTime) 마다 z축을 더한다
+        transform.rotation = Quaternion.Euler(0, 0, z);
+        //총알발싸
+
+
+
+        if(transform.rotation.eulerAngles.z >= 350)  //각도가 360이 되면 초기화
         {
-            bigAttackFlyShoot();
+            transform.rotation = Quaternion.Euler(0, 0, 0);// 회전 초기화
+            if (runningCoroutine != null) //실행중인 코루틴이 있으면
+            {
+                // 멈추기
+                StopCoroutine(runningCoroutine);
+            }
+
+            // 초기화
+            z = 0; // 각도 초기화
+            coruState = true;
+            chageState = true;
             currTime = attaackSpeed;
         }
     }
 
-    public void bigAttackFlyShoot()
+    IEnumerator ShootBullets()
     {
-        for (int i = 0; i < 10; i++) 
+        while (true) 
         {
-            GameObject bu = Instantiate(bigShootBullet, shootSpace.transform.position, Quaternion.identity);
-            bu.GetComponent<Rigidbody2D>().velocity = bu.transform.forward * bulletSpeed;
-            shootSpace.transform.Rotate(new Vector3(0, rotSpeed * Time.deltaTime, 0));
+            bool isbullet = true;
+            if (isbullet) 
+            {
+                GameObject bu = Instantiate(bigShootBullet, transform.position, transform.rotation);
+                bu.GetComponent<Rigidbody2D>().velocity = transform.right * bulletSpeed;
+                isbullet = false;
+            }
+            yield return new WaitForSeconds(0.05f);
         }
-
     }
+
 
 }

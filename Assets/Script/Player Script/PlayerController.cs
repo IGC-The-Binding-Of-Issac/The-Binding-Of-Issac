@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -160,11 +161,11 @@ public void Shoot(float x, float y)
         Vector3 firePoint = tearPoint.transform.position;
         //발사 기능 구현
         //게임 중 눈물 생성 눈물 프리펩, 발사 시작위치, 회전
+
         tear = Instantiate(PlayerManager.instance.tearObj, firePoint, transform.rotation) as GameObject;
         tear.GetComponent<Rigidbody2D>().velocity = new Vector3(x * tearSpeed, y * tearSpeed, 0);
-
-        
         CheckedObject = null;
+        
         if(y != 1) // 위 공격이 아닐때
         {
             CheckedObject = tearPoint.overLapObject;
@@ -349,6 +350,8 @@ public void Shoot(float x, float y)
         if (Input.GetKey(KeyCode.UpArrow))
         {
             playerShotAnim.SetBool("playerUpShot", true);
+            if(tear != null)
+                tear.GetComponent<SpriteRenderer>().sortingOrder = 102;
         }
         else
         {

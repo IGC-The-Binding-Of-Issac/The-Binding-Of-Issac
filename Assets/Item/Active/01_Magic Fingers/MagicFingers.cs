@@ -23,6 +23,8 @@ public class MagicFingers : ActiveInfo
         }
         canUse = false;
         Invoke("SetCanUse", 1f);
-        
+        GameManager.instance.playerObject.GetComponent<PlayerController>().canChangeItem = false;
+        Invoke("SetCanChangeItem", 1f);
+
     }
 }
