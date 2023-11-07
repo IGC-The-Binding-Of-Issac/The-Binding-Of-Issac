@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5534180701449138498}
   m_Layer: 14
   m_Name: The Halo
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,6 +99,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0feb17eb04ad5414288c30fb9e69f37a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemTitle: 
+  itemDescription: 
+  itemInformation: 
   canCollision: 0
 --- !u!50 &1686944165519134249
 Rigidbody2D:

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2275076766619957629}
   m_Layer: 14
   m_Name: NO!
-  m_TagString: Trinket
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -162,6 +162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trinketItemCode: 0
+  itemTitle: 
+  itemDescription: 
+  itemInformation: 
   canCollision: 0
-  beforeMoveSpeed: 0
-  beforeShotDelay: 0

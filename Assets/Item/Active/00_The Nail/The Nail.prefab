@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3707374716971247225}
   m_Layer: 14
   m_Name: The Nail
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -162,5 +162,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeItemCode: 0
-  activated: 0
+  needEnergy: 0
+  currentEnergy: 0
+  itemTitle: 
+  itemDescription: 
+  itemInformation: 
+  canUse: 0
+  player: {fileID: 0}
   redTearImg: {fileID: 1814297148, guid: 09c04784cbb310846b889e82311c5862, type: 3}

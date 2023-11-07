@@ -46,7 +46,7 @@ public class ItemTable : MonoBehaviour
         return DropItems[rd];
     }
 
-    GameObject DropTrinket()
+    public GameObject DropTrinket()
     {
         GameObject obj;
         if (trinket.Count == 0)
@@ -76,7 +76,7 @@ public class ItemTable : MonoBehaviour
         return obj;
     }
 
-    GameObject DropPssive()
+    public GameObject DropPassive()
     {
         GameObject obj;
         if (passive.Count == 0)
@@ -106,7 +106,7 @@ public class ItemTable : MonoBehaviour
         return obj;
     }
 
-    GameObject DropActive()
+    public GameObject DropActive()
     {
         GameObject obj;
         if (active.Count == 0)
@@ -147,7 +147,7 @@ public class ItemTable : MonoBehaviour
             return DropTrinket();
 
         else if (50 <= n && n >= 75)
-            return DropPssive();
+            return DropPassive();
 
         else
             return DropActive();

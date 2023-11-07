@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 6141510182489731219}
   - component: {fileID: 8535752803394719649}
   - component: {fileID: 4999783403565270676}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Tammy's Head
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -162,7 +162,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeItemCode: 0
-  activated: 0
   needEnergy: 0
   currentEnergy: 0
+  itemTitle: 
+  itemDescription: 
+  itemInformation: 
+  canUse: 0
   player: {fileID: 0}

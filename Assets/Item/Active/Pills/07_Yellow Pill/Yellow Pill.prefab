@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3842459306906607518}
   m_Layer: 14
   m_Name: Yellow Pill
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -102,6 +102,10 @@ MonoBehaviour:
   activeItemCode: 0
   needEnergy: 0
   currentEnergy: 0
+  itemTitle: 
+  itemDescription: 
+  itemInformation: 
+  canUse: 0
   player: {fileID: 0}
 --- !u!70 &1418013527611828000
 CapsuleCollider2D:

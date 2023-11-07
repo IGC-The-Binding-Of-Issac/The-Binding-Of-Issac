@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2825429695962761156}
   m_Layer: 14
   m_Name: The Poop
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -169,9 +169,4 @@ MonoBehaviour:
   itemInformation: 
   canUse: 0
   player: {fileID: 0}
-  poopSpr:
-  - {fileID: -1289852127, guid: 12e9da185c606ad4abaa0cd07083586f, type: 3}
-  - {fileID: -1047874308, guid: 12e9da185c606ad4abaa0cd07083586f, type: 3}
-  - {fileID: -2001532376, guid: 12e9da185c606ad4abaa0cd07083586f, type: 3}
-  - {fileID: 786642279, guid: 12e9da185c606ad4abaa0cd07083586f, type: 3}
   goldenPoop: {fileID: 2333138349130384984, guid: c4527f49dc4f15a4aa1944371899e3c2, type: 3}
