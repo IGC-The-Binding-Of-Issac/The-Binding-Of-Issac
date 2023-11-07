@@ -7,6 +7,7 @@ public class Door : MonoBehaviour
     public Transform movePosition;
     public GameObject roomInfo;
     public int doorDir = -1;
+    public float doorDamage;
 
     [Header("Unity Setup")]
     public GameObject closeDoor;
@@ -64,6 +65,11 @@ public class Door : MonoBehaviour
                 {
                     collision.transform.position = movePosition.transform.position; // 플레이어를 이동
                 }
+
+                if(doorDamage != 0)
+                {
+                    PlayerManager.instance.GetDamage();
+                }
             }
 
             // 열쇠를 사용해야하는 문일때
@@ -74,21 +80,25 @@ public class Door : MonoBehaviour
                 {
                      UsingKey();
                     ItemManager.instance.keyCount--;
+                    roomInfo.GetComponent<Room>().DoorSound(2);
                 }
                 else if (Input.GetKey(KeyCode.D) && doorDir == 1)
                 {
                     UsingKey();
                     ItemManager.instance.keyCount--;
+                    roomInfo.GetComponent<Room>().DoorSound(2);
                 }
                 else if (Input.GetKey(KeyCode.S) && doorDir == 2)
                 {
                     UsingKey();
                     ItemManager.instance.keyCount--;
+                    roomInfo.GetComponent<Room>().DoorSound(2);
                 }
                 else if (Input.GetKey(KeyCode.A) && doorDir == 3)
                 {
                     UsingKey();
                     ItemManager.instance.keyCount--;
+                    roomInfo.GetComponent<Room>().DoorSound(2);
                 }
             }
         }

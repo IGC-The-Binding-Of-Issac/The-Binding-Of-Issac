@@ -61,6 +61,8 @@ public class Room : MonoBehaviour
                 PlayerManager.instance.CanBlockDamage++;
             }
 
+            // 방 클리어시 문 열리는 사운드 출력
+            DoorSound(1); // open sound
         }
     }
 
@@ -80,7 +82,7 @@ public class Room : MonoBehaviour
         }
     }
 
-    void DoorSound(int mode)
+    public void DoorSound(int mode)
     {
 
         AudioClip doorAudio =  SoundManager.instance.GetDoorClip(mode); // 오디오클립 받아오기.
@@ -93,6 +95,14 @@ public class Room : MonoBehaviour
         if(collision.gameObject.CompareTag("Player"))
         {
             playerInRoom = true;
+            
+            // 방에 플레이어가 입장했을때
+            // 클리어 되어있지않으면
+            // 문 닫히는 사운드 
+            if(!isClear)
+            {
+                DoorSound(0); // close Sound
+            }
         }
     }
 

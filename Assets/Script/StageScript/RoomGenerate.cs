@@ -152,6 +152,12 @@ public class RoomGenerate : MonoBehaviour
                 door.GetComponent<Door>().UsingKey();
 
             doors.Add(door);
+
+            // 도어 입장 데미지.
+            if (doorNumder == 4)
+                door.GetComponent<Door>().doorDamage = 1;
+            else
+                door.GetComponent<Door>().doorDamage = 0;
         }
     }
     int ChoiceDoor(int y, int x, int ny, int nx)
