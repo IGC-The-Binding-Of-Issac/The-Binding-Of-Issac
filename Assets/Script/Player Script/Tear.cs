@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class Tear : MonoBehaviour
@@ -90,6 +91,13 @@ public class Tear : MonoBehaviour
                 gameObject.GetComponent<CircleCollider2D>().enabled = false;
                 BoomTear();
                 collision.GetComponent<Poop>().GetDamage();
+            }
+            //황금 똥에 박으면
+            else if (collision.gameObject.name == "Golden Poop(Clone)")
+            {
+                gameObject.GetComponent<CircleCollider2D>().enabled = false;
+                BoomTear();
+                collision.GetComponent<GoldenPoop>().GetDamage(); 
             }
             //불에 박으면
             else if (collision.gameObject.CompareTag("Object_Fire"))
