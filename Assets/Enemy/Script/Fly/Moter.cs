@@ -53,6 +53,11 @@ public class Moter : Top_Fly
     void GenerateAttackFly() 
     {
         GameObject obj = Instantiate(attackFly, transform.position, Quaternion.identity) as GameObject;
+
+        // SoundManage의 sfxObject로 추가.
+        if (obj.GetComponent<AudioSource>() != null)
+            SoundManager.instance.sfxObjects.Add(obj.GetComponent<AudioSource>());
+
         roomInfo.GetComponent<Room>().enemis.Add(obj);
     }
 

@@ -87,6 +87,7 @@ public class RoomGenerate : MonoBehaviour
                 }
                 // create room
                 GameObject room = Instantiate(roomPrefabs[stage - 1, roomNum - 1], roomPos, Quaternion.identity) as GameObject;
+                SetSFXObject(room);
                 roomList[i, j] = room;
                 roomList[i, j].GetComponent<Room>().isClear = false;
 
@@ -206,8 +207,7 @@ public class RoomGenerate : MonoBehaviour
                     roomList[y, x].GetComponent<Room>().enemis.Add(enemy); // 해당 방의 몬스터리스트에 추가
 
                     // sfx 사운드 조절을 위한 오브젝트 저장
-                    if (enemy.GetComponent<AudioSource>() != null)
-                        SoundManager.instance.sfxObjects.Add(enemy.GetComponent<AudioSource>());
+                    SetSFXObject(enemy);
                 }
 
                 // 그 외
@@ -236,8 +236,7 @@ public class RoomGenerate : MonoBehaviour
                         }
 
                         // sfx 사운드 조절을 위한 오브젝트 저장
-                        if (obstacle.GetComponent<AudioSource>() != null)
-                            SoundManager.instance.sfxObjects.Add(obstacle.GetComponent<AudioSource>());
+                        SetSFXObject(obstacle);
                     }
 
                 }
@@ -245,6 +244,15 @@ public class RoomGenerate : MonoBehaviour
             }
         }    
     }
+
+    void SetSFXObject(GameObject obj)
+    {
+        // sfx 사운드 조절을 위한 오브젝트 저장
+        if (obj.GetComponent<AudioSource>() != null)
+            SoundManager.instance.sfxObjects.Add(obj.GetComponent<AudioSource>());
+    }
+
+
     private void Update()
     {
         if(doors != null)
