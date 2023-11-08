@@ -163,7 +163,7 @@ public void Shoot(float x, float y)
         //게임 중 눈물 생성 눈물 프리펩, 발사 시작위치, 회전
 
         //칼 먹었을 때
-        if (ItemManager.instance.PassiveItems[13])
+        if (ItemManager.instance.PassiveItems[13] && !ItemManager.instance.PassiveItems[16])
         {
             Vector3 knifeRotate = new Vector3(0, 0, 0);
             if (x == -1) knifeRotate = new Vector3(180, 0, 90);

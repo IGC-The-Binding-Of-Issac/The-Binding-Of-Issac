@@ -5,7 +5,6 @@ using UnityEngine;
 public class MomsKnife : ItemInfo
 {
     public Sprite knifeImg;
-    public GameObject knife;
     private void Start()
     {
         SetItemCode(13);
@@ -22,6 +21,7 @@ public class MomsKnife : ItemInfo
         PlayerManager.instance.playerShotDelay *= 2.5f;
         PlayerManager.instance.CheckedShotDelay();
 
-        PlayerManager.instance.tearObj.GetComponent<SpriteRenderer>().sprite = knifeImg;
+        if (!ItemManager.instance.PassiveItems[16])
+            PlayerManager.instance.tearObj.GetComponent<SpriteRenderer>().sprite = knifeImg;
     }
 }

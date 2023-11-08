@@ -16,7 +16,7 @@ public class Dr_fetus : ItemInfo
 
     public override void UseItem()
     {
-        PlayerManager.instance.playerShotDelay /= 0.33f;
+        PlayerManager.instance.playerShotDelay /= 0.5f;
         PlayerManager.instance.tearObj = attackBomb;
     }
 }
