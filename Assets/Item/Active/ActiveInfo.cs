@@ -41,6 +41,7 @@ public class ActiveInfo : MonoBehaviour
 
             if (ItemManager.instance.ActiveItem == null)
             {
+                UIManager.instance.ItemBanner(itemTitle, itemDescription);
                 canUse = false;
                 GameManager.instance.playerObject.GetComponent<PlayerController>().canChangeItem = false;
                 ActiveGet(collision);
@@ -48,22 +49,23 @@ public class ActiveInfo : MonoBehaviour
 
             else if (ItemManager.instance.ActiveItem != null)
             {
-                    canUse = false;
-                    GameManager.instance.playerObject.GetComponent<PlayerController>().canChangeItem = false;
-                    GameObject obj = ItemManager.instance.itemTable.ActiveChange(ItemManager.instance.ActiveItem.GetComponent<ActiveInfo>().activeItemCode);
-                    Transform dropPosition = GameManager.instance.playerObject.GetComponent<PlayerController>().itemPosition;
-                    GameObject beforeActive = Instantiate(obj, new Vector3(dropPosition.position.x, (dropPosition.position.y - 1f), 0), Quaternion.identity) as GameObject;
+                UIManager.instance.ItemBanner(itemTitle, itemDescription);
+                canUse = false;
+                GameManager.instance.playerObject.GetComponent<PlayerController>().canChangeItem = false;
+                GameObject obj = ItemManager.instance.itemTable.ActiveChange(ItemManager.instance.ActiveItem.GetComponent<ActiveInfo>().activeItemCode);
+                Transform dropPosition = GameManager.instance.playerObject.GetComponent<PlayerController>().itemPosition;
+                GameObject beforeActive = Instantiate(obj, new Vector3(dropPosition.position.x, (dropPosition.position.y - 1f), 0), Quaternion.identity) as GameObject;
 
-                    int curEnergy = ItemManager.instance.ActiveItem.GetComponent<ActiveInfo>().currentEnergy;
+                int curEnergy = ItemManager.instance.ActiveItem.GetComponent<ActiveInfo>().currentEnergy;
 
-                    beforeActive.GetComponent<ActiveInfo>().currentEnergy = curEnergy;
+                beforeActive.GetComponent<ActiveInfo>().currentEnergy = curEnergy;
 
-                    // 현재 드랍된 아이템 리스트에 등록.
-                    GameManager.instance.roomGenerate.itemList.Add(beforeActive);
-                    // 기존 아이템 삭제
-                    Destroy(ItemManager.instance.ActiveItem);
-                    ActiveGet(collision);
-             }
+                // 현재 드랍된 아이템 리스트에 등록.
+                GameManager.instance.roomGenerate.itemList.Add(beforeActive);
+                // 기존 아이템 삭제
+                Destroy(ItemManager.instance.ActiveItem);
+                ActiveGet(collision);
+            }
             Invoke("SetCanChangeItem", 1f);
         }
     }

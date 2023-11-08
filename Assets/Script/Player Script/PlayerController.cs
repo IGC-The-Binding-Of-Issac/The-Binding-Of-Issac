@@ -482,6 +482,4 @@ public void Shoot(float x, float y)
             }
         }
     }
-
-
 }

@@ -46,6 +46,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject loadingImage;
     [SerializeField] Sprite[] volumeNum;
     [SerializeField] GameObject[] volumeObj;
+
+    [Header("Banner")]
+    [SerializeField] Banner banner;
     private void Start()
     {
         SetPlayerMaxHP(); // 하트HP 초기세팅
@@ -292,4 +295,18 @@ public class UIManager : MonoBehaviour
         attackRangeText.text = PlayerManager.instance.playerRange.ToString("0.00");
         tearSpeedText.text = PlayerManager.instance.playerTearSpeed.ToString("0.00");
     }
+
+
+    #region banner
+    public IEnumerator StageBanner(int stage)
+    {
+        yield return new WaitForSeconds(1f);
+        banner.StageBanner(stage);
+    }
+
+    public void ItemBanner(string title, string info)
+    {
+        banner.ItemBanner(title,info);
+    }
+    #endregion
 }

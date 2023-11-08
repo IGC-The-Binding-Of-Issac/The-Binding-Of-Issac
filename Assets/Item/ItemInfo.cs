@@ -14,12 +14,13 @@ public class ItemInfo : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.CompareTag("Player") && canCollision
-            && GameManager.instance.playerObject.GetComponent<PlayerController>().canChangeItem)
+           && GameManager.instance.playerObject.GetComponent<PlayerController>().canChangeItem)
              {
             GameManager.instance.playerObject.GetComponent<PlayerController>().canChangeItem = false;
             // 아이템을 가지고있지않을때.
             if (!ItemManager.instance.PassiveItems[itemCode])
             {
+                UIManager.instance.ItemBanner(itemTitle, itemDescription);
                 gameObject.layer = 31;
                 ItemManager.instance.PassiveItems[itemCode] = true; // 미보유 -> 보유 로 변경 
                 UseItem();
