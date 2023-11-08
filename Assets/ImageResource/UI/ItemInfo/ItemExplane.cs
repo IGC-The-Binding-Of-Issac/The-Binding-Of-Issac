@@ -26,6 +26,7 @@ public class ItemExplane : MonoBehaviour
             col = Physics2D.OverlapCircleAll(GameManager.instance.playerObject.transform.position, radius, itemlayer);
             if (col.Length > 0)
             {
+
                 if (col[0].GetComponent<ItemInfo>() != null)
                 {
                     itemInfo1th.text = col[0].GetComponent<ItemInfo>().itemTitle;
