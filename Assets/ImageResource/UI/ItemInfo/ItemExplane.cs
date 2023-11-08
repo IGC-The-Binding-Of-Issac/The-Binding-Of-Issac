@@ -9,8 +9,7 @@ public class ItemExplane : MonoBehaviour
     public Text itemInfo1th;
     public Text itemInfo2nd;
 
-    [Range(min: 1, max: 5)]
-    [SerializeField] float radius;
+    private float radius;
 
     [SerializeField] Collider2D[] col;
     public LayerMask itemlayer;
