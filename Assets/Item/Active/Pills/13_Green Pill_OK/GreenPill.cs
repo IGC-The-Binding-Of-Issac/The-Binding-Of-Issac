@@ -19,6 +19,7 @@ public class GreenPill : ActiveInfo
         if(canUse)
         {
             PlayerManager.instance.playerHp -= 1;
+            PlayerManager.instance.CheckedPlayerHP();
             SetActiveString("진통제인 줄 알았는데..",
                             "체력 감소",
                             "사용 시 현재 체력이 감소한다.");

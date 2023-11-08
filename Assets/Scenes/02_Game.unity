@@ -841,6 +841,7 @@ MonoBehaviour:
   playerSize: 1
   CanGetDamage: 1
   CanBlockDamage: 1
+  deathCount: 0
   tearObj: {fileID: 5114894525887414092, guid: ba1b1ea4a7a80f44185689dfb5626760, type: 3}
   head:
   - {fileID: 7108339969198208228, guid: fc8a5af4a10fb9b4ba21a6c6c4c25e0f, type: 3}

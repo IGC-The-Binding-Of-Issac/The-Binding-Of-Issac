@@ -18,6 +18,7 @@ public class Ipecac : ItemInfo
     public override void UseItem()
     {
         PlayerManager.instance.playerHp--;
+        PlayerManager.instance.CheckedPlayerHP();
         PlayerManager.instance.SetHeadSkin(1);
         PlayerManager.instance.SetBodySkin(1);
         if (!ItemManager.instance.PassiveItems[13] && !ItemManager.instance.PassiveItems[16])
