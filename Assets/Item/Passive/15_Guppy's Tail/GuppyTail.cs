@@ -8,8 +8,8 @@ public class GuppyTail : ItemInfo
     {
         SetItemCode(15);
         SetItemString("备乔狼 部府",
-            "肋赴 备乔 部府",
-            "");
+                      "肋赴 备乔 部府",
+                      "");
     }
     public override void UseItem()
     {
