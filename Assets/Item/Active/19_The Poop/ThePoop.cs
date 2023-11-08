@@ -21,6 +21,9 @@ public class ThePoop : ActiveInfo
         {
             Transform poopTransform = GameManager.instance.playerObject.GetComponent<Transform>();
             GameObject goldPoop = Instantiate(goldenPoop, new Vector3(poopTransform.position.x, poopTransform.position.y, 0), Quaternion.identity) as GameObject;
+
+            goldPoop.transform.SetParent(GameManager.instance.roomGenerate.roomPool.GetChild(0).transform); // 그냥 아무방에다가 같이 묶어두기.
+            SoundManager.instance.sfxObjects.Add(goldPoop.GetComponent<AudioSource>());
         }
     }
 }
