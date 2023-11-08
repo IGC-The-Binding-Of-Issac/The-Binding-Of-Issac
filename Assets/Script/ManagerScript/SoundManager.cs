@@ -29,6 +29,7 @@ public class SoundManager : MonoBehaviour
     // [0] master   [1] BGM   [2] SFX
     private void Start()
     {
+        sfxObjects = new List<AudioSource>();
         SoundInit();
         BGMInit();
     }
