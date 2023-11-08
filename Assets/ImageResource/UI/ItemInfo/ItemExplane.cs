@@ -44,6 +44,12 @@ public class ItemExplane : MonoBehaviour
                     itemInfo1th.text = col[0].GetComponent<TrinketInfo>().itemTitle;
                     itemInfo2nd.text = col[0].GetComponent<TrinketInfo>().itemInformation;
                 }
+                else if(col[0].GetComponent<ShopTable>() != null)
+                {
+                    string[] info = col[0].GetComponent<ShopTable>().itemInfomation;
+                    itemInfo1th.text = info[0];
+                    itemInfo2nd.text = info[1];
+                }
             }
             else
             {

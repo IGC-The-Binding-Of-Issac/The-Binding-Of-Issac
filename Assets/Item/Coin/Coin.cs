@@ -7,8 +7,20 @@ public class Coin : MonoBehaviour
     Animator coin_animator;
     private Rigidbody2D rb;
     private CapsuleCollider2D cl;
+
+    public AudioSource audioSource;
+
+    public AudioClip pickupClip;
+    public AudioClip dropClip;
     public void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+
+        audioSource.volume = SoundManager.instance.GetSFXVolume();
+        audioSource.clip = dropClip;
+        audioSource.Play();
+
+
         rb = GetComponent<Rigidbody2D>();
         float randomX = Random.Range(-1.0f, 1.0f);
         float randomY = Random.Range(-1.0f, 1.0f);
@@ -23,6 +35,10 @@ public class Coin : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            audioSource.volume = SoundManager.instance.GetSFXVolume();
+            audioSource.clip = pickupClip;
+            audioSource.Play();
+
             gameObject.layer = 31; // 플레이어와 충돌하지않는 레이어
             coin_animator.SetTrigger("GetCoin");
             ItemManager.instance.coinCount++;

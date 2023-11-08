@@ -9,6 +9,7 @@ public class ShopTable : MonoBehaviour
     [Header("State")]
     [SerializeField] int cost;
     [SerializeField] GameObject item;
+    public string[] itemInfomation = new string[2];
 
     [Header("Unty Setup")]
     [SerializeField] Transform itemPos;
@@ -117,6 +118,8 @@ public class ShopTable : MonoBehaviour
 
         item.transform.SetParent(itemPos);
         item.transform.localPosition = Vector3.zero;
+
+        Invoke("SetInfomation",0.2f);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -127,6 +130,25 @@ public class ShopTable : MonoBehaviour
             itemPos.localPosition = Vector3.zero;
             ItemManager.instance.coinCount -= cost;
             Destroy(this);
+        }
+    }
+
+    void SetInfomation()
+    {
+        if (item.GetComponent<ItemInfo>() != null)
+        {
+            itemInfomation[0] = item.GetComponent<ItemInfo>().itemTitle;
+            itemInfomation[1] = item.GetComponent<ItemInfo>().itemInformation;
+        }
+        else if (item.GetComponent<ActiveInfo>() != null)
+        {
+            itemInfomation[0] = item.GetComponent<ActiveInfo>().itemTitle;
+            itemInfomation[1] = item.GetComponent<ActiveInfo>().itemInformation;
+        }
+        else if (item.GetComponent<TrinketInfo>() != null)
+        {
+            itemInfomation[0] = item.GetComponent<TrinketInfo>().itemTitle;
+            itemInfomation[1] = item.GetComponent<TrinketInfo>().itemInformation;
         }
     }
 }

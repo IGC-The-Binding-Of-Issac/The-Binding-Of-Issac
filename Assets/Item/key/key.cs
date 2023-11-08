@@ -6,8 +6,19 @@ public class key : MonoBehaviour
 {
     private Rigidbody2D rb;
     private Animator keyAni;
+
+    public AudioSource audioSource;
+
+    public AudioClip pickupClip;
+    public AudioClip dropClip;
     public void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+
+        audioSource.volume = SoundManager.instance.GetSFXVolume();
+        audioSource.clip = dropClip;
+        audioSource.Play();
+
         rb = GetComponent<Rigidbody2D>();
         float randomX = Random.Range(-1.0f, 1.0f);
         float randomY = Random.Range(-1.0f, 1.0f);
@@ -20,6 +31,10 @@ public class key : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            audioSource.volume = SoundManager.instance.GetSFXVolume();
+            audioSource.clip = pickupClip;
+            audioSource.Play();
+
             gameObject.layer = 31;
             keyAni.SetTrigger("GetKey");
         }
