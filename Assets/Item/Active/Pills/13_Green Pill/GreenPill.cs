@@ -18,13 +18,14 @@ public class GreenPill : ActiveInfo
     {
         if(canUse)
         {
-        PlayerManager.instance.playerHp -= 1;
-        SetActiveString("진통제인 줄 알았는데..",
-        "체력 감소",
-        "사용 시 현재 체력이 감소한다.");
-        GameManager.instance.playerObject.GetComponent<PlayerController>().canChangeItem = false;
-        Invoke("SetCanChangeItem", 1f);
-        Destroy(gameObject);
+            PlayerManager.instance.playerHp -= 1;
+            SetActiveString("진통제인 줄 알았는데..",
+            "체력 감소",
+            "사용 시 현재 체력이 감소한다.");
+            UIManager.instance.ItemBanner(itemTitle, itemDescription);
+            GameManager.instance.playerObject.GetComponent<PlayerController>().canChangeItem = false;
+            Invoke("SetCanChangeItem", 1f);
+            Destroy(gameObject);
         }
     }
 }

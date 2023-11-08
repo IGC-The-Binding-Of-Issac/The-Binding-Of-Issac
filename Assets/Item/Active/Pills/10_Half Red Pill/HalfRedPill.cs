@@ -18,13 +18,14 @@ public class HalfRedPill : ActiveInfo
     {
         if(canUse)
         {
-        PlayerManager.instance.playerDamage -= 0.15f;
-        SetActiveString("나는 멸치야..",
-        "공격력 감소",
-        "사용 시 공격력이 감소한다.");
-        GameManager.instance.playerObject.GetComponent<PlayerController>().canChangeItem = false;
-        Invoke("SetCanChangeItem", 1f);
-        Destroy(gameObject);
+            PlayerManager.instance.playerDamage -= 0.15f;
+            SetActiveString("나는 멸치야..",
+            "공격력 감소",
+            "사용 시 공격력이 감소한다.");
+            UIManager.instance.ItemBanner(itemTitle, itemDescription);
+            GameManager.instance.playerObject.GetComponent<PlayerController>().canChangeItem = false;
+            Invoke("SetCanChangeItem", 1f);
+            Destroy(gameObject);
         }
     }
 }

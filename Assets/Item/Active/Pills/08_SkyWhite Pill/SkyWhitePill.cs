@@ -17,12 +17,13 @@ public class SkyWhitePill : ActiveInfo
     {
         if(canUse)
         {
-        PlayerManager.instance.playerRange -= 0.15f;
-        SetActiveString("작은 고추가 맵다",
-        "사거리 감소",
-        "사용 시 눈물의 사거리가 감소한다.");
-        GameManager.instance.playerObject.GetComponent<PlayerController>().canChangeItem = false;
-        Invoke("SetCanChangeItem", 1f);
+            PlayerManager.instance.playerRange -= 0.15f;
+            SetActiveString("작은 고추가 맵다",
+            "사거리 감소",
+            "사용 시 눈물의 사거리가 감소한다.");
+            UIManager.instance.ItemBanner(itemTitle, itemDescription);
+            GameManager.instance.playerObject.GetComponent<PlayerController>().canChangeItem = false;
+            Invoke("SetCanChangeItem", 1f);
             Destroy(gameObject);
         }
     }
