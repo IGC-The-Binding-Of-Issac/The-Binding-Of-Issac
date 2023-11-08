@@ -165,7 +165,6 @@ public void Shoot(float x, float y)
         Vector3 firePoint = tearPoint.transform.position;
         //발사 기능 구현
         //게임 중 눈물 생성 눈물 프리펩, 발사 시작위치, 회전
-        ShootSound();
 
         //칼 먹었을 때
         if (ItemManager.instance.PassiveItems[13] && !ItemManager.instance.PassiveItems[16])
@@ -523,12 +522,6 @@ public void Shoot(float x, float y)
     public void UseItemSound()
     {
         audioSource.clip = useItemClip;
-        audioSource.Play();
-    }
-
-    public void ShootSound()
-    {
-        audioSource.clip = ShootClip;
         audioSource.Play();
     }
     #endregion
