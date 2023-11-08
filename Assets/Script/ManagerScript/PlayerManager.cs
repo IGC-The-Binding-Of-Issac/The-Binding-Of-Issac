@@ -46,6 +46,7 @@ public class PlayerManager : MonoBehaviour
     [Header("Player OutFit")]
     public SpriteLibraryAsset[] head;
     public SpriteLibraryAsset[] body;
+    public SpriteLibraryAsset[] tear;
 
     void PlayerInitialization()
     {
@@ -79,7 +80,10 @@ public class PlayerManager : MonoBehaviour
     { 
         ChangeBody(body[index]);
     }
-
+    public void SetTearSkin(int index)
+    {
+        ChangeTear(tear[index]);
+    }
     public void ChangeHead(SpriteLibraryAsset head)
     {
         GameManager.instance.playerObject.GetComponent<PlayerController>().head.GetComponent<SpriteLibrary>().spriteLibraryAsset = head;
@@ -90,6 +94,11 @@ public class PlayerManager : MonoBehaviour
         GameManager.instance.playerObject.GetComponent<PlayerController>().body.GetComponent<SpriteLibrary>().spriteLibraryAsset = body;
     }
 
+    public void ChangeTear(SpriteLibraryAsset tear)
+    {
+        tearObj.GetComponent<SpriteLibrary>().spriteLibraryAsset = tear;
+    }
+
     //delegate 선언 위치
 
     public void Start()
@@ -97,6 +106,7 @@ public class PlayerManager : MonoBehaviour
         tearObj.transform.localScale = new Vector3(1, 1, 1);
         gameObject.AddComponent<AudioSource>();
         PlayerInitialization();
+        SetTearSkin(0);
     }
 
     public void CheckedPlayerHP()

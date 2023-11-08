@@ -113,10 +113,10 @@ TextureImporter:
       name: pickup_007_pill_0
       rect:
         serializedVersion: 2
-        x: 7
-        y: 233
-        width: 17
-        height: 17
+        x: 0
+        y: 224
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -134,10 +134,10 @@ TextureImporter:
       name: pickup_007_pill_1
       rect:
         serializedVersion: 2
-        x: 42
-        y: 233
-        width: 13
-        height: 19
+        x: 32
+        y: 224
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -155,10 +155,10 @@ TextureImporter:
       name: pickup_007_pill_2
       rect:
         serializedVersion: 2
-        x: 72
-        y: 233
-        width: 17
-        height: 17
+        x: 64
+        y: 224
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -176,10 +176,10 @@ TextureImporter:
       name: pickup_007_pill_3
       rect:
         serializedVersion: 2
-        x: 103
-        y: 233
-        width: 19
-        height: 13
+        x: 96
+        y: 224
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -197,10 +197,10 @@ TextureImporter:
       name: pickup_007_pill_4
       rect:
         serializedVersion: 2
-        x: 10
-        y: 201
-        width: 13
-        height: 19
+        x: 0
+        y: 192
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -218,10 +218,10 @@ TextureImporter:
       name: pickup_007_pill_5
       rect:
         serializedVersion: 2
-        x: 39
-        y: 201
-        width: 17
-        height: 17
+        x: 32
+        y: 192
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -239,10 +239,10 @@ TextureImporter:
       name: pickup_007_pill_6
       rect:
         serializedVersion: 2
-        x: 73
-        y: 201
-        width: 17
-        height: 17
+        x: 64
+        y: 192
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -260,10 +260,10 @@ TextureImporter:
       name: pickup_007_pill_7
       rect:
         serializedVersion: 2
-        x: 106
-        y: 201
-        width: 13
-        height: 19
+        x: 96
+        y: 192
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -281,10 +281,10 @@ TextureImporter:
       name: pickup_007_pill_8
       rect:
         serializedVersion: 2
-        x: 10
-        y: 169
-        width: 13
-        height: 19
+        x: 0
+        y: 160
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -302,10 +302,10 @@ TextureImporter:
       name: pickup_007_pill_9
       rect:
         serializedVersion: 2
-        x: 39
-        y: 169
-        width: 17
-        height: 17
+        x: 32
+        y: 160
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -323,10 +323,10 @@ TextureImporter:
       name: pickup_007_pill_10
       rect:
         serializedVersion: 2
-        x: 73
-        y: 169
-        width: 17
-        height: 17
+        x: 64
+        y: 160
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -344,10 +344,10 @@ TextureImporter:
       name: pickup_007_pill_11
       rect:
         serializedVersion: 2
-        x: 104
-        y: 169
-        width: 17
-        height: 17
+        x: 96
+        y: 160
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -365,10 +365,10 @@ TextureImporter:
       name: pickup_007_pill_12
       rect:
         serializedVersion: 2
-        x: 9
-        y: 135
-        width: 15
-        height: 20
+        x: 0
+        y: 128
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -386,10 +386,10 @@ TextureImporter:
       name: pickup_007_pill_13
       rect:
         serializedVersion: 2
-        x: 41
-        y: 134
-        width: 17
-        height: 22
+        x: 32
+        y: 128
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -407,10 +407,10 @@ TextureImporter:
       name: pickup_007_pill_14
       rect:
         serializedVersion: 2
-        x: 66
-        y: 129
-        width: 29
-        height: 29
+        x: 64
+        y: 128
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -428,10 +428,10 @@ TextureImporter:
       name: pickup_007_pill_15
       rect:
         serializedVersion: 2
-        x: 103
-        y: 137
-        width: 19
-        height: 13
+        x: 96
+        y: 128
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -449,10 +449,10 @@ TextureImporter:
       name: pickup_007_pill_16
       rect:
         serializedVersion: 2
-        x: 2
-        y: 97
-        width: 29
-        height: 29
+        x: 0
+        y: 96
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -470,10 +470,10 @@ TextureImporter:
       name: pickup_007_pill_17
       rect:
         serializedVersion: 2
-        x: 34
-        y: 97
-        width: 29
-        height: 29
+        x: 32
+        y: 96
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -491,10 +491,10 @@ TextureImporter:
       name: pickup_007_pill_18
       rect:
         serializedVersion: 2
-        x: 73
-        y: 102
-        width: 17
-        height: 22
+        x: 64
+        y: 96
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -512,10 +512,10 @@ TextureImporter:
       name: pickup_007_pill_19
       rect:
         serializedVersion: 2
-        x: 106
-        y: 105
-        width: 11
-        height: 16
+        x: 96
+        y: 96
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

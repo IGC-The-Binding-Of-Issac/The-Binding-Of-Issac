@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 2975693518597754413}
   - component: {fileID: -7445222113538342290}
   - component: {fileID: 6378355158076953981}
+  - component: {fileID: 1468952892883276826}
+  - component: {fileID: 5458008635088887033}
   m_Layer: 0
   m_Name: Tear
   m_TagString: Tears
@@ -78,12 +80,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 104
-  m_Sprite: {fileID: 1837185413, guid: 64f0cce7912310a489ab219e28d20338, type: 3}
+  m_Sprite: {fileID: 1814297148, guid: 09c04784cbb310846b889e82311c5862, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.4222223, y: 1.4222223}
+  m_Size: {x: 1.3777778, y: 1.2888889}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -282,3 +284,33 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1468952892883276826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5114894525887414092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c29cff538c195c249b69c6f2236de67b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Library: []
+  m_SpriteLibraryAsset: {fileID: 7108339969198208228, guid: 7ed7975bd5b13494c8a0746501d0ec6d, type: 3}
+--- !u!114 &5458008635088887033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5114894525887414092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed8b1ae4e4e52b34ea557c1c11e076fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_CategoryHash: 9.681982e-14
+  m_labelHash: 1.9896236e-24
+  m_SpriteKey: 0
+  m_SpriteHash: 39593687
