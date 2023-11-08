@@ -41,11 +41,9 @@ namespace MyFSM
         // fsm 종료
         public void Exit() 
         {
-            m_CurState.Exit(); // 원래는 m_CurState.Exit()인데 오류남!!
+            m_CurState.Exit(); // T 타입의 exit 함수 실행
             m_CurState = null;
             m_PrevState = null;
-        
-        
         }
 
         public void Change(FSM<T> _state)
