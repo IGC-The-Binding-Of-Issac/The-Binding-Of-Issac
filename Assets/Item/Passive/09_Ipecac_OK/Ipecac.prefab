@@ -165,3 +165,4 @@ MonoBehaviour:
   itemDescription: 
   itemInformation: 
   canCollision: 0
+  ipecacSpr: {fileID: 1369703319, guid: 13909fd86a5360e45845f0bc0bd08936, type: 3}

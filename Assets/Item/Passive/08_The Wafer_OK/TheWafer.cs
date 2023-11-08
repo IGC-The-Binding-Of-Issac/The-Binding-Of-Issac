@@ -9,10 +9,10 @@ public class TheWafer : ItemInfo
     {
         SetItemCode(8);
         SetItemString("밀빵",
-            "탄수화물 덩어리",
-            "습득 시 이동속도 - 2"
-            +"\n공격력 + 2"
-            +"\n 사거리 - 2");
+                      "탄수화물 덩어리",
+                      "습득 시 이동속도 - 2"
+                    + "\n공격력 + 2"
+                    + "\n사거리 - 2");
     }
     public override void UseItem()
     {

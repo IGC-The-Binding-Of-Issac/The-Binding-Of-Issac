@@ -9,10 +9,10 @@ public class MomsKnife : ItemInfo
     {
         SetItemCode(13);
         SetItemString("엄마의 식칼",
-            "저는 죽이지 않았습니다.",
-            "습득 시 눈물이 사라지고 식칼을 날린다."
-            + "공격력 * 4"
-            + "공격속도 / 4");
+                      "저는 죽이지 않았습니다.",
+                      "습득 시 눈물이 사라지고 식칼을 날린다."
+                    + "\n공격력 * 4"
+                    + "\n공격속도 / 4");
     }
     public override void UseItem()
     {
@@ -22,6 +22,6 @@ public class MomsKnife : ItemInfo
         PlayerManager.instance.CheckedShotDelay();
 
         if (!ItemManager.instance.PassiveItems[16])
-            PlayerManager.instance.tearObj.GetComponent<SpriteRenderer>().sprite = knifeImg;
+        PlayerManager.instance.tearObj.GetComponent<SpriteRenderer>().sprite = knifeImg;
     }
 }
