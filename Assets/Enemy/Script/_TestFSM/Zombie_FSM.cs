@@ -12,7 +12,7 @@ public enum ZOMBIE_STATE
 }
 
 
-public class Zombie_FSM : MonoBehaviour
+public class Zombie_FSM : MonoBehaviour // 이게 Enemy 스크립트가 되고 , 이걸 상속받으면 되지 않을까?
 {
     /// <summary>
     /// 
@@ -52,10 +52,11 @@ public class Zombie_FSM : MonoBehaviour
     {
         m_state = new Head_Machine<Zombie_FSM>();
 
-        //m_arrState[(int)ZOMBIE_STATE.Idle] = new Zombie_Idle(this); // 앞으로 해당 스크립트 작성 예정임
-        //m_arrState[(int)ZOMBIE_STATE.Walk] = new Zombie_Walk(this);
-        //m_arrState[(int)ZOMBIE_STATE.Die] = new Zombie_Die(this);
-        //m_arrState[(int)ZOMBIE_STATE.Attack] = new Zombie_Attack(this);
+        //생성자로 이 스크립트의 객체를 넘겨줌 (new 어쩌고 -> 생성자)
+        m_arrState[(int)ZOMBIE_STATE.Idle] = new Zombie_Idle(this); //Zombie_FSM을 넘김!
+        m_arrState[(int)ZOMBIE_STATE.Walk] = new Zombie_Walk(this);
+        m_arrState[(int)ZOMBIE_STATE.Die] = new Zombie_Die(this);
+        m_arrState[(int)ZOMBIE_STATE.Attack] = new Zombie_Attack(this);
 
         m_state.SetState(m_arrState[(int)ZOMBIE_STATE.Idle] , this); // Head_Machine의 SetState
         // 좀비 스테이트(this)를 idle로 바꾼다

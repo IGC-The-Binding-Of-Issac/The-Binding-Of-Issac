@@ -41,7 +41,7 @@ namespace MyFSM
         // fsm 종료
         public void Exit() 
         {
-            m_CurState.End(); // 원래는 m_CurState.Exit()인데 오류남!!
+            m_CurState.Exit(); // 원래는 m_CurState.Exit()인데 오류남!!
             m_CurState = null;
             m_PrevState = null;
         
@@ -58,7 +58,7 @@ namespace MyFSM
 
             // 현재 상태가 있다면 종료
             if (m_CurState != null)
-                m_CurState.End();
+                m_CurState.Exit();
 
             m_CurState = _state;
             // 새로 적용된 상태가 null이 아니면 실행

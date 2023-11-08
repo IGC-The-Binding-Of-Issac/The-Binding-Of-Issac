@@ -9,7 +9,7 @@ namespace MyFSM
     {
         abstract public void Begin();
         abstract public void Run();
-        abstract public void End();
+        abstract public void Exit();
     }
 }
 
