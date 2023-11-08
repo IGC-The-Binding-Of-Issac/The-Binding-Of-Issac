@@ -136,17 +136,13 @@ public class ItemTable : MonoBehaviour
 
     public GameObject OpenGoldChest()
     {
-        //return PassiveItems[0]; // 테스트용
-        // 드랍확률 : 장신구 50% / 패시브 25% / 액티브 25%
-
-        // 테스트 할때는 이코드들 주석처리 해주셈
         int rd = Random.Range(0, 10000);
         int n = rd % 100;
 
-        if (0 <= n && n >= 49)
+        if (0 <= n && n <= 49)
             return DropTrinket();
 
-        else if (50 <= n && n >= 75)
+        else if (50 <= n && n <= 75)
             return DropPassive();
 
         else
