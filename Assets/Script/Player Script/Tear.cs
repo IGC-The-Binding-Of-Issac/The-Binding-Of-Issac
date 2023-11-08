@@ -13,13 +13,23 @@ public class Tear : MonoBehaviour
 
     float betweenDistance;
     float playerTearSize;
+
+    AudioSource audioSource;
+
+    [Header("Audio")]
+    public AudioClip shootSound;
+    public AudioClip boomSound;
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         tearBoomAnim = GetComponent<Animator>();
         tearRB = GetComponent<Rigidbody2D>();
         //플레이어 발사 시작위치
         playerPosition = playerController.transform.position;
+
+        audioSource.volume = SoundManager.instance.GetSFXVolume(); // 볼륨 설정
+        ShootSound(); // shoot 사운드 실행
     }
 
     void Update()
@@ -42,6 +52,7 @@ public class Tear : MonoBehaviour
 
     public void StopTear()
     {
+        BoomSound(); // tear 터지는 사운드
         tearRB.velocity = Vector2.zero;
         //총알 오브젝트 속도를 zero로 만듬
     }
@@ -127,4 +138,18 @@ public class Tear : MonoBehaviour
             }
         }
     }
+
+    #region Sound
+    void BoomSound()
+    {
+        audioSource.clip = boomSound;
+        audioSource.Play();
+    }
+
+    void ShootSound()
+    {
+        audioSource.clip = shootSound;
+        audioSource.Play();
+    }
+    #endregion
 }
