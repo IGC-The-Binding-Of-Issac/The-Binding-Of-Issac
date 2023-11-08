@@ -47,6 +47,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] Sprite[] volumeNum;
     [SerializeField] GameObject[] volumeObj;
 
+
     [Header("Banner")]
     [SerializeField] Banner banner;
     private void Start()
