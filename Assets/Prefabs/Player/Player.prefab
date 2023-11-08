@@ -483,10 +483,17 @@ MonoBehaviour:
   nailActivated: 0
   canUseActive: 1
   canChangeItem: 0
-  audioClips:
+  hitClips:
   - {fileID: 8300000, guid: 8c4bfa44717c99b4fb5609740648d91c, type: 3}
   - {fileID: 8300000, guid: 2b8c743b666e32b49850c0ed0a428c1a, type: 3}
   - {fileID: 8300000, guid: 19209af1c0cde794189fb18554ab93ee, type: 3}
+  deadClips:
+  - {fileID: 8300000, guid: d379bedd8b5139c43915fe91c99dd6ba, type: 3}
+  - {fileID: 8300000, guid: d7175e43e5feeee44887058353d27359, type: 3}
+  - {fileID: 8300000, guid: 0695024bd74a6434aa3becef8215cd73, type: 3}
+  getItemClip: {fileID: 8300000, guid: eebfd782cee00aa46b5e6ffc7069d6b8, type: 3}
+  useItemClip: {fileID: 8300000, guid: eebfd782cee00aa46b5e6ffc7069d6b8, type: 3}
+  ShootClip: {fileID: 8300000, guid: 7d5a21a74964a254d95477cdb36378c1, type: 3}
   HeadItem: {fileID: 4835568290336441186}
 --- !u!50 &8576594411106358938
 Rigidbody2D:
