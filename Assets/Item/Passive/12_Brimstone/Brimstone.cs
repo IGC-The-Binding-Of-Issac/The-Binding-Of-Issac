@@ -9,8 +9,8 @@ public class Brimstone : ItemInfo
     {
         SetItemCode(12);
         SetItemString("유황",
-            "혈사포",
-            "습득시 공격속도 / 3배");
+                      "혈사포",
+                      "습득시 공격속도 / 3배");
     }
     public override void UseItem()
     {

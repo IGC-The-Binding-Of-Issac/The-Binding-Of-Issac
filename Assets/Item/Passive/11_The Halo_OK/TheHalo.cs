@@ -7,6 +7,11 @@ public class TheHalo : ItemInfo
     private void Start()
     {
         SetItemCode(11);
+        SetItemString("±¤·û",
+                      "Ãµ»ç",
+                      "½Àµæ ½Ã ÃÖ´ë Ã¼·Â + 1Ä­"
+                    + "°ø°Ý¼Óµµ + 0.07"
+                    + "°ø°Ý·Â - 0.3");
     }
     public override void UseItem()
     {

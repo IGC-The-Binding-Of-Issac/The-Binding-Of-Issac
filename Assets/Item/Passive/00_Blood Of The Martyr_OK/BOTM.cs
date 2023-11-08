@@ -13,9 +13,9 @@ public class BOTM : ItemInfo
     {
         SetItemCode(0);
         SetItemString("월계관",
-            "순교자의 힘",
-            "습득 시 공격력 + 1" +
-            "\n 눈물 색깔을 빨간색으로 바꾼다.");
+                      "순교자의 힘",
+                      "습득 시 공격력 + 1" +
+                      "\n눈물 색깔을 빨간색으로 바꾼다.");
     }
     public override void UseItem()
     {
