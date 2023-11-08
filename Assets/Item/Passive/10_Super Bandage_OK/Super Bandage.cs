@@ -8,6 +8,11 @@ public class SuperBandage : ItemInfo
     private void Start()
     {
         SetItemCode(10);
+        SetItemString("슈퍼 반창고",
+            "그만 때려! 너무 아파!",
+            "습득 시 최대 체력 - 1칸"
+            + "\n 체력 - 1칸"
+            + "\n 공격속도 + 0.1");
     }
     public override void UseItem()
     {

@@ -22,6 +22,7 @@ public class TrinketInfo : MonoBehaviour
             // 1. 장신구 아이템을 장착하고 있지 않을 시
             if (ItemManager.instance.TrinketItem == null)
             {
+                UIManager.instance.ItemBanner(itemTitle, itemDescription);
                 GameManager.instance.playerObject.GetComponent<PlayerController>().canChangeItem = false;
                 TrinketGet(collision);
             }
@@ -29,6 +30,7 @@ public class TrinketInfo : MonoBehaviour
             // 2. 장신구 아이템을 장착하고 있을 시
             else if(ItemManager.instance.TrinketItem != null)
             {
+                UIManager.instance.ItemBanner(itemTitle, itemDescription);
                 GameManager.instance.playerObject.GetComponent<PlayerController>().canChangeItem = false;
                 // 현재 보유중인 아이템의 효과를 제거.
                 ItemManager.instance.TrinketItem.GetComponent<TrinketInfo>().DropTrinket();

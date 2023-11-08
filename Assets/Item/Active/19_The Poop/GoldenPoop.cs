@@ -13,6 +13,7 @@ public class GoldenPoop : MonoBehaviour
     {
         col = gameObject.GetComponent<Collider2D>();
         col.isTrigger = true;
+        gameObject.GetComponent<AudioSource>().volume = SoundManager.instance.GetSFXVolume();
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -23,13 +24,6 @@ public class GoldenPoop : MonoBehaviour
         }
     }
 
-    //private void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //   if (collision.gameObject.CompareTag("Tears"))
-    //    {
-    //        GetDamage();
-    //    }
-    //}
     public void GetDamage()
     {
         startIdx++;

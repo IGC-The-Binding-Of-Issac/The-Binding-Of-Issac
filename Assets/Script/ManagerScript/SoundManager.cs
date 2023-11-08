@@ -39,6 +39,12 @@ public class SoundManager : MonoBehaviour
     {
         return volumes;
     }
+
+    public float GetSFXVolume()
+    {
+        return (volumes[2] / 9.0f) * (volumes[0] / 9.0f);
+    }
+
     public int VolumeControl(int mode, int increase)
     {
         // mode 0 : master  1 : bgm  2: sfx

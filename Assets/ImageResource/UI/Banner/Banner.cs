@@ -1,45 +1,84 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 public class Banner : MonoBehaviour
 {
     public Vector2 BannerPosi;
     RectTransform rect;
-    // Start is called before the first frame update
+
+    [SerializeField] GameObject[] stageTEXT;
+    [SerializeField] Text itemTitle;
+    [SerializeField] Text itemInfo;
+
+    bool bannerState;
     void Start()
     {
+        bannerState = true;
         rect = gameObject.GetComponent<RectTransform>();
     }
-
-    // Update is called once per frame
-    void Update()
+    
+    public void ItemBanner(string Title, string info)
     {
-        //필요한데서 갖다쓰면 되는 함수 => StartCoroutine(CallBanner());
+        if(bannerState)
+        {
+            StageBannerControl(0); // stage Text 전부 끄기
+
+            itemTitle.text = Title;
+            itemInfo.text = info;
+
+            StartCoroutine(CallBanner());
+        }
+    }
+    public void StageBanner(int stage)
+    {
+        if(bannerState)
+        {
+            StageBannerControl(stage);
+            itemTitle.text = "";
+            itemInfo.text = "";
+            StartCoroutine(CallBanner());
+        }
+    }
+
+    void StageBannerControl(int stage)
+    {
+        for (int i = 0; i < stageTEXT.Length; i++)
+        {
+            if (i == stage - 1)
+                stageTEXT[i].SetActive(true);
+            else
+                stageTEXT[i].SetActive(false);
+        }
     }
     IEnumerator CallBanner()
     {
-        while (rect.anchoredPosition.x <= 0)
+        if(bannerState)
         {
-            transform.Translate(Vector3.right * 7000f * Time.deltaTime);
+            bannerState = false;
+            while (rect.anchoredPosition.x <= 0)
+            {
+                transform.Translate(Vector3.right * 7000f * Time.deltaTime);
 
-            // 한 프레임을 기다립니다.
-            yield return null;
-        }
+                // 한 프레임을 기다립니다.
+                yield return null;
+            }
 
-        rect.anchoredPosition = new Vector3(0,rect.anchoredPosition.y,0);
+            rect.anchoredPosition = new Vector3(0,rect.anchoredPosition.y,0);
         
-        yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(1.3f);
 
-        while (rect.anchoredPosition.x <= 1000)
-        {
-            transform.Translate(Vector3.right * 7000f * Time.deltaTime);
+            while (rect.anchoredPosition.x <= 1000)
+            {
+                transform.Translate(Vector3.right * 7000f * Time.deltaTime);
 
-            // 한 프레임을 기다립니다.
-            yield return null;
+                // 한 프레임을 기다립니다.
+                yield return null;
+            }
+
+            rect.anchoredPosition = new Vector3(-1000, rect.anchoredPosition.y, 0);
+            bannerState = true;
         }
-
-        rect.anchoredPosition = new Vector3(-1000, rect.anchoredPosition.y, 0);
     }
 }

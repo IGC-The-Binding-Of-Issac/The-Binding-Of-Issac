@@ -7,6 +7,10 @@ public class Pentagram : ItemInfo
     private void Start()
     {
         SetItemCode(7);
+        SetItemString("오망성",
+            "공격력 증가",
+            "습득 시 공격력 + 1" +
+            "\n최대 체력 + 1칸");
     }
     public override void UseItem()
     {
