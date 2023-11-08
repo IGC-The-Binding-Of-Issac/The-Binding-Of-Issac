@@ -26,6 +26,7 @@ public class ItemExplane : MonoBehaviour
         {
             if (col[0].GetComponent<ItemInfo>() != null)
             {
+
                 itemInfo1th.text = col[0].GetComponent<ItemInfo>().itemTitle;
                 itemInfo2nd.text = col[0].GetComponent<ItemInfo>().itemInformation;
             }
