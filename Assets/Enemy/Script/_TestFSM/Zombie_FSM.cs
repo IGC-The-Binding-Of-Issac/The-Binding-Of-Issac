@@ -22,19 +22,20 @@ public class Zombie_FSM : MonoBehaviour // 이게 Enemy 스크립트가 되고 , 이걸 상�
     /// </summary>
 
     // 머신에 들어갈 스테이드
-    public Head_Machine<Zombie_FSM> m_state;
+    public Head_Machine<Zombie_FSM> m_state; 
 
     // 좀비가 미리 가지고 있을 state
     // System.Enum.GetValues(typeof(state이름)).Length : enum 타입의 길이 구하기
     // 여기선 [4]
     public FSM<Zombie_FSM>[] m_arrState = new FSM<Zombie_FSM>[System.Enum.GetValues(typeof(ZOMBIE_STATE)).Length];
 
-
     public float m_findRange;     // 좀비가 다른 오브젝트를 찾을 범위
     public Transform m_TransTarget; //  좀비가 찾은 타겟
 
     public int m_iHealth; // 좀비의 체력
     public float m_fAttackRange; // 좀비의 공격 범위
+    public bool isTest; //true 이면 상태가 변환됨 ,  enemy에서 isplayerIn 같은 변수
+
 
     public ZOMBIE_STATE m_eCurState; // 좀비의 현재 상태 
     public ZOMBIE_STATE m_ePrevState; // 좀비의 이전 상태 
