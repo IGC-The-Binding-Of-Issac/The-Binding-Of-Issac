@@ -1,0 +1,130 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5e6fedc2472449cead18ef23b5cb30d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Library:
+  - m_Name: FrontWalk
+    m_Hash: 708961936
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: Isaac_39
+      m_Hash: 211259971
+      m_Sprite: {fileID: 1701875990, guid: 3c377f6263ae5d44e80c80c2f17334db, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: -1207515481, guid: 7fbefccd4d1b5e4408a83760fccbf5d6, type: 3}
+    - m_Name: Isaac_40
+      m_Hash: 973782048
+      m_Sprite: {fileID: -1862935459, guid: 3c377f6263ae5d44e80c80c2f17334db, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: 1944032541, guid: 7fbefccd4d1b5e4408a83760fccbf5d6, type: 3}
+    - m_Name: Isaac_41
+      m_Hash: 218991798
+      m_Sprite: {fileID: -303298277, guid: 3c377f6263ae5d44e80c80c2f17334db, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: -140367925, guid: 7fbefccd4d1b5e4408a83760fccbf5d6, type: 3}
+    - m_Name: Isaac_42
+      m_Hash: 335863052
+      m_Sprite: {fileID: -1245284235, guid: 3c377f6263ae5d44e80c80c2f17334db, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: 1480341366, guid: 7fbefccd4d1b5e4408a83760fccbf5d6, type: 3}
+    - m_Name: Isaac_43
+      m_Hash: 587459994
+      m_Sprite: {fileID: 2047030156, guid: 3c377f6263ae5d44e80c80c2f17334db, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: 2032739224, guid: 7fbefccd4d1b5e4408a83760fccbf5d6, type: 3}
+    - m_Name: Isaac_44
+      m_Hash: 1030191161
+      m_Sprite: {fileID: 18167455, guid: 3c377f6263ae5d44e80c80c2f17334db, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: -1877666796, guid: 7fbefccd4d1b5e4408a83760fccbf5d6, type: 3}
+    - m_Name: Isaac_45
+      m_Hash: 174082223
+      m_Sprite: {fileID: 122414844, guid: 3c377f6263ae5d44e80c80c2f17334db, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: -1289370250, guid: 7fbefccd4d1b5e4408a83760fccbf5d6, type: 3}
+    - m_Name: Isaac_46
+      m_Hash: 325654805
+      m_Sprite: {fileID: 607761823, guid: 3c377f6263ae5d44e80c80c2f17334db, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: 1994817381, guid: 7fbefccd4d1b5e4408a83760fccbf5d6, type: 3}
+    - m_Name: Isaac_47
+      m_Hash: 611199363
+      m_Sprite: {fileID: 271110167, guid: 3c377f6263ae5d44e80c80c2f17334db, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: 688255871, guid: 7fbefccd4d1b5e4408a83760fccbf5d6, type: 3}
+    - m_Name: Isaac_48
+      m_Hash: 886125586
+      m_Sprite: {fileID: 1056548632, guid: 3c377f6263ae5d44e80c80c2f17334db, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: -1418360943, guid: 7fbefccd4d1b5e4408a83760fccbf5d6, type: 3}
+    m_FromMain: 1
+    m_EntryOverrideCount: 10
+  - m_Name: SideWalk
+    m_Hash: 787848572
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: Isaac_72
+      m_Hash: 1059688143
+      m_Sprite: {fileID: -691277245, guid: 3c377f6263ae5d44e80c80c2f17334db, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: 1725492822, guid: 7fbefccd4d1b5e4408a83760fccbf5d6, type: 3}
+    - m_Name: Isaac_73
+      m_Hash: 137281113
+      m_Sprite: {fileID: -898714528, guid: 3c377f6263ae5d44e80c80c2f17334db, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: 1150774329, guid: 7fbefccd4d1b5e4408a83760fccbf5d6, type: 3}
+    - m_Name: Isaac_74
+      m_Hash: 373959674
+      m_Sprite: {fileID: -951082364, guid: 3c377f6263ae5d44e80c80c2f17334db, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: 593569274, guid: 7fbefccd4d1b5e4408a83760fccbf5d6, type: 3}
+    - m_Name: Isaac_75
+      m_Hash: 558701420
+      m_Sprite: {fileID: -629777350, guid: 3c377f6263ae5d44e80c80c2f17334db, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: -1036567649, guid: 7fbefccd4d1b5e4408a83760fccbf5d6, type: 3}
+    - m_Name: Isaac_76
+      m_Hash: 943999702
+      m_Sprite: {fileID: 71150905, guid: 3c377f6263ae5d44e80c80c2f17334db, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: 1186003624, guid: 7fbefccd4d1b5e4408a83760fccbf5d6, type: 3}
+    - m_Name: Isaac_77
+      m_Hash: 256080448
+      m_Sprite: {fileID: -909317984, guid: 3c377f6263ae5d44e80c80c2f17334db, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: 1789954774, guid: 7fbefccd4d1b5e4408a83760fccbf5d6, type: 3}
+    - m_Name: Isaac_78
+      m_Hash: 536635345
+      m_Sprite: {fileID: 34181329, guid: 3c377f6263ae5d44e80c80c2f17334db, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: 1638291521, guid: 7fbefccd4d1b5e4408a83760fccbf5d6, type: 3}
+    - m_Name: Isaac_79
+      m_Hash: 687560519
+      m_Sprite: {fileID: -751055670, guid: 3c377f6263ae5d44e80c80c2f17334db, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: -761039588, guid: 7fbefccd4d1b5e4408a83760fccbf5d6, type: 3}
+    - m_Name: Isaac_80
+      m_Hash: 381678380
+      m_Sprite: {fileID: -2145759873, guid: 3c377f6263ae5d44e80c80c2f17334db, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: 1668152203, guid: 7fbefccd4d1b5e4408a83760fccbf5d6, type: 3}
+    - m_Name: Isaac_81
+      m_Hash: 565756858
+      m_Sprite: {fileID: -617940810, guid: 3c377f6263ae5d44e80c80c2f17334db, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: 143541029, guid: 7fbefccd4d1b5e4408a83760fccbf5d6, type: 3}
+    m_FromMain: 1
+    m_EntryOverrideCount: 10
+  m_PrimaryLibraryGUID: b328e7ef20526a34ea82483670ebbd20
+  m_ModificationHash: 638350671742219233
+  m_Version: 1

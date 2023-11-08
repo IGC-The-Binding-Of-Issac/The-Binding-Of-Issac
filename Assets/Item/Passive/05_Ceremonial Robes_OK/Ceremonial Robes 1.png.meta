@@ -1,0 +1,943 @@
+fileFormatVersion: 2
+guid: 7fbefccd4d1b5e4408a83760fccbf5d6
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Ceremonial Robes 1_0
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 223
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ec51bbd08f0b6449a57019fdf4b2a4a
+      internalID: -1066876600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ceremonial Robes 1_1
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 223
+        width: 32
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b8dd71ad0c1e5646b99b8ac0bc39123
+      internalID: -518620764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ceremonial Robes 1_2
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 223
+        width: 32
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56db1984782a9994c8b306492be41ca8
+      internalID: 1276351304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ceremonial Robes 1_3
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 223
+        width: 32
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 868ff07fe20a6ff4dbf422044bc8bea1
+      internalID: -1674112189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ceremonial Robes 1_4
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 221
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 402f8bb3174be264db1e132e008e45d2
+      internalID: -176799348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ceremonial Robes 1_5
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 221
+        width: 32
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b728d6742ce0f444b327af812558152
+      internalID: 1298259972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ceremonial Robes 1_7
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 190
+        width: 32
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81885c81c35a7cb44940f95d74a280a4
+      internalID: -974991257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ceremonial Robes 1_8
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 171
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eca24ef6b4db1c74880d7369b024e01c
+      internalID: 1725492822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ceremonial Robes 1_9
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 171
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15e600c812023b342855651ef845569d
+      internalID: 1150774329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ceremonial Robes 1_10
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 171
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b5f891ef5523c844ae0c2dac7f443a8
+      internalID: 593569274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ceremonial Robes 1_11
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 171
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f24607ad8d9a1ff4aa6ed079ec7d83a7
+      internalID: -1036567649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ceremonial Robes 1_12
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 171
+        width: 18
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7e69a1b283a3104d9f234bbd53e069c
+      internalID: 1186003624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ceremonial Robes 1_13
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 171
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5cd8f8dafab92447a7128e761293449
+      internalID: 1789954774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ceremonial Robes 1_14
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 171
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc724746bc70f8142a40bf8d34b80c34
+      internalID: 1638291521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ceremonial Robes 1_15
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 171
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73bd0acbea601684f9834572ab245035
+      internalID: -761039588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ceremonial Robes 1_16
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 139
+        width: 17
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7704a7d4b46a7f146992fa185d867128
+      internalID: 1668152203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ceremonial Robes 1_17
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 139
+        width: 18
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0fe8911cd2882d46adf37211dd5c0f6
+      internalID: 143541029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ceremonial Robes 1_18
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 107
+        width: 18
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0dcb7e6ca18e95d41aa34b3b06425223
+      internalID: -1207515481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ceremonial Robes 1_19
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 107
+        width: 18
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aabf7cc596f75f948b0d4f8e69eaf0ac
+      internalID: 1944032541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ceremonial Robes 1_20
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 107
+        width: 18
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5706abba1ca817a4d8242719219027fb
+      internalID: -140367925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ceremonial Robes 1_21
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 106
+        width: 18
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ea3782dbbcc4ce4ca0a3004b901ff93
+      internalID: 1480341366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ceremonial Robes 1_22
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 105
+        width: 18
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ed6c99ab47830a45ad1def890b4c055
+      internalID: 2032739224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ceremonial Robes 1_23
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 107
+        width: 18
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ae104c28e792da44b87e48e05761f38
+      internalID: -1877666796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ceremonial Robes 1_24
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 107
+        width: 18
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a86f270f99a101141b2412da0600aae0
+      internalID: -1289370250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ceremonial Robes 1_25
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 106
+        width: 18
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 911c24fa7e1069441aa22c44ab29f824
+      internalID: 1994817381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ceremonial Robes 1_26
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 74
+        width: 18
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fee743d405f77624e986da4ea43a9068
+      internalID: 688255871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ceremonial Robes 1_27
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 73
+        width: 18
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bceea795f5c7b64fb81a169e57cf0bb
+      internalID: -1418360943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ceremonial Robes 1_28
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 43
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c16cc5762f9a06418e7db578f858e8e
+      internalID: 2011558999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ceremonial Robes 1_29
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 43
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ca9b9878c0b22b44a08a9895fb7a041
+      internalID: 525285506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ceremonial Robes 1_30
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 43
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83207ac5c4a01774888ace0174773ffc
+      internalID: 1052914395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ceremonial Robes 1_31
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 43
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7bf2b3ef40816c4e822521629c49a23
+      internalID: -569058297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ceremonial Robes 1_32
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 43
+        width: 18
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af953c2ee3fcf5744ad282645354cce4
+      internalID: 36235117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ceremonial Robes 1_33
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 43
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 301f52e904f50bb438e48137fbbe9bdb
+      internalID: -1409794841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ceremonial Robes 1_34
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 43
+        width: 15
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98091adb7caa4d0439241a86b8f8b638
+      internalID: 2141182670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ceremonial Robes 1_35
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 43
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5e8b8745d1a5004b8f059b0e3349bfb
+      internalID: -362217333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ceremonial Robes 1_36
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 14
+        width: 17
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 785bd1f81ae89c64792f6cb6fc4eec3e
+      internalID: -1003608402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ceremonial Robes 1_37
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 14
+        width: 18
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d704e16d10d1f84e90a01935e46fcf4
+      internalID: -475547474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: ff9079b2b5f4f034c8d43cf60e1eaa3d
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Ceremonial Robes 1_0: -1066876600
+      Ceremonial Robes 1_1: -518620764
+      Ceremonial Robes 1_10: 593569274
+      Ceremonial Robes 1_11: -1036567649
+      Ceremonial Robes 1_12: 1186003624
+      Ceremonial Robes 1_13: 1789954774
+      Ceremonial Robes 1_14: 1638291521
+      Ceremonial Robes 1_15: -761039588
+      Ceremonial Robes 1_16: 1668152203
+      Ceremonial Robes 1_17: 143541029
+      Ceremonial Robes 1_18: -1207515481
+      Ceremonial Robes 1_19: 1944032541
+      Ceremonial Robes 1_2: 1276351304
+      Ceremonial Robes 1_20: -140367925
+      Ceremonial Robes 1_21: 1480341366
+      Ceremonial Robes 1_22: 2032739224
+      Ceremonial Robes 1_23: -1877666796
+      Ceremonial Robes 1_24: -1289370250
+      Ceremonial Robes 1_25: 1994817381
+      Ceremonial Robes 1_26: 688255871
+      Ceremonial Robes 1_27: -1418360943
+      Ceremonial Robes 1_28: 2011558999
+      Ceremonial Robes 1_29: 525285506
+      Ceremonial Robes 1_3: -1674112189
+      Ceremonial Robes 1_30: 1052914395
+      Ceremonial Robes 1_31: -569058297
+      Ceremonial Robes 1_32: 36235117
+      Ceremonial Robes 1_33: -1409794841
+      Ceremonial Robes 1_34: 2141182670
+      Ceremonial Robes 1_35: -362217333
+      Ceremonial Robes 1_36: -1003608402
+      Ceremonial Robes 1_37: -475547474
+      Ceremonial Robes 1_38: 1906395734
+      Ceremonial Robes 1_4: -176799348
+      Ceremonial Robes 1_5: 1298259972
+      Ceremonial Robes 1_6: 696160209
+      Ceremonial Robes 1_7: -974991257
+      Ceremonial Robes 1_8: 1725492822
+      Ceremonial Robes 1_9: 1150774329
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

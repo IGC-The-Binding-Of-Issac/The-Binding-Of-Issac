@@ -21,5 +21,7 @@ public class CeremonialRobes : ItemInfo
         PlayerManager.instance.playerDamage += 1;
 
         //캐릭터 텍스처 변경
+        PlayerManager.instance.SetBodySkin(2);
+        PlayerManager.instance.SetHeadSkin(4);
     }
 }

@@ -19,7 +19,6 @@ public class PlayerController : MonoBehaviour
     public Transform useActiveItemImage;
 
     [Header("Sprite")]
-    public Sprite defaultTearImg;
     SpriteRenderer bodyRenderer;
     SpriteRenderer headRenderer;
     SpriteRenderer headItem;
@@ -61,7 +60,6 @@ public class PlayerController : MonoBehaviour
         bodyRenderer = body.GetComponent<SpriteRenderer>();
         headRenderer = head.GetComponent<SpriteRenderer>();
         headItem = GameManager.instance.playerObject.transform.GetChild(6).gameObject.GetComponent<SpriteRenderer>();
-        PlayerManager.instance.tearObj.GetComponent<SpriteRenderer>().sprite = defaultTearImg;
 
         canUseActive = true; // 액티브 아이템 개갈김을 방지하기 위한
         canChangeItem = true; // 액티브 아이템 변경 과부하를 위한

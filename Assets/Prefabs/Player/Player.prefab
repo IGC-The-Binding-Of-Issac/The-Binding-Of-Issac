@@ -400,7 +400,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 102
+  m_SortingOrder: 104
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -476,7 +476,6 @@ MonoBehaviour:
   body: {fileID: 7152328079427505730}
   head: {fileID: 1042874374983917579}
   useActiveItemImage: {fileID: 8591384693438208543}
-  defaultTearImg: {fileID: 1837185413, guid: 64f0cce7912310a489ab219e28d20338, type: 3}
   tear: {fileID: 0}
   tearPoint: {fileID: 4903488415990779368}
   CheckedObject: {fileID: 0}

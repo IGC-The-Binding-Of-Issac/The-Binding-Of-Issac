@@ -1,0 +1,89 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5e6fedc2472449cead18ef23b5cb30d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Library:
+  - m_Name: Tear
+    m_Hash: 702153940
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: KakaoTalk_20230912_161557715_7
+      m_Hash: 404353166
+      m_Sprite: {fileID: 1837185413, guid: 64f0cce7912310a489ab219e28d20338, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: 1034744742, guid: 13909fd86a5360e45845f0bc0bd08936, type: 3}
+    - m_Name: KakaoTalk_20230912_161557715_1
+      m_Hash: 830100923
+      m_Sprite: {fileID: 181905590, guid: 64f0cce7912310a489ab219e28d20338, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: 1781315581, guid: be90189ca17b9e14c9a36b708d0ba034, type: 3}
+    - m_Name: KakaoTalk_20230912_161557715_2
+      m_Hash: 678626305
+      m_Sprite: {fileID: 449630241, guid: 64f0cce7912310a489ab219e28d20338, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: 182128491, guid: be90189ca17b9e14c9a36b708d0ba034, type: 3}
+    - m_Name: KakaoTalk_20230912_161557715_3
+      m_Hash: 527709335
+      m_Sprite: {fileID: -1009354597, guid: 64f0cce7912310a489ab219e28d20338, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: 1593174944, guid: be90189ca17b9e14c9a36b708d0ba034, type: 3}
+    - m_Name: KakaoTalk_20230912_161557715_4
+      m_Hash: 17867060
+      m_Sprite: {fileID: -1404423771, guid: 64f0cce7912310a489ab219e28d20338, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: 753582106, guid: be90189ca17b9e14c9a36b708d0ba034, type: 3}
+    - m_Name: KakaoTalk_20230912_161557715_0
+      m_Hash: 108881197
+      m_Sprite: {fileID: -1903477612, guid: 64f0cce7912310a489ab219e28d20338, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: -18677472, guid: be90189ca17b9e14c9a36b708d0ba034, type: 3}
+    - m_Name: KakaoTalk_20230912_161557715_8
+      m_Hash: 145157407
+      m_Sprite: {fileID: -190375345, guid: 64f0cce7912310a489ab219e28d20338, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: -1484716799, guid: be90189ca17b9e14c9a36b708d0ba034, type: 3}
+    - m_Name: KakaoTalk_20230912_161557715_9
+      m_Hash: 1067572617
+      m_Sprite: {fileID: 932063844, guid: 64f0cce7912310a489ab219e28d20338, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: 687311805, guid: be90189ca17b9e14c9a36b708d0ba034, type: 3}
+    - m_Name: KakaoTalk_20230912_161557715_5
+      m_Hash: 907514274
+      m_Sprite: {fileID: -1509927245, guid: 64f0cce7912310a489ab219e28d20338, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: -1539631731, guid: be90189ca17b9e14c9a36b708d0ba034, type: 3}
+    - m_Name: KakaoTalk_20230912_161557715_6
+      m_Hash: 790544408
+      m_Sprite: {fileID: 801940445, guid: 64f0cce7912310a489ab219e28d20338, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: -2011006689, guid: be90189ca17b9e14c9a36b708d0ba034, type: 3}
+    - m_Name: KakaoTalk_20230912_161557715_11
+      m_Hash: 530513894
+      m_Sprite: {fileID: 351262200, guid: 64f0cce7912310a489ab219e28d20338, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: -255015700, guid: be90189ca17b9e14c9a36b708d0ba034, type: 3}
+    - m_Name: KakaoTalk_20230912_161557715_12
+      m_Hash: 110603868
+      m_Sprite: {fileID: 1566424551, guid: be90189ca17b9e14c9a36b708d0ba034, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1566424551, guid: be90189ca17b9e14c9a36b708d0ba034, type: 3}
+    - m_Name: New Label
+      m_Hash: 259326342
+      m_Sprite: {fileID: -2003434038, guid: be90189ca17b9e14c9a36b708d0ba034, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -2003434038, guid: be90189ca17b9e14c9a36b708d0ba034, type: 3}
+    m_FromMain: 1
+    m_EntryOverrideCount: 13
+  m_PrimaryLibraryGUID: d5a9160adc143e847990f3fb5598bec6
+  m_ModificationHash: 638350665617211251
+  m_Version: 1
