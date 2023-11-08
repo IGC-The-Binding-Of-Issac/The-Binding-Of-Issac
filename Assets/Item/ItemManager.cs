@@ -46,9 +46,4 @@ public class ItemManager : MonoBehaviour
         TrinketItems = new bool[100];
         ActiveItems = new bool[100];
     }
-    /*
-     * 하나의 delegate로 여러 함수들에 접근해 실행
-     * 각 아이템의 기능 함수는 여기서 작성
-     * 획득한 아이템의 해당 기능 함수들을 PlayerManager 스크립트에서 참조
-     */
 }

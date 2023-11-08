@@ -71,6 +71,7 @@ public class GameManager : MonoBehaviour
 
                 SoundManager.instance.OnStageBGM();
                 SoundManager.instance.SFXInit();
+                StartCoroutine(UIManager.instance.StageBanner(stageLevel));
                 break;
             }
         }
