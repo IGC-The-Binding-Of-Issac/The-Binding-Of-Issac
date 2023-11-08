@@ -31,6 +31,7 @@ public class PlayerManager : MonoBehaviour
 
     public bool CanGetDamage = true; // 데미지를 받을 수 있는지 확인.
     public int CanBlockDamage = 0; // Holy Mantle 습득 시 데미지를 5회 방어해준다.
+    public int deathCount = 0;
     float hitDelay = .5f; // 피격 딜레이
 
     [Header("unity setup")]
@@ -98,6 +99,18 @@ public class PlayerManager : MonoBehaviour
         PlayerInitialization();
     }
 
+    public void CheckedPlayerHP()
+    {
+        if (playerHp<=0)
+        {
+            GameManager.instance.playerObject.GetComponent<PlayerController>().Dead();
+            Invoke("GameOver", 0.7f);
+        }
+        else if (playerHp > playerMaxHp)
+        {
+            playerHp = playerMaxHp;
+        }
+    }
 
     public void GetDamage()
     {
@@ -119,10 +132,10 @@ public class PlayerManager : MonoBehaviour
             else //체력이 0일 때
             {
             int[] liveOrDeath = { 0, 1 }; 
-            int randomNum = UnityEngine.Random.Range(0, 2);
+            int randomNum = (UnityEngine.Random.Range(0, 100000) % 2);
             if (liveOrDeath[randomNum] == 0) 
                  {
-                    playerHp = playerMaxHp; //최대 체력만큼 채워줌
+                    playerHp = 2; //최대 체력만큼 채워줌
                     StartCoroutine(HitDelay());
                     GameManager.instance.playerObject.GetComponent<PlayerController>().Hit();
                  }
@@ -131,6 +144,28 @@ public class PlayerManager : MonoBehaviour
                     GameManager.instance.playerObject.GetComponent<PlayerController>().Dead(); //그냥 죽음
                     Invoke("GameOver", 0.7f);
                  }
+            }
+        }
+        else if (ItemManager.instance.PassiveItems[15] && CanGetDamage && CanBlockDamage == 0) // Guppy's tail 먹었을 때
+        {
+            playerHp--;
+            CanGetDamage = false;
+            if (playerHp > 0)
+            {
+                StartCoroutine(HitDelay());
+                GameManager.instance.playerObject.GetComponent<PlayerController>().Hit();
+            }
+            else if (playerHp <= 0 && deathCount >= 1)
+            {
+                playerHp = playerMaxHp;
+                StartCoroutine(HitDelay());
+                GameManager.instance.playerObject.GetComponent<PlayerController>().Hit();
+                deathCount--;
+            }
+            else
+            {
+                GameManager.instance.playerObject.GetComponent<PlayerController>().Dead(); //그냥 죽음
+                Invoke("GameOver", 0.7f);
             }
         }
         else if (CanGetDamage && CanBlockDamage == 0)

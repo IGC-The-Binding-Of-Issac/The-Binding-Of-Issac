@@ -22,6 +22,7 @@ public class Tick : TrinketInfo
         PlayerManager.instance.playerDamage += 0.3f;
         PlayerManager.instance.playerMoveSpeed -= 0.24f;
         PlayerManager.instance.playerHp -= 2;
+        PlayerManager.instance.CheckedPlayerHP();
         PlayerManager.instance.playerShotDelay += 0.2f;
         if(PlayerManager.instance.playerHp <= 0)
         {
