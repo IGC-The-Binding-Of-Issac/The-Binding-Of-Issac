@@ -17,7 +17,7 @@ public class HalfPill : ActiveInfo
     {
         if(canUse)
         {
-        PlayerManager.instance.playerShotDelay -= 0.15f;
+        PlayerManager.instance.playerShotDelay -= 0.05f;
         PlayerManager.instance.CheckedShotDelay();
         SetActiveString("»¡¸®»¡¸®",
         "°ø°Ý ¼Óµµ Áõ°¡",
