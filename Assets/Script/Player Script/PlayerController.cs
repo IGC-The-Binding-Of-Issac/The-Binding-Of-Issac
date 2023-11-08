@@ -162,7 +162,21 @@ public void Shoot(float x, float y)
         //발사 기능 구현
         //게임 중 눈물 생성 눈물 프리펩, 발사 시작위치, 회전
 
+        //칼 먹었을 때
+        if (ItemManager.instance.PassiveItems[13])
+        {
+            Vector3 knifeRotate = new Vector3(0, 0, 0);
+            if (x == -1) knifeRotate = new Vector3(180, 0, 90);
+            else if (x == 1) knifeRotate = new Vector3(0, 0, 270);
+            else if (y == 1) knifeRotate = new Vector3(0, 180, 0);
+            else if (y == -1) knifeRotate = new Vector3(0, 0, 180);
+            tear = Instantiate(PlayerManager.instance.tearObj, firePoint, Quaternion.Euler(knifeRotate.x, knifeRotate.y, knifeRotate.z)) as GameObject;
+        }
+        //나머지
+        else
+        {
         tear = Instantiate(PlayerManager.instance.tearObj, firePoint, transform.rotation) as GameObject;
+        } 
         tear.GetComponent<Rigidbody2D>().velocity = new Vector3(x * tearSpeed, y * tearSpeed, 0);
         CheckedObject = null;
         
