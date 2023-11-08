@@ -46,6 +46,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject loadingImage;
     [SerializeField] Sprite[] volumeNum;
     [SerializeField] GameObject[] volumeObj;
+
     private void Start()
     {
         SetPlayerMaxHP(); // 하트HP 초기세팅
