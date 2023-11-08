@@ -6,8 +6,12 @@ public class Ipecac : ItemInfo
 {
     private void Start()
     {
-        itemCode = 10;
-        //SetItemCode(9);
+       
+        SetItemCode(9);
+        SetItemString("구토제",
+            "토할 것 같아..",
+            "습득 시 체력 반 칸 감소" +
+            "\n외형이 누렇게 변한다.");
     }
 
     public override void UseItem()
