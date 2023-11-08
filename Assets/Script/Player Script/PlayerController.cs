@@ -44,8 +44,12 @@ public class PlayerController : MonoBehaviour
 
     
     [Header("Audio")]
-    public AudioClip[] audioClips;
     private AudioSource audioSource;
+    public AudioClip[] hitClips;
+    public AudioClip[] deadClips;
+    public AudioClip getItemClip;
+    public AudioClip useItemClip;
+    public AudioClip ShootClip;
 
     [Header("equipment")]
     public GameObject HeadItem;
@@ -392,18 +396,11 @@ public void Shoot(float x, float y)
         HitSound();
     }
 
-    public void HitSound()
-    {
-        int randomIndex = Random.Range(0, audioClips.Length);
-
-        audioSource.clip = audioClips[randomIndex];
-        audioSource.Play();
-    }
-
-
     // 사망 애니메이션
     public void Dead()
     {
+        DeadSound();
+
         //player head, player body 오브젝트 찾아서 끄기
         head.gameObject.SetActive(false);
         body.gameObject.SetActive(false);
@@ -435,6 +432,7 @@ public void Shoot(float x, float y)
 
     public IEnumerator GetTrinketItem()
     {
+        GetitemSound();
         //원래 모습은 가려둠
         headRenderer.color = new Color(1, 1, 1, 0);
         bodyRenderer.color = new Color(1, 1, 1, 0);
@@ -452,6 +450,7 @@ public void Shoot(float x, float y)
 
     public IEnumerator GetActiveItem()
     {
+        GetitemSound();
         headRenderer.color = new Color(1, 1, 1, 0);
         bodyRenderer.color = new Color(1, 1, 1, 0);
         headItem.color = new Color(1, 1, 1, 0);
@@ -467,6 +466,7 @@ public void Shoot(float x, float y)
 
     public IEnumerator UseActiveItem()
     {
+        UseItemSound();
         Sprite activeSpr = ItemManager.instance.ActiveItem.GetComponent<SpriteRenderer>().sprite;
         useActiveItemImage.GetComponent<SpriteRenderer>().sprite = activeSpr;
         headRenderer.color = new Color(1, 1, 1, 0);
@@ -496,4 +496,33 @@ public void Shoot(float x, float y)
             }
         }
     }
+
+    #region Sound
+    public void HitSound()
+    {
+        int randomIndex = Random.Range(0, hitClips.Length);
+
+        audioSource.clip = hitClips[randomIndex];
+        audioSource.Play();
+    }
+    public void DeadSound()
+    {
+        int randomIndex = Random.Range(0, deadClips.Length);
+
+        audioSource.clip = deadClips[randomIndex];
+        audioSource.Play();
+    }
+
+    public void GetitemSound()
+    {
+        audioSource.clip = getItemClip;
+        audioSource.Play();
+    }
+
+    public void UseItemSound()
+    {
+        audioSource.clip = useItemClip;
+        audioSource.Play();
+    }
+    #endregion
 }

@@ -10,8 +10,9 @@ public class Dr_fetus : ItemInfo
     {
         SetItemCode(16);
         SetItemString("태아 박사",
-            "폭탄 발사",
-            "");
+                      "폭탄 발사",
+                      "습득 후 공격 시 폭탄을 발사한다."
+                    + "공격속도 * 0.5");
     }
 
     public override void UseItem()

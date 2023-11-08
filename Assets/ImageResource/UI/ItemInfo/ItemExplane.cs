@@ -21,32 +21,35 @@ public class ItemExplane : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        col = Physics2D.OverlapCircleAll(GameManager.instance.playerObject.transform.position, radius, itemlayer);
-        if (col.Length > 0)
+        if(GameManager.instance.playerObject != null)
         {
-            if (col[0].GetComponent<ItemInfo>() != null)
+            col = Physics2D.OverlapCircleAll(GameManager.instance.playerObject.transform.position, radius, itemlayer);
+            if (col.Length > 0)
             {
 
-                itemInfo1th.text = col[0].GetComponent<ItemInfo>().itemTitle;
-                itemInfo2nd.text = col[0].GetComponent<ItemInfo>().itemInformation;
-            }
+                if (col[0].GetComponent<ItemInfo>() != null)
+                {
+                    itemInfo1th.text = col[0].GetComponent<ItemInfo>().itemTitle;
+                    itemInfo2nd.text = col[0].GetComponent<ItemInfo>().itemInformation;
+                }
 
-            else if (col[0].GetComponent<ActiveInfo>() != null)
-            {
-                itemInfo1th.text = col[0].GetComponent<ActiveInfo>().itemTitle;
-                itemInfo2nd.text = col[0].GetComponent<ActiveInfo>().itemInformation;
-            }
+                else if (col[0].GetComponent<ActiveInfo>() != null)
+                {
+                    itemInfo1th.text = col[0].GetComponent<ActiveInfo>().itemTitle;
+                    itemInfo2nd.text = col[0].GetComponent<ActiveInfo>().itemInformation;
+                }
 
-            else if (col[0].GetComponent<TrinketInfo>() != null)
-            {
-                itemInfo1th.text = col[0].GetComponent<TrinketInfo>().itemTitle;
-                itemInfo2nd.text = col[0].GetComponent<TrinketInfo>().itemInformation;
+                else if (col[0].GetComponent<TrinketInfo>() != null)
+                {
+                    itemInfo1th.text = col[0].GetComponent<TrinketInfo>().itemTitle;
+                    itemInfo2nd.text = col[0].GetComponent<TrinketInfo>().itemInformation;
+                }
             }
-        }
-        else
-        {
-            itemInfo1th.text = "";
-            itemInfo2nd.text = "";
+            else
+            {
+                itemInfo1th.text = "";
+                itemInfo2nd.text = "";
+            }
         }
     }
 }

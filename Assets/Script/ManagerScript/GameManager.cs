@@ -66,6 +66,7 @@ public class GameManager : MonoBehaviour
             if (stageGenerate.CreateStage(stageSize, stageMinimunRoom))
             {
                 roomGenerate.ClearRoom(); // room reset -> create
+                SoundManager.instance.sfxObjects = new List<AudioSource>(); // soundManager의 SFXObjects 초기화.
                 roomGenerate.CreateRoom(stageLevel, stageSize); // room create
                 myCamera.transform.position = playerObject.transform.position;
 
