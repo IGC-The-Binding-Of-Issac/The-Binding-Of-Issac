@@ -17,15 +17,6 @@ public class DeadCat : ItemInfo
 
     public override void UseItem()
     {
-        PlayerManager.instance.playerMaxHp = 2;
-        if (PlayerManager.instance.playerMaxHp < PlayerManager.instance.playerHp)
-        {
-            PlayerManager.instance.playerHp = PlayerManager.instance.playerMaxHp;
-        }
-
-        if (PlayerManager.instance.playerHp == 0)
-        {
-            PlayerManager.instance.playerHp = PlayerManager.instance.playerMaxHp;
-        }
+        //기능은 playerManager에 구현되어 있음.
     }
 }

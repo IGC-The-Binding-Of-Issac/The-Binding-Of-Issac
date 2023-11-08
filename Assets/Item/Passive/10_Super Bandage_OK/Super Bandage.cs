@@ -18,6 +18,7 @@ public class SuperBandage : ItemInfo
     {
         PlayerManager.instance.playerMaxHp-=2;
         PlayerManager.instance.playerHp-=2;
+        PlayerManager.instance.CheckedPlayerHP();
         PlayerManager.instance.playerShotDelay-=0.1f;
         //Ä³¸¯ÅÍÀÇ ´«¹°ÀÌ »¡°²°Ô º¯ÇÑ´Ù.
         
