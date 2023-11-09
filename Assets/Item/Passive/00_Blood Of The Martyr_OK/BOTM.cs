@@ -23,7 +23,6 @@ public class BOTM : ItemInfo
         PlayerManager.instance.playerDamage++;
 
         //눈물 색깔 빨간색으로 변경
-        //PlayerManager.instance.tearObj.GetComponent<SpriteRenderer>().sprite = redTearImg;
         PlayerManager.instance.SetTearSkin(1);
 
         //월계관 달리는 함수 1초뒤 실행
@@ -36,7 +35,6 @@ public class BOTM : ItemInfo
     public void getBOTM()
     {
         //먹으면 캐릭터 위에 월계관 달림
-        //GameManager.instance.playerObject.transform.Find("HeadItem").GetComponent<SpriteRenderer>().sprite = MartyrImg;
         GameManager.instance.playerObject.GetComponent<PlayerController>().HeadItem.GetComponent<SpriteRenderer>().sprite = MartyrImg;
     }
 }

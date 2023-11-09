@@ -103,6 +103,7 @@ MonoBehaviour:
   itemDescription: 
   itemInformation: 
   canCollision: 0
+  HaloImg: {fileID: -1664830357, guid: b2209e2c29aa42547a794c20df1f8fbd, type: 3}
 --- !u!50 &1686944165519134249
 Rigidbody2D:
   serializedVersion: 4
