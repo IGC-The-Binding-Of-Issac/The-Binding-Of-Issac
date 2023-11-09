@@ -19,14 +19,14 @@ MonoBehaviour:
     m_OverrideEntries:
     - m_Name: Isaac_16
       m_Hash: 773778768
-      m_Sprite: {fileID: 1876812807, guid: 4e3d8c71907f3194cbfc0e2af313c93e, type: 3}
+      m_Sprite: {fileID: 910724852, guid: cbac921042960c44596445dab499e0c1, type: 3}
       m_FromMain: 0
-      m_SpriteOverride: {fileID: 1876812807, guid: 4e3d8c71907f3194cbfc0e2af313c93e, type: 3}
+      m_SpriteOverride: {fileID: 910724852, guid: cbac921042960c44596445dab499e0c1, type: 3}
     - m_Name: Isaac_17
       m_Hash: 421125574
-      m_Sprite: {fileID: -1753644264, guid: 4e3d8c71907f3194cbfc0e2af313c93e, type: 3}
+      m_Sprite: {fileID: -670792452, guid: cbac921042960c44596445dab499e0c1, type: 3}
       m_FromMain: 0
-      m_SpriteOverride: {fileID: -1753644264, guid: 4e3d8c71907f3194cbfc0e2af313c93e, type: 3}
+      m_SpriteOverride: {fileID: -670792452, guid: cbac921042960c44596445dab499e0c1, type: 3}
     m_FromMain: 0
     m_EntryOverrideCount: 2
   - m_Name: DownShot
@@ -35,14 +35,14 @@ MonoBehaviour:
     m_OverrideEntries:
     - m_Name: Isaac_12
       m_Hash: 695413065
-      m_Sprite: {fileID: -865531629, guid: 4e3d8c71907f3194cbfc0e2af313c93e, type: 3}
+      m_Sprite: {fileID: 742756766, guid: cbac921042960c44596445dab499e0c1, type: 3}
       m_FromMain: 0
-      m_SpriteOverride: {fileID: -865531629, guid: 4e3d8c71907f3194cbfc0e2af313c93e, type: 3}
+      m_SpriteOverride: {fileID: 742756766, guid: cbac921042960c44596445dab499e0c1, type: 3}
     - m_Name: Isaac_13
       m_Hash: 510925279
-      m_Sprite: {fileID: 690291757, guid: 4e3d8c71907f3194cbfc0e2af313c93e, type: 3}
+      m_Sprite: {fileID: 1362725801, guid: cbac921042960c44596445dab499e0c1, type: 3}
       m_FromMain: 0
-      m_SpriteOverride: {fileID: 690291757, guid: 4e3d8c71907f3194cbfc0e2af313c93e, type: 3}
+      m_SpriteOverride: {fileID: 1362725801, guid: cbac921042960c44596445dab499e0c1, type: 3}
     m_FromMain: 0
     m_EntryOverrideCount: 2
   - m_Name: LeftShot
@@ -51,14 +51,14 @@ MonoBehaviour:
     m_OverrideEntries:
     - m_Name: Isaac_18
       m_Hash: 161923159
-      m_Sprite: {fileID: 12985214, guid: 4e3d8c71907f3194cbfc0e2af313c93e, type: 3}
+      m_Sprite: {fileID: -671322515, guid: cbac921042960c44596445dab499e0c1, type: 3}
       m_FromMain: 0
-      m_SpriteOverride: {fileID: 12985214, guid: 4e3d8c71907f3194cbfc0e2af313c93e, type: 3}
+      m_SpriteOverride: {fileID: -671322515, guid: cbac921042960c44596445dab499e0c1, type: 3}
     - m_Name: Isaac_19
       m_Hash: 1050800321
-      m_Sprite: {fileID: 1035879870, guid: 4e3d8c71907f3194cbfc0e2af313c93e, type: 3}
+      m_Sprite: {fileID: -503540424, guid: cbac921042960c44596445dab499e0c1, type: 3}
       m_FromMain: 0
-      m_SpriteOverride: {fileID: 1035879870, guid: 4e3d8c71907f3194cbfc0e2af313c93e, type: 3}
+      m_SpriteOverride: {fileID: -503540424, guid: cbac921042960c44596445dab499e0c1, type: 3}
     m_FromMain: 0
     m_EntryOverrideCount: 2
   - m_Name: RightShot
@@ -67,16 +67,16 @@ MonoBehaviour:
     m_OverrideEntries:
     - m_Name: Isaac_14
       m_Hash: 1084540
-      m_Sprite: {fileID: -162889010, guid: 4e3d8c71907f3194cbfc0e2af313c93e, type: 3}
+      m_Sprite: {fileID: -1241985908, guid: cbac921042960c44596445dab499e0c1, type: 3}
       m_FromMain: 0
-      m_SpriteOverride: {fileID: -162889010, guid: 4e3d8c71907f3194cbfc0e2af313c93e, type: 3}
+      m_SpriteOverride: {fileID: -1241985908, guid: cbac921042960c44596445dab499e0c1, type: 3}
     - m_Name: Isaac_15
       m_Hash: 924302570
-      m_Sprite: {fileID: -1926387975, guid: 4e3d8c71907f3194cbfc0e2af313c93e, type: 3}
+      m_Sprite: {fileID: -2044197450, guid: cbac921042960c44596445dab499e0c1, type: 3}
       m_FromMain: 0
-      m_SpriteOverride: {fileID: -1926387975, guid: 4e3d8c71907f3194cbfc0e2af313c93e, type: 3}
+      m_SpriteOverride: {fileID: -2044197450, guid: cbac921042960c44596445dab499e0c1, type: 3}
     m_FromMain: 0
     m_EntryOverrideCount: 2
   m_PrimaryLibraryGUID: fc8a5af4a10fb9b4ba21a6c6c4c25e0f
-  m_ModificationHash: 638345267340209048
+  m_ModificationHash: 638351354252074917
   m_Version: 1

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class TheNail : ActiveInfo
 {
-    public Sprite redTearImg;
 
     private void Awake()
     {
@@ -28,7 +27,9 @@ public class TheNail : ActiveInfo
             PlayerManager.instance.playerMoveSpeed -= 0.08f;
             PlayerManager.instance.playerDamage += 0.5f;
 
-            PlayerManager.instance.tearObj.GetComponent<SpriteRenderer>().sprite = redTearImg;
+            PlayerManager.instance.SetHeadSkin(5);
+            PlayerManager.instance.SetBodySkin(3);
+            PlayerManager.instance.SetTearSkin(1);
             GameManager.instance.playerObject.GetComponent<PlayerController>().canChangeItem = false;
             Invoke("SetCanChangeItem", 1f);
             Invoke("SetCanUse", 1f);
