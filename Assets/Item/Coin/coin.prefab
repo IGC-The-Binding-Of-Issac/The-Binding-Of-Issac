@@ -123,7 +123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 0}
-  pickupClip: {fileID: 8300000, guid: 0c6b2e367c2e7e04d990a1f4f59cf56a, type: 3}
+  pickupClip: {fileID: 8300000, guid: 5214a12c6f6356f428af32e19e4c8265, type: 3}
   dropClip: {fileID: 8300000, guid: 7efbf85f3ea7d9f4c9c2d1fb360d2cb6, type: 3}
 --- !u!50 &466121603223004101
 Rigidbody2D:
@@ -243,7 +243,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
