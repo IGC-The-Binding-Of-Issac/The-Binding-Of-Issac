@@ -46,12 +46,15 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject loadingImage;
     [SerializeField] Sprite[] volumeNum;
     [SerializeField] GameObject[] volumeObj;
+    private bool EscControl;
+
 
 
     [Header("Banner")]
     [SerializeField] Banner banner;
     private void Start()
     {
+        EscControl = false;
         SetPlayerMaxHP(); // 하트HP 초기세팅
         OnLoading();
     }
@@ -85,30 +88,34 @@ public class UIManager : MonoBehaviour
         }
         yield return new WaitForSeconds(1);
         loadingImage.SetActive(false);
+        EscControl = true;
     }
     #endregion
 
     #region PauseUI
     public void PauseUIOnOff()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if(EscControl == true)
         {
-            if (!pauseUI.activeSelf)
+            if (Input.GetKeyDown(KeyCode.Escape))
             {
-                pauseUI.SetActive(true);
-                Time.timeScale = 0;
-            }
-
-            else if(pauseUI.activeSelf)
-            {
-                if (optionUI.activeSelf)
+                if (!pauseUI.activeSelf)
                 {
-                    optionUI.SetActive(false);
+                    pauseUI.SetActive(true);
+                    Time.timeScale = 0;
                 }
-                else
+
+                else if(pauseUI.activeSelf)
                 {
-                    pauseUI.SetActive(false);
-                    Time.timeScale = 1;
+                    if (optionUI.activeSelf)
+                    {
+                        optionUI.SetActive(false);
+                    }
+                    else
+                    {
+                        pauseUI.SetActive(false);
+                        Time.timeScale = 1;
+                    }
                 }
             }
         }
