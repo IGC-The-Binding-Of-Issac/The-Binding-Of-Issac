@@ -16,11 +16,6 @@ public class Coin : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
 
-        audioSource.volume = SoundManager.instance.GetSFXVolume();
-        audioSource.clip = dropClip;
-        audioSource.Play();
-
-
         rb = GetComponent<Rigidbody2D>();
         float randomX = Random.Range(-1.0f, 1.0f);
         float randomY = Random.Range(-1.0f, 1.0f);
@@ -53,5 +48,8 @@ public class Coin : MonoBehaviour
     {
         coin_animator.SetBool("DropCoin", false);
         cl.enabled = true;
+        audioSource.volume = SoundManager.instance.GetSFXVolume();
+        audioSource.clip = dropClip;
+        audioSource.Play();
     }
 }

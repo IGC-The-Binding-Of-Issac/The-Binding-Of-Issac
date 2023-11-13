@@ -49,6 +49,7 @@ public class Heart : MonoBehaviour
     }
     IEnumerator getHeart()
     {
+        gameObject.GetComponent<AudioSource>().Play(); // È¹µæ »ç¿îµå
         float progress = 0;
         float increment = smoothness / duration;
         while (progress < 0.65f)

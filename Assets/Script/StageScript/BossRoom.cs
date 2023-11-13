@@ -22,6 +22,7 @@ public class BossRoom : MonoBehaviour
         {
             nextStageDoor.SetActive(true);
             bossHpUI.SetActive(false);
+            
         }
         else 
         {
