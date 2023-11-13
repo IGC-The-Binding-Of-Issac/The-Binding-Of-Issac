@@ -464,7 +464,6 @@ public void Shoot(float x, float y)
 
     public IEnumerator UseActiveItem()
     {
-        UseItemSound();
         Sprite activeSpr = ItemManager.instance.ActiveItem.GetComponent<SpriteRenderer>().sprite;
         useActiveItemImage.GetComponent<SpriteRenderer>().sprite = activeSpr;
         headRenderer.color = new Color(1, 1, 1, 0);
@@ -514,12 +513,6 @@ public void Shoot(float x, float y)
     public void GetitemSound()
     {
         audioSource.clip = getItemClip;
-        audioSource.Play();
-    }
-
-    public void UseItemSound()
-    {
-        audioSource.clip = useItemClip;
         audioSource.Play();
     }
     #endregion

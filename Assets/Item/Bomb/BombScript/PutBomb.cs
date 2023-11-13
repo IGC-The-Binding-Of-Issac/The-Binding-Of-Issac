@@ -17,6 +17,9 @@ public class PutBomb : MonoBehaviour
     private float bossBombDamage = 30f;
 
     bool CanAttack;
+
+    public AudioClip explosionClip;
+    public AudioClip putClip;
     void Awake()
     {
         CanAttack = false;
@@ -30,6 +33,10 @@ public class PutBomb : MonoBehaviour
 
     public void PlayerBomb()
     {
+        // 설치 Sound 실행
+        gameObject.GetComponent<AudioSource>().clip = putClip;
+        gameObject.GetComponent<AudioSource>().Play();
+
         StartCoroutine(Boom());
         bombAnimator.SetTrigger("IsBomb");
     }
@@ -93,6 +100,10 @@ public class PutBomb : MonoBehaviour
 
     public void BombAttack()
     {
+        // 폭파 Sound 실행
+        gameObject.GetComponent<AudioSource>().clip = explosionClip;
+        gameObject.GetComponent<AudioSource>().Play();
+
         transform.position += new Vector3(0, 1f, 0);
 
         bc.isTrigger = true;

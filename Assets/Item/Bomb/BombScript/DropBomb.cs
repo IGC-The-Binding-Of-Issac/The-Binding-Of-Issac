@@ -6,6 +6,7 @@ public class DropBomb : MonoBehaviour
 {
     private Animator gb;
     private Rigidbody2D rb;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -26,6 +27,8 @@ public class DropBomb : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            gameObject.GetComponent<AudioSource>().Play(); // 획득 사운드
+
             gameObject.layer = 31; // 플레이어와 충돌하지않는 레이어
             gb.SetTrigger("GetBomb");
             ItemManager.instance.bombCount++;
