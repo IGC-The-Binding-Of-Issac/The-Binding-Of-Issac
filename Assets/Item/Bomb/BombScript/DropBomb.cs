@@ -27,6 +27,7 @@ public class DropBomb : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            gameObject.GetComponent<AudioSource>().volume = SoundManager.instance.GetSFXVolume();
             gameObject.GetComponent<AudioSource>().Play(); // 획득 사운드
 
             gameObject.layer = 31; // 플레이어와 충돌하지않는 레이어
