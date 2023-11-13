@@ -45,24 +45,24 @@ public class RoomGenerate : MonoBehaviour
     }
     public void ClearRoom()
     {
-        roomList = null;
-        doors = new List<GameObject>(); // 문 초기화 
+        roomList = null; // 생성된 방 오브젝트 배열 초기화
+        doors = new List<GameObject>(); // 생성된 문 오브젝트 배열 초기화
 
-        // 방 삭제
+        // 생성되어있는 모든 방들을 삭제
         for(int i = 0; i < roomPool.childCount; i++)
         {
             Destroy(roomPool.GetChild(i).gameObject);
         }
 
-
-        // 생성된 아이템 삭제
+        // 생성된 아이템 오브젝트 List 초기화
         if (itemList == null)
         {
             itemList = new List<GameObject>();
         }
 
-        else
+        else 
         {
+            // 생성되어있는 아이템이있을때 전부 삭제 후 초기화
             for(int i = 0; i < itemList.Count; i++)
             {
                 Destroy(itemList[i]);
@@ -79,24 +79,29 @@ public class RoomGenerate : MonoBehaviour
         {
             for (int j = 0; j < size; j++)
             {
-                int roomNum = GameManager.instance.stageGenerate.stageArr[i, j];
+                int roomNum = GameManager.instance.stageGenerate.stageArr[i, j]; // 스테이지 구조에서 방 번호
+
+                // 비어있는방
                 if (roomNum == 0)
                 {
                     roomPos += new Vector3(15, 0, 0);
                     continue;
                 }
-                // create room
-                GameObject room = Instantiate(roomPrefabs[stage - 1, roomNum - 1], roomPos, Quaternion.identity) as GameObject;
-                SetSFXObject(room);
-                roomList[i, j] = room;
-                roomList[i, j].GetComponent<Room>().isClear = false;
+                // 그외
 
+                // 방 오브젝트 생성
+                GameObject room = Instantiate(roomPrefabs[stage - 1, roomNum - 1], roomPos, Quaternion.identity) as GameObject; // 방 오브젝트를 생성.
+                SetSFXObject(room); // 해당 방을 Sound Manager의 SFXObject로 추가
+                roomList[i, j] = room; 
+                roomList[i, j].GetComponent<Room>().isClear = false; // 해당 방을 미클리어 상태로 전환
+
+                // (4 상점) (5 황금) (6 저주) (7 시작) 인 경우 바로 클리어 상태로 전환
                 if (roomNum == 4 || roomNum == 5 || roomNum == 6 || roomNum == 1)
                     roomList[i, j].GetComponent<Room>().isClear = true;
                 
 
-                // create obstacle
-                roomList[i, j].GetComponent<Room>().SetGrid();
+                // 방 오브젝트 생성
+                roomList[i, j].GetComponent<Room>().SetGrid(); //
                 CreateObstacle(i, j, roomNum);
                 room.transform.SetParent(roomPool);
 
