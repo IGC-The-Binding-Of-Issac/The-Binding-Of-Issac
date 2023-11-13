@@ -22,6 +22,9 @@ public class MomsKnife : ItemInfo
         PlayerManager.instance.CheckedShotDelay();
 
         if (!ItemManager.instance.PassiveItems[16])
-        PlayerManager.instance.tearObj.GetComponent<SpriteRenderer>().sprite = knifeImg;
+        {
+            //Debug.Log("¿¿æ÷");
+        //PlayerManager.instance.tearObj.GetComponent<SpriteRenderer>().sprite = knifeImg;
+        }
     }
 }
