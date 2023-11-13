@@ -34,6 +34,7 @@ public class PutBomb : MonoBehaviour
     public void PlayerBomb()
     {
         // 설치 Sound 실행
+        gameObject.GetComponent<AudioSource>().volume = SoundManager.instance.GetSFXVolume();
         gameObject.GetComponent<AudioSource>().clip = putClip;
         gameObject.GetComponent<AudioSource>().Play();
 
@@ -101,6 +102,7 @@ public class PutBomb : MonoBehaviour
     public void BombAttack()
     {
         // 폭파 Sound 실행
+        gameObject.GetComponent<AudioSource>().volume = SoundManager.instance.GetSFXVolume();
         gameObject.GetComponent<AudioSource>().clip = explosionClip;
         gameObject.GetComponent<AudioSource>().Play();
 
