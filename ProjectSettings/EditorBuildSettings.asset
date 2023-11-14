@@ -6,12 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Sound/Scenes/01_Intro.unity
+    path: Assets/Scenes/01_Intro.unity
     guid: 917323fc3075f8d4b83e371d634c4a07
   - enabled: 1
-    path: Assets/Sound/Scenes/02_Game.unity
+    path: Assets/Scenes/02_Game.unity
     guid: 3b7e6055702455648b06b7be5509f4e6
   - enabled: 1
-    path: Assets/Sound/Scenes/03_Outro.unity
+    path: Assets/Scenes/03_Outro.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects: {}

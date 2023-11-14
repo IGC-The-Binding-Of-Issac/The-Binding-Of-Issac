@@ -46,7 +46,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject loadingImage;
     [SerializeField] Sprite[] volumeNum;
     [SerializeField] GameObject[] volumeObj;
-    [SerializeField] Stuff stuff;
+    [SerializeField] Stuff pauseStuff;
+    [SerializeField] Stuff gameOverStuff;
 
     [Header("Banner")]
     [SerializeField] Banner banner;
@@ -102,7 +103,7 @@ public class UIManager : MonoBehaviour
                 if (!pauseUI.activeSelf)
                 {
                     pauseUI.SetActive(true);
-                    stuff.SetStuff();
+                    pauseStuff.SetStuff();
                     Time.timeScale = 0;
                 }
 
@@ -173,6 +174,7 @@ public class UIManager : MonoBehaviour
     public void GameOver()
     {
         gameoverUI.SetActive(true);
+        gameOverStuff.SetStuff();
         Time.timeScale = 0;
     }
 
