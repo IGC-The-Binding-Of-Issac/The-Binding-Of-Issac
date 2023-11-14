@@ -27,7 +27,6 @@ public class PutBomb : MonoBehaviour
         bombSpr = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
         bc = GetComponent<BoxCollider2D>();
-
         PlayerBomb();
     }
 
@@ -46,7 +45,7 @@ public class PutBomb : MonoBehaviour
 
         float progress = 0;
         float increment = smoothness / duration;
-        while (progress < 0.823f)
+        while (progress < 0.78f)
         {
             bombSpr.color = Color.Lerp(Color.white, Color.red, progress);
             progress += increment;
@@ -63,6 +62,7 @@ public class PutBomb : MonoBehaviour
             this.GetComponent<BoxCollider2D>().isTrigger = false;
         }
     }
+
 
     private void OnTriggerStay2D(Collider2D collision)
     {

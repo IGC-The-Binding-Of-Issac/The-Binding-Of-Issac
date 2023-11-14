@@ -1,6 +1,5 @@
+
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,6 +16,7 @@ public class PlayerController : MonoBehaviour
     public Transform body;
     public Transform head;
     public Transform useActiveItemImage;
+    public Transform knifePosition;
 
     [Header("Sprite")]
     SpriteRenderer bodyRenderer;
@@ -64,6 +64,7 @@ public class PlayerController : MonoBehaviour
         canUseActive = true; // 액티브 아이템 개갈김을 방지하기 위한
         canChangeItem = true; // 액티브 아이템 변경 과부하를 위한
         nailActivated = false;
+        //knifePosition.gameObject.SetActive(false);
     }
 
     void Update()
@@ -139,18 +140,26 @@ public class PlayerController : MonoBehaviour
         }
         shootHor = Input.GetAxis("ShootHorizontal");
         shootVer = Input.GetAxis("ShootVertical");
-
-        //총알 발사 딜레이
-        if ((shootHor != 0 || shootVer != 0) && Time.time > lastshot + shotDelay)
+        if (ItemManager.instance.PassiveItems[13])
         {
-            if (shootHor != 0 && shootVer != 0)
-            {
-                //대각 발사 X
-                shootHor = 0;
-            }
-            Shoot(shootHor, shootVer);
-            lastshot = Time.time;
+            KnifeAttack(hori,verti,shootHor, shootVer);
         }
+        else
+        {
+            //총알 발사 딜레이
+            if ((shootHor != 0 || shootVer != 0) && Time.time > lastshot + shotDelay)
+            {
+                if (shootHor != 0 && shootVer != 0)
+                {
+                    //대각 발사 X
+                    shootHor = 0;
+                }
+                Shoot(shootHor, shootVer);
+                lastshot = Time.time;
+            }
+
+        }
+
 
         //플레이어 움직임
         playerRB.velocity = moveInput * moveSpeed;
@@ -164,25 +173,26 @@ public void Shoot(float x, float y)
         //발사 기능 구현
         //게임 중 눈물 생성 눈물 프리펩, 발사 시작위치, 회전
 
-        //칼 먹었을 때
-        if (ItemManager.instance.PassiveItems[13] && !ItemManager.instance.PassiveItems[16])
+        if (ItemManager.instance.PassiveItems[16] && y < 0) //닥터 페투스 습득 후 눈물 발사 시 바로 Collision 일어나는 거 방지를 위해 transform 옮김
         {
-            Vector3 knifeRotate = new Vector3(0, 0, 0);
-            if (x == -1) knifeRotate = new Vector3(180, 0, 90);
-            else if (x == 1) knifeRotate = new Vector3(0, 0, 270);
-            else if (y == 1) knifeRotate = new Vector3(0, 180, 0);
-            else if (y == -1) knifeRotate = new Vector3(0, 0, 180);
-            tear = Instantiate(PlayerManager.instance.tearObj, firePoint, Quaternion.Euler(knifeRotate.x, knifeRotate.y, knifeRotate.z)) as GameObject;
+            tear = Instantiate(PlayerManager.instance.tearObj, new Vector3(firePoint.x, firePoint.y - 0.7f, firePoint.z), transform.rotation) as GameObject;
         }
-        //나머지
-        else
+        else if (ItemManager.instance.PassiveItems[16] && x < 0)
         {
-        tear = Instantiate(PlayerManager.instance.tearObj, firePoint, transform.rotation) as GameObject;
-        } 
+            tear = Instantiate(PlayerManager.instance.tearObj, new Vector3(firePoint.x-0.67f, firePoint.y - 0.4f, firePoint.z), transform.rotation) as GameObject;
+        }
+        else if (ItemManager.instance.PassiveItems[16] && x > 0)
+        {
+            tear = Instantiate(PlayerManager.instance.tearObj, new Vector3(firePoint.x + 0.67f, firePoint.y - 0.4f, firePoint.z), transform.rotation) as GameObject;
+        }
+        else //눈물 쏠때는 동일함
+        {
+            tear = Instantiate(PlayerManager.instance.tearObj, firePoint, transform.rotation) as GameObject;
+        }
+        if (ItemManager.instance.PassiveItems[16]) tear.GetComponent<Collider2D>().isTrigger = false;
         tear.GetComponent<Rigidbody2D>().velocity = new Vector3(x * tearSpeed, y * tearSpeed, 0);
         CheckedObject = null;
-        
-        if(y != 1) // 위 공격이 아닐때
+        if (y != 1) // 위 공격이 아닐때
         {
             CheckedObject = tearPoint.overLapObject;
         }
@@ -215,7 +225,7 @@ public void Shoot(float x, float y)
                 MutantShoot(x, y);
         }
     }
-    public void MutantShoot(float x, float y)
+public void MutantShoot(float x, float y)
     {
         float tearSpeed = PlayerManager.instance.playerTearSpeed;
         Vector3 firePoint = tearPoint.transform.position + new Vector3(Random.Range(-0.5f, 0.5f), Random.Range(-0.5f, 0.5f), 0);
@@ -223,7 +233,6 @@ public void Shoot(float x, float y)
         //게임 중 눈물 생성 눈물 프리펩, 발사 시작위치, 회전
         tear = Instantiate(PlayerManager.instance.tearObj, firePoint, transform.rotation) as GameObject;
         tear.GetComponent<Rigidbody2D>().velocity = new Vector3(x * tearSpeed, y * tearSpeed, 0);
-
 
         CheckedObject = null;
         if (y != 1) // 위 공격이 아닐때
@@ -255,6 +264,49 @@ public void Shoot(float x, float y)
         }
     }
 
+public void KnifeAttack(float moveX, float moveY, float shootX, float shootY)
+    {
+        if (moveX > 0 || shootX > 0) //오른쪽
+        {
+            knifePosition.localPosition = new Vector3(0.94f, 0.2f, 0);
+            knifePosition.rotation = Quaternion.Euler(0, 0, -90);
+        }
+        else if (moveX < 0 || shootX < 0) //왼쪽
+        {
+            knifePosition.localPosition = new Vector3(-0.84f, 0.2f, 0);
+            knifePosition.rotation = Quaternion.Euler(180, 0, 90);
+        }
+        if (moveY > 0 || shootY > 0) //위
+        {
+            knifePosition.localPosition = new Vector3(0, 1.31f, 0);
+            knifePosition.rotation = Quaternion.Euler(0, 0, 0);
+        }
+        else if (moveY < 0 || shootY < 0) //아래
+        {
+            knifePosition.localPosition = new Vector3(0, -0.69f, 0);
+            knifePosition.rotation = Quaternion.Euler(0, 0, 180);
+        }
+        if ((moveX > 0 && moveY < 0) || (shootX > 0 && shootY < 0)) 
+        {
+            knifePosition.localPosition = new Vector3(0.78f, -0.5f, 0);
+            knifePosition.rotation = Quaternion.Euler(180, 180, 45);
+        }
+        else if ((moveX > 0 && moveY > 0) || (shootX > 0 && shootY > 0))
+        {
+            knifePosition.localPosition = new Vector3(0.78f, 0.96f, 0);
+            knifePosition.rotation = Quaternion.Euler(180, 180, 135);
+        }
+        else if ((moveX < 0 && moveY > 0) || (shootX < 0 && shootY > 0))
+        {
+            knifePosition.localPosition = new Vector3(-0.78f, 0.96f, 0);
+            knifePosition.rotation = Quaternion.Euler(180, 180, 225);
+        }
+        else if ((moveX < 0 && moveY < 0) || (shootX < 0 && shootY < 0))
+        {
+            knifePosition.localPosition = new Vector3(-0.78f, -0.5f, 0);
+            knifePosition.rotation = Quaternion.Euler(180, 0, 45);
+        }
+    }
     //이동 애니메이션
     void MoveAnim()
     {
