@@ -23,7 +23,8 @@ public class BOTM : ItemInfo
         PlayerManager.instance.playerDamage++;
 
         //눈물 색깔 빨간색으로 변경
-        PlayerManager.instance.SetTearSkin(1);
+        if (ItemManager.instance.PassiveItems[16] == false)
+            PlayerManager.instance.SetTearSkin(1);
 
         //월계관 달리는 함수 1초뒤 실행
         Invoke("getBOTM", 1f);

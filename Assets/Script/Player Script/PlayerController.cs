@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour
     float shootHor;
     float shootVer;
     public GameObject tear;
-
+    int tearDir;
     [Header("Unity Setup")]
     public TearPoint tearPoint;
 
@@ -154,7 +154,29 @@ public class PlayerController : MonoBehaviour
                     //대각 발사 X
                     shootHor = 0;
                 }
-                Shoot(shootHor, shootVer);
+                if (ItemManager.instance.PassiveItems[9])
+                {
+                    if (Input.GetKey(KeyCode.RightArrow))
+                    {
+                        Shoot(Mathf.Cos(55 * Mathf.Deg2Rad), Mathf.Sin(55 * Mathf.Deg2Rad));
+                    }
+                    if (Input.GetKey(KeyCode.LeftArrow))
+                    {
+                        Shoot(Mathf.Cos(120 * Mathf.Deg2Rad), Mathf.Sin(120 * Mathf.Deg2Rad));
+                    }
+                    if (Input.GetKey(KeyCode.UpArrow))
+                    {
+                        Shoot(shootHor, shootVer);
+                    }
+                    if (Input.GetKey(KeyCode.DownArrow))
+                    {
+                        Shoot(shootHor, shootVer);
+                    }
+                }
+                else
+                {
+                    Shoot(shootHor, shootVer);
+                }
                 lastshot = Time.time;
             }
 
@@ -191,6 +213,10 @@ public void Shoot(float x, float y)
         }
         if (ItemManager.instance.PassiveItems[16]) tear.GetComponent<Collider2D>().isTrigger = false;
         tear.GetComponent<Rigidbody2D>().velocity = new Vector3(x * tearSpeed, y * tearSpeed, 0);
+        if (ItemManager.instance.PassiveItems[9])
+            tear.GetComponent<Rigidbody2D>().gravityScale = 3;
+        else
+            tear.GetComponent<Rigidbody2D>().gravityScale = 0;
         CheckedObject = null;
         if (y != 1) // 위 공격이 아닐때
         {
@@ -233,7 +259,14 @@ public void MutantShoot(float x, float y)
         //게임 중 눈물 생성 눈물 프리펩, 발사 시작위치, 회전
         tear = Instantiate(PlayerManager.instance.tearObj, firePoint, transform.rotation) as GameObject;
         tear.GetComponent<Rigidbody2D>().velocity = new Vector3(x * tearSpeed, y * tearSpeed, 0);
-
+        if (ItemManager.instance.PassiveItems[9])
+        {
+            tear.GetComponent<Rigidbody2D>().gravityScale = 3;
+        }
+        else
+        {
+            tear.GetComponent<Rigidbody2D>().gravityScale = 0;
+        }
         CheckedObject = null;
         if (y != 1) // 위 공격이 아닐때
         {

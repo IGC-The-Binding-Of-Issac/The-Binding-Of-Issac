@@ -44,6 +44,11 @@ public class Tear : MonoBehaviour
         //둘 사이의 거리
         betweenDistance = Vector3.Distance(tearPosition, playerPosition);
         //둘 사이의 거리가 플레이어 사거리보다 커지면
+        if (ItemManager.instance.PassiveItems[9])
+        {
+            if(tearPosition.y <= playerPosition.y)
+                BoomTear();
+        }
         if (betweenDistance >= PlayerManager.instance.playerRange)
         {
             BoomTear();
@@ -54,6 +59,7 @@ public class Tear : MonoBehaviour
     {
         BoomSound(); // tear 터지는 사운드
         tearRB.velocity = Vector2.zero;
+        tearRB.gravityScale = 0f;
         //총알 오브젝트 속도를 zero로 만듬
     }
 

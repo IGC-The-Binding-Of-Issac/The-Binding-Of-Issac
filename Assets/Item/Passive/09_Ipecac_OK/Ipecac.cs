@@ -18,12 +18,12 @@ public class Ipecac : ItemInfo
     public override void UseItem()
     {
         PlayerManager.instance.playerHp--;
+        PlayerManager.instance.playerTearSpeed *= 2f;
         PlayerManager.instance.CheckedPlayerHP();
         PlayerManager.instance.SetHeadSkin(1);
         PlayerManager.instance.SetBodySkin(1);
         PlayerManager.instance.SetTearSkin(2);
-        //if (!ItemManager.instance.PassiveItems[13] && !ItemManager.instance.PassiveItems[16])
-        //PlayerManager.instance.tearObj.GetComponent<SpriteRenderer>().sprite = ipecacSpr;
-        
+        //눈물이 포물선을 그리며 날아감
+        //포물선 마지막 지점에서 터지며 데미지를 줌
     }
 }
