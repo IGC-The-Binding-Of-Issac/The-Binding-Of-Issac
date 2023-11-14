@@ -33,7 +33,6 @@ public class key : MonoBehaviour
         {
             audioSource.volume = SoundManager.instance.GetSFXVolume();
             audioSource.clip = pickupClip;
-            audioSource.Play();
 
             gameObject.layer = 31;
             keyAni.SetTrigger("GetKey");
@@ -43,6 +42,8 @@ public class key : MonoBehaviour
     public void GetKey()
     {
         ItemManager.instance.keyCount++;
-        Destroy(this.gameObject);
+        audioSource.Play();
+        Destroy(gameObject.GetComponent<SpriteRenderer>());
+        Destroy(this.gameObject,0.5f);
     }
 }

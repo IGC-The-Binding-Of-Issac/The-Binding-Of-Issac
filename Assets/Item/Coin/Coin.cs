@@ -30,10 +30,6 @@ public class Coin : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            audioSource.volume = SoundManager.instance.GetSFXVolume();
-            audioSource.clip = pickupClip;
-            audioSource.Play();
-
             gameObject.layer = 31; // 플레이어와 충돌하지않는 레이어
             coin_animator.SetTrigger("GetCoin");
             ItemManager.instance.coinCount++;
@@ -42,7 +38,12 @@ public class Coin : MonoBehaviour
 
     public void GetCoin()
     {
-        Destroy(this.gameObject);
+        audioSource.volume = SoundManager.instance.GetSFXVolume();
+        audioSource.clip = pickupClip;
+        audioSource.Play();
+
+        Destroy(gameObject.GetComponent<SpriteRenderer>());
+        Destroy(this.gameObject,0.5f);
     }
     public void DropCoinEnd()
     {
