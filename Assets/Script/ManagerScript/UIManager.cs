@@ -46,12 +46,12 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject loadingImage;
     [SerializeField] Sprite[] volumeNum;
     [SerializeField] GameObject[] volumeObj;
-    private bool EscControl;
-
-
+    [SerializeField] Stuff stuff;
 
     [Header("Banner")]
     [SerializeField] Banner banner;
+
+    private bool EscControl;
     private void Start()
     {
         EscControl = false;
@@ -102,6 +102,7 @@ public class UIManager : MonoBehaviour
                 if (!pauseUI.activeSelf)
                 {
                     pauseUI.SetActive(true);
+                    stuff.SetStuff();
                     Time.timeScale = 0;
                 }
 
