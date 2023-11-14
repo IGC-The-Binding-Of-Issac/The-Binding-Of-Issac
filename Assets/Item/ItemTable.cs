@@ -174,4 +174,8 @@ public class ItemTable : MonoBehaviour
         }
     }
    
+    public Sprite GetStuffImage(int index)
+    {
+        return PassiveItems[index].GetComponent<SpriteRenderer>().sprite;
+    }
 }
