@@ -104,6 +104,7 @@ public class PlayerManager : MonoBehaviour
     public void Start()
     {
         tearObj.transform.localScale = new Vector3(1, 1, 1);
+        ItemManager.instance.bombPrefab.transform.localScale = new Vector3(1, 1, 1);
         gameObject.AddComponent<AudioSource>();
         PlayerInitialization();
         SetTearSkin(0);
