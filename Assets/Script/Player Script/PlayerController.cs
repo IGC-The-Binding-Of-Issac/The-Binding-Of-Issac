@@ -27,17 +27,17 @@ public class PlayerController : MonoBehaviour
     [Header("Function")]
     private float lastshot;
     Vector2 moveInput;
-
     float shootHor;
     float shootVer;
+
+    [Header("PlayerState")]
+    public GameObject HeadItem;
+    public GameObject CheckedObject;
     public GameObject tear;
-    public GameObject knife;
-    int tearDir;
-    [Header("Unity Setup")]
     public TearPoint tearPoint;
 
-    [Header("State")]
-    public GameObject CheckedObject;
+    [Header("ItemState")]
+    public GameObject knife;
     public bool nailActivated; // 대못 아이템을 사용했을 때
     public bool canUseActive = true; //액티브 아이템 개갈김을 방지하기 위한
     public bool canChangeItem = false; //액티브 아이템 변경 과부하를 위한
@@ -51,8 +51,6 @@ public class PlayerController : MonoBehaviour
     public AudioClip useItemClip;
     public AudioClip ShootClip;
 
-    [Header("equipment")]
-    public GameObject HeadItem;
 
     void Start()
     {

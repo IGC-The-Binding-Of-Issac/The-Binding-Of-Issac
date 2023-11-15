@@ -9,14 +9,14 @@ public class StageGenerate : MonoBehaviour
 
     // 1: 시작방  2:일반방  3:보스방  4:상점방  5:황금방  6:저주방
     public int[,] stageArr;
-    public bool CreateStage(int size, int min) 
+    public bool CreateStage(int size, int min)
     {
         stageArr = new int[size, size]; // 스테이지 구조를 2차원 배열로 선언
 
         if (CreateStructure(size, min)) // 구조 생성
         {
             // 구조 생성에 성공했을때 플레이에 필요한 방들을 지정.
-            if (SelectRoom(size)) 
+            if (SelectRoom(size))
             {
                 return true;
             }
@@ -107,7 +107,7 @@ public class StageGenerate : MonoBehaviour
                         continue;  // pass
 
                     // 인접해있는 방의 개수가 1개 이하일때
-                    int rd = (Random.Range(0, 3)); 
+                    int rd = (Random.Range(0, 3));
                     if (rd == 0) 
                         continue;
 
@@ -123,9 +123,8 @@ public class StageGenerate : MonoBehaviour
         if (roomCount >= min)
             return true;
         return false;
-
     }
-
+    
     private int CheckAbjCount(int y, int x, int size)
     {
         int ret = 0;

@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
-    #region 싱글톤
+    #region singleTon
     public static UIManager instance;
     private void Awake()
     {
