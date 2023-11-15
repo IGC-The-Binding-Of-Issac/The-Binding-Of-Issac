@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -50,6 +49,7 @@ public class Room : MonoBehaviour
         //방이 클리어됐을때 플레이어가 방에 있으면.
         if(isClear && playerInRoom) // 방이 클리어 + 방에 플레이어 존재
         {
+            // 액티브 아이템 에너지 증가.
             if(ItemManager.instance.ActiveItem != null) // 보유한 액티브 아이템이 존재할때.
             {
                 ItemManager.instance.ActiveItem.GetComponent<ActiveInfo>().GetEnergy();
@@ -61,8 +61,12 @@ public class Room : MonoBehaviour
                 PlayerManager.instance.CanBlockDamage++;
             }
 
-            // 방 클리어시 문 열리는 사운드 출력
-            DoorSound(1); // open sound
+            //방 클리어 보상
+            GameObject obj = Instantiate(ItemManager.instance.itemTable.OpenNormalChest(Random.Range(0,1000) % 4), transform.position, Quaternion.identity) as GameObject;
+            GameManager.instance.roomGenerate.itemList.Add(obj);
+
+            //door open sound
+            DoorSound(1);
         }
     }
 

@@ -8,26 +8,32 @@ public class BossRoom : MonoBehaviour
     [Header("Room info")]
     [SerializeField] Enemy bossComponent;
     [SerializeField] bool spawnBoss = true;
-    private Enemy bossObject;
 
     [Header("unity Setup")]
     [SerializeField] Transform bossSpawnPoint;
     [SerializeField] GameObject nextStageDoor;
     [SerializeField] GameObject bossHpUI;
     [SerializeField] Image bossHP;
-
     private void Update()
     {
-        if (gameObject.GetComponent<Room>().isClear)
+        // 보스가 생성된 이후
+        if(!spawnBoss)
         {
-            nextStageDoor.SetActive(true);
-            bossHpUI.SetActive(false);
-            
-        }
-        else 
-        {
-            nextStageDoor.SetActive(false);
-            bossHpUI.SetActive(true);
+            // 방이 클리어되면.
+            if (gameObject.GetComponent<Room>().isClear)
+            {
+                nextStageDoor.SetActive(true);
+                bossHpUI.SetActive(false);
+
+                // 보스방 보상 생성
+                GameObject reward = Instantiate(ItemManager.instance.goldTable) as GameObject;
+                reward.transform.SetParent(gameObject.transform);
+                reward.transform.localPosition = new Vector3(0, -1.3f, 0);
+
+                reward.GetComponent<GoldTable>().SpawnItem(true);
+
+                Destroy(this); 
+            }
         }
     }
 
@@ -38,12 +44,15 @@ public class BossRoom : MonoBehaviour
         {
             if(spawnBoss)
             {
+                gameObject.GetComponent<Room>().isClear = false;
+
                 // 보스 재생성 방지
                 spawnBoss = false;
 
                 GameObject boss;
                 // 보스생성
-                boss = GameObject.Find("EnemyGenerate").GetComponent<EnemyGenerate>().GetBoss();
+                boss = GameManager.instance.roomGenerate.enemyGenerate.GetBoss();
+                //boss = GameObject.Find("EnemyGenerate").GetComponent<EnemyGenerate>().GetBoss();
 
                 // 보스오브젝트를 보스방 자식오브젝트로 설정
                 boss.transform.SetParent(gameObject.transform);
@@ -56,7 +65,10 @@ public class BossRoom : MonoBehaviour
                 bossComponent = boss.GetComponent<Enemy>();
                 bossComponent.hpBarSlider = bossHP;
 
-                gameObject.GetComponent<Room>().isClear = false;
+
+                // 문닫기 / 보스 체력바 생성
+                nextStageDoor.SetActive(false);
+                bossHpUI.SetActive(true);
             }
         }
     }

@@ -39,6 +39,10 @@ public class ItemManager : MonoBehaviour
     public GameObject bombPrefab; // 설치하는 폭탄 오브젝트 프리팹
     public ItemTable itemTable; // 아이템 드랍관련 스크립트
     public Transform itemStorage; // 아이템 보관장소 ( 장신구 / 액티브 )
+    public GameObject goldTable; // 아이템 테이블 프리팹
+    
+    [Header("Prefabs")]
+    public GameObject tableEffect; // 아이템 생성 이펙트?
 
     private void Start()
     {
