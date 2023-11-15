@@ -84,7 +84,7 @@ public class PutBomb : MonoBehaviour
             }
             if(collision.CompareTag("Enemy"))
             {
-                collision.GetComponent<Enemy>().GetDamage(100);   
+                collision.GetComponent<TEnemy>().GetDamage(100);   
             }
             if(collision.CompareTag("Player"))
             {

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SnakeManager : Enemy
+public class SnakeManager : TEnemy
 {
     /// <summary>
     /// <Larry J>
@@ -47,7 +47,6 @@ public class SnakeManager : Enemy
         sight = 5f;
         moveSpeed = 5f; // 이거 바꾸면 distanceBetween도 바꿔서 생성 하는 타이밍 맞춰야함!!!
         waitforSecond = 0.3f;
-        dieParameter = "isEmpty"; // 오류 방지용 파라미터 
 
         maxhp = hp;
 
@@ -107,7 +106,7 @@ public class SnakeManager : Enemy
     }
 
     // 움직이는 최종 로직
-    public override void Move()
+    public void Move()
     {
         SnakeMovement();
 

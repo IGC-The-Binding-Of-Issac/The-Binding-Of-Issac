@@ -41,7 +41,7 @@ public class Room : MonoBehaviour
             if (enemis[i] != null)
             {
                 flag = false;
-                enemis[i].GetComponent<Enemy>().playerInRoom = playerInRoom;
+                enemis[i].GetComponent<TEnemy>().playerInRoom = playerInRoom;
             }
         }
         isClear = flag;

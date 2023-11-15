@@ -13,109 +13,40 @@ enum MawState
     MawTracking
 }
 
-public class Maw : Top_IssacMonster
+public class Maw : TEnemy
 {
-    // 범위 안에 들어오면 추적 + 촣알 발싸
-    // 범위 안에 없으면 랜덤 움직임
-    // Pooter와 코드 같음
-
-
-    [SerializeField] MawState state;
-    [SerializeField] GameObject enemyBullet; //총알 프리팹
-    float currTime;
-    float oriMoveSpeed;
-
-
-    // 작은 범위 랜덤 움직임 + 플레이어가 안에 들어오면 추적
-    void Start()
+    // 플레이어 추적
+    public override void En_setState()
     {
-
         playerInRoom = false;
-        dieParameter = "isDie";
 
-        //Enemy
-        animator = GetComponent<Animator>();
-        hp = 6f;
-        sight = 4f;
+        hp = 2f;
+        sight = 5f;
         moveSpeed = 1.5f;
-        waitforSecond = 1f;
-        attaackSpeed = 3f; // idle <-> Shoot
+        waitforSecond = 0.5f;
 
         maxhp = hp;
-        //TopFly
-        randRange = 0.5f;
-        fTime = 0.5f;
-        StartCoroutine(checkPosi(randRange));
+    }
 
-        //Footer
-        currTime = attaackSpeed;
-        oriMoveSpeed = moveSpeed;
+    public override void En_kindOfEnemy()
+    {
+        isTracking = true;
+        isProwl = false;
+        isDetective = false;
+    }
 
+    private void Start()
+    {
+        // 하위 몬스터 state 설정
+        En_setState();              // 스탯 설정
+        En_kindOfEnemy();           // enemy의 행동 조건
+        En_stateArray();            // state 를 배열에 세팅
+
+        E_Enter();                  // 상태 진입 (기본은 idle로 설정 되어잇음)
     }
 
     private void Update()
     {
-        if (playerInRoom)
-        {
-            Move();
-            //플레이어가 범위 안에 없을 때
-            if (!PlayerSearch())
-            {
-                state = MawState.MawProwl;
-                return;
-            }
-
-            //플레이어가 범위 안에 있을 때, 시간 별로 총 쏘고 , 이동하고
-            else if (PlayerSearch())
-            {
-                currTime -= Time.deltaTime;
-                if (currTime > 0)
-                {
-                    state = MawState.MawTracking;
-                    Lookplayer();
-                    //moveSpeed = oriMoveSpeed;
-                    return;
-                }
-
-                else if (currTime <= 0)
-                {
-                    state = MawState.MawShoot;
-                    //moveSpeed = 0;
-                    //animator.SetTrigger("isShoot");
-                    currTime = attaackSpeed;
-                }
-            }
-        }
-
-
-    }
-
-    override public void Move()
-    {
-        switch (state)
-        {
-            case MawState.MawProwl:
-                Prwol();
-                break;
-            case MawState.MawShoot:
-                MawShoot();
-                break;
-            case MawState.MawTracking:
-                Tracking(playerPos);
-                break;
-        }
-
-    }
-
-    // 공격
-    void MawShoot()
-    {
-        GameObject bulletobj = Instantiate(enemyBullet, transform.position, Quaternion.identity);
-    }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, sight);
+        E_Excute();                 // 상태 실행
     }
 }

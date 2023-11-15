@@ -214,7 +214,7 @@ public class RoomGenerate : MonoBehaviour
                     GameObject enemy = enemyGenerate.GetEnemy();
                     enemy.transform.SetParent(roomList[y, x].GetComponent<Room>().roomObjects[idx]);
                     enemy.transform.localPosition = new Vector3(0, 0, 0);
-                    enemy.GetComponent<Enemy>().roomInfo = roomList[y, x];
+                    enemy.GetComponent<TEnemy>().roomInfo = roomList[y, x];
                     roomList[y, x].GetComponent<Room>().enemis.Add(enemy); // 해당 방의 몬스터리스트에 추가
 
                     // sfx 사운드 조절을 위한 오브젝트 저장

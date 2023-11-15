@@ -10,96 +10,41 @@ public enum SpiderState
     SpiderRandMove
 }
 
-public class Spider : Top_Spider
+public class Spider : TEnemy
 {
-    //  랜덤 움직임
-    [SerializeField] SpiderState state;
-    float currTime;
-    float spdierMoveTime;
-
-    void Start()
+    // 플레이어 추적
+    public override void En_setState()
     {
-        Spider_Move_InitialIze();
-
         playerInRoom = false;
-        dieParameter = "isDie";
 
-        //Enemy
-        animator = GetComponent<Animator>();
-        hp = 3f;
-        sight = 4f;
-        moveSpeed = 2f;
-        waitforSecond = 1f;
-        attaackSpeed = 0.5f; // stay <-> move
+        hp = 2f;
+        sight = 5f;
+        moveSpeed = 1.5f;
+        waitforSecond = 0.5f;
 
         maxhp = hp;
-        //TopFly
-        randRange = 3f;
-        fTime = 0.5f;
-        StartCoroutine(checkPosi(randRange));
-
-        //Spider
-        currTime = attaackSpeed;
-        spdierMoveTime = 3f;
     }
+
+    public override void En_kindOfEnemy()
+    {
+        isTracking = true;
+        isProwl = false;
+        isDetective = false;
+    }
+
+    private void Start()
+    {
+        // 하위 몬스터 state 설정
+        En_setState();              // 스탯 설정
+        En_kindOfEnemy();           // enemy의 행동 조건
+        En_stateArray();            // state 를 배열에 세팅
+
+        E_Enter();                  // 상태 진입 (기본은 idle로 설정 되어잇음)
+    }
+
     private void Update()
     {
-        if (playerInRoom)
-        {
-            Move();
-        }
-
-    }
-
-    public override void Move()
-    {
-        //상태 변화
-        currTime += Time.deltaTime;
-        if (currTime < attaackSpeed)
-        {
-            ChageState(SpiderState.SpiderStay);
-        }
-        else if (currTime < spdierMoveTime)
-        {
-
-            ChageState(SpiderState.SpiderRandMove);
-        }
-        else
-        {
-            // 타이머를 재설정하고 "SpiderStay" 상태로 돌아감
-            animator.SetBool("isMove", false);
-            currTime = 0;
-            ChageState(SpiderState.SpiderStay);
-        }
-    }
-
-    void ChageState(SpiderState newState)
-    {
-        // 이전 상태 종료
-        StopCoroutine(state.ToString());
-        // 새로운 상태로 변경
-        state = newState;
-        // 현재 상태의 코루틴 실행
-        StartCoroutine(state.ToString());
-    }
-
-    //상태 
-    IEnumerator SpiderStay()
-    {
-        while (true)
-        {
-            //아무것도 안함
-            yield return null;
-        }
-    }
-    IEnumerator SpiderRandMove()
-    {
-        animator.SetBool("isMove", true);
-        while (true)
-        {
-            Prwol();
-            yield return null;
-        }
+        E_Excute();                 // 상태 실행
     }
 
 }

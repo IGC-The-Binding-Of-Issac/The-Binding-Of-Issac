@@ -6,7 +6,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.Playables;
 
-public class BigAttackFly : Top_Fly
+public class BigAttackFly : TEnemy
 {
     /// <summary>
     /// 
@@ -18,7 +18,7 @@ public class BigAttackFly : Top_Fly
     [Header("BigAttackFly")]
     [SerializeField] float currTime; //현재 상태의 시간
     [SerializeField] bool chageState; // 상태변환 
-    [SerializeField]  float rotSpeed;
+    [SerializeField] float rotSpeed;
     [SerializeField] GameObject bigShootBullet;
 
     float z = 0;
@@ -27,10 +27,7 @@ public class BigAttackFly : Top_Fly
 
     void Start()
     {         
-        Fly_Move_InitialIze();
-
         playerInRoom = false;
-        dieParameter = "isBigFlyDie";
 
         // Enemy
         hp = 30f;
@@ -52,20 +49,20 @@ public class BigAttackFly : Top_Fly
 
     private void Update()
     {
-        justTrackingPlayerPosi = GameObject.FindWithTag("Player").transform;
-        if (justTrackingPlayerPosi == null)
-            return;
-
         if (playerInRoom)
             Move();
     }
 
-    override public void Move()
+    public void Move()
     {
+        if (e_isDead())
+            e_destroyEnemy();        
+        e_findPlayer();                     // player 감지
+
         currTime -= Time.deltaTime;
         if (currTime > 0 && chageState)
         {
-            Tracking(justTrackingPlayerPosi); //추적
+            e_Tracking();                   // 추적
         }
         else if (currTime <= 0) 
         {

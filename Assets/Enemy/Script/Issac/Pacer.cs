@@ -2,57 +2,41 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pacer : Top_IssacMonster
+public class Pacer : TEnemy
 {
-
-    void Start()
+    // 플레이어 추적
+    public override void En_setState()
     {
-        Issac_Move_InitialIze();
-
         playerInRoom = false;
-        dieParameter = "isDie";
 
-        // Enemy
-        hp = 3f;
+        hp = 2f;
         sight = 5f;
         moveSpeed = 1.5f;
         waitforSecond = 0.5f;
 
         maxhp = hp;
-        // Top_IssacMonster
-        randRange = 3f;
-        fTime = 2f;
-        StartCoroutine(checkPosi(randRange));
     }
 
-    void Update()
+    public override void En_kindOfEnemy()
     {
-        if (playerInRoom)
-        {
-            justTrackingPlayerPosi = GameObject.FindWithTag("Player").transform;
-            Move();
-        }
+        isTracking = true;
+        isProwl = false;
+        isDetective = false;
     }
 
-    public override void Move()
+    private void Start()
     {
-        Prwol();
+        // 하위 몬스터 state 설정
+        En_setState();              // 스탯 설정
+        En_kindOfEnemy();           // enemy의 행동 조건
+        En_stateArray();            // state 를 배열에 세팅
+
+        E_Enter();                  // 상태 진입 (기본은 idle로 설정 되어잇음)
     }
 
-    //플레이어 위치에 따라 그쪽을 보는 애니메이션
-    /*
-    public void PaverTurn()
+    private void Update()
     {
-        if (transform.position.x > justTrackingPlayerPosi.position.x && paberisFlipped)
-        {
-            animator.SetBool("isRight" , true);
-            paberisFlipped = false;
-        }
-        else if (transform.position.x < justTrackingPlayerPosi.position.x && !paberisFlipped)
-        {
-            animator.SetBool("isRight", false);
-            paberisFlipped = true;
-        }
+        E_Excute();                 // 상태 실행
     }
-    */
+
 }

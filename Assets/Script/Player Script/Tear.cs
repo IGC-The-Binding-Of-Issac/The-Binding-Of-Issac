@@ -130,12 +130,12 @@ public class Tear : MonoBehaviour
             {
                 gameObject.GetComponent<CircleCollider2D>().enabled = false;
                 BoomTear();
-                collision.gameObject.GetComponent<Enemy>().GetDamage(PlayerManager.instance.playerDamage);
+                collision.gameObject.GetComponent<TEnemy>().GetDamage(PlayerManager.instance.playerDamage);
                 //Rigidbody2D enemyRB = collision.gameObject.GetComponent<Rigidbody2D>();
                 //총알 방향
                 Vector2 direction = gameObject.transform.GetComponent<Rigidbody2D>().velocity;
                 //넉백
-                StartCoroutine(collision.gameObject.GetComponent<Enemy>().knockBack());
+                StartCoroutine(collision.gameObject.GetComponent<TEnemy>().knockBack());
                 collision.gameObject.GetComponent<Rigidbody2D>().AddForce(direction * 200);
             }
 
