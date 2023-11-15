@@ -2,63 +2,39 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Moter : Top_Fly
+public class Moter : TEnemy
 {
-    [SerializeField ]GameObject attackFly;
-
-    void Start()
+    public override void En_setState()
     {
-        Fly_Move_InitialIze();
-
         playerInRoom = false;
-        dieParameter = "isDie";
 
-        //Enemy
-        hp = 3f;
+        hp = 2f;
         sight = 5f;
-        moveSpeed = 0.5f;
+        moveSpeed = 1.5f;
         waitforSecond = 0.5f;
 
         maxhp = hp;
     }
 
+    public override void En_kindOfEnemy()
+    {
+        isTracking = true;
+        isProwl = false;
+        isDetective = false;
+    }
+
+    private void Start()
+    {
+        // 하위 몬스터 state 설정
+        En_setState();              // 스탯 설정
+        En_kindOfEnemy();           // enemy의 행동 조건
+        En_stateArray();            // state 를 배열에 세팅
+
+        E_Enter();                  // 상태 진입 (기본은 idle로 설정 되어잇음)
+    }
+
     private void Update()
     {
-
-        justTrackingPlayerPosi = GameObject.FindWithTag("Player").transform;
-        if (justTrackingPlayerPosi == null)
-            return;
-
-        if (playerInRoom)
-        {
-            Move();
-        }
+        E_Excute();                 // 상태 실행
     }
-
-
-    private void OnDestroy()
-    {
-        if(hp <= 0.1f) // 오브젝트가 Destory가 될때 그냥 Destory가 되는건지. HP를 전부 잃어 Destory되는건지 확인.
-        {
-            GenerateAttackFly();
-            GenerateAttackFly();
-        }
-    }
-
-    public override void Move()
-    {
-        Tracking(justTrackingPlayerPosi);
-    }
-
-    void GenerateAttackFly() 
-    {
-        GameObject obj = Instantiate(attackFly, transform.position, Quaternion.identity) as GameObject;
-
-        // SoundManage의 sfxObject로 추가.
-        if (obj.GetComponent<AudioSource>() != null)
-            SoundManager.instance.sfxObjects.Add(obj.GetComponent<AudioSource>());
-
-        roomInfo.GetComponent<Room>().enemis.Add(obj);
-    }
-
 }

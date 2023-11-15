@@ -13,7 +13,7 @@ public class Enemy_Prowl : TEnemy_FSM<TEnemy>
 
     public override void Enter()                            // 해당 상태를 시작할 때 "1회" 호출
     {
-        Debug.Log(e_Owner.gameObject.tag + " : Prowl 상태 ");
+        //Debug.Log(e_Owner.gameObject.tag + " : Prowl 상태 ");
         e_Owner.eCurState = TENEMY_STATE.Prowl;          // 현재 상태를 TENEMY_STATE의 Prowl  
     }
 

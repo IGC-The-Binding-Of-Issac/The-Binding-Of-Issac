@@ -4,27 +4,27 @@ using UnityEngine;
 
 public class Enemy_Die : TEnemy_FSM<TEnemy>
 {
-    [SerializeField] TEnemy m_Owner;
+    [SerializeField] TEnemy e_Owner;
 
-    //생성자 초기화
     public Enemy_Die(TEnemy _ower)
     {
-        m_Owner = _ower;
+        e_Owner = _ower;
     }
 
     public override void Enter()
     {
-        
+        e_Owner.eCurState = TENEMY_STATE.Die;          // 현재 상태를 TENEMY_STATE의 Die 
+        e_Owner.e_destroyEnemy();
     }
 
     public override void Excute()
     {
-        
+
     }
 
     public override void Exit()
     {
-        
+
     }
 
 

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class BossRoom : MonoBehaviour
 {
     [Header("Room info")]
-    [SerializeField] Enemy bossComponent;
+    [SerializeField] TEnemy bossComponent;
     [SerializeField] bool spawnBoss = true;
 
     [Header("unity Setup")]
@@ -62,7 +62,7 @@ public class BossRoom : MonoBehaviour
 
                 // 보스오브젝트를 보스방의 Room 스크립트의 enemis에 추가.
                 gameObject.GetComponent<Room>().enemis.Add(boss);
-                bossComponent = boss.GetComponent<Enemy>();
+                bossComponent = boss.GetComponent<TEnemy>();
                 bossComponent.hpBarSlider = bossHP;
 
 

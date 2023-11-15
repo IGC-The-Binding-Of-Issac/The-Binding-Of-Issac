@@ -13,7 +13,7 @@ public class Enemy_Tracking : TEnemy_FSM<TEnemy>
 
     public override void Enter()                            // 해당 상태를 시작할 때 "1회" 호출
     {
-        Debug.Log(e_Owner.gameObject.tag + " : Tracking 상태 ");
+        //Debug.Log(e_Owner.gameObject.tag + " : Tracking 상태 ");
         e_Owner.eCurState = TENEMY_STATE.Tracking;          // 현재 상태를 TENEMY_STATE의 Tracking으로 
     }
 
@@ -29,6 +29,12 @@ public class Enemy_Tracking : TEnemy_FSM<TEnemy>
             e_Owner.e_Tracking();                                   // tracking
         }
 
+        if (e_Owner.e_isDead())                                     // 몬스터가 죽으면 
+        {
+            e_Owner.ChageFSM(TENEMY_STATE.Die);                     // Die로 상태변화 
+        }
+
+        /*
         if (e_Owner.getisProwl && !e_Owner.e_SearchingPlayer())      // prowl을 하는 enemy + 플레이어가 범위 안에 없을 때 
         {
             e_Owner.ChageFSM(TENEMY_STATE.Prowl);                    // prowl로 상태 변화
@@ -36,7 +42,8 @@ public class Enemy_Tracking : TEnemy_FSM<TEnemy>
         if (e_Owner.getisProwl && e_Owner.e_SearchingPlayer())       // prowl을 하는 enemy + 플레이어가 범위 안에 있으면
         {
             e_Owner.e_Tracking();                                    // tracking
-        }   
+        } 
+        */
     }
 
     public override void Exit()                              // 해당 상태를 종료할 때 "1회" 호출

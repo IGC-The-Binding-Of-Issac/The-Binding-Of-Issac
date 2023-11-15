@@ -11,109 +11,40 @@ public enum FooterState
     //추적
     PooteTracking
 }
-public class Footer : Top_Fly
+public class Footer : TEnemy
 {
-    // 범위 안에 들어오면 추적 + 촣알 발싸
-    // 범위 안에 없으면 랜덤 움직임
-   
-
-    [SerializeField] FooterState state;
-    [SerializeField] GameObject enemyBullet; //총알 프리팹
-    float currTime;
-    float oriMoveSpeed;
-
-
-    // 작은 범위 랜덤 움직임 + 플레이어가 안에 들어오면 추적
-    void Start()
+    // 플레이어 추적
+    public override void En_setState()
     {
-        Fly_Move_InitialIze();
-
         playerInRoom = false;
-        dieParameter = "isDie";
 
-        //Enemy
-        animator = GetComponent<Animator>();
-        hp = 3f;
-        sight = 4f;
+        hp = 2f;
+        sight = 5f;
         moveSpeed = 1.5f;
         waitforSecond = 0.5f;
-        attaackSpeed = 3f; // idle <-> Shoot
 
         maxhp = hp;
-        //TopFly
-        randRange = 1f;
-        fTime = 0.5f;
-        StartCoroutine(checkPosi(randRange));
+    }
 
-        //Footer
-        currTime = attaackSpeed;
-        oriMoveSpeed = moveSpeed;
+    public override void En_kindOfEnemy()
+    {
+        isTracking = true;
+        isProwl = false;
+        isDetective = false;
+    }
+
+    private void Start()
+    {
+        // 하위 몬스터 state 설정
+        En_setState();              // 스탯 설정
+        En_kindOfEnemy();           // enemy의 행동 조건
+        En_stateArray();            // state 를 배열에 세팅
+
+        E_Enter();                  // 상태 진입 (기본은 idle로 설정 되어잇음)
     }
 
     private void Update()
     {
-        if (playerInRoom)
-        {
-            Move();
-
-            //플레이어가 범위 안에 없을 때
-            if (!PlayerSearch())
-            {
-                state = FooterState.PooterProwl;
-                return;
-            }
-
-            //플레이어가 범위 안에 있을 때, 시간 별로 총 쏘고 , 이동하고
-            else if (PlayerSearch()) 
-            {
-                currTime -= Time.deltaTime;
-                if (currTime > 0)
-                {
-                    state = FooterState.PooteTracking;
-                    Lookplayer();
-                    moveSpeed = oriMoveSpeed;
-                    return;
-                }
-
-                else if (currTime <= 0)
-                {
-                    state = FooterState.PooteShoot;
-                    //moveSpeed = 0;
-                    animator.SetTrigger("isShoot");
-                    currTime = attaackSpeed;
-                }
-            }
-        }
-
-
-    }
-
-    override public void Move()
-    {
-        switch (state) 
-        {
-            case FooterState.PooterProwl:
-                Prwol();
-                break;
-            case FooterState.PooteShoot:
-                PooterShoot();
-                break;
-            case FooterState.PooteTracking:
-                Tracking(playerPos);
-                break;
-        }
-        
-    }
-
-    // 공격
-    void PooterShoot() 
-    {
-        GameObject bulletobj = Instantiate(enemyBullet , transform.position + new Vector3(0,-0.1f,0) , Quaternion.identity);
-    }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, sight);
+        E_Excute();                 // 상태 실행
     }
 }

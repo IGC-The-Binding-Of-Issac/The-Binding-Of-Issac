@@ -240,12 +240,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3775576585011057165}
+  - component: {fileID: 1532277544228630299}
   - component: {fileID: 8729790325263342239}
   - component: {fileID: 1078251565761799760}
   - component: {fileID: 4347880297634660365}
   - component: {fileID: 8075978181479366049}
   - component: {fileID: 3030247053543377799}
-  - component: {fileID: 1532277544228630299}
   - component: {fileID: 1679058647909658410}
   m_Layer: 10
   m_Name: AttackFly
@@ -270,6 +270,33 @@ Transform:
   - {fileID: 6576611891249337450}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &1532277544228630299
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7229639532422697358}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 50
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!61 &8729790325263342239
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -339,13 +366,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c254426303457f149b51a71716c514cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isTracking: 0
+  isProwl: 0
+  isDetective: 0
   playerInRoom: 0
   hpBarSlider: {fileID: 3857163700732466124}
-  hp: 0
-  moveSpeed: 0
-  playerPos: {fileID: 0}
-  knockBackState: 0
   roomInfo: {fileID: 0}
+  trackingTarget: {fileID: 0}
+  eCurState: 0
+  ePreState: 0
 --- !u!212 &8075978181479366049
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -419,33 +448,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!50 &1532277544228630299
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7229639532422697358}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 50
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
 --- !u!82 &1679058647909658410
 AudioSource:
   m_ObjectHideFlags: 0

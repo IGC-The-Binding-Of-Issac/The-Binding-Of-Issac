@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Data.Common;
 using UnityEngine;
+using UnityEngine.UI;
+
 public enum TENEMY_STATE // 스크립트로 만들 상태 
 {
     Idle,
@@ -38,37 +41,33 @@ public class TEnemy : MonoBehaviour
 
 
     // Enemy가 가지고 있을 기본 스탯들
-    public bool playerInRoom;               // 플레이어가 방에 들어왔는지 여부
-    protected float hp;                       // hp
-    protected float sight;                  // 시야 범위
-    protected float moveSpeed;              // 움직임 속도
+    public bool playerInRoom;                   // 플레이어가 방에 들어왔는지 여부
+    protected float hp;                         // hp
+    protected float sight;                      // 시야 범위
+    protected float moveSpeed;                  // 움직임 속도
+    protected bool knockBackState = false;      // 넉백 
+    protected float waitforSecond;              // destroy 전 대기 시간 
+    protected float attaackSpeed;               // 공격 속도
+    protected float bulletSpeed;                // 총알 속도 
 
     // enemy 스탯 프로퍼티
     public float getMoveSpeed { get => moveSpeed; }
     public float getSight { get => sight; }
 
-    // 플레이어 위치
-    public Transform trackingTarget;
+    // Enemy의 Hp바
+    protected float maxhp;                      // hp 바의 max 
+    public Image hpBarSlider;                   // hp 바의 이미지
+
+    // 컴포넌트
+    public GameObject roomInfo;                 // 방 정보 오브젝트
+    public Transform trackingTarget;             // 플레이어 위치
 
     // Enemy가 가지고 있는 컴포넌트 (init 에서 초기화)
-    protected Animator animator;            // 애니메이터
+    protected Animator animator;                // 애니메이터
 
     // Enemy의 상태 (enum)
-    public TENEMY_STATE eCurState;          // 현재 상태
-    public TENEMY_STATE ePreState;          // 이전 상태
-
-    /// <summary>
-    /// - 생성자
-    /// 1. 자식 클래스가 부모 클래스의 생성자를 가져와야함 -> 오류남, start나 awake 에 사용헤야함
-    /// (해결 : 초기화 하는 메서드를 하위 오브젝트의 start 함수에서 실행시킴)
-    /// </summary>
-    /*
-    public TENemy() 
-    {
-        Debug.Log("부모 생성자 실행");
-        init();
-    }
-    */
+    public TENEMY_STATE eCurState;              // 현재 상태
+    public TENEMY_STATE ePreState;              // 이전 상태
 
     /// <summary>
     /// 
@@ -170,20 +169,25 @@ public class TEnemy : MonoBehaviour
 
     /// <summary>
     /// * 기타 동작 메서드
-    /// 
-    /// </summary>
-    /// 
-    public void e_findPlayer()                              // tracking할 enemy 를 탐색
+    /// </summary>  
+
+    // tracking할 enemy 를 탐색
+    public void e_findPlayer()                             
     {
         trackingTarget = GameObject.FindWithTag("Player").transform;
     }
-    public void e_Tracking()                                // tracking 움직임
+    // tracking 움직임
+    public void e_Tracking()                               
     {
+        if (knockBackState) // 넉백 상태
+            return;
+
         gameObject.transform.position
             = Vector3.MoveTowards(gameObject.transform.position, trackingTarget.transform.position, getMoveSpeed * Time.deltaTime);
     }
 
-    public bool e_SearchingPlayer()                         // 범위 안에 player 감지
+    // 범위 안에 player 감지
+    public bool e_SearchingPlayer()                         
     {
         Collider[] colliders = Physics.OverlapSphere(gameObject.transform.position, getSight);
 
@@ -196,5 +200,68 @@ public class TEnemy : MonoBehaviour
 
         }
         return false;
+    }
+
+    // 일반 몬스터 collider검사
+    private void OnCollisionStay2D(Collision2D collision)       
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            PlayerManager.instance.GetDamage();                 //플레이어랑 부딪히면 플레이어의 hp감소
+        }
+    }
+
+    // 일반 몬스터 trigger 검사
+    private void OnTriggerEnter2D(Collider2D collision)             
+    {
+        if (collision.gameObject.CompareTag("Tears"))               //눈물이랑 부딪히면 색 변화
+        {
+            Color oriColor = gameObject.GetComponent<SpriteRenderer>().color;
+            StartCoroutine(Hit(oriColor));
+        }
+    }
+
+    // 색 변화 코루틴
+    IEnumerator Hit(Color oriColor)
+    {
+        gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+        yield return new WaitForSeconds(0.1f);
+        gameObject.GetComponent<SpriteRenderer>().color = oriColor;
+    }
+
+    // 넉백 코루틴 
+    public IEnumerator knockBack()
+    {
+        knockBackState = true;
+        yield return new WaitForSeconds(0.2f);
+        knockBackState = false;
+        gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+    }
+
+    // 일반 몬스터 hp 바
+    public void CheckHp()
+    {
+        hpBarSlider.fillAmount = hp / maxhp;
+    }
+
+    // player 데미지 만큼 피 감소 (Tear 스크립트 에서 사용 )
+    public void GetDamage(float damage) 
+    {
+        hp -= damage;
+        CheckHp();
+    }
+
+    // enemy 죽음
+    public bool e_isDead() 
+    {
+        if (hp <= 0)
+            return true;
+        return false;
+    }
+
+    // enemy 삭제
+    public void e_destroyEnemy()
+    {
+        Destroy(gameObject , waitforSecond);
     }
 }
