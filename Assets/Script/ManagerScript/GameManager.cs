@@ -57,11 +57,11 @@ public class GameManager : MonoBehaviour
             playerObject = obj; // playerObject 초기화
             
             // SoundManager의 플레이어 관련 사운드 오브젝트 초기화
-            SoundManager.instance.playerObject = playerObject.GetComponent<AudioSource>(); 
+            SoundManager.instance.playerObject = playerObject.GetComponent<AudioSource>();
         }
 
         myCamera.transform.SetParent(null); // 카메라의 위치를 초기화
-        // ** 이부분이 없으면 스테이지 생성될때 스테이지가 초기화되면서 카메라도 같이 사라집니다 ** 
+        // ** 이부분이 없으면 스테이지 생성될때 스테이지가 초기화되면서 카메라도 같이 사라집니다 **
 
 
         int cnt = 15; // 방 생성 실패 한계치
@@ -70,7 +70,7 @@ public class GameManager : MonoBehaviour
             // 스테이지 구조 생성 시도
             // 정상적으로 구조가 생성되면 true
             // 실패하면 false 리턴
-            if (stageGenerate.CreateStage(stageSize, stageMinimunRoom)) 
+            if (stageGenerate.CreateStage(stageSize, stageMinimunRoom))
             {
                 roomGenerate.ClearRoom(); // 현재 생성되어있는 방 / 오브젝트 / 몬스터 등등 전부 초기화
                 SoundManager.instance.sfxObjects = new List<AudioSource>(); // soundManager의 SFXObjects 초기화.

@@ -5,20 +5,24 @@ using UnityEngine;
 
 public class Tear : MonoBehaviour
 {
+    [Header("Player")]
     PlayerController playerController;
+    Vector3 playerPosition;
+    float playerTearSize;
+
+    [Header("Tear")]
     Animator tearBoomAnim;
     Rigidbody2D tearRB;
     Vector3 tearPosition;
-    Vector3 playerPosition;
 
+    [Header("Function")]
     float betweenDistance;
-    float playerTearSize;
-
-    AudioSource audioSource;
 
     [Header("Audio")]
     public AudioClip shootSound;
     public AudioClip boomSound;
+    AudioSource audioSource;
+
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
