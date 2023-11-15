@@ -127,41 +127,53 @@ public class PlayerController : MonoBehaviour
     //이동 기능
     void Movement()
     {
+        //이동속도
         float moveSpeed = PlayerManager.instance.playerMoveSpeed;
+        //발사 딜레이
         float shotDelay = PlayerManager.instance.playerShotDelay;
 
+        //가로 이동 키입력
         float hori = Input.GetAxis("Horizontal");
+        //세로 이동 키입력
         float verti = Input.GetAxis("Vertical");
+        //입력했을 때 이동 방향 계산식
         moveInput = hori * Vector2.right + verti * Vector2.up;
         //대각 이동속도 1 넘기지 않기
         if(moveInput.magnitude > 1f)
         {
             moveInput.Normalize();
         }
+        //가로 발사 키 입력
         shootHor = Input.GetAxis("ShootHorizontal");
+        //세로 발사 키 입력
         shootVer = Input.GetAxis("ShootVertical");
+
         if (ItemManager.instance.PassiveItems[13])
         {
             KnifeAttack(hori,verti,shootHor, shootVer);
         }
         else
         {
-            //총알 발사 딜레이
+            //총알 발사 딜레이 마지막 발사와 딜레이를 합쳐 현재시간(초단위)을 넘어서면 실행
             if ((shootHor != 0 || shootVer != 0) && Time.time > lastshot + shotDelay)
             {
+                //가로나 세로 입력이 같이 될 때
                 if (shootHor != 0 && shootVer != 0)
                 {
                     //대각 발사 X
                     shootHor = 0;
                 }
+                //총알이 포물선을 그리는 아이템
                 if (ItemManager.instance.PassiveItems[9])
                 {
                     if (Input.GetKey(KeyCode.RightArrow))
                     {
+                        //우측키를 눌렀을 때 대각 위 55도로 힘을 주는 코드
                         Shoot(Mathf.Cos(55 * Mathf.Deg2Rad), Mathf.Sin(55 * Mathf.Deg2Rad));
                     }
                     if (Input.GetKey(KeyCode.LeftArrow))
                     {
+                        //좌측키를 눌렀을 때 대각 위 120도로 힘을 주는 코드
                         Shoot(Mathf.Cos(120 * Mathf.Deg2Rad), Mathf.Sin(120 * Mathf.Deg2Rad));
                     }
                     if (Input.GetKey(KeyCode.UpArrow))
@@ -177,6 +189,7 @@ public class PlayerController : MonoBehaviour
                 {
                     Shoot(shootHor, shootVer);
                 }
+                //마지막 발사에 현재 시간(초단위)을 넣음
                 lastshot = Time.time;
             }
 
@@ -190,13 +203,14 @@ public class PlayerController : MonoBehaviour
 //발사 기능
 public void Shoot(float x, float y)
     {
+        //눈물 발사 속도
         float tearSpeed = PlayerManager.instance.playerTearSpeed;
+        //눈물 생성 지점
         Vector3 firePoint = tearPoint.transform.position;
-        //발사 기능 구현
-        //게임 중 눈물 생성 눈물 프리펩, 발사 시작위치, 회전
 
         if (ItemManager.instance.PassiveItems[16] && y < 0) //닥터 페투스 습득 후 눈물 발사 시 바로 Collision 일어나는 거 방지를 위해 transform 옮김
         {
+            //게임 중 눈물 생성 눈물 프리펩, 발사 시작위치, 회전
             tear = Instantiate(PlayerManager.instance.tearObj, new Vector3(firePoint.x, firePoint.y - 0.7f, firePoint.z), transform.rotation) as GameObject;
         }
         else if (ItemManager.instance.PassiveItems[16] && x < 0)
@@ -212,9 +226,16 @@ public void Shoot(float x, float y)
             tear = Instantiate(PlayerManager.instance.tearObj, firePoint, transform.rotation) as GameObject;
         }
         if (ItemManager.instance.PassiveItems[16]) tear.GetComponent<Collider2D>().isTrigger = false;
+
+        //생성된 눈물에 눈물속도 곱해서 힘주기
         tear.GetComponent<Rigidbody2D>().velocity = new Vector3(x * tearSpeed, y * tearSpeed, 0);
+
+        //9번 패시브 아이템을 먹으면
         if (ItemManager.instance.PassiveItems[9])
+        {
+            //눈물 중력 증가
             tear.GetComponent<Rigidbody2D>().gravityScale = 3;
+        }
         else
             tear.GetComponent<Rigidbody2D>().gravityScale = 0;
         CheckedObject = null;
@@ -223,12 +244,13 @@ public void Shoot(float x, float y)
             CheckedObject = tearPoint.overLapObject;
         }
 
-        //총알이 대각으로 밀려서 발사되게 옆으로 힘을 줌
+        //눈물이 이동속도의 영향을 받음
+        //해당 이동키를 누르면 
         if (Input.GetKey(KeyCode.W))
         {
             Rigidbody2D rigid_bullet = tear.GetComponent<Rigidbody2D>();
+            //해당 방향으로 힘을 줌
             rigid_bullet.AddForce(Vector2.up * 1.5f, ForceMode2D.Impulse);
-            //위로 발사할 땐 눈물 레이어 높이기
         }
         if (Input.GetKey(KeyCode.S))
         {
@@ -245,17 +267,19 @@ public void Shoot(float x, float y)
             Rigidbody2D rigid_bullet = tear.GetComponent<Rigidbody2D>();
             rigid_bullet.AddForce(Vector2.right * 1.5f, ForceMode2D.Impulse);
         }
+        //2번 패시브 아이템을 먹으면
         if (ItemManager.instance.PassiveItems[2])
         {
+            //해당 함수 4번 실행
             for (int i = 0; i < 3; i++)
                 MutantShoot(x, y);
         }
     }
 public void MutantShoot(float x, float y)
     {
+        //발사 기능 구현
         float tearSpeed = PlayerManager.instance.playerTearSpeed;
         Vector3 firePoint = tearPoint.transform.position + new Vector3(Random.Range(-0.5f, 0.5f), Random.Range(-0.5f, 0.5f), 0);
-        //발사 기능 구현
         //게임 중 눈물 생성 눈물 프리펩, 발사 시작위치, 회전
         tear = Instantiate(PlayerManager.instance.tearObj, firePoint, transform.rotation) as GameObject;
         tear.GetComponent<Rigidbody2D>().velocity = new Vector3(x * tearSpeed, y * tearSpeed, 0);
@@ -273,12 +297,13 @@ public void MutantShoot(float x, float y)
             CheckedObject = tearPoint.overLapObject;
         }
 
-        //총알이 대각으로 밀려서 발사되게 옆으로 힘을 줌
+        //눈물이 이동속도의 영향을 받음
+        //해당 이동키를 누르면 
         if (Input.GetKey(KeyCode.W))
         {
             Rigidbody2D rigid_bullet = tear.GetComponent<Rigidbody2D>();
+            //해당 방향으로 힘을 줌
             rigid_bullet.AddForce(Vector2.up * 1.5f, ForceMode2D.Impulse);
-            //위로 발사할 땐 눈물 레이어 높이기
         }
         if (Input.GetKey(KeyCode.S))
         {
@@ -343,15 +368,24 @@ public void KnifeAttack(float moveX, float moveY, float shootX, float shootY)
     //이동 애니메이션
     void MoveAnim()
     {
+        //가로입력방향 -> -1 몸통 애니메이션 뒤집기(왼쪽)
         if (moveInput.x < 0) { bodyRenderer.flipX = true; }
+        //가로입력방향 -> 1 몸통 애니메이션 그대로(오른쪽)
         if (moveInput.x > 0) { bodyRenderer.flipX = false; }
+        //세로입력 절댓값
         playerMoveAnim.SetFloat("Up&Down", Mathf.Abs(moveInput.y));
+        //가로입력 절댓값
         playerMoveAnim.SetFloat("Left&Right", Mathf.Abs(moveInput.x));
+
+        //위로가는 방향키를 눌렀을 때
         if (Input.GetKey(KeyCode.W))
         {
+            //위로 보는 애니메이션 실행
             playerShotAnim.SetBool("UpLook", true);
+            //다른 발사 키를 누르면
             if (Input.GetKey(KeyCode.LeftArrow))
             {
+                //애니메이션 종료
                 playerShotAnim.SetBool("UpLook", false);
             }
             if (Input.GetKey(KeyCode.DownArrow))
@@ -432,8 +466,10 @@ public void KnifeAttack(float moveX, float moveY, float shootX, float shootY)
     //발사 애니메이션
     void ShotAnim()
     {
+        //각 발사 방향키를 누르면
         if (Input.GetKey(KeyCode.LeftArrow))
         {
+            //해당 방향 애니메이션 실행
             playerShotAnim.SetBool("playerLeftShot", true);
         }
         else
@@ -451,6 +487,7 @@ public void KnifeAttack(float moveX, float moveY, float shootX, float shootY)
         if (Input.GetKey(KeyCode.UpArrow))
         {
             playerShotAnim.SetBool("playerUpShot", true);
+            //위로 쏠 떄 눈물 레이어 낮게 바뀜
             if(tear != null)
                 tear.GetComponent<SpriteRenderer>().sortingOrder = 102;
         }
@@ -471,29 +508,35 @@ public void KnifeAttack(float moveX, float moveY, float shootX, float shootY)
     //피격 애니메이션
     public void Hit()
     {
+        //머리 투명
         headRenderer.color = new Color(1, 1, 1, 0);
+        //몸통 투명
         bodyRenderer.color = new Color(1, 1, 1, 0);
+        //머리에 씌워진 아이템 투명
         headItem.color = new Color(1, 1, 1, 0);
+        //피격 애니메이션 실행
         playerAnim.SetTrigger("Hit");
-
+        //피격 사운드 실행
         HitSound();
     }
 
     // 사망 애니메이션
     public void Dead()
     {
+        //사망 사운드 실행
         DeadSound();
 
         //player head, player body 오브젝트 찾아서 끄기
         head.gameObject.SetActive(false);
         body.gameObject.SetActive(false);
+        //사망 애니메이션 실행
         playerAnim.SetTrigger("Death");
     }
 
     //아이템 획득 애니메이션
     public IEnumerator GetItemTime()
     {
-        //원래 모습은 가려둠
+        //원래 head, body,headitem 모습은 가려둠
         headRenderer.color = new Color(1, 1, 1, 0);
         bodyRenderer.color = new Color(1, 1, 1, 0);
         headItem.color = new Color(1, 1, 1, 0);

@@ -74,28 +74,34 @@ public class PlayerManager : MonoBehaviour
 
     public void SetHeadSkin(int index)
     {
+        //머리 외형을 바꾸는 함수
         ChangeHead(head[index]);
     }
     public void SetBodySkin(int index) 
     { 
+        //몸통 외형을 바꾸는 함수
         ChangeBody(body[index]);
     }
     public void SetTearSkin(int index)
     {
+        //눈물 외형을 바꾸는 함수
         ChangeTear(tear[index]);
     }
     public void ChangeHead(SpriteLibraryAsset head)
     {
+        //SpriteLibraryAsset안에 있는 head를 플레이어 스프라이트에 넣어줌 
         GameManager.instance.playerObject.GetComponent<PlayerController>().head.GetComponent<SpriteLibrary>().spriteLibraryAsset = head;
     }
 
     public void ChangeBody(SpriteLibraryAsset body)
     {
+        //SpriteLibraryAsset안에 있는 body를 플레이어 스프라이트에 넣어줌
         GameManager.instance.playerObject.GetComponent<PlayerController>().body.GetComponent<SpriteLibrary>().spriteLibraryAsset = body;
     }
 
     public void ChangeTear(SpriteLibraryAsset tear)
     {
+        //SpriteLibraryAsset안에 있는 tear를 플레이어 스프라이트에 넣어줌
         tearObj.GetComponent<SpriteLibrary>().spriteLibraryAsset = tear;
     }
 
@@ -107,6 +113,7 @@ public class PlayerManager : MonoBehaviour
         ItemManager.instance.bombPrefab.transform.localScale = new Vector3(1, 1, 1);
         gameObject.AddComponent<AudioSource>();
         PlayerInitialization();
+        //눈물 외형 초기화
         SetTearSkin(0);
     }
 
@@ -215,6 +222,7 @@ public class PlayerManager : MonoBehaviour
 
         int countTime = 0;
 
+        //피격 후 깜빡이는 효과
         while(countTime < 14)
         {
             //countTIme%2 == 0이면 플레이어 모습이 보임
@@ -232,7 +240,7 @@ public class PlayerManager : MonoBehaviour
                 headItem.color = new Color(1, 1, 1, 0);
             }
             countTime++;
-
+            //0.1초에 한번씩 깜빡임
             yield return new WaitForSeconds(0.1f);
         }
         //while문 실행 후 모습이 보임
@@ -245,11 +253,13 @@ public class PlayerManager : MonoBehaviour
     }
     public void ChgTearSize()
     {
+        //눈물 스케일 변경
         tearObj.transform.localScale = new Vector3(playerTearSize, playerTearSize, 0);
     }
 
     public void ChgPlayerSize()
     {
+        //플레이어 스케일 변경
         playerObj = GameManager.instance.playerObject;
         playerObj.transform.localScale = new Vector3(playerSize, playerSize, 0);
     }

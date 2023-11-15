@@ -28,9 +28,6 @@ public class BOTM : ItemInfo
 
         //월계관 달리는 함수 1초뒤 실행
         Invoke("getBOTM", 1f);
-
-        //눈물 터지는 애니메이션 변경
-
     }
 
     public void getBOTM()
