@@ -43,57 +43,59 @@ public class Tear : MonoBehaviour
         tearPosition = this.transform.position;
         //둘 사이의 거리
         betweenDistance = Vector3.Distance(tearPosition, playerPosition);
-        //둘 사이의 거리가 플레이어 사거리보다 커지면
+
+        //해당 아이템을 먹으면
         if (ItemManager.instance.PassiveItems[9])
         {
+            //눈물 y값이 플레이어 y값보다 낮아지면 눈물 터트림
             if(tearPosition.y <= playerPosition.y)
                 BoomTear();
         }
+        //둘 사이의 거리가 플레이어 사거리보다 커지면
         if (betweenDistance >= PlayerManager.instance.playerRange)
         {
+            //눈물 터트림
             BoomTear();
         }
     }
 
+    //눈물이 터지는 애니메이션이 실행되면서 애니메이션 위치는 고정
+    //TearBoom 애니메이션 클립에 추가함
     public void StopTear()
     {
         BoomSound(); // tear 터지는 사운드
+        //눈물 속도 0
         tearRB.velocity = Vector2.zero;
-        tearRB.gravityScale = 0f;
-        //총알 오브젝트 속도를 zero로 만듬
+        //눈물 중력 0
+        tearRB.gravityScale = 0;
     }
 
     public void BoomTear()
     {
-        if (ItemManager.instance.PassiveItems[0] == true || (playerController.nailActivated))
-        {
-            tearBoomAnim.SetTrigger("RedBoomTear");
-        }
-        else
-        {
-            //눈물 터지는 애니메이션 실행
-            tearBoomAnim.SetTrigger("BoomTear");
-        }
+        //눈물 터지는 애니메이션 실행
+        tearBoomAnim.SetTrigger("BoomTear");
     }
     public void TearSize()
     {
+        //플레이어 스탯 눈물 사이즈를 가져옴
         playerTearSize = PlayerManager.instance.playerTearSize;
+        //현재 눈물에 플레이어 스탯 사이즈 적용
         gameObject.transform.localScale = new Vector3(playerTearSize, playerTearSize, 0);
     }
 
+    //눈물 애니메이션 클립 이벤트로 마지막에 추가 되어있음
     public void DestoryTear()
     {
         //총알 파괴
         Destroy(gameObject);
     }
 
-
     private void OnTriggerStay2D(Collider2D collision)
     {
         GameObject tmp = GameManager.instance.playerObject.GetComponent<PlayerController>().CheckedObject;
         
         //벽에 박으면 총알 터트리기
-        if (tmp != collision.gameObject) 
+        if (tmp != collision.gameObject)
         {
 
             if (collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Object_Rock"))
