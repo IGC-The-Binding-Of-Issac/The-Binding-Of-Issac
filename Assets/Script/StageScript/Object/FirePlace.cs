@@ -12,10 +12,27 @@ public class FirePlace : MonoBehaviour
     [SerializeField] GameObject eft;
     [SerializeField] GameObject boxCollider;
     [SerializeField] AudioClip destoryClip;
+    [SerializeField] AudioClip fireClip;
 
+
+    Sprite defaultSprite;
     private void Start()
     {
         sfxAudio = GetComponent<AudioSource>();
+        defaultSprite = GetComponent<SpriteRenderer>().sprite;
+    }
+
+    public void ResetObject()
+    {
+        //초기화
+        fireIndex = -1;
+        FireSound();
+        eft.SetActive(true);
+        GetComponent<SpriteRenderer>().sprite = defaultSprite;
+        GetComponent<BoxCollider2D>().enabled = true;
+
+        //오브젝트 끄기
+        gameObject.SetActive(false);
     }
 
     public void GetDamage() 
@@ -55,9 +72,15 @@ public class FirePlace : MonoBehaviour
         objectAudio.loop = false;
         objectAudio.clip = destoryClip;
         objectAudio.Play();
-        
     }
 
+    void FireSound()
+    {
+        AudioSource objectAudio = gameObject.GetComponent<AudioSource>();
+        objectAudio.loop = true;
+        objectAudio.clip = fireClip;
+        objectAudio.Play();
+    }
 
     private void OnTriggerStay2D(Collider2D collision)
     {

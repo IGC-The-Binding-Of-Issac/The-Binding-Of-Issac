@@ -23,6 +23,143 @@ public class RoomGenerate : MonoBehaviour
     public GameObject[] objectPrefabs; // 방생성후 오브젝트 생성할때 사용할 프리팹들
     public GameObject[] doorPrefabs;   // 방생성후 문 생성할때 사용할 프리팹들
 
+    [Header("Pooling")]
+    public Transform rockPool_Transform;
+    Stack<GameObject> rockPool = new Stack<GameObject>();
+
+    public Transform poopPool_Transform;
+    Stack<GameObject> poopPool = new Stack<GameObject>();
+
+    public Transform firePool_Transform;
+    Stack<GameObject> firePool = new Stack<GameObject>();
+
+    public Transform spikePool_Transform;
+    Stack<GameObject> spikePool = new Stack<GameObject>();
+
+    public void SetObjectPooling()
+    {
+        rockPool = new Stack<GameObject>();
+        poopPool = new Stack<GameObject>();
+        firePool = new Stack<GameObject>();
+        spikePool = new Stack<GameObject>();
+
+        for(int i = 0; i < 40; i++)
+        {
+            // 오브젝트 생성
+            GameObject rock = Instantiate(objectPrefabs[0], rockPool_Transform.position, Quaternion.identity);
+            GameObject poop = Instantiate(objectPrefabs[1], poopPool_Transform.position, Quaternion.identity);
+            GameObject fire = Instantiate(objectPrefabs[2], firePool_Transform.position, Quaternion.identity); 
+            GameObject spike = Instantiate(objectPrefabs[3]);
+
+            rockPool.Push(rock);
+            poopPool.Push(poop);
+            firePool.Push(fire);
+            spikePool.Push(spike);
+
+            // 오브젝트 한곳에 모아두기.
+            rock.transform.SetParent(rockPool_Transform);
+            poop.transform.SetParent(poopPool_Transform);
+            fire.transform.SetParent(firePool_Transform);
+            spike.transform.SetParent(spikePool_Transform);
+
+            // 사운드 조절을 위해 SFXObject로 넣어주기
+            SetSFXObject(rock);
+            SetSFXObject(poop);
+            SetSFXObject(fire);
+            SetSFXObject(spike);
+        }
+    }
+
+    GameObject GetObstacle(int num)
+    {
+        switch(num)
+        {
+            #region 돌
+            case 0: // 돌 
+                if(rockPool.Count == 0) // 오브젝트풀에 오브젝트가 없을때
+                {
+                    // 오브젝트 생성해서 리턴
+                    GameObject rock = Instantiate(objectPrefabs[0], rockPool_Transform.position, Quaternion.identity);
+                    rockPool.Push(rock);
+                    rock.transform.SetParent(rockPool_Transform);
+                    SetSFXObject(rock);
+                    return rockPool.Pop();
+                }
+                return rockPool.Pop();
+            #endregion
+
+            #region 똥
+            case 1: // 똥
+                if (poopPool.Count == 0) // 오브젝트풀에 오브젝트가 없을때
+                {
+                    // 오브젝트 생성해서 리턴
+                    GameObject poop = Instantiate(objectPrefabs[1], poopPool_Transform.position, Quaternion.identity);
+                    poopPool.Push(poop);
+                    poop.transform.SetParent(poopPool_Transform);
+                    SetSFXObject(poop);
+                    return poopPool.Pop();
+                }
+                return poopPool.Pop();
+            #endregion
+
+            #region 불
+            case 2: // 불
+                if (firePool.Count == 0) // 오브젝트풀에 오브젝트가 없을때
+                {
+                    // 오브젝트 생성해서 리턴
+                    GameObject fire = Instantiate(objectPrefabs[2], firePool_Transform.position, Quaternion.identity);
+                    firePool.Push(fire);
+                    fire.transform.SetParent(firePool_Transform);
+                    SetSFXObject(fire);
+                    return firePool.Pop();
+                }
+                return firePool.Pop();
+            #endregion
+
+            #region 가시
+            case 3: // 가시
+                if (spikePool.Count == 0) // 오브젝트풀에 오브젝트가 없을때
+                {
+                    // 오브젝트 생성해서 리턴
+                    GameObject spike = Instantiate(objectPrefabs[3], spikePool_Transform.position, Quaternion.identity);
+                    spikePool.Push(spike);
+                    spike.transform.SetParent(spikePool_Transform);
+                    SetSFXObject(spike);
+                    return spikePool.Pop();
+                }
+                return spikePool.Pop();
+            #endregion
+        }
+        return null;
+    }
+    void AllReturnObject(GameObject obj)
+    {
+
+        if (obj.GetComponent<Rock>() != null)
+        {
+            obj.GetComponent<Rock>().ResetObject();
+            rockPool.Push(obj);
+        }
+
+        else if(obj.GetComponent<Poop>() != null)
+        {
+            obj.GetComponent<Poop>().ResetObject();
+            poopPool.Push(obj);
+        }
+
+        else if(obj.GetComponent<FirePlace>() != null)
+        {
+            obj.GetComponent<FirePlace>().ResetObject();
+            firePool.Push(obj);
+        }
+
+        else if(obj.GetComponent<Spikes>() != null)
+        {
+            obj.GetComponent<Spikes>().ResetObject();
+            spikePool.Push(obj);
+        }
+    }
+
     public void SetPrefabs()
     {
         /* 

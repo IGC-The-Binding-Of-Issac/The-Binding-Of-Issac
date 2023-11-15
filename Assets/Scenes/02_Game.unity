@@ -1176,6 +1176,10 @@ MonoBehaviour:
   - {fileID: 15529143964921950, guid: 07f3ba8484564f24fb79d004c89c1205, type: 3}
   - {fileID: 2481015437421042754, guid: 98df69f2f183cca43aaa5800a95d2885, type: 3}
   - {fileID: 5023763103856867615, guid: 99fe68da64dcf8b4aa453dcaef2063fd, type: 3}
+  rockPool_Transform: {fileID: 0}
+  poopPool_Transform: {fileID: 0}
+  firePool_Transform: {fileID: 0}
+  spikePool_Transform: {fileID: 0}
 --- !u!1 &419525034
 GameObject:
   m_ObjectHideFlags: 0
