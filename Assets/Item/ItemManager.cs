@@ -42,7 +42,7 @@ public class ItemManager : MonoBehaviour
     public GameObject goldTable; // 아이템 테이블 프리팹
     
     [Header("Prefabs")]
-    public GameObject tableEffect; // 아이템 생성 이펙트?
+    public GameObject tableEffect; // 아이템 생성 이펙트
 
     private void Start()
     {

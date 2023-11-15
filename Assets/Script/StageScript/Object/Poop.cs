@@ -8,6 +8,11 @@ public class Poop : MonoBehaviour
 
     [Header("Unity SetUp")]
     [SerializeField] Sprite[] poopSprite;
+    Sprite defaultSprite;
+    private void Start()
+    {
+        defaultSprite = GetComponent<SpriteRenderer>().sprite;
+    }
 
     public void GetDamage()
     {
@@ -40,5 +45,15 @@ public class Poop : MonoBehaviour
     void DestorySound()
     {
         gameObject.GetComponent<AudioSource>().Play();
+    }
+    public void ResetObject()
+    {
+        // 초기화
+        poopIndex = -1;
+        GetComponent<SpriteRenderer>().sprite = defaultSprite;
+        GetComponent<BoxCollider2D>().enabled = true;
+
+        // 오브젝트 끄기.
+        gameObject.SetActive(false);
     }
 }

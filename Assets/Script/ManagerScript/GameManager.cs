@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
     {
         SetStage(1); // 1stage create
         roomGenerate.SetPrefabs(); // room Prefabs Setting
+        roomGenerate.SetObjectPooling(); // set room object pool
 
         // 게임 시작 ( 스테이지 생성 )
         Invoke("StageStart", 0.3f);

@@ -23,6 +23,171 @@ public class RoomGenerate : MonoBehaviour
     public GameObject[] objectPrefabs; // 방생성후 오브젝트 생성할때 사용할 프리팹들
     public GameObject[] doorPrefabs;   // 방생성후 문 생성할때 사용할 프리팹들
 
+    [Header("Pooling")]
+    public Transform rockPool_Transform;
+    Stack<GameObject> rockPool = new Stack<GameObject>();
+
+    public Transform poopPool_Transform;
+    Stack<GameObject> poopPool = new Stack<GameObject>();
+
+    public Transform firePool_Transform;
+    Stack<GameObject> firePool = new Stack<GameObject>();
+
+    public Transform spikePool_Transform;
+    Stack<GameObject> spikePool = new Stack<GameObject>();
+
+    public void SetObjectPooling()
+    {
+        rockPool = new Stack<GameObject>();
+        poopPool = new Stack<GameObject>();
+        firePool = new Stack<GameObject>();
+        spikePool = new Stack<GameObject>();
+
+        for(int i = 0; i < 40; i++)
+        {
+            // 오브젝트 생성
+            GameObject rock = Instantiate(objectPrefabs[0], rockPool_Transform.position, Quaternion.identity);
+            GameObject poop = Instantiate(objectPrefabs[1], poopPool_Transform.position, Quaternion.identity);
+            GameObject fire = Instantiate(objectPrefabs[2], firePool_Transform.position, Quaternion.identity); 
+            GameObject spike = Instantiate(objectPrefabs[3]);
+
+            rockPool.Push(rock);
+            poopPool.Push(poop);
+            firePool.Push(fire);
+            spikePool.Push(spike);
+
+            // 오브젝트 한곳에 모아두기.
+            rock.transform.SetParent(rockPool_Transform);
+            poop.transform.SetParent(poopPool_Transform);
+            fire.transform.SetParent(firePool_Transform);
+            spike.transform.SetParent(spikePool_Transform);
+
+            // 사운드 조절을 위해 SFXObject로 넣어주기
+            SetSFXObject(rock);
+            SetSFXObject(poop);
+            SetSFXObject(fire);
+            SetSFXObject(spike);
+
+            rock.SetActive(false);
+            poop.SetActive(false);
+            fire.SetActive(false);
+            spike.SetActive(false);
+        }
+    }
+
+    GameObject GetObstacle(int num)
+    {
+        switch(num)
+        {
+            #region 돌
+            case 0: // 돌 
+                if(rockPool.Count == 0) // 오브젝트풀에 오브젝트가 없을때
+                {
+                    // 오브젝트 생성해서 리턴
+                    GameObject rock = Instantiate(objectPrefabs[0], rockPool_Transform.position, Quaternion.identity);
+                    rockPool.Push(rock);
+                    rock.transform.SetParent(rockPool_Transform);
+                    SetSFXObject(rock);
+                }
+                GameObject rockObj = rockPool.Pop();
+                rockObj.SetActive(true);
+                return rockObj;
+            #endregion
+
+            #region 똥
+            case 1: // 똥
+                if (poopPool.Count == 0) // 오브젝트풀에 오브젝트가 없을때
+                {
+                    // 오브젝트 생성해서 리턴
+                    GameObject poop = Instantiate(objectPrefabs[1], poopPool_Transform.position, Quaternion.identity);
+                    poopPool.Push(poop);
+                    poop.transform.SetParent(poopPool_Transform);
+                    SetSFXObject(poop);
+                }
+                GameObject poopObj = poopPool.Pop();
+                poopObj.SetActive(true);
+                return poopObj;
+            #endregion
+
+            #region 불
+            case 2: // 불
+                if (firePool.Count == 0) // 오브젝트풀에 오브젝트가 없을때
+                {
+                    // 오브젝트 생성해서 리턴
+                    GameObject fire = Instantiate(objectPrefabs[2], firePool_Transform.position, Quaternion.identity);
+                    firePool.Push(fire);
+                    fire.transform.SetParent(firePool_Transform);
+                    SetSFXObject(fire);
+                }
+                GameObject fireObj = firePool.Pop();
+                fireObj.SetActive(true);
+                return fireObj;
+            #endregion
+
+            #region 가시
+            case 3: // 가시
+                if (spikePool.Count == 0) // 오브젝트풀에 오브젝트가 없을때
+                {
+                    // 오브젝트 생성해서 리턴
+                    GameObject spike = Instantiate(objectPrefabs[3], spikePool_Transform.position, Quaternion.identity);
+                    spikePool.Push(spike);
+                    spike.transform.SetParent(spikePool_Transform);
+                    SetSFXObject(spike);
+                }
+                GameObject spikeObj = spikePool.Pop();
+                spikeObj.SetActive(true);
+                return spikeObj;
+                #endregion
+        }
+        return null;
+    }
+    void AllReturnObject()
+    {
+        // 돌
+        for(int i = 0; i < rockPool_Transform.childCount; i++)
+        {
+            GameObject obj = rockPool_Transform.GetChild(i).gameObject;
+            if (obj.activeSelf)
+            {
+                obj.GetComponent<Rock>().ResetObject();
+                rockPool.Push(obj);
+            }
+        }
+
+        // 똥
+        for (int i = 0; i < poopPool_Transform.childCount; i++)
+        {
+            GameObject obj = poopPool_Transform.GetChild(i).gameObject;
+            if (obj.activeSelf)
+            {
+                obj.GetComponent<Poop>().ResetObject();
+                poopPool.Push(obj);
+            }
+        }
+
+        // 불
+        for (int i = 0; i < firePool_Transform.childCount; i++)
+        {
+            GameObject obj = firePool_Transform.GetChild(i).gameObject;
+            if (obj.activeSelf)
+            {
+                obj.GetComponent<FirePlace>().ResetObject();
+                firePool.Push(obj);
+            }
+        }
+
+        // 가시
+        for (int i = 0; i < spikePool_Transform.childCount; i++)
+        {
+            GameObject obj = spikePool_Transform.GetChild(i).gameObject;
+            if (obj.activeSelf)
+            {
+                obj.GetComponent<Spikes>().ResetObject();
+                spikePool.Push(obj);
+            }
+        }
+    }
+
     public void SetPrefabs()
     {
         /* 
@@ -47,6 +212,8 @@ public class RoomGenerate : MonoBehaviour
     {
         roomList = null; // 생성된 방 오브젝트 배열 초기화
         doors = new List<GameObject>(); // 생성된 문 오브젝트 배열 초기화
+
+        AllReturnObject();
 
         // 생성되어있는 모든 방들을 삭제
         for(int i = 0; i < roomPool.childCount; i++)
@@ -233,23 +400,50 @@ public class RoomGenerate : MonoBehaviour
                     // 그외
                     else
                     {
-                        GameObject obstacle = Instantiate(objectPrefabs[pNum - 1]) as GameObject; // 오브젝트 생성
-                        obstacle.transform.SetParent(roomList[y, x].GetComponent<Room>().roomObjects[idx]); // 오브젝트 위치 설정
-                        obstacle.transform.localPosition = new Vector3(0, 0, 0); // 오브젝트 위치 설정
-
                         if (pNum == 7) // 황금방 아이템 테이블
                         {
-                            obstacle.GetComponent<GoldTable>().SetRoomInfo(roomList[y,x]);
+                            GameObject gold = Instantiate(objectPrefabs[pNum - 1]) as GameObject; // 오브젝트 생성
+                            gold.transform.SetParent(roomList[y, x].GetComponent<Room>().roomObjects[idx]); // 오브젝트 위치 설정
+                            gold.transform.localPosition = new Vector3(0, 0, 0); // 오브젝트 위치 설정
+                            gold.GetComponent<GoldTable>().SetRoomInfo(roomList[y, x]);
+                            SetSFXObject(gold);
                         }
-                        else if(pNum == 6) // 상점방 아이템 테이블
+                        else if (pNum == 6) // 상점방 아이템 테이블
                         {
-                            obstacle.GetComponent<ShopTable>().SetRoomInfo(roomList[y, x]);
+                            GameObject shop = Instantiate(objectPrefabs[pNum - 1]) as GameObject; // 오브젝트 생성
+                            shop.transform.SetParent(roomList[y, x].GetComponent<Room>().roomObjects[idx]); // 오브젝트 위치 설정
+                            shop.transform.localPosition = new Vector3(0, 0, 0); // 오브젝트 위치 설정
+                            shop.GetComponent<ShopTable>().SetRoomInfo(roomList[y, x]);
+                            SetSFXObject(shop);
                         }
 
-                        // sfx 사운드 조절을 위한 오브젝트 저장
-                        SetSFXObject(obstacle);
-                    }
+                        // 아이템 상자 ( 일반  
+                        else if (pNum == 8)
+                        {
+                            GameObject chest = Instantiate(objectPrefabs[pNum - 1]) as GameObject; // 오브젝트 생성
+                            chest.transform.SetParent(roomList[y, x].GetComponent<Room>().roomObjects[idx]); // 오브젝트 위치 설정
+                            chest.transform.localPosition = new Vector3(0, 0, 0); // 오브젝트 위치 설정
+                            SetSFXObject(chest);
+                        }
 
+                        // 아이템 상자 ( 황금
+                        else if (pNum == 9)
+                        {
+                            GameObject chest = Instantiate(objectPrefabs[pNum - 1]) as GameObject; // 오브젝트 생성
+                            chest.transform.SetParent(roomList[y, x].GetComponent<Room>().roomObjects[idx]); // 오브젝트 위치 설정
+                            chest.transform.localPosition = new Vector3(0, 0, 0); // 오브젝트 위치 설정
+                            SetSFXObject(chest);
+                        }
+
+
+
+                        else // 돌 똥 불 가시
+                        {
+                            GameObject obstacle = GetObstacle(pNum-1);
+                            Vector3 pos = roomList[y, x].GetComponent<Room>().roomObjects[idx].position;
+                            obstacle.transform.position = pos;
+                        }
+                    }
                 }
                 idx++;
             }

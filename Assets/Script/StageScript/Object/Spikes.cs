@@ -11,4 +11,8 @@ public class Spikes : MonoBehaviour
             PlayerManager.instance.GetDamage();
         }
     }
+    public void ResetObject()
+    {
+        gameObject.SetActive(false);
+    }
 }
