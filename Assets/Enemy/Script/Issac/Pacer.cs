@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Pacer : Top_IssacMonster
 {
-    bool paberisFlipped;
+
     void Start()
     {
         Issac_Move_InitialIze();
@@ -23,9 +23,6 @@ public class Pacer : Top_IssacMonster
         randRange = 3f;
         fTime = 2f;
         StartCoroutine(checkPosi(randRange));
-
-        //pacer
-        paberisFlipped = false;
     }
 
     void Update()
