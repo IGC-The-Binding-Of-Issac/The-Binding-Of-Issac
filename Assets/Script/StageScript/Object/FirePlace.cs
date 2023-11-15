@@ -16,10 +16,12 @@ public class FirePlace : MonoBehaviour
 
 
     Sprite defaultSprite;
+    Vector3 defaultScale;
     private void Start()
     {
         sfxAudio = GetComponent<AudioSource>();
         defaultSprite = GetComponent<SpriteRenderer>().sprite;
+        defaultScale = eft.transform.localScale;
     }
 
     public void ResetObject()
@@ -30,6 +32,7 @@ public class FirePlace : MonoBehaviour
         eft.SetActive(true);
         GetComponent<SpriteRenderer>().sprite = defaultSprite;
         GetComponent<BoxCollider2D>().enabled = true;
+        eft.transform.localScale = defaultScale;
 
         //오브젝트 끄기
         gameObject.SetActive(false);

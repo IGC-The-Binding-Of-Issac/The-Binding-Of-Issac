@@ -7,10 +7,13 @@ public class Rock : MonoBehaviour
     [SerializeField] Sprite destoryRock;
     Sprite defaultSprite;
     // ∆¯≈∫ø° ««∞›¿Ã DestoryRock()¿ª »£√‚.
-    public void DestroyRock()
+
+    private void Start()
     {
         defaultSprite = gameObject.GetComponent<SpriteRenderer>().sprite;
-
+    }
+    public void DestroyRock()
+    {
         gameObject.GetComponent<SpriteRenderer>().sprite = destoryRock;
         gameObject.GetComponent<BoxCollider2D>().enabled = false;
 
