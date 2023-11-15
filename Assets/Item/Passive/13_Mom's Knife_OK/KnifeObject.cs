@@ -9,6 +9,8 @@ public class KnifeObject : MonoBehaviour
 
     private Rigidbody2D rb;
     private float triggerStay;
+    private Vector3 startPosition;
+    private bool canShoot = true;
     private bool canReturn;
     [SerializeField]
     float shootForce;
@@ -28,24 +30,39 @@ public class KnifeObject : MonoBehaviour
     {
         float x = Input.GetAxisRaw("ShootHorizontal");
         float y = Input.GetAxisRaw("ShootVertical");
-        if (x > 0)
+        if (x > 0 && canShoot)
         {
             shootForce += Time.deltaTime;
         }
-        if (x == 0 && shootForce != 0 && !canReturn)
+        if (x == 0 && shootForce != 0 && canShoot)
         {
-            rb.velocity = new Vector3(shootForce, 0, 0);
-            canReturn = true;
+            startPosition = gameObject.transform.position;
+            Debug.Log(startPosition);
+            rb.AddForce(new Vector3(shootForce, 0, 0) * shootForce * 2.5f, ForceMode2D.Impulse);
+            canShoot = false;
         }
     }
     private void RangeCheck()
     {
-        Vector3 knifePosition = this.gameObject.transform.position;
-        Vector3 playerPosition = GameManager.instance.playerObject.transform.position;
-        float between = Vector3.Distance(knifePosition, playerPosition);
-        if (between >= PlayerManager.instance.playerRange && canReturn)
+        if(!canShoot)
         {
-            rb.velocity = new Vector3(-shootForce, 0, 0);
+            Vector3 knifePosition = gameObject.transform.position;
+            float distance = Vector3.Distance(knifePosition, startPosition);
+            if (!canShoot && rb.velocity.x <= 0.5f)
+            {
+                canReturn = true;
+            }
+            if (canReturn)
+            {
+                rb.AddForce(new Vector3(-shootForce, 0, 0) * shootForce * 0.2f, ForceMode2D.Force);
+            }
+            if (canReturn && distance <= 0.01f)
+            {
+                rb.velocity = Vector3.zero;
+                canReturn = false;
+                canShoot = true;
+                shootForce = 0;
+            }
         }
     }
     private void OnTriggerStay2D(Collider2D collision)
