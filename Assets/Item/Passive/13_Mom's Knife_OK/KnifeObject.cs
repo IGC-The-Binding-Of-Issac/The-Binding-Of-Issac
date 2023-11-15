@@ -5,71 +5,116 @@ using UnityEngine;
 
 public class KnifeObject : MonoBehaviour
 {
-    public PlayerController playerCtr;
 
-    private Rigidbody2D rb;
-    private float triggerStay;
-    private Vector3 startPosition;
-    private bool canShoot = true;
-    private bool canReturn;
     [SerializeField]
-    float shootForce;
+    public Transform startPosition;
+    private Rigidbody2D rb;
+    [SerializeField]
+    float shootForceX;
+    [SerializeField]
+    float shootForceY;
+
+    public bool canShoot = true;
+
     private void Start()
     {
-        playerCtr = GameManager.instance.playerObject.GetComponent<PlayerController>();
         rb = gameObject.GetComponent<Rigidbody2D>();
     }
 
     private void Update()
     {
         ShootKnife();
-        RangeCheck();
+        if(canShoot) transform.position = startPosition.position;
     }
+  
+    private void ShootKnifeX(float x, float distance)
+    {
+        if (x != 0 && canShoot)
+        {
+            if (x > 0) shootForceX += Time.deltaTime;
 
+            else if (x < 0) shootForceX -= Time.deltaTime;
+
+            if (shootForceX >= 1f) shootForceX = 1f;
+
+            else if (shootForceX <= -1f) shootForceX = -1f;
+        }
+        if (x == 0 && canShoot && shootForceX != 0)
+        {
+            if (shootForceX > 0 && x == 0)
+            {
+                rb.AddForce(new Vector3(shootForceX, 0, 0) * shootForceX * 7f, ForceMode2D.Impulse);
+            }
+            else if (shootForceX < 0 && x == 0)
+            {
+                rb.AddForce(new Vector3(shootForceX, 0, 0) * -shootForceX * 7f, ForceMode2D.Impulse);
+            }
+            canShoot = false;
+        }
+        if ((!canShoot && rb.velocity.x <= 1.5f && shootForceX > 0) || (!canShoot && rb.velocity.x >= -1.5f && shootForceX < 0))
+        {
+            rb.velocity = Vector3.zero;
+            Vector3 velo = Vector3.zero;
+            Vector3 currentPosition = gameObject.transform.position;
+            transform.position = Vector3.SmoothDamp(currentPosition, startPosition.position, ref velo, 0.07f);
+        }
+        if ((!canShoot && distance <= 0.5f && rb.velocity.x <= 0.1f && shootForceX > 0) || (!canShoot && distance <= 0.5f && rb.velocity.x >= -0.1f && shootForceX < 0))
+        {
+            transform.position = startPosition.position;
+            canShoot = true;
+            shootForceX = 0;
+        }
+    }
+    
+    private void ShootKnifeY(float y, float distance)
+    {
+        if (y != 0 && canShoot)
+        {
+            if (y > 0) shootForceY += Time.deltaTime;
+            else if (y < 0) shootForceY -= Time.deltaTime;
+
+            if (shootForceY >= 1f) shootForceY = 1f;
+            else if (shootForceY <= -1f) shootForceY = -1f;
+        }
+        if (y == 0 && canShoot && shootForceY != 0)
+        {
+            if (shootForceY > 0 && y == 0)
+            {
+                rb.AddForce(new Vector3(0, shootForceY, 0) * shootForceY * 7f, ForceMode2D.Impulse);
+            }
+            else if (shootForceY < 0 && y == 0)
+            {
+                rb.AddForce(new Vector3(0, shootForceY, 0) * -shootForceY * 7f, ForceMode2D.Impulse);
+            }
+            canShoot = false;
+        }
+        if ((!canShoot && rb.velocity.y <= 1.5f && shootForceY > 0) || (!canShoot && rb.velocity.y >= -1.5f && shootForceY < 0))
+        {
+            rb.velocity = Vector3.zero;
+            Vector3 velo = Vector3.zero;
+            Vector3 currentPosition = gameObject.transform.position;
+            transform.position = Vector3.SmoothDamp(currentPosition, startPosition.position, ref velo, 0.07f);
+        }
+        if ((!canShoot && distance <= 0.5f && rb.velocity.y <= 0.1f && shootForceY > 0) || (!canShoot && distance <= 0.5f && rb.velocity.y >= -0.1f && shootForceY < 0))
+        {
+            transform.position = startPosition.position;
+            canShoot = true;
+            shootForceY = 0;
+        }
+    }
+        
+    
     private void ShootKnife()
     {
         float x = Input.GetAxisRaw("ShootHorizontal");
         float y = Input.GetAxisRaw("ShootVertical");
-        if (x > 0 && canShoot)
-        {
-            shootForce += Time.deltaTime;
-        }
-        if (x == 0 && shootForce != 0 && canShoot)
-        {
-            startPosition = gameObject.transform.position;
-            Debug.Log(startPosition);
-            rb.AddForce(new Vector3(shootForce, 0, 0) * shootForce * 2.5f, ForceMode2D.Impulse);
-            canShoot = false;
-        }
+        float distance = Vector3.Distance(startPosition.position, transform.position);
+        ShootKnifeX(x, distance);
+        ShootKnifeY(y, distance);
     }
-    private void RangeCheck()
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(!canShoot)
-        {
-            Vector3 knifePosition = gameObject.transform.position;
-            float distance = Vector3.Distance(knifePosition, startPosition);
-            if (!canShoot && rb.velocity.x <= 0.5f)
-            {
-                canReturn = true;
-            }
-            if (canReturn)
-            {
-                rb.AddForce(new Vector3(-shootForce, 0, 0) * shootForce * 0.2f, ForceMode2D.Force);
-            }
-            if (canReturn && distance <= 0.01f)
-            {
-                rb.velocity = Vector3.zero;
-                canReturn = false;
-                canShoot = true;
-                shootForce = 0;
-            }
-        }
-    }
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        triggerStay += Time.deltaTime;
-        if (triggerStay > 0.15f)
-        {
             //¶Ë¿¡ ¹ÚÀ¸¸é
             if (collision.gameObject.CompareTag("Object_Poop"))
             {
@@ -99,8 +144,5 @@ public class KnifeObject : MonoBehaviour
             {
             collision.gameObject.GetComponent<Enemy>().GetDamage(PlayerManager.instance.playerDamage);
             }
-            triggerStay = 0;
-        }
-        
     }
 }

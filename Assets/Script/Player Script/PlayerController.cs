@@ -31,6 +31,7 @@ public class PlayerController : MonoBehaviour
     float shootHor;
     float shootVer;
     public GameObject tear;
+    public GameObject knife;
     int tearDir;
     [Header("Unity Setup")]
     public TearPoint tearPoint;
@@ -324,45 +325,28 @@ public void MutantShoot(float x, float y)
 
 public void KnifeAttack(float moveX, float moveY, float shootX, float shootY)
     {
-        if (moveX > 0 || shootX > 0) //오른쪽
+        if(knife.GetComponent<KnifeObject>().canShoot)
         {
-            knifePosition.localPosition = new Vector3(0.94f, 0.2f, 0);
-            knifePosition.rotation = Quaternion.Euler(0, 0, -90);
-        }
-        else if (moveX < 0 || shootX < 0) //왼쪽
-        {
-            knifePosition.localPosition = new Vector3(-0.84f, 0.2f, 0);
-            knifePosition.rotation = Quaternion.Euler(180, 0, 90);
-        }
-        if (moveY > 0 || shootY > 0) //위
-        {
-            knifePosition.localPosition = new Vector3(0, 1.31f, 0);
-            knifePosition.rotation = Quaternion.Euler(0, 0, 0);
-        }
-        else if (moveY < 0 || shootY < 0) //아래
-        {
-            knifePosition.localPosition = new Vector3(0, -0.69f, 0);
-            knifePosition.rotation = Quaternion.Euler(0, 0, 180);
-        }
-        if ((moveX > 0 && moveY < 0) || (shootX > 0 && shootY < 0)) 
-        {
-            knifePosition.localPosition = new Vector3(0.78f, -0.5f, 0);
-            knifePosition.rotation = Quaternion.Euler(180, 180, 45);
-        }
-        else if ((moveX > 0 && moveY > 0) || (shootX > 0 && shootY > 0))
-        {
-            knifePosition.localPosition = new Vector3(0.78f, 0.96f, 0);
-            knifePosition.rotation = Quaternion.Euler(180, 180, 135);
-        }
-        else if ((moveX < 0 && moveY > 0) || (shootX < 0 && shootY > 0))
-        {
-            knifePosition.localPosition = new Vector3(-0.78f, 0.96f, 0);
-            knifePosition.rotation = Quaternion.Euler(180, 180, 225);
-        }
-        else if ((moveX < 0 && moveY < 0) || (shootX < 0 && shootY < 0))
-        {
-            knifePosition.localPosition = new Vector3(-0.78f, -0.5f, 0);
-            knifePosition.rotation = Quaternion.Euler(180, 0, 45);
+            if (shootX > 0) //오른쪽
+            {
+                knifePosition.localPosition = new Vector3(0.94f, 0.2f, 0);
+                knife.transform.rotation = Quaternion.Euler(0, 0, -90);
+            }
+            else if (shootX < 0) //왼쪽
+            {
+                knifePosition.localPosition = new Vector3(-0.84f, 0.2f, 0);
+                knife.transform.rotation = Quaternion.Euler(180, 0, 90);
+            }
+            if (shootY > 0) //위
+            {
+                knifePosition.localPosition = new Vector3(0, 1.31f, 0);
+                knife.transform.rotation = Quaternion.Euler(0, 0, 0);
+            }
+            else if (shootY < 0) //아래
+            {
+                knifePosition.localPosition = new Vector3(0, -0.69f, 0);
+                knife.transform.rotation = Quaternion.Euler(0, 0, 180);
+            }
         }
     }
     //이동 애니메이션
