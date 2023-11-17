@@ -33,11 +33,13 @@ public class TEnemy : MonoBehaviour
     [SerializeField] protected bool isTracking;              // tracking 하는가?
     [SerializeField] protected bool isProwl;                 // prowl (배회) 하는가?
     [SerializeField] protected bool isDetective;             // detective (감지) 하는가?
+    [SerializeField] protected bool isShoot;                 // shoot (총 쏨) 하는가?
 
     // enemy 종류 프로퍼티
     public bool getIsTracking { get => isTracking; }
     public bool getisProwl { get => isProwl; }
     public bool getisDetective { get => isDetective; }
+    public bool getisShoot { get => isShoot; }
 
 
     // Enemy가 가지고 있을 기본 스탯들
@@ -45,20 +47,34 @@ public class TEnemy : MonoBehaviour
     protected float hp;                         // hp
     protected float sight;                      // 시야 범위
     protected float moveSpeed;                  // 움직임 속도
-    protected bool knockBackState = false;      // 넉백 
     protected float waitforSecond;              // destroy 전 대기 시간 
     protected float attaackSpeed;               // 공격 속도
     protected float bulletSpeed;                // 총알 속도 
+    protected float fTime;                      // prowl - 랜덤 이동 시간
+    protected float randRange;                  // prowl - 랜덤 이동 거리
+    protected bool isRaadyShoot;                // shoot -  총 쏘는 조건
+
+    //
+    protected bool knockBackState = false;      // 넉백 
+    protected float mx;                         // 본인 x
+    protected float my;                         // 본인 y
+    protected float xRan;                       // x 랜덤 움직임
+    protected float yRan;                       // y 랜덤 움직임
 
     // enemy 스탯 프로퍼티
     public float getMoveSpeed { get => moveSpeed; }
     public float getSight { get => sight; }
+    public bool IsReadyShoot
+    {
+        set { isRaadyShoot = value; }
+    }
 
     // Enemy의 Hp바
     protected float maxhp;                      // hp 바의 max 
     public Image hpBarSlider;                   // hp 바의 이미지
 
     // 컴포넌트
+    public GameObject enemyBullet;              // 총알
     public GameObject roomInfo;                 // 방 정보 오브젝트
     public Transform trackingTarget;             // 플레이어 위치
 
@@ -70,8 +86,6 @@ public class TEnemy : MonoBehaviour
     public TENEMY_STATE ePreState;              // 이전 상태
 
     /// <summary>
-    /// 
-    /// - 하위 몬스터가 반드시 가져야 할 것
     /// 1. setStateArray()
     ///     - 상태 배열 arrayState를 세팅 
     ///     - 상태 배열에 this로 넣어서 하위 몬스터가 들어감
@@ -128,11 +142,11 @@ public class TEnemy : MonoBehaviour
 
     public virtual void En_setState() { }         // 초기 세팅 (Getcomponent, hp 설정 등)
     public virtual void En_kindOfEnemy() { }      // Enemy의 종류 (isTracking , isProwl ,isDetective )
-    public void En_Start()                        // 현재 상태 (idle)의 begin 실행 
+    public void En_Start()                        // 하위 몬스터 start에서 실행         
     {
-        E_Enter();
+        En_stateArray();                          // 초기 배열 설정
+        E_Enter();                                // 현재 상태 (idle)의 begin 실행 
     }
-
 
     public void E_Enter()
     {
@@ -183,13 +197,16 @@ public class TEnemy : MonoBehaviour
             return;
 
         gameObject.transform.position
-            = Vector3.MoveTowards(gameObject.transform.position, trackingTarget.transform.position, getMoveSpeed * Time.deltaTime);
+            = Vector3.MoveTowards(gameObject.transform.position, trackingTarget.transform.position, moveSpeed * Time.deltaTime);
     }
 
     // 범위 안에 player 감지
     public bool e_SearchingPlayer()                         
     {
-        Collider[] colliders = Physics.OverlapSphere(gameObject.transform.position, getSight);
+        float x = transform.position.x;
+        float y = transform.position.y;
+        Vector2 sightSize = new Vector2(x, y);
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(sightSize, sight); //시작 위치 , 범위
 
         for (int i = 0; i < colliders.Length; i++)
         {
@@ -197,11 +214,51 @@ public class TEnemy : MonoBehaviour
             {
                 return true;
             }
-
         }
         return false;
     }
 
+    // enemy 초기 위치
+    public void e_moveInialize() 
+    {
+        mx = gameObject.transform.position.x;
+        my = gameObject.transform.position.y;
+        xRan = mx;
+        yRan = my;
+    } 
+
+    //랜덤 움직임
+    public void e_Prwol()
+    {
+        Vector3 moveRan = new Vector3(xRan, yRan, transform.position.z);
+        transform.position = Vector3.MoveTowards(transform.position, moveRan, moveSpeed * Time.deltaTime);
+    }
+
+    // 총 쏘기
+    public void e_Shoot() 
+    {
+        if (isRaadyShoot) 
+        {
+            GameObject bulletobj = Instantiate(enemyBullet, transform.position + new Vector3(0, -0.1f, 0), Quaternion.identity);
+            isRaadyShoot = false;
+        }
+    }
+
+    IEnumerator waitShoot() 
+    {
+        yield return new WaitForSeconds(2f);
+    }
+
+    //랜덤 움직임 검사
+    public IEnumerator checkPosi()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(fTime);
+            xRan = Random.Range(mx + randRange, mx - randRange);    // x위치는 현재 위치 randRange부터 , 현재위치 -randRange까지
+            yRan = Random.Range(my + randRange, my - randRange);    // y위치 동일
+        }
+    }
     // 일반 몬스터 collider검사
     private void OnCollisionStay2D(Collision2D collision)       
     {
