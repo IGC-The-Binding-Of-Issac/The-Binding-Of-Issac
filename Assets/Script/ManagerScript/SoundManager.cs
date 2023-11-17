@@ -114,7 +114,7 @@ public class SoundManager : MonoBehaviour
     {
         volumes = new int[3];
         volumes[0] = 5;
-        volumes[1] = 3;
+        volumes[1] = 0;
         volumes[2] = 3;
     }
     #endregion
