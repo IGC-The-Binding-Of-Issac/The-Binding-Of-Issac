@@ -19,12 +19,14 @@ public class PlayerController : MonoBehaviour
     public Transform useActiveItemImage;
     public Transform knifePosition;
     public Transform familiarPosition;
+    public Transform tearPointTransform;
 
     [Header("Sprite")]
     SpriteRenderer bodyRenderer;
     SpriteRenderer headRenderer;
     SpriteRenderer headItem;
     Rigidbody2D playerRB;
+    public Sprite DefaultSprite;
 
     [Header("Function")]
     private float lastshot;
@@ -37,6 +39,7 @@ public class PlayerController : MonoBehaviour
     public GameObject CheckedObject;
     public GameObject tear;
     public TearPoint tearPoint;
+    GameObject tearObject;
 
     [Header("ItemState")]
     public GameObject knife;
@@ -44,16 +47,14 @@ public class PlayerController : MonoBehaviour
     public bool canUseActive = true; //액티브 아이템 개갈김을 방지하기 위한
     public bool canChangeItem = false; //액티브 아이템 변경 과부하를 위한
 
-    
     [Header("Audio")]
     private AudioSource audioSource;
     public AudioClip[] hitClips;
     public AudioClip[] deadClips;
     public AudioClip getItemClip;
-    public AudioClip useItemClip;
     public AudioClip ShootClip;
 
-
+    Stack<GameObject> tearPool;
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -65,6 +66,8 @@ public class PlayerController : MonoBehaviour
         canUseActive = true; // 액티브 아이템 개갈김을 방지하기 위한
         canChangeItem = true; // 액티브 아이템 변경 과부하를 위한
         nailActivated = false;
+        tearPool = new Stack<GameObject>();
+        SetTearPooling();
         //knifePosition.gameObject.SetActive(false);
     }
 
@@ -79,6 +82,43 @@ public class PlayerController : MonoBehaviour
     {
         Movement();
     }
+
+    #region tearPooling
+    public void SetTearPooling()
+    {
+        for (int i = 0; i < 40; i++)
+        {
+            GameObject tearObj = Instantiate(tear, tearPointTransform.position, Quaternion.identity);
+            tearPool.Push(tearObj);
+            tearObj.transform.SetParent(tearPoint.transform);
+            tearObj.gameObject.SetActive(false);
+        }
+    }
+    public GameObject GetTearPooling()
+    {
+        if (tearPool.Count == 0)
+        {
+            GameObject tearObj = Instantiate(tear, tearPointTransform.position, Quaternion.identity);
+            tearPool.Push(tearObj);
+            tearObj.transform.SetParent(tearPoint.transform);
+            tearObj.gameObject.SetActive(false);
+        }
+        GameObject tearObject = tearPool.Pop();
+        tearObject.SetActive(true);
+        tearObject.GetComponent<Tear>().SetPlayerPosition(transform.position);
+        return tearObject;
+    }
+
+    public void ReturnTearPooling(GameObject bullet)
+    {
+        bullet.GetComponent<SpriteRenderer>().sprite = DefaultSprite;
+        //bullet.transform.localScale = new Vector3(1, 1, 1);
+        bullet.transform.localPosition = Vector3.zero;
+        bullet.GetComponent<CircleCollider2D>().enabled = true;
+        bullet.SetActive(false);
+        tearPool.Push(bullet);
+    }
+    #endregion
 
     //액티브 아이템 사용
     void UseActive()
@@ -193,15 +233,11 @@ public class PlayerController : MonoBehaviour
                 //마지막 발사에 현재 시간(초단위)을 넣음
                 lastshot = Time.time;
             }
-
         }
-
-
         //플레이어 움직임
         playerRB.velocity = moveInput * moveSpeed;
     }
-
-//발사 기능
+    //발사 기능
     public void Shoot(float x, float y)
         {
             //눈물 발사 속도
@@ -209,27 +245,31 @@ public class PlayerController : MonoBehaviour
             //눈물 생성 지점
             Vector3 firePoint = tearPoint.transform.position;
 
-            if (ItemManager.instance.PassiveItems[16] && y < 0) //닥터 페투스 습득 후 눈물 발사 시 바로 Collision 일어나는 거 방지를 위해 transform 옮김
+        if (ItemManager.instance.PassiveItems[16] && y < 0) //닥터 페투스 습득 후 눈물 발사 시 바로 Collision 일어나는 거 방지를 위해 transform 옮김
+        {
+            //게임 중 눈물 생성 눈물 프리펩, 발사 시작위치, 회전
+            //tearObject = GetTearPooling();
+            tear = Instantiate(PlayerManager.instance.tearObj, new Vector3(firePoint.x, firePoint.y - 0.7f, firePoint.z), transform.rotation) as GameObject;
+        }
+        else if (ItemManager.instance.PassiveItems[16] && x < 0)
+        {
+            //tearObject = GetTearPooling();
+            tear = Instantiate(PlayerManager.instance.tearObj, new Vector3(firePoint.x - 0.67f, firePoint.y - 0.4f, firePoint.z), transform.rotation) as GameObject;
+        }
+        else if (ItemManager.instance.PassiveItems[16] && x > 0)
+        {
+            //tearObject = GetTearPooling();
+            tear = Instantiate(PlayerManager.instance.tearObj, new Vector3(firePoint.x + 0.67f, firePoint.y - 0.4f, firePoint.z), transform.rotation) as GameObject;
+        }
+        else //눈물 쏠때는 동일함
             {
-                //게임 중 눈물 생성 눈물 프리펩, 발사 시작위치, 회전
-                tear = Instantiate(PlayerManager.instance.tearObj, new Vector3(firePoint.x, firePoint.y - 0.7f, firePoint.z), transform.rotation) as GameObject;
-            }
-            else if (ItemManager.instance.PassiveItems[16] && x < 0)
-            {
-                tear = Instantiate(PlayerManager.instance.tearObj, new Vector3(firePoint.x-0.67f, firePoint.y - 0.4f, firePoint.z), transform.rotation) as GameObject;
-            }
-            else if (ItemManager.instance.PassiveItems[16] && x > 0)
-            {
-                tear = Instantiate(PlayerManager.instance.tearObj, new Vector3(firePoint.x + 0.67f, firePoint.y - 0.4f, firePoint.z), transform.rotation) as GameObject;
-            }
-            else //눈물 쏠때는 동일함
-            {
-                tear = Instantiate(PlayerManager.instance.tearObj, firePoint, transform.rotation) as GameObject;
+                tearObject = GetTearPooling();
+                //tear = Instantiate(PlayerManager.instance.tearObj, firePoint, transform.rotation) as GameObject;
             }
             if (ItemManager.instance.PassiveItems[16]) tear.GetComponent<Collider2D>().isTrigger = false;
 
             //생성된 눈물에 눈물속도 곱해서 힘주기
-            tear.GetComponent<Rigidbody2D>().velocity = new Vector3(x * tearSpeed, y * tearSpeed, 0);
+            tearObject.GetComponent<Rigidbody2D>().velocity = new Vector3(x * tearSpeed, y * tearSpeed, 0);
 
             //9번 패시브 아이템을 먹으면
             if (ItemManager.instance.PassiveItems[9])
@@ -239,6 +279,7 @@ public class PlayerController : MonoBehaviour
             }
             else
                 tear.GetComponent<Rigidbody2D>().gravityScale = 0;
+
             CheckedObject = null;
             if (y != 1) // 위 공격이 아닐때
             {
@@ -249,23 +290,23 @@ public class PlayerController : MonoBehaviour
             //해당 이동키를 누르면 
             if (Input.GetKey(KeyCode.W))
             {
-                Rigidbody2D rigid_bullet = tear.GetComponent<Rigidbody2D>();
+                Rigidbody2D rigid_bullet = tearObject.GetComponent<Rigidbody2D>();
                 //해당 방향으로 힘을 줌
                 rigid_bullet.AddForce(Vector2.up * 1.5f, ForceMode2D.Impulse);
             }
             if (Input.GetKey(KeyCode.S))
             {
-                Rigidbody2D rigid_bullet = tear.GetComponent<Rigidbody2D>();
+                Rigidbody2D rigid_bullet = tearObject.GetComponent<Rigidbody2D>();
                 rigid_bullet.AddForce(Vector2.down * 1.5f, ForceMode2D.Impulse);
             }
             if (Input.GetKey(KeyCode.A))
             {
-                Rigidbody2D rigid_bullet = tear.GetComponent<Rigidbody2D>();
+                Rigidbody2D rigid_bullet = tearObject.GetComponent<Rigidbody2D>();
                 rigid_bullet.AddForce(Vector2.left * 1.5f, ForceMode2D.Impulse);
             }
             if (Input.GetKey(KeyCode.D))
             {
-                Rigidbody2D rigid_bullet = tear.GetComponent<Rigidbody2D>();
+                Rigidbody2D rigid_bullet = tearObject.GetComponent<Rigidbody2D>();
                 rigid_bullet.AddForce(Vector2.right * 1.5f, ForceMode2D.Impulse);
             }
             //2번 패시브 아이템을 먹으면
@@ -278,47 +319,79 @@ public class PlayerController : MonoBehaviour
         }
     public void MutantShoot(float x, float y)
         {
-            //발사 기능 구현
-            float tearSpeed = PlayerManager.instance.playerTearSpeed;
-            Vector3 firePoint = tearPoint.transform.position + new Vector3(Random.Range(-0.5f, 0.5f), Random.Range(-0.5f, 0.5f), 0);
-            //게임 중 눈물 생성 눈물 프리펩, 발사 시작위치, 회전
-            tear = Instantiate(PlayerManager.instance.tearObj, firePoint, transform.rotation) as GameObject;
-            tear.GetComponent<Rigidbody2D>().velocity = new Vector3(x * tearSpeed, y * tearSpeed, 0);
-            if (ItemManager.instance.PassiveItems[9])
-            {
-                tear.GetComponent<Rigidbody2D>().gravityScale = 3;
-            }
-            else
-            {
-                tear.GetComponent<Rigidbody2D>().gravityScale = 0;
-            }
-            CheckedObject = null;
-            if (y != 1) // 위 공격이 아닐때
-            {
-                CheckedObject = tearPoint.overLapObject;
-            }
+        //눈물 발사 속도
+        float tearSpeed = PlayerManager.instance.playerTearSpeed;
+        //눈물 생성 지점
+        Vector3 firePoint = tearPoint.transform.position + new Vector3(Random.Range(-0.5f, 0.5f), Random.Range(-0.5f, 0.5f), 0);
 
-            Rigidbody2D rigid_bullet = tear.GetComponent<Rigidbody2D>();
-            //눈물이 이동속도의 영향을 받음
-            //해당 이동키를 누르면 
-            if (Input.GetKey(KeyCode.W))
-            {
-                //해당 방향으로 힘을 줌
-                rigid_bullet.AddForce(Vector2.up * 1.5f, ForceMode2D.Impulse);
-            }
-            if (Input.GetKey(KeyCode.S))
-            {
-                rigid_bullet.AddForce(Vector2.down * 1.5f, ForceMode2D.Impulse);
-            }
-            if (Input.GetKey(KeyCode.A))
-            {
-                rigid_bullet.AddForce(Vector2.left * 1.5f, ForceMode2D.Impulse);
-            }
-            if (Input.GetKey(KeyCode.D))
-            {
-                rigid_bullet.AddForce(Vector2.right * 1.5f, ForceMode2D.Impulse);
-            }
+        if (ItemManager.instance.PassiveItems[16] && y < 0) //닥터 페투스 습득 후 눈물 발사 시 바로 Collision 일어나는 거 방지를 위해 transform 옮김
+        {
+            //게임 중 눈물 생성 눈물 프리펩, 발사 시작위치, 회전
+            //tearObject = GetTearPooling();
+            tear = Instantiate(PlayerManager.instance.tearObj, new Vector3(firePoint.x, firePoint.y - 0.7f, firePoint.z), transform.rotation) as GameObject;
         }
+        else if (ItemManager.instance.PassiveItems[16] && x < 0)
+        {
+            //tearObject = GetTearPooling();
+            tear = Instantiate(PlayerManager.instance.tearObj, new Vector3(firePoint.x - 0.67f, firePoint.y - 0.4f, firePoint.z), transform.rotation) as GameObject;
+        }
+        else if (ItemManager.instance.PassiveItems[16] && x > 0)
+        {
+            //tearObject = GetTearPooling();
+            tear = Instantiate(PlayerManager.instance.tearObj, new Vector3(firePoint.x + 0.67f, firePoint.y - 0.4f, firePoint.z), transform.rotation) as GameObject;
+        }
+        else //눈물 쏠때는 동일함
+        {
+            tearObject = GetTearPooling();
+            tearObject.transform.position = firePoint;
+            //tear = Instantiate(PlayerManager.instance.tearObj, firePoint, transform.rotation) as GameObject;
+        }
+        if (ItemManager.instance.PassiveItems[16]) tear.GetComponent<Collider2D>().isTrigger = false;
+
+        //생성된 눈물에 눈물속도 곱해서 힘주기
+        tearObject.GetComponent<Rigidbody2D>().velocity = new Vector3(x * tearSpeed, y * tearSpeed, 0);
+
+        //9번 패시브 아이템을 먹으면
+        if (ItemManager.instance.PassiveItems[9])
+        {
+            //눈물 중력 증가
+            tear.GetComponent<Rigidbody2D>().gravityScale = 3;
+        }
+        else
+            tear.GetComponent<Rigidbody2D>().gravityScale = 0;
+
+        CheckedObject = null;
+        if (y != 1) // 위 공격이 아닐때
+        {
+            CheckedObject = tearPoint.overLapObject;
+        }
+
+        //눈물이 이동속도의 영향을 받음
+        //해당 이동키를 누르면 
+        if (Input.GetKey(KeyCode.W))
+        {
+            Rigidbody2D rigid_bullet = tearObject.GetComponent<Rigidbody2D>();
+            //해당 방향으로 힘을 줌
+            rigid_bullet.AddForce(Vector2.up * 1.5f, ForceMode2D.Impulse);
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            Rigidbody2D rigid_bullet = tearObject.GetComponent<Rigidbody2D>();
+            rigid_bullet.AddForce(Vector2.down * 1.5f, ForceMode2D.Impulse);
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            Rigidbody2D rigid_bullet = tearObject.GetComponent<Rigidbody2D>();
+            rigid_bullet.AddForce(Vector2.left * 1.5f, ForceMode2D.Impulse);
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            Rigidbody2D rigid_bullet = tearObject.GetComponent<Rigidbody2D>();
+            rigid_bullet.AddForce(Vector2.right * 1.5f, ForceMode2D.Impulse);
+        }
+    }
+
+    //눈물 애니메이션 클립 이벤트로 마지막에 추가 되어있음
 
     public void KnifeAttack(float moveX, float moveY, float shootX, float shootY)
     {
@@ -361,7 +434,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    #region Animation
+    #region PlayerAnim
     //이동 애니메이션
     void MoveAnim()
     {
@@ -531,7 +604,8 @@ public class PlayerController : MonoBehaviour
     }
     #endregion
 
-    #region GetItem
+    #region GotItem
+
     //아이템 획득 애니메이션
     public IEnumerator GetItemTime()
     {

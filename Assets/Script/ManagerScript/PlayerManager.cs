@@ -48,6 +48,12 @@ public class PlayerManager : MonoBehaviour
     public SpriteLibraryAsset[] body;
     public SpriteLibraryAsset[] tear;
 
+    public void Start()
+    {
+        ItemManager.instance.bombPrefab.transform.localScale = new Vector3(1, 1, 1);
+        gameObject.AddComponent<AudioSource>();
+        PlayerInitialization();
+    }
     void PlayerInitialization()
     {
         playerHp = 6; // 현재 체력
@@ -102,20 +108,17 @@ public class PlayerManager : MonoBehaviour
     public void ChangeTear(SpriteLibraryAsset tear)
     {
         //SpriteLibraryAsset안에 있는 tear를 플레이어 스프라이트에 넣어줌
-        tearObj.GetComponent<SpriteLibrary>().spriteLibraryAsset = tear;
+        Transform allChildren = GameManager.instance.playerObject.GetComponent<PlayerController>().tearPointTransform;
+        for (int i = 0; i < allChildren.childCount; i++)
+        {
+            GameObject obj = allChildren.GetChild(i).gameObject;
+            obj.GetComponent<SpriteLibrary>().spriteLibraryAsset = tear;
+        }
+        //tearObj.GetComponent<SpriteLibrary>().spriteLibraryAsset = tear;
     }
 
     //delegate 선언 위치
 
-    public void Start()
-    {
-        tearObj.transform.localScale = new Vector3(1, 1, 1);
-        ItemManager.instance.bombPrefab.transform.localScale = new Vector3(1, 1, 1);
-        gameObject.AddComponent<AudioSource>();
-        PlayerInitialization();
-        //눈물 외형 초기화
-        SetTearSkin(0);
-    }
 
     public void CheckedPlayerHP()
     {
@@ -253,8 +256,13 @@ public class PlayerManager : MonoBehaviour
     }
     public void ChgTearSize()
     {
-        //눈물 스케일 변경
-        tearObj.transform.localScale = new Vector3(playerTearSize, playerTearSize, 0);
+        //눈물 사이즈 변경
+        Transform allChildren = GameManager.instance.playerObject.GetComponent<PlayerController>().tearPointTransform;
+        for (int i = 0; i < allChildren.childCount; i++)
+        {
+            GameObject obj = allChildren.GetChild(i).gameObject;
+            obj.transform.localScale = new Vector3(playerTearSize, playerTearSize, 0);
+        }
     }
 
     public void ChgPlayerSize()
