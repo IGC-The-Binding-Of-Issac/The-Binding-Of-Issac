@@ -34,8 +34,21 @@ public class Enemy_Tracking : TEnemy_FSM<TEnemy>
             e_Owner.ChageFSM(TENEMY_STATE.Die);                     // Die로 상태변화 
         }
 
+        // 범위 감지 x
+        if (!e_Owner.getisDetective) 
+        {
+            if ((e_Owner.getisJump))                            // 점프를 하는 애면? 
+            {
+                if (isIsInvoke)
+                {
+                    e_Owner.invokeJump();                          // 일정 시간후 점프로 넘어감
+                    isIsInvoke = false;
+                }
+            }
+        }
+
         // 범위 감지 하는애면?
-            // -> 총 쏘는지 아닌지에 따라 달라짐
+        // -> 총 쏘는지 아닌지에 따라 달라짐
         if (e_Owner.getisDetective)                                
         {
             
@@ -45,10 +58,11 @@ public class Enemy_Tracking : TEnemy_FSM<TEnemy>
                 {
                     if (isIsInvoke) 
                     { 
-                        e_Owner.involeShoot();                          // 일정 시간후 총 쏘기로 넘어감
+                        e_Owner.invokeShoot();                          // 일정 시간후 총 쏘기로 넘어감
                         isIsInvoke = false;
                     }
                 }
+
             }
             else if (!e_Owner.e_SearchingPlayer())                  // 범위 밖에 있으면
             {
