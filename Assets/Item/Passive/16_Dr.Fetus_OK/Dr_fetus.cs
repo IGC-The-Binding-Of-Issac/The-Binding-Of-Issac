@@ -22,6 +22,12 @@ public class Dr_fetus : ItemInfo
     }
     public override void UseItem()
     {
+        if (ItemManager.instance.PassiveItems[13])
+        {
+            GameManager.instance.playerObject.GetComponent<PlayerController>().knifePosition.gameObject.SetActive(false);
+            GameManager.instance.playerObject.GetComponent<PlayerController>().knife.SetActive(false);
+            ItemManager.instance.PassiveItems[13] = false;
+        }
         PlayerManager.instance.playerShotDelay /= 0.5f;
         PlayerManager.instance.tearObj = attackBomb;
     }

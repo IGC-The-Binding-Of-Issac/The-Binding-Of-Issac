@@ -11,8 +11,8 @@ public class TheHalo : ItemInfo
         SetItemString("광륜",
                       "천사",
                       "습득 시 최대 체력 + 1칸"
-                    + "공격속도 + 0.07"
-                    + "공격력 - 0.3");
+                    + "\n공격속도 + 0.07"
+                    + "\n공격력 - 0.3");
     }
     public override void UseItem()
     {

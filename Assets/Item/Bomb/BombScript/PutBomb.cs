@@ -45,7 +45,7 @@ public class PutBomb : MonoBehaviour
 
         float progress = 0;
         float increment = smoothness / duration;
-        while (progress < 0.78f)
+        while (progress < 0.7f)
         {
             bombSpr.color = Color.Lerp(Color.white, Color.red, progress);
             progress += increment;
@@ -88,8 +88,9 @@ public class PutBomb : MonoBehaviour
             }
             if(collision.CompareTag("Player"))
             {
-                // 터졌을때 플레이어에게 데미지 주기.
-                PlayerManager.instance.GetDamage();
+                if (ItemManager.instance.PassiveItems[16]) return;
+                else PlayerManager.instance.GetDamage();
+
             }
         }
     }

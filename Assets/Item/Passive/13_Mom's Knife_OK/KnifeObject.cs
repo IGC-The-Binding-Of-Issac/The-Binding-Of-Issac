@@ -142,7 +142,7 @@ public class KnifeObject : MonoBehaviour
             //적과 박으면
             else if (collision.gameObject.CompareTag("Enemy"))
             {
-            collision.gameObject.GetComponent<Enemy>().GetDamage(PlayerManager.instance.playerDamage);
+            collision.gameObject.GetComponent<TEnemy>().GetDamage(PlayerManager.instance.playerDamage);
             }
     }
 }
