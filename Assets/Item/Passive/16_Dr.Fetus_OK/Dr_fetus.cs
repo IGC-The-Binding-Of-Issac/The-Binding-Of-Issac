@@ -12,8 +12,8 @@ public class Dr_fetus : ItemInfo
         SetItemCode(16);
         SetItemString("태아 박사",
                       "폭탄 발사",
-                      "습득 후 공격 시 폭탄을 발사한다."
-                    + "공격속도 * 0.5");
+                      "공격 시 폭탄을 발사한다."
+                    + "\n공격속도 * 0.5");
     }
 
     private void Start()
@@ -27,6 +27,7 @@ public class Dr_fetus : ItemInfo
             GameManager.instance.playerObject.GetComponent<PlayerController>().knifePosition.gameObject.SetActive(false);
             GameManager.instance.playerObject.GetComponent<PlayerController>().knife.SetActive(false);
             ItemManager.instance.PassiveItems[13] = false;
+            PlayerManager.instance.playerDamage -= 2.0f;
         }
         PlayerManager.instance.playerShotDelay /= 0.5f;
         PlayerManager.instance.tearObj = attackBomb;

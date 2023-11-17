@@ -10,7 +10,7 @@ public class GuppyTail : ItemInfo
         SetItemString("备乔狼 部府",
                       "肋赴 备乔 部府",
                       "嚼垫 矫 弥措 眉仿 1沫栏肺 绊沥"
-                    + "格见 x9");
+                    + "\n格见 + 9");
     }
     public override void UseItem()
     {

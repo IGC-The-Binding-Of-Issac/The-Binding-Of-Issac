@@ -11,7 +11,8 @@ public class MomsKnife : ItemInfo
         SetItemString("엄마의 식칼",
                       "저는 죽이지 않았습니다.",
                       "습득 시 눈물이 사라지고 식칼을 날린다."
-                    + "\n공격력 + 2");
+                    + "\n공격력 + 2"
+                    + "\nDr.Fetus 보유 시 식칼이 생기지 않는다.");
     }
     public override void UseItem()
     {

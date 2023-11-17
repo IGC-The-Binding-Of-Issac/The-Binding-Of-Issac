@@ -23,6 +23,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] Text coinText; // 코인
     [SerializeField] Text bombText; // 폭탄
     [SerializeField] Text keyText;  // 열쇠
+    [SerializeField] Text DeathCount; //목숨 카운트 [은총]
 
     [Header("Player Stat")]
     [SerializeField] Text damageText;
@@ -273,6 +274,7 @@ public class UIManager : MonoBehaviour
         coinText.text = ItemManager.instance.coinCount.ToString();
         bombText.text = ItemManager.instance.bombCount.ToString();
         keyText.text = ItemManager.instance.keyCount.ToString();
+        DeathCount.text = PlayerManager.instance.deathCount.ToString(); //은총
     }
 
     // 보유 아이템 현황 업데이트

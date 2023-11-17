@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     public Transform head;
     public Transform useActiveItemImage;
     public Transform knifePosition;
+    public Transform familiarPosition;
 
     [Header("Sprite")]
     SpriteRenderer bodyRenderer;
@@ -148,7 +149,7 @@ public class PlayerController : MonoBehaviour
         //세로 발사 키 입력
         shootVer = Input.GetAxis("ShootVertical");
 
-        if (ItemManager.instance.PassiveItems[13])
+        if (ItemManager.instance.PassiveItems[13] && !ItemManager.instance.PassiveItems[16])
         {
             KnifeAttack(hori,verti,shootHor, shootVer);
         }
@@ -345,7 +346,6 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-
     //폭탄 설치 기능
     void InstallBomb()
     {

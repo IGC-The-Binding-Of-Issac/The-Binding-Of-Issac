@@ -11,7 +11,7 @@ public class TheD6 : ActiveInfo
         SetActiveItem(20, 6);
         SetActiveString("The D6",
                         "운명을 바꾸는 능력",
-                        "사용 시 방 안의 모든 액티브/패시브/장신구 아이템을" +
+                        "방 안의 모든 장착 아이템을" +
                         "\n다른 아이템으로 변경한다.");
     }
 

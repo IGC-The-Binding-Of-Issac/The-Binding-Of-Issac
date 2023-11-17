@@ -11,7 +11,7 @@ public class SuperBandage : ItemInfo
         SetItemString("슈퍼 반창고",
                       "그만 때려! 너무 아파!",
                       "습득 시 최대 체력 - 1칸"
-                    + "\n체력 - 1"
+                    + "\n체력 - 1칸"
                     + "\n공격속도 + 0.1");
     }
     public override void UseItem()
