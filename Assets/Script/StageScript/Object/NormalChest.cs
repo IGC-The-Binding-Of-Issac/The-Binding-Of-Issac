@@ -6,6 +6,22 @@ public class NormalChest : MonoBehaviour
 {
     [Header("Unity Setup")]
     [SerializeField] Sprite openChestSprite;
+    [SerializeField] Sprite closeChestSprite;
+
+    private void Start()
+    {
+        closeChestSprite = gameObject.GetComponent<SpriteRenderer>().sprite;
+    }
+
+    public void ResetObject()
+    {
+        // 초기화
+        gameObject.GetComponent<SpriteRenderer>().sprite = closeChestSprite;
+        gameObject.layer = 15;
+
+        // 오브젝트 끄기.
+        gameObject.SetActive(false);
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -14,7 +30,7 @@ public class NormalChest : MonoBehaviour
                 gameObject.GetComponent<SpriteRenderer>().sprite = openChestSprite; // 열린상자 이미지로 변경
                 OpenChest(); // 드랍 아이템 생성
                 openChestSound();
-                StartCoroutine(StopChest());
+                StartCoroutine(StopChest()); // 밀린 오브젝트 멈추도기
             }
     }
 
@@ -23,7 +39,7 @@ public class NormalChest : MonoBehaviour
         gameObject.layer = 16;
         yield return new WaitForSeconds(1.0f);
         gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
-        Destroy(gameObject.GetComponent<Rigidbody2D>());
+
     }
 
     void OpenChest()

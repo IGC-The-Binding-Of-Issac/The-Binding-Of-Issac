@@ -36,42 +36,60 @@ public class RoomGenerate : MonoBehaviour
     public Transform spikePool_Transform;
     Stack<GameObject> spikePool = new Stack<GameObject>();
 
+    public Transform normalChestPool_Transform;
+    Stack<GameObject> normalChestPool = new Stack<GameObject>();
+
+    public Transform goldchestPool_Transform;
+    Stack<GameObject> goldChestPool = new Stack<GameObject>();
+
     public void SetObjectPooling()
     {
         rockPool = new Stack<GameObject>();
         poopPool = new Stack<GameObject>();
         firePool = new Stack<GameObject>();
         spikePool = new Stack<GameObject>();
+        normalChestPool = new Stack<GameObject>();
+        goldChestPool = new Stack<GameObject>();
 
-        for(int i = 0; i < 40; i++)
+        for (int i = 0; i < 25; i++)
         {
             // 오브젝트 생성
             GameObject rock = Instantiate(objectPrefabs[0], rockPool_Transform.position, Quaternion.identity);
             GameObject poop = Instantiate(objectPrefabs[1], poopPool_Transform.position, Quaternion.identity);
             GameObject fire = Instantiate(objectPrefabs[2], firePool_Transform.position, Quaternion.identity); 
-            GameObject spike = Instantiate(objectPrefabs[3]);
+            GameObject spike = Instantiate(objectPrefabs[3], spikePool_Transform.position, Quaternion.identity);
+            GameObject normalChest = Instantiate(objectPrefabs[7], normalChestPool_Transform.position, Quaternion.identity);
+            GameObject goldChest = Instantiate(objectPrefabs[8], normalChestPool_Transform.position, Quaternion.identity);
 
             rockPool.Push(rock);
             poopPool.Push(poop);
             firePool.Push(fire);
             spikePool.Push(spike);
+            normalChestPool.Push(normalChest);
+            goldChestPool.Push(goldChest);
 
             // 오브젝트 한곳에 모아두기.
             rock.transform.SetParent(rockPool_Transform);
             poop.transform.SetParent(poopPool_Transform);
             fire.transform.SetParent(firePool_Transform);
             spike.transform.SetParent(spikePool_Transform);
+            normalChest.transform.SetParent(normalChestPool_Transform);
+            goldChest.transform.SetParent(goldchestPool_Transform);
 
             // 사운드 조절을 위해 SFXObject로 넣어주기
             SetSFXObject(rock);
             SetSFXObject(poop);
             SetSFXObject(fire);
             SetSFXObject(spike);
+            SetSFXObject(normalChest);
+            SetSFXObject(goldChest);
 
             rock.SetActive(false);
             poop.SetActive(false);
             fire.SetActive(false);
             spike.SetActive(false);
+            normalChest.SetActive(false);
+            goldChest.SetActive(false);
         }
     }
 
@@ -137,6 +155,34 @@ public class RoomGenerate : MonoBehaviour
                 GameObject spikeObj = spikePool.Pop();
                 spikeObj.SetActive(true);
                 return spikeObj;
+            #endregion
+
+            #region 일반상자
+            case 7:
+                if(normalChestPool.Count == 0)
+                {
+                    GameObject normalChest = Instantiate(objectPrefabs[7], normalChestPool_Transform.position, Quaternion.identity);
+                    normalChestPool.Push(normalChest);
+                    normalChest.transform.SetParent(normalChestPool_Transform);
+                    SetSFXObject(normalChest);
+                }
+                GameObject normalChestObj = normalChestPool.Pop();
+                normalChestObj.SetActive(true);
+                return normalChestObj;
+            #endregion
+
+            #region 황금상자
+            case 8:
+                if (goldChestPool.Count == 0)
+                {
+                    GameObject goldChest = Instantiate(objectPrefabs[8], goldchestPool_Transform.position, Quaternion.identity);
+                    goldChestPool.Push(goldChest);
+                    goldChest.transform.SetParent(goldchestPool_Transform);
+                    SetSFXObject(goldChest);
+                }
+                GameObject goldChestObj = goldChestPool.Pop();
+                goldChestObj.SetActive(true);
+                return goldChestObj;
                 #endregion
         }
         return null;
@@ -186,6 +232,28 @@ public class RoomGenerate : MonoBehaviour
                 spikePool.Push(obj);
             }
         }
+
+        // 일반 상자
+        for (int i = 0; i < normalChestPool_Transform.childCount; i++)
+        {
+            GameObject obj = normalChestPool_Transform.GetChild(i).gameObject;
+            if (obj.activeSelf)
+            {
+                obj.GetComponent<NormalChest>().ResetObject();
+                normalChestPool.Push(obj);
+            }
+        }
+
+        // 황금 상자
+        for (int i = 0; i < goldchestPool_Transform.childCount; i++)
+        {
+            GameObject obj = goldchestPool_Transform.GetChild(i).gameObject;
+            if (obj.activeSelf)
+            {
+                obj.GetComponent<GoldChest>().ResetObject();
+                goldChestPool.Push(obj);
+            }
+        }
     }
 
     public void SetPrefabs()
@@ -213,7 +281,7 @@ public class RoomGenerate : MonoBehaviour
         roomList = null; // 생성된 방 오브젝트 배열 초기화
         doors = new List<GameObject>(); // 생성된 문 오브젝트 배열 초기화
 
-        AllReturnObject();
+        AllReturnObject(); // 맵 오브젝트 리턴
 
         // 생성되어있는 모든 방들을 삭제
         for(int i = 0; i < roomPool.childCount; i++)
@@ -222,17 +290,21 @@ public class RoomGenerate : MonoBehaviour
         }
 
         // 생성된 아이템 오브젝트 List 초기화
+        // 아이템 리스트가 비어있을때
         if (itemList == null)
         {
             itemList = new List<GameObject>();
         }
 
+        // 아이템 리스트가 비어있지않을때.
         else 
         {
             // 생성되어있는 아이템이있을때 전부 삭제 후 초기화
             for(int i = 0; i < itemList.Count; i++)
             {
                 Destroy(itemList[i]);
+                // 드랍아이템은 오브젝트 풀링적용시켜서 돌려주고,
+                // 그외 액티브,패시브,장신구 아이템은 삭제해야함.
             }
             itemList = new List<GameObject>();
         }
@@ -417,23 +489,23 @@ public class RoomGenerate : MonoBehaviour
                             SetSFXObject(shop);
                         }
 
-                        // 아이템 상자 ( 일반  
-                        else if (pNum == 8)
-                        {
-                            GameObject chest = Instantiate(objectPrefabs[pNum - 1]) as GameObject; // 오브젝트 생성
-                            chest.transform.SetParent(roomList[y, x].GetComponent<Room>().roomObjects[idx]); // 오브젝트 위치 설정
-                            chest.transform.localPosition = new Vector3(0, 0, 0); // 오브젝트 위치 설정
-                            SetSFXObject(chest);
-                        }
+                        //// 아이템 상자 ( 일반  
+                        //else if (pNum == 8)
+                        //{
+                        //    GameObject chest = Instantiate(objectPrefabs[pNum - 1]) as GameObject; // 오브젝트 생성
+                        //    chest.transform.SetParent(roomList[y, x].GetComponent<Room>().roomObjects[idx]); // 오브젝트 위치 설정
+                        //    chest.transform.localPosition = new Vector3(0, 0, 0); // 오브젝트 위치 설정
+                        //    SetSFXObject(chest);
+                        //}
 
-                        // 아이템 상자 ( 황금
-                        else if (pNum == 9)
-                        {
-                            GameObject chest = Instantiate(objectPrefabs[pNum - 1]) as GameObject; // 오브젝트 생성
-                            chest.transform.SetParent(roomList[y, x].GetComponent<Room>().roomObjects[idx]); // 오브젝트 위치 설정
-                            chest.transform.localPosition = new Vector3(0, 0, 0); // 오브젝트 위치 설정
-                            SetSFXObject(chest);
-                        }
+                        //// 아이템 상자 ( 황금
+                        //else if (pNum == 9)
+                        //{
+                        //    GameObject chest = Instantiate(objectPrefabs[pNum - 1]) as GameObject; // 오브젝트 생성
+                        //    chest.transform.SetParent(roomList[y, x].GetComponent<Room>().roomObjects[idx]); // 오브젝트 위치 설정
+                        //    chest.transform.localPosition = new Vector3(0, 0, 0); // 오브젝트 위치 설정
+                        //    SetSFXObject(chest);
+                        //}
 
 
 
