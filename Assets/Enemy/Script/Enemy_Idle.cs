@@ -32,20 +32,20 @@ public class Enemy_Idle : TEnemy_FSM<TEnemy>
     }
 
 
-    public override void Excute()                           // 해당 상태를 업데이트 할 때 "매 프레임" 호출
+    public override void Excute()                               // 해당 상태를 업데이트 할 때 "매 프레임" 호출
     {
-        if (e_Owner.playerInRoom)                           // 플레이어가 방 안에 있으면 상태변환
+        if (e_Owner.playerInRoom)                               // 플레이어가 방 안에 있으면 상태변환
         {
-            if (e_Owner.getIsTracking)                      // 해당 몬스터가 tracking을 하는 몬스터 이면
+            if (e_Owner.getIsTracking)                          // tracking을 하는
             {
-                e_Owner.ChageFSM(TENEMY_STATE.Tracking);    // tracking 으로 상태 변환
+                e_Owner.ChageFSM(TENEMY_STATE.Tracking);        // tracking 으로 상태 변환
             }
-            /*
-            if (e_Owner.getisProwl)                         // 해당 몬스터가 prowl을 하는 몬스터 이면
+            
+            if (!e_Owner.getIsTracking && e_Owner.getisProwl)   // prowl 만 하면?
             {
-                e_Owner.ChageFSM(TENEMY_STATE.Prowl);       // prowl 으로 상태 변환
+                e_Owner.ChageFSM(TENEMY_STATE.Prowl);           // prowl 으로 상태 변환
             }
-            */
+            
         }
 
     }
@@ -54,6 +54,8 @@ public class Enemy_Idle : TEnemy_FSM<TEnemy>
     {
         e_Owner.ePreState = TENEMY_STATE.Idle;              // 전 상태를 TENEMY_STATE의 idle로
     }
+
+    
 }
 
 
