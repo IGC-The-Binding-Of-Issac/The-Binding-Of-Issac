@@ -44,7 +44,6 @@ public class GameManager : MonoBehaviour
         {
             UIManager.instance.OnLoading();
             StageStart();
-            
         }
     }
     public void StageStart()
@@ -62,7 +61,7 @@ public class GameManager : MonoBehaviour
         }
 
         myCamera.transform.SetParent(null); // 카메라의 위치를 초기화
-        // ** 이부분이 없으면 스테이지 생성될때 스테이지가 초기화되면서 카메라도 같이 사라집니다 **
+        // ** 이부분이 없으면 스테이지 생성될때 스테이지내 방들이 삭제되면서 카메라도 같이 사라집니다 **
 
 
         int cnt = 15; // 방 생성 실패 한계치
@@ -74,7 +73,7 @@ public class GameManager : MonoBehaviour
             if (stageGenerate.CreateStage(stageSize, stageMinimunRoom))
             {
                 roomGenerate.ClearRoom(); // 현재 생성되어있는 방 / 오브젝트 / 몬스터 등등 전부 초기화
-                SoundManager.instance.sfxObjects = new List<AudioSource>(); // soundManager의 SFXObjects 초기화.
+                SoundManager.instance.sfxDestoryObjects = new List<AudioSource>(); // soundManager의 sfxDestoryObjects 초기화.
                 roomGenerate.CreateRoom(stageLevel, stageSize); // 방 생성
                 myCamera.transform.position = playerObject.transform.position;
 

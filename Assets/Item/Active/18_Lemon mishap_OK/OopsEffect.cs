@@ -28,7 +28,7 @@ public class OopsEffect : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("TEnemy"))
         {
             if (canDamage)
             {
@@ -41,7 +41,7 @@ public class OopsEffect : MonoBehaviour
         {
             if (canDamage)
             {
-                //ÀÎ¼ö¸¦ »ç¿ëÇÏ´Â ¸Ş¼Òµå°¡ BombDamage¶ó¼­ ÀÏ´Ü ÀÌ°Å »ç¿ë
+                //ì¸ìˆ˜ë¥¼ ì‚¬ìš©í•˜ëŠ” ë©”ì†Œë“œê°€ BombDamageë¼ì„œ ì¼ë‹¨ ì´ê±° ì‚¬ìš©
                 collision.gameObject.GetComponentInParent<SnakeManager>().getBombDamage(8);
                 canDamage = false;
                 Invoke("canGiveDamage", 0.5f);

@@ -16,21 +16,23 @@ public class Tride : TEnemy
 {
     public override void En_setState()
     {
-        playerInRoom = false;
+        playerInRoom    = false;
 
-        hp = 2f;
-        sight = 5f;
-        moveSpeed = 1.5f;
-        waitforSecond = 0.5f;
+        hp              = 2f;
+        sight           = 5f;
+        moveSpeed       = 1.5f;
+        waitforSecond   = 0.5f;
+        jumpSpeed       = 3f;
 
-        maxhp = hp;
+        maxhp           = hp;
     }
 
     public override void En_kindOfEnemy()
     {
-        isTracking = true;
-        isProwl = false;
-        isDetective = false;
+        isTracking      = true;
+        isProwl         = false;
+        isDetective     = false;
+        isShoot         = false;
     }
 
     private void Start()
@@ -38,9 +40,8 @@ public class Tride : TEnemy
         // 하위 몬스터 state 설정
         En_setState();              // 스탯 설정
         En_kindOfEnemy();           // enemy의 행동 조건
-        En_stateArray();            // state 를 배열에 세팅
 
-        E_Enter();                  // 상태 진입 (기본은 idle로 설정 되어잇음)
+        En_Start();                  // 초기세팅
     }
 
     private void Update()

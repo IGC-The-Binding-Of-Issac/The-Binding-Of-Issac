@@ -4,25 +4,26 @@ using UnityEngine;
 
 public class AttackFly : TEnemy
 {
-    // 플레이어 추적
+    // tracking
     public override void En_setState()
     {
-        playerInRoom = false;
+        playerInRoom    = false;
+        dieParameter    = "isDie";
 
-        hp = 2f;
-        sight = 5f;
-        moveSpeed = 1.5f;
-        waitforSecond = 0.5f;
+        hp              = 2f;
+        sight           = 5f;
+        moveSpeed       = 1.5f;
+        waitforSecond   = 0.5f;
 
-        maxhp = hp;
+        maxhp           = hp;
     }
 
     public override void En_kindOfEnemy()
     {
-        isTracking = true;
-        isProwl = false;
-        isDetective = false;
-        isShoot = false;
+        isTracking      = true;
+        isProwl         = false;
+        isDetective     = false;
+        isShoot         = false;
     }
 
     private void Start()
