@@ -1,12 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
 public class Tear : MonoBehaviour
 {
     [Header("Player")]
-    PlayerController playerController;
     Vector3 playerPosition;
     float playerTearSize;
 
@@ -26,12 +26,8 @@ public class Tear : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         tearBoomAnim = GetComponent<Animator>();
         tearRB = GetComponent<Rigidbody2D>();
-        //플레이어 발사 시작위치
-        playerPosition = playerController.transform.position;
-
         audioSource.volume = SoundManager.instance.GetSFXVolume(); // 볼륨 설정
         ShootSound(); // shoot 사운드 실행
     }
@@ -40,7 +36,10 @@ public class Tear : MonoBehaviour
     {
         TearRange();
     }
-
+    public void SetPlayerPosition(Vector3 playerPos)
+    {
+        playerPosition = playerPos;
+    }
     void TearRange()
     {
         //총알 위치
@@ -79,6 +78,11 @@ public class Tear : MonoBehaviour
         //눈물 터지는 애니메이션 실행
         tearBoomAnim.SetTrigger("BoomTear");
     }
+    public void DestoryTear()
+    {
+        //총알 파괴
+        GameManager.instance.playerObject.GetComponent<PlayerController>().ReturnTearPooling(gameObject);
+    }
     public void TearSize()
     {
         //플레이어 스탯 눈물 사이즈를 가져옴
@@ -87,21 +91,12 @@ public class Tear : MonoBehaviour
         gameObject.transform.localScale = new Vector3(playerTearSize, playerTearSize, 0);
     }
 
-    //눈물 애니메이션 클립 이벤트로 마지막에 추가 되어있음
-    public void DestoryTear()
-    {
-        //총알 파괴
-        Destroy(gameObject);
-    }
-
     private void OnTriggerStay2D(Collider2D collision)
     {
         GameObject tmp = GameManager.instance.playerObject.GetComponent<PlayerController>().CheckedObject;
-        
         //벽에 박으면 총알 터트리기
         if (tmp != collision.gameObject)
         {
-
             if (collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Object_Rock"))
             {
                 gameObject.GetComponent<CircleCollider2D>().enabled = false;

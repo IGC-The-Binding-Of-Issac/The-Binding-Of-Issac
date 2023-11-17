@@ -511,20 +511,27 @@ MonoBehaviour:
   head: {fileID: 1042874374983917579}
   useActiveItemImage: {fileID: 8591384693438208543}
   knifePosition: {fileID: 5449846101330744763}
-  familiarPosition: {fileID: 3987601544564592591}
-  HeadItem: {fileID: 0}
+  familiarPosition: {fileID: 0}
+  tearPointTransform: {fileID: 4903051384914692604}
+  DefaultSprite: {fileID: 1837185413, guid: 64f0cce7912310a489ab219e28d20338, type: 3}
+  HeadItem: {fileID: 4835568290336441186}
   CheckedObject: {fileID: 0}
-  tear: {fileID: 0}
-  tearPoint: {fileID: 0}
+  tear: {fileID: 5114894525887414092, guid: ba1b1ea4a7a80f44185689dfb5626760, type: 3}
+  tearPoint: {fileID: 4903488415990779368}
   knife: {fileID: 0}
   nailActivated: 0
   canUseActive: 1
   canChangeItem: 0
-  hitClips: []
-  deadClips: []
-  getItemClip: {fileID: 0}
-  useItemClip: {fileID: 0}
-  ShootClip: {fileID: 0}
+  hitClips:
+  - {fileID: 8300000, guid: 8c4bfa44717c99b4fb5609740648d91c, type: 3}
+  - {fileID: 8300000, guid: 2b8c743b666e32b49850c0ed0a428c1a, type: 3}
+  - {fileID: 8300000, guid: 19209af1c0cde794189fb18554ab93ee, type: 3}
+  deadClips:
+  - {fileID: 8300000, guid: d379bedd8b5139c43915fe91c99dd6ba, type: 3}
+  - {fileID: 8300000, guid: d7175e43e5feeee44887058353d27359, type: 3}
+  - {fileID: 8300000, guid: 0695024bd74a6434aa3becef8215cd73, type: 3}
+  getItemClip: {fileID: 8300000, guid: eebfd782cee00aa46b5e6ffc7069d6b8, type: 3}
+  ShootClip: {fileID: 8300000, guid: 7d5a21a74964a254d95477cdb36378c1, type: 3}
 --- !u!50 &8576594411106358938
 Rigidbody2D:
   serializedVersion: 4
