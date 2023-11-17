@@ -510,10 +510,12 @@ MonoBehaviour:
   head: {fileID: 1042874374983917579}
   useActiveItemImage: {fileID: 8591384693438208543}
   knifePosition: {fileID: 5449846101330744763}
-  tear: {fileID: 0}
-  knife: {fileID: 7157704114343907855}
-  tearPoint: {fileID: 4903488415990779368}
+  DefaultSprite: {fileID: 1837185413, guid: 64f0cce7912310a489ab219e28d20338, type: 3}
+  HeadItem: {fileID: 4835568290336441186}
   CheckedObject: {fileID: 0}
+  tear: {fileID: 0}
+  tearPoint: {fileID: 4903488415990779368}
+  knife: {fileID: 7157704114343907855}
   nailActivated: 0
   canUseActive: 1
   canChangeItem: 0
@@ -528,7 +530,6 @@ MonoBehaviour:
   getItemClip: {fileID: 8300000, guid: eebfd782cee00aa46b5e6ffc7069d6b8, type: 3}
   useItemClip: {fileID: 8300000, guid: eebfd782cee00aa46b5e6ffc7069d6b8, type: 3}
   ShootClip: {fileID: 8300000, guid: 7d5a21a74964a254d95477cdb36378c1, type: 3}
-  HeadItem: {fileID: 4835568290336441186}
 --- !u!50 &8576594411106358938
 Rigidbody2D:
   serializedVersion: 4
@@ -885,7 +886,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8c5083a210b89844908a124a244a209, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerCtr: {fileID: 1635804941268350248}
   startPosition: {fileID: 5449846101330744763}
   shootForceX: 0
   shootForceY: 0
