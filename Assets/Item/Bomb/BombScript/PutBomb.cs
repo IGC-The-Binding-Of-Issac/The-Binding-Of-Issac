@@ -117,7 +117,7 @@ public class PutBomb : MonoBehaviour
         bc.isTrigger = true;
         CanAttack = true;
         bc.offset = new Vector2(0, -0.2f);
-        bc.size = new Vector2(3f, 3.15f);
+        bc.size = new Vector2(2.5f, 2.5f);
     }
 
     //메서드 추가

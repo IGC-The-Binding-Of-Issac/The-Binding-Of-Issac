@@ -120,6 +120,7 @@ public class PlayerController : MonoBehaviour
     }
     #endregion
 
+    #region UseActiveItem
     //액티브 아이템 사용
     void UseActive()
     {
@@ -164,7 +165,9 @@ public class PlayerController : MonoBehaviour
     {
         canChangeItem = true;
     }
+    #endregion
 
+    #region PlayerFunction
     //이동 기능
     void Movement()
     {
@@ -433,6 +436,7 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+    #endregion
 
     #region PlayerAnim
     //이동 애니메이션
@@ -604,8 +608,7 @@ public class PlayerController : MonoBehaviour
     }
     #endregion
 
-    #region GotItem
-
+    #region GetItemAnim
     //아이템 획득 애니메이션
     public IEnumerator GetItemTime()
     {
