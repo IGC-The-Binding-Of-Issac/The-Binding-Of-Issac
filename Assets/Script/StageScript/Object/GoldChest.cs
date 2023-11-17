@@ -6,6 +6,22 @@ public class GoldChest : MonoBehaviour
 {
     [Header("Unity Setup")]
     [SerializeField] Sprite openChestSprite;
+    [SerializeField] Sprite closeChestSprite;
+
+    private void Start()
+    {
+        closeChestSprite = gameObject.GetComponent<SpriteRenderer>().sprite;
+    }
+
+    public void ResetObject()
+    {
+        //초기화
+        gameObject.layer = 15;
+        gameObject.GetComponent<SpriteRenderer>().sprite = closeChestSprite;
+
+        // 오브젝트 끄기.
+        gameObject.SetActive(false);
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -25,7 +41,6 @@ public class GoldChest : MonoBehaviour
         gameObject.layer = 16;
         yield return new WaitForSeconds(1.0f);
         gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
-        Destroy(gameObject.GetComponent<Rigidbody2D>());
     }
 
     void OpenChest()
