@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7056965426812683830}
   - component: {fileID: -5889196280352784749}
   - component: {fileID: 7964529706880481302}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: CurseChest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 21
+  m_SortingOrder: 19
   m_Sprite: {fileID: 1222237394, guid: 12e1a6e50ffb3fb4fbe6c8c15bdb2782, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
