@@ -36,6 +36,25 @@ public class ShopTable : MonoBehaviour
         }
     }
 
+    public void ResetObject()
+    {
+        roomObject = null;
+        roomInfo = null;
+        cost = 0;
+        if(item != null)
+        {
+            Destroy(item);
+            item = null;
+        }
+        itemInfomation[0] = "";
+        itemInfomation[1] = "";
+
+        Cost_1.GetComponent<SpriteRenderer>().sprite = costImages[0];
+        Cost_10.GetComponent<SpriteRenderer>().sprite = costImages[0];
+
+        gameObject.SetActive(false);
+    }
+
     void ItemLayer()
     {
         if (GameManager.instance.playerObject.transform.position.y > gameObject.transform.position.y)
@@ -129,7 +148,6 @@ public class ShopTable : MonoBehaviour
             item.GetComponent<Collider2D>().enabled = true;
             itemPos.localPosition = Vector3.zero;
             ItemManager.instance.coinCount -= cost;
-            Destroy(this);
         }
     }
 

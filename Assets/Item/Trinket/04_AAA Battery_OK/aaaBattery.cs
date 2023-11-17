@@ -6,24 +6,27 @@ public class aaaBattery : TrinketInfo
 
 {
     float beforeDropMoveSpeed;
+    float beforeDropShotDelay;
     private void Start()
     {
         SetTrinketItemCode(4);
         SetTrinketString("AAA 건전지",
-                         "충전 효율 증가",
-                         "습득 시 방 클리어 시 액티브 아이템 충전 효율이 2배가 되며" +
+                         "파지직",
+                         "공격속도 + 0.05" +
                          "이동속도 + 0.1");
     }
 
     public override void GetItem()
     {
-        //장착 시 배터리 충전 효율이 2배로 늘어난다. 가능하면 넣어주고 아니면 빼고
+        PlayerManager.instance.playerShotDelay -= 0.05f;
         PlayerManager.instance.playerMoveSpeed += 0.1f;
     }
 
     public override void DropTrinket()
     {
+        beforeDropShotDelay = PlayerManager.instance.playerShotDelay;
         beforeDropMoveSpeed = PlayerManager.instance.playerMoveSpeed;
         PlayerManager.instance.playerMoveSpeed = beforeDropMoveSpeed - 0.1f;
+        PlayerManager.instance.playerMoveSpeed = beforeDropShotDelay + 0.05f;
     }
 }

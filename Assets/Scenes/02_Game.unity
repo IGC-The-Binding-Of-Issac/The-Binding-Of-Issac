@@ -1195,6 +1195,10 @@ Transform:
   - {fileID: 800432320}
   - {fileID: 1601931041}
   - {fileID: 2129910044}
+  - {fileID: 671384108}
+  - {fileID: 994518045}
+  - {fileID: 1498093126}
+  - {fileID: 1466785068}
   m_Father: {fileID: 1991369605}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &351783603
@@ -1259,6 +1263,10 @@ MonoBehaviour:
   poopPool_Transform: {fileID: 800432320}
   firePool_Transform: {fileID: 1601931041}
   spikePool_Transform: {fileID: 2129910044}
+  normalChestPool_Transform: {fileID: 671384108}
+  goldchestPool_Transform: {fileID: 994518045}
+  shopTable_Transform: {fileID: 1466785068}
+  goldTable_Transform: {fileID: 1498093126}
 --- !u!1 &419525034
 GameObject:
   m_ObjectHideFlags: 0
@@ -1660,6 +1668,37 @@ MonoBehaviour:
   m_Spacing: {x: 0, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
+--- !u!1 &671384107
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 671384108}
+  m_Layer: 0
+  m_Name: NormalChestPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &671384108
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 671384107}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1000, y: 1000, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 351783602}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &676398678
 GameObject:
   m_ObjectHideFlags: 0
@@ -2506,6 +2545,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 981434181}
   m_CullTransparentMesh: 1
+--- !u!1 &994518044
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 994518045}
+  m_Layer: 0
+  m_Name: GoldChestPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &994518045
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 994518044}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1000, y: 1000, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 351783602}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1026704112
 GameObject:
   m_ObjectHideFlags: 0
@@ -2756,6 +2826,7 @@ MonoBehaviour:
   coinText: {fileID: 1362639914}
   bombText: {fileID: 1401842131}
   keyText: {fileID: 2068630430}
+  DeathCount: {fileID: 1943989226}
   damageText: {fileID: 1789591500}
   moveSpeedText: {fileID: 194163769}
   attackSpeedText: {fileID: 1864242038}
@@ -3717,6 +3788,68 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1410106755}
   m_CullTransparentMesh: 1
+--- !u!1 &1466785067
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1466785068}
+  m_Layer: 0
+  m_Name: ShopTablePool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1466785068
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1466785067}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1000, y: 1000, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 351783602}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1498093125
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1498093126}
+  m_Layer: 0
+  m_Name: GoldTablePool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1498093126
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1498093125}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1000, y: 1000, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 351783602}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1565698048
 GameObject:
   m_ObjectHideFlags: 0
@@ -4116,7 +4249,7 @@ MonoBehaviour:
   - {fileID: 2224291892743795063, guid: 2b16369be2c1db9498cc1c7f1ce88c27, type: 3}
   - {fileID: 1939503092496380227, guid: 5e4ff7a3eb839f34f85e8b5255fb4036, type: 3}
   - {fileID: 1011503089169196416, guid: b613184e31a7b9b4898c567efe320834, type: 3}
-  - {fileID: 659596180675281916, guid: 97ceab7eef72e4c4aae0044ed1b44200, type: 3}
+  - {fileID: 5765631921516226393, guid: 3e776fa96b8cfee46960a5d279efae70, type: 3}
   - {fileID: 214016026676750245, guid: c080bfde4ec74314680c841e16a3f2b2, type: 3}
   - {fileID: 2775568438795394074, guid: 6ada65ee85291464d9da7d65914814e0, type: 3}
   - {fileID: 5570061789916460198, guid: 858346f40c3078a479d5b410f90683be, type: 3}
@@ -5207,6 +5340,7 @@ MonoBehaviour:
   bgmObject: {fileID: 209403519}
   playerObject: {fileID: 0}
   sfxObjects: []
+  sfxDestoryObjects: []
   volumes: 
 --- !u!1 &2042181454
 GameObject:

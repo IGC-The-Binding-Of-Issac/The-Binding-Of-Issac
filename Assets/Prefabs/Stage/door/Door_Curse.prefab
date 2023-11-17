@@ -95,7 +95,6 @@ GameObject:
   - component: {fileID: 4463597407791011690}
   - component: {fileID: 981244746176661128}
   - component: {fileID: 7311722367315051639}
-  - component: {fileID: -5554155198323892021}
   m_Layer: 0
   m_Name: Door_Curse
   m_TagString: door
@@ -181,21 +180,10 @@ MonoBehaviour:
   movePosition: {fileID: 0}
   roomInfo: {fileID: 0}
   doorDir: -1
+  doorDamage: 0
   closeDoor: {fileID: 5194783392700659119}
   openDoor: {fileID: 5575524538017822623}
   doorKey: 1
---- !u!114 &-5554155198323892021
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5023763103856867615}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 751754fe172ad5a4290bc53fa45a0b82, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &5194783392700659119
 GameObject:
   m_ObjectHideFlags: 0
