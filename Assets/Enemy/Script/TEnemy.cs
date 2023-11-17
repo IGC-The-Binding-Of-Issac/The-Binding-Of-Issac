@@ -10,6 +10,7 @@ public enum TENEMY_STATE // 스크립트로 만들 상태
     Prowl,
     Tracking,
     Shoot,
+    Jump,
     Die
 }
 
@@ -81,7 +82,7 @@ public class TEnemy : MonoBehaviour
     // 컴포넌트
     public GameObject enemyBullet;              // 총알
     public GameObject roomInfo;                 // 방 정보 오브젝트
-    public Transform playerPosi;             // 플레이어 위치
+    public Transform playerPosi;                // 플레이어 위치
 
     // Enemy가 가지고 있는 컴포넌트 (init 에서 초기화)
     protected Animator animator;                // 애니메이터
@@ -131,11 +132,12 @@ public class TEnemy : MonoBehaviour
         /// Q. 왜 어렵게  arrayState[(int)TENEMY_STATE.Idle]이렇게 하지? arr[0]하면 안됨?
         ///     A. 직관성을 위해서 , arr[0] 하면 배열의 0번째가 어떤 타입인지 모르니까
         /// </summary>
-        arrayState[(int)TENEMY_STATE.Idle] = new Enemy_Idle(this);
-        arrayState[(int)TENEMY_STATE.Prowl] = new Enemy_Prowl(this);
-        arrayState[(int)TENEMY_STATE.Tracking] = new Enemy_Tracking(this);
-        arrayState[(int)TENEMY_STATE.Shoot] = new Enemy_Shoot(this);
-        arrayState[(int)TENEMY_STATE.Die] = new Enemy_Die(this);
+        arrayState[(int)TENEMY_STATE.Idle]      = new Enemy_Idle(this);
+        arrayState[(int)TENEMY_STATE.Prowl]     = new Enemy_Prowl(this);
+        arrayState[(int)TENEMY_STATE.Tracking]  = new Enemy_Tracking(this);
+        arrayState[(int)TENEMY_STATE.Shoot]     = new Enemy_Shoot(this);
+        arrayState[(int)TENEMY_STATE.Jump]      = new Enemy_Jump(this);
+        arrayState[(int)TENEMY_STATE.Die]       = new Enemy_Die(this);
         //Debug.Log(this.gameObject.tag); -> 자식 오브젝트에서 생성하면 자식 오브젝트가 this
 
         // Enemy 상태를 Idle 상태로 초기 설정
