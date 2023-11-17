@@ -13,9 +13,11 @@ public class Enemy_Die : TEnemy_FSM<TEnemy>
 
     public override void Enter()
     {
-        Debug.Log(e_Owner.gameObject.tag + " : DIE 상태 ");
+        //Debug.Log(e_Owner.gameObject.tag + " : DIE 상태 ");
         e_Owner.eCurState = TENEMY_STATE.Die;          // 현재 상태를 TENEMY_STATE의 Die 
+        
         e_Owner.e_destroyEnemy();
+        
     }
 
     public override void Excute()

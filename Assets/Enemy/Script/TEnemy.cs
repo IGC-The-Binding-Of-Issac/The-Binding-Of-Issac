@@ -53,6 +53,7 @@ public class TEnemy : MonoBehaviour
     protected float fTime;                      // prowl - 랜덤 이동 시간
     protected float randRange;                  // prowl - 랜덤 이동 거리
     protected bool isRaadyShoot;                // shoot -  총 쏘는 조건
+    protected bool isFlipped = true;                   // 뒤집기
 
     //
     protected bool knockBackState = false;      // 넉백 
@@ -61,10 +62,14 @@ public class TEnemy : MonoBehaviour
     protected float xRan;                       // x 랜덤 움직임
     protected float yRan;                       // y 랜덤 움직임
 
+    //
+    protected string dieParameter;              // 죽는 애니메이션 실행 파라미터
+    protected string shootParameter;            // 총쏘는 애니메이션 실행 파라미터
+
     // enemy 스탯 프로퍼티
     public float getMoveSpeed { get => moveSpeed; }
     public float getSight { get => sight; }
-    public bool IsReadyShoot
+    public bool setIsReadyShoot
     {
         set { isRaadyShoot = value; }
     }
@@ -76,7 +81,7 @@ public class TEnemy : MonoBehaviour
     // 컴포넌트
     public GameObject enemyBullet;              // 총알
     public GameObject roomInfo;                 // 방 정보 오브젝트
-    public Transform trackingTarget;             // 플레이어 위치
+    public Transform playerPosi;             // 플레이어 위치
 
     // Enemy가 가지고 있는 컴포넌트 (init 에서 초기화)
     protected Animator animator;                // 애니메이터
@@ -167,6 +172,9 @@ public class TEnemy : MonoBehaviour
         headState.H_Exit(); ;
     }
 
+
+
+
     /// <summary>
     /// - 상태 변환
     /// 1. 상태 안에서 (상태 스크립트 안에서) "내상태-> 다음상태" 변환 할 때 사용
@@ -185,10 +193,24 @@ public class TEnemy : MonoBehaviour
     /// * 기타 동작 메서드
     /// </summary>  
 
+    // 플레이어 쳐다보기
+    public void e_Lookplayer()
+    {
+        if (transform.position.x > playerPosi.position.x && isFlipped)
+        {
+            transform.Rotate(0f, 180f, 0f);
+            isFlipped = false;
+        }
+        else if (transform.position.x < playerPosi.position.x && !isFlipped)
+        {
+            transform.Rotate(0f, 180f, 0f);
+            isFlipped = true;
+        }
+    }
     // tracking할 enemy 를 탐색
     public void e_findPlayer()                             
     {
-        trackingTarget = GameObject.FindWithTag("Player").transform;
+        playerPosi = GameObject.FindWithTag("Player").transform;
     }
     // tracking 움직임
     public void e_Tracking()                               
@@ -197,7 +219,7 @@ public class TEnemy : MonoBehaviour
             return;
 
         gameObject.transform.position
-            = Vector3.MoveTowards(gameObject.transform.position, trackingTarget.transform.position, moveSpeed * Time.deltaTime);
+            = Vector3.MoveTowards(gameObject.transform.position, playerPosi.transform.position, moveSpeed * Time.deltaTime);
     }
 
     // 범위 안에 player 감지
@@ -237,18 +259,29 @@ public class TEnemy : MonoBehaviour
     // 총 쏘기
     public void e_Shoot() 
     {
-        if (isRaadyShoot) 
-        {
+        animator.SetTrigger(shootParameter);
+        if (isRaadyShoot) {
             GameObject bulletobj = Instantiate(enemyBullet, transform.position + new Vector3(0, -0.1f, 0), Quaternion.identity);
             isRaadyShoot = false;
         }
     }
 
-    IEnumerator waitShoot() 
+    // Tracking -> Shoot으로 넘어갈때 조건 (invoke)
+    public void involeShoot()
     {
-        yield return new WaitForSeconds(2f);
+        Invoke("chageToShoot", attaackSpeed);             // 3초후에  
+
+    }
+    public void chageToShoot()
+    {
+        ChageFSM(TENEMY_STATE.Shoot);           // Shoot으로 상태 변화
     }
 
+    // 랜덤움 움직임 코루틴 실행
+    public void startRaomPosiCoru()
+    {
+        StartCoroutine(checkPosi());
+    }
     //랜덤 움직임 검사
     public IEnumerator checkPosi()
     {
@@ -259,6 +292,8 @@ public class TEnemy : MonoBehaviour
             yRan = Random.Range(my + randRange, my - randRange);    // y위치 동일
         }
     }
+
+
     // 일반 몬스터 collider검사
     private void OnCollisionStay2D(Collision2D collision)       
     {
@@ -319,6 +354,7 @@ public class TEnemy : MonoBehaviour
     // enemy 삭제
     public void e_destroyEnemy()
     {
+        animator.SetBool(dieParameter , true);
         Destroy(gameObject , waitforSecond);
     }
 }
