@@ -26,7 +26,8 @@ public class GlassCannon : ActiveInfo
         {
             float shootHor = Input.GetAxis("Horizontal");
             float shootVer = Input.GetAxis("Vertical");
-            PlayerManager.instance.playerTearSize *= 8f;
+            if (ItemManager.instance.PassiveItems[16]) PlayerManager.instance.playerTearSize *= 2.3f;
+            else PlayerManager.instance.playerTearSize *= 8f;
             PlayerManager.instance.ChgTearSize();
             PlayerManager.instance.playerDamage *= 10f;
             if (shootHor == 0 && shootVer != 0)

@@ -32,7 +32,7 @@ public class OopsEffect : MonoBehaviour
         {
             if (canDamage)
             {
-            collision.gameObject.GetComponent<Enemy>().GetDamage(8);
+            collision.gameObject.GetComponent<TEnemy>().GetDamage(4);
             canDamage = false;
             Invoke("canGiveDamage", 0.5f);
             }

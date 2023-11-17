@@ -77,7 +77,12 @@ public class PutBomb : MonoBehaviour
                 for(int i = 0; i < 4; i++)
                     collision.GetComponent<Poop>().GetDamage();
             }
-            if(collision.CompareTag("Object_Fire"))
+            else if (collision.gameObject.name == "Golden Poop(Clone)")
+            {
+                for (int i = 0; i < 4; i++)
+                    collision.GetComponent<GoldenPoop>().GetDamage();
+            }
+            if (collision.CompareTag("Object_Fire"))
             {
                 for (int i = 0; i < 4; i++)
                     collision.GetComponent<FirePlace>().GetDamage();
