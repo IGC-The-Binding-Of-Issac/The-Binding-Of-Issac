@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class Footer : TEnemy
 {
-    // 플레이어 추적
+    // tracking, pworl, shoot, 
     public override void En_setState()
     {
         playerInRoom         = false;
+        dieParameter         = "isDie";
+        shootParameter       = "isShoot";
 
         hp                   = 2f;
         sight                = 2f;
         moveSpeed            = 1.5f;
+        attaackSpeed         = 1f;
         waitforSecond        = 0.5f;
         fTime                = 0.5f;
         randRange            = 1f;

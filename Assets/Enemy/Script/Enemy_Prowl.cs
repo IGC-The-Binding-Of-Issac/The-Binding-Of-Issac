@@ -17,7 +17,7 @@ public class Enemy_Prowl : TEnemy_FSM<TEnemy>
         e_Owner.eCurState = TENEMY_STATE.Prowl;                 // 현재 상태를 TENEMY_STATE의 Prowl  
 
         e_Owner.e_moveInialize();                               // 랜덤으로 움직이기 위한 초기값 설정
-        CoroutineHandler.Start_Coroutine(e_Owner.checkPosi());  // 랜덤 위치 설정 코루틴 실행
+        e_Owner.startRaomPosiCoru();                            // 랜덤 위치 설정 코루틴 실행
     }
 
     public override void Excute()                               // 해당 상태를 업데이트 할 때 "매 프레임" 호출

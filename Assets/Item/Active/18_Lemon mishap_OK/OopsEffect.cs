@@ -28,11 +28,11 @@ public class OopsEffect : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("TEnemy"))
         {
             if (canDamage)
             {
-            collision.gameObject.GetComponent<Enemy>().GetDamage(8);
+            collision.gameObject.GetComponent<TEnemy>().GetDamage(8);
             canDamage = false;
             Invoke("canGiveDamage", 0.5f);
             }

@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Gurdy : Enemy
+public class Gurdy : TEnemy
 {
     [Header("BigAttackFly")]
     [SerializeField] float currTime; //현재 상태의 시간
@@ -21,7 +21,6 @@ public class Gurdy : Enemy
     {
 
         playerInRoom = false;
-        dieParameter = "";
 
         // Enemy
         hp = 100f;
@@ -42,15 +41,9 @@ public class Gurdy : Enemy
 
     private void Update()
     {
-        if (playerInRoom)
-            Move();
+            
     }
 
-    override public void Move()
-    {
-
-
-    }
 
     private void gurdyReset()
     {
