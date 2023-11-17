@@ -19,6 +19,14 @@ public class EnemyGenerate : MonoBehaviour
         return enemy;
     }
 
+    public GameObject GetEnemy(int index)
+    {
+        GameObject enemy;
+        enemy = Instantiate(enemyPrefabs[index]) as GameObject;
+        return enemy;
+    }
+
+
     public GameObject GetBoss()
     {
         // 스테이지별 보스를 생성후 리턴
