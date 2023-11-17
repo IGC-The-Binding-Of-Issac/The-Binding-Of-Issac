@@ -15,15 +15,17 @@ public class MomsKnife : ItemInfo
     }
     public override void UseItem()
     {
+        if (!ItemManager.instance.PassiveItems[16])
+        {
         //눈물이 사라지고 눈물 대신 칼이 부메랑처럼 나간다.
         PlayerManager.instance.playerDamage += 2.0f;
         Invoke("GenerateKnife", 1.0f);
+        }
     }
 
     private void GenerateKnife()
     {
         GameManager.instance.playerObject.GetComponent<PlayerController>().knifePosition.gameObject.SetActive(true);
         GameManager.instance.playerObject.GetComponent<PlayerController>().knife.SetActive(true);
-
     }
 }
