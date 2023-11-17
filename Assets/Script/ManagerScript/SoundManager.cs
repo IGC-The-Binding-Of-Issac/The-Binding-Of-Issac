@@ -22,14 +22,14 @@ public class SoundManager : MonoBehaviour
     [Header("Sound Object")]
     public AudioSource bgmObject; // BGM 사운드 오브젝트
     public AudioSource playerObject;  // 플레이어 사운드 오브젝트
-    public List<AudioSource> sfxObjects; // 그 외 SFX 사운드 적용 오브젝트.
+    public List<AudioSource> sfxObjects = new List<AudioSource>(); // SFX 사운드 오브젝트트 ( 풀링 적용된 오브젝트
+    public List<AudioSource> sfxDestoryObjects = new List<AudioSource>(); // SFX 사운드 오브젝트트 ( 풀링 적용X 오브젝트
 
     [Header("Sound State")]
     [SerializeField] private int[] volumes;
     // [0] master   [1] BGM   [2] SFX
     private void Start()
     {
-        sfxObjects = new List<AudioSource>();
         SoundInit();
         BGMInit();
     }
@@ -107,6 +107,15 @@ public class SoundManager : MonoBehaviour
                 sfxObjects[i].volume = (volumes[2] / 9.0f) * (volumes[0] / 9.0f);
             }
         }
+
+        for(int i = 0; i < sfxDestoryObjects.Count; i++)
+        {
+            if (sfxDestoryObjects[i] != null)
+            {
+                sfxDestoryObjects[i].volume = (volumes[2] / 9.0f) * (volumes[0] / 9.0f);
+            }
+        }
+
         playerObject.volume = (volumes[2] / 9.0f) * (volumes[0] / 9.0f);
     }
 
@@ -148,23 +157,4 @@ public class SoundManager : MonoBehaviour
         }
         return null;
     }
-/*
-Master Volume 
-  -
-Music Volume 
-  - BGM
-SFX Volume
-  - 플레이어 피격 사운드
-  - 플레이어 사망 사운드
-  - 동전/열쇠/폭탄 획득 사운드
-  - 아이템 획득/교체 사운드
-  - 플레이어 눈물 터지는 소리
-  - 폭탄 터지는 소리
-  - 돌,똥,불 터지는 사운드
-  - 방 클리어시 문열릴때 사운드
-  - 상자 오픈시 사운드
-  - 상점/황금방 문 여는 소리
-  - 몬스터 기본 사운드
-  - 몬스터 사망 사운드
-*/
 }

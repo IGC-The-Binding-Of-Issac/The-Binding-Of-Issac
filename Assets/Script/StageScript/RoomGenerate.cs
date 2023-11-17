@@ -42,6 +42,12 @@ public class RoomGenerate : MonoBehaviour
     public Transform goldchestPool_Transform;
     Stack<GameObject> goldChestPool = new Stack<GameObject>();
 
+    public Transform shopTable_Transform;
+    Stack<GameObject> shopTablePool = new Stack<GameObject>();
+
+    public Transform goldTable_Transform;
+    Stack<GameObject> goldTablePool = new Stack<GameObject>();
+
     public void SetObjectPooling()
     {
         rockPool = new Stack<GameObject>();
@@ -50,21 +56,28 @@ public class RoomGenerate : MonoBehaviour
         spikePool = new Stack<GameObject>();
         normalChestPool = new Stack<GameObject>();
         goldChestPool = new Stack<GameObject>();
+        goldTablePool = new Stack<GameObject>();
+        shopTablePool = new Stack<GameObject>();
 
-        for (int i = 0; i < 25; i++)
+        for (int i = 0; i < 5; i++)
         {
             // 오브젝트 생성
             GameObject rock = Instantiate(objectPrefabs[0], rockPool_Transform.position, Quaternion.identity);
             GameObject poop = Instantiate(objectPrefabs[1], poopPool_Transform.position, Quaternion.identity);
             GameObject fire = Instantiate(objectPrefabs[2], firePool_Transform.position, Quaternion.identity); 
             GameObject spike = Instantiate(objectPrefabs[3], spikePool_Transform.position, Quaternion.identity);
+            GameObject shopTable = Instantiate(objectPrefabs[5], shopTable_Transform.position, Quaternion.identity);
+            GameObject goldTable = Instantiate(objectPrefabs[6], goldTable_Transform.position, Quaternion.identity);
             GameObject normalChest = Instantiate(objectPrefabs[7], normalChestPool_Transform.position, Quaternion.identity);
             GameObject goldChest = Instantiate(objectPrefabs[8], normalChestPool_Transform.position, Quaternion.identity);
 
+            // 오브젝트 풀 담아주기
             rockPool.Push(rock);
             poopPool.Push(poop);
             firePool.Push(fire);
             spikePool.Push(spike);
+            shopTablePool.Push(shopTable);
+            goldTablePool.Push(goldTable);
             normalChestPool.Push(normalChest);
             goldChestPool.Push(goldChest);
 
@@ -73,21 +86,27 @@ public class RoomGenerate : MonoBehaviour
             poop.transform.SetParent(poopPool_Transform);
             fire.transform.SetParent(firePool_Transform);
             spike.transform.SetParent(spikePool_Transform);
+            shopTable.transform.SetParent(shopTable_Transform);
+            goldTable.transform.SetParent(goldTable_Transform);
             normalChest.transform.SetParent(normalChestPool_Transform);
             goldChest.transform.SetParent(goldchestPool_Transform);
 
-            // 사운드 조절을 위해 SFXObject로 넣어주기
+            // 사운드 조절을 위해 SFXObject로 넣어주기 // 이 부분 작동안함.
             SetSFXObject(rock);
             SetSFXObject(poop);
             SetSFXObject(fire);
             SetSFXObject(spike);
+            SetSFXObject(shopTable); // 사운드 없는 오브젝트 입니다.
+            SetSFXObject(goldTable); // 사운드 없는 오브젝트입니다.
             SetSFXObject(normalChest);
-            SetSFXObject(goldChest);
-
+            SetSFXObject(goldChest); 
+            
             rock.SetActive(false);
             poop.SetActive(false);
             fire.SetActive(false);
             spike.SetActive(false);
+            shopTable.SetActive(false);
+            goldTable.SetActive(false);
             normalChest.SetActive(false);
             goldChest.SetActive(false);
         }
@@ -157,6 +176,34 @@ public class RoomGenerate : MonoBehaviour
                 return spikeObj;
             #endregion
 
+            #region 상점방 아이템테이블
+            case 5:
+                if (shopTablePool.Count == 0)
+                {
+                    GameObject shopTable = Instantiate(objectPrefabs[6], shopTable_Transform.position, Quaternion.identity);
+                    shopTablePool.Push(shopTable);
+                    shopTable.transform.SetParent(shopTable_Transform);
+                    SetSFXObject(shopTable); // 사운드가없는 오브젝트입니다.
+                }
+                GameObject shopTableObj = shopTablePool.Pop();
+                shopTableObj.SetActive(true);
+                return shopTableObj;
+            #endregion
+
+            #region 황금방 보상테이블
+            case 6:
+                if(goldTablePool.Count == 0)
+                {
+                    GameObject goldTable = Instantiate(objectPrefabs[6], goldTable_Transform.position, Quaternion.identity);
+                    goldTablePool.Push(goldTable);
+                    goldTable.transform.SetParent(goldTable_Transform);
+                    SetSFXObject(goldTable); // 사운드가없는 오브젝트입니다.
+                }
+                GameObject goldTableObj = goldTablePool.Pop();
+                goldTableObj.SetActive(true);
+                return goldTableObj;
+                #endregion
+
             #region 일반상자
             case 7:
                 if(normalChestPool.Count == 0)
@@ -183,13 +230,14 @@ public class RoomGenerate : MonoBehaviour
                 GameObject goldChestObj = goldChestPool.Pop();
                 goldChestObj.SetActive(true);
                 return goldChestObj;
-                #endregion
+            #endregion
         }
         return null;
     }
+
     void AllReturnObject()
     {
-        // 돌
+        // 돌 0
         for(int i = 0; i < rockPool_Transform.childCount; i++)
         {
             GameObject obj = rockPool_Transform.GetChild(i).gameObject;
@@ -199,8 +247,8 @@ public class RoomGenerate : MonoBehaviour
                 rockPool.Push(obj);
             }
         }
-
-        // 똥
+         
+        // 똥 1
         for (int i = 0; i < poopPool_Transform.childCount; i++)
         {
             GameObject obj = poopPool_Transform.GetChild(i).gameObject;
@@ -211,7 +259,7 @@ public class RoomGenerate : MonoBehaviour
             }
         }
 
-        // 불
+        // 불 2
         for (int i = 0; i < firePool_Transform.childCount; i++)
         {
             GameObject obj = firePool_Transform.GetChild(i).gameObject;
@@ -222,7 +270,7 @@ public class RoomGenerate : MonoBehaviour
             }
         }
 
-        // 가시
+        // 가시 3
         for (int i = 0; i < spikePool_Transform.childCount; i++)
         {
             GameObject obj = spikePool_Transform.GetChild(i).gameObject;
@@ -233,7 +281,29 @@ public class RoomGenerate : MonoBehaviour
             }
         }
 
-        // 일반 상자
+        // 상점방 아이템 테이블 5
+        for (int i = 0; i < shopTable_Transform.childCount; i++)
+        {
+            GameObject obj = shopTable_Transform.GetChild(i).gameObject;
+            if (obj.activeSelf)
+            {
+                obj.GetComponent<ShopTable>().ResetObject();
+                shopTablePool.Push(obj);
+            }
+        }
+
+        // 황금방 보상테이블 6
+        for (int i = 0; i < goldTable_Transform.childCount; i++)
+        {
+            GameObject obj = goldTable_Transform.GetChild(i).gameObject;
+            if (obj.activeSelf)
+            {
+                obj.GetComponent<GoldTable>().ResetObject();
+                goldTablePool.Push(obj);
+            }
+        }
+
+        // 일반 상자 7
         for (int i = 0; i < normalChestPool_Transform.childCount; i++)
         {
             GameObject obj = normalChestPool_Transform.GetChild(i).gameObject;
@@ -244,7 +314,7 @@ public class RoomGenerate : MonoBehaviour
             }
         }
 
-        // 황금 상자
+        // 황금 상자 8
         for (int i = 0; i < goldchestPool_Transform.childCount; i++)
         {
             GameObject obj = goldchestPool_Transform.GetChild(i).gameObject;
@@ -254,6 +324,7 @@ public class RoomGenerate : MonoBehaviour
                 goldChestPool.Push(obj);
             }
         }
+
     }
 
     public void SetPrefabs()
@@ -330,7 +401,7 @@ public class RoomGenerate : MonoBehaviour
 
                 // 방 오브젝트 생성
                 GameObject room = Instantiate(roomPrefabs[stage - 1, roomNum - 1], roomPos, Quaternion.identity) as GameObject; // 방 오브젝트를 생성.
-                SetSFXObject(room); // 해당 방을 Sound Manager의 SFXObject로 추가
+                SetSFXDestoryObject(room); // 해당 방을 Sound Manager의 SFXObject로 추가
                 roomList[i, j] = room; 
                 roomList[i, j].GetComponent<Room>().isClear = false; // 해당 방을 미클리어 상태로 전환
 
@@ -381,7 +452,7 @@ public class RoomGenerate : MonoBehaviour
             // 문 선택
             int doorNumder = ChoiceDoor(y,x,ny,nx);
 
-            GameObject door = Instantiate(doorPrefabs[doorNumder]) as GameObject;
+            GameObject door = Instantiate(doorPrefabs[doorNumder]);
             door.transform.SetParent(roomList[y, x].GetComponent<Room>().doorPosition[i]);
             door.transform.localPosition = new Vector3(0, 0, 0);
             door.transform.localRotation = Quaternion.Euler(new Vector3(0, 0, 0));
@@ -431,7 +502,6 @@ public class RoomGenerate : MonoBehaviour
         return doorNum;
     }
 
-
     void CreateObstacle(int y, int x, int roomNumber)
     {
         int idx = 0;
@@ -441,13 +511,19 @@ public class RoomGenerate : MonoBehaviour
             for(int j = 0; j < rdPattern.GetLength(1); j++)
             {
                 int pNum = rdPattern[i, j]; ;
-                if (pNum == 0)
+                if (pNum == 0) // 빈칸
                 {
                     idx++;
                     continue;
                 }
 
-                if (pNum == 5) // 몬스터 오브젝트일때
+                else if (pNum == 10) // 플레이어 오브젝트일때
+                {
+                    Transform pos = roomList[y, x].GetComponent<Room>().roomObjects[idx].transform;
+                    GameManager.instance.playerObject.transform.position = pos.position;
+                }
+
+                else if (pNum == 5) // 몬스터 오브젝트일때
                 {
                     // 랜덤한 일반몬스터를 반환받음.
                     GameObject enemy = enemyGenerate.GetEnemy();
@@ -457,64 +533,21 @@ public class RoomGenerate : MonoBehaviour
                     roomList[y, x].GetComponent<Room>().enemis.Add(enemy); // 해당 방의 몬스터리스트에 추가
 
                     // sfx 사운드 조절을 위한 오브젝트 저장
-                    SetSFXObject(enemy);
+                    SetSFXDestoryObject(enemy);
                 }
 
-                // 그 외
-                else
+                else // 돌 똥 불 가시 아이템상자 2종 , 황금방/보스방 보상 테이블 , 상점방 아이템 테이블
                 {
-                    if (pNum == 10) // 플레이어 오브젝트일때
+                    GameObject obstacle = GetObstacle(pNum-1);
+                    Vector3 pos = roomList[y, x].GetComponent<Room>().roomObjects[idx].position;
+                    obstacle.transform.position = pos;
+                    if(pNum == 7)
                     {
-                        Transform pos = roomList[y, x].GetComponent<Room>().roomObjects[idx].transform;
-                        GameManager.instance.playerObject.transform.position = pos.position;
+                        obstacle.GetComponent<GoldTable>().SetRoomInfo(roomList[y, x]);
                     }
-
-                    // 그외
-                    else
+                    else if(pNum == 6)
                     {
-                        if (pNum == 7) // 황금방 아이템 테이블
-                        {
-                            GameObject gold = Instantiate(objectPrefabs[pNum - 1]) as GameObject; // 오브젝트 생성
-                            gold.transform.SetParent(roomList[y, x].GetComponent<Room>().roomObjects[idx]); // 오브젝트 위치 설정
-                            gold.transform.localPosition = new Vector3(0, 0, 0); // 오브젝트 위치 설정
-                            gold.GetComponent<GoldTable>().SetRoomInfo(roomList[y, x]);
-                            SetSFXObject(gold);
-                        }
-                        else if (pNum == 6) // 상점방 아이템 테이블
-                        {
-                            GameObject shop = Instantiate(objectPrefabs[pNum - 1]) as GameObject; // 오브젝트 생성
-                            shop.transform.SetParent(roomList[y, x].GetComponent<Room>().roomObjects[idx]); // 오브젝트 위치 설정
-                            shop.transform.localPosition = new Vector3(0, 0, 0); // 오브젝트 위치 설정
-                            shop.GetComponent<ShopTable>().SetRoomInfo(roomList[y, x]);
-                            SetSFXObject(shop);
-                        }
-
-                        //// 아이템 상자 ( 일반  
-                        //else if (pNum == 8)
-                        //{
-                        //    GameObject chest = Instantiate(objectPrefabs[pNum - 1]) as GameObject; // 오브젝트 생성
-                        //    chest.transform.SetParent(roomList[y, x].GetComponent<Room>().roomObjects[idx]); // 오브젝트 위치 설정
-                        //    chest.transform.localPosition = new Vector3(0, 0, 0); // 오브젝트 위치 설정
-                        //    SetSFXObject(chest);
-                        //}
-
-                        //// 아이템 상자 ( 황금
-                        //else if (pNum == 9)
-                        //{
-                        //    GameObject chest = Instantiate(objectPrefabs[pNum - 1]) as GameObject; // 오브젝트 생성
-                        //    chest.transform.SetParent(roomList[y, x].GetComponent<Room>().roomObjects[idx]); // 오브젝트 위치 설정
-                        //    chest.transform.localPosition = new Vector3(0, 0, 0); // 오브젝트 위치 설정
-                        //    SetSFXObject(chest);
-                        //}
-
-
-
-                        else // 돌 똥 불 가시
-                        {
-                            GameObject obstacle = GetObstacle(pNum-1);
-                            Vector3 pos = roomList[y, x].GetComponent<Room>().roomObjects[idx].position;
-                            obstacle.transform.position = pos;
-                        }
+                        obstacle.GetComponent<ShopTable>().SetRoomInfo(roomList[y, x]);
                     }
                 }
                 idx++;
@@ -526,9 +559,17 @@ public class RoomGenerate : MonoBehaviour
     {
         // sfx 사운드 조절을 위한 오브젝트 저장
         if (obj.GetComponent<AudioSource>() != null)
+        {
             SoundManager.instance.sfxObjects.Add(obj.GetComponent<AudioSource>());
+        }
     }
 
+    void SetSFXDestoryObject(GameObject obj)
+    {
+        // sfx 사운드 조절을 위한 오브젝트 저장
+        if (obj.GetComponent<AudioSource>() != null)
+            SoundManager.instance.sfxDestoryObjects.Add(obj.GetComponent<AudioSource>());
+    }
 
     private void Update()
     {
@@ -540,5 +581,4 @@ public class RoomGenerate : MonoBehaviour
             }
         }
     }
-
 }

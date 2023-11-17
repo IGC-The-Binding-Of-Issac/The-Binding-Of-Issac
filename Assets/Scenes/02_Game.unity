@@ -1122,6 +1122,8 @@ Transform:
   - {fileID: 2129910044}
   - {fileID: 671384108}
   - {fileID: 994518045}
+  - {fileID: 1498093126}
+  - {fileID: 1466785068}
   m_Father: {fileID: 1991369605}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &351783603
@@ -1188,6 +1190,8 @@ MonoBehaviour:
   spikePool_Transform: {fileID: 2129910044}
   normalChestPool_Transform: {fileID: 671384108}
   goldchestPool_Transform: {fileID: 994518045}
+  shopTable_Transform: {fileID: 1466785068}
+  goldTable_Transform: {fileID: 1498093126}
 --- !u!1 &419525034
 GameObject:
   m_ObjectHideFlags: 0
@@ -3630,6 +3634,68 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1410106755}
   m_CullTransparentMesh: 1
+--- !u!1 &1466785067
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1466785068}
+  m_Layer: 0
+  m_Name: ShopTablePool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1466785068
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1466785067}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1000, y: 1000, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 351783602}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1498093125
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1498093126}
+  m_Layer: 0
+  m_Name: GoldTablePool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1498093126
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1498093125}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1000, y: 1000, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 351783602}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1565698048
 GameObject:
   m_ObjectHideFlags: 0
@@ -5025,6 +5091,7 @@ MonoBehaviour:
   bgmObject: {fileID: 209403519}
   playerObject: {fileID: 0}
   sfxObjects: []
+  sfxDestoryObjects: []
   volumes: 
 --- !u!1 &2042181454
 GameObject:
