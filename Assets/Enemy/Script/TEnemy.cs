@@ -35,12 +35,14 @@ public class TEnemy : MonoBehaviour
     [SerializeField] protected bool isProwl;                 // prowl (배회) 하는가?
     [SerializeField] protected bool isDetective;             // detective (감지) 하는가?
     [SerializeField] protected bool isShoot;                 // shoot (총 쏨) 하는가?
+    [SerializeField] protected bool isJump;                  // jump (점프) 하는가?
 
     // enemy 종류 프로퍼티
     public bool getIsTracking { get => isTracking; }
     public bool getisProwl { get => isProwl; }
     public bool getisDetective { get => isDetective; }
     public bool getisShoot { get => isShoot; }
+    public bool getisJump { get => isJump; }
 
 
     // Enemy가 가지고 있을 기본 스탯들
@@ -51,17 +53,20 @@ public class TEnemy : MonoBehaviour
     protected float waitforSecond;              // destroy 전 대기 시간 
     protected float attaackSpeed;               // 공격 속도
     protected float bulletSpeed;                // 총알 속도 
+
+    //
     protected float fTime;                      // prowl - 랜덤 이동 시간
     protected float randRange;                  // prowl - 랜덤 이동 거리
     protected bool isRaadyShoot;                // shoot -  총 쏘는 조건
-    protected bool isFlipped = true;                   // 뒤집기
+    protected bool isFlipped = true;            // 뒤집기
+    protected float jumpSpeed;                  // jump -  점프 속도
 
     //
     protected bool knockBackState = false;      // 넉백 
     protected float mx;                         // 본인 x
     protected float my;                         // 본인 y
-    protected float xRan;                       // x 랜덤 움직임
-    protected float yRan;                       // y 랜덤 움직임
+    protected float xRan;                       // random - x 랜덤 움직임
+    protected float yRan;                       // random - y 랜덤 움직임
 
     //
     protected string dieParameter;              // 죽는 애니메이션 실행 파라미터
@@ -74,6 +79,9 @@ public class TEnemy : MonoBehaviour
     {
         set { isRaadyShoot = value; }
     }
+    public float getJumpSpeed { get => jumpSpeed; }
+    public float getMyx { get => mx; }
+    public float getMyy { get => my; }
 
     // Enemy의 Hp바
     protected float maxhp;                      // hp 바의 max 
@@ -269,7 +277,7 @@ public class TEnemy : MonoBehaviour
     }
 
     // Tracking -> Shoot으로 넘어갈때 조건 (invoke)
-    public void involeShoot()
+    public void invokeShoot()
     {
         Invoke("chageToShoot", attaackSpeed);             // 3초후에  
 
@@ -279,7 +287,18 @@ public class TEnemy : MonoBehaviour
         ChageFSM(TENEMY_STATE.Shoot);           // Shoot으로 상태 변화
     }
 
-    // 랜덤움 움직임 코루틴 실행
+    // Tracking -> jump로 넘어갈때 조건 (invoke)
+    public void invokeJump()
+    {
+        Invoke("chagetToJump", attaackSpeed);             // 3초후에  
+
+    }
+    public void chagetToJump()
+    {
+        ChageFSM(TENEMY_STATE.Jump);           // Shoot으로 상태 변화
+    }
+
+    // Prowl - 랜덤 움직임 코루틴 실행
     public void startRaomPosiCoru()
     {
         StartCoroutine(checkPosi());
