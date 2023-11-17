@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Collections.LowLevel.Unsafe;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,20 +9,22 @@ public class ItemExplane : MonoBehaviour
 {
     [SerializeField] Text itemInfo1th;
     [SerializeField] Text itemInfo2nd;
-
-    private float radius;
-
     [SerializeField] Collider2D[] col;
     public LayerMask itemlayer;
+    private float radius;
+
+    private Color[] colors = { Color.red, new Color(1, 0.6f, 0), Color.yellow, Color.green, Color.blue, new Color(0.1f, 0, 0.6f), new Color(0.4f, 0, 1)};
     void Start()
     {
         radius = 1.3f;
+        StartCoroutine(title());
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(GameManager.instance.playerObject != null)
+        //RainbowTitle();
+        if (GameManager.instance.playerObject != null)
         {
             col = Physics2D.OverlapCircleAll(GameManager.instance.playerObject.transform.position, radius, itemlayer);
             if (col.Length > 0)
@@ -56,44 +59,24 @@ public class ItemExplane : MonoBehaviour
                 itemInfo1th.text = "";
                 itemInfo2nd.text = "";
             }
-            //StartCoroutine(RainbowTitle());
         }
     }
-    IEnumerator RainbowTitle()
+    IEnumerator title()
     {
-        int cnt = 8;
-        while(cnt > 0) 
+        int cnt = 0;
+        while(true)
         {
-            if(cnt == 1)
+            if(cnt > 6)
             {
-                itemInfo1th.color = Color.red;
+                cnt = 0;
             }
-            else if(cnt == 2)
-            {
-                itemInfo1th.color = new Color(1, 0.5f, 1);
-            }
-            else if (cnt == 3)
-            {
-                itemInfo1th.color = Color.yellow;
-            }
-            else if (cnt == 4)
-            {
-                itemInfo1th.color = Color.green;
-            }
-            else if (cnt == 5)
-            {
-                itemInfo1th.color = Color.blue;
-            }
-            else if (cnt == 6)
-            {
-                itemInfo1th.color = new Color(0.1f, 0, 0.5f);
-            }
-            else if (cnt == 7)
-            {
-                itemInfo1th.color = new Color(0.7f, 0, 1);
-            }
-            cnt--;
-            yield return new WaitForSeconds(3f);
+            ChangeColor(colors[cnt]);
+            cnt++;
+            yield return new WaitForSeconds(0.1f);
         }
+    }
+    void ChangeColor(Color color)
+    {
+        itemInfo1th.color = color;
     }
 }

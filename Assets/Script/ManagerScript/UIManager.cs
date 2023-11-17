@@ -70,6 +70,7 @@ public class UIManager : MonoBehaviour
 
         PauseUIOnOff(); // Pause UI
         UpdateUI(); // 각종 UI 업데이트
+        GameOverButton(); // Esc, Space 버튼 기능
     }
 
     #region Loading
@@ -97,7 +98,7 @@ public class UIManager : MonoBehaviour
     #region PauseUI
     public void PauseUIOnOff()
     {
-        if(EscControl == true)
+        if(EscControl == true && gameoverUI.activeSelf == false)
         {
             if (Input.GetKeyDown(KeyCode.Escape))
             {
@@ -183,6 +184,25 @@ public class UIManager : MonoBehaviour
     {
         Time.timeScale = 1;
         SceneManager.LoadScene("02_Game");
+    }
+
+    public void GameOverButton()
+    {
+        if (gameoverUI.activeSelf)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                Time.timeScale = 1;
+                SceneManager.LoadScene("02_Game");
+                gameoverUI.SetActive(false);
+            }
+            else if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                Time.timeScale = 1;
+                SceneManager.LoadScene("01_Intro");
+                gameoverUI.SetActive(false);
+            }
+        }
     }
     #endregion
 
