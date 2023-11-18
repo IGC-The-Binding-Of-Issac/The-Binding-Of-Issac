@@ -24,6 +24,7 @@ public class AttackFly : TEnemy
         isProwl         = false;
         isDetective     = false;
         isShoot         = false;
+        isJump          = false;
     }
 
     private void Start()

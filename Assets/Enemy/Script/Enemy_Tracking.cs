@@ -14,7 +14,7 @@ public class Enemy_Tracking : TEnemy_FSM<TEnemy>
 
     public override void Enter()                            // 해당 상태를 시작할 때 "1회" 호출
     {
-        //Debug.Log(e_Owner.gameObject.tag + " : Tracking 상태 ");
+        Debug.Log(e_Owner.gameObject.tag + " : Tracking 상태 ");
         e_Owner.eCurState = TENEMY_STATE.Tracking;          // 현재 상태를 TENEMY_STATE의 Tracking으로 
 
         isIsInvoke = true;
