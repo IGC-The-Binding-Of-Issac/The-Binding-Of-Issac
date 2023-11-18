@@ -205,31 +205,7 @@ public class TEnemy : MonoBehaviour
     /// * 기타 동작 메서드
     /// </summary>  
 
-    // jump 실행전 세팅
-    public void e_jumpSet() 
-    {
-        myPosi = new Vector3(mx, my, 0);                // 내 위치
-        jumpPosi = playerPosi.transform.position;        // 플레이어 위치 (점프할 위치)
-        playerToDis = Vector3.Distance(playerPosi.transform.position, myPosi);  // 나와 플레이어 사이의 거리
-        jumpAiPlayTime = playerToDis / jumpSpeed;       // (점프)시간 = 플레이어와 tride거리 / 점프 속도
-    }
-
-    // jump (1회 실행)
-    public void e_jump() 
-    {
-        animator.SetFloat("isJump" , jumpAiPlayTime);       //jumpAiPlayTime 만큼 점프 ani 실행
-
-        // 내 위치 에서 점프posi 만큼
-        gameObject.transform.position
-          = Vector3.MoveTowards(myPosi, jumpPosi, jumpSpeed * Time.deltaTime);
-    }
-
-    // jump -> tracking / 애니메이션 이벤트
-    public void e_doneJump() 
-    {
-        Debug.Log("애니메이션 이벤트 실행");
-        ChageFSM(TENEMY_STATE.Tracking);
-    }
+  
 
     // 플레이어 쳐다보기
     public void e_Lookplayer()
@@ -307,7 +283,7 @@ public class TEnemy : MonoBehaviour
     // Tracking -> Shoot으로 넘어갈때 조건 (invoke)
     public void invokeShoot()
     {
-        Invoke("chageToShoot", attaackSpeed);             // 3초후에  
+        Invoke("chageToShoot", attaackSpeed);             // attaackSpeed 후에  
 
     }
     public void chageToShoot()
@@ -318,12 +294,38 @@ public class TEnemy : MonoBehaviour
     // Tracking -> jump로 넘어갈때 조건 (invoke)
     public void invokeJump()
     {
-        Invoke("chagetToJump", attaackSpeed);             // 3초후에  
+        Invoke("chagetToJump", attaackSpeed);             //  attaackSpeed 후에
 
     }
     public void chagetToJump()
     {
         ChageFSM(TENEMY_STATE.Jump);           // Shoot으로 상태 변화
+    }
+
+    // jump 실행전 세팅
+    public void e_jumpSet()
+    {
+        myPosi = new Vector3(mx, my, 0);                // 내 위치
+        jumpPosi = playerPosi.transform.position;        // 플레이어 위치 (점프할 위치)
+        playerToDis = Vector3.Distance(playerPosi.transform.position, myPosi);  // 나와 플레이어 사이의 거리
+        jumpAiPlayTime = playerToDis / jumpSpeed;       // (점프)시간 = 플레이어와 tride거리 / 점프 속도
+
+        Debug.Log("점프할 위치 : " + jumpPosi);
+    }
+
+    // jump (1회 실행)
+    public void e_jumpAni()
+    {
+        animator.SetFloat("isJump", jumpAiPlayTime);       //jumpAiPlayTime 만큼 점프 ani 실행
+
+    }
+
+    // jump -> tracking / 애니메이션 이벤트
+    public void e_doneJump()
+    {
+        Debug.Log("Current State Name 애니메이션 종료.");
+        animator.SetFloat("isJump", 0);
+        ChageFSM(TENEMY_STATE.Tracking);
     }
 
     // Prowl - 랜덤 움직임 코루틴 실행

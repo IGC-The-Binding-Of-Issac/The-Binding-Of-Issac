@@ -27,7 +27,7 @@ public class Enemy_Idle : TEnemy_FSM<TEnemy>
                                     
     public override void Enter()                            // 해당 상태를 시작할 때 "1회" 호출
     {
-        //Debug.Log(e_Owner.gameObject.tag + " : idle 상태 ");
+        Debug.Log(e_Owner.gameObject.tag + " : idle 상태 ");
         e_Owner.eCurState = TENEMY_STATE.Idle;              // 현재 상태를 TENEMY_STATE의 idle로
     }
 
@@ -40,7 +40,6 @@ public class Enemy_Idle : TEnemy_FSM<TEnemy>
             {
                 e_Owner.ChageFSM(TENEMY_STATE.Tracking);        // tracking 으로 상태 변환
             }
-            
             if (!e_Owner.getIsTracking && e_Owner.getisProwl)   // prowl 만 하면?
             {
                 e_Owner.ChageFSM(TENEMY_STATE.Prowl);           // prowl 으로 상태 변환
