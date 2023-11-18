@@ -7,10 +7,6 @@ public class Enemy_Jump : TEnemy_FSM<TEnemy>
 {
     [SerializeField] TEnemy e_Owner;                          // 주인 변수
 
-    float playerToDis;
-    float jumpAiPlayTime;
-    Vector3 myPosi;
-
     public Enemy_Jump(TEnemy _ower)                       // 생성자 초기화
     {
         e_Owner = _ower;
@@ -19,13 +15,12 @@ public class Enemy_Jump : TEnemy_FSM<TEnemy>
     public override void Enter()
     {
         e_Owner.eCurState = TENEMY_STATE.Jump;              // 현재 상태를 TENEMY_STATE의 Tracking으로 
-        e_Owner.e_findPlayer();                             // 플레이어의 위치를 1회 받아옴
 
         e_Owner.e_moveInialize();                           // 내 위치 1회 받아오기
         e_Owner.e_findPlayer();                             // 플레이어 위치 1회 받아오기
-        myPosi = new Vector3(e_Owner.getMyx, e_Owner.getMyy, 0); 
-        playerToDis = Vector3.Distance(e_Owner.playerPosi.transform.position, myPosi);
-        jumpAiPlayTime = playerToDis / e_Owner.getJumpSpeed;    // (점프)시간 = 플레이어와 tride거리 / 점프 속도
+        e_Owner.e_jumpSet();                                // 점프 전 세팅
+
+        e_Owner.e_jump();                                   // 점프
     }
 
     public override void Excute()

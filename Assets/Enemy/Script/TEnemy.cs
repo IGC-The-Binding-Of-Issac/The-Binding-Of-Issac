@@ -53,35 +53,37 @@ public class TEnemy : MonoBehaviour
     protected float waitforSecond;              // destroy 전 대기 시간 
     protected float attaackSpeed;               // 공격 속도
     protected float bulletSpeed;                // 총알 속도 
-
-    //
     protected float fTime;                      // prowl - 랜덤 이동 시간
     protected float randRange;                  // prowl - 랜덤 이동 거리
-    protected bool isRaadyShoot;                // shoot -  총 쏘는 조건
-    protected bool isFlipped = true;            // 뒤집기
     protected float jumpSpeed;                  // jump -  점프 속도
 
     //
-    protected bool knockBackState = false;      // 넉백 
-    protected float mx;                         // 본인 x
-    protected float my;                         // 본인 y
-    protected float xRan;                       // random - x 랜덤 움직임
-    protected float yRan;                       // random - y 랜덤 움직임
-
-    //
-    protected string dieParameter;              // 죽는 애니메이션 실행 파라미터
+    protected string dieParameter;              // 죽는   애니메이션 실행 파라미터
     protected string shootParameter;            // 총쏘는 애니메이션 실행 파라미터
+    protected string jumpParameter;             // 점프   애니메이션 실행 파라미터
+    protected bool knockBackState = false;      // 넉백s
+    bool isFlipped = true;                      // 뒤집기
+    bool isRaadyShoot;                          // shoot -  총 쏘는 조건
+
+    // jump
+    float playerToDis;                          // jump - 나와 플레이어 사이의 거리
+    float jumpAiPlayTime;                       // jump - 점프 애니메이션 실행 시간
+    Vector3 myPosi;                             // jump - 내 위치
+    Vector3 jumpPosi;                            // jump - 점프할 위치
+
+    // prowl
+    float mx;                         // 본인 x
+    float my;                         // 본인 y
+    float xRan;                       // random - x 랜덤 움직임
+    float yRan;                       // random - y 랜덤 움직임
+
 
     // enemy 스탯 프로퍼티
-    public float getMoveSpeed { get => moveSpeed; }
-    public float getSight { get => sight; }
     public bool setIsReadyShoot
     {
         set { isRaadyShoot = value; }
     }
-    public float getJumpSpeed { get => jumpSpeed; }
-    public float getMyx { get => mx; }
-    public float getMyy { get => my; }
+
 
     // Enemy의 Hp바
     protected float maxhp;                      // hp 바의 max 
@@ -202,6 +204,32 @@ public class TEnemy : MonoBehaviour
     /// <summary>
     /// * 기타 동작 메서드
     /// </summary>  
+
+    // jump 실행전 세팅
+    public void e_jumpSet() 
+    {
+        myPosi = new Vector3(mx, my, 0);                // 내 위치
+        jumpPosi = playerPosi.transform.position;        // 플레이어 위치 (점프할 위치)
+        playerToDis = Vector3.Distance(playerPosi.transform.position, myPosi);  // 나와 플레이어 사이의 거리
+        jumpAiPlayTime = playerToDis / jumpSpeed;       // (점프)시간 = 플레이어와 tride거리 / 점프 속도
+    }
+
+    // jump (1회 실행)
+    public void e_jump() 
+    {
+        animator.SetFloat("isJump" , jumpAiPlayTime);       //jumpAiPlayTime 만큼 점프 ani 실행
+
+        // 내 위치 에서 점프posi 만큼
+        gameObject.transform.position
+          = Vector3.MoveTowards(myPosi, jumpPosi, jumpSpeed * Time.deltaTime);
+    }
+
+    // jump -> tracking / 애니메이션 이벤트
+    public void e_doneJump() 
+    {
+        Debug.Log("애니메이션 이벤트 실행");
+        ChageFSM(TENEMY_STATE.Tracking);
+    }
 
     // 플레이어 쳐다보기
     public void e_Lookplayer()
