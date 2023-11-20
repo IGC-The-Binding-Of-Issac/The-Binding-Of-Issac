@@ -56,9 +56,12 @@ public class Room : MonoBehaviour
             }
 
             // 쉴드 추가.
-            if (ItemManager.instance.PassiveItems[6])
+            if (ItemManager.instance.PassiveItems[6] && ItemManager.instance.PassiveItems[12])
             {
+                if (PlayerManager.instance.CanBlockDamage == 0)
+                {
                 PlayerManager.instance.CanBlockDamage++;
+                }
             }
 
             //방 클리어 보상

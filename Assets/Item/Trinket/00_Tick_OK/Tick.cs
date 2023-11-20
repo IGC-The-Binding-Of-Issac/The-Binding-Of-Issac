@@ -24,11 +24,11 @@ public class Tick : TrinketInfo
         PlayerManager.instance.playerHp -= 2;
         PlayerManager.instance.CheckedPlayerHP();
         PlayerManager.instance.playerShotDelay += 0.2f;
+        PlayerManager.instance.CheckedShotDelay();
         if(PlayerManager.instance.playerHp <= 0)
         {
             GameManager.instance.playerObject.GetComponent<PlayerController>().Dead();
         }
-        PlayerManager.instance.CheckedShotDelay();
     }
 
     public override void DropTrinket()
