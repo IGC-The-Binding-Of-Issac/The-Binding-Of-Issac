@@ -65,15 +65,9 @@ public class TEnemy : MonoBehaviour
     bool isFlipped = true;                      // 뒤집기
     bool isRaadyShoot;                          // shoot -  총 쏘는 조건
 
-    // jump
-    float playerToDis;                          // jump - 나와 플레이어 사이의 거리
-    float jumpAiPlayTime;                       // jump - 점프 애니메이션 실행 시간
-    [SerializeField] Vector3 myPosi;                             // jump - 내 위치
-    [SerializeField] Vector3 jumpPosi;                            // jump - 점프할 위치
-
     // prowl
-    [SerializeField] float mx;                         // 본인 x
-    [SerializeField] float my;                         // 본인 y
+    float mx;                         // 본인 x
+    float my;                         // 본인 y
     float xRan;                       // random - x 랜덤 움직임
     float yRan;                       // random - y 랜덤 움직임
 
