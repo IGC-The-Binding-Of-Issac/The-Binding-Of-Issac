@@ -65,8 +65,7 @@ public class Room : MonoBehaviour
             }
 
             //방 클리어 보상
-            GameObject obj = Instantiate(ItemManager.instance.itemTable.OpenNormalChest(Random.Range(0,1000) % 4), transform.position, Quaternion.identity) as GameObject;
-            GameManager.instance.roomGenerate.itemList.Add(obj);
+            ItemManager.instance.itemTable.Dropitem(transform.position, Random.Range(0, 1000) % 4);
 
             //door open sound
             DoorSound(1);

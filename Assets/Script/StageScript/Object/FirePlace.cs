@@ -63,8 +63,7 @@ public class FirePlace : MonoBehaviour
         int rd = Random.Range(0, 3);
         if (rd == 0)
         {
-            GameObject it = Instantiate(ItemManager.instance.itemTable.ObjectBreak(), transform.position, Quaternion.identity) as GameObject;
-            GameManager.instance.roomGenerate.itemList.Add(it); 
+            ItemManager.instance.itemTable.Dropitem(transform.position,rd);
         }
     }
 

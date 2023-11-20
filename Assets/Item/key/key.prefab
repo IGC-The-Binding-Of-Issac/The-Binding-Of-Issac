@@ -187,6 +187,7 @@ MonoBehaviour:
   audioSource: {fileID: 0}
   pickupClip: {fileID: 8300000, guid: f8352bbcdc84f8f4eac600b3b9bbaadb, type: 3}
   dropClip: {fileID: 8300000, guid: 1a3216a29c1f5cf4db5aaff6be4a4e65, type: 3}
+  defaultSprite: {fileID: 2017794542, guid: a5ccf36b511d3df4993a226aa4581024, type: 3}
 --- !u!82 &5296142018660506756
 AudioSource:
   m_ObjectHideFlags: 0

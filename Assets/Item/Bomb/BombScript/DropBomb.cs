@@ -5,7 +5,7 @@ using UnityEngine;
 public class DropBomb : MonoBehaviour
 {
     private Animator gb;
-    Sprite defaultSprite;
+    public Sprite defaultSprite;
 
     // 상자에서 폭탄이 나옴과 동시에 획득하는 문제가 있어서
     // 드랍이후 획득까지 딜레이를 주기위한 변수입니다.
@@ -13,7 +13,6 @@ public class DropBomb : MonoBehaviour
     private void Start()
     {
         gb = GetComponent<Animator>();
-        defaultSprite = GetComponent<SpriteRenderer>().sprite;
         getDelay = false;
     }
 

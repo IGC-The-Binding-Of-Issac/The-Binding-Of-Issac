@@ -12,7 +12,7 @@ public class key : MonoBehaviour
     public AudioClip pickupClip;
     public AudioClip dropClip;
 
-    Sprite defaultSprite;
+    public Sprite defaultSprite;
 
     // 상자에서 폭탄이 나옴과 동시에 획득하는 문제가 있어서
     // 드랍이후 획득까지 딜레이를 주기위한 변수입니다.
@@ -23,7 +23,6 @@ public class key : MonoBehaviour
         keyAni = GetComponent<Animator>();
 
         getDelay = false;
-        defaultSprite = GetComponent<SpriteRenderer>().sprite;
     }
 
     public void DropKey()

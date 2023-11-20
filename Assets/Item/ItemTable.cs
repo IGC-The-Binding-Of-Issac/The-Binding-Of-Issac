@@ -207,6 +207,10 @@ public class ItemTable : MonoBehaviour
             dropitem.SetActive(false);
             keyPool.Push(dropitem);
         }
+        else
+        {
+            Destroy(dropitem);
+        }
     }
     public void AllReturnDropItem()
     {
@@ -217,18 +221,6 @@ public class ItemTable : MonoBehaviour
         }
     }
     #endregion
-
-    public GameObject ObjectBreak() // 오브젝트 부쉈을때
-    {
-        int rd = Random.Range(0, DropItems.Length-1);
-        return DropItems[rd]; // 랜텀 아이템 반환 ( 열쇠 제외 )
-    }
-
-    public GameObject OpenNormalChest(int rd)
-    {
-        //return GetDropItem(rd);
-        return DropItems[rd];
-    }
 
     public GameObject DropTrinket()
     {
@@ -363,8 +355,6 @@ public class ItemTable : MonoBehaviour
         return PassiveItems[index].GetComponent<SpriteRenderer>().sprite;
     }
 
-
-
     void SetSFXObject(GameObject obj)
     {
         // 매개변수로 받은 오브젝트에 오디오소스가 있는지 확인후 sfxobject로 등록
@@ -373,4 +363,19 @@ public class ItemTable : MonoBehaviour
             SoundManager.instance.sfxObjects.Add(obj.GetComponent<AudioSource>());
         }
     }
+
+    #region archive
+    public GameObject ObjectBreak() // 오브젝트 부쉈을때
+    {
+        int rd = Random.Range(0, DropItems.Length-1);
+        return DropItems[rd]; // 랜텀 아이템 반환 ( 열쇠 제외 )
+    }
+
+    public GameObject OpenNormalChest(int rd)
+    {
+        //return GetDropItem(rd);
+        return DropItems[rd];
+    }
+
+    #endregion
 }
