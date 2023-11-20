@@ -29,8 +29,8 @@ public class TheNail : ActiveInfo
             PlayerManager.instance.playerMoveSpeed -= 0.08f;
             PlayerManager.instance.playerDamage += 0.5f;
 
-            PlayerManager.instance.SetHeadSkin(5);
-            PlayerManager.instance.SetBodySkin(3);
+            PlayerManager.instance.SetHeadSkin(4);
+            PlayerManager.instance.SetBodySkin(2);
             PlayerManager.instance.SetTearSkin(1);
 
             GameManager.instance.playerObject.GetComponent<PlayerController>().canChangeItem = false;

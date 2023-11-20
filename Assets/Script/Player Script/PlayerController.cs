@@ -15,13 +15,16 @@ public class PlayerController : MonoBehaviour
 
     [Header("Transform")]
     public Transform itemPosition;
-    public Transform body;
     public Transform head;
+    public Transform body;
+    public Transform headClothes;
+    public Transform bodyClothes;
     public Transform useActiveItemImage;
     public Transform knifePosition;
     public Transform familiarPosition;
     public Transform tearPointTransform;
     public Transform bombPointTransform;
+    public Transform DrBombPointTransform;
 
     [Header("Sprite")]
     SpriteRenderer bodyRenderer;
@@ -47,6 +50,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("ItemState")]
     public GameObject knife;
+    public bool bombState;
     public bool nailActivated; // 대못 아이템을 사용했을 때
     public bool canUseActive = true; //액티브 아이템 개갈김을 방지하기 위한
     public bool canChangeItem = false; //액티브 아이템 변경 과부하를 위한
@@ -59,7 +63,8 @@ public class PlayerController : MonoBehaviour
     public AudioClip ShootClip;
 
     Stack<GameObject> tearPool;
-    Stack<GameObject> bombPool;
+    Stack<GameObject> putBombPool;
+    Stack<GameObject> DrBombPool;
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -72,9 +77,11 @@ public class PlayerController : MonoBehaviour
         canChangeItem = true; // 액티브 아이템 변경 과부하를 위한
         nailActivated = false;
         tearPool = new Stack<GameObject>();
-        bombPool = new Stack<GameObject>();
+        putBombPool = new Stack<GameObject>();
+        DrBombPool = new Stack<GameObject>();
         SetTearPooling();
         SetBombPooling();
+        SetDrBombPooling();
         //knifePosition.gameObject.SetActive(false);
     }
 
@@ -89,28 +96,66 @@ public class PlayerController : MonoBehaviour
     {
         Movement();
     }
-    #region bombPooling
+    #region Dr_BombPooling
 
-    public void SetBombPooling()
+    public void SetDrBombPooling()
     {
         for (int i = 0; i < 30; i++)
         {
+            GameObject DrbombObj = Instantiate(bomb, bombPointTransform.position, Quaternion.identity);
+            DrBombPool.Push(DrbombObj);
+            DrbombObj.transform.SetParent(DrBombPointTransform.transform);
+            DrbombObj.gameObject.SetActive(false);
+        }
+    }
+    public GameObject GetDrBombPooling()
+    {
+        if (DrBombPool.Count == 0)
+        {
+            GameObject DrbombObj = Instantiate(bomb, bombPointTransform.position, Quaternion.identity);
+            DrBombPool.Push(DrbombObj);
+            DrbombObj.transform.SetParent(DrBombPointTransform.transform);
+            DrbombObj.gameObject.SetActive(false);
+        }
+        GameObject DrbombObject = DrBombPool.Pop();
+        DrbombObject.SetActive(true);
+        return DrbombObject;
+    }
+    public void ReturnDrBombPooling(GameObject bombObj)
+    {
+        bombObj.GetComponent<SpriteRenderer>().sprite = bombDefaultSprite;
+        bombObj.transform.localPosition = Vector3.zero;
+        //bombObj.transform.localScale = Vector3.one;
+        bombObj.SetActive(false);
+        bombObj.GetComponent<PutBomb>().CanAttack = false;
+        bombObj.GetComponent<BoxCollider2D>().offset = new Vector2(0.04f, -0.03f);
+        bombObj.GetComponent<BoxCollider2D>().size = new Vector2(0.6f, 0.64f);
+        DrBombPool.Push(bombObj);
+    }
+    #endregion
+
+    #region putBombPooling
+
+    public void SetBombPooling()
+    {
+        for (int i = 0; i < 2; i++)
+        {
             GameObject bombObj = Instantiate(bomb, bombPointTransform.position, Quaternion.identity);
-            bombPool.Push(bombObj);
+            putBombPool.Push(bombObj);
             bombObj.transform.SetParent(bombPointTransform.transform);
             bombObj.gameObject.SetActive(false);
         }
     }
     public GameObject GetBombPooling()
     {
-        if (bombPool.Count == 0)
+        if (putBombPool.Count == 0)
         {
             GameObject bombObj = Instantiate(bomb, bombPointTransform.position, Quaternion.identity);
-            bombPool.Push(bombObj);
+            putBombPool.Push(bombObj);
             bombObj.transform.SetParent(bombPointTransform.transform);
             bombObj.gameObject.SetActive(false);
         }
-        GameObject bombObject = bombPool.Pop();
+        GameObject bombObject = putBombPool.Pop();
         bombObject.SetActive(true);
         return bombObject;
     }
@@ -122,7 +167,7 @@ public class PlayerController : MonoBehaviour
         bombObj.GetComponent<PutBomb>().CanAttack = false;
         bombObj.GetComponent<BoxCollider2D>().offset = new Vector2(0.04f, -0.03f);
         bombObj.GetComponent<BoxCollider2D>().size = new Vector2(0.6f, 0.64f);
-        bombPool.Push(bombObj);
+        putBombPool.Push(bombObj);
     }
     #endregion
 
@@ -295,6 +340,7 @@ public class PlayerController : MonoBehaviour
         if (ItemManager.instance.PassiveItems[16])
         {
             DefaultTearObject = DrFetusBomb();
+            bombState = true;
         }
         else
         {
@@ -361,6 +407,7 @@ public class PlayerController : MonoBehaviour
         if (ItemManager.instance.PassiveItems[16])
         {
             DefaultTearObject = DrFetusBomb();
+            bombState = true;
         }
         else
         {
@@ -450,7 +497,7 @@ public class PlayerController : MonoBehaviour
                 GameObject bomb = GetBombPooling();
                 bomb.GetComponent<PutBomb>().PlayerBomb();
                 ItemManager.instance.bombCount--;
-
+                bombState = false;
                 bomb.name = "Putbomb"; // 생성된 폭탄 오브젝트 이름 변경
             }
         }
@@ -458,7 +505,7 @@ public class PlayerController : MonoBehaviour
 
     public GameObject DrFetusBomb()
     {
-        GameObject bomb = GetBombPooling();
+        GameObject bomb = GetDrBombPooling();
         bomb.GetComponent<PutBomb>().PlayerBomb();
         return bomb;
     }

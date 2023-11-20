@@ -520,6 +520,7 @@ Transform:
   - {fileID: 7470781635017143417}
   - {fileID: 3987601544564592591}
   - {fileID: 5184294236088174354}
+  - {fileID: 9111248821616009760}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1635804941268350248
@@ -539,13 +540,16 @@ MonoBehaviour:
   playerAnim: {fileID: 6971391542794828394}
   getItem: {fileID: 6971391542794828394}
   itemPosition: {fileID: 6711306316167842221}
-  body: {fileID: 7152328079427505730}
   head: {fileID: 1042874374983917579}
+  body: {fileID: 7152328079427505730}
+  headClothes: {fileID: 0}
+  bodyClothes: {fileID: 0}
   useActiveItemImage: {fileID: 8591384693438208543}
   knifePosition: {fileID: 5449846101330744763}
   familiarPosition: {fileID: 3987601544564592591}
   tearPointTransform: {fileID: 4903051384914692604}
   bombPointTransform: {fileID: 5184294236088174354}
+  DrBombPointTransform: {fileID: 9111248821616009760}
   tearDefaultSprite: {fileID: 1837185413, guid: 64f0cce7912310a489ab219e28d20338, type: 3}
   bombDefaultSprite: {fileID: -153517370, guid: 4d38a3b189607af4ab7cd1369fa326f5, type: 3}
   HeadItem: {fileID: 4835568290336441186}
@@ -554,6 +558,7 @@ MonoBehaviour:
   bomb: {fileID: 9152286902886193127, guid: 7fce7d28537db664aaca9ad6d71bd9c4, type: 3}
   tearPoint: {fileID: 4903488415990779368}
   knife: {fileID: 7157704114343907855}
+  bombState: 0
   nailActivated: 0
   canUseActive: 1
   canChangeItem: 0
@@ -1346,6 +1351,37 @@ MonoBehaviour:
   m_labelHash: 2.3353262e-31
   m_SpriteKey: 0
   m_SpriteHash: 954138578
+--- !u!1 &8376564752631046257
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9111248821616009760}
+  m_Layer: 0
+  m_Name: DrBombPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9111248821616009760
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8376564752631046257}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalScale: {x: 1, y: 1, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5782382362621316817}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8746126639892159799
 GameObject:
   m_ObjectHideFlags: 0
