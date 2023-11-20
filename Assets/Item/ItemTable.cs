@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -20,13 +19,27 @@ public class ItemTable : MonoBehaviour
     [SerializeField] private List<int> passive;
     [SerializeField] private List<int> trinket;
     [SerializeField] private List<int> active;
+
+    [Header("Pooling")]
+    [SerializeField] Transform dropItemPool_Transform;
+    Stack<GameObject> coinPool = new Stack<GameObject>();
+    Stack<GameObject> heartPool = new Stack<GameObject>();
+    Stack<GameObject> bombPool = new Stack<GameObject>();
+    Stack<GameObject> keyPool = new Stack<GameObject>();
+
     private void Start()
     {
         // 중복 드랍 방지용  초기화
+        Itemduplication();
+        SetPooling();
+    }
+    #region initialization
+    void Itemduplication()
+    {
         passive = new List<int>();
         trinket = new List<int>();
         active = new List<int>();
-        for(int i = 0; i < PassiveItems.Length; i++)
+        for (int i = 0; i < PassiveItems.Length; i++)
             passive.Add(i);
 
         for (int i = 0; i < TrinketItems.Length; i++)
@@ -35,6 +48,144 @@ public class ItemTable : MonoBehaviour
         for (int i = 0; i < ActiveItems.Length; i++)
             active.Add(i);
     }
+
+    void SetPooling()
+    {
+        // pool stack 초기화
+        coinPool = new Stack<GameObject>();
+        heartPool = new Stack<GameObject>();
+        bombPool = new Stack<GameObject>();
+        keyPool = new Stack<GameObject>();
+
+        // 오브젝트 생성
+        for(int i = 0; i < 10; i++)
+        {
+            CreateCoin();
+            CreateHeart();
+            CreateBomb();
+            CreateKey();
+        }
+    }
+
+    void CreateCoin()
+    {
+        GameObject coin = Instantiate(DropItems[0], dropItemPool_Transform.position, Quaternion.identity);
+        coin.transform.SetParent(dropItemPool_Transform);
+        coinPool.Push(coin);
+        SetSFXObject(coin);
+        coin.SetActive(false);
+    }
+
+    void CreateHeart()
+    {
+        GameObject heart = Instantiate(DropItems[1], dropItemPool_Transform.position, Quaternion.identity);
+        heart.transform.SetParent(dropItemPool_Transform);
+        heartPool.Push(heart);
+        SetSFXObject(heart);
+        heart.SetActive(false);
+    }
+
+    void CreateBomb()
+    {
+        GameObject bomb = Instantiate(DropItems[2], dropItemPool_Transform.position, Quaternion.identity);
+        bomb.transform.SetParent(dropItemPool_Transform);
+        bombPool.Push(bomb);
+        SetSFXObject(bomb);
+        bomb.SetActive(false);
+    }
+
+    void CreateKey()
+    {
+        GameObject key = Instantiate(DropItems[3], dropItemPool_Transform.position, Quaternion.identity);
+        key.transform.SetParent(dropItemPool_Transform);
+        keyPool.Push(key);
+        SetSFXObject(key);
+        key.SetActive(false);
+    }
+    #endregion
+
+    #region pooling
+    public GameObject GetDropItem(int index)
+    {
+        switch(index) 
+        {
+            #region 동전
+            case 0:
+                if(coinPool.Count == 0)
+                {
+                    CreateCoin();
+                }
+                GameObject coin = coinPool.Pop();
+                coin.SetActive(true);
+                return coin;
+            #endregion
+            #region 하트
+            case 1:
+                if (heartPool.Count == 0)
+                {
+                    CreateHeart();
+                }
+                GameObject heart = heartPool.Pop();
+                heart.SetActive(true);
+                return heart;
+            #endregion
+            #region 폭탄
+            case 2:
+                if (bombPool.Count == 0)
+                {
+                    CreateBomb();
+                }
+                GameObject bomb = bombPool.Pop();
+                bomb.SetActive(true);
+                return bomb;
+            #endregion
+            #region 열쇠
+            case 3:
+                if (keyPool.Count == 0)
+                {
+                    CreateKey();
+                }
+                GameObject key = keyPool.Pop();
+                key.SetActive(true);
+                return key;
+            #endregion
+        }
+        return null;
+    }
+    
+    public void ReturnDropItem(GameObject dropitem)
+    {
+         
+        if (dropitem.GetComponent<Coin>() != null)
+        {
+            coinPool.Push(dropitem);
+        }
+        else if (dropitem.GetComponent<Heart>() != null)
+        {
+            // heart의ㅏ resetObject 함수 실행
+            heartPool.Push(dropitem);
+        }
+        else if (dropitem.GetComponent<DropBomb>() != null)
+        {
+            // dropbomb resetObject 함수 실행
+            bombPool.Push(dropitem);
+        }
+        else if (dropitem.GetComponent<key>() != null)
+        {
+            // key의ㅏ resetObject 함수 실행
+            keyPool.Push(dropitem);
+        }
+    }
+    public void AllReturnDropItem(GameObject dropItem)
+    {
+        for(int i = 0; i < dropItemPool_Transform.childCount; i++)
+        {
+            GameObject obj = dropItemPool_Transform.GetChild(i).gameObject;
+            ReturnDropItem(obj);
+        }
+    }
+    #endregion
+
     public GameObject ObjectBreak() // 오브젝트 부쉈을때
     {
         int rd = Random.Range(0, DropItems.Length-1);
@@ -43,6 +194,7 @@ public class ItemTable : MonoBehaviour
 
     public GameObject OpenNormalChest(int rd)
     {
+        //return GetDropItem(rd);
         return DropItems[rd];
     }
 
@@ -177,5 +329,16 @@ public class ItemTable : MonoBehaviour
     public Sprite GetStuffImage(int index)
     {
         return PassiveItems[index].GetComponent<SpriteRenderer>().sprite;
+    }
+
+
+
+    void SetSFXObject(GameObject obj)
+    {
+        // 매개변수로 받은 오브젝트에 오디오소스가 있는지 확인후 sfxobject로 등록
+        if(obj.GetComponent<AudioSource>() != null)
+        {
+            SoundManager.instance.sfxObjects.Add(obj.GetComponent<AudioSource>());
+        }
     }
 }
