@@ -5,8 +5,9 @@ using UnityEngine;
 public class SuperBandage : ItemInfo
 {
 
-    private void Start()
+    public override void Start()
     {
+        base.Start();
         SetItemCode(10);
         SetItemString("슈퍼 반창고",
                       "그만 때려! 너무 아파!",
@@ -17,7 +18,9 @@ public class SuperBandage : ItemInfo
     public override void UseItem()
     {
         PlayerManager.instance.playerMaxHp-=2;
+        UIManager.instance.DelHeart();
         PlayerManager.instance.playerHp-=2;
+        UIManager.instance.SetPlayerCurrentHP();
         PlayerManager.instance.CheckedPlayerHP();
         PlayerManager.instance.playerShotDelay-=0.1f;
         //캐릭터의 눈물이 빨갛게 변한다.

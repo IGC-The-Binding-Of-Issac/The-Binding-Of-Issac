@@ -19,6 +19,8 @@ public class HalfBlackPill : ActiveInfo
         {
             PlayerManager.instance.playerHp -= 1;
             PlayerManager.instance.CheckedPlayerHP();
+            UIManager.instance.SetPlayerCurrentHP();
+
             PlayerManager.instance.playerMoveSpeed += 0.08f;
             PlayerManager.instance.playerDamage += 0.15f;
             SetActiveString("±Ωΐ°Ελ",

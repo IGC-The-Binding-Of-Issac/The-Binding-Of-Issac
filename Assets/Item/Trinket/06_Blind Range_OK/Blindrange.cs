@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class Blindrange : TrinketInfo
 {
+    [Header("beforeStatement")]
     float beforeDropRange;
     float beforeDropDamage;
     float beforeDropMoveSpeed;
     float beforeDropShotDelay;
+
     private void Start()
     {
         SetTrinketItemCode(6);
@@ -33,6 +35,7 @@ public class Blindrange : TrinketInfo
         beforeDropDamage = PlayerManager.instance.playerDamage;
         beforeDropMoveSpeed = PlayerManager.instance.playerMoveSpeed;
         beforeDropShotDelay = PlayerManager.instance.playerShotDelay;
+
         PlayerManager.instance.playerRange = beforeDropRange /= 0.25f;
         PlayerManager.instance.playerDamage = beforeDropDamage -= 5f;
         PlayerManager.instance.playerMoveSpeed = beforeDropMoveSpeed += 1.2f;

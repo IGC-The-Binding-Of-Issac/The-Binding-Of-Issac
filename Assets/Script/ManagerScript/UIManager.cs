@@ -63,9 +63,9 @@ public class UIManager : MonoBehaviour
 
     private void Update()
     {
-        AddHeart(); // 최대체력 증가하는곳에서 호출해주세요
-        DelHeart(); // 최대체력 감소하는곳에서 호출해주세요
-        SetPlayerCurrentHP(); // 현재 체력이 감소 또는 증가할때 호출해주세요 ( GetDamage / GetHeart  등등 )
+        //AddHeart(); // 최대체력 증가하는곳에서 호출해주세요, [은총] 일단 아이템 쪽에선 다 했음. 혹시 몰라서 지우진 않겠소
+        //DelHeart(); // 최대체력 감소하는곳에서 호출해주세요, [은총] AddHeart랑 똑같음
+        SetPlayerCurrentHP(); // 현재 체력이 감소 또는 증가할때 호출해주세요 ( GetDamage / GetHeart  등등 ) [은총] 아이템 쪽은 완료
         UpdateActiveEnergy(); // 액티브 아이템 게이지 증가또는 감소(사용)할때 호출해주세요.
 
         PauseUIOnOff(); // Pause UI

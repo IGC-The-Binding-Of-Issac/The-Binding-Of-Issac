@@ -19,7 +19,6 @@ public class ActiveInfo : MonoBehaviour
     public string itemInformation; //아이템 설명 [습득 전 왼쪽 UI에 설명들]
 
     [Header("bool")]
-    private bool canCollision;     //아이템과 충돌이 가능한지 여부 (체인지 or 습득)
     public bool canUse;            //아이템 사용 가능 여부
 
 
@@ -40,7 +39,7 @@ public class ActiveInfo : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player") && canCollision
+        if (collision.gameObject.CompareTag("Player")
             && GameManager.instance.playerObject.GetComponent<PlayerController>().canChangeItem) //아이템 습득 가능 조건
         {
             gameObject.layer = 31; //NoCollision으로 Layer 변경
@@ -116,12 +115,6 @@ public class ActiveInfo : MonoBehaviour
         //Debug.Log("눈물이 남아 있는 지 재정의");
     }
 
-    
-    //Update문에서 canCollision이 false인 Object들 true로 바꿔주는 역할, 중복 충돌 방지용
-    void SetDelay()
-    {
-        canCollision = true;
-    }
 
     void SetCanUse()
     {
@@ -131,14 +124,6 @@ public class ActiveInfo : MonoBehaviour
     void SetCanChangeItem()
     {
         GameManager.instance.playerObject.GetComponent<PlayerController>().canChangeItem = true;
-    }
-
-    private void Update()
-    {
-        if (!canCollision)
-        {
-            Invoke("SetDelay", 0.8f);
-        }
     }
 
     //아이템 드랍 List에서 제외

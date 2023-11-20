@@ -5,8 +5,9 @@ using UnityEngine;
 
 public class HolyMantle : ItemInfo
 {
-    private void Start()
+    public override void Start()
     {
+        base.Start();
         SetItemCode(6);
         SetItemString("신성한 망토",
                       "성스러운 방패",

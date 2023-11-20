@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class GuardianAngel : ItemInfo
 {
-    private void Start()
+    public override void Start()
     {
+        base.Start();
         SetItemCode(12);
         SetItemString("수호 천사",
                       "보호",

@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class SoyMilk : ItemInfo
 {
-    private void Start()
+    public override void Start()
     {
+        base.Start();
         SetItemCode(4);
         SetItemString("두유",
                       "쉬 마려워..",

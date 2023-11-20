@@ -5,8 +5,9 @@ using UnityEngine;
 public class CeremonialRobes : ItemInfo
 {
 
-    private void Start()
+    public override void Start()
     {
+        base.Start();
         SetItemCode(5);
         SetItemString("의식용 예복",
                       "어두운 두건",
@@ -17,6 +18,7 @@ public class CeremonialRobes : ItemInfo
     public override void UseItem()
     {
         PlayerManager.instance.playerMaxHp += 4;
+        UIManager.instance.AddHeart();
         PlayerManager.instance.playerDamage += 1;
 
         //캐릭터 텍스처 변경

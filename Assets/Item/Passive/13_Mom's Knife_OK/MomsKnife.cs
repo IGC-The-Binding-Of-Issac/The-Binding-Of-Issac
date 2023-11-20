@@ -5,8 +5,9 @@ using UnityEngine;
 public class MomsKnife : ItemInfo
 {
     public Sprite knifeImg;
-    private void Start()
+    public override void Start()
     {
+        base.Start();
         SetItemCode(13);
         SetItemString("엄마의 식칼",
                       "저는 죽이지 않았습니다.",

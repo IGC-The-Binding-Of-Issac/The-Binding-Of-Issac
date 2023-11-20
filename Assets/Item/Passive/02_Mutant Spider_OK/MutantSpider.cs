@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class MutantSpider : ItemInfo
 {
-    private void Start()
+    public override void Start()
     {
+        base.Start();
         SetItemCode(2);
         SetItemString("돌연변이 거미",
                       "네 갈래 샷",

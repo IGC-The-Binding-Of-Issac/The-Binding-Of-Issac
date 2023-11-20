@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class CricketsHead : ItemInfo
 {
-    private void Start()
+    public override void Start()
     {
+        base.Start();
         SetItemCode(1);
         SetItemString("크리켓의 머리",
                       "공격력 증가",

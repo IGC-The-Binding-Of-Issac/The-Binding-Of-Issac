@@ -9,13 +9,11 @@ public class TrinketInfo : MonoBehaviour
     public string itemTitle; //아이템 이름
     public string itemDescription; //아이템 요약 설명 [습득 시 중앙 UI 밑에 텍스트 한줄]
     public string itemInformation; // 아이템 설명 [습득 전 왼쪽 UI에 설명들]
-    public bool canCollision = false;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // 충돌 대상이 플레이어일때
-        if(collision.gameObject.CompareTag("Player") && canCollision
-            && GameManager.instance.playerObject.GetComponent<PlayerController>().canChangeItem)
+        if(collision.gameObject.CompareTag("Player") && GameManager.instance.playerObject.GetComponent<PlayerController>().canChangeItem)
         {
             gameObject.layer = 31;
 
@@ -114,15 +112,5 @@ public class TrinketInfo : MonoBehaviour
                 GameManager.instance.roomGenerate.itemList.RemoveAt(i);
             }
         }
-    }
-
-    void SetDelay()
-    {
-        canCollision = true;
-    }
-    private void Update()
-    {
-        if (!canCollision)
-            Invoke("SetDelay", 0.8f);
     }
 }

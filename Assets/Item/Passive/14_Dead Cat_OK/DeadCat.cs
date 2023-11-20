@@ -5,8 +5,9 @@ using UnityEngine;
 
 public class DeadCat : ItemInfo
 {
-    private void Start()
+    public override void Start()
     {
+        base.Start();
         SetItemCode(14);
         SetItemString("죽은 고양이",
                       "구피가 죽었어...",
@@ -16,6 +17,8 @@ public class DeadCat : ItemInfo
 
     public override void UseItem()
     {
-        //기능은 playerManager에 구현되어 있음. 위 SetItemString에 적힌 그대로
+        PlayerManager.instance.playerMaxHp = 2;
+        PlayerManager.instance.playerHp = PlayerManager.instance.playerMaxHp;
+        UIManager.instance.DelHeart();
     }
 }
