@@ -31,6 +31,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5782382362621316817}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 180}
+--- !u!1 &2087137895122999339
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5184294236088174354}
+  m_Layer: 13
+  m_Name: BombPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5184294236088174354
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2087137895122999339}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5782382362621316817}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2190128239138356942
 GameObject:
   m_ObjectHideFlags: 0
@@ -296,7 +327,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 103
+  m_SortingOrder: 102
   m_Sprite: {fileID: -99040560, guid: 3c377f6263ae5d44e80c80c2f17334db, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -488,6 +519,7 @@ Transform:
   - {fileID: 5449846101330744763}
   - {fileID: 7470781635017143417}
   - {fileID: 3987601544564592591}
+  - {fileID: 5184294236088174354}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1635804941268350248
@@ -513,10 +545,13 @@ MonoBehaviour:
   knifePosition: {fileID: 5449846101330744763}
   familiarPosition: {fileID: 3987601544564592591}
   tearPointTransform: {fileID: 4903051384914692604}
-  DefaultSprite: {fileID: 1837185413, guid: 64f0cce7912310a489ab219e28d20338, type: 3}
+  bombPointTransform: {fileID: 5184294236088174354}
+  tearDefaultSprite: {fileID: 1837185413, guid: 64f0cce7912310a489ab219e28d20338, type: 3}
+  bombDefaultSprite: {fileID: -153517370, guid: 4d38a3b189607af4ab7cd1369fa326f5, type: 3}
   HeadItem: {fileID: 4835568290336441186}
   CheckedObject: {fileID: 0}
   tear: {fileID: 5114894525887414092, guid: ba1b1ea4a7a80f44185689dfb5626760, type: 3}
+  bomb: {fileID: 9152286902886193127, guid: 7fce7d28537db664aaca9ad6d71bd9c4, type: 3}
   tearPoint: {fileID: 4903488415990779368}
   knife: {fileID: 7157704114343907855}
   nailActivated: 0

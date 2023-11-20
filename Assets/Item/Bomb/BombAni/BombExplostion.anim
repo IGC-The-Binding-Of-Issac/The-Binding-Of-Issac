@@ -97,17 +97,24 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
+  - time: 1.9833333
+    functionName: DefaultBomb
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 2
     functionName: BombAttack
     data: 
-    objectReferenceParameter: {fileID: 0}
+    objectReferenceParameter: {fileID: 11500000, guid: d5d45338b0bbac5459068885cf876db3, type: 3}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 2.4
     functionName: BombDelete
     data: 
-    objectReferenceParameter: {fileID: 0}
+    objectReferenceParameter: {fileID: 11500000, guid: d5d45338b0bbac5459068885cf876db3, type: 3}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
