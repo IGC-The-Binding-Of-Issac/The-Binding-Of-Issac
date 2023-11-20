@@ -54,6 +54,11 @@ public class BigAttackFly : TEnemy
     {
         if (playerInRoom)
             Move();
+
+        if (e_isDead()) 
+        {
+            e_destroyEnemy();
+        }
     }
 
     public void Move()
