@@ -19,9 +19,11 @@ public class TheD6 : ActiveInfo
     {
         if(canUse)
         {
+            //모든 방 중에서 현재 방 정보를 불러온 후 사이즈를 측정하고
             GameObject d6Room = GetRoom();
             Vector2 size = GetSize(d6Room);
 
+            //그 Size와 충돌하는 모든 아이템들 찾아낸 후 아이템 변경
             Collider2D[] itemColliders = Physics2D.OverlapBoxAll(d6Room.transform.position, size, 0, itemMask);
             ChangeItems(itemColliders);
         }
@@ -64,7 +66,7 @@ public class TheD6 : ActiveInfo
             {
                 newItems = Instantiate(ItemManager.instance.itemTable.DropTrinket(), colPos, Quaternion.identity) as GameObject;
             }
-
+            //변경된 아이템은 itemList에 추가해서 생성된 아이템으로 관리.
             if(newItems != null)
             {
                 GameManager.instance.roomGenerate.itemList.Add(newItems);

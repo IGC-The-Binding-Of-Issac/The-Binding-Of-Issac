@@ -11,7 +11,8 @@ public class HolyMantle : ItemInfo
         SetItemString("신성한 망토",
                       "성스러운 방패",
                       "3회 방어막을 부여한다." 
-                    + "\n방 클리어 때마다 1회 방어막을 부여한다.");
+                    + "\nGuardian Angel 보유 시" 
+                    + "\n방 클리어 시 1회 방어막을 부여한다.");
     }
     public override void UseItem()
     {

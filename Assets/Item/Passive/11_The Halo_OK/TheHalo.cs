@@ -20,8 +20,8 @@ public class TheHalo : ItemInfo
         PlayerManager.instance.playerShotDelay -= 0.07f;
         PlayerManager.instance.playerDamage -= 0.3f;
         PlayerManager.instance.CheckedShotDelay();
+        //캐릭터 머리 위에 천사링 생성
         GameManager.instance.playerObject.GetComponent<PlayerController>().HeadItem.GetComponent<SpriteRenderer>().sprite = HaloImg;
-        //캐릭터가 하늘을 날 수 있게 된다.
 
     }
 }

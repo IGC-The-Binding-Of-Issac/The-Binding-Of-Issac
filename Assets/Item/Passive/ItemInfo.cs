@@ -5,39 +5,45 @@ using UnityEngine;
 
 public class ItemInfo : MonoBehaviour
 {
-    protected int itemCode;
-    public string itemTitle;
+    [Header("int")]
+    protected int itemCode;           //패시브 아이템 고유 코드
+
+    [Header("string")]
+    public string itemTitle;         
     public string itemDescription;
     public string itemInformation;
 
-    public bool canCollision = false;
+    [Header("bool")]
+    public bool canCollision = false; //아이템 충돌 가능 여부
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.CompareTag("Player") && canCollision
-           && GameManager.instance.playerObject.GetComponent<PlayerController>().canChangeItem)
+           && GameManager.instance.playerObject.GetComponent<PlayerController>().canChangeItem) //아이템 습득 가능 시
              {
             GameManager.instance.playerObject.GetComponent<PlayerController>().canChangeItem = false;
-            // 아이템을 가지고있지않을때.
+            
+            //1. 패시브 아이템 최초 습득 시
             if (!ItemManager.instance.PassiveItems[itemCode])
             {
                 GameManager.instance.playerObject.GetComponent<PlayerController>().GetitemSound();
-
                 UIManager.instance.ItemBanner(itemTitle, itemDescription);
                 gameObject.layer = 31;
                 ItemManager.instance.PassiveItems[itemCode] = true; // 미보유 -> 보유 로 변경 
-                UseItem();
-
+                UseItem(); //습득 시 효과 발생
                 gameObject.transform.SetParent(collision.gameObject.GetComponent<PlayerController>().itemPosition);
                 gameObject.transform.localPosition = new Vector3(0, 0, 0);
                 Destroy(gameObject.GetComponent<Rigidbody2D>());
-                
                 StartCoroutine(collision.gameObject.GetComponent<PlayerController>().GetItemTime());
             }
             Invoke("SetCanChangeItem", 1f);
         }
     }
 
-    public virtual void UseItem() { Debug.Log("재정의 해줘!"); }
+    //패시브 아이템 습득 시 효과 재정의
+    public virtual void UseItem() 
+    {
+
+    }
 
     public void SetItemCode(int code)
     {

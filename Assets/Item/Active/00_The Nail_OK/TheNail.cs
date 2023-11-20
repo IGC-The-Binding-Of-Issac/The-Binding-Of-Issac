@@ -9,6 +9,7 @@ public class TheNail : ActiveInfo
     {
         //0번 아이템, 6칸 필요함
         SetActiveItem(0, 6);
+
         SetActiveString("대못", 
                         "일시적 악마 변신",
                         "사용 시 캐릭터가 악마로 변하여 다음의 효과를 얻는다."
@@ -16,6 +17,7 @@ public class TheNail : ActiveInfo
                         + "\n이동 속도 - 0.08" 
                         + "\n공격력 + 0.5"
                         + "\n캐릭터의 눈물이 빨갛게 변한다.");
+
         Invoke("SetCanChangeItem", 1f);
     }
 
@@ -30,7 +32,9 @@ public class TheNail : ActiveInfo
             PlayerManager.instance.SetHeadSkin(5);
             PlayerManager.instance.SetBodySkin(3);
             PlayerManager.instance.SetTearSkin(1);
+
             GameManager.instance.playerObject.GetComponent<PlayerController>().canChangeItem = false;
+
             Invoke("SetCanChangeItem", 1f);
             Invoke("SetCanUse", 1f);
         }

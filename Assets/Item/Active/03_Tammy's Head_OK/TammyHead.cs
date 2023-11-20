@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class TammyHead : ActiveInfo
 {
-    float beforeDamage;
-    private GameObject activeTear;
+    private int shootCount;
     void Awake()
     {
         SetActiveItem(3, 1);
         SetActiveString("태미의 머리",
                         "충전식 눈물 폭발",
-                        "사용 시 8방향으로 데미지가 25 더 높은 눈물을 동시에 발사한다.");
-        beforeDamage = PlayerManager.instance.playerDamage;
+                        "사용 시 8방향으로 눈물을 동시에 발사한다.");
         Invoke("SetCanChangeItem", 1f);
     }
 
@@ -20,7 +18,17 @@ public class TammyHead : ActiveInfo
     {
         if(canUse)
         {
-            PlayerManager.instance.playerDamage += 25f;
+            StartCoroutine(TammyHeadAttack());
+            canUse = false;
+            Invoke("SetCanUse", 1f);
+            GameManager.instance.playerObject.GetComponent<PlayerController>().canChangeItem = false;
+            Invoke("SetCanChangeItem", 1f);
+        }
+    }
+    private IEnumerator TammyHeadAttack()
+    {
+        for(int i = 0; i < 2; i++) 
+        { 
             GameManager.instance.playerObject.GetComponent<PlayerController>().Shoot(1, 1);
             GameManager.instance.playerObject.GetComponent<PlayerController>().Shoot(1, 0);
             GameManager.instance.playerObject.GetComponent<PlayerController>().Shoot(1, -1);
@@ -29,16 +37,8 @@ public class TammyHead : ActiveInfo
             GameManager.instance.playerObject.GetComponent<PlayerController>().Shoot(-1, 1);
             GameManager.instance.playerObject.GetComponent<PlayerController>().Shoot(-1, 0);
             GameManager.instance.playerObject.GetComponent<PlayerController>().Shoot(-1, -1);
-            activeTear = GameObject.Find("Tear(Clone)");
-            canUse = false;
-            Invoke("SetCanUse", 1f);
-            GameManager.instance.playerObject.GetComponent<PlayerController>().canChangeItem = false;
-            Invoke("SetCanChangeItem", 1f);
+            yield return new WaitForSeconds(0.25f);
         }
     }
 
-    public override void CheckedItem()
-    {
-        if (activeTear == null) PlayerManager.instance.playerDamage = beforeDamage;
-    }
 }

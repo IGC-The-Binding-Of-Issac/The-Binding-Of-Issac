@@ -11,6 +11,7 @@ public class OopsEffect : MonoBehaviour
         StartCoroutine(flooring());
     }
 
+    //Oops 생성 시 점점 스케일이 커졌다가 다시 줄어드는 방식, Coroutine이 끝나면 Destroy
     private IEnumerator flooring()
     {
         while (gameObject.transform.localScale.x <= 1.5f)
@@ -30,14 +31,14 @@ public class OopsEffect : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("TEnemy"))
         {
-            if (canDamage)
+            if (canDamage) //0.5초마다 데미지 4 부여
             {
             collision.gameObject.GetComponent<TEnemy>().GetDamage(4);
             canDamage = false;
             Invoke("canGiveDamage", 0.5f);
             }
         }
-        else if (collision.gameObject.layer == 25)
+        else if (collision.gameObject.layer == 25) //Larry.Jr 한테만 별개로 적용
         {
             if (canDamage)
             {

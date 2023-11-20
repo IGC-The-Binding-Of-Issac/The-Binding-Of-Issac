@@ -9,8 +9,8 @@ public class SoyMilk : ItemInfo
         SetItemCode(4);
         SetItemString("두유",
                       "쉬 마려워..",
-                      "습득 시 공격력 * 0.2" +
-                      "\n공격속도 * 5.5");
+                      "습득 시 공격력 * 0.2" 
+                    + "\n공격속도 * 5.5");
     }
 
     public override void UseItem()
