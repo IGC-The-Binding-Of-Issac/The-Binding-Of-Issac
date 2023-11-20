@@ -511,14 +511,14 @@ MonoBehaviour:
   head: {fileID: 1042874374983917579}
   useActiveItemImage: {fileID: 8591384693438208543}
   knifePosition: {fileID: 5449846101330744763}
-  familiarPosition: {fileID: 0}
+  familiarPosition: {fileID: 3987601544564592591}
   tearPointTransform: {fileID: 4903051384914692604}
   DefaultSprite: {fileID: 1837185413, guid: 64f0cce7912310a489ab219e28d20338, type: 3}
   HeadItem: {fileID: 4835568290336441186}
   CheckedObject: {fileID: 0}
   tear: {fileID: 5114894525887414092, guid: ba1b1ea4a7a80f44185689dfb5626760, type: 3}
   tearPoint: {fileID: 4903488415990779368}
-  knife: {fileID: 0}
+  knife: {fileID: 7157704114343907855}
   nailActivated: 0
   canUseActive: 1
   canChangeItem: 0
@@ -940,9 +940,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 007671f11763b034ea6f05226bf5f0a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tearobj: {fileID: 173800174975341562, guid: ba1b1ea4a7a80f44185689dfb5626760, type: 3}
-  shootPoint: {fileID: 6305270908749089737}
-  miniTear: {fileID: 0}
 --- !u!50 &6618411975114587756
 Rigidbody2D:
   serializedVersion: 4

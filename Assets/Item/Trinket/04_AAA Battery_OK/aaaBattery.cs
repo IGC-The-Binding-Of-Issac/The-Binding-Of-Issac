@@ -12,8 +12,8 @@ public class aaaBattery : TrinketInfo
         SetTrinketItemCode(4);
         SetTrinketString("AAA 건전지",
                          "파지직",
-                         "공격속도 + 0.05" +
-                         "이동속도 + 0.1");
+                         "공격속도 + 0.05" 
+                       + "\n이동속도 + 0.1");
     }
 
     public override void GetItem()
@@ -26,7 +26,8 @@ public class aaaBattery : TrinketInfo
     {
         beforeDropShotDelay = PlayerManager.instance.playerShotDelay;
         beforeDropMoveSpeed = PlayerManager.instance.playerMoveSpeed;
-        PlayerManager.instance.playerMoveSpeed = beforeDropMoveSpeed - 0.1f;
-        PlayerManager.instance.playerMoveSpeed = beforeDropShotDelay + 0.05f;
+        Debug.Log(beforeDropMoveSpeed);
+        PlayerManager.instance.playerMoveSpeed = beforeDropMoveSpeed -= 0.1f;
+        PlayerManager.instance.playerShotDelay = beforeDropShotDelay += 0.05f;
     }
 }
