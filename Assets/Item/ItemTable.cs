@@ -153,30 +153,66 @@ public class ItemTable : MonoBehaviour
         return null;
     }
     
+    public void Dropitem(Vector3 dropPosition, int itemCode)
+    {
+        GameObject dropItem;
+        switch(itemCode)
+        {
+            case 0:
+                dropItem = GetDropItem(itemCode); // 아이템 받아오기
+                dropItem.transform.position = dropPosition;
+                dropItem.GetComponent<Coin>().DropCoin();
+                break;
+            case 1:
+                dropItem = GetDropItem(itemCode); // 아이템 받아오기
+                dropItem.transform.position = dropPosition;
+                dropItem.GetComponent<Heart>().DropHeart();
+                break;
+            case 2:
+                dropItem = GetDropItem(itemCode); // 아이템 받아오기
+                dropItem.transform.position = dropPosition;
+                dropItem.GetComponent<DropBomb>().DropBomb_move();
+                break;
+            case 3:
+                dropItem = GetDropItem(itemCode); // 아이템 받아오기
+                dropItem.transform.position = dropPosition;
+                dropItem.GetComponent<key>().DropKey();
+                break;
+        }
+    }
+
     public void ReturnDropItem(GameObject dropitem)
     {
-         
         if (dropitem.GetComponent<Coin>() != null)
         {
-            coinPool.Push(dropitem);
+            dropitem.GetComponent<Coin>().ResetObject();
+            dropitem.SetActive(false);
+            coinPool.Push(dropitem); 
         }
         else if (dropitem.GetComponent<Heart>() != null)
         {
-            // heart의ㅏ resetObject 함수 실행
+            dropitem.GetComponent<Heart>().ResetObject();
+            dropitem.SetActive(false);
             heartPool.Push(dropitem);
         }
         else if (dropitem.GetComponent<DropBomb>() != null)
         {
-            // dropbomb resetObject 함수 실행
+            dropitem.GetComponent<DropBomb>().ResetObject();
+            dropitem.SetActive(false);
             bombPool.Push(dropitem);
         }
         else if (dropitem.GetComponent<key>() != null)
         {
-            // key의ㅏ resetObject 함수 실행
+            dropitem.GetComponent<key>().ResetObject();
+            dropitem.SetActive(false);
             keyPool.Push(dropitem);
         }
+        else
+        {
+            Destroy(dropitem);
+        }
     }
-    public void AllReturnDropItem(GameObject dropItem)
+    public void AllReturnDropItem()
     {
         for(int i = 0; i < dropItemPool_Transform.childCount; i++)
         {
@@ -185,18 +221,6 @@ public class ItemTable : MonoBehaviour
         }
     }
     #endregion
-
-    public GameObject ObjectBreak() // 오브젝트 부쉈을때
-    {
-        int rd = Random.Range(0, DropItems.Length-1);
-        return DropItems[rd]; // 랜텀 아이템 반환 ( 열쇠 제외 )
-    }
-
-    public GameObject OpenNormalChest(int rd)
-    {
-        //return GetDropItem(rd);
-        return DropItems[rd];
-    }
 
     public GameObject DropTrinket()
     {
@@ -331,8 +355,6 @@ public class ItemTable : MonoBehaviour
         return PassiveItems[index].GetComponent<SpriteRenderer>().sprite;
     }
 
-
-
     void SetSFXObject(GameObject obj)
     {
         // 매개변수로 받은 오브젝트에 오디오소스가 있는지 확인후 sfxobject로 등록
@@ -341,4 +363,19 @@ public class ItemTable : MonoBehaviour
             SoundManager.instance.sfxObjects.Add(obj.GetComponent<AudioSource>());
         }
     }
+
+    #region archive
+    public GameObject ObjectBreak() // 오브젝트 부쉈을때
+    {
+        int rd = Random.Range(0, DropItems.Length-1);
+        return DropItems[rd]; // 랜텀 아이템 반환 ( 열쇠 제외 )
+    }
+
+    public GameObject OpenNormalChest(int rd)
+    {
+        //return GetDropItem(rd);
+        return DropItems[rd];
+    }
+
+    #endregion
 }

@@ -101,6 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9599eaf8d4bd6bb439132c375ee04140, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultSprite: {fileID: -153517370, guid: 4d38a3b189607af4ab7cd1369fa326f5, type: 3}
 --- !u!95 &5485564635957782400
 Animator:
   serializedVersion: 5
@@ -205,7 +206,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 658c85f28c9db5841a52dc57590993a1, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

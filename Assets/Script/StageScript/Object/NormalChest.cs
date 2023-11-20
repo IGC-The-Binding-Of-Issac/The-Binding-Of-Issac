@@ -52,14 +52,12 @@ public class NormalChest : MonoBehaviour
                 int coin = Random.Range(0, 6);
                 for (int j = 0; j < coin; j++)
                 {
-                    GameObject it = Instantiate(ItemManager.instance.itemTable.OpenNormalChest(rd), transform.position, Quaternion.identity) as GameObject;
-                    GameManager.instance.roomGenerate.itemList.Add(it);
+                    ItemManager.instance.itemTable.Dropitem(transform.position, 0);
                 }
             }
             else
             {
-                GameObject it = Instantiate(ItemManager.instance.itemTable.OpenNormalChest(rd), transform.position, Quaternion.identity) as GameObject;
-                GameManager.instance.roomGenerate.itemList.Add(it);
+                ItemManager.instance.itemTable.Dropitem(transform.position, rd);
             }
         }
     }

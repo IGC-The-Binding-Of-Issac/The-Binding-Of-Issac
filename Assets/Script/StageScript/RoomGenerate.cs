@@ -411,6 +411,10 @@ public class RoomGenerate : MonoBehaviour
             }
             itemList = new List<GameObject>();
         }
+
+        // 오브젝트 풀링이 적용된( 드랍 아이템 ) 초기화
+        ItemManager.instance.itemTable.AllReturnDropItem();
+        
     }
     public void CreateRoom(int stage, int size)
     {
