@@ -27,7 +27,10 @@ public class BigAttackFly : TEnemy
 
     void Start()
     {         
+        animator = GetComponent<Animator>();    
+
         playerInRoom = false;
+        dieParameter = "isBigFlyDie";
 
         // Enemy
         hp = 30f;
@@ -62,7 +65,7 @@ public class BigAttackFly : TEnemy
         currTime -= Time.deltaTime;
         if (currTime > 0 && chageState)
         {
-            e_Tracking();                   // 추적
+            e_Tracking(moveSpeed);                   // 추적
         }
         else if (currTime <= 0) 
         {

@@ -12,29 +12,27 @@ public class Tride : TEnemy
     // prowl
     public override void En_setState()
     {
-        playerInRoom = false;
-        dieParameter = "isDie";
-        jumpParameter = "isJump";
+        playerInRoom    = false;
+        dieParameter    = "isDie";
+        jumpParameter   = "isJump";
 
-        hp = 2f;
-        sight = 5f;
-        moveSpeed = 1.5f;
-        waitforSecond = 0.5f;
-        attaackSpeed = 2f;
-        jumpSpeed = 2f;
-        fTime = 0.5f;
-        randRange = 1f;
+        hp              = 2f;
+        sight           = 5f;
+        moveSpeed       = 1f;
+        waitforSecond   = 0.5f;
+        attaackSpeed    = 0.5f;
+        jumpSpeed       = 2.5f;
 
-        maxhp = hp;
+        maxhp           = hp;
     }
 
     public override void En_kindOfEnemy()
     {
-        isTracking = true;
-        isProwl = false;
-        isDetective = false;
-        isShoot = false;
-        isJump = true;
+        isTracking      = true;
+        isProwl         = false;
+        isDetective     = false;
+        isShoot         = false;
+        isJump          = true;
     }
 
     private void Start()

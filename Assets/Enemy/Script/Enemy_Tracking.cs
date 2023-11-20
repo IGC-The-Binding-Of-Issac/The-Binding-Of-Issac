@@ -23,7 +23,7 @@ public class Enemy_Tracking : TEnemy_FSM<TEnemy>
     public override void Excute()                                   // 해당 상태를 업데이트 할 때 "매 프레임" 호출
     {
         e_Owner.e_findPlayer();                                     // player 탐색
-        e_Owner.e_Tracking();                                       // tracking
+        e_Owner.e_Tracking(e_Owner.getMoveSpeed);                                       // tracking
         e_Owner.e_Lookplayer();                                     // 플레이어 look
        
         if (e_Owner.playerPosi == null)
@@ -41,6 +41,7 @@ public class Enemy_Tracking : TEnemy_FSM<TEnemy>
             {
                 if (isIsInvoke)
                 {
+                    Debug.Log(" 상태");
                     e_Owner.invokeJump();                          // 일정 시간후 점프로 넘어감
                     isIsInvoke = false;
                 }
