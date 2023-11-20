@@ -44,27 +44,22 @@ public class NormalChest : MonoBehaviour
 
     void OpenChest()
     {
-
-        ItemManager.instance.itemTable.Dropitem(transform.position, 1); // 코인 받아오기
-        // Before
-        //for (int i = 0; i < 2; i++)
-        //{
-        //    int rd = Random.Range(0, 4);
-        //    if (rd == 0)
-        //    {
-        //        int coin = Random.Range(0, 6);
-        //        for (int j = 0; j < coin; j++)
-        //        {
-        //            GameObject it = Instantiate(ItemManager.instance.itemTable.OpenNormalChest(rd), transform.position, Quaternion.identity) as GameObject;
-        //            GameManager.instance.roomGenerate.itemList.Add(it);
-        //        }
-        //    }
-        //    else
-        //    {
-        //        GameObject it = Instantiate(ItemManager.instance.itemTable.OpenNormalChest(rd), transform.position, Quaternion.identity) as GameObject;
-        //        GameManager.instance.roomGenerate.itemList.Add(it);
-        //    }
-        //}
+        for (int i = 0; i < 2; i++)
+        {
+            int rd = Random.Range(0, 4);
+            if (rd == 0)
+            {
+                int coin = Random.Range(0, 6);
+                for (int j = 0; j < coin; j++)
+                {
+                    ItemManager.instance.itemTable.Dropitem(transform.position, 0);
+                }
+            }
+            else
+            {
+                ItemManager.instance.itemTable.Dropitem(transform.position, rd);
+            }
+        }
     }
 
     void openChestSound()

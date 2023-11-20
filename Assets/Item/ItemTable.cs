@@ -169,8 +169,14 @@ public class ItemTable : MonoBehaviour
                 dropItem.GetComponent<Heart>().DropHeart();
                 break;
             case 2:
+                dropItem = GetDropItem(itemCode); // 아이템 받아오기
+                dropItem.transform.position = dropPosition;
+                dropItem.GetComponent<DropBomb>().DropBomb_move();
                 break;
             case 3:
+                dropItem = GetDropItem(itemCode); // 아이템 받아오기
+                dropItem.transform.position = dropPosition;
+                dropItem.GetComponent<key>().DropKey();
                 break;
         }
     }
@@ -198,6 +204,7 @@ public class ItemTable : MonoBehaviour
         else if (dropitem.GetComponent<key>() != null)
         {
             dropitem.GetComponent<key>().ResetObject();
+            dropitem.SetActive(false);
             keyPool.Push(dropitem);
         }
     }
