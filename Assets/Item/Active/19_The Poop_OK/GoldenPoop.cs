@@ -16,6 +16,7 @@ public class GoldenPoop : MonoBehaviour
         gameObject.GetComponent<AudioSource>().volume = SoundManager.instance.GetSFXVolume();
     }
 
+    //생성 시 물리 충돌 X, 똥 Collider 벗어나면 충돌 O
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))

@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class BOTM : ItemInfo
 {
+    [Header("Sprite")]
     public Sprite redTearImg;
     public Sprite MartyrImg;
 
@@ -19,20 +20,19 @@ public class BOTM : ItemInfo
     }
     public override void UseItem()
     {
-        //플레이어 데미지 + 1
         PlayerManager.instance.playerDamage++;
 
-        //눈물 색깔 빨간색으로 변경
-        if (ItemManager.instance.PassiveItems[16] == false)
+        //Dr.Fetus 제외 나머지 눈물 빨간색으로 변경
+        if (!ItemManager.instance.PassiveItems[16])
+        {
             PlayerManager.instance.SetTearSkin(1);
-
-        //월계관 달리는 함수 1초뒤 실행
+        }
         Invoke("getBOTM", 1f);
     }
 
     public void getBOTM()
     {
-        //먹으면 캐릭터 위에 월계관 달림
+        // 캐릭터 위 월계관 생성
         GameManager.instance.playerObject.GetComponent<PlayerController>().HeadItem.GetComponent<SpriteRenderer>().sprite = MartyrImg;
     }
 }

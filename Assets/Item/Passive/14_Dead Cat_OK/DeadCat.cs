@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class DeadCat : ItemInfo
 {
-    // Start is called before the first frame update
     private void Start()
     {
         SetItemCode(14);
@@ -17,6 +16,6 @@ public class DeadCat : ItemInfo
 
     public override void UseItem()
     {
-        //기능은 playerManager에 구현되어 있음.
+        //기능은 playerManager에 구현되어 있음. 위 SetItemString에 적힌 그대로
     }
 }
