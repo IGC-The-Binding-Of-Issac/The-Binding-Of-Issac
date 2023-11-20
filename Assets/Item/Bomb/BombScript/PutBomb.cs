@@ -102,7 +102,10 @@ public class PutBomb : MonoBehaviour
 
     public void BombDelete()
     {
-        GameManager.instance.playerObject.GetComponent<PlayerController>().ReturnBombPooling(gameObject);
+        if(GameManager.instance.playerObject.GetComponent<PlayerController>().bombState)
+            GameManager.instance.playerObject.GetComponent<PlayerController>().ReturnDrBombPooling(gameObject);
+        else
+            GameManager.instance.playerObject.GetComponent<PlayerController>().ReturnBombPooling(gameObject);
     }
 
     public void BombAttack()

@@ -47,6 +47,8 @@ public class PlayerManager : MonoBehaviour
     public SpriteLibraryAsset[] head;
     public SpriteLibraryAsset[] body;
     public SpriteLibraryAsset[] tear;
+    public SpriteLibraryAsset[] headClothes;
+    public SpriteLibraryAsset[] bodyClothes;
 
     public void Start()
     {
@@ -69,7 +71,7 @@ public class PlayerManager : MonoBehaviour
         CanGetDamage = true;
         hitDelay = 0.5f; // 피격 딜레이
     }
-
+    #region SkinChange
     public void CheckedShotDelay()
     {
         if(playerShotDelay < 0.025)
@@ -93,16 +95,36 @@ public class PlayerManager : MonoBehaviour
         //눈물 외형을 바꾸는 함수
         ChangeTear(tear[index]);
     }
+    public void SetHeadClothesSkin(int index)
+    {
+        //모자 외형을 바꾸는 함수
+        ChangeHeadClothes(headClothes[index]);
+    }
+    public void SetBodyClothesSkin(int index)
+    {
+        //옷 외형을 바꾸는 함수
+        ChangeBodyClothes(bodyClothes[index]);
+    }
     public void ChangeHead(SpriteLibraryAsset head)
     {
         //SpriteLibraryAsset안에 있는 head를 플레이어 스프라이트에 넣어줌 
         GameManager.instance.playerObject.GetComponent<PlayerController>().head.GetComponent<SpriteLibrary>().spriteLibraryAsset = head;
+    }
+    public void ChangeHeadClothes(SpriteLibraryAsset headClothes)
+    {
+        //SpriteLibraryAsset안에 있는 headClothes를 플레이어 스프라이트에 넣어줌 
+        GameManager.instance.playerObject.GetComponent<PlayerController>().headClothes.GetComponent<SpriteLibrary>().spriteLibraryAsset = headClothes;
     }
 
     public void ChangeBody(SpriteLibraryAsset body)
     {
         //SpriteLibraryAsset안에 있는 body를 플레이어 스프라이트에 넣어줌
         GameManager.instance.playerObject.GetComponent<PlayerController>().body.GetComponent<SpriteLibrary>().spriteLibraryAsset = body;
+    }
+    public void ChangeBodyClothes(SpriteLibraryAsset bodyClothes)
+    {
+        //SpriteLibraryAsset안에 있는 bodyClothes를 플레이어 스프라이트에 넣어줌
+        GameManager.instance.playerObject.GetComponent<PlayerController>().bodyClothes.GetComponent<SpriteLibrary>().spriteLibraryAsset = bodyClothes;
     }
 
     public void ChangeTear(SpriteLibraryAsset tear)
@@ -116,7 +138,7 @@ public class PlayerManager : MonoBehaviour
         }
         //tearObj.GetComponent<SpriteLibrary>().spriteLibraryAsset = tear;
     }
-
+    #endregion
     //delegate 선언 위치
 
 
@@ -257,11 +279,17 @@ public class PlayerManager : MonoBehaviour
     public void ChgTearSize()
     {
         //눈물 사이즈 변경
-        Transform allChildren = GameManager.instance.playerObject.GetComponent<PlayerController>().tearPointTransform;
-        for (int i = 0; i < allChildren.childCount; i++)
+        Transform tearChildren = GameManager.instance.playerObject.GetComponent<PlayerController>().tearPointTransform;
+        Transform DrbombChildren = GameManager.instance.playerObject.GetComponent<PlayerController>().DrBombPointTransform;
+        for (int i = 0; i < tearChildren.childCount; i++)
         {
-            GameObject obj = allChildren.GetChild(i).gameObject;
-            obj.transform.localScale = new Vector3(playerTearSize, playerTearSize, 0);
+            GameObject tearObj = tearChildren.GetChild(i).gameObject;
+            tearObj.transform.localScale = new Vector3(playerTearSize, playerTearSize, 0);
+        }
+        for (int i = 0; i < DrbombChildren.childCount; i++)
+        {
+            GameObject bombObj = DrbombChildren.GetChild(i).gameObject;
+            bombObj.transform.localScale = new Vector3(playerTearSize, playerTearSize, 0);
         }
     }
 
