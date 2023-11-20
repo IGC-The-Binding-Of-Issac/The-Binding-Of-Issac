@@ -17,7 +17,7 @@ public class Enemy_Jump : TEnemy_FSM<TEnemy>
 
     public override void Enter()
     {
-        Debug.Log("jump 상태 진입");
+        //Debug.Log("jump 상태 진입");
         e_Owner.eCurState = TENEMY_STATE.Jump;              // 현재 상태를 TENEMY_STATE의 Tracking으로 
         e_Owner.e_jumpSet();                                // 점프 전 세팅
 

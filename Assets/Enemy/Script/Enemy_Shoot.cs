@@ -15,7 +15,7 @@ public class Enemy_Shoot : TEnemy_FSM<TEnemy>
 
     public override void Enter()
     {
-        Debug.Log(e_Owner.gameObject.tag + " : Shoot 상태 ");
+        //Debug.Log(e_Owner.gameObject.tag + " : Shoot 상태 ");
         e_Owner.eCurState = TENEMY_STATE.Shoot;          // 현재 상태를 TENEMY_STATE의 Tracking으로 
 
         e_Owner.setIsReadyShoot = true;

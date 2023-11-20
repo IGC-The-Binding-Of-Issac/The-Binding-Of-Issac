@@ -300,7 +300,6 @@ public class TEnemy : MonoBehaviour
     // Tracking -> jump로 넘어갈때 조건 (invoke)
     public void invokeJump()
     {
-        Debug.Log("invoke 실행예정");
         Invoke("chageTojump", attaackSpeed);             //  attaackSpeed 후에
 
     }
@@ -318,7 +317,6 @@ public class TEnemy : MonoBehaviour
     // jump -> tracking 
     public void e_doneJump()
     {
-        Debug.Log("상태가 변합니다");
         animator.SetBool(jumpParameter, false);
         ChageFSM(TENEMY_STATE.Tracking);
     }
