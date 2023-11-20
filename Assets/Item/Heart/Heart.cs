@@ -72,4 +72,9 @@ public class Heart : MonoBehaviour
         
         else cl.isTrigger = true;
     }
+
+    public void ResetObject()
+    {
+
+    }
 }

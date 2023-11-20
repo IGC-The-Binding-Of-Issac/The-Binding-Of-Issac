@@ -46,4 +46,9 @@ public class key : MonoBehaviour
         Destroy(gameObject.GetComponent<SpriteRenderer>());
         Destroy(this.gameObject,0.5f);
     }
+
+    public void ResetObject()
+    {
+
+    }
 }

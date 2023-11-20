@@ -155,28 +155,31 @@ public class ItemTable : MonoBehaviour
     
     public void ReturnDropItem(GameObject dropitem)
     {
-         
         if (dropitem.GetComponent<Coin>() != null)
         {
-            coinPool.Push(dropitem);
+            dropitem.GetComponent<Coin>().ResetObject();
+            dropitem.SetActive(false);
+            coinPool.Push(dropitem); 
         }
         else if (dropitem.GetComponent<Heart>() != null)
         {
-            // heart의ㅏ resetObject 함수 실행
+            dropitem.GetComponent<Heart>().ResetObject();
+            dropitem.SetActive(false);
             heartPool.Push(dropitem);
         }
         else if (dropitem.GetComponent<DropBomb>() != null)
         {
-            // dropbomb resetObject 함수 실행
+            dropitem.GetComponent<DropBomb>().ResetObject();
+            dropitem.SetActive(false);
             bombPool.Push(dropitem);
         }
         else if (dropitem.GetComponent<key>() != null)
         {
-            // key의ㅏ resetObject 함수 실행
+            dropitem.GetComponent<key>().ResetObject();
             keyPool.Push(dropitem);
         }
     }
-    public void AllReturnDropItem(GameObject dropItem)
+    public void AllReturnDropItem()
     {
         for(int i = 0; i < dropItemPool_Transform.childCount; i++)
         {

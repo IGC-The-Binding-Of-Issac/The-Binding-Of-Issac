@@ -42,4 +42,10 @@ public class DropBomb : MonoBehaviour
     {
         Destroy(gameObject);
     }
+
+
+    public void ResetObject()
+    {
+        
+    }
 }

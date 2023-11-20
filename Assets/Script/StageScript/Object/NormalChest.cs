@@ -44,24 +44,30 @@ public class NormalChest : MonoBehaviour
 
     void OpenChest()
     {
-        for (int i = 0; i < 2; i++)
-        {
-            int rd = Random.Range(0, 4);
-            if (rd == 0)
-            {
-                int coin = Random.Range(0, 6);
-                for (int j = 0; j < coin; j++)
-                {
-                    GameObject it = Instantiate(ItemManager.instance.itemTable.OpenNormalChest(rd), transform.position, Quaternion.identity) as GameObject;
-                    GameManager.instance.roomGenerate.itemList.Add(it);
-                }
-            }
-            else
-            {
-                GameObject it = Instantiate(ItemManager.instance.itemTable.OpenNormalChest(rd), transform.position, Quaternion.identity) as GameObject;
-                GameManager.instance.roomGenerate.itemList.Add(it);
-            }
-        }
+        GameObject coin;
+        coin = ItemManager.instance.itemTable.GetDropItem(0); // 코인 받아오기
+        coin.transform.position = gameObject.transform.position;
+        coin.GetComponent<Coin>().DropCoin();
+
+        // Before
+        //for (int i = 0; i < 2; i++)
+        //{
+        //    int rd = Random.Range(0, 4);
+        //    if (rd == 0)
+        //    {
+        //        int coin = Random.Range(0, 6);
+        //        for (int j = 0; j < coin; j++)
+        //        {
+        //            GameObject it = Instantiate(ItemManager.instance.itemTable.OpenNormalChest(rd), transform.position, Quaternion.identity) as GameObject;
+        //            GameManager.instance.roomGenerate.itemList.Add(it);
+        //        }
+        //    }
+        //    else
+        //    {
+        //        GameObject it = Instantiate(ItemManager.instance.itemTable.OpenNormalChest(rd), transform.position, Quaternion.identity) as GameObject;
+        //        GameManager.instance.roomGenerate.itemList.Add(it);
+        //    }
+        //}
     }
 
     void openChestSound()
