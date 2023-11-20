@@ -10,20 +10,20 @@ public class BigAttackFly : TEnemy
 {
     /// <summary>
     /// 
-    /// 1. 매우 천천히 플레이어 추적
+    /// 1. 플레이어 추적
     /// 2. 일정 시간마다 한바퀴 돌면서 직선으로 나가는 총알 뿜뿜
     /// 
     /// </summary>
 
     [Header("BigAttackFly")]
-    [SerializeField] float currTime; //현재 상태의 시간
-    [SerializeField] bool chageState; // 상태변환 
-    [SerializeField] float rotSpeed;
-    [SerializeField] GameObject bigShootBullet;
+    [SerializeField] float currTime;                // 현재 상태의 시간
+    [SerializeField] bool chageState;               // 상태변환 
+    [SerializeField] float rotSpeed;                // 회전 속도
+    [SerializeField] GameObject bigShootBullet;     // 총알
 
-    float z = 0;
+    float z                     = 0;
     bool coruState;
-    Coroutine runningCoroutine = null;
+    Coroutine runningCoroutine  = null;
 
     void Start()
     {         
@@ -33,32 +33,27 @@ public class BigAttackFly : TEnemy
         dieParameter = "isBigFlyDie";
 
         // Enemy
-        hp = 30f;
-        sight = 5f;
-        moveSpeed = 1f;
-        waitforSecond = 0.4f;
-        attaackSpeed = 4f;
-        bulletSpeed = 6f;
+        hp              = 30f;
+        sight           = 5f;
+        moveSpeed       = 1f;
+        waitforSecond   = 0.4f;
+        attaackSpeed    = 4f;
+        bulletSpeed     = 6f;
 
-        maxhp = hp;
+        maxhp           = hp;
 
         //BigAttackFly
-        chageState = true;
-        currTime = attaackSpeed;
-        rotSpeed = 600f;
-        chageState = true;
-        coruState = true;
+        chageState      = true;
+        currTime        = attaackSpeed;
+        rotSpeed        = 600f;
+        chageState      = true;
+        coruState       = true;
     }
 
     private void Update()
     {
         if (playerInRoom)
             Move();
-
-        if (e_isDead()) 
-        {
-            e_destroyEnemy();
-        }
     }
 
     public void Move()
