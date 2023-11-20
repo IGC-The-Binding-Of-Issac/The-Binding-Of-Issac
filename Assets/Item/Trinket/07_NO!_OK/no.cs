@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class no : TrinketInfo
 {
+    [Header("beforeStatement")]
     float beforeDropMoveSpeed;
     float beforeDropShotDelay;
 
@@ -15,7 +16,6 @@ public class no : TrinketInfo
                          "습득 시 이동속도 * 0.5" +
                          "\n공격속도 * 0.5");
     }
-
     public override void GetItem()
     {
         PlayerManager.instance.playerMoveSpeed /= 2f;
@@ -27,6 +27,7 @@ public class no : TrinketInfo
     {
         beforeDropMoveSpeed = PlayerManager.instance.playerMoveSpeed;
         beforeDropShotDelay = PlayerManager.instance.playerShotDelay;
+
         PlayerManager.instance.playerMoveSpeed = beforeDropMoveSpeed * 2f;  
         PlayerManager.instance.playerShotDelay = beforeDropShotDelay / 2f;
     }

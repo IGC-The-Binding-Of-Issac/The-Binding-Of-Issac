@@ -5,9 +5,9 @@ using UnityEngine;
 public class Ipecac : ItemInfo
 {
     public Sprite ipecacSpr;
-    private void Start()
+    public override void Start()
     {
-       
+        base.Start();
         SetItemCode(9);
         SetItemString("구토제",
                       "토할 것 같아..",
@@ -18,6 +18,7 @@ public class Ipecac : ItemInfo
     public override void UseItem()
     {
         PlayerManager.instance.playerHp--;
+        UIManager.instance.DelHeart();
         PlayerManager.instance.playerTearSpeed *= 2f;
         PlayerManager.instance.CheckedPlayerHP();
         PlayerManager.instance.SetHeadSkin(1);

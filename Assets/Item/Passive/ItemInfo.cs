@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ItemInfo : MonoBehaviour
@@ -15,14 +16,16 @@ public class ItemInfo : MonoBehaviour
 
     [Header("bool")]
     public bool canCollision = false; //아이템 충돌 가능 여부
+
+    public virtual void Start()
+    {
+        Invoke("SetDelay", 0.8f);
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.CompareTag("Player") && canCollision
-           && GameManager.instance.playerObject.GetComponent<PlayerController>().canChangeItem) //아이템 습득 가능 시
-             {
-            GameManager.instance.playerObject.GetComponent<PlayerController>().canChangeItem = false;
-            
-            //1. 패시브 아이템 최초 습득 시
+        if(collision.gameObject.CompareTag("Player") && canCollision) //아이템 습득 가능 시
+        {
+            //패시브 아이템 최초 습득 시
             if (!ItemManager.instance.PassiveItems[itemCode])
             {
                 GameManager.instance.playerObject.GetComponent<PlayerController>().GetitemSound();
@@ -35,7 +38,7 @@ public class ItemInfo : MonoBehaviour
                 Destroy(gameObject.GetComponent<Rigidbody2D>());
                 StartCoroutine(collision.gameObject.GetComponent<PlayerController>().GetItemTime());
             }
-            Invoke("SetCanChangeItem", 1f);
+            Invoke("SetDelay", 1f);
         }
     }
 
@@ -49,10 +52,6 @@ public class ItemInfo : MonoBehaviour
     {
         itemCode = code;
     }
-    void SetCanChangeItem()
-    {
-        GameManager.instance.playerObject.GetComponent<PlayerController>().canChangeItem = true;
-    }
     public void SetItemString(string title, string description, string information)
     {
         itemTitle = title;
@@ -62,10 +61,5 @@ public class ItemInfo : MonoBehaviour
     void SetDelay()
     {
         canCollision = true;
-    }
-    private void Update()
-    {
-        if (!canCollision)
-            Invoke("SetDelay", 0.8f);
     }
 }

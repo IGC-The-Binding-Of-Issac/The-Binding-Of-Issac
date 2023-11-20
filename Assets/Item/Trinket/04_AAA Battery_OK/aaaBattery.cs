@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class aaaBattery : TrinketInfo
-
 {
+    [Header("beforeStatement")]
     float beforeDropMoveSpeed;
     float beforeDropShotDelay;
+
     private void Start()
     {
         SetTrinketItemCode(4);
@@ -26,7 +27,7 @@ public class aaaBattery : TrinketInfo
     {
         beforeDropShotDelay = PlayerManager.instance.playerShotDelay;
         beforeDropMoveSpeed = PlayerManager.instance.playerMoveSpeed;
-        Debug.Log(beforeDropMoveSpeed);
+
         PlayerManager.instance.playerMoveSpeed = beforeDropMoveSpeed -= 0.1f;
         PlayerManager.instance.playerShotDelay = beforeDropShotDelay += 0.05f;
     }

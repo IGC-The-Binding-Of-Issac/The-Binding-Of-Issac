@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Cancer : TrinketInfo
 {
+    [Header("beforeStatement")]
     float beforeDropShotDelay;
     float beforeDropDamage;
     float beforeDropMoveSpeed;
@@ -31,6 +32,7 @@ public class Cancer : TrinketInfo
         beforeDropShotDelay = PlayerManager.instance.playerShotDelay;
         beforeDropDamage = PlayerManager.instance.playerDamage;
         beforeDropMoveSpeed = PlayerManager.instance.playerMoveSpeed;
+
         PlayerManager.instance.playerShotDelay = beforeDropShotDelay + 0.15f;
         PlayerManager.instance.playerDamage = beforeDropDamage +  0.2f;
         PlayerManager.instance.playerMoveSpeed = beforeDropMoveSpeed + 0.34f;

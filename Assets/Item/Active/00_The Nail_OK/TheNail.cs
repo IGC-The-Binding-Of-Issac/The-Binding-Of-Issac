@@ -26,6 +26,7 @@ public class TheNail : ActiveInfo
         if(canUse)
         {
             PlayerManager.instance.playerMaxHp += 2;
+            UIManager.instance.AddHeart();
             PlayerManager.instance.playerMoveSpeed -= 0.08f;
             PlayerManager.instance.playerDamage += 0.5f;
 

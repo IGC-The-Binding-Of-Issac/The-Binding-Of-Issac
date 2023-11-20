@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class TheWafer : ItemInfo
 {
-    // Start is called before the first frame update
-    private void Start()
+    public override void Start()
     {
+        base.Start();
         SetItemCode(8);
         SetItemString("¹Ð»§",
                       "Åº¼öÈ­¹° µ¢¾î¸®",

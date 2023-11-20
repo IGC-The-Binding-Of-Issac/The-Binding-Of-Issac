@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class WhipWorm : TrinketInfo
 {
+    [Header("beforeStatement")]
     float beforeDropRange;
     float beforeDropShotDelay;
+
     private void Start()
     {
         SetTrinketItemCode(5);
@@ -26,6 +28,7 @@ public class WhipWorm : TrinketInfo
     {
         beforeDropRange = PlayerManager.instance.playerRange;
         beforeDropShotDelay = PlayerManager.instance.playerShotDelay;
+
         PlayerManager.instance.playerRange = beforeDropRange - 1.2f; 
         PlayerManager.instance.playerShotDelay = beforeDropShotDelay - 0.3f;
     }

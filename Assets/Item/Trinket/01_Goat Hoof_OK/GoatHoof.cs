@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GoatHoof : TrinketInfo
 {
+    [Header("beforeStatement")]
     float beforeDropMoveSpeed;
     float beforeDropShotDelay;
     void Awake()
@@ -17,7 +18,6 @@ public class GoatHoof : TrinketInfo
 
     public override void GetItem()
     {
-
         PlayerManager.instance.playerMoveSpeed += 0.16f;
         PlayerManager.instance.playerShotDelay += 0.16f;
     }
@@ -25,6 +25,7 @@ public class GoatHoof : TrinketInfo
     {
         beforeDropMoveSpeed = PlayerManager.instance.playerMoveSpeed;
         beforeDropShotDelay = PlayerManager.instance.playerShotDelay;
+
         PlayerManager.instance.playerMoveSpeed = beforeDropMoveSpeed - 0.16f;
         PlayerManager.instance.playerShotDelay = beforeDropShotDelay - 0.16f;
     }

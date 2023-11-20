@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class GuppyTail : ItemInfo
 {
-    private void Start()
+    public override void Start()
     {
+        base.Start();
         SetItemCode(15);
         SetItemString("备乔狼 部府",
                       "肋赴 备乔 部府",
@@ -16,6 +17,7 @@ public class GuppyTail : ItemInfo
     {
         PlayerManager.instance.playerMaxHp = 2;
         PlayerManager.instance.playerHp = PlayerManager.instance.playerMaxHp;
+        UIManager.instance.DelHeart();
         PlayerManager.instance.deathCount = 9;
     }
 }

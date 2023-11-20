@@ -5,8 +5,9 @@ using UnityEngine;
 public class MagicMushroom : ItemInfo
 {
     public GameObject playerObj;
-    private void Start()
+    public override void Start()
     {
+        base.Start();
         SetItemCode(3);
         SetItemString("요술 버섯",
                       "모두 좋은!",
@@ -26,6 +27,9 @@ public class MagicMushroom : ItemInfo
 
         PlayerManager.instance.playerMaxHp+=2;
         PlayerManager.instance.playerHp = PlayerManager.instance.playerMaxHp;
+        UIManager.instance.AddHeart();
+        UIManager.instance.SetPlayerCurrentHP();
+
         PlayerManager.instance.playerMoveSpeed += 0.3f;
         PlayerManager.instance.playerDamage += 0.3f;
         PlayerManager.instance.playerDamage *= 1.5f;

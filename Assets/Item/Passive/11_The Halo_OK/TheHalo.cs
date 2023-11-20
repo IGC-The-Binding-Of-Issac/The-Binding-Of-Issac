@@ -5,8 +5,9 @@ using UnityEngine;
 public class TheHalo : ItemInfo
 {
     public Sprite HaloImg;
-    private void Start()
+    public override void Start()
     {
+        base.Start();
         SetItemCode(11);
         SetItemString("±¤·û",
                       "Ãµ»ç",
@@ -17,6 +18,7 @@ public class TheHalo : ItemInfo
     public override void UseItem()
     {
         PlayerManager.instance.playerMaxHp += 2;
+        UIManager.instance.AddHeart();
         PlayerManager.instance.playerShotDelay -= 0.07f;
         PlayerManager.instance.playerDamage -= 0.3f;
         PlayerManager.instance.CheckedShotDelay();

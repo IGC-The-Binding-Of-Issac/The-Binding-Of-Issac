@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Pentagram : ItemInfo
 {
-    private void Start()
+    public override void Start()
     {
+        base.Start();
         SetItemCode(7);
         SetItemString("오망성",
                       "공격력 증가",
@@ -16,5 +17,6 @@ public class Pentagram : ItemInfo
     {
         PlayerManager.instance.playerDamage += 1.0f;
         PlayerManager.instance.playerMaxHp += 2;
+        UIManager.instance.AddHeart();
     }
 }

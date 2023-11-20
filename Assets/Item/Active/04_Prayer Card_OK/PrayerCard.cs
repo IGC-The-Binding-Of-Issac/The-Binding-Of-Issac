@@ -18,6 +18,7 @@ public class PrayerCard : ActiveInfo
         if (canUse)
         {
             PlayerManager.instance.playerMaxHp += 2;
+            UIManager.instance.AddHeart();
             canUse = false;
             Invoke("SetCanUse", 1f);
             GameManager.instance.playerObject.GetComponent<PlayerController>().canChangeItem = false;

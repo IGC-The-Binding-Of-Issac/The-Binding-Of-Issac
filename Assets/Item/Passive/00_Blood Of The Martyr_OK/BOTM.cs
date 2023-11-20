@@ -10,8 +10,9 @@ public class BOTM : ItemInfo
     public Sprite MartyrImg;
 
 
-    private void Start()
+    public override void Start()
     {
+        base.Start();
         SetItemCode(0);
         SetItemString("월계관",
                       "순교자의 힘",
