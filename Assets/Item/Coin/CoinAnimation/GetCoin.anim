@@ -89,7 +89,7 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.2
+  - time: 0.21666667
     functionName: GetCoin
     data: 
     objectReferenceParameter: {fileID: 11500000, guid: 315ae463112142f4a82b8dff1d162d87, type: 3}

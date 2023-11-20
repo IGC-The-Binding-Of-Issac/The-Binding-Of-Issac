@@ -44,11 +44,8 @@ public class NormalChest : MonoBehaviour
 
     void OpenChest()
     {
-        GameObject coin;
-        coin = ItemManager.instance.itemTable.GetDropItem(0); // 코인 받아오기
-        coin.transform.position = gameObject.transform.position;
-        coin.GetComponent<Coin>().DropCoin();
 
+        ItemManager.instance.itemTable.Dropitem(transform.position, 1); // 코인 받아오기
         // Before
         //for (int i = 0; i < 2; i++)
         //{

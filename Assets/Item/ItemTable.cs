@@ -153,6 +153,28 @@ public class ItemTable : MonoBehaviour
         return null;
     }
     
+    public void Dropitem(Vector3 dropPosition, int itemCode)
+    {
+        GameObject dropItem;
+        switch(itemCode)
+        {
+            case 0:
+                dropItem = GetDropItem(itemCode); // 아이템 받아오기
+                dropItem.transform.position = dropPosition;
+                dropItem.GetComponent<Coin>().DropCoin();
+                break;
+            case 1:
+                dropItem = GetDropItem(itemCode); // 아이템 받아오기
+                dropItem.transform.position = dropPosition;
+                dropItem.GetComponent<Heart>().DropHeart();
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+        }
+    }
+
     public void ReturnDropItem(GameObject dropitem)
     {
         if (dropitem.GetComponent<Coin>() != null)

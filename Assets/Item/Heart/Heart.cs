@@ -4,20 +4,22 @@ using UnityEngine;
 
 public class Heart : MonoBehaviour
 {
-    private Rigidbody2D rb;
     private CapsuleCollider2D cl;
     private float duration = 2;
     private float smoothness = 0.01f;
 
+    bool getDelay;
     public void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        cl = GetComponent<CapsuleCollider2D>();
+    }
+
+    public void DropHeart()
+    {
         float randomX = Random.Range(-1.0f, 1.0f);
         float randomY = Random.Range(-1.0f, 1.0f);
         float randomForce = Random.Range(50f, 70f);
-        rb.AddForce(new Vector2(randomX, randomY) * randomForce);
-
-        cl = GetComponent<CapsuleCollider2D>();
+        GetComponent<Rigidbody2D>().AddForce(new Vector2(randomX, randomY) * randomForce);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -33,7 +35,7 @@ public class Heart : MonoBehaviour
         else if (collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Object_Fire")
             || collision.gameObject.CompareTag("Object_Poop") || collision.gameObject.CompareTag("Object_Rock"))
         {
-            rb.velocity = new Vector2(0, 0);
+            GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
         }
     }
 
@@ -44,13 +46,16 @@ public class Heart : MonoBehaviour
         {
             ContactPoint2D contactPoint = collision.GetContact(0);
             Vector2 direction = new Vector2(transform.position.x - contactPoint.point.x, transform.position.y - contactPoint.point.y);
-            rb.AddForce((direction).normalized * 35f);
+            GetComponent<Rigidbody2D>().AddForce((direction).normalized * 35f);
         }
     }
     IEnumerator getHeart()
     {
         gameObject.GetComponent<AudioSource>().volume = SoundManager.instance.GetSFXVolume();
         gameObject.GetComponent<AudioSource>().Play(); // È¹µæ »ç¿îµå
+
+        ResetObject();
+
         float progress = 0;
         float increment = smoothness / duration;
         while (progress < 0.65f)
@@ -60,21 +65,25 @@ public class Heart : MonoBehaviour
             yield return new WaitForSeconds(smoothness);
             if (transform.localScale.y <= 0)
             {
-                Destroy(gameObject);
+                transform.localPosition = Vector3.zero;
+                gameObject.SetActive(false);
+                ItemManager.instance.itemTable.ReturnDropItem(gameObject);
             } 
         }
     }
 
+    
     private void Update()
     {
         if (PlayerManager.instance.playerHp == PlayerManager.instance.playerMaxHp)
             cl.isTrigger = false;
-        
+   
         else cl.isTrigger = true;
     }
 
     public void ResetObject()
     {
-
+        gameObject.layer = 14;
+        transform.localScale = Vector3.one;
     }
 }
