@@ -198,6 +198,7 @@ MonoBehaviour:
   bombSpr: {fileID: 0}
   rb: {fileID: 0}
   bc: {fileID: 0}
+  CanAttack: 0
   explosionClip: {fileID: 8300000, guid: 64939c67237cb1f4fb459d81a3e259dd, type: 3}
   putClip: {fileID: 8300000, guid: b541f4e9c49a68149925b81d4f3fd276, type: 3}
 --- !u!82 &5432395509065279153
@@ -210,9 +211,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: b541f4e9c49a68149925b81d4f3fd276, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.18518518
   m_Pitch: 1
   Loop: 0
   Mute: 0

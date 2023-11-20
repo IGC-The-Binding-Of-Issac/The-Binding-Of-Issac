@@ -16,7 +16,7 @@ public class PutBomb : MonoBehaviour
     private float smoothness = 0.01f;
     private float bossBombDamage = 30f;
 
-    bool CanAttack;
+    public bool CanAttack;
 
     public AudioClip explosionClip;
     public AudioClip putClip;
@@ -27,7 +27,6 @@ public class PutBomb : MonoBehaviour
         bombSpr = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
         bc = GetComponent<BoxCollider2D>();
-        PlayerBomb();
     }
 
     public void PlayerBomb()
@@ -42,7 +41,6 @@ public class PutBomb : MonoBehaviour
     }
     public IEnumerator Boom()
     {
-
         float progress = 0;
         float increment = smoothness / duration;
         while (progress < 0.7f)
@@ -51,9 +49,11 @@ public class PutBomb : MonoBehaviour
             progress += increment;
             yield return new WaitForSeconds(smoothness);
         }
+    }
+    public void DefaultBomb()
+    {
         bombSpr.color = Color.white;
     }
-
 
     public void OnTriggerExit2D(Collider2D collision)
     {
@@ -89,7 +89,7 @@ public class PutBomb : MonoBehaviour
             }
             if(collision.CompareTag("Enemy"))
             {
-                collision.GetComponent<TEnemy>().GetDamage(100);   
+                collision.GetComponent<TEnemy>().GetDamage(10);   
             }
             if(collision.CompareTag("Player"))
             {
@@ -102,7 +102,7 @@ public class PutBomb : MonoBehaviour
 
     public void BombDelete()
     {
-        Destroy(this.gameObject);
+        GameManager.instance.playerObject.GetComponent<PlayerController>().ReturnBombPooling(gameObject);
     }
 
     public void BombAttack()
