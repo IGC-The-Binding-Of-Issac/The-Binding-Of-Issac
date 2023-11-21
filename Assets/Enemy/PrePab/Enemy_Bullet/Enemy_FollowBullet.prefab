@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 4861285493161681724}
   - component: {fileID: 1095351606082658739}
   - component: {fileID: 954026665604628522}
-  - component: {fileID: 682580402104619943}
   - component: {fileID: 4061128271058144660}
+  - component: {fileID: 6372115616256701287}
   m_Layer: 0
-  m_Name: Enemy_Bullet
+  m_Name: Enemy_FollowBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -160,20 +160,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &682580402104619943
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5075845781784470873}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e3aa5823cb281443a7fc62350069889, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletDesti: {x: 0, y: 0, z: 0}
-  playerPosi: {fileID: 0}
 --- !u!95 &4061128271058144660
 Animator:
   serializedVersion: 5
@@ -195,3 +181,17 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6372115616256701287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5075845781784470873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba35f3198d7beca46b66cb9dc68a3504, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletDesti: {x: 0, y: 0, z: 0}
+  playerPosi: {fileID: 0}

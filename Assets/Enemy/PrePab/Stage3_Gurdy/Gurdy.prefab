@@ -83,7 +83,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 118
+  m_SortingOrder: 108
   m_Sprite: {fileID: 1166630846, guid: 98a4489290e1ca441a104c70db096513, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -141,7 +141,6 @@ MonoBehaviour:
   eCurState: 0
   ePreState: 0
   bigShootBullet: {fileID: 6279111789319045818, guid: c30a7f436a34a5d4a8e6cab40993ba6f, type: 3}
-  rightPosition: {fileID: 0}
   pooter: {fileID: 4487783121691819913, guid: 7b81fc2038c0a1d49a5fb4450c995b69, type: 3}
   childAni: {fileID: 0}
   Children: []
@@ -483,7 +482,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 120
+  m_SortingOrder: 109
   m_Sprite: {fileID: -1304315328, guid: 98a4489290e1ca441a104c70db096513, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

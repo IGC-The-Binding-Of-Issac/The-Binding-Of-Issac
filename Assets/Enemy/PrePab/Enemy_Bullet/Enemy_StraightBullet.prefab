@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 6241269789193929961}
   - component: {fileID: 969851009057215379}
   - component: {fileID: 5401594402326431445}
-  - component: {fileID: 898604137622673318}
   - component: {fileID: 2334770537269432906}
+  - component: {fileID: 4862071120753487709}
   m_Layer: 0
   m_Name: Enemy_StraightBullet
   m_TagString: Untagged
@@ -119,18 +119,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &898604137622673318
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6279111789319045818}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d615938c0512941489418664f3019ab2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &2334770537269432906
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -183,3 +171,15 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4862071120753487709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6279111789319045818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87853de1da010474a9538696375c69e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
