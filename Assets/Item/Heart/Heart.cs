@@ -35,6 +35,7 @@ public class Heart : MonoBehaviour
             getDelay = true;
             gameObject.layer = 31;
             PlayerManager.instance.playerHp+=2;
+            UIManager.instance.SetPlayerCurrentHP();
             if (PlayerManager.instance.playerHp > PlayerManager.instance.playerMaxHp)
                 PlayerManager.instance.playerHp = PlayerManager.instance.playerMaxHp;
             StartCoroutine(getHeart());

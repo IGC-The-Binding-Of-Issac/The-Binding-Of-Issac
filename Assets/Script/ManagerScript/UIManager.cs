@@ -224,14 +224,17 @@ public class UIManager : MonoBehaviour
             GameObject eheart = Instantiate(emptyHeart) as GameObject;
             eheart.transform.SetParent(heartUI);
         }
+        SetPlayerCurrentHP();
     }
+
     public void DelHeart() // 최대 체력 감소
     {
-        int delCount = -((PlayerManager.instance.playerMaxHp / 2) - heartUI.childCount);
+        int delCount = heartUI.childCount - (PlayerManager.instance.playerMaxHp / 2);
         for (int i = 0; i < delCount; i++)
         {
-            Destroy(heartUI.GetChild(0).gameObject);
+            Destroy(heartUI.GetChild(i).gameObject);
         }
+        SetPlayerCurrentHP();
     }
 
     public void SetPlayerCurrentHP()
