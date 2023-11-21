@@ -7,8 +7,9 @@ public class GlassCannon : ActiveInfo
     [Header("beforeStatement")]
     float beforeTearSize;
 
-    void Awake()
+    public override void Start()
     {
+        base.Start();
         SetActiveItem(2, 1);
         SetActiveString("유리 대포",
                         "조심해서 다루세요.",

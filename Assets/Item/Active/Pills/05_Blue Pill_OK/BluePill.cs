@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class BluePill : ActiveInfo
 {
-    private void Awake()
+    public override void Start()
     {
+        base.Start();
         SetActiveItem(5, 0);
         SetActiveString("???",
                         "???",

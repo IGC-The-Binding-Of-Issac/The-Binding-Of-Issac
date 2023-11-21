@@ -552,6 +552,7 @@ MonoBehaviour:
   DrBombPointTransform: {fileID: 9111248821616009760}
   tearDefaultSprite: {fileID: 1837185413, guid: 64f0cce7912310a489ab219e28d20338, type: 3}
   bombDefaultSprite: {fileID: -153517370, guid: 4d38a3b189607af4ab7cd1369fa326f5, type: 3}
+  tearY: 0
   HeadItem: {fileID: 4835568290336441186}
   CheckedObject: {fileID: 0}
   tear: {fileID: 5114894525887414092, guid: ba1b1ea4a7a80f44185689dfb5626760, type: 3}
@@ -1054,6 +1055,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8c5083a210b89844908a124a244a209, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mask:
+    serializedVersion: 2
+    m_Bits: 1024
   startPosition: {fileID: 5449846101330744763}
   shootForceX: 0
   shootForceY: 0

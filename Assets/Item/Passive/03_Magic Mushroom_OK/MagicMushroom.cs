@@ -25,7 +25,7 @@ public class MagicMushroom : ItemInfo
     {
         playerObj = GameManager.instance.playerObject;
 
-        PlayerManager.instance.playerMaxHp+=2;
+        PlayerManager.instance.playerMaxHp += 2;
         PlayerManager.instance.playerHp = PlayerManager.instance.playerMaxHp;
         UIManager.instance.AddHeart();
         UIManager.instance.SetPlayerCurrentHP();
@@ -36,8 +36,8 @@ public class MagicMushroom : ItemInfo
 
         PlayerManager.instance.playerMoveSpeed += 0.3f;
         PlayerManager.instance.playerRange += 2.5f;
-        PlayerManager.instance.playerTearSize *= 1.1f;
-        PlayerManager.instance.playerSize *= 1.1f;
+        PlayerManager.instance.playerTearSize *= 1.15f;
+        PlayerManager.instance.playerSize *= 1.2f;
         PlayerManager.instance.ChgTearSize();
         PlayerManager.instance.ChgPlayerSize();
     }

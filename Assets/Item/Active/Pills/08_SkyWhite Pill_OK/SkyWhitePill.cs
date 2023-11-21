@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class SkyWhitePill : ActiveInfo
 {
-    private void Awake()
+    public override void Start()
     {
+        base.Start();
         SetActiveItem(8, 0);
         SetActiveString("???",
                         "???",

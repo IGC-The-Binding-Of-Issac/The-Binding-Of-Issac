@@ -6,8 +6,9 @@ public class TheD6 : ActiveInfo
 {
 
     public LayerMask itemMask;
-    private void Awake()
+    public override void Start()
     {
+        base.Start();
         SetActiveItem(20, 6);
         SetActiveString("The D6",
                         "운명을 바꾸는 능력",

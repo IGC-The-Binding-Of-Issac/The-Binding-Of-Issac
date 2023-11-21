@@ -8,8 +8,9 @@ public class no : TrinketInfo
     float beforeDropMoveSpeed;
     float beforeDropShotDelay;
 
-    private void Start()
+    public override void Start()
     {
+        base.Start();
         SetTrinketItemCode(7);
         SetTrinketString("æ»µ≈!",
                          "∏ÿ√Á!",

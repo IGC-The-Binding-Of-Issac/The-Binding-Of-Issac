@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class WhitePill : ActiveInfo
 {
-    private void Awake()
+    public override void Start()
     {
+        base.Start();
         SetActiveItem(9, 0);
         SetActiveString("???",
                         "???",

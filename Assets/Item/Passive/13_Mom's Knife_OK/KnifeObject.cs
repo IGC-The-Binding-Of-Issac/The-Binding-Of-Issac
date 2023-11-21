@@ -5,16 +5,19 @@ using UnityEngine;
 
 public class KnifeObject : MonoBehaviour
 {
-
+    private Rigidbody2D rb;
     [SerializeField]
     public Transform startPosition;
-    private Rigidbody2D rb;
+
+    [Header("float")]
     [SerializeField]
     float shootForceX;
     [SerializeField]
     float shootForceY;
 
+    [Header("bool")]
     public bool canShoot = true;
+    private bool canAttack = true;
 
     private void Start()
     {
@@ -139,10 +142,30 @@ public class KnifeObject : MonoBehaviour
                 collision.GetComponent<FirePlace>().GetDamage();
                 }
             }
-            //적과 박으면
-            else if (collision.gameObject.CompareTag("Enemy"))
-            {
-            collision.gameObject.GetComponent<TEnemy>().GetDamage(PlayerManager.instance.playerDamage);
-            }
+    }
+
+    //적 공격
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            knifeAttack(collision);
+        }
+    }
+    private void knifeAttack(Collider2D enemy)
+    {
+        GameObject enemyObject = enemy.gameObject;
+        if (canAttack)
+        {
+            enemyObject.GetComponent<TEnemy>().GetDamage(PlayerManager.instance.playerDamage);
+            enemyObject.GetComponent<TEnemy>().knockBack();
+            canAttack = false;
+            Invoke("CanAttackChange", 0.2f);
+        }
+       
+    }
+    private void CanAttackChange()
+    {
+        canAttack = true;
     }
 }

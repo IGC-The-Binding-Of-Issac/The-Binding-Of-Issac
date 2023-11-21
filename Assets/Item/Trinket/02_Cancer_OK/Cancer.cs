@@ -9,8 +9,9 @@ public class Cancer : TrinketInfo
     float beforeDropDamage;
     float beforeDropMoveSpeed;
 
-    private void Start()
+    public override void Start()
     {
+        base.Start();
         SetTrinketItemCode(2);
         SetTrinketString("암세포",
                          "와, 암이다!",

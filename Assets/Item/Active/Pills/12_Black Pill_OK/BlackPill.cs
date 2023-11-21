@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class BlackPill : ActiveInfo
 {
-    private void Awake()
+    public override void Start()
     {
+        base.Start();
         SetActiveItem(12, 0);
         SetActiveString("???",
                         "???",

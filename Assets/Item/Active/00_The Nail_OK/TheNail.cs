@@ -5,9 +5,9 @@ using UnityEngine;
 public class TheNail : ActiveInfo
 {
 
-    private void Awake()
+    public override void Start()
     {
-        //0번 아이템, 6칸 필요함
+        base.Start();
         SetActiveItem(0, 6);
 
         SetActiveString("대못", 

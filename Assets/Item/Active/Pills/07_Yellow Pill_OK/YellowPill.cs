@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class YellowPill : ActiveInfo
 {
-    private void Awake()
+    public override void Start()
     {
+        base.Start();
         SetActiveItem(7, 0);
         SetActiveString("???",
                         "???",

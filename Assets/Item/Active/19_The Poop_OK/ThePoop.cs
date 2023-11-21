@@ -7,8 +7,9 @@ public class ThePoop : ActiveInfo
     [SerializeField]
     GameObject goldenPoop;
 
-    private void Awake()
+    public override void Start()
     {
+        base.Start();
         SetActiveItem(19, 0);
         SetActiveString("È²±Ý¶Ë",
                         "¹«ÇÑÀ¸·Î Áñ°Ü¿ä",

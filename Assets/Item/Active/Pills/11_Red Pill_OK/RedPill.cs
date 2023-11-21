@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class RedPill : ActiveInfo
 {
-    private void Awake()
+    public override void Start()
     {
+        base.Start();
         SetActiveItem(11, 0);
         SetActiveString("???",
                         "???",

@@ -7,8 +7,9 @@ public class LemonMishap : ActiveInfo
     [SerializeField]
     private GameObject oops;
 
-    private void Awake()
+    public override void Start()
     {
+        base.Start();
         SetActiveItem(18, 1);
         SetActiveString("·¹¸óºû »ç°í",
                         "¾Ñ ...",

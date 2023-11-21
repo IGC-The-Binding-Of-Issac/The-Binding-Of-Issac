@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class GreenPill : ActiveInfo
 {
-    
-    private void Awake()
+    public override void Start()
     {
+        base.Start();
         SetActiveItem(13, 0);
         SetActiveString("???",
                         "???",

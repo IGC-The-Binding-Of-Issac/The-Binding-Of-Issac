@@ -20,7 +20,7 @@ public class ActiveInfo : MonoBehaviour
 
     [Header("bool")]
     public bool canUse;            //아이템 사용 가능 여부
-
+    public bool canGet;            //아이템 습득 가능 여부 [최초 드랍 후 바로 습득 방지]
 
     public void SetActiveItem(int code, int energy) //습득 시 아이템 설정
     {
@@ -37,9 +37,13 @@ public class ActiveInfo : MonoBehaviour
         itemInformation = information;
     }
 
+    public virtual void Start()
+    {
+        Invoke("SetDelay", 0.8f);
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player")
+        if (collision.gameObject.CompareTag("Player") && canGet
             && GameManager.instance.playerObject.GetComponent<PlayerController>().canChangeItem) //아이템 습득 가능 조건
         {
 
@@ -117,7 +121,10 @@ public class ActiveInfo : MonoBehaviour
         //Debug.Log("눈물이 남아 있는 지 재정의");
     }
 
-
+    private void SetDelay()
+    {
+        canGet = true;
+    }
     void SetCanUse()
     {
         canUse = true;

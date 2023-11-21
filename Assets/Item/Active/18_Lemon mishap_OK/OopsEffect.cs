@@ -43,7 +43,7 @@ public class OopsEffect : MonoBehaviour
             if (canDamage)
             {
                 //인수를 사용하는 메소드가 BombDamage라서 일단 이거 사용
-                collision.gameObject.GetComponentInParent<SnakeManager>().getBombDamage(8);
+                collision.gameObject.GetComponentInParent<SnakeManager>().getBombDamage(4);
                 canDamage = false;
                 Invoke("canGiveDamage", 0.5f);
             }
