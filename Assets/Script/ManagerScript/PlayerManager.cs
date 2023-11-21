@@ -157,6 +157,7 @@ public class PlayerManager : MonoBehaviour
 
     public void GetDamage()
     {
+        UIManager.instance.SetPlayerCurrentHP();
         if (ItemManager.instance.PassiveItems[6] && CanGetDamage && CanBlockDamage > 0) //È¦¸® ¸ÇÆ² ¸Ô¾úÀ» ¶§
         {
             StartCoroutine(HitDelay());
