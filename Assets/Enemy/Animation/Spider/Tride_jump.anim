@@ -102,4 +102,11 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0.6
+    functionName: LandingSound
+    data: 
+    objectReferenceParameter: {fileID: 11500000, guid: f2dfe305923f5554fb8ed4ecbbe33aaf, type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
