@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Net;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
@@ -7,7 +8,7 @@ using UnityEngine;
 public class Tear : MonoBehaviour
 {
     [Header("Player")]
-    Vector3 playerPosition;
+    public Vector3 playerPosition;
     float playerTearSize;
 
     [Header("Tear")]
@@ -47,12 +48,15 @@ public class Tear : MonoBehaviour
         //둘 사이의 거리
         betweenDistance = Vector3.Distance(tearPosition, playerPosition);
 
-        //해당 아이템을 먹으면
         if (ItemManager.instance.PassiveItems[9])
         {
-            //눈물 y값이 플레이어 y값보다 낮아지면 눈물 터트림
-            if(tearPosition.y <= playerPosition.y)
-                BoomTear();
+            if(GameManager.instance.playerObject.GetComponent<PlayerController>().tearY != -1f)
+            {
+                if(tearPosition.y < playerPosition.y)
+                {
+                    BoomTear();
+                }
+            }
         }
         //둘 사이의 거리가 플레이어 사거리보다 커지면
         if (betweenDistance >= PlayerManager.instance.playerRange)

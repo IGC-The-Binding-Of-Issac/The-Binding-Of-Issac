@@ -39,6 +39,7 @@ public class PlayerController : MonoBehaviour
     Vector2 moveInput;
     float shootHor;
     float shootVer;
+    public float tearY;
 
     [Header("PlayerState")]
     public GameObject HeadItem;
@@ -336,6 +337,7 @@ public class PlayerController : MonoBehaviour
     //발사 기능
     public void Shoot(float x, float y)
     {
+        tearY = y;
         //눈물 발사 속도
         float tearSpeed = PlayerManager.instance.playerTearSpeed;
         //눈물 생성 지점
@@ -359,10 +361,10 @@ public class PlayerController : MonoBehaviour
         if (ItemManager.instance.PassiveItems[9])
         {
             //눈물 중력 증가
-            tear.GetComponent<Rigidbody2D>().gravityScale = 3;
+            DefaultTearObject.GetComponent<Rigidbody2D>().gravityScale = 3;
         }
         else
-            tear.GetComponent<Rigidbody2D>().gravityScale = 0;
+            DefaultTearObject.GetComponent<Rigidbody2D>().gravityScale = 0;
 
         CheckedObject = null;
         if (y != 1) // 위 공격이 아닐때
@@ -426,10 +428,10 @@ public class PlayerController : MonoBehaviour
         if (ItemManager.instance.PassiveItems[9])
         {
             //눈물 중력 증가
-            tear.GetComponent<Rigidbody2D>().gravityScale = 3;
+            DefaultTearObject.GetComponent<Rigidbody2D>().gravityScale = 3;
         }
         else
-            tear.GetComponent<Rigidbody2D>().gravityScale = 0;
+            DefaultTearObject.GetComponent<Rigidbody2D>().gravityScale = 0;
 
         CheckedObject = null;
         if (y != 1) // 위 공격이 아닐때
