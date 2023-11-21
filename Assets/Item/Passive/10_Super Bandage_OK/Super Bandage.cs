@@ -23,6 +23,7 @@ public class SuperBandage : ItemInfo
         UIManager.instance.SetPlayerCurrentHP();
         PlayerManager.instance.CheckedPlayerHP();
         PlayerManager.instance.playerShotDelay-=0.1f;
+        PlayerManager.instance.CheckedShotDelay();
         //Ä³¸¯ÅÍÀÇ ´«¹°ÀÌ »¡°²°Ô º¯ÇÑ´Ù.
         
     }

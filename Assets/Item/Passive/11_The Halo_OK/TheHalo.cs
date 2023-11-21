@@ -21,6 +21,7 @@ public class TheHalo : ItemInfo
         UIManager.instance.AddHeart();
         PlayerManager.instance.playerShotDelay -= 0.07f;
         PlayerManager.instance.playerDamage -= 0.3f;
+        PlayerManager.instance.CheckedDamage();
         PlayerManager.instance.CheckedShotDelay();
         //캐릭터 머리 위에 천사링 생성
         GameManager.instance.playerObject.GetComponent<PlayerController>().HeadItem.GetComponent<SpriteRenderer>().sprite = HaloImg;

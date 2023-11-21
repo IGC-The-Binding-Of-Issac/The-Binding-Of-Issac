@@ -19,5 +19,6 @@ public class GuppyTail : ItemInfo
         PlayerManager.instance.playerHp = PlayerManager.instance.playerMaxHp;
         UIManager.instance.DelHeart();
         PlayerManager.instance.deathCount = 9;
+        UIManager.instance.deathCount.gameObject.transform.parent.gameObject.SetActive(true);
     }
 }

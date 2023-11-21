@@ -30,5 +30,6 @@ public class no : TrinketInfo
 
         PlayerManager.instance.playerMoveSpeed = beforeDropMoveSpeed * 2f;  
         PlayerManager.instance.playerShotDelay = beforeDropShotDelay / 2f;
+        PlayerManager.instance.CheckedShotDelay();
     }
 }

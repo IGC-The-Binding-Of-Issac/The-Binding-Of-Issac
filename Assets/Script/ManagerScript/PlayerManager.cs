@@ -73,10 +73,17 @@ public class PlayerManager : MonoBehaviour
     {
         if(playerShotDelay < 0.025)
         {
-            playerShotDelay = 0.025f;
+            playerShotDelay = 0.05f;
         }
     }
 
+    public void CheckedDamage()
+    {
+        if(playerDamage < 0.3f)
+        {
+            playerDamage = 0.3f;
+        }
+    }
     #region SkinChange
     public void SetHeadSkin(int index)
     {
