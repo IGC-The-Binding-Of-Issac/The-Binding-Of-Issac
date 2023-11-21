@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ItemTable : MonoBehaviour
@@ -58,7 +59,7 @@ public class ItemTable : MonoBehaviour
         keyPool = new Stack<GameObject>();
 
         // 오브젝트 생성
-        for(int i = 0; i < 10; i++)
+        for(int i = 0; i < 40; i++)
         {
             CreateCoin();
             CreateHeart();
@@ -72,7 +73,6 @@ public class ItemTable : MonoBehaviour
         GameObject coin = Instantiate(DropItems[0], dropItemPool_Transform.position, Quaternion.identity);
         coin.transform.SetParent(dropItemPool_Transform);
         coinPool.Push(coin);
-        SetSFXObject(coin);
         coin.SetActive(false);
     }
 
@@ -81,7 +81,6 @@ public class ItemTable : MonoBehaviour
         GameObject heart = Instantiate(DropItems[1], dropItemPool_Transform.position, Quaternion.identity);
         heart.transform.SetParent(dropItemPool_Transform);
         heartPool.Push(heart);
-        SetSFXObject(heart);
         heart.SetActive(false);
     }
 
@@ -90,7 +89,6 @@ public class ItemTable : MonoBehaviour
         GameObject bomb = Instantiate(DropItems[2], dropItemPool_Transform.position, Quaternion.identity);
         bomb.transform.SetParent(dropItemPool_Transform);
         bombPool.Push(bomb);
-        SetSFXObject(bomb);
         bomb.SetActive(false);
     }
 
@@ -99,7 +97,6 @@ public class ItemTable : MonoBehaviour
         GameObject key = Instantiate(DropItems[3], dropItemPool_Transform.position, Quaternion.identity);
         key.transform.SetParent(dropItemPool_Transform);
         keyPool.Push(key);
-        SetSFXObject(key);
         key.SetActive(false);
     }
     #endregion
@@ -354,16 +351,6 @@ public class ItemTable : MonoBehaviour
     {
         return PassiveItems[index].GetComponent<SpriteRenderer>().sprite;
     }
-
-    void SetSFXObject(GameObject obj)
-    {
-        // 매개변수로 받은 오브젝트에 오디오소스가 있는지 확인후 sfxobject로 등록
-        if(obj.GetComponent<AudioSource>() != null)
-        {
-            SoundManager.instance.sfxObjects.Add(obj.GetComponent<AudioSource>());
-        }
-    }
-
     #region archive
     public GameObject ObjectBreak() // 오브젝트 부쉈을때
     {

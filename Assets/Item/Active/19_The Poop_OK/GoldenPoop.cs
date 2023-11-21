@@ -13,7 +13,6 @@ public class GoldenPoop : MonoBehaviour
     {
         col = gameObject.GetComponent<Collider2D>();
         col.isTrigger = true;
-        gameObject.GetComponent<AudioSource>().volume = SoundManager.instance.GetSFXVolume();
     }
 
     //생성 시 물리 충돌 X, 똥 Collider 벗어나면 충돌 O
@@ -37,6 +36,7 @@ public class GoldenPoop : MonoBehaviour
     }
     void DestorySound()
     {
+        gameObject.GetComponent<AudioSource>().volume = SoundManager.instance.GetSFXVolume();
         gameObject.GetComponent<AudioSource>().Play();
     }
 }
