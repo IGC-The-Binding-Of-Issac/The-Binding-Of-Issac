@@ -53,6 +53,7 @@ public class Room : MonoBehaviour
             if(ItemManager.instance.ActiveItem != null) // 보유한 액티브 아이템이 존재할때.
             {
                 ItemManager.instance.ActiveItem.GetComponent<ActiveInfo>().GetEnergy();
+                UIManager.instance.UpdateActiveEnergy();
             }
 
             // 쉴드 추가.

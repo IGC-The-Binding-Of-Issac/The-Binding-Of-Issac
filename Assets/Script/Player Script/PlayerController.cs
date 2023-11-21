@@ -225,7 +225,10 @@ public class PlayerController : MonoBehaviour
 
                     if (active.currentEnergy >= active.needEnergy) // 필요 에너지 넘었을때.
                     {
-                        if (active.activeItemCode == 1 && ItemManager.instance.coinCount <= 0) return;
+                        if (active.activeItemCode == 1 && ItemManager.instance.coinCount <= 0)
+                        {
+                            return;
+                        }
                         else
                         {
                             StartCoroutine(UseActiveItem()); // 아이템 사용 애니메이션
@@ -236,6 +239,7 @@ public class PlayerController : MonoBehaviour
                             }
                         }
                         active.currentEnergy = 0;
+                        UIManager.instance.UpdateActiveEnergy();
                         canUseActive = false;
                         Invoke("SetActiveDelay", 1f);
                         Invoke("SetCanChangeItem", 1f);
