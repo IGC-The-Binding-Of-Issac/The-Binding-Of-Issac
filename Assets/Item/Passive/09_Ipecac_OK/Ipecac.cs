@@ -18,7 +18,7 @@ public class Ipecac : ItemInfo
     public override void UseItem()
     {
         PlayerManager.instance.playerHp--;
-        UIManager.instance.DelHeart();
+        UIManager.instance.SetPlayerCurrentHP();
         PlayerManager.instance.playerTearSpeed *= 2f;
         PlayerManager.instance.CheckedPlayerHP();
         PlayerManager.instance.SetHeadSkin(1);

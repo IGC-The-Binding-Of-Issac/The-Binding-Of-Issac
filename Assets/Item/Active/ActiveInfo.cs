@@ -42,6 +42,7 @@ public class ActiveInfo : MonoBehaviour
         if (collision.gameObject.CompareTag("Player")
             && GameManager.instance.playerObject.GetComponent<PlayerController>().canChangeItem) //아이템 습득 가능 조건
         {
+
             gameObject.layer = 31; //NoCollision으로 Layer 변경
 
             if (ItemManager.instance.ActiveItem == null) //액티브 아이템 최초 습득 시
@@ -74,6 +75,7 @@ public class ActiveInfo : MonoBehaviour
                 ActiveGet(collision);
             }
             Invoke("SetCanChangeItem", 1f);
+            UIManager.instance.UpdateActiveEnergy();
         }
     }
     //아이템 저장 (대충 창고 역할)
@@ -141,9 +143,16 @@ public class ActiveInfo : MonoBehaviour
     //방 클리어 시 currentEnergy 증가
     public void GetEnergy()
     {
+        //현재 보유 에너지가 필요한 에너지보다 많을 시
         if (currentEnergy >= needEnergy)
             return;
-
-        currentEnergy++;
+        //장신구 중 AAA Battery를 소유하고 있을 시
+        if (ItemManager.instance.TrinketItem != null && ItemManager.instance.TrinketItem.GetComponent<TrinketInfo>().trinketItemCode == 4)
+        {
+            if (needEnergy <= 1) currentEnergy++;
+            else currentEnergy += 2;
+        }
+        else 
+            currentEnergy++;
     }
 }
