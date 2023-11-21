@@ -5,8 +5,9 @@ using UnityEngine;
 public class HalfRedPill : ActiveInfo
 {
 
-    private void Awake()
+    public override void Start()
     {
+        base.Start();
         SetActiveItem(10, 0);
         SetActiveString("???",
                         "???",

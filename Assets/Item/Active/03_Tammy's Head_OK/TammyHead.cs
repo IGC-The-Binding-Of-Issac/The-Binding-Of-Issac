@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class TammyHead : ActiveInfo
 {
-    private int shootCount;
-    void Awake()
+    public override void Start()
     {
+        base.Start();
         SetActiveItem(3, 1);
         SetActiveString("태미의 머리",
                         "충전식 눈물 폭발",

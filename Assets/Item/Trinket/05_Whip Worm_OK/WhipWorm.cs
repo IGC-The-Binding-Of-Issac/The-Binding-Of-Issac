@@ -8,8 +8,9 @@ public class WhipWorm : TrinketInfo
     float beforeDropRange;
     float beforeDropShotDelay;
 
-    private void Start()
+    public override void Start()
     {
+        base.Start();
         SetTrinketItemCode(5);
         SetTrinketString("Ã¤Âï ¹ú·¹",
                          "ÈªÄ¡!",

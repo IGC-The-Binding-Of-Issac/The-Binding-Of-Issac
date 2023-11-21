@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class PrayerCard : ActiveInfo
 {
-    void Awake()
+    public override void Start()
     {
+        base.Start();
         SetActiveItem(4, 4);
         SetActiveString("기도자 카드",
                         "재사용가능한 영원",

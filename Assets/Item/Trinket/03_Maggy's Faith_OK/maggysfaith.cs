@@ -8,8 +8,9 @@ public class maggysfaith : TrinketInfo
     float beforeDropTearSpeed;
     float beforeDropRange;
 
-    private void Start()
+    public override void Start()
     {
+        base.Start();
         SetTrinketItemCode(3);
         SetTrinketString("∏≈±‚¿« πœ¿Ω",
                          "πœ¿Ω¿« ¥Î∞°",

@@ -18,5 +18,6 @@ public class HolyMantle : ItemInfo
     public override void UseItem()
     {
         PlayerManager.instance.CanBlockDamage += 3;
+        UIManager.instance.guardCount.transform.parent.gameObject.SetActive(true);
     }
 }

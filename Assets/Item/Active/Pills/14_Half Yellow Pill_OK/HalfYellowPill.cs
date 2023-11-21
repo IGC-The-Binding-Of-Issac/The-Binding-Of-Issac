@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class HalfYellowPill : ActiveInfo
 {
-
-    private void Awake()
+    public override void Start()
     {
+        base.Start();
         SetActiveItem(14, 0);
         SetActiveString("???",
                         "???",

@@ -18,10 +18,11 @@ public class SuperBandage : ItemInfo
     public override void UseItem()
     {
         PlayerManager.instance.playerMaxHp-=2;
-        UIManager.instance.DelHeart();
         PlayerManager.instance.playerHp-=2;
+        UIManager.instance.DelHeart();
         UIManager.instance.SetPlayerCurrentHP();
         PlayerManager.instance.CheckedPlayerHP();
+
         PlayerManager.instance.playerShotDelay-=0.1f;
         PlayerManager.instance.CheckedShotDelay();
         //Ä³¸¯ÅÍÀÇ ´«¹°ÀÌ »¡°²°Ô º¯ÇÑ´Ù.

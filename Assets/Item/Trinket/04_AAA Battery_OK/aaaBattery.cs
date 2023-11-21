@@ -8,13 +8,16 @@ public class aaaBattery : TrinketInfo
     float beforeDropMoveSpeed;
     float beforeDropShotDelay;
 
-    private void Start()
+    public override void Start()
     {
+        base.Start();
         SetTrinketItemCode(4);
         SetTrinketString("AAA 건전지",
                          "파지직",
                          "공격속도 + 0.05" 
-                       + "\n이동속도 + 0.1");
+                       + "\n이동속도 + 0.1"
+                       + "\n 방 클리어 시 액티브 아이템 게이지" 
+                       + "\n 충전 효율이 두 배가 된다.");
     }
 
     public override void GetItem()

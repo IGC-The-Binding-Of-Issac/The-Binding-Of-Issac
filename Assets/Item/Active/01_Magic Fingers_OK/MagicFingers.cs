@@ -5,8 +5,9 @@ using UnityEngine;
 public class MagicFingers : ActiveInfo
 {
     
-    void Awake()
+    public override void Start()
     {
+        base.Start();
         SetActiveItem(1, 0);
         SetActiveString("유료 안마기",
                         "1원을 넣어주세요",
@@ -22,7 +23,7 @@ public class MagicFingers : ActiveInfo
             ItemManager.instance.coinCount--;
             PlayerManager.instance.playerDamage += 0.13f;
             PlayerManager.instance.CheckedDamage();
-        }
+          }
 
         canUse = false;
         Invoke("SetCanUse", 1f);

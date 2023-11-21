@@ -7,8 +7,9 @@ public class GoatHoof : TrinketInfo
     [Header("beforeStatement")]
     float beforeDropMoveSpeed;
     float beforeDropShotDelay;
-    void Awake()
+    public override void Start()
     {
+        base.Start();
         SetTrinketItemCode(1);
         SetTrinketString("염소 발굽",
                          "이동 속도 증가, 공격 속도 감소",

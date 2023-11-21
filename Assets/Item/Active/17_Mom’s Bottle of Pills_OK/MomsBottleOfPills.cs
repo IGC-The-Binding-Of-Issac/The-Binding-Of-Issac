@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class MomsBottleOfPills : ActiveInfo
 {
-    private void Awake()
+    public override void Start()
     {
+        base.Start();
         SetActiveItem(17, 4);
         SetActiveString("엄마의 약병",
                         "충전식 알약 생성기",
