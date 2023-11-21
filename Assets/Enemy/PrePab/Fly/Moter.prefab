@@ -549,13 +549,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00c8d3b9d6ec0014d812a1f2f4ade4c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isTracking: 0
+  isProwl: 0
+  isDetective: 0
+  isShoot: 0
+  isJump: 0
   playerInRoom: 0
   hpBarSlider: {fileID: 9204475474838603794}
-  hp: 0
-  moveSpeed: 0
-  playerPos: {fileID: 0}
-  knockBackState: 0
+  enemyBullet: {fileID: 0}
   roomInfo: {fileID: 0}
+  playerPosi: {fileID: 0}
+  eCurState: 0
+  ePreState: 0
   attackFly: {fileID: 7229639532422697358, guid: 3913fec5d6b5d5e4ea56aca55f44a03e, type: 3}
 --- !u!212 &830135226742380364
 SpriteRenderer:
@@ -640,20 +645,20 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 2eedfd2446dd28f48ac968d1b194710f, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 5
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 2
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -686,7 +691,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0

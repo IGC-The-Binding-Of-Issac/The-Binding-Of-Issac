@@ -96,6 +96,7 @@ public class TEnemy : MonoBehaviour
 
     // Enemy가 가지고 있는 컴포넌트 (init 에서 초기화)
     protected Animator animator;                // 애니메이터
+    protected AudioSource audioSource;          // 몬스터 오디오
 
     // Enemy의 상태 (enum)
     public TENEMY_STATE eCurState;              // 현재 상태
@@ -155,6 +156,7 @@ public class TEnemy : MonoBehaviour
 
         // 컴포넌트 초기화
         animator = this.gameObject.GetComponent<Animator>();
+        audioSource = this.gameObject.GetComponent<AudioSource>();
     }
 
     public virtual void En_setState() { }         // 초기 세팅 (Getcomponent, hp 설정 등)
