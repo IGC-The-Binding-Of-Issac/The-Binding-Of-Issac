@@ -14,9 +14,9 @@ public class Gurdy : TEnemy
     /// 
     /// </summary>
     /// 
-    [Header("BigAttackFly")]
+    [Header("TEnemy")]
     [SerializeField] GameObject bigShootBullet;
-    [SerializeField] GameObject rightPosition;
+    [SerializeField] GameObject pooter;
     [SerializeField] Animator childAni;
     public Transform[] Children;
 
@@ -26,6 +26,7 @@ public class Gurdy : TEnemy
     [SerializeField] bool chageState;               // 상태변환
     bool coruState;
     Coroutine runningCoroutine = null;
+    bool isGene;
 
     void Start()
     {
@@ -36,17 +37,19 @@ public class Gurdy : TEnemy
         // index3 : down
         // index4 : left
         // index5 : top
+        // index6 : left top
+        // index7 : genePosi
 
         Children = gameObject.GetComponentsInChildren<Transform>();
         animator = GetComponent<Animator>();
         childAni = Children[1].gameObject.GetComponent<Animator>();
 
         playerInRoom        = false;
-        dieParameter        = "isBigFlyDie";
+        dieParameter        = "isDie";
 
         // Enemy
-        hp                  = 100f;
-        waitforSecond       = 0.4f;
+        hp                  = 400f;
+        waitforSecond       = 1f;   // 죽기전 시간
         attaackSpeed        = 1.5f; // 총알 발사 하는 시간 
         bulletSpeed         = 5f;
 
@@ -58,6 +61,7 @@ public class Gurdy : TEnemy
         currTime = stateTime;
         chageState = true;
         coruState = true;
+        isGene = true;
     }
 
     private void Update()
@@ -70,6 +74,14 @@ public class Gurdy : TEnemy
 
     void Move() 
     {
+        if (e_isDead())
+        {
+            childAni.SetBool("isDie" , true);       // 죽기전 머리 애니메이션
+            animator.SetBool("isBeforeDie" , true); // 죽기전 몸통 애니메이션
+
+            e_destroyEnemy();
+        }
+
 
         currTime -= Time.deltaTime;
         if (currTime > 0)
@@ -82,7 +94,13 @@ public class Gurdy : TEnemy
             {
                 // 멈추기
                 StopCoroutine(runningCoroutine);
+                childAni.SetBool("isOpps", false);
+                childAni.SetBool("isdisapear", false);
+                childAni.SetBool("isShoot", false);
+                childAni.SetBool("isHi", false);
+                isGene = true;
             }
+
 
             // 초기화
             randNum();
@@ -101,28 +119,29 @@ public class Gurdy : TEnemy
 
     void gurdyShoot() 
     {
-        Debug.Log("거디 총쏨");
-
-
-        int rand = Random.Range(2 , 6); // 2~5
-
         if (coruState)
         {
-            runningCoroutine = StartCoroutine(ShootBullets(Children[rand].gameObject));
+
+            childAni.SetBool("isOpps", true);
+            childAni.SetBool("isdisapear", true);
+            runningCoroutine = StartCoroutine(ShootBullets());
             coruState = false;
         }
 
 
     }
 
-    IEnumerator ShootBullets(GameObject _obj)
+    IEnumerator ShootBullets()
     {
         float randGravityScale;
-
+        childAni.SetBool("isShoot", true);
 
         while (true)
         {
-            float randWait = Random.Range(0.2f, 0.5f);
+            int rand = Random.Range(2, 7);                  // 랜덤방향 (2~6)
+            GameObject _obj = Children[rand].gameObject;    // 랜덤 방향에 따른 자식 오브젝트
+
+            float randWait = Random.Range(0.03f, 0.1f);      // 랜덤 총알발사 사이의 시간
             bool isbullet = true;
             if (isbullet)
             {
@@ -136,12 +155,31 @@ public class Gurdy : TEnemy
             }
             yield return new WaitForSeconds(randWait);
         }
+
     }
 
     void gurdyGeneFly() 
     {
-        Debug.Log("거디 생성");
+        childAni.SetBool("isappear", true);
+        childAni.SetBool("isHi", true) ;
 
+        if (isGene)
+        { 
+            GenerateAttackFly();
+            isGene = false;
+        }
+
+    }
+
+    void GenerateAttackFly()
+    {
+        GameObject obj = Instantiate(pooter, Children[7].transform.position, Quaternion.identity) as GameObject;
+
+        // SoundManage의 sfxObject로 추가.
+        if (obj.GetComponent<AudioSource>() != null)
+            SoundManager.instance.sfxObjects.Add(obj.GetComponent<AudioSource>());
+
+        roomInfo.GetComponent<Room>().enemis.Add(obj);
     }
 
     void randTime()

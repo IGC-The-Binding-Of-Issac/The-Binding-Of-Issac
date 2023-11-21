@@ -32,7 +32,8 @@ public class EnemyStraightBullet : MonoBehaviour
         else if (collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Object_Rock")) // 벽 닿이면 삭제
         {
             ani.SetBool("bulletDestroy", true);
-            gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;   
+            gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+            gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
             Destroy(gameObject, waitForDest);
         }
 

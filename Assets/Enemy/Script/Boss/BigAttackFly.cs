@@ -58,8 +58,9 @@ public class BigAttackFly : TEnemy
 
     public void Move()
     {
-        if (e_isDead())
-            e_destroyEnemy();        
+        if (e_isDead())                     // hp가 0이하면
+            e_destroyEnemy();               // die
+
         e_findPlayer();                     // player 감지
 
         currTime -= Time.deltaTime;

@@ -538,7 +538,7 @@ TextureImporter:
         width: 45
         height: 35
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -559,7 +559,7 @@ TextureImporter:
         width: 46
         height: 35
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -567,6 +567,27 @@ TextureImporter:
       bones: []
       spriteID: 237c7153f3b242c45b0138bcb5dea434
       internalID: -1283472273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gurdy_22
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 40
+        width: 45
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bf6e1ee1b8712643bb4a2116466cb80
+      internalID: 1119611775
       vertices: []
       indices: 
       edges: []
@@ -597,6 +618,7 @@ TextureImporter:
       gurdy_2: 1114079767
       gurdy_20: -1634335740
       gurdy_21: -1283472273
+      gurdy_22: 1119611775
       gurdy_3: -239653881
       gurdy_4: -1865048410
       gurdy_5: -1641934219

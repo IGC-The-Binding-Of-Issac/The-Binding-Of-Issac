@@ -12,7 +12,7 @@ public class Footer : TEnemy
         shootParameter       = "isShoot";
 
         hp                   = 2f;
-        sight                = 2f;
+        sight                = 4f;
         moveSpeed            = 1.5f;
         attaackSpeed         = 1f;
         waitforSecond        = 0.5f;
