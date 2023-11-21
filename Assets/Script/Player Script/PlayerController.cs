@@ -17,8 +17,6 @@ public class PlayerController : MonoBehaviour
     public Transform itemPosition;
     public Transform head;
     public Transform body;
-    public Transform headClothes;
-    public Transform bodyClothes;
     public Transform useActiveItemImage;
     public Transform knifePosition;
     public Transform familiarPosition;
@@ -37,6 +35,7 @@ public class PlayerController : MonoBehaviour
     [Header("Function")]
     private float lastshot;
     Vector2 moveInput;
+    Vector2 shotInput;
     float shootHor;
     float shootVer;
     public float tearY;
@@ -89,7 +88,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         MoveAnim();
-        //ShotAnim();
+        ShotAnim();
         InstallBomb();
         UseActive();
     }
@@ -286,6 +285,7 @@ public class PlayerController : MonoBehaviour
         //세로 발사 키 입력
         shootVer = Input.GetAxis("ShootVertical");
 
+        shotInput = shootHor * Vector2.right + shootVer * Vector2.up;
         if (ItemManager.instance.PassiveItems[13] && !ItemManager.instance.PassiveItems[16])
         {
             KnifeAttack(hori,verti,shootHor, shootVer);
@@ -337,7 +337,6 @@ public class PlayerController : MonoBehaviour
     //발사 기능
     public void Shoot(float x, float y)
     {
-        ShotAnim();
         //눈물 Y값
         tearY = y;
         //눈물 발사 속도
@@ -533,135 +532,75 @@ public class PlayerController : MonoBehaviour
         //가로입력 절댓값
         playerMoveAnim.SetFloat("Left&Right", Mathf.Abs(moveInput.x));
 
-        //위로가는 방향키를 눌렀을 때
-        if (Input.GetKey(KeyCode.W))
+        if (moveInput.x < 0)
         {
-            //위로 보는 애니메이션 실행
-            playerShotAnim.SetBool("UpLook", true);
-            //다른 발사 키를 누르면
-            if (Input.GetKey(KeyCode.LeftArrow))
-            {
-                //애니메이션 종료
-                playerShotAnim.SetBool("UpLook", false);
-            }
-            if (Input.GetKey(KeyCode.DownArrow))
-            {
-                playerShotAnim.SetBool("UpLook", false);
-            }
-            if (Input.GetKey(KeyCode.RightArrow))
-            {
-                playerShotAnim.SetBool("UpLook", false);
-            }
-        }
-        else
-        {
-            playerShotAnim.SetBool("UpLook", false);
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            playerShotAnim.SetBool("DownLook", true);
-            if (Input.GetKey(KeyCode.LeftArrow))
-            {
-                playerShotAnim.SetBool("DownLook", false);
-            }
-            if (Input.GetKey(KeyCode.UpArrow))
-            {
-                playerShotAnim.SetBool("DownLook", false);
-            }
-            if (Input.GetKey(KeyCode.RightArrow))
-            {
-                playerShotAnim.SetBool("DownLook", false);
-            }
-        }
-        else
-        {
-            playerShotAnim.SetBool("DownLook", false);
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            playerShotAnim.SetBool("LeftLook", true);
-            if (Input.GetKey(KeyCode.DownArrow))
-            {
-                playerShotAnim.SetBool("LeftLook", false);
-            }
-            if (Input.GetKey(KeyCode.UpArrow))
-            {
-                playerShotAnim.SetBool("LeftLook", false);
-            }
-            if (Input.GetKey(KeyCode.RightArrow))
-            {
-                playerShotAnim.SetBool("LeftLook", false);
-            }
+            playerShotAnim.SetBool("LeftLook", true); // 왼쪽 방향
         }
         else
         {
             playerShotAnim.SetBool("LeftLook", false);
         }
-        if (Input.GetKey(KeyCode.D))
+        if (moveInput.x > 0)
         {
-            playerShotAnim.SetBool("RightLook", true);
-            if (Input.GetKey(KeyCode.DownArrow))
-            {
-                playerShotAnim.SetBool("RightLook", false);
-            }
-            if (Input.GetKey(KeyCode.UpArrow))
-            {
-                playerShotAnim.SetBool("RightLook", false);
-            }
-            if (Input.GetKey(KeyCode.LeftArrow))
-            {
-                playerShotAnim.SetBool("RightLook", false);
-            }
+            playerShotAnim.SetBool("RightLook", true); // 오른쪽 방향
         }
         else
         {
             playerShotAnim.SetBool("RightLook", false);
+        }
+        if (moveInput.y > 0)
+        {
+            playerShotAnim.SetBool("UpLook", true); // 위쪽 방향
+        }
+        else
+        {
+            playerShotAnim.SetBool("UpLook", false);
+        }
+        if (moveInput.y < 0)
+        {
+            playerShotAnim.SetBool("DownLook", true); // 아래쪽 방향
+        }
+        else
+        {
+            playerShotAnim.SetBool("DownLook", false);
         }
     }
 
     //발사 애니메이션
     void ShotAnim()
     {
-        //각 발사 방향키를 누르면
-        if (Input.GetKey(KeyCode.LeftArrow))
+        // 가로 입력 방향에 따라 몸통 애니메이션 방향 조절
+        if (shotInput.x < 0)
         {
-            //해당 방향 애니메이션 실행
-            playerShotAnim.SetBool("playerLeftShot", true);
+            playerShotAnim.SetBool("LeftShot", true); // 왼쪽 방향
         }
         else
         {
-            playerShotAnim.SetBool("playerLeftShot", false);
+            playerShotAnim.SetBool("LeftShot", false);
         }
-        if (Input.GetKey(KeyCode.RightArrow))
+        if (shotInput.x > 0)
         {
-            playerShotAnim.SetBool("playerRightShot", true);
-        }
-        else
-        {
-            playerShotAnim.SetBool("playerRightShot", false);
-        }
-        if (Input.GetKey(KeyCode.UpArrow))
-        {
-            playerShotAnim.SetBool("playerUpShot", true);
-            //위로 쏠 떄 눈물 레이어 낮게 바뀜
-            Transform allChildren = GameManager.instance.playerObject.GetComponent<PlayerController>().tearPointTransform;
-            for (int i = 0; i < allChildren.childCount; i++)
-            {
-                GameObject obj = allChildren.GetChild(i).gameObject;
-                obj.GetComponent<SpriteRenderer>().sortingOrder = 101;
-            }
+            playerShotAnim.SetBool("RightShot", true); // 오른쪽 방향
         }
         else
         {
-            playerShotAnim.SetBool("playerUpShot", false);
+            playerShotAnim.SetBool("RightShot", false);
         }
-        if (Input.GetKey(KeyCode.DownArrow))
+        if (shotInput.y > 0)
         {
-            playerShotAnim.SetBool("playerDownShot", true);
+            playerShotAnim.SetBool("UpShot", true); // 위쪽 방향
         }
         else
         {
-            playerShotAnim.SetBool("playerDownShot", false);
+            playerShotAnim.SetBool("UpShot", false);
+        }
+        if (shotInput.y < 0)
+        {
+            playerShotAnim.SetBool("DownShot", true); // 아래쪽 방향
+        }
+        else
+        {
+            playerShotAnim.SetBool("DownShot", false);
         }
     }
 
