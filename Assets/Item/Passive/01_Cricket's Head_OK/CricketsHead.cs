@@ -19,6 +19,7 @@ public class CricketsHead : ItemInfo
     {
         PlayerManager.instance.playerDamage += 0.5f;
         PlayerManager.instance.playerDamage *= 1.5f;
+        PlayerManager.instance.CheckedDamage();
         PlayerManager.instance.playerTearSize *= 1.1f;
         PlayerManager.instance.ChgTearSize();
         PlayerManager.instance.SetHeadSkin(3);

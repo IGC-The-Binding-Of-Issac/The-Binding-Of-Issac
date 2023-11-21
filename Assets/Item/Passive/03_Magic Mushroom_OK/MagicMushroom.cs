@@ -30,9 +30,11 @@ public class MagicMushroom : ItemInfo
         UIManager.instance.AddHeart();
         UIManager.instance.SetPlayerCurrentHP();
 
-        PlayerManager.instance.playerMoveSpeed += 0.3f;
         PlayerManager.instance.playerDamage += 0.3f;
         PlayerManager.instance.playerDamage *= 1.5f;
+        PlayerManager.instance.CheckedDamage();
+
+        PlayerManager.instance.playerMoveSpeed += 0.3f;
         PlayerManager.instance.playerRange += 2.5f;
         PlayerManager.instance.playerTearSize *= 1.1f;
         PlayerManager.instance.playerSize *= 1.1f;

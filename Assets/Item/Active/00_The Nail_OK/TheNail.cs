@@ -29,7 +29,7 @@ public class TheNail : ActiveInfo
             UIManager.instance.AddHeart();
             PlayerManager.instance.playerMoveSpeed -= 0.08f;
             PlayerManager.instance.playerDamage += 0.5f;
-
+            PlayerManager.instance.CheckedDamage();
             PlayerManager.instance.SetHeadSkin(4);
             PlayerManager.instance.SetBodySkin(2);
             PlayerManager.instance.SetTearSkin(1);

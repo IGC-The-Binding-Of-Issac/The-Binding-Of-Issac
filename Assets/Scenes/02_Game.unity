@@ -3163,7 +3163,8 @@ MonoBehaviour:
   coinText: {fileID: 1362639914}
   bombText: {fileID: 1401842131}
   keyText: {fileID: 2068630430}
-  DeathCount: {fileID: 1943989226}
+  deathCount: {fileID: 1943989226}
+  guardCount: {fileID: 0}
   damageText: {fileID: 1789591500}
   moveSpeedText: {fileID: 194163769}
   attackSpeedText: {fileID: 1864242038}
@@ -3926,7 +3927,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1382890439
 RectTransform:
   m_ObjectHideFlags: 0

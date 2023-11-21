@@ -26,7 +26,9 @@ public class Dr_fetus : ItemInfo
             ctr.knife.SetActive(false);
             ItemManager.instance.PassiveItems[13] = false;
             PlayerManager.instance.playerDamage -= 2.0f;
+            PlayerManager.instance.CheckedDamage();
         }
         PlayerManager.instance.playerShotDelay /= 0.5f;
+        PlayerManager.instance.CheckedShotDelay();
     }
 }

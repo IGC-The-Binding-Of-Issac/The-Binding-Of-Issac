@@ -18,6 +18,7 @@ public class TheWafer : ItemInfo
     {
         PlayerManager.instance.playerMoveSpeed -= 2f;
         PlayerManager.instance.playerDamage += 2f;
+        PlayerManager.instance.CheckedDamage();
         PlayerManager.instance.playerRange -= 2f;
     }
 }

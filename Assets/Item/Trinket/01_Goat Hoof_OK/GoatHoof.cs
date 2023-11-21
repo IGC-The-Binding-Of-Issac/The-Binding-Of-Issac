@@ -20,6 +20,7 @@ public class GoatHoof : TrinketInfo
     {
         PlayerManager.instance.playerMoveSpeed += 0.16f;
         PlayerManager.instance.playerShotDelay += 0.16f;
+        PlayerManager.instance.CheckedShotDelay();
     }
     public override void DropTrinket()
     {
@@ -28,6 +29,7 @@ public class GoatHoof : TrinketInfo
 
         PlayerManager.instance.playerMoveSpeed = beforeDropMoveSpeed - 0.16f;
         PlayerManager.instance.playerShotDelay = beforeDropShotDelay - 0.16f;
+        PlayerManager.instance.CheckedShotDelay();
     }
 }
 

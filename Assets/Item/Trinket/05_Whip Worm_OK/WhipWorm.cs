@@ -31,5 +31,6 @@ public class WhipWorm : TrinketInfo
 
         PlayerManager.instance.playerRange = beforeDropRange - 1.2f; 
         PlayerManager.instance.playerShotDelay = beforeDropShotDelay - 0.3f;
+        PlayerManager.instance.CheckedShotDelay();
     }
 }

@@ -22,9 +22,10 @@ public class Cancer : TrinketInfo
     public override void GetItem()
     {
         PlayerManager.instance.playerShotDelay -= 0.15f;
-        PlayerManager.instance.playerDamage -= 0.2f;
-        PlayerManager.instance.playerMoveSpeed -= 0.34f;
         PlayerManager.instance.CheckedShotDelay();
+        PlayerManager.instance.playerDamage -= 0.2f;
+        PlayerManager.instance.CheckedDamage();
+        PlayerManager.instance.playerMoveSpeed -= 0.34f;
     }
 
     public override void DropTrinket()
@@ -34,7 +35,9 @@ public class Cancer : TrinketInfo
         beforeDropMoveSpeed = PlayerManager.instance.playerMoveSpeed;
 
         PlayerManager.instance.playerShotDelay = beforeDropShotDelay + 0.15f;
+        PlayerManager.instance.CheckedShotDelay();
         PlayerManager.instance.playerDamage = beforeDropDamage +  0.2f;
+        PlayerManager.instance.CheckedDamage();
         PlayerManager.instance.playerMoveSpeed = beforeDropMoveSpeed + 0.34f;
     }
 }
