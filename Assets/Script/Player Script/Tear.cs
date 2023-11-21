@@ -26,11 +26,15 @@ public class Tear : MonoBehaviour
 
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
+        AudioInit();
         tearBoomAnim = GetComponent<Animator>();
         tearRB = GetComponent<Rigidbody2D>();
+    }
+
+    void AudioInit()
+    {
+        audioSource = GetComponent<AudioSource>();
         audioSource.volume = SoundManager.instance.GetSFXVolume(); // 볼륨 설정
-        ShootSound(); // shoot 사운드 실행
     }
 
     void Update()
@@ -161,6 +165,13 @@ public class Tear : MonoBehaviour
     {
         audioSource.clip = shootSound;
         audioSource.Play();
+    }
+
+    private void OnEnable()
+    {
+        if(audioSource == null)
+            AudioInit();
+        ShootSound();
     }
     #endregion
 }

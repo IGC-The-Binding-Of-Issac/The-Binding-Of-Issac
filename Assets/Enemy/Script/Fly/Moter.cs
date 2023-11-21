@@ -59,7 +59,7 @@ public class Moter : TEnemy
         // SoundManage의 sfxObject로 추가.
         if (obj.GetComponent<AudioSource>() != null)
         {
-            SoundManager.instance.sfxObjects.Add(obj.GetComponent<AudioSource>());
+            SoundManager.instance.sfxDestoryObjects.Add(obj.GetComponent<AudioSource>());
             obj.GetComponent<AudioSource>().volume = SoundManager.instance.GetSFXVolume();
         }    
 

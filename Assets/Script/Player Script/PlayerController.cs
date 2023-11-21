@@ -178,6 +178,7 @@ public class PlayerController : MonoBehaviour
         {
             GameObject tearObj = Instantiate(tear, tearPointTransform.position, Quaternion.identity);
             tearPool.Push(tearObj);
+            SetSFXObject(tearObj);
             tearObj.transform.SetParent(tearPoint.transform);
             tearObj.gameObject.SetActive(false);
         }
@@ -188,6 +189,8 @@ public class PlayerController : MonoBehaviour
         {
             GameObject tearObj = Instantiate(tear, tearPointTransform.position, Quaternion.identity);
             tearPool.Push(tearObj);
+            SetSFXObject(tearObj);
+            tearObj.GetComponent<AudioSource>().volume = SoundManager.instance.GetSFXVolume();
             tearObj.transform.SetParent(tearPoint.transform);
             tearObj.gameObject.SetActive(false);
         }
@@ -729,6 +732,14 @@ public class PlayerController : MonoBehaviour
     {
         audioSource.clip = getItemClip;
         audioSource.Play();
+    }
+
+    void SetSFXObject(GameObject obj)
+    {
+        if(obj.GetComponent<AudioSource>() != null)
+        {
+            SoundManager.instance.sfxObjects.Add(obj.GetComponent<AudioSource>());
+        }
     }
     #endregion
 }
