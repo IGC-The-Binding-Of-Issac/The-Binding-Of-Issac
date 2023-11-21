@@ -89,7 +89,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         MoveAnim();
-        ShotAnim();
+        //ShotAnim();
         InstallBomb();
         UseActive();
     }
@@ -337,6 +337,8 @@ public class PlayerController : MonoBehaviour
     //발사 기능
     public void Shoot(float x, float y)
     {
+        ShotAnim();
+        //눈물 Y값
         tearY = y;
         //눈물 발사 속도
         float tearSpeed = PlayerManager.instance.playerTearSpeed;
@@ -360,8 +362,9 @@ public class PlayerController : MonoBehaviour
         //9번 패시브 아이템을 먹으면
         if (ItemManager.instance.PassiveItems[9])
         {
-            //눈물 중력 증가
-            DefaultTearObject.GetComponent<Rigidbody2D>().gravityScale = 3;
+            if(tearY != -1)
+                //눈물 중력 증가
+                DefaultTearObject.GetComponent<Rigidbody2D>().gravityScale = 3;
         }
         else
             DefaultTearObject.GetComponent<Rigidbody2D>().gravityScale = 0;
