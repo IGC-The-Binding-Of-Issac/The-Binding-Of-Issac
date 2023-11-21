@@ -542,8 +542,6 @@ MonoBehaviour:
   itemPosition: {fileID: 6711306316167842221}
   head: {fileID: 1042874374983917579}
   body: {fileID: 7152328079427505730}
-  headClothes: {fileID: 0}
-  bodyClothes: {fileID: 0}
   useActiveItemImage: {fileID: 8591384693438208543}
   knifePosition: {fileID: 5449846101330744763}
   familiarPosition: {fileID: 3987601544564592591}
@@ -556,7 +554,8 @@ MonoBehaviour:
   HeadItem: {fileID: 4835568290336441186}
   CheckedObject: {fileID: 0}
   tear: {fileID: 5114894525887414092, guid: ba1b1ea4a7a80f44185689dfb5626760, type: 3}
-  bomb: {fileID: 9152286902886193127, guid: 7fce7d28537db664aaca9ad6d71bd9c4, type: 3}
+  putBomb: {fileID: 9152286902886193127, guid: 7fce7d28537db664aaca9ad6d71bd9c4, type: 3}
+  DrBomb: {fileID: 9152286902886193127, guid: b76f6f0bd8af3ac4a88345cb8a6a00eb, type: 3}
   tearPoint: {fileID: 4903488415990779368}
   knife: {fileID: 7157704114343907855}
   bombState: 0
@@ -1055,9 +1054,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8c5083a210b89844908a124a244a209, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mask:
-    serializedVersion: 2
-    m_Bits: 1024
   startPosition: {fileID: 5449846101330744763}
   shootForceX: 0
   shootForceY: 0

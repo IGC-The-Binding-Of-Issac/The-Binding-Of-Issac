@@ -44,7 +44,8 @@ public class PlayerController : MonoBehaviour
     public GameObject HeadItem;
     public GameObject CheckedObject;
     public GameObject tear;
-    public GameObject bomb;
+    public GameObject putBomb;
+    public GameObject DrBomb;
     public TearPoint tearPoint;
     GameObject DefaultTearObject;
 
@@ -65,6 +66,9 @@ public class PlayerController : MonoBehaviour
     Stack<GameObject> tearPool;
     Stack<GameObject> putBombPool;
     Stack<GameObject> DrBombPool;
+    GameObject tearPoolChild;
+    GameObject DrBombChild;
+    GameObject putBombChild;
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -102,17 +106,18 @@ public class PlayerController : MonoBehaviour
     {
         for (int i = 0; i < 30; i++)
         {
-            GameObject DrbombObj = Instantiate(bomb, bombPointTransform.position, Quaternion.identity);
+            GameObject DrbombObj = Instantiate(DrBomb, bombPointTransform.position, Quaternion.identity);
             DrBombPool.Push(DrbombObj);
             DrbombObj.transform.SetParent(DrBombPointTransform.transform);
             DrbombObj.gameObject.SetActive(false);
         }
+        DrBombChild = DrBombPool.Pop();
     }
     public GameObject GetDrBombPooling()
     {
         if (DrBombPool.Count == 0)
         {
-            GameObject DrbombObj = Instantiate(bomb, bombPointTransform.position, Quaternion.identity);
+            GameObject DrbombObj = Instantiate(DrBombChild, bombPointTransform.position, Quaternion.identity);
             DrBombPool.Push(DrbombObj);
             DrbombObj.transform.SetParent(DrBombPointTransform.transform);
             DrbombObj.gameObject.SetActive(false);
@@ -140,17 +145,18 @@ public class PlayerController : MonoBehaviour
     {
         for (int i = 0; i < 2; i++)
         {
-            GameObject bombObj = Instantiate(bomb, bombPointTransform.position, Quaternion.identity);
+            GameObject bombObj = Instantiate(putBomb, bombPointTransform.position, Quaternion.identity);
             putBombPool.Push(bombObj);
             bombObj.transform.SetParent(bombPointTransform.transform);
             bombObj.gameObject.SetActive(false);
         }
+        putBombChild = putBombPool.Pop();
     }
     public GameObject GetBombPooling()
     {
         if (putBombPool.Count == 0)
         {
-            GameObject bombObj = Instantiate(bomb, bombPointTransform.position, Quaternion.identity);
+            GameObject bombObj = Instantiate(putBombChild, bombPointTransform.position, Quaternion.identity);
             putBombPool.Push(bombObj);
             bombObj.transform.SetParent(bombPointTransform.transform);
             bombObj.gameObject.SetActive(false);
@@ -181,12 +187,13 @@ public class PlayerController : MonoBehaviour
             tearObj.transform.SetParent(tearPoint.transform);
             tearObj.gameObject.SetActive(false);
         }
+        tearPoolChild = tearPool.Pop();
     }
     public GameObject GetTearPooling()
     {
         if (tearPool.Count == 0)
         {
-            GameObject tearObj = Instantiate(tear, tearPointTransform.position, Quaternion.identity);
+            GameObject tearObj = Instantiate(tearPoolChild, tearPointTransform.position, Quaternion.identity);
             tearPool.Push(tearObj);
             tearObj.transform.SetParent(tearPoint.transform);
             tearObj.gameObject.SetActive(false);
@@ -376,27 +383,13 @@ public class PlayerController : MonoBehaviour
 
         //눈물이 이동속도의 영향을 받음
         //해당 이동키를 누르면 
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
         {
             Rigidbody2D rigid_bullet = DefaultTearObject.GetComponent<Rigidbody2D>();
             //해당 방향으로 힘을 줌
-            rigid_bullet.AddForce(Vector2.up * 1.5f, ForceMode2D.Impulse);
+            rigid_bullet.AddForce(moveInput * 2.5f, ForceMode2D.Impulse);
         }
-        if (Input.GetKey(KeyCode.S))
-        {
-            Rigidbody2D rigid_bullet = DefaultTearObject.GetComponent<Rigidbody2D>();
-            rigid_bullet.AddForce(Vector2.down * 1.5f, ForceMode2D.Impulse);
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            Rigidbody2D rigid_bullet = DefaultTearObject.GetComponent<Rigidbody2D>();
-            rigid_bullet.AddForce(Vector2.left * 1.5f, ForceMode2D.Impulse);
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            Rigidbody2D rigid_bullet = DefaultTearObject.GetComponent<Rigidbody2D>();
-            rigid_bullet.AddForce(Vector2.right * 1.5f, ForceMode2D.Impulse);
-        }
+        
         //2번 패시브 아이템을 먹으면
         if (ItemManager.instance.PassiveItems[2])
         {
@@ -412,6 +405,7 @@ public class PlayerController : MonoBehaviour
         //눈물 생성 지점
         Vector3 firePoint = tearPoint.transform.position + new Vector3(Random.Range(-0.5f, 0.5f), Random.Range(-0.5f, 0.5f), 0);
 
+        //16번 패시브 아이템 먹으면
         if (ItemManager.instance.PassiveItems[16])
         {
             DefaultTearObject = DrFetusBomb();
@@ -443,26 +437,11 @@ public class PlayerController : MonoBehaviour
 
         //눈물이 이동속도의 영향을 받음
         //해당 이동키를 누르면 
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
         {
             Rigidbody2D rigid_bullet = DefaultTearObject.GetComponent<Rigidbody2D>();
             //해당 방향으로 힘을 줌
-            rigid_bullet.AddForce(Vector2.up * 1.5f, ForceMode2D.Impulse);
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            Rigidbody2D rigid_bullet = DefaultTearObject.GetComponent<Rigidbody2D>();
-            rigid_bullet.AddForce(Vector2.down * 1.5f, ForceMode2D.Impulse);
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            Rigidbody2D rigid_bullet = DefaultTearObject.GetComponent<Rigidbody2D>();
-            rigid_bullet.AddForce(Vector2.left * 1.5f, ForceMode2D.Impulse);
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            Rigidbody2D rigid_bullet = DefaultTearObject.GetComponent<Rigidbody2D>();
-            rigid_bullet.AddForce(Vector2.right * 1.5f, ForceMode2D.Impulse);
+            rigid_bullet.AddForce(moveInput * 2.5f, ForceMode2D.Impulse);
         }
     }
 

@@ -115,8 +115,6 @@ public class PutBomb : MonoBehaviour
         gameObject.GetComponent<AudioSource>().clip = explosionClip;
         gameObject.GetComponent<AudioSource>().Play();
 
-        transform.position += new Vector3(0, 1f, 0);
-
         bc.isTrigger = true;
         CanAttack = true;
         bc.offset = new Vector2(0, -0.2f);
