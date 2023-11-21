@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Data.Common;
@@ -49,4 +48,9 @@ public class Tride : TEnemy
         E_Excute();                 // 상태 실행
     }
 
+
+    public void LandingSound()
+    {
+        audioSource.Play();
+    }
 }
