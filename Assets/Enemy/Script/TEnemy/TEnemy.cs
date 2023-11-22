@@ -278,7 +278,9 @@ public class TEnemy : MonoBehaviour
     {
         animator.SetTrigger(shootParameter);
         if (isRaadyShoot) {
-            GameObject bulletobj = Instantiate(enemyBullet, transform.position + new Vector3(0, -0.1f, 0), Quaternion.identity);
+            GameObject bulletobj = EnemyPooling.Instance.GetFollowBullet(this.gameObject);   // follow го╢б bullet pooling
+            //bulletobj.transform.position = gameObject.transform.position;
+            //GameObject bulletobj = Instantiate(enemyBullet, transform.position + new Vector3(0, -0.1f, 0), Quaternion.identity);
             isRaadyShoot = false;
         }
     }

@@ -10,11 +10,15 @@ public class EnemyFollowBullet : Enemy_Bullet
     [SerializeField] Vector3 bulletDesti;
     [SerializeField] Transform playerPosi;
 
+    public Vector3 setBulletDesti { set { bulletDesti = value; } }
+    public Transform setPlayerPosi { set { playerPosi = value;  } }
+
 
     bool isMoving = true;
 
     private void Start()
     {
+        isCoru = true;
         ani             = GetComponent<Animator>();
         playerPosi      = GameObject.FindWithTag("Player").transform; 
         bulletDesti     = new Vector3(playerPosi.position.x, playerPosi.position.y, 0);
@@ -36,7 +40,9 @@ public class EnemyFollowBullet : Enemy_Bullet
         if (Vector3.Distance(gameObject.transform.position, bulletDesti) <= 0.5f)
         {
             ani.SetBool("bulletDestroy", true);
-            Destroy(gameObject, waitForDest);
+            //StartCoroutine(EnemyPooling.Instance.waitReturn(waitForDest, this.gameObject)); // pooling return
         }
     }
+
+
 }
