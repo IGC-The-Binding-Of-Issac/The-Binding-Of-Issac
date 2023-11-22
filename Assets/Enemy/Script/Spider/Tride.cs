@@ -23,6 +23,8 @@ public class Tride : TEnemy
         jumpSpeed       = 2.5f;
 
         maxhp           = hp;
+
+        enemyNumber = 6;
     }
 
     public override void En_kindOfEnemy()
@@ -53,4 +55,6 @@ public class Tride : TEnemy
     {
         audioSource.Play();
     }
+
+    public override void e_ResetEnemy() { }
 }

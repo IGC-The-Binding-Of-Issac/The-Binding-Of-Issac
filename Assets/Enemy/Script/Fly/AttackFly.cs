@@ -16,6 +16,7 @@ public class AttackFly : TEnemy
         waitforSecond   = 0.5f;
 
         maxhp           = hp;
+        enemyNumber = 0;
     }
 
     public override void En_kindOfEnemy()
@@ -40,4 +41,6 @@ public class AttackFly : TEnemy
     {
         E_Excute();                 // 상태 실행
     }
+
+    public override void e_ResetEnemy() { }
 }

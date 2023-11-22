@@ -19,6 +19,8 @@ public class Moter : TEnemy
         waitforSecond    = 0.5f;
 
         maxhp            = hp;
+
+        enemyNumber = 1;
     }
 
     public override void En_kindOfEnemy()
@@ -65,4 +67,6 @@ public class Moter : TEnemy
 
         roomInfo.GetComponent<Room>().enemis.Add(obj);
     }
+
+    public override void e_ResetEnemy() { }
 }

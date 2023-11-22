@@ -56,6 +56,7 @@ public class TEnemy : MonoBehaviour
     protected float fTime;                      // prowl - 랜덤 이동 시간
     protected float randRange;                  // prowl - 랜덤 이동 거리
     protected float jumpSpeed;                  // jump -  점프 속도
+    protected int enemyNumber = -1;                  // enemyNumber = 몬스터 고유번호 ( 풀링
 
     //
     protected string dieParameter;              // 죽는   애니메이션 실행 파라미터
@@ -397,4 +398,19 @@ public class TEnemy : MonoBehaviour
         animator.SetBool(dieParameter , true);
         Destroy(gameObject , waitforSecond);
     }
+
+    #region pooling
+    // 사망했을때 해당 함수 불러오면됨.
+    // EnemyGenerate의 enemyPool로 돌아감
+    public void e_ReturnEnemy()
+    {
+        if (enemyNumber >= 0)
+        {
+            e_ResetEnemy();
+            GameManager.instance.roomGenerate.enemyGenerate.P_ReturnEnemy(gameObject, enemyNumber);
+        }
+    }
+
+    public virtual void e_ResetEnemy() { }
+    #endregion
 }

@@ -60,27 +60,50 @@ public class EnemyGenerate : MonoBehaviour
         #endregion
 
         #region 오브젝트 저장
-        //attackFlyPool.Push(attackFly);
-        //moterPool.Push(moter);
-        //pooterPool.Push(pooter);
-        //mawPool.Push(maw);
-        //pacerPool.Push(pacer);
-        //spiderPool.Push(spider);    
-        //tridePool.Push(tride);
-        #endregion
-
-        #region 오브젝트 off
-
+        enemyPool[0].Push(attackFly);
+        enemyPool[1].Push(moter);
+        enemyPool[2].Push(pooter);
+        enemyPool[3].Push(maw);
+        enemyPool[4].Push(pacer);
+        enemyPool[5].Push(spider);
+        enemyPool[6].Push(tride);
         #endregion
     }
 
 
-    //public GameObject P_GetEnemy()
-    //{
-    //    int rd = Random.Range(0,enemyPrefabs.Length);
+    public GameObject P_GetEnemy(int enemyIndex = -1)
+    {
+        // 매개변수로 받은값이 없으면 랜덤 몬스터
+        if (enemyIndex == -1 )
+            enemyIndex = Random.Range(0, enemyPrefabs.Length);
 
-    //}
+        // 풀에 오브젝트가 없을때
+        if (enemyPool[enemyIndex].Count == 0)
+        {
+            GameObject enemy = Instantiate(enemyPrefabs[enemyIndex], enemyPool_Transform.position, Quaternion.identity);
+            enemy.transform.SetParent(enemyPool_Transform);
+            enemy.SetActive(false);
+        }
+        
+        GameObject returnEnemy = enemyPool[enemyIndex].Pop();
+        returnEnemy.SetActive(true);
+        return returnEnemy;
+    }
 
+    public void P_ReturnEnemy(GameObject enemy, int enemyIndex)
+    {
+        enemyPool[enemyIndex].Push(enemy);
+    }
+
+    public void P_AllReturnEnemy()
+    {
+        for(int i = 0; i < enemyPool_Transform.childCount; i++)
+        {
+            GameObject enemyObject = enemyPool_Transform.GetChild(i).gameObject;
+
+            enemyObject.GetComponent<TEnemy>().e_ReturnEnemy();
+        }
+    }
     #endregion
 
 
