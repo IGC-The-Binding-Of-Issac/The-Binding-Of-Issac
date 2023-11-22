@@ -18,6 +18,8 @@ public class Pacer : TEnemy
         randRange       = 1f;
 
         maxhp           = hp;
+
+        enemyNumber = 4;
     }
 
     public override void En_kindOfEnemy()
@@ -42,4 +44,5 @@ public class Pacer : TEnemy
         E_Excute();                 // 상태 실행
     }
 
+    public override void e_ResetEnemy() { }
 }

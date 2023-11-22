@@ -20,6 +20,8 @@ public class Footer : TEnemy
         randRange            = 1f;
 
         maxhp                = hp;
+
+        enemyNumber = 2;
     }
 
     public override void En_kindOfEnemy()
@@ -49,4 +51,6 @@ public class Footer : TEnemy
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, sight);
     }
+
+    public override void e_ResetEnemy() { }
 }

@@ -21,6 +21,8 @@ public class Maw : TEnemy
         randRange       = 1f;
 
         maxhp           = hp;
+
+        enemyNumber = 3;
     }
 
     public override void En_kindOfEnemy()
@@ -50,4 +52,6 @@ public class Maw : TEnemy
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, sight);
     }
+
+    public override void e_ResetEnemy() { }
 }
