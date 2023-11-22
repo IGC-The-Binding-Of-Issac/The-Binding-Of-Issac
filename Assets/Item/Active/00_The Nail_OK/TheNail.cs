@@ -5,22 +5,20 @@ using UnityEngine;
 public class TheNail : ActiveInfo
 {
 
-    public override void Start()
+    public void Awake()
     {
         base.Start();
         SetActiveItem(0, 6);
-
-        SetActiveString("대못", 
+        SetActiveString("대못",
                         "일시적 악마 변신",
                         "사용 시 캐릭터가 악마로 변하여 다음의 효과를 얻는다."
                         + "\n최대 체력 + 1칸"
-                        + "\n이동 속도 - 0.08" 
+                        + "\n이동 속도 - 0.08"
                         + "\n공격력 + 0.5"
                         + "\n캐릭터의 눈물이 빨갛게 변한다.");
-
         Invoke("SetCanChangeItem", 1f);
+        Debug.Log(gameObject.GetComponent<ActiveInfo>().currentEnergy);
     }
-
     public override void UseActive()
     {
         if(canUse)

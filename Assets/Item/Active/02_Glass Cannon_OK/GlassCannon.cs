@@ -7,7 +7,7 @@ public class GlassCannon : ActiveInfo
     [Header("beforeStatement")]
     float beforeTearSize;
 
-    public override void Start()
+    public void Awake()
     {
         base.Start();
         SetActiveItem(2, 1);

@@ -62,19 +62,17 @@ public class PutBomb : MonoBehaviour
             this.GetComponent<BoxCollider2D>().isTrigger = false;
         }
     }
-
-
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if(CanAttack)
+        if (CanAttack)
         {
-            if(collision.CompareTag("Object_Rock"))
+            if (collision.CompareTag("Object_Rock"))
             {
                 collision.GetComponent<Rock>().DestroyRock();
             }
-            if(collision.CompareTag("Object_Poop"))
+            if (collision.CompareTag("Object_Poop"))
             {
-                for(int i = 0; i < 4; i++)
+                for (int i = 0; i < 4; i++)
                     collision.GetComponent<Poop>().GetDamage();
             }
             else if (collision.gameObject.name == "Golden Poop(Clone)")
@@ -87,19 +85,24 @@ public class PutBomb : MonoBehaviour
                 for (int i = 0; i < 4; i++)
                     collision.GetComponent<FirePlace>().GetDamage();
             }
-            if(collision.CompareTag("Enemy"))
+            if (collision.CompareTag("Enemy"))
             {
                 collision.GetComponent<TEnemy>().GetDamage(10);
+                CanAttack = false;
+                Invoke("CanAttackChange", 0.5f);
             }
-            if(collision.CompareTag("Player"))
+            if (collision.CompareTag("Player"))
             {
                 if (ItemManager.instance.PassiveItems[16]) return;
                 else PlayerManager.instance.GetDamage();
-
             }
         }
     }
 
+    private void CanAttackChange()
+    {
+        CanAttack = true;
+    }
     public void BombDelete()
     {
         if(GameManager.instance.playerObject.GetComponent<PlayerController>().bombState)

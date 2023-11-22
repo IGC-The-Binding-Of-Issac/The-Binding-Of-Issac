@@ -5,7 +5,7 @@ using UnityEngine;
 public class ZebraPill : ActiveInfo
 {
 
-    public override void Start()
+    public void Awake()
     {
         base.Start();
         SetActiveItem(15, 0);

@@ -67,7 +67,7 @@ public class Banner : MonoBehaviour
 
             rect.anchoredPosition = new Vector3(0,rect.anchoredPosition.y,0);
         
-            yield return new WaitForSeconds(1.3f);
+            yield return new WaitForSeconds(0.7f);
 
             while (rect.anchoredPosition.x <= 1000)
             {

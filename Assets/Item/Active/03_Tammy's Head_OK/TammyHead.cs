@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TammyHead : ActiveInfo
 {
-    public override void Start()
+    public void Awake()
     {
         base.Start();
         SetActiveItem(3, 1);

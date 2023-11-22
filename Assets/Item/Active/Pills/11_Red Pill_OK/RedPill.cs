@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RedPill : ActiveInfo
 {
-    public override void Start()
+    public void Awake()
     {
         base.Start();
         SetActiveItem(11, 0);

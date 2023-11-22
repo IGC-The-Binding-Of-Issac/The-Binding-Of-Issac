@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HalfBlackPill : ActiveInfo
 {
-    public override void Start()
+    public void Awake()
     {
         base.Start();
         SetActiveItem(16, 0);

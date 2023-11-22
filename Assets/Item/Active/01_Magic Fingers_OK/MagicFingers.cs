@@ -5,7 +5,7 @@ using UnityEngine;
 public class MagicFingers : ActiveInfo
 {
     
-    public override void Start()
+    public void Awake()
     {
         base.Start();
         SetActiveItem(1, 0);

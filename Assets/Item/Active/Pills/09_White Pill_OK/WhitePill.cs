@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WhitePill : ActiveInfo
 {
-    public override void Start()
+    public void Awake()
     {
         base.Start();
         SetActiveItem(9, 0);
