@@ -22,7 +22,7 @@ public class WhipWorm : TrinketInfo
     {
         PlayerManager.instance.playerRange += 1.2f;
         PlayerManager.instance.playerShotDelay += 0.3f;
-        PlayerManager.instance.CheckedShotDelay();
+        base.GetItem();
     }
 
     public override void DropTrinket()
@@ -32,6 +32,6 @@ public class WhipWorm : TrinketInfo
 
         PlayerManager.instance.playerRange = beforeDropRange - 1.2f; 
         PlayerManager.instance.playerShotDelay = beforeDropShotDelay - 0.3f;
-        PlayerManager.instance.CheckedShotDelay();
+        PlayerManager.instance.CheckedStatus();
     }
 }

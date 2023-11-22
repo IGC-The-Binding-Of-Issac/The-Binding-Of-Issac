@@ -26,10 +26,9 @@ public class Blindrange : TrinketInfo
     {
         if (PlayerManager.instance.playerRange > 3) PlayerManager.instance.playerRange *= 0.25f;
         PlayerManager.instance.playerDamage += 3f;
-        PlayerManager.instance.CheckedDamage();
         PlayerManager.instance.playerShotDelay -= 0.25f;
-        PlayerManager.instance.CheckedShotDelay();
         PlayerManager.instance.playerMoveSpeed -= 1.2f;
+        base.GetItem(); 
     }
 
     public override void DropTrinket()
@@ -40,10 +39,9 @@ public class Blindrange : TrinketInfo
         beforeDropShotDelay = PlayerManager.instance.playerShotDelay;
 
         PlayerManager.instance.playerRange = beforeDropRange /= 0.25f;
-        PlayerManager.instance.playerDamage = beforeDropDamage -= 5f;
-        PlayerManager.instance.CheckedDamage();
+        PlayerManager.instance.playerDamage = beforeDropDamage -= 3f;
         PlayerManager.instance.playerMoveSpeed = beforeDropMoveSpeed += 1.2f;
         PlayerManager.instance.playerShotDelay = beforeDropShotDelay += 0.25f;
-        PlayerManager.instance.CheckedShotDelay();
+        PlayerManager.instance.CheckedStatus();
     }
 }

@@ -20,7 +20,7 @@ public class CeremonialRobes : ItemInfo
         PlayerManager.instance.playerMaxHp += 4;
         UIManager.instance.AddHeart();
         PlayerManager.instance.playerDamage += 1;
-        PlayerManager.instance.CheckedDamage();
+        base.UseItem();
         //캐릭터 외형 변경
         PlayerManager.instance.SetBodySkin(3);
         PlayerManager.instance.SetHeadSkin(5);

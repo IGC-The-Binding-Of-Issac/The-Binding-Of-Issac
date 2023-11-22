@@ -45,7 +45,7 @@ public class ItemInfo : MonoBehaviour
     //패시브 아이템 습득 시 효과 재정의
     public virtual void UseItem() 
     {
-
+        PlayerManager.instance.CheckedStatus();
     }
 
     public void SetItemCode(int code)

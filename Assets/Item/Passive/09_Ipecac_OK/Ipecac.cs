@@ -20,7 +20,7 @@ public class Ipecac : ItemInfo
         PlayerManager.instance.playerHp--;
         UIManager.instance.SetPlayerCurrentHP();
         PlayerManager.instance.playerTearSpeed *= 2f;
-        PlayerManager.instance.CheckedPlayerHP();
+        base.UseItem();
         PlayerManager.instance.SetHeadSkin(1);
         PlayerManager.instance.SetBodySkin(1);
         PlayerManager.instance.SetTearSkin(2);

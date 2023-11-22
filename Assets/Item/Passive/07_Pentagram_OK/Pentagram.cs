@@ -16,8 +16,8 @@ public class Pentagram : ItemInfo
     public override void UseItem()
     {
         PlayerManager.instance.playerDamage += 1.0f;
-        PlayerManager.instance.CheckedDamage();
         PlayerManager.instance.playerMaxHp += 2;
+        base.UseItem();
         UIManager.instance.AddHeart();
     }
 }

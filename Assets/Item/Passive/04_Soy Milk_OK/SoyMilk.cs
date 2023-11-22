@@ -17,10 +17,9 @@ public class SoyMilk : ItemInfo
     public override void UseItem()
     {
         PlayerManager.instance.playerDamage *= 0.2f;
-        PlayerManager.instance.CheckedDamage();
         PlayerManager.instance.playerShotDelay /= 5.5f;
         PlayerManager.instance.playerTearSize *= 0.45f;
         PlayerManager.instance.ChgTearSize();
-        PlayerManager.instance.CheckedShotDelay();
+        base.UseItem();
     }
 }

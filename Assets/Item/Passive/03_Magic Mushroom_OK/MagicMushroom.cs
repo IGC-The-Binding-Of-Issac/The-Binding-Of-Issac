@@ -32,12 +32,11 @@ public class MagicMushroom : ItemInfo
 
         PlayerManager.instance.playerDamage += 0.3f;
         PlayerManager.instance.playerDamage *= 1.5f;
-        PlayerManager.instance.CheckedDamage();
-
         PlayerManager.instance.playerMoveSpeed += 0.3f;
         PlayerManager.instance.playerRange += 2.5f;
         PlayerManager.instance.playerTearSize *= 1.15f;
         PlayerManager.instance.playerSize *= 1.2f;
+        base.UseItem();
         PlayerManager.instance.ChgTearSize();
         PlayerManager.instance.ChgPlayerSize();
     }

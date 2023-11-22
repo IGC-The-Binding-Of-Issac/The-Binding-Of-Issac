@@ -20,8 +20,8 @@ public class TheWafer : ItemInfo
         Transform bodySize = GameManager.instance.playerObject.transform.GetChild(1).GetComponent<Transform>();
         PlayerManager.instance.playerMoveSpeed -= 1.3f;
         PlayerManager.instance.playerDamage += 2f;
-        PlayerManager.instance.CheckedDamage();
         PlayerManager.instance.playerRange -= 2f;
+        base.UseItem();
         bodySize.localScale = new Vector3(parentSize.localScale.x * 1.2f, parentSize.localScale.y, 0);
     }
 }

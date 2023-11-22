@@ -21,7 +21,7 @@ public class no : TrinketInfo
     {
         PlayerManager.instance.playerMoveSpeed /= 2f;
         PlayerManager.instance.playerShotDelay *= 2f;
-        PlayerManager.instance.CheckedShotDelay();
+        base.GetItem();
     }
 
     public override void DropTrinket()
@@ -31,6 +31,6 @@ public class no : TrinketInfo
 
         PlayerManager.instance.playerMoveSpeed = beforeDropMoveSpeed * 2f;  
         PlayerManager.instance.playerShotDelay = beforeDropShotDelay / 2f;
-        PlayerManager.instance.CheckedShotDelay();
+        PlayerManager.instance.CheckedStatus();
     }
 }

@@ -19,6 +19,7 @@ public class BluePill : ActiveInfo
         if (canUse)
         {
             PlayerManager.instance.playerMoveSpeed += 0.15f;
+            base.UseActive();
             SetActiveString("발에 붙 붙었어!",
                             "이동 속도 증가",
                             "사용 시 이동 속도가 증가한다.");
