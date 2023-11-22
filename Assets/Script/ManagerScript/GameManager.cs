@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
     public StageGenerate stageGenerate;
     public RoomGenerate roomGenerate;
     public GameObject myCamera;
-
+    
     private void Start()
     {
         SetStage(1); // 1stage create
