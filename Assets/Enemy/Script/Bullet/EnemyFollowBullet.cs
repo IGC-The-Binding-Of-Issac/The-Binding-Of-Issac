@@ -45,4 +45,10 @@ public class EnemyFollowBullet : Enemy_Bullet
     }
 
 
+    public void resetBullet()
+    {
+        Debug.Log("ÀÌ¿¡¤À¤·¤·");
+        EnemyPooling.Instance.returnBullet(this.gameObject);
+    }
+
 }

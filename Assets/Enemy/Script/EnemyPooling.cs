@@ -59,6 +59,8 @@ public class EnemyPooling : MonoBehaviour
         GameObject newObj = Instantiate(straightBullet) as GameObject;
         newObj.gameObject.SetActive(false);                         // queue에 있을 때는 안 보이게 
         newObj.transform.SetParent(straightPooling_parent);         // 부모설정
+        newObj.transform.localPosition = Vector3.zero;
+
         return newObj;
     }
 
@@ -68,11 +70,13 @@ public class EnemyPooling : MonoBehaviour
         GameObject newObj = Instantiate(followBullet) as GameObject;
         newObj.gameObject.SetActive(false);                        // queue에 있을 때는 안 보이게 
         newObj.transform.SetParent(followPooling_Parent);          // 부모설정
+        newObj.transform.localPosition = Vector3.zero;
+
         return newObj;
     }
 
     // 다른 스크립트에서 straightBullet 생성할 때 사용하는
-    public GameObject GetStraightBullet() 
+    public GameObject GetStraightBullet(GameObject shootPosi) 
     {
         GameObject obj;
 
@@ -85,12 +89,13 @@ public class EnemyPooling : MonoBehaviour
         else
         {
             obj = Instance.createStraightBullet();      // 새로운 총알 만들기
-            // return 할 때 queue로 되돌려줌 , 여기서 queue 에 안넣어줘도됨
+            poolingStraightBullet.Enqueue(obj);  //queue 에 값 추가
         }
 
+        obj.transform.position = shootPosi.transform.position;  // 스크립트 실행하는 위치로
         // 지정된 오브젝트를 return
         obj.gameObject.SetActive(true);                         // pooling 배열에서 setActive(false)로 해놓은 걸 꺼내면 보이게 만듬
-        obj.transform.SetParent(null);                          // 부모를 해제함
+        //obj.transform.SetParent(null);                          // 부모를 해제함
         return obj;
     }
 
@@ -108,25 +113,16 @@ public class EnemyPooling : MonoBehaviour
         else
         {
             obj = Instance.createFollowBullet();      // 새로운 총알 만들기
-            // 어차피 return 할 때 queue로 되돌려줌 , 여기서 queue 에 안넣어줘도됨
+            poolingFollowBullet.Enqueue(obj);  //queue 에 값 추가
         }
 
         obj.transform.position = shootPosi.transform.position;  // 스크립트 실행하는 위치로
         // 지정된 오브젝트를 return
         obj.gameObject.SetActive(true);                         // pooling 배열에서 setActive(false)로 해놓은 걸 꺼내면 보이게 만듬
-        obj.transform.SetParent(null);                          // 부모를 해제함
+        //obj.transform.SetParent(null);                          // 부모를 해제함
         return obj;
     }
 
-    // 일정시간 이후에 return
-    /*
-    public IEnumerator waitReturn(float f , GameObject obj) 
-    {
-        Debug.Log("코루틴 실헹");
-        yield return new WaitForSeconds(f);
-        returnBullet(obj);
-    }
-    */
 
     // 다른 오브젝트에서 총알을 생성하고 파괴될때, 
     // return으로 pooling배열에 넣어줌
@@ -138,20 +134,26 @@ public class EnemyPooling : MonoBehaviour
 
         if (obj.GetComponent<EnemyStraightBullet>() != null)        // straight 스크립트를 들고있으면?
         {
+            // 부모의 아래 (0,0,0)으로
+            obj.transform.localPosition = Vector3.zero;
+            
             obj.gameObject.SetActive(false);
             obj.transform.SetParent(straightPooling_parent);
-            Instance.poolingStraightBullet.Enqueue(obj);            // 되돌아오면 다시 pooling 배열에 넣어줌
+            poolingStraightBullet.Enqueue(obj);            // 되돌아오면 다시 pooling 배열에 넣어줌
         }
 
         else if (obj.GetComponent<EnemyFollowBullet>() != null)     // follow 스크립트를 들고 있으면?
         {
+            // 부모의 아래 (0,0,0)으로
+            obj.transform.localPosition = Vector3.zero;
+
             // 따라가는 총알 초기화
             obj.GetComponent<EnemyFollowBullet>().setBulletDesti = Vector3.zero;
             obj.GetComponent<EnemyFollowBullet>().setPlayerPosi = null;
 
             obj.gameObject.SetActive(false);
             obj.transform.SetParent(followPooling_Parent);
-            Instance.poolingFollowBullet.Enqueue(obj);              // 되돌아오면 다시 pooling 배열에 넣어줌
+            poolingFollowBullet.Enqueue(obj);              // 되돌아오면 다시 pooling 배열에 넣어줌
         }
       
     }

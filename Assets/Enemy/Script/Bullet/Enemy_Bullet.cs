@@ -59,9 +59,4 @@ public class Enemy_Bullet : MonoBehaviour
         }
     }
 
-    public void resetBullet()
-    {
-        Debug.Log("ÀÌ¿¡¤À¤·¤·");
-        EnemyPooling.Instance.returnBullet(this.gameObject);
-    }
 }
