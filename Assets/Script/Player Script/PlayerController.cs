@@ -171,6 +171,7 @@ public class PlayerController : MonoBehaviour
         bombObj.transform.localPosition = Vector3.zero;
         bombObj.SetActive(false);
         bombObj.GetComponent<PutBomb>().CanAttack = false;
+        bombObj.GetComponent<BoxCollider2D>().isTrigger = true;
         bombObj.GetComponent<BoxCollider2D>().offset = new Vector2(0.04f, -0.03f);
         bombObj.GetComponent<BoxCollider2D>().size = new Vector2(0.6f, 0.64f);
         putBombPool.Push(bombObj);

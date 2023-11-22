@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GreenPill : ActiveInfo
 {
-    public override void Start()
+    public void Awake()
     {
         base.Start();
         SetActiveItem(13, 0);

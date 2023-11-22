@@ -6,7 +6,7 @@ public class TheD6 : ActiveInfo
 {
 
     public LayerMask itemMask;
-    public override void Start()
+    public void Awake()
     {
         base.Start();
         SetActiveItem(20, 6);

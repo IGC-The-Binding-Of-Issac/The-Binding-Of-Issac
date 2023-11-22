@@ -7,7 +7,7 @@ public class ThePoop : ActiveInfo
     [SerializeField]
     GameObject goldenPoop;
 
-    public override void Start()
+    public void Awake()
     {
         base.Start();
         SetActiveItem(19, 0);
