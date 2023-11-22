@@ -124,18 +124,18 @@ public class EnemyPooling : MonoBehaviour
         // straight 인지 follow 인지 검사해서 
         // 각자 해당하는 queue에 넣어줘야함
 
-        if (obj is EnemyStraightBullet)
+        if (obj.GetComponent<EnemyStraightBullet>() != null)        // straight 스크립트를 들고있으면?
         {
             obj.gameObject.SetActive(false);
             obj.transform.SetParent(straightPooling_parent);
             Instance.poolingStraightBullet.Enqueue(obj);            // 되돌아오면 다시 pooling 배열에 넣어줌
         }
 
-        else if (obj is EnemyFollowBullet) 
+        else if (obj.GetComponent<EnemyFollowBullet>() != null)     // follow 스크립트를 들고 있으면?
         {
             obj.gameObject.SetActive(false);
             obj.transform.SetParent(followPooling_Parent);
-            Instance.poolingFollowBullet.Enqueue(obj);            // 되돌아오면 다시 pooling 배열에 넣어줌
+            Instance.poolingFollowBullet.Enqueue(obj);              // 되돌아오면 다시 pooling 배열에 넣어줌
         }
       
     }
