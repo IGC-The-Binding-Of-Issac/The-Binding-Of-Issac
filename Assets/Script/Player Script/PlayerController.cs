@@ -91,8 +91,8 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        MoveAnim();
         ShotAnim();
+        MoveAnim();
         InstallBomb();
         UseActive();
     }
