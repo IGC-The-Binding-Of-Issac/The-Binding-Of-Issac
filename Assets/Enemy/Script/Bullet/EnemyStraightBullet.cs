@@ -10,9 +10,10 @@ public class EnemyStraightBullet : Enemy_Bullet
     /// </summary>
     void Start()
     {
-        ani = GetComponent<Animator>();
+        ani         = GetComponent<Animator>();
         waitForDest = 0.5f;
         bulletSpeed = 5f;
+
     }
 
 }

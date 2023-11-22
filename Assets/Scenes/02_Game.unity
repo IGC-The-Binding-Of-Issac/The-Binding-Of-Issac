@@ -5227,7 +5227,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b46e4c793e041c948b6cbb3a7a44be1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  straightBullet: {fileID: 0}
+  childArr: []
+  straightPooling_parent: {fileID: 806952735}
+  followPooling_Parent: {fileID: 573440955}
+  straightBullet: {fileID: 6279111789319045818, guid: c30a7f436a34a5d4a8e6cab40993ba6f, type: 3}
+  followBullet: {fileID: 5075845781784470873, guid: badefd297090b9f4098457860dee0ecc, type: 3}
 --- !u!1 &1830796577
 GameObject:
   m_ObjectHideFlags: 0
@@ -5556,6 +5560,7 @@ MonoBehaviour:
   - {fileID: 1775137408243754433, guid: 6f6f03e5385c3374ab52c21dc1879b38, type: 3}
   - {fileID: 7229639532422697358, guid: 3913fec5d6b5d5e4ea56aca55f44a03e, type: 3}
   - {fileID: 7229639532422697358, guid: 3913fec5d6b5d5e4ea56aca55f44a03e, type: 3}
+  enemyPool_Transform: {fileID: 0}
 --- !u!1 &1892193211
 GameObject:
   m_ObjectHideFlags: 0
