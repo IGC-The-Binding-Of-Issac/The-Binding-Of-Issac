@@ -14,7 +14,7 @@ public class Enemy_Bullet : MonoBehaviour
         {
             ani.SetBool("bulletDestroy", true);
             PlayerManager.instance.GetDamage(); //플레이어랑 데미지
-            Destroy(gameObject, waitForDest);
+
         }
         else if (collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Object_Rock")) // 벽 닿이면 삭제
         {
@@ -28,6 +28,9 @@ public class Enemy_Bullet : MonoBehaviour
         else if (collision.gameObject.CompareTag("Object_Poop"))
         {
             ani.SetBool("bulletDestroy", true);
+            gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+            gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
+
             Destroy(gameObject, waitForDest);
             collision.gameObject.GetComponent<Poop>().GetDamage();
         }
@@ -35,6 +38,9 @@ public class Enemy_Bullet : MonoBehaviour
         else if (collision.gameObject.CompareTag("Object_Fire"))
         {
             ani.SetBool("bulletDestroy", true);
+            gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+            gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
+
             Destroy(gameObject, waitForDest);
             collision.gameObject.GetComponent<FirePlace>().GetDamage();
         }

@@ -29,8 +29,8 @@ public class BigAttackFly : TEnemy
     {         
         animator = GetComponent<Animator>();    
 
-        playerInRoom = false;
-        dieParameter = "isBigFlyDie";
+        playerInRoom    = false;
+        dieParameter    = "isBigFlyDie";
 
         // Enemy
         hp              = 30f;
@@ -94,8 +94,6 @@ public class BigAttackFly : TEnemy
         transform.rotation = Quaternion.Euler(0, 0, z);
         //총알발싸
 
-
-
         if(transform.rotation.eulerAngles.z >= 350)  //각도가 360이 되면 초기화
         {
             transform.rotation = Quaternion.Euler(0, 0, 0);// 회전 초기화
@@ -127,6 +125,5 @@ public class BigAttackFly : TEnemy
             yield return new WaitForSeconds(0.05f);
         }
     }
-
 
 }

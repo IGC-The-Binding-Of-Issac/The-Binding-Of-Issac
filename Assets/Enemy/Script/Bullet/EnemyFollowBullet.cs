@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyBullet : Enemy_Bullet
+public class EnemyFollowBullet : Enemy_Bullet
 {
     /// <summary>
     /// Player 따라가는 총알

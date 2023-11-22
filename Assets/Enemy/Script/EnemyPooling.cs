@@ -14,12 +14,21 @@ public class EnemyPooling : MonoBehaviour
 
     public static EnemyPooling Instance;
 
-    [SerializeField]
-    private GameObject straightBullet;
-    private GameObject followBullet;
+    [Header("pooling")]
+    [SerializeField] Transform[] childArr;
+    // index 0 : 본인
+    // index 1 : straightBullet 을 담을 공간
+    // index 2 : followBullet ``
+    [SerializeField] Transform straightPooling_parent;  // 총알이 담겨 있을 부모 (빈 오브젝트)
+    [SerializeField] Transform followPooling_Parent;    // ``
 
-    Queue<EnemyBullet> poolingStraightBullet = new Queue<EnemyBullet>();
-    Queue<EnemyBullet> poolingFollowBullet = new Queue<EnemyBullet>();
+    [Header("pooling 오브젝트")]
+    [SerializeField] private GameObject straightBullet;
+    [SerializeField] private GameObject followBullet;
+
+    [Header("pooliong queue")]
+    Queue<GameObject> poolingStraightBullet     = new Queue<GameObject>();
+    Queue<GameObject> poolingFollowBullet       = new Queue<GameObject>();
 
     private void Awake()
     {
@@ -32,6 +41,10 @@ public class EnemyPooling : MonoBehaviour
     // 초기화 ,  queue에 미리 initCount 만큼 넣어둠
     private void EnemyBullet_Initialize(int initCount)
     {
+        childArr = gameObject.GetComponentsInChildren<Transform>();         // 자식오브젝트를 배열로
+        straightPooling_parent  = childArr[1];                       // 배열의 1
+        followPooling_Parent    = childArr[2];                       // 배열의 2 
+
         for (int i = 0; i < initCount; i++) 
         {
             poolingStraightBullet.Enqueue(createStraightBullet());  //queue 에 값 추가
@@ -40,27 +53,27 @@ public class EnemyPooling : MonoBehaviour
     }
 
     // straight bullet 생성
-    private EnemyBullet createStraightBullet() 
+    private GameObject createStraightBullet() 
     {
-        EnemyBullet newObj = Instantiate(straightBullet).GetComponent<EnemyBullet>();
-        newObj.gameObject.SetActive(false);             // queue에 있을 때는 안 보이게 
-        newObj.transform.SetParent(transform);          // 현재 이 스크립트가 들어있는 빈 오브젝트를 부모로
+        GameObject newObj = Instantiate(straightBullet) as GameObject;
+        newObj.gameObject.SetActive(false);                         // queue에 있을 때는 안 보이게 
+        newObj.transform.SetParent(straightPooling_parent);         // 부모설정
         return newObj;
     }
 
     // follow Bullet 생성
-    private EnemyBullet createFollowBullet()
+    private GameObject createFollowBullet()
     {
-        EnemyBullet newObj = Instantiate(followBullet).GetComponent<EnemyBullet>();
-        newObj.gameObject.SetActive(false);
-        newObj.transform.SetParent(transform);          // 현재 이 스크립트가 들어있는 빈 오브젝트를 부모로
+        GameObject newObj = Instantiate(followBullet) as GameObject;
+        newObj.gameObject.SetActive(false);                        // queue에 있을 때는 안 보이게 
+        newObj.transform.SetParent(followPooling_Parent);          // 부모설정
         return newObj;
     }
 
     // 다른 스크립트에서 straightBullet 생성할 때 사용하는
-    public static EnemyBullet GetStraightBullet() 
+    public static GameObject GetStraightBullet() 
     {
-        EnemyBullet obj;
+        GameObject obj;
 
         // straight pool에 오브젝트가 담겨져 있으면
         if (Instance.poolingStraightBullet.Count > 0)
@@ -81,9 +94,9 @@ public class EnemyPooling : MonoBehaviour
     }
 
     // 다른 스크립트에서 straightBullet 생성할 때 사용하는
-    public static EnemyBullet GetFollowBullet()
+    public static GameObject GetFollowBullet()
     {
-        EnemyBullet obj;
+        GameObject obj;
 
         // straight pool에 오브젝트가 담겨져 있으면
         if (Instance.poolingStraightBullet.Count > 0)
@@ -106,22 +119,28 @@ public class EnemyPooling : MonoBehaviour
     // 다른 오브젝트에서 총알을 생성하고 파괴될때, 
     // return으로 pooling배열에 넣어줌
     // straight 총알 return
-    public static void returnStrightBullet(EnemyBullet obj) 
+    public void returnBullet(GameObject obj) 
     {
-        obj.gameObject.SetActive(false);
-        obj.transform.SetParent(Instance.transform);
-        Instance.poolingStraightBullet.Enqueue(obj); 
-    }
+        // straight 인지 follow 인지 검사해서 
+        // 각자 해당하는 queue에 넣어줘야함
 
-    // Follow 총알 return
-    public static void returnFollowBullet(EnemyBullet obj) 
-    {
-        obj.gameObject.SetActive(false);
-        obj.transform.SetParent (Instance.transform);
-        Instance.poolingFollowBullet.Enqueue(obj);
-    }
+        if (obj is EnemyStraightBullet)
+        {
+            obj.gameObject.SetActive(false);
+            obj.transform.SetParent(straightPooling_parent);
+            Instance.poolingStraightBullet.Enqueue(obj);            // 되돌아오면 다시 pooling 배열에 넣어줌
+        }
 
+        else if (obj is EnemyFollowBullet) 
+        {
+            obj.gameObject.SetActive(false);
+            obj.transform.SetParent(followPooling_Parent);
+            Instance.poolingFollowBullet.Enqueue(obj);            // 되돌아오면 다시 pooling 배열에 넣어줌
+        }
+      
+    }
 
     
 
+  
 }
