@@ -29,7 +29,7 @@ public class OopsEffect : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("TEnemy"))
+        if (collision.gameObject.CompareTag("Enemy"))
         {
             if (canDamage) //0.5초마다 데미지 4 부여
             {
