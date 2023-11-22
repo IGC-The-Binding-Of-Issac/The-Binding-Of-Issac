@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class ShopTable : MonoBehaviour
@@ -43,7 +44,17 @@ public class ShopTable : MonoBehaviour
         cost = 0;
         if(item != null)
         {
-            Destroy(item);
+            // 드랍아이템인지 확인
+            // 드랍아이템이라면 오브젝트풀로 돌려주고 
+            // 그외 아이템이라면 삭제
+            if (CheckedDropItem(item))
+            {
+                item.GetComponent<Collider2D>().enabled = true; // 콜라이더 on 
+                ItemManager.instance.itemTable.ReturnDropItem(item);
+            }
+            else
+                Destroy(item);
+
             item = null;
         }
         itemInfomation[0] = "";
@@ -53,6 +64,15 @@ public class ShopTable : MonoBehaviour
         Cost_10.GetComponent<SpriteRenderer>().sprite = costImages[0];
 
         gameObject.SetActive(false);
+
+        gameObject.layer = 14;
+    }
+
+    bool CheckedDropItem(GameObject obj)
+    {
+        if (obj.GetComponent<key>() != null || obj.GetComponent<Heart>() != null || obj.GetComponent<DropBomb>() != null)
+            return true;
+        return false;
     }
 
     void ItemLayer()
@@ -110,21 +130,9 @@ public class ShopTable : MonoBehaviour
     public void CreateDropItem()
     {
         int rd = Random.Range(1, 4);
-        item = Instantiate(ItemManager.instance.itemTable.OpenNormalChest(rd)) as GameObject;
+        item = ItemManager.instance.itemTable.GetDropItem(rd);
         item.GetComponent<Collider2D>().enabled = false; // 콜라이더 off
-        item.transform.SetParent(itemPos);
-
-        StartCoroutine(VeryFuckingDropItem());
-    }
-
-    IEnumerator VeryFuckingDropItem()
-    { 
-        for(int i = 0; i < 15; i++)
-        {
-            item.GetComponent<Rigidbody2D>().velocity = Vector3.zero; // 초기화
-            item.transform.localPosition = Vector3.zero;
-            yield return new WaitForSeconds(0.1f);
-        }
+        item.transform.position = itemPos.position;
     }
 
     public void CreateItem()
@@ -143,11 +151,14 @@ public class ShopTable : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        // 구매 시
         if (collision.gameObject.CompareTag("Player") && ItemManager.instance.coinCount >= cost)
         {
-            item.GetComponent<Collider2D>().enabled = true;
-            itemPos.localPosition = Vector3.zero;
-            ItemManager.instance.coinCount -= cost;
+            item.GetComponent<Collider2D>().enabled = true; // 아이템의 콜라이더를 다시 켜줌.
+            item.transform.position = collision.transform.position; // 구매 직후 바로 플레이어가 획득할수있도록 플레이어 위치로 강제이동
+            ItemManager.instance.coinCount -= cost; // 구매 비용 사용
+
+            gameObject.layer = 31; // 상점 테이블과 충돌 못하도록 레이어 변경
         }
     }
 

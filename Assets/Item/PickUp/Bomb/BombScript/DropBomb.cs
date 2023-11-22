@@ -7,19 +7,13 @@ public class DropBomb : MonoBehaviour
     private Animator gb;
     public Sprite defaultSprite;
 
-    // 상자에서 폭탄이 나옴과 동시에 획득하는 문제가 있어서
-    // 드랍이후 획득까지 딜레이를 주기위한 변수입니다.
-    bool getDelay;
     private void Start()
     {
         gb = GetComponent<Animator>();
-        getDelay = false;
     }
 
     public void DropBomb_move()
     {
-        getDelay = false;
-        StartCoroutine(GetDelay());
         float randomX = Random.Range(-1.0f, 1.0f);
         float randomY = Random.Range(-1.0f, 1.0f);
         float randomForce = Random.Range(50f, 70f);
@@ -30,9 +24,8 @@ public class DropBomb : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player") && getDelay)
+        if (collision.gameObject.CompareTag("Player"))
         {
-            getDelay = false;
             gameObject.GetComponent<AudioSource>().volume = SoundManager.instance.GetSFXVolume();
             gameObject.GetComponent<AudioSource>().Play(); // 획득 사운드
 
@@ -55,7 +48,6 @@ public class DropBomb : MonoBehaviour
     {
         GetComponent<SpriteRenderer>().sprite = defaultSprite;
         gameObject.layer = 14;
-        getDelay = false;
     }
 
     IEnumerator Delay()
@@ -63,10 +55,5 @@ public class DropBomb : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         gameObject.SetActive(false);
         ItemManager.instance.itemTable.ReturnDropItem(gameObject);
-    }
-    IEnumerator GetDelay()
-    {
-        yield return new WaitForSeconds(0.3f);
-        getDelay = true;
     }
 }
