@@ -71,7 +71,7 @@ public class PlayerManager : MonoBehaviour
     }
     public void CheckedShotDelay()
     {
-        if(playerShotDelay < 0.025)
+        if(playerShotDelay < 0.05)
         {
             playerShotDelay = 0.05f;
         }
@@ -79,9 +79,47 @@ public class PlayerManager : MonoBehaviour
 
     public void CheckedDamage()
     {
-        if(playerDamage < 0.3f)
+        if (playerDamage < 0.3f)
         {
             playerDamage = 0.3f;
+        }
+    }
+    public void CheckedStatus()
+    {
+        //체력 체크
+        if (playerHp <= 0)
+        {
+            GameManager.instance.playerObject.GetComponent<PlayerController>().Dead();
+            Invoke("GameOver", 0.7f);
+        }
+        else if (playerHp > playerMaxHp)
+        {
+            playerHp = playerMaxHp;
+        }
+        //이동속도 최소값
+        if (playerMoveSpeed < 1f)
+        {
+            playerMoveSpeed = 1f;
+        }
+        //눈물 속도 최소값
+        if (playerTearSpeed < 0.5f)
+        {
+            playerTearSpeed = 0.5f;
+        }
+        //공격 속도 최소값
+        if (playerShotDelay < 0.05f)
+        {
+            playerShotDelay = 0.05f;
+        }
+        //데미지 최소값
+        if (playerDamage < 0.3f)
+        {
+            playerDamage = 0.3f;
+        }
+        //사거리 최소값
+        if (playerRange < 0.5f)
+        {
+            playerRange = 0.5f;
         }
     }
     #region SkinChange

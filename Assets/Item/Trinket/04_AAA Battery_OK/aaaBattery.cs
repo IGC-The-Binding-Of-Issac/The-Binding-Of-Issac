@@ -23,8 +23,8 @@ public class aaaBattery : TrinketInfo
     public override void GetItem()
     {
         PlayerManager.instance.playerShotDelay -= 0.05f;
-        PlayerManager.instance.CheckedShotDelay();
         PlayerManager.instance.playerMoveSpeed += 0.1f;
+        base.GetItem();
     }
 
     public override void DropTrinket()
@@ -34,5 +34,6 @@ public class aaaBattery : TrinketInfo
 
         PlayerManager.instance.playerMoveSpeed = beforeDropMoveSpeed -= 0.1f;
         PlayerManager.instance.playerShotDelay = beforeDropShotDelay += 0.05f;
+        PlayerManager.instance.CheckedStatus();
     }
 }

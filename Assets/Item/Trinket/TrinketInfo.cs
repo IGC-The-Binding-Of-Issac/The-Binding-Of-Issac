@@ -85,8 +85,8 @@ public class TrinketInfo : MonoBehaviour
         transform.SetParent(ItemManager.instance.itemStorage);
     }
 
-    public virtual void GetItem() { 
-        Debug.Log("¿Á¡§¿« «ÿ¡‡!"); 
+    public virtual void GetItem() {
+        PlayerManager.instance.CheckedStatus();
     }
 
     public virtual void DropTrinket()

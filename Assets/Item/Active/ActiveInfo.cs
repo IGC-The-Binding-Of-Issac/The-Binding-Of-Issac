@@ -113,6 +113,7 @@ public class ActiveInfo : MonoBehaviour
 
     public virtual void UseActive()
     {
+        PlayerManager.instance.CheckedStatus();
         //Debug.Log("액티브 사용 시 재정의");
     }
 

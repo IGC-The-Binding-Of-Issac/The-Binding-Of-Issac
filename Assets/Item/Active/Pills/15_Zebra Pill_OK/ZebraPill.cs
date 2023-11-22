@@ -26,6 +26,7 @@ public class ZebraPill : ActiveInfo
                             "이동속도 감소, 공격속도 증가",
                             "사용 시 이동속도가 감소하지만, 공격속도가 증가한다.");
             UIManager.instance.ItemBanner(itemTitle, itemDescription);
+            base.UseActive();
             GameManager.instance.playerObject.GetComponent<PlayerController>().canChangeItem = false;
             Invoke("SetCanChangeItem", 1f);
             Destroy(gameObject);

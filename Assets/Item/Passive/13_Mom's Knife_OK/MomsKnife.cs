@@ -20,7 +20,7 @@ public class MomsKnife : ItemInfo
         if (!ItemManager.instance.PassiveItems[16])
         {
             PlayerManager.instance.playerDamage += 0.5f;
-            PlayerManager.instance.CheckedDamage();
+            base.UseItem();
             Invoke("GenerateKnife", 1.0f);
         }
     }

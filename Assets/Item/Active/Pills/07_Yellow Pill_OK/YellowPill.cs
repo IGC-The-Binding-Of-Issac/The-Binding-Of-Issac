@@ -19,11 +19,11 @@ public class YellowPill : ActiveInfo
         if(canUse)
         {
             PlayerManager.instance.playerDamage += 0.15f;
-            PlayerManager.instance.CheckedDamage();
             SetActiveString("힘에는 힘!",
                             "공격력 증가",
                             "사용 시 공격력이 증가한다.");
             UIManager.instance.ItemBanner(itemTitle, itemDescription);
+            base.UseActive();
             GameManager.instance.playerObject.GetComponent<PlayerController>().canChangeItem = false;
             Invoke("SetCanChangeItem", 1f);
             Destroy(gameObject);

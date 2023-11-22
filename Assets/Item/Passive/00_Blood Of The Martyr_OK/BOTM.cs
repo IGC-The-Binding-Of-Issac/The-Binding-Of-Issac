@@ -22,7 +22,7 @@ public class BOTM : ItemInfo
     public override void UseItem()
     {
         PlayerManager.instance.playerDamage++;
-        PlayerManager.instance.CheckedDamage();
+        base.UseItem();
         //Dr.Fetus 제외 나머지 눈물 빨간색으로 변경
         if (!ItemManager.instance.PassiveItems[16])
         {

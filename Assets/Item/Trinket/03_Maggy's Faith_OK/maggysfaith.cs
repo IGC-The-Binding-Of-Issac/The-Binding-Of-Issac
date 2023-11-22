@@ -22,6 +22,7 @@ public class maggysfaith : TrinketInfo
     {
         PlayerManager.instance.playerTearSpeed += 0.12f;
         PlayerManager.instance.playerRange += 0.12f;
+        base.GetItem();
     }
 
     public override void DropTrinket()
@@ -31,5 +32,6 @@ public class maggysfaith : TrinketInfo
 
         PlayerManager.instance.playerTearSpeed = beforeDropTearSpeed - 0.12f;
         PlayerManager.instance.playerRange = beforeDropRange - 0.12f;
+        PlayerManager.instance.CheckedStatus();
     }
 }

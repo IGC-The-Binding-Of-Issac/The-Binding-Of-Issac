@@ -23,6 +23,7 @@ public class SkyWhitePill : ActiveInfo
                             "사거리 감소",
                             "사용 시 눈물의 사거리가 감소한다.");
             UIManager.instance.ItemBanner(itemTitle, itemDescription);
+            base.UseActive();
             GameManager.instance.playerObject.GetComponent<PlayerController>().canChangeItem = false;
             Invoke("SetCanChangeItem", 1f);
             Destroy(gameObject);

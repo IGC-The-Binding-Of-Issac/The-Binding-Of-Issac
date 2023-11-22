@@ -22,9 +22,8 @@ public class MagicFingers : ActiveInfo
           {
             ItemManager.instance.coinCount--;
             PlayerManager.instance.playerDamage += 0.13f;
-            PlayerManager.instance.CheckedDamage();
           }
-
+        base.UseActive();
         canUse = false;
         Invoke("SetCanUse", 1f);
 
