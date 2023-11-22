@@ -16,4 +16,10 @@ public class EnemyStraightBullet : Enemy_Bullet
         bulletSpeed = 5f;
     }
 
+    public void resetBullet()
+    {
+        Debug.Log("ÀÌ¿¡¤À¤·¤·");
+        EnemyPooling.Instance.returnBullet(this.gameObject);
+    }
+
 }
