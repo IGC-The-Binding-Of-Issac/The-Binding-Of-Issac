@@ -14,22 +14,15 @@ public class key : MonoBehaviour
 
     public Sprite defaultSprite;
 
-    // 상자에서 폭탄이 나옴과 동시에 획득하는 문제가 있어서
-    // 드랍이후 획득까지 딜레이를 주기위한 변수입니다.
-    bool getDelay;
     public void Start()
     {
         audioSource = GetComponent<AudioSource>(); // 분명 초기화도 해줬는데
         keyAni = GetComponent<Animator>();
-
-        getDelay = false;
     }
 
     public void DropKey()
     {
         DropSound();
-        getDelay = false;
-        StartCoroutine(GetDelay());
 
         float randomX = Random.Range(-1.0f, 1.0f);
         float randomY = Random.Range(-1.0f, 1.0f);
@@ -39,9 +32,8 @@ public class key : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player") && getDelay)
+        if (collision.gameObject.CompareTag("Player"))
         {
-            getDelay = false;
             GetSound();
 
             gameObject.layer = 31;
@@ -59,14 +51,7 @@ public class key : MonoBehaviour
     public void ResetObject()
     {
         GetComponent<SpriteRenderer>().sprite = defaultSprite;
-        getDelay = false;
         gameObject.layer = 14;
-    }
-
-    IEnumerator GetDelay()
-    {
-        yield return new WaitForSeconds(0.3f);
-        getDelay = true;
     }
 
     IEnumerator Delay()

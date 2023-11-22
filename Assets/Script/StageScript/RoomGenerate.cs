@@ -62,7 +62,7 @@ public class RoomGenerate : MonoBehaviour
         shopTablePool = new Stack<GameObject>();
         curseChestPool = new Stack<GameObject>();
 
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < 10; i++)
         {
             // 오브젝트 생성
             GameObject rock = Instantiate(objectPrefabs[0], rockPool_Transform.position, Quaternion.identity);
