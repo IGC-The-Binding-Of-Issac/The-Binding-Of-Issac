@@ -38,6 +38,16 @@ public class PutBomb : MonoBehaviour
 
         StartCoroutine(Boom());
         bombAnimator.SetTrigger("IsBomb");
+        if (ItemManager.instance.PassiveItems[16])
+        {
+            Invoke("SetTriggerOff", 0.2f);
+        }
+    }
+
+    //Soy Milk 먹었을 때 trigger가 안 꺼지는 현상 방지
+    private void SetTriggerOff()
+    {
+        gameObject.GetComponent<Collider2D>().isTrigger = false;
     }
     public IEnumerator Boom()
     {
@@ -88,8 +98,6 @@ public class PutBomb : MonoBehaviour
             if (collision.CompareTag("Enemy"))
             {
                 collision.GetComponent<TEnemy>().GetDamage(10);
-                CanAttack = false;
-                Invoke("CanAttackChange", 0.5f);
             }
             if (collision.CompareTag("Player"))
             {
@@ -99,10 +107,6 @@ public class PutBomb : MonoBehaviour
         }
     }
 
-    private void CanAttackChange()
-    {
-        CanAttack = true;
-    }
     public void BombDelete()
     {
         if(GameManager.instance.playerObject.GetComponent<PlayerController>().bombState)
@@ -120,7 +124,7 @@ public class PutBomb : MonoBehaviour
 
         bc.isTrigger = true;
         CanAttack = true;
-        bc.offset = new Vector2(0, -0.2f);
+        bc.offset = new Vector2(0.07f, 0.68f);
         bc.size = new Vector2(2.5f, 2.5f);
     }
 

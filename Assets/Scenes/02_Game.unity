@@ -1745,7 +1745,7 @@ MonoBehaviour:
   stageSize: 0
   stageMinimunRoom: 0
   playerObject: {fileID: 0}
-  maxStage: 1
+  maxStage: 3
   stageGenerate: {fileID: 1043015904}
   roomGenerate: {fileID: 351783603}
   myCamera: {fileID: 926169540}
