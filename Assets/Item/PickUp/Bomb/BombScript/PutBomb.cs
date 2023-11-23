@@ -97,7 +97,12 @@ public class PutBomb : MonoBehaviour
             }
             if (collision.CompareTag("Enemy"))
             {
-                collision.GetComponent<TEnemy>().GetDamage(10);
+                if (ItemManager.instance.PassiveItems[4] && ItemManager.instance.PassiveItems[16])
+                {
+                    collision.GetComponent<TEnemy>().GetDamage(3);
+                }
+                else
+                    collision.GetComponent<TEnemy>().GetDamage(10);
             }
             if (collision.CompareTag("Player"))
             {
