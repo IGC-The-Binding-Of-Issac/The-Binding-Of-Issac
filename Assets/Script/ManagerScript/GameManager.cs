@@ -38,16 +38,16 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        // 스테이지 생성 테스트.
+        // 스테이지 재생성
         // R키 누르기 -> 스테이지 시작시로 변경 할것. 
-        if(Input.GetKeyDown(KeyCode.R)) 
+        if(Input.GetKeyDown(KeyCode.R) && !UIManager.instance.LodingImage.activeSelf) 
         {
             UIManager.instance.OnLoading();
             StageStart();
         }
     }
     public void StageStart()
-    {
+    {   
         // Create stage/room
 
         // 현재 플레이어 오브젝트가 없을때.

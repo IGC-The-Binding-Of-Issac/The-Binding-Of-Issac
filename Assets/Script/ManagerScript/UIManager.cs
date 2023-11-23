@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEditor.Build;
 
 public class UIManager : MonoBehaviour
 {
@@ -51,13 +52,13 @@ public class UIManager : MonoBehaviour
     [SerializeField] Stuff pauseStuff;
     [SerializeField] Stuff gameOverStuff;
 
+    public GameObject LodingImage { get {  return loadingImage; } }
+
     [Header("Banner")]
     [SerializeField] Banner banner;
 
-    private bool EscControl;
     private void Start()
     {
-        EscControl = false;
         SetPlayerMaxHP(); // 하트HP 초기세팅
         OnLoading();
     }
@@ -82,24 +83,25 @@ public class UIManager : MonoBehaviour
     }
     IEnumerator FadeOutStart()
     {
-        yield return new WaitForSeconds(0.2f);
+        Image lodingColor = loadingImage.GetComponent<Image>();
+        Color defaultColor = lodingColor.color;
+        yield return new WaitForSeconds(1.2f);
         for (float f = 1f; f > 0; f -= 0.005f)
         {
-            Color c = loadingImage.GetComponent<Image>().color;
-            c.a = f;
-            loadingImage.GetComponent<Image>().color = c;
+            lodingColor.color = new Color(0, 0, 0, f);
             yield return null;
         }
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.2f);
+        lodingColor.color = defaultColor;
         loadingImage.SetActive(false);
-        EscControl = true;
     }
     #endregion
 
     #region PauseUI
     public void PauseUIOnOff()
     {
-        if(EscControl == true && gameoverUI.activeSelf == false)
+        // 게임오버 UI가 꺼져있을떄 or 로딩 UI가 꺼져있을때
+        if(!gameoverUI.activeSelf && !loadingImage.activeSelf)
         {
             if (Input.GetKeyDown(KeyCode.Escape))
             {
