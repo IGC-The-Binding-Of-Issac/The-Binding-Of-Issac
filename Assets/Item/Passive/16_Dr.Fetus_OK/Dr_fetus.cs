@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Tilemaps;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
@@ -8,10 +9,14 @@ public class Dr_fetus : ItemInfo
     public GameObject attackBomb;
     public PlayerController ctr;
 
+    public void Awake()
+    {
+        
+    }
     public override void Start()
     {
         base.Start();
-        PlayerController ctr = GameManager.instance.playerObject.GetComponent<PlayerController>();
+        ctr = GameManager.instance.playerObject.GetComponent<PlayerController>();
         SetItemCode(16);
         SetItemString("ÅÂ¾Æ ¹Ú»ç",
                       "ÆøÅº ¹ß»ç",
