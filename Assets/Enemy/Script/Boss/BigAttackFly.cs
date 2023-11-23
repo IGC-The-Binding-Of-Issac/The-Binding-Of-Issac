@@ -118,8 +118,8 @@ public class BigAttackFly : TEnemy
             bool isbullet = true;
             if (isbullet) 
             {
-                GameObject bu = Instantiate(bigShootBullet, transform.position, transform.rotation);
-                bu.GetComponent<Rigidbody2D>().velocity = transform.right * bulletSpeed;
+                GameObject bulletobj = EnemyPooling.Instance.GetStraightBullet(this.gameObject);
+                bulletobj.GetComponent<Rigidbody2D>().velocity = transform.right * bulletSpeed;
                 isbullet = false;
             }
             yield return new WaitForSeconds(0.025f);

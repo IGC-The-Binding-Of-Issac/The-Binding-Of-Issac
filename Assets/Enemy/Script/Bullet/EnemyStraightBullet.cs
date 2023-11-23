@@ -10,15 +10,17 @@ public class EnemyStraightBullet : Enemy_Bullet
     /// </summary>
     void Start()
     {
-        isCoru = true;
+        // 초기화는 EnemPooling에서 진행
+        /*
         ani         = GetComponent<Animator>();
         waitForDest = 0.5f;
         bulletSpeed = 5f;
+        */
+
     }
 
     public void resetBullet()
     {
-        Debug.Log("이에ㅐㅇㅇ");
         EnemyPooling.Instance.returnBullet(this.gameObject);
     }
 
