@@ -7,6 +7,8 @@ public class DropBomb : MonoBehaviour
     private Animator gb;
     public Sprite defaultSprite;
 
+
+    bool collisionDelay;
     private void Start()
     {
         gb = GetComponent<Animator>();
@@ -14,6 +16,10 @@ public class DropBomb : MonoBehaviour
 
     public void DropBomb_move()
     {
+        // 상자 드랍시 즉시 충돌 방지
+        collisionDelay = false;
+        StartCoroutine(CollisionDelay());
+
         float randomX = Random.Range(-1.0f, 1.0f);
         float randomY = Random.Range(-1.0f, 1.0f);
         float randomForce = Random.Range(50f, 70f);
@@ -24,7 +30,7 @@ public class DropBomb : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") && collisionDelay)
         {
             gameObject.GetComponent<AudioSource>().volume = SoundManager.instance.GetSFXVolume();
             gameObject.GetComponent<AudioSource>().Play(); // 획득 사운드
@@ -55,5 +61,16 @@ public class DropBomb : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         gameObject.SetActive(false);
         ItemManager.instance.itemTable.ReturnDropItem(gameObject);
+    }
+
+    IEnumerator CollisionDelay()
+    {
+        yield return new WaitForSeconds(0.2f);
+        collisionDelay = true;
+    }
+
+    public void SetCollisionDelay(bool state)
+    {
+        collisionDelay = state;
     }
 }

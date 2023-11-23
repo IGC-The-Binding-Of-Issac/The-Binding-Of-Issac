@@ -17,7 +17,6 @@ public class TheNail : ActiveInfo
                         + "\n공격력 + 0.5"
                         + "\n캐릭터의 눈물이 빨갛게 변한다.");
         Invoke("SetCanChangeItem", 1f);
-        Debug.Log(gameObject.GetComponent<ActiveInfo>().currentEnergy);
     }
     public override void UseActive()
     {

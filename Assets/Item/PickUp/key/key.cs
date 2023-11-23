@@ -14,6 +14,7 @@ public class key : MonoBehaviour
 
     public Sprite defaultSprite;
 
+    bool collisionDelay;
     public void Start()
     {
         audioSource = GetComponent<AudioSource>(); // 분명 초기화도 해줬는데
@@ -22,7 +23,12 @@ public class key : MonoBehaviour
 
     public void DropKey()
     {
+        // 상자 드랍시 즉시 충돌 방지
+        collisionDelay = false;
+        StartCoroutine(CollisionDelay());
+
         DropSound();
+
 
         float randomX = Random.Range(-1.0f, 1.0f);
         float randomY = Random.Range(-1.0f, 1.0f);
@@ -32,7 +38,7 @@ public class key : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") && collisionDelay)
         {
             GetSound();
 
@@ -84,4 +90,13 @@ public class key : MonoBehaviour
         audioSource.Play();
     }
 
+    IEnumerator CollisionDelay()
+    {
+        yield return new WaitForSeconds(0.2f);
+        collisionDelay = true;
+    }
+    public void SetCollisionDelay(bool state)
+    {
+        collisionDelay = state;
+    }
 }
