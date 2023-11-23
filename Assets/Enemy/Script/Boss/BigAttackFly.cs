@@ -122,7 +122,7 @@ public class BigAttackFly : TEnemy
                 bu.GetComponent<Rigidbody2D>().velocity = transform.right * bulletSpeed;
                 isbullet = false;
             }
-            yield return new WaitForSeconds(0.05f);
+            yield return new WaitForSeconds(0.025f);
         }
     }
 

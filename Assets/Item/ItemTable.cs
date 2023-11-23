@@ -124,6 +124,7 @@ public class ItemTable : MonoBehaviour
                 }
                 GameObject heart = heartPool.Pop();
                 heart.SetActive(true);
+                heart.GetComponent<Heart>().SetCollisionDelay(true);
                 return heart;
             #endregion
             #region ÆøÅº
@@ -134,6 +135,7 @@ public class ItemTable : MonoBehaviour
                 }
                 GameObject bomb = bombPool.Pop();
                 bomb.SetActive(true);
+                bomb.GetComponent<DropBomb>().SetCollisionDelay(true);
                 return bomb;
             #endregion
             #region ¿­¼è
@@ -144,6 +146,7 @@ public class ItemTable : MonoBehaviour
                 }
                 GameObject key = keyPool.Pop();
                 key.SetActive(true);
+                key.GetComponent<key>().SetCollisionDelay(true);
                 return key;
             #endregion
         }

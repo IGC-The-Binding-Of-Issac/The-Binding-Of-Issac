@@ -8,6 +8,7 @@ public class Heart : MonoBehaviour
     private float duration = 2;
     private float smoothness = 0.01f;
 
+    bool collisionDelay;
     public void Start()
     {
         cl = GetComponent<CapsuleCollider2D>();
@@ -15,6 +16,10 @@ public class Heart : MonoBehaviour
 
     public void DropHeart()
     {
+        // 상자 드랍시 즉시 충돌 방지
+        collisionDelay = false;
+        StartCoroutine(CollisionDelay());
+
         float randomX = Random.Range(-1.0f, 1.0f);
         float randomY = Random.Range(-1.0f, 1.0f);
         float randomForce = Random.Range(50f, 70f);
@@ -23,7 +28,7 @@ public class Heart : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player") && PlayerManager.instance.playerHp < PlayerManager.instance.playerMaxHp)
+        if (collision.gameObject.CompareTag("Player") && PlayerManager.instance.playerHp < PlayerManager.instance.playerMaxHp && collisionDelay)
         {
             gameObject.layer = 31;
             PlayerManager.instance.playerHp+=2;
@@ -85,5 +90,15 @@ public class Heart : MonoBehaviour
     {
         gameObject.layer = 14;
         transform.localScale = Vector3.one;
+    }
+
+    IEnumerator CollisionDelay()
+    {
+        yield return new WaitForSeconds(0.2f);
+        collisionDelay = true;
+    }
+    public void SetCollisionDelay(bool state)
+    {
+        collisionDelay = state;
     }
 }
