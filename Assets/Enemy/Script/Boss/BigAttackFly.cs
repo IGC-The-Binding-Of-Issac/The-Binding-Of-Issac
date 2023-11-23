@@ -93,7 +93,7 @@ public class BigAttackFly : TEnemy
         z += rotSpeed * Time.deltaTime; //일정 시간 (Time.deltaTime) 마다 z축을 더한다
         transform.rotation = Quaternion.Euler(0, 0, z);
         //총알발싸
-
+        
         if(transform.rotation.eulerAngles.z >= 350)  //각도가 360이 되면 초기화
         {
             transform.rotation = Quaternion.Euler(0, 0, 0);// 회전 초기화

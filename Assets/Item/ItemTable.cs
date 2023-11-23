@@ -232,6 +232,7 @@ public class ItemTable : MonoBehaviour
                 if(active.Count == 0)
                 {
                     obj = DropItems[3];
+                    obj.GetComponent<key>().SetCollisionDelay(true);
                     return obj;
                 }
                 ShuffleList(ref active);
@@ -262,6 +263,7 @@ public class ItemTable : MonoBehaviour
                 if (trinket.Count == 0)
                 {
                     obj = DropItems[3];
+                    obj.GetComponent<key>().SetCollisionDelay(true);
                     return obj;
                 }
                 ShuffleList(ref trinket);
@@ -292,6 +294,7 @@ public class ItemTable : MonoBehaviour
                 if (trinket.Count == 0)
                 {
                     obj = DropItems[3];
+                    obj.GetComponent<key>().SetCollisionDelay(true);
                     return obj;
                 }
                 ShuffleList(ref trinket);
