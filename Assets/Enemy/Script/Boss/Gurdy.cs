@@ -146,11 +146,12 @@ public class Gurdy : TEnemy
             if (isbullet)
             {
 
-                GameObject bu = Instantiate(bigShootBullet, _obj.transform.position, transform.rotation);
-                bu.GetComponent<Rigidbody2D>().velocity = _obj.transform.right * bulletSpeed;
+                GameObject bulletobj = EnemyPooling.Instance.GetStraightBullet(_obj);
+                
+                bulletobj.GetComponent<Rigidbody2D>().velocity = _obj.transform.right * bulletSpeed;
 
                 randGravityScale = Random.Range(0f, 1f);
-                bu.GetComponent<Rigidbody2D>().gravityScale += randGravityScale;
+                bulletobj.GetComponent<Rigidbody2D>().gravityScale += randGravityScale;
                 isbullet = false;
             }
             yield return new WaitForSeconds(randWait);

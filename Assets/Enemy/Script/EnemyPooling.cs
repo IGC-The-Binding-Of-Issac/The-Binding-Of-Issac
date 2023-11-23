@@ -26,6 +26,7 @@ public class EnemyPooling : MonoBehaviour
     [Header("pooling 오브젝트")]
     [SerializeField] private GameObject straightBullet;
     [SerializeField] private GameObject followBullet;
+    [SerializeField] Sprite oriBulletImage;
 
     [Header("pooliong queue")]
     Queue<GameObject> poolingStraightBullet     = new Queue<GameObject>();
@@ -36,7 +37,7 @@ public class EnemyPooling : MonoBehaviour
         Instance = this;
 
         // 나중에 playermanager...? 에서 초기화하기
-        EnemyBullet_Initialize(10);
+        EnemyBullet_Initialize(30);
     }
 
     // 초기화 ,  queue에 미리 initCount 만큼 넣어둠
@@ -56,11 +57,11 @@ public class EnemyPooling : MonoBehaviour
     // straight bullet 생성
     private GameObject createStraightBullet() 
     {
+        // 오브젝트 설정 
         GameObject newObj = Instantiate(straightBullet) as GameObject;
         newObj.gameObject.SetActive(false);                         // queue에 있을 때는 안 보이게 
         newObj.transform.SetParent(straightPooling_parent);         // 부모설정
         newObj.transform.localPosition = Vector3.zero;
-
         return newObj;
     }
 
@@ -71,7 +72,6 @@ public class EnemyPooling : MonoBehaviour
         newObj.gameObject.SetActive(false);                        // queue에 있을 때는 안 보이게 
         newObj.transform.SetParent(followPooling_Parent);          // 부모설정
         newObj.transform.localPosition = Vector3.zero;
-
         return newObj;
     }
 
@@ -94,8 +94,15 @@ public class EnemyPooling : MonoBehaviour
 
         obj.transform.position = shootPosi.transform.position;  // 스크립트 실행하는 위치로
         // 지정된 오브젝트를 return
+        obj.GetComponent<SpriteRenderer>().sprite = oriBulletImage;
         obj.gameObject.SetActive(true);                         // pooling 배열에서 setActive(false)로 해놓은 걸 꺼내면 보이게 만듬
-        //obj.transform.SetParent(null);                          // 부모를 해제함
+
+        // 세팅 설정
+        Enemy_Bullet bulletScript = obj.GetComponent<Enemy_Bullet>();
+        bulletScript.property_Ani = obj.gameObject.GetComponent<Animator>();
+        bulletScript.property_WaitForDest = 0.5f;
+        bulletScript.property_BulletSpeed = 5f;
+
         return obj;
     }
 
@@ -118,15 +125,34 @@ public class EnemyPooling : MonoBehaviour
 
         obj.transform.position = shootPosi.transform.position;  // 스크립트 실행하는 위치로
         // 지정된 오브젝트를 return
+        obj.GetComponent<SpriteRenderer>().sprite = oriBulletImage;
         obj.gameObject.SetActive(true);                         // pooling 배열에서 setActive(false)로 해놓은 걸 꺼내면 보이게 만듬
-        //obj.transform.SetParent(null);                          // 부모를 해제함
+
+        //세팅설정
+        Enemy_Bullet bulletScript = obj.GetComponent<Enemy_Bullet>();
+        bulletScript.property_Ani = obj.gameObject.GetComponent<Animator>();
+        bulletScript.property_WaitForDest = 0.5f;
+        bulletScript.property_BulletSpeed = 5f;
+
+        bulletScript.property_PlayerPosi = GameObject.FindWithTag("Player").transform;
+        bulletScript.property_BulletDesti
+            = new Vector3(bulletScript.property_PlayerPosi.transform.position.x,
+                                bulletScript.property_PlayerPosi.transform.position.y, 0);
+        bulletScript.property_enemyBulletIsBomb = true;
+
         return obj;
     }
 
 
-    // 다른 오브젝트에서 총알을 생성하고 파괴될때, 
-    // return으로 pooling배열에 넣어줌
-    // straight 총알 return
+    /// <summary>
+    /// 
+    /// 1. 다른 오브젝트에서 총알을 생성하고 파괴될때, 
+    /// 2. return으로 pooling배열에 넣어줌
+    /// 
+    /// 3. bulletDestroy 애니메이션이 끝날 때, 애니메이션 이벤트로 들어감  
+    /// 
+    /// </summary>
+
     public void returnBullet(GameObject obj) 
     {
         // straight 인지 follow 인지 검사해서 
@@ -138,7 +164,6 @@ public class EnemyPooling : MonoBehaviour
             obj.transform.localPosition = Vector3.zero;
             
             obj.gameObject.SetActive(false);
-            obj.transform.SetParent(straightPooling_parent);
             poolingStraightBullet.Enqueue(obj);            // 되돌아오면 다시 pooling 배열에 넣어줌
         }
 
@@ -148,11 +173,10 @@ public class EnemyPooling : MonoBehaviour
             obj.transform.localPosition = Vector3.zero;
 
             // 따라가는 총알 초기화
-            obj.GetComponent<EnemyFollowBullet>().setBulletDesti = Vector3.zero;
-            obj.GetComponent<EnemyFollowBullet>().setPlayerPosi = null;
+            obj.GetComponent<Enemy_Bullet>().property_BulletDesti = Vector3.zero;
+            obj.GetComponent<Enemy_Bullet>().property_PlayerPosi = null;
 
             obj.gameObject.SetActive(false);
-            obj.transform.SetParent(followPooling_Parent);
             poolingFollowBullet.Enqueue(obj);              // 되돌아오면 다시 pooling 배열에 넣어줌
         }
       
