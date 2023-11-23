@@ -5232,6 +5232,7 @@ MonoBehaviour:
   followPooling_Parent: {fileID: 573440955}
   straightBullet: {fileID: 6279111789319045818, guid: c30a7f436a34a5d4a8e6cab40993ba6f, type: 3}
   followBullet: {fileID: 5075845781784470873, guid: badefd297090b9f4098457860dee0ecc, type: 3}
+  oriBulletImage: {fileID: -905846631, guid: 86e6a8e8b48434e4a9e63a3cac04ccdd, type: 3}
 --- !u!1 &1830796577
 GameObject:
   m_ObjectHideFlags: 0
@@ -5556,7 +5557,7 @@ MonoBehaviour:
   - {fileID: 1921601911043370482, guid: df32c1c393446664dadd1e36748679af, type: 3}
   - {fileID: 8121270031479538464, guid: 790d21798bb1011438e28300740a4ad7, type: 3}
   bossPrefabs:
-  - {fileID: 3604114207680004072, guid: 4869447f38986524cb716d16648c3980, type: 3}
+  - {fileID: 189141935642926084, guid: 24a3ab701b2ac9049a8d85023ae57378, type: 3}
   - {fileID: 1775137408243754433, guid: 6f6f03e5385c3374ab52c21dc1879b38, type: 3}
   - {fileID: 7229639532422697358, guid: 3913fec5d6b5d5e4ea56aca55f44a03e, type: 3}
   - {fileID: 7229639532422697358, guid: 3913fec5d6b5d5e4ea56aca55f44a03e, type: 3}
