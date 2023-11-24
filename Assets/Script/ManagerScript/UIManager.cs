@@ -79,13 +79,21 @@ public class UIManager : MonoBehaviour
     public void OnLoading()
     {
         loadingImage.SetActive(true);
-        //StartCoroutine(FadeOutStart());
-        FadeOutStart();
+        StartCoroutine(FadeOutStart());
+        //FadeOutStart();
     }
-    void FadeOutStart()
+    IEnumerator FadeOutStart()
     {
         Image loadingColor = loadingImage.GetComponent<Image>();
+
+        Color defaultColor = loadingColor.color;
+        yield return new WaitForSeconds(1.2f);
+
         loadingColor.DOColor(new Color(0, 0, 0, 0), 3f);
+
+        yield return new WaitForSeconds(3.2f);
+        loadingColor.color = defaultColor;
+        loadingImage.SetActive(false);
     }
     //IEnumerator FadeOutStart()
     //{
@@ -346,7 +354,7 @@ public class UIManager : MonoBehaviour
     #region banner
     public IEnumerator StageBanner(int stage)
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2.5f);
         banner.StageBanner(stage);
     }
 
