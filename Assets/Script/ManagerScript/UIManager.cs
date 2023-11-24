@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEditor.Build;
-
+using DG.Tweening;
 public class UIManager : MonoBehaviour
 {
     #region singleTon
@@ -79,22 +79,28 @@ public class UIManager : MonoBehaviour
     public void OnLoading()
     {
         loadingImage.SetActive(true);
-        StartCoroutine(FadeOutStart());
+        //StartCoroutine(FadeOutStart());
+        FadeOutStart();
     }
-    IEnumerator FadeOutStart()
+    void FadeOutStart()
     {
-        Image lodingColor = loadingImage.GetComponent<Image>();
-        Color defaultColor = lodingColor.color;
-        yield return new WaitForSeconds(1.2f);
-        for (float f = 1f; f > 0; f -= 0.005f)
-        {
-            lodingColor.color = new Color(0, 0, 0, f);
-            yield return null;
-        }
-        yield return new WaitForSeconds(0.2f);
-        lodingColor.color = defaultColor;
-        loadingImage.SetActive(false);
+        Image loadingColor = loadingImage.GetComponent<Image>();
+        loadingColor.DOColor(new Color(0, 0, 0, 0), 3f);
     }
+    //IEnumerator FadeOutStart()
+    //{
+    //    Image lodingColor = loadingImage.GetComponent<Image>();
+    //    Color defaultColor = lodingColor.color;
+    //    yield return new WaitForSeconds(1.2f);
+    //    for (float f = 1f; f > 0; f -= 0.005f)
+    //    {
+    //        lodingColor.color = new Color(0, 0, 0, f);
+    //        yield return null;
+    //    }
+    //    yield return new WaitForSeconds(0.2f);
+    //    lodingColor.color = defaultColor;
+    //    loadingImage.SetActive(false);
+    //}
     #endregion
 
     #region PauseUI
