@@ -114,6 +114,7 @@ public class ItemTable : MonoBehaviour
                 }
                 GameObject coin = coinPool.Pop();
                 coin.SetActive(true);
+                coin.GetComponent<Coin>().SetCollisionDelay(true);
                 return coin;
             #endregion
             #region 하트
@@ -231,7 +232,7 @@ public class ItemTable : MonoBehaviour
             {
                 if(active.Count == 0)
                 {
-                    obj = DropItems[3];
+                    obj = GetDropItem(3);
                     obj.GetComponent<key>().SetCollisionDelay(true);
                     return obj;
                 }
@@ -262,7 +263,7 @@ public class ItemTable : MonoBehaviour
             {
                 if (trinket.Count == 0)
                 {
-                    obj = DropItems[3];
+                    obj = GetDropItem(3);
                     obj.GetComponent<key>().SetCollisionDelay(true);
                     return obj;
                 }
@@ -293,7 +294,7 @@ public class ItemTable : MonoBehaviour
             {
                 if (trinket.Count == 0)
                 {
-                    obj = DropItems[3];
+                    obj = GetDropItem(3);
                     obj.GetComponent<key>().SetCollisionDelay(true);
                     return obj;
                 }
@@ -357,6 +358,9 @@ public class ItemTable : MonoBehaviour
     {
         return PassiveItems[index].GetComponent<SpriteRenderer>().sprite;
     }
+
+
+
     #region archive
     public GameObject ObjectBreak() // 오브젝트 부쉈을때
     {

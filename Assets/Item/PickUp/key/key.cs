@@ -14,7 +14,7 @@ public class key : MonoBehaviour
 
     public Sprite defaultSprite;
 
-    bool collisionDelay;
+    [SerializeField] bool collisionDelay;
     public void Start()
     {
         audioSource = GetComponent<AudioSource>(); // 분명 초기화도 해줬는데

@@ -74,6 +74,7 @@ public class RoomGenerate : MonoBehaviour
 
             GameObject shopTable = Instantiate(objectPrefabs[5], shopTable_Transform.position, Quaternion.identity);
             GameObject goldTable = Instantiate(objectPrefabs[6], goldTable_Transform.position, Quaternion.identity);
+
             GameObject normalChest = Instantiate(objectPrefabs[7], chestPool_Transform.position, Quaternion.identity);
             GameObject goldChest = Instantiate(objectPrefabs[8], chestPool_Transform.position, Quaternion.identity);
             GameObject curseChest = Instantiate(objectPrefabs[10], chestPool_Transform.position, Quaternion.identity);
@@ -83,8 +84,10 @@ public class RoomGenerate : MonoBehaviour
             poopPool.Push(poop);
             firePool.Push(fire);
             spikePool.Push(spike);
+
             shopTablePool.Push(shopTable);
             goldTablePool.Push(goldTable);
+
             normalChestPool.Push(normalChest);
             goldChestPool.Push(goldChest);
             curseChestPool.Push(curseChest);
@@ -94,8 +97,10 @@ public class RoomGenerate : MonoBehaviour
             poop.transform.SetParent(obstaclePool_Transform);
             fire.transform.SetParent(obstaclePool_Transform);
             spike.transform.SetParent(obstaclePool_Transform);
+
             shopTable.transform.SetParent(shopTable_Transform);
             goldTable.transform.SetParent(goldTable_Transform);
+
             normalChest.transform.SetParent(chestPool_Transform);
             goldChest.transform.SetParent(chestPool_Transform);
             curseChest.transform.SetParent(chestPool_Transform);
@@ -105,8 +110,10 @@ public class RoomGenerate : MonoBehaviour
             SetSFXObject(poop);
             SetSFXObject(fire);
             SetSFXObject(spike);
+
             SetSFXObject(shopTable); // 사운드 없는 오브젝트 입니다.
             SetSFXObject(goldTable); // 사운드 없는 오브젝트입니다.
+
             SetSFXObject(normalChest);
             SetSFXObject(goldChest);
             SetSFXObject(curseChest);
@@ -115,8 +122,10 @@ public class RoomGenerate : MonoBehaviour
             poop.SetActive(false);
             fire.SetActive(false);
             spike.SetActive(false);
+
             shopTable.SetActive(false);
             goldTable.SetActive(false);
+
             normalChest.SetActive(false);
             goldChest.SetActive(false);
             curseChest.SetActive(false);
