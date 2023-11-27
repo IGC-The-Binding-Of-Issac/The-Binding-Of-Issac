@@ -100,7 +100,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89a5e51a962715942a7ee30436c44632, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  openChestSprite: {fileID: 1616873601, guid: 12e1a6e50ffb3fb4fbe6c8c15bdb2782, type: 3}
+  openSprite: {fileID: 1616873601, guid: 12e1a6e50ffb3fb4fbe6c8c15bdb2782, type: 3}
+  closeSprite: {fileID: -470725204, guid: 12e1a6e50ffb3fb4fbe6c8c15bdb2782, type: 3}
 --- !u!61 &7369054732692330342
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -159,7 +160,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 2
-  m_LinearDrag: 0
+  m_LinearDrag: 1
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}

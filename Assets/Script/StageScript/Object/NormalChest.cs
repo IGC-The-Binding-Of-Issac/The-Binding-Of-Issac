@@ -2,47 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NormalChest : MonoBehaviour
+public class NormalChest : Chest
 {
-    [Header("Unity Setup")]
-    [SerializeField] Sprite openChestSprite;
-    [SerializeField] Sprite closeChestSprite;
-
-    private void Start()
+    protected override void initialization()
     {
-        closeChestSprite = gameObject.GetComponent<SpriteRenderer>().sprite;
+        gameObject.GetComponent<SpriteRenderer>().sprite = closeSprite;
     }
 
-    public void ResetObject()
+    public override void Returnobject()
     {
-        // 초기화
-        gameObject.GetComponent<SpriteRenderer>().sprite = closeChestSprite;
-        gameObject.layer = 15;
-
-        // 오브젝트 끄기.
-        gameObject.SetActive(false);
+        GameManager.instance.roomGenerate.NormalChestPool.Push(gameObject);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-            if(collision.gameObject.CompareTag("Player")) // 풀래아와 충돌시
-            {
-                gameObject.GetComponent<SpriteRenderer>().sprite = openChestSprite; // 열린상자 이미지로 변경
-                OpenChest(); // 드랍 아이템 생성
-                openChestSound();
-                StartCoroutine(StopChest()); // 밀린 오브젝트 멈추도기
-            }
+        if(collision.gameObject.CompareTag("Player"))
+        {
+            OpenChest();
+        }
     }
 
-    IEnumerator StopChest()
-    {
-        gameObject.layer = 16;
-        yield return new WaitForSeconds(1.0f);
-        gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
-
-    }
-
-    void OpenChest()
+    protected override void DropReward()
     {
         for (int i = 0; i < 2; i++)
         {
@@ -60,10 +40,5 @@ public class NormalChest : MonoBehaviour
                 ItemManager.instance.itemTable.Dropitem(transform.position, rd);
             }
         }
-    }
-
-    void openChestSound()
-    {
-        gameObject.GetComponent<AudioSource>().Play();
     }
 }

@@ -146,7 +146,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 2
-  m_LinearDrag: 0
+  m_LinearDrag: 1
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -172,7 +172,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1ecc599dc2995b48a9fdb16ba53d427, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  openChestSprite: {fileID: 21641220, guid: 12e1a6e50ffb3fb4fbe6c8c15bdb2782, type: 3}
+  openSprite: {fileID: 21641220, guid: 12e1a6e50ffb3fb4fbe6c8c15bdb2782, type: 3}
+  closeSprite: {fileID: -1887365102, guid: 12e1a6e50ffb3fb4fbe6c8c15bdb2782, type: 3}
 --- !u!82 &-8188323703645944483
 AudioSource:
   m_ObjectHideFlags: 0

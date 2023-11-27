@@ -24,32 +24,34 @@ public class RoomGenerate : MonoBehaviour
     public GameObject[] doorPrefabs;   // 방생성후 문 생성할때 사용할 프리팹들
 
     [Header("Pooling")]
-    public Transform rockPool_Transform;
-    Stack<GameObject> rockPool = new Stack<GameObject>();
+    // 맵 오브젝트
+    public Transform obstaclePool_Transform;
+    private Stack<GameObject> rockPool = new Stack<GameObject>();
+    private Stack<GameObject> poopPool = new Stack<GameObject>();
+    private Stack<GameObject> firePool = new Stack<GameObject>();
+    private Stack<GameObject> spikePool = new Stack<GameObject>();
+    public Stack<GameObject> RockPool { get => rockPool; }
+    public Stack<GameObject> PoopPool { get => poopPool; }
+    public Stack<GameObject> FirePool { get => firePool; }
+    public Stack<GameObject> SpikePool { get => spikePool; }
 
-    public Transform poopPool_Transform;
-    Stack<GameObject> poopPool = new Stack<GameObject>();
-
-    public Transform firePool_Transform;
-    Stack<GameObject> firePool = new Stack<GameObject>();
-
-    public Transform spikePool_Transform;
-    Stack<GameObject> spikePool = new Stack<GameObject>();
-
-    public Transform normalChestPool_Transform;
+    // 상자 
+    public Transform chestPool_Transform;
     Stack<GameObject> normalChestPool = new Stack<GameObject>();
-
-    public Transform goldchestPool_Transform;
     Stack<GameObject> goldChestPool = new Stack<GameObject>();
+    Stack<GameObject> curseChestPool = new Stack<GameObject>();
+    public Stack<GameObject> NormalChestPool { get => normalChestPool; }
+    public Stack<GameObject> GoldChestPool { get => goldChestPool; }
+    public Stack<GameObject> CurseChestPool { get => curseChestPool; }
 
+
+    // 상점/황금방 보상 테이블
     public Transform shopTable_Transform;
     Stack<GameObject> shopTablePool = new Stack<GameObject>();
 
     public Transform goldTable_Transform;
     Stack<GameObject> goldTablePool = new Stack<GameObject>();
 
-    public Transform curseChestPool_Transform;
-    Stack<GameObject> curseChestPool = new Stack<GameObject>();
     public void SetObjectPooling()
     {
         rockPool = new Stack<GameObject>();
@@ -65,45 +67,53 @@ public class RoomGenerate : MonoBehaviour
         for (int i = 0; i < 10; i++)
         {
             // 오브젝트 생성
-            GameObject rock = Instantiate(objectPrefabs[0], rockPool_Transform.position, Quaternion.identity);
-            GameObject poop = Instantiate(objectPrefabs[1], poopPool_Transform.position, Quaternion.identity);
-            GameObject fire = Instantiate(objectPrefabs[2], firePool_Transform.position, Quaternion.identity); 
-            GameObject spike = Instantiate(objectPrefabs[3], spikePool_Transform.position, Quaternion.identity);
+            GameObject rock = Instantiate(objectPrefabs[0], obstaclePool_Transform.position, Quaternion.identity);
+            GameObject poop = Instantiate(objectPrefabs[1], obstaclePool_Transform.position, Quaternion.identity);
+            GameObject fire = Instantiate(objectPrefabs[2], obstaclePool_Transform.position, Quaternion.identity); 
+            GameObject spike = Instantiate(objectPrefabs[3], obstaclePool_Transform.position, Quaternion.identity);
+
             GameObject shopTable = Instantiate(objectPrefabs[5], shopTable_Transform.position, Quaternion.identity);
             GameObject goldTable = Instantiate(objectPrefabs[6], goldTable_Transform.position, Quaternion.identity);
-            GameObject normalChest = Instantiate(objectPrefabs[7], normalChestPool_Transform.position, Quaternion.identity);
-            GameObject goldChest = Instantiate(objectPrefabs[8], normalChestPool_Transform.position, Quaternion.identity);
-            GameObject curseChest = Instantiate(objectPrefabs[10], curseChestPool_Transform.position, Quaternion.identity);
+
+            GameObject normalChest = Instantiate(objectPrefabs[7], chestPool_Transform.position, Quaternion.identity);
+            GameObject goldChest = Instantiate(objectPrefabs[8], chestPool_Transform.position, Quaternion.identity);
+            GameObject curseChest = Instantiate(objectPrefabs[10], chestPool_Transform.position, Quaternion.identity);
 
             // 오브젝트 풀 담아주기
             rockPool.Push(rock);
             poopPool.Push(poop);
             firePool.Push(fire);
             spikePool.Push(spike);
+
             shopTablePool.Push(shopTable);
             goldTablePool.Push(goldTable);
+
             normalChestPool.Push(normalChest);
             goldChestPool.Push(goldChest);
             curseChestPool.Push(curseChest);
 
             // 오브젝트 한곳에 모아두기.
-            rock.transform.SetParent(rockPool_Transform);
-            poop.transform.SetParent(poopPool_Transform);
-            fire.transform.SetParent(firePool_Transform);
-            spike.transform.SetParent(spikePool_Transform);
+            rock.transform.SetParent(obstaclePool_Transform);
+            poop.transform.SetParent(obstaclePool_Transform);
+            fire.transform.SetParent(obstaclePool_Transform);
+            spike.transform.SetParent(obstaclePool_Transform);
+
             shopTable.transform.SetParent(shopTable_Transform);
             goldTable.transform.SetParent(goldTable_Transform);
-            normalChest.transform.SetParent(normalChestPool_Transform);
-            goldChest.transform.SetParent(goldchestPool_Transform);
-            curseChest.transform.SetParent(curseChestPool_Transform);
+
+            normalChest.transform.SetParent(chestPool_Transform);
+            goldChest.transform.SetParent(chestPool_Transform);
+            curseChest.transform.SetParent(chestPool_Transform);
 
             // 사운드 조절을 위해 SFXObject로 넣어주기 // 이 부분 작동안함.
             SetSFXObject(rock);
             SetSFXObject(poop);
             SetSFXObject(fire);
             SetSFXObject(spike);
+
             SetSFXObject(shopTable); // 사운드 없는 오브젝트 입니다.
             SetSFXObject(goldTable); // 사운드 없는 오브젝트입니다.
+
             SetSFXObject(normalChest);
             SetSFXObject(goldChest);
             SetSFXObject(curseChest);
@@ -112,8 +122,10 @@ public class RoomGenerate : MonoBehaviour
             poop.SetActive(false);
             fire.SetActive(false);
             spike.SetActive(false);
+
             shopTable.SetActive(false);
             goldTable.SetActive(false);
+
             normalChest.SetActive(false);
             goldChest.SetActive(false);
             curseChest.SetActive(false);
@@ -129,9 +141,9 @@ public class RoomGenerate : MonoBehaviour
                 if(rockPool.Count == 0) // 오브젝트풀에 오브젝트가 없을때
                 {
                     // 오브젝트 생성해서 리턴
-                    GameObject rock = Instantiate(objectPrefabs[0], rockPool_Transform.position, Quaternion.identity);
+                    GameObject rock = Instantiate(objectPrefabs[0], obstaclePool_Transform.position, Quaternion.identity);
                     rockPool.Push(rock);
-                    rock.transform.SetParent(rockPool_Transform);
+                    rock.transform.SetParent(obstaclePool_Transform);
                     SetSFXObject(rock);
                 }
                 GameObject rockObj = rockPool.Pop();
@@ -144,9 +156,9 @@ public class RoomGenerate : MonoBehaviour
                 if (poopPool.Count == 0) // 오브젝트풀에 오브젝트가 없을때
                 {
                     // 오브젝트 생성해서 리턴
-                    GameObject poop = Instantiate(objectPrefabs[1], poopPool_Transform.position, Quaternion.identity);
+                    GameObject poop = Instantiate(objectPrefabs[1], obstaclePool_Transform.position, Quaternion.identity);
                     poopPool.Push(poop);
-                    poop.transform.SetParent(poopPool_Transform);
+                    poop.transform.SetParent(obstaclePool_Transform);
                     SetSFXObject(poop);
                 }
                 GameObject poopObj = poopPool.Pop();
@@ -159,9 +171,9 @@ public class RoomGenerate : MonoBehaviour
                 if (firePool.Count == 0) // 오브젝트풀에 오브젝트가 없을때
                 {
                     // 오브젝트 생성해서 리턴
-                    GameObject fire = Instantiate(objectPrefabs[2], firePool_Transform.position, Quaternion.identity);
+                    GameObject fire = Instantiate(objectPrefabs[2], obstaclePool_Transform.position, Quaternion.identity);
                     firePool.Push(fire);
-                    fire.transform.SetParent(firePool_Transform);
+                    fire.transform.SetParent(obstaclePool_Transform);
                     SetSFXObject(fire);
                 }
                 GameObject fireObj = firePool.Pop();
@@ -174,9 +186,9 @@ public class RoomGenerate : MonoBehaviour
                 if (spikePool.Count == 0) // 오브젝트풀에 오브젝트가 없을때
                 {
                     // 오브젝트 생성해서 리턴
-                    GameObject spike = Instantiate(objectPrefabs[3], spikePool_Transform.position, Quaternion.identity);
+                    GameObject spike = Instantiate(objectPrefabs[3], obstaclePool_Transform.position, Quaternion.identity);
                     spikePool.Push(spike);
-                    spike.transform.SetParent(spikePool_Transform);
+                    spike.transform.SetParent(obstaclePool_Transform);
                     SetSFXObject(spike);
                 }
                 GameObject spikeObj = spikePool.Pop();
@@ -216,9 +228,9 @@ public class RoomGenerate : MonoBehaviour
             case 7:
                 if(normalChestPool.Count == 0)
                 {
-                    GameObject normalChest = Instantiate(objectPrefabs[7], normalChestPool_Transform.position, Quaternion.identity);
+                    GameObject normalChest = Instantiate(objectPrefabs[7], chestPool_Transform.position, Quaternion.identity);
                     normalChestPool.Push(normalChest);
-                    normalChest.transform.SetParent(normalChestPool_Transform);
+                    normalChest.transform.SetParent(chestPool_Transform);
                     SetSFXObject(normalChest);
                 }
                 GameObject normalChestObj = normalChestPool.Pop();
@@ -230,9 +242,9 @@ public class RoomGenerate : MonoBehaviour
             case 8:
                 if (goldChestPool.Count == 0)
                 {
-                    GameObject goldChest = Instantiate(objectPrefabs[8], goldchestPool_Transform.position, Quaternion.identity);
+                    GameObject goldChest = Instantiate(objectPrefabs[8], chestPool_Transform.position, Quaternion.identity);
                     goldChestPool.Push(goldChest);
-                    goldChest.transform.SetParent(goldchestPool_Transform);
+                    goldChest.transform.SetParent(chestPool_Transform);
                     SetSFXObject(goldChest);
                 }
                 GameObject goldChestObj = goldChestPool.Pop();
@@ -244,9 +256,9 @@ public class RoomGenerate : MonoBehaviour
             case 10:
                 if (curseChestPool.Count == 0)
                 {
-                    GameObject curseChest = Instantiate(objectPrefabs[10], curseChestPool_Transform.position, Quaternion.identity);
+                    GameObject curseChest = Instantiate(objectPrefabs[10], chestPool_Transform.position, Quaternion.identity);
                     curseChestPool.Push(curseChest);
-                    curseChest.transform.SetParent(curseChestPool_Transform);
+                    curseChest.transform.SetParent(chestPool_Transform);
                     SetSFXObject(curseChest);
                 }
                 GameObject curseChestObj = curseChestPool.Pop();
@@ -259,49 +271,28 @@ public class RoomGenerate : MonoBehaviour
 
     void AllReturnObject()
     {
-        // 돌 0
-        for(int i = 0; i < rockPool_Transform.childCount; i++)
+        // 돌 똥 불 가시
+        for(int i = 0; i < obstaclePool_Transform.childCount; i++)
         {
-            GameObject obj = rockPool_Transform.GetChild(i).gameObject;
+            GameObject obj = obstaclePool_Transform.GetChild(i).gameObject;
             if (obj.activeSelf)
             {
-                obj.GetComponent<Rock>().ResetObject();
-                rockPool.Push(obj);
-            }
-        }
-         
-        // 똥 1
-        for (int i = 0; i < poopPool_Transform.childCount; i++)
-        {
-            GameObject obj = poopPool_Transform.GetChild(i).gameObject;
-            if (obj.activeSelf)
-            {
-                obj.GetComponent<Poop>().ResetObject();
-                poopPool.Push(obj);
+                obj.GetComponent<Obstacle>().ResetObject();
+                obj.GetComponent<Obstacle>().Returnobject(); ;
             }
         }
 
-        // 불 2
-        for (int i = 0; i < firePool_Transform.childCount; i++)
+        // 일반상자/ 황금상자/ 저주방상자
+        for (int i = 0; i < chestPool_Transform.childCount; i++)
         {
-            GameObject obj = firePool_Transform.GetChild(i).gameObject;
+            GameObject obj = chestPool_Transform.GetChild(i).gameObject;
             if (obj.activeSelf)
             {
-                obj.GetComponent<FirePlace>().ResetObject();
-                firePool.Push(obj);
+                obj.GetComponent<Chest>().ResetObject();
+                obj.GetComponent<Chest>().Returnobject();
             }
         }
 
-        // 가시 3
-        for (int i = 0; i < spikePool_Transform.childCount; i++)
-        {
-            GameObject obj = spikePool_Transform.GetChild(i).gameObject;
-            if (obj.activeSelf)
-            {
-                obj.GetComponent<Spikes>().ResetObject();
-                spikePool.Push(obj);
-            }
-        }
 
         // 상점방 아이템 테이블 5
         for (int i = 0; i < shopTable_Transform.childCount; i++)
@@ -322,39 +313,6 @@ public class RoomGenerate : MonoBehaviour
             {
                 obj.GetComponent<GoldTable>().ResetObject();
                 goldTablePool.Push(obj);
-            }
-        }
-
-        // 일반 상자 7
-        for (int i = 0; i < normalChestPool_Transform.childCount; i++)
-        {
-            GameObject obj = normalChestPool_Transform.GetChild(i).gameObject;
-            if (obj.activeSelf)
-            {
-                obj.GetComponent<NormalChest>().ResetObject();
-                normalChestPool.Push(obj);
-            }
-        }
-
-        // 황금 상자 8
-        for (int i = 0; i < goldchestPool_Transform.childCount; i++)
-        {
-            GameObject obj = goldchestPool_Transform.GetChild(i).gameObject;
-            if (obj.activeSelf)
-            {
-                obj.GetComponent<GoldChest>().ResetObject();
-                goldChestPool.Push(obj);
-            }
-        }
-
-        // 저주방 상자 10
-        for (int i = 0; i < curseChestPool_Transform.childCount; i++)
-        {
-            GameObject obj = curseChestPool_Transform.GetChild(i).gameObject;
-            if (obj.activeSelf)
-            {
-                obj.GetComponent<CurseChest>().ResetObject();
-                curseChestPool.Push(obj);
             }
         }
     }

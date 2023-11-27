@@ -8,6 +8,8 @@ public class Coin : MonoBehaviour
 
     [SerializeField] AudioClip pickupClip;
     [SerializeField] AudioClip dropClip;
+
+    bool collisionDelay;
     public void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -15,8 +17,8 @@ public class Coin : MonoBehaviour
 
     public void DropCoin()
     {
+        collisionDelay = false;
         GetComponent<Animator>().SetTrigger("Drop");
-        gameObject.layer = 31;
         
         float randomX = Random.Range(-1.0f, 1.0f);
         float randomY = Random.Range(-1.0f, 1.0f);
@@ -27,9 +29,8 @@ public class Coin : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") && collisionDelay)
         {
-            gameObject.layer = 31;
             GetComponent<Animator>().SetTrigger("Get");
             ItemManager.instance.coinCount++;
         }
@@ -43,13 +44,14 @@ public class Coin : MonoBehaviour
 
     public void DropCoinEnd()
     {
-        gameObject.layer = 14;
+        collisionDelay = true;
     }
 
     public void ResetObject()
     {
         // 레이어 초기화 
-        gameObject.layer = 14;
+        gameObject.layer = 14; // 음.. 이젠 안쓰긴하는데 넣어둬야지
+        collisionDelay = true; 
     }
     
     IEnumerator CoinReturnDelay()
@@ -75,5 +77,10 @@ public class Coin : MonoBehaviour
         audioSource.volume = SoundManager.instance.GetSFXVolume();
         audioSource.clip = pickupClip;
         audioSource.Play();
+    }
+
+    public void SetCollisionDelay(bool state)
+    {
+        collisionDelay = state;
     }
 }

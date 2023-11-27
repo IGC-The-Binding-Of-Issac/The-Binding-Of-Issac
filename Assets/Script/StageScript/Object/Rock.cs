@@ -2,36 +2,43 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Rock : MonoBehaviour
+public class Rock : Obstacle
 {
-    [SerializeField] Sprite destoryRock;
-    Sprite defaultSprite;
-    // 폭탄에 피격이 DestoryRock()을 호출.
+    [SerializeField] Sprite[] rockSprite;
 
-    private void Start()
+    protected override void initialization()
     {
-        defaultSprite = gameObject.GetComponent<SpriteRenderer>().sprite;
+        GetComponent<SpriteRenderer>().sprite = rockSprite[spriteIndex];
+        objectLayer = 8;
     }
-    public void DestroyRock()
+
+    public override void ResetObject()
     {
-        gameObject.GetComponent<SpriteRenderer>().sprite = destoryRock;
-        gameObject.GetComponent<BoxCollider2D>().enabled = false;
+        // 초기화
+        spriteIndex = 0;
+        gameObject.GetComponent<SpriteRenderer>().sprite = rockSprite[0];
+        gameObject.layer = objectLayer;
+
+        // 오브젝트 끄기.
+        gameObject.SetActive(false);
+    }
+
+    public override void Returnobject()
+    {
+        GameManager.instance.roomGenerate.RockPool.Push(gameObject);
+    }
+
+    public override void GetDamage()
+    {
+        spriteIndex++;
+        ChangeObjectSPrite();
+        gameObject.layer = noCollisionLayer;
 
         DestorySound();
     }
 
-    void DestorySound()
+    protected override void ChangeObjectSPrite()
     {
-        gameObject.GetComponent<AudioSource>().Play();
-    }
-
-    public void ResetObject()
-    {
-        // 초기화
-        gameObject.GetComponent<SpriteRenderer>().sprite = defaultSprite;
-        gameObject.GetComponent<BoxCollider2D>().enabled = true;
-
-        // 오브젝트 끄기.
-        gameObject.SetActive(false);
+        gameObject.GetComponent<SpriteRenderer>().sprite = rockSprite[spriteIndex];
     }
 }

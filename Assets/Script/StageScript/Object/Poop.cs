@@ -1,58 +1,61 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Tilemaps;
 using UnityEngine;
 
-public class Poop : MonoBehaviour
+public class Poop : Obstacle
 {
-    int poopIndex = -1;
-
     [Header("Unity SetUp")]
     [SerializeField] Sprite[] poopSprite;
-    Sprite defaultSprite;
-    private void Start()
+
+    protected override void initialization()
     {
-        defaultSprite = GetComponent<SpriteRenderer>().sprite;
+        GetComponent<SpriteRenderer>().sprite = poopSprite[spriteIndex];
+        objectLayer = 7;
     }
 
-    public void GetDamage()
+    public override void ResetObject()
     {
-        poopIndex++;
-        ChangeSprite(poopIndex);
-        if(poopIndex >= 3) // 체력이 전부 깍이면
+        // 초기화
+        spriteIndex = 0;
+        GetComponent<SpriteRenderer>().sprite = poopSprite[0];
+        gameObject.layer = objectLayer;
+
+        // 오브젝트 끄기.
+        gameObject.SetActive(false);
+    }
+
+    public override void Returnobject()
+    {
+        GameManager.instance.roomGenerate.PoopPool.Push(gameObject);
+    }
+
+    public override void GetDamage()
+    {
+        spriteIndex++;
+        ChangeObjectSPrite();
+        if(spriteIndex >= 4) // 체력이 전부 깍이면
         {
             DestorySound();
-            gameObject.GetComponent<BoxCollider2D>().enabled = false; //콜라이더 없애기.
-            ItemDrop();
+            gameObject.layer = noCollisionLayer;
+            DropItem();
         }
     }
 
-    void ChangeSprite(int index)
+    protected override void ChangeObjectSPrite()
     {
-        gameObject.GetComponent<SpriteRenderer>().sprite = poopSprite[index];
+        if (spriteIndex >= 4)
+            spriteIndex = 4;
+        gameObject.GetComponent<SpriteRenderer>().sprite = poopSprite[spriteIndex];
     }
 
-    void ItemDrop()
+    protected override void DropItem()
     {
         int rd = Random.Range(0, 3);
         if (rd <= 0)
         {
             ItemManager.instance.itemTable.Dropitem(transform.position, rd);
-
         }
     }
 
-    void DestorySound()
-    {
-        gameObject.GetComponent<AudioSource>().Play();
-    }
-    public void ResetObject()
-    {
-        // 초기화
-        poopIndex = -1;
-        GetComponent<SpriteRenderer>().sprite = defaultSprite;
-        GetComponent<BoxCollider2D>().enabled = true;
-
-        // 오브젝트 끄기.
-        gameObject.SetActive(false);
-    }
 }
