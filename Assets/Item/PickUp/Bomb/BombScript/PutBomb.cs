@@ -78,7 +78,7 @@ public class PutBomb : MonoBehaviour
         {
             if (collision.CompareTag("Object_Rock"))
             {
-                collision.GetComponent<Rock>().DestroyRock();
+                collision.GetComponent<Rock>().GetDamage();
             }
             if (collision.CompareTag("Object_Poop"))
             {

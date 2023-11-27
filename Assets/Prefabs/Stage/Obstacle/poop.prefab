@@ -146,6 +146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   poopSprite:
+  - {fileID: 1203131857, guid: 84c00d40111fcb9409f10cac7e3e5e24, type: 3}
   - {fileID: 2100527698, guid: 84c00d40111fcb9409f10cac7e3e5e24, type: 3}
   - {fileID: -1470265258, guid: 84c00d40111fcb9409f10cac7e3e5e24, type: 3}
   - {fileID: -1789983260, guid: 84c00d40111fcb9409f10cac7e3e5e24, type: 3}

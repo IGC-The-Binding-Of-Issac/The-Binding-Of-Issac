@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spikes : MonoBehaviour
+public class Spikes : Obstacle
 {
     private void OnTriggerStay2D(Collider2D collision)
     {
@@ -11,8 +11,19 @@ public class Spikes : MonoBehaviour
             PlayerManager.instance.GetDamage();
         }
     }
-    public void ResetObject()
+
+    protected override void initialization() 
     {
-        gameObject.SetActive(false);
+        objectLayer = 9;
+    }
+
+    public override void ResetObject() 
+    { 
+        gameObject.SetActive(false); 
+    }
+
+    public override void Returnobject()
+    {
+        // 해당 오브젝트의 풀 stack에 넣어주기
     }
 }

@@ -228,6 +228,7 @@ MonoBehaviour:
   eft: {fileID: 7076980663986299382}
   boxCollider: {fileID: 1368629504134227966}
   destoryClip: {fileID: 8300000, guid: 074bb1c59b030e244b4852ddd5b07507, type: 3}
+  fireClip: {fileID: 8300000, guid: a836c8c0c463d95429b7a0a66c4ec53e, type: 3}
 --- !u!50 &545498563490721372
 Rigidbody2D:
   serializedVersion: 4
