@@ -40,7 +40,7 @@ public class FirePlace : Obstacle
 
     public override void Returnobject()
     {
-        // 해당 오브젝트의 풀 stack에 넣어주기
+        GameManager.instance.roomGenerate.FirePool.Push(gameObject);
     }
 
 

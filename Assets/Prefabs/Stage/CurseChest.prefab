@@ -100,8 +100,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e523df39c63e69428340e24c13e77b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  openChestSprite: {fileID: -1166104295, guid: 12e1a6e50ffb3fb4fbe6c8c15bdb2782, type: 3}
-  closeChestSprite: {fileID: 1222237394, guid: 12e1a6e50ffb3fb4fbe6c8c15bdb2782, type: 3}
+  openSprite: {fileID: -1166104295, guid: 12e1a6e50ffb3fb4fbe6c8c15bdb2782, type: 3}
+  closeSprite: {fileID: 1222237394, guid: 12e1a6e50ffb3fb4fbe6c8c15bdb2782, type: 3}
 --- !u!50 &7056965426812683830
 Rigidbody2D:
   serializedVersion: 4
@@ -115,7 +115,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 2
-  m_LinearDrag: 0
+  m_LinearDrag: 1
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}

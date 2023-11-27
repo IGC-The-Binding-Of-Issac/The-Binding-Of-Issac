@@ -25,7 +25,7 @@ public class Rock : Obstacle
 
     public override void Returnobject()
     {
-        // 해당 오브젝트의 풀 stack에 넣어주기
+        GameManager.instance.roomGenerate.RockPool.Push(gameObject);
     }
 
     public override void GetDamage()

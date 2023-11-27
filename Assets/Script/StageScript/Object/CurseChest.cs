@@ -3,48 +3,31 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Purchasing;
 
-public class CurseChest : MonoBehaviour
+public class CurseChest : Chest
 {
-    [Header("Unity Setup")]
-    [SerializeField] Sprite openChestSprite;
-    [SerializeField] Sprite closeChestSprite;
+    [Header("Chest State")]
     Room roomInfo;
 
-    private void Start()
+    protected override void initialization()
     {
-        closeChestSprite = gameObject.GetComponent<SpriteRenderer>().sprite;
+        gameObject.GetComponent<SpriteRenderer>().sprite = closeSprite;
     }
 
-    public void ResetObject()
+    public override void Returnobject()
     {
-        // 초기화
-        gameObject.GetComponent<SpriteRenderer>().sprite = closeChestSprite;
-        gameObject.layer = 15;
-
-        // 오브젝트 끄기.
-        gameObject.SetActive(false);
+        GameManager.instance.roomGenerate.CurseChestPool.Push(gameObject);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player")) // 풀래아와 충돌시
+        if (collision.gameObject.CompareTag("Player"))
         {
-            gameObject.GetComponent<SpriteRenderer>().sprite = openChestSprite; // 열린상자 이미지로 변경
-            OpenChest(); // 몬스터 또는 패시브 아이템 드랍
-            openChestSound(); // 상자 오픈 사운드 실행
-            StartCoroutine(StopChest()); // 상자 밀림 멈춰!
+            OpenChest();
         }
     }
 
-    IEnumerator StopChest()
-    {
-        gameObject.layer = 16;
-        yield return new WaitForSeconds(1.0f);
-        gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
 
-    }
-
-    void OpenChest()
+    protected override void DropReward()
     {
         int rd = Random.Range(0, 10000);
         if(rd % 2 == 0)
@@ -87,10 +70,5 @@ public class CurseChest : MonoBehaviour
     public void SetRoomInfo(GameObject room)
     {
         roomInfo = room.GetComponent<Room>();
-    }
-
-    void openChestSound()
-    {
-        gameObject.GetComponent<AudioSource>().Play();
     }
 }
