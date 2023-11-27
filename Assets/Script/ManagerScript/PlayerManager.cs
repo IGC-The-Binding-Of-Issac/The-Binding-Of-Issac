@@ -22,7 +22,7 @@ public class PlayerManager : MonoBehaviour
     public int playerHp = 6; // 현재 체력
     public int playerMaxHp = 6; // 최대 체력
     public float playerMoveSpeed = 5f; // 이동 속도
-    public float playerTearSpeed = 6f; // 투사체 속도
+    public float playerTearSpeed = 5f; // 투사체 속도
     public float playerShotDelay = 0.5f; // 공격 딜레이
     public float playerDamage = 1f; // 데미지
     public float playerRange = 5f; // 사거리
