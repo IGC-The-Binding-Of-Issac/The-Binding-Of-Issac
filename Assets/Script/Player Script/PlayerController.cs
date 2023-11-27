@@ -36,8 +36,6 @@ public class PlayerController : MonoBehaviour
     private float lastshot;
     Vector2 moveInput;
     Vector2 shotInput;
-    float shootHor;
-    float shootVer;
     public float tearY;
 
     [Header("PlayerState")]
@@ -91,8 +89,8 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        ShotAnim();
         MoveAnim();
+        ShotAnim();
         InstallBomb();
         UseActive();
     }
@@ -292,9 +290,9 @@ public class PlayerController : MonoBehaviour
             moveInput.Normalize();
         }
         //가로 발사 키 입력
-        shootHor = Input.GetAxis("ShootHorizontal");
+        float shootHor = Input.GetAxis("ShootHorizontal");
         //세로 발사 키 입력
-        shootVer = Input.GetAxis("ShootVertical");
+        float shootVer = Input.GetAxis("ShootVertical");
 
         shotInput = shootHor * Vector2.right + shootVer * Vector2.up;
         if (ItemManager.instance.PassiveItems[13] && !ItemManager.instance.PassiveItems[16])
@@ -312,32 +310,7 @@ public class PlayerController : MonoBehaviour
                     //대각 발사 X
                     shootHor = 0;
                 }
-                //총알이 포물선을 그리는 아이템
-                if (ItemManager.instance.PassiveItems[9])
-                {
-                    if (Input.GetKey(KeyCode.RightArrow))
-                    {
-                        //우측키를 눌렀을 때 대각 위 55도로 힘을 주는 코드
-                        Shoot(Mathf.Cos(55 * Mathf.Deg2Rad), Mathf.Sin(55 * Mathf.Deg2Rad));
-                    }
-                    if (Input.GetKey(KeyCode.LeftArrow))
-                    {
-                        //좌측키를 눌렀을 때 대각 위 120도로 힘을 주는 코드
-                        Shoot(Mathf.Cos(120 * Mathf.Deg2Rad), Mathf.Sin(120 * Mathf.Deg2Rad));
-                    }
-                    if (Input.GetKey(KeyCode.UpArrow))
-                    {
-                        Shoot(shootHor, shootVer);
-                    }
-                    if (Input.GetKey(KeyCode.DownArrow))
-                    {
-                        Shoot(shootHor, shootVer);
-                    }
-                }
-                else
-                {
-                    Shoot(shootHor, shootVer);
-                }
+                Shoot(shootHor, shootVer);
                 //마지막 발사에 현재 시간(초단위)을 넣음
                 lastshot = Time.time;
             }
@@ -368,16 +341,6 @@ public class PlayerController : MonoBehaviour
         DefaultTearObject.transform.position = firePoint;
         //생성된 눈물에 눈물속도 곱해서 힘주기
         DefaultTearObject.GetComponent<Rigidbody2D>().velocity = new Vector3(x * tearSpeed, y * tearSpeed, 0);
-
-        //9번 패시브 아이템을 먹으면
-        if (ItemManager.instance.PassiveItems[9])
-        {
-            if(tearY != -1)
-                //눈물 중력 증가
-                DefaultTearObject.GetComponent<Rigidbody2D>().gravityScale = 3;
-        }
-        else
-            DefaultTearObject.GetComponent<Rigidbody2D>().gravityScale = 0;
 
         CheckedObject = null;
         if (y != 1) // 위 공격이 아닐때
@@ -424,15 +387,6 @@ public class PlayerController : MonoBehaviour
         //생성된 눈물에 눈물속도 곱해서 힘주기
         DefaultTearObject.GetComponent<Rigidbody2D>().velocity = new Vector3(x * tearSpeed, y * tearSpeed, 0);
 
-        //9번 패시브 아이템을 먹으면
-        if (ItemManager.instance.PassiveItems[9])
-        {
-            //눈물 중력 증가
-            DefaultTearObject.GetComponent<Rigidbody2D>().gravityScale = 3;
-        }
-        else
-            DefaultTearObject.GetComponent<Rigidbody2D>().gravityScale = 0;
-
         CheckedObject = null;
         if (y != 1) // 위 공격이 아닐때
         {
@@ -477,6 +431,7 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+
     //폭탄 설치 기능
     void InstallBomb()
     {
@@ -507,30 +462,15 @@ public class PlayerController : MonoBehaviour
     void MoveAnim()
     {
         //가로입력방향 -> -1 몸통 애니메이션 뒤집기(왼쪽)
-        if (moveInput.x < 0) { bodyRenderer.flipX = true; }
+        if (moveInput.x < 0) { bodyRenderer.flipX = true; headRenderer.flipX = true; }
         //가로입력방향 -> 1 몸통 애니메이션 그대로(오른쪽)
-        if (moveInput.x > 0) { bodyRenderer.flipX = false; }
+        if (moveInput.x > 0) { bodyRenderer.flipX = false; headRenderer.flipX = false; }
         //세로입력 절댓값
         playerMoveAnim.SetFloat("Up&Down", Mathf.Abs(moveInput.y));
         //가로입력 절댓값
         playerMoveAnim.SetFloat("Left&Right", Mathf.Abs(moveInput.x));
+        playerShotAnim.SetFloat("Left&RightLook", Mathf.Abs(moveInput.x));
 
-        if (moveInput.x < 0)
-        {
-            playerShotAnim.SetBool("LeftLook", true); // 왼쪽 방향
-        }
-        else
-        {
-            playerShotAnim.SetBool("LeftLook", false);
-        }
-        if (moveInput.x > 0)
-        {
-            playerShotAnim.SetBool("RightLook", true); // 오른쪽 방향
-        }
-        else
-        {
-            playerShotAnim.SetBool("RightLook", false);
-        }
         if (moveInput.y > 0)
         {
             playerShotAnim.SetBool("UpLook", true); // 위쪽 방향
@@ -552,23 +492,10 @@ public class PlayerController : MonoBehaviour
     //발사 애니메이션
     void ShotAnim()
     {
-        // 가로 입력 방향에 따라 몸통 애니메이션 방향 조절
-        if (shotInput.x < 0)
-        {
-            playerShotAnim.SetBool("LeftShot", true); // 왼쪽 방향
-        }
-        else
-        {
-            playerShotAnim.SetBool("LeftShot", false);
-        }
-        if (shotInput.x > 0)
-        {
-            playerShotAnim.SetBool("RightShot", true); // 오른쪽 방향
-        }
-        else
-        {
-            playerShotAnim.SetBool("RightShot", false);
-        }
+        if (shotInput.x < 0) { headRenderer.flipX = true; }
+        if (shotInput.x > 0) { headRenderer.flipX = false; }
+        playerShotAnim.SetFloat("Left&RightShot", Mathf.Abs(shotInput.x));
+
         if (shotInput.y > 0)
         {
             playerShotAnim.SetBool("UpShot", true); // 위쪽 방향
