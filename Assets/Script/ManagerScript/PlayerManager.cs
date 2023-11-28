@@ -95,6 +95,8 @@ public class PlayerManager : MonoBehaviour
                     playerMaxHp = 2;
                     playerHp = playerMaxHp;
                     StartCoroutine(HitDelay());
+                    UIManager.instance.DelHeart();
+                    UIManager.instance.SetPlayerCurrentHP();
                     return;
                 }
                 else
@@ -114,6 +116,8 @@ public class PlayerManager : MonoBehaviour
                     playerMaxHp = 2;
                     playerHp = playerMaxHp; //최대 체력만큼 채워줌
                     StartCoroutine(HitDelay());
+                    UIManager.instance.DelHeart();
+                    UIManager.instance.SetPlayerCurrentHP();
                     return;
                 }
                 else
