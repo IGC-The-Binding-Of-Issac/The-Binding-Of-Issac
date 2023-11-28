@@ -51,11 +51,14 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject[] volumeObj;
     [SerializeField] Stuff pauseStuff;
     [SerializeField] Stuff gameOverStuff;
+    [SerializeField] Sprite joinedSymbol;
 
-    public GameObject LodingImage { get {  return loadingImage; } }
+    public GameObject LodingImage { get => loadingImage; }
+    public Sprite JoinedSymbol { get => joinedSymbol; }
 
     [Header("Banner")]
     [SerializeField] Banner banner;
+
 
     private void Start()
     {
