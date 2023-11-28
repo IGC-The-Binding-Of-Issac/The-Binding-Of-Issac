@@ -19,10 +19,10 @@ public class SuperBandage : ItemInfo
     {
         PlayerManager.instance.playerMaxHp-=2;
         PlayerManager.instance.playerHp-=2;
-        UIManager.instance.DelHeart();
-        UIManager.instance.SetPlayerCurrentHP();
         PlayerManager.instance.playerShotDelay-=0.1f;
         base.UseItem();
+        UIManager.instance.DelHeart();
+        UIManager.instance.SetPlayerCurrentHP();
 
         if (!ItemManager.instance.PassiveItems[16])
         {

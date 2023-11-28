@@ -39,9 +39,9 @@ public class Blindrange : TrinketInfo
         beforeDropShotDelay = PlayerManager.instance.playerShotDelay;
 
         PlayerManager.instance.playerRange = beforeDropRange /= 0.25f;
-        PlayerManager.instance.playerDamage = beforeDropDamage -= 3f;
-        PlayerManager.instance.playerMoveSpeed = beforeDropMoveSpeed += 1.2f;
+        PlayerManager.instance.playerDamage = beforeDropDamage -= 1f;
         PlayerManager.instance.playerShotDelay = beforeDropShotDelay += 0.25f;
+        PlayerManager.instance.playerMoveSpeed = beforeDropMoveSpeed += 1.2f;
         PlayerManager.instance.CheckedStatus();
     }
 }

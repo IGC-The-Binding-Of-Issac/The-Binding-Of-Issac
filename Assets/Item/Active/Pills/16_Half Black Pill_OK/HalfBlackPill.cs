@@ -19,7 +19,7 @@ public class HalfBlackPill : ActiveInfo
         if(canUse)
         {
             PlayerManager.instance.playerHp -= 1;
-            PlayerManager.instance.CheckedPlayerHP();
+            PlayerManager.instance.CheckedStatus();
             UIManager.instance.SetPlayerCurrentHP();
 
             PlayerManager.instance.playerMoveSpeed += 0.08f;
