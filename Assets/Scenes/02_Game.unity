@@ -1766,7 +1766,7 @@ MonoBehaviour:
   stageSize: 0
   stageMinimunRoom: 0
   playerObject: {fileID: 0}
-  maxStage: 3
+  maxStage: 4
   stageGenerate: {fileID: 1043015904}
   roomGenerate: {fileID: 351783603}
   myCamera: {fileID: 926169540}
@@ -5426,7 +5426,7 @@ MonoBehaviour:
   - {fileID: 3604114207680004072, guid: 4869447f38986524cb716d16648c3980, type: 3}
   - {fileID: 1775137408243754433, guid: 6f6f03e5385c3374ab52c21dc1879b38, type: 3}
   - {fileID: 7229639532422697358, guid: 3913fec5d6b5d5e4ea56aca55f44a03e, type: 3}
-  - {fileID: 7229639532422697358, guid: 3913fec5d6b5d5e4ea56aca55f44a03e, type: 3}
+  - {fileID: 189141935642926084, guid: 24a3ab701b2ac9049a8d85023ae57378, type: 3}
   enemyPool_Transform: {fileID: 0}
 --- !u!1 &1892193211
 GameObject:

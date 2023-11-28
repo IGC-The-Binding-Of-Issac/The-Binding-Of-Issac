@@ -1,7 +1,4 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Xml;
 using UnityEngine;
 using UnityEngine.U2D.Animation;
 
@@ -89,6 +86,42 @@ public class PlayerManager : MonoBehaviour
         //Ã¼·Â Ã¼Å©
         if (playerHp <= 0)
         {
+            //Guppy's Tail ¸Ô¾úÀ» ¶§
+            if (ItemManager.instance.PassiveItems[15]) // Guppy's tail ¸Ô¾úÀ» ¶§
+            {
+                if ((deathCount >= 1 && playerMaxHp <= 0) || deathCount >= 1)
+                {
+                    deathCount--;
+                    playerMaxHp = 2;
+                    playerHp = playerMaxHp;
+                    StartCoroutine(HitDelay());
+                    return;
+                }
+                else
+                {
+                    GameManager.instance.playerObject.GetComponent<PlayerController>().Dead(); //±×³É Á×À½
+                    Invoke("GameOver", 0.7f);
+                }
+            }
+
+            //Dead Cat ¸Ô¾úÀ» ¶§
+            if (ItemManager.instance.PassiveItems[14])
+            {
+                int[] liveOrDeath = { 0, 1 };
+                int randomNum = (Random.Range(0, 100000) % 2);
+                if ((liveOrDeath[randomNum] == 0 && playerMaxHp <= 0) || liveOrDeath[randomNum] == 0)
+                {
+                    playerMaxHp = 2;
+                    playerHp = playerMaxHp; //ÃÖ´ë Ã¼·Â¸¸Å­ Ã¤¿öÁÜ
+                    StartCoroutine(HitDelay());
+                    return;
+                }
+                else
+                {
+                    GameManager.instance.playerObject.GetComponent<PlayerController>().Dead(); //±×³É Á×À½
+                    Invoke("GameOver", 0.7f);
+                }
+            }
             GameManager.instance.playerObject.GetComponent<PlayerController>().Dead();
             Invoke("GameOver", 0.7f);
         }
@@ -162,21 +195,6 @@ public class PlayerManager : MonoBehaviour
         //tearObj.GetComponent<SpriteLibrary>().spriteLibraryAsset = tear;
     }
     #endregion
-    //delegate ¼±¾ð À§Ä¡
-
-
-    public void CheckedPlayerHP()
-    {
-        if (playerHp<=0)
-        {
-            GameManager.instance.playerObject.GetComponent<PlayerController>().Dead();
-            Invoke("GameOver", 0.7f);
-        }
-        else if (playerHp > playerMaxHp)
-        {
-            playerHp = playerMaxHp;
-        }
-    }
 
     public void GetDamage()
     {
@@ -187,7 +205,29 @@ public class PlayerManager : MonoBehaviour
             CanGetDamage = false;
             CanBlockDamage--;
         }
-        else if (ItemManager.instance.PassiveItems[14] && CanGetDamage && CanBlockDamage == 0) // Dead Cat ¸Ô¾úÀ» ¶§
+        if (ItemManager.instance.PassiveItems[15] && CanGetDamage && CanBlockDamage == 0) // Guppy's tail ¸Ô¾úÀ» ¶§
+        {
+            playerHp--;
+            CanGetDamage = false;
+            if (playerHp > 0)
+            {
+                StartCoroutine(HitDelay());
+                GameManager.instance.playerObject.GetComponent<PlayerController>().Hit();
+            }
+            else if (playerHp <= 0 && deathCount >= 1)
+            {
+                playerHp = playerMaxHp;
+                StartCoroutine(HitDelay());
+                GameManager.instance.playerObject.GetComponent<PlayerController>().Hit();
+                deathCount--;
+            }
+            else
+            {
+                GameManager.instance.playerObject.GetComponent<PlayerController>().Dead(); //±×³É Á×À½
+                Invoke("GameOver", 0.7f);
+            }
+        }
+        if (ItemManager.instance.PassiveItems[14] && CanGetDamage && CanBlockDamage == 0) // Dead Cat ¸Ô¾úÀ» ¶§
         {
             playerHp--;
             CanGetDamage = false;
@@ -212,29 +252,7 @@ public class PlayerManager : MonoBehaviour
                     Invoke("GameOver", 0.7f);
                  }
             }
-        }
-        else if (ItemManager.instance.PassiveItems[15] && CanGetDamage && CanBlockDamage == 0) // Guppy's tail ¸Ô¾úÀ» ¶§
-        {
-            playerHp--;
-            CanGetDamage = false;
-            if (playerHp > 0)
-            {
-                StartCoroutine(HitDelay());
-                GameManager.instance.playerObject.GetComponent<PlayerController>().Hit();
-            }
-            else if (playerHp <= 0 && deathCount >= 1)
-            {
-                playerHp = playerMaxHp;
-                StartCoroutine(HitDelay());
-                GameManager.instance.playerObject.GetComponent<PlayerController>().Hit();
-                deathCount--;
-            }
-            else
-            {
-                GameManager.instance.playerObject.GetComponent<PlayerController>().Dead(); //±×³É Á×À½
-                Invoke("GameOver", 0.7f);
-            }
-        }
+        } 
         else if (CanGetDamage && CanBlockDamage == 0)
         {
             playerHp--;
@@ -250,7 +268,6 @@ public class PlayerManager : MonoBehaviour
                 GameManager.instance.playerObject.GetComponent<PlayerController>().Hit();
             }
         }
-
     }
 
     void GameOver()

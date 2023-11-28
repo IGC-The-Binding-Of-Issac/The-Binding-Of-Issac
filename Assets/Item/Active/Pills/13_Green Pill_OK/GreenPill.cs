@@ -19,7 +19,7 @@ public class GreenPill : ActiveInfo
         if(canUse)
         {
             PlayerManager.instance.playerHp -= 1;
-            PlayerManager.instance.CheckedPlayerHP();
+            PlayerManager.instance.CheckedStatus();
             UIManager.instance.SetPlayerCurrentHP();
             SetActiveString("진통제인 줄 알았는데..",
                             "체력 감소",
