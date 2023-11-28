@@ -9,10 +9,6 @@ public class Dr_fetus : ItemInfo
     public GameObject attackBomb;
     public PlayerController ctr;
 
-    public void Awake()
-    {
-        
-    }
     public override void Start()
     {
         base.Start();
@@ -32,6 +28,8 @@ public class Dr_fetus : ItemInfo
             ItemManager.instance.PassiveItems[13] = false;
             PlayerManager.instance.playerDamage -= 2.0f;
         }
+
+
         PlayerManager.instance.playerShotDelay /= 0.5f;
         base.UseItem();
     }

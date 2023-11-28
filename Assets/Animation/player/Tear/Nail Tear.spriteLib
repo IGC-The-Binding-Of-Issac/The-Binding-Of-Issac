@@ -21,69 +21,65 @@ MonoBehaviour:
       m_Hash: 404353166
       m_Sprite: {fileID: 1837185413, guid: 64f0cce7912310a489ab219e28d20338, type: 3}
       m_FromMain: 1
-      m_SpriteOverride: {fileID: 1034744742, guid: 13909fd86a5360e45845f0bc0bd08936, type: 3}
+      m_SpriteOverride: {fileID: 1856978817, guid: b2209e2c29aa42547a794c20df1f8fbd, type: 3}
     - m_Name: KakaoTalk_20230912_161557715_1
       m_Hash: 830100923
       m_Sprite: {fileID: 181905590, guid: 64f0cce7912310a489ab219e28d20338, type: 3}
       m_FromMain: 1
-      m_SpriteOverride: {fileID: 1781315581, guid: be90189ca17b9e14c9a36b708d0ba034, type: 3}
+      m_SpriteOverride: {fileID: 1146320732, guid: dbbbb1871913ca3449af9307998f4960, type: 3}
     - m_Name: KakaoTalk_20230912_161557715_2
       m_Hash: 678626305
       m_Sprite: {fileID: 449630241, guid: 64f0cce7912310a489ab219e28d20338, type: 3}
       m_FromMain: 1
-      m_SpriteOverride: {fileID: 182128491, guid: be90189ca17b9e14c9a36b708d0ba034, type: 3}
+      m_SpriteOverride: {fileID: -1247321654, guid: dbbbb1871913ca3449af9307998f4960, type: 3}
     - m_Name: KakaoTalk_20230912_161557715_3
       m_Hash: 527709335
       m_Sprite: {fileID: -1009354597, guid: 64f0cce7912310a489ab219e28d20338, type: 3}
       m_FromMain: 1
-      m_SpriteOverride: {fileID: -1484716799, guid: be90189ca17b9e14c9a36b708d0ba034, type: 3}
+      m_SpriteOverride: {fileID: -897358930, guid: dbbbb1871913ca3449af9307998f4960, type: 3}
     - m_Name: KakaoTalk_20230912_161557715_4
       m_Hash: 17867060
       m_Sprite: {fileID: -1404423771, guid: 64f0cce7912310a489ab219e28d20338, type: 3}
       m_FromMain: 1
-      m_SpriteOverride: {fileID: 687311805, guid: be90189ca17b9e14c9a36b708d0ba034, type: 3}
+      m_SpriteOverride: {fileID: -228134525, guid: dbbbb1871913ca3449af9307998f4960, type: 3}
     - m_Name: KakaoTalk_20230912_161557715_0
       m_Hash: 108881197
       m_Sprite: {fileID: -1903477612, guid: 64f0cce7912310a489ab219e28d20338, type: 3}
       m_FromMain: 1
-      m_SpriteOverride: {fileID: -1539631731, guid: be90189ca17b9e14c9a36b708d0ba034, type: 3}
+      m_SpriteOverride: {fileID: 848456113, guid: dbbbb1871913ca3449af9307998f4960, type: 3}
     - m_Name: KakaoTalk_20230912_161557715_8
       m_Hash: 145157407
       m_Sprite: {fileID: -190375345, guid: 64f0cce7912310a489ab219e28d20338, type: 3}
       m_FromMain: 1
-      m_SpriteOverride: {fileID: -2011006689, guid: be90189ca17b9e14c9a36b708d0ba034, type: 3}
+      m_SpriteOverride: {fileID: -137188542, guid: dbbbb1871913ca3449af9307998f4960, type: 3}
     - m_Name: KakaoTalk_20230912_161557715_9
       m_Hash: 1067572617
       m_Sprite: {fileID: 932063844, guid: 64f0cce7912310a489ab219e28d20338, type: 3}
       m_FromMain: 1
-      m_SpriteOverride: {fileID: -255015700, guid: be90189ca17b9e14c9a36b708d0ba034, type: 3}
+      m_SpriteOverride: {fileID: 1188507820, guid: dbbbb1871913ca3449af9307998f4960, type: 3}
     - m_Name: KakaoTalk_20230912_161557715_5
       m_Hash: 907514274
       m_Sprite: {fileID: -1509927245, guid: 64f0cce7912310a489ab219e28d20338, type: 3}
       m_FromMain: 1
-      m_SpriteOverride: {fileID: 1566424551, guid: be90189ca17b9e14c9a36b708d0ba034, type: 3}
+      m_SpriteOverride: {fileID: -1788801406, guid: dbbbb1871913ca3449af9307998f4960, type: 3}
     - m_Name: KakaoTalk_20230912_161557715_6
       m_Hash: 790544408
       m_Sprite: {fileID: 801940445, guid: 64f0cce7912310a489ab219e28d20338, type: 3}
       m_FromMain: 1
-      m_SpriteOverride: {fileID: -2003434038, guid: be90189ca17b9e14c9a36b708d0ba034, type: 3}
+      m_SpriteOverride: {fileID: -759136461, guid: dbbbb1871913ca3449af9307998f4960, type: 3}
     - m_Name: KakaoTalk_20230912_161557715_11
       m_Hash: 530513894
       m_Sprite: {fileID: 351262200, guid: 64f0cce7912310a489ab219e28d20338, type: 3}
       m_FromMain: 1
-      m_SpriteOverride: {fileID: 1638147866, guid: be90189ca17b9e14c9a36b708d0ba034, type: 3}
-    - m_Name: KakaoTalk_20230912_161557715_12
-      m_Hash: 110603868
-      m_Sprite: {fileID: 1593174944, guid: be90189ca17b9e14c9a36b708d0ba034, type: 3}
-      m_FromMain: 0
-      m_SpriteOverride: {fileID: 1593174944, guid: be90189ca17b9e14c9a36b708d0ba034, type: 3}
-    - m_Name: New Label
-      m_Hash: 259326342
-      m_Sprite: {fileID: 753582106, guid: be90189ca17b9e14c9a36b708d0ba034, type: 3}
-      m_FromMain: 0
-      m_SpriteOverride: {fileID: 753582106, guid: be90189ca17b9e14c9a36b708d0ba034, type: 3}
+      m_SpriteOverride: {fileID: -128681176, guid: dbbbb1871913ca3449af9307998f4960, type: 3}
     m_FromMain: 1
-    m_EntryOverrideCount: 13
+    m_EntryOverrideCount: 11
+  - m_Name: New Category
+    m_Hash: 259530823
+    m_CategoryList: []
+    m_OverrideEntries: []
+    m_FromMain: 0
+    m_EntryOverrideCount: 0
   m_PrimaryLibraryGUID: d5a9160adc143e847990f3fb5598bec6
-  m_ModificationHash: 638355722302992950
+  m_ModificationHash: 638367754215196619
   m_Version: 1
