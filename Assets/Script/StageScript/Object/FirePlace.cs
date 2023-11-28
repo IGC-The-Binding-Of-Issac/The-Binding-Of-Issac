@@ -46,17 +46,22 @@ public class FirePlace : Obstacle
 
     public override void GetDamage()
     {
+        if (spriteIndex > 4)
+            return;
+
         spriteIndex++;
         ChangeObjectSPrite();
-        if (spriteIndex >= 3)
+        if (spriteIndex >= 4)
         {
-            DestorySound();
-
-            DropItem();
-            eft.SetActive(false);
             gameObject.GetComponent<SpriteRenderer>().sprite = woodSprite;
             gameObject.layer = noCollisionLayer;
+
+            DestorySound();
+
+            eft.SetActive(false);
             boxCollider.SetActive(false);
+
+            DropItem();
         }
     }
 

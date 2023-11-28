@@ -30,7 +30,9 @@ public class Rock : Obstacle
 
     public override void GetDamage()
     {
-        spriteIndex++;
+        if (spriteIndex == 1)
+            return;
+        spriteIndex = 1;
         ChangeObjectSPrite();
         gameObject.layer = noCollisionLayer;
 

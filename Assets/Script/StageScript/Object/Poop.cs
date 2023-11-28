@@ -32,12 +32,17 @@ public class Poop : Obstacle
 
     public override void GetDamage()
     {
+        if (spriteIndex > 4)
+            return;
+
         spriteIndex++;
         ChangeObjectSPrite();
         if(spriteIndex >= 4) // 체력이 전부 깍이면
         {
-            DestorySound();
             gameObject.layer = noCollisionLayer;
+
+            DestorySound();
+
             DropItem();
         }
     }
@@ -46,6 +51,7 @@ public class Poop : Obstacle
     {
         if (spriteIndex >= 4)
             spriteIndex = 4;
+
         gameObject.GetComponent<SpriteRenderer>().sprite = poopSprite[spriteIndex];
     }
 
