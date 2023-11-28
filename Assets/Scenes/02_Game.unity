@@ -1386,7 +1386,7 @@ MonoBehaviour:
   - {fileID: 6318551211771143073, guid: c283c6ef2cecf0e4b87a35f679d18e17, type: 3}
   - {fileID: 6109695621822969886, guid: e803cf0b0fa07b34588707a81a120a8b, type: 3}
   - {fileID: 3219036113762686436, guid: 88a9aeb87dd1262408dd104fb87b320b, type: 3}
-  - {fileID: 2005278590316562919, guid: 9f545b4330195c74294a67e0eaa99bdc, type: 3}
+  - {fileID: 1129068252793212066, guid: b66770ab74e376740889cd4f0f345875, type: 3}
   - {fileID: 6916186502092149318, guid: f6bff1dbec4dba243be0d82e693ae73d, type: 3}
   - {fileID: 2939042935250214586, guid: 2e2e47c9575c73345b3c7f4a427d7c23, type: 3}
   - {fileID: 6318551211771143073, guid: c283c6ef2cecf0e4b87a35f679d18e17, type: 3}
@@ -3185,6 +3185,7 @@ MonoBehaviour:
   - {fileID: 3046659060664860089}
   pauseStuff: {fileID: 467766983}
   gameOverStuff: {fileID: 543560692}
+  joinedSymbol: {fileID: -85666106, guid: 9630ade33d1c0bc44a6cfd7af97afa76, type: 3}
   banner: {fileID: 220351573044702409}
 --- !u!1 &1049656372
 GameObject:
