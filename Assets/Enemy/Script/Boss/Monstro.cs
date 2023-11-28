@@ -83,16 +83,18 @@ public class Monstro : TEnemy
         {
             float randGravityScale;
             float randBulletSpeed;
+            float randBulletSpeedY;
             randGravityScale = Random.Range(0f, 1f);
             randBulletSpeed = Random.Range(3f, 5f);
+            randBulletSpeedY = Random.Range(2f, 4f);
             GameObject bulletobj = EnemyPooling.Instance.GetStraightBullet(bulletPosition); // 풀링 총알 오브젝트 가져오기
             if (GetComponent<SpriteRenderer>().flipX)
             {
-                bulletobj.GetComponent<Rigidbody2D>().velocity = bulletPosition.transform.right * randBulletSpeed;
+                bulletobj.GetComponent<Rigidbody2D>().velocity = new Vector3(-randBulletSpeed, randBulletSpeedY, 0);
             }
             else
             {
-                bulletobj.GetComponent<Rigidbody2D>().velocity = (bulletPosition.transform.right * -1) * randBulletSpeed;           
+                bulletobj.GetComponent<Rigidbody2D>().velocity = new Vector3(randBulletSpeed, randBulletSpeedY, 0);
             }
             bulletobj.GetComponent<Rigidbody2D>().gravityScale += randGravityScale;
         }
