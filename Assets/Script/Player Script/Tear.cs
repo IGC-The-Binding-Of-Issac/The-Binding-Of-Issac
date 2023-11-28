@@ -51,17 +51,6 @@ public class Tear : MonoBehaviour
         tearPosition = this.transform.position;
         //둘 사이의 거리
         betweenDistance = Vector3.Distance(tearPosition, playerPosition);
-
-        if (ItemManager.instance.PassiveItems[9])
-        {
-            if(GameManager.instance.playerObject.GetComponent<PlayerController>().tearY != -1f)
-            {
-                if(tearPosition.y < playerPosition.y)
-                {
-                    BoomTear();
-                }
-            }
-        }
         //둘 사이의 거리가 플레이어 사거리보다 커지면
         if (betweenDistance >= PlayerManager.instance.playerRange)
         {

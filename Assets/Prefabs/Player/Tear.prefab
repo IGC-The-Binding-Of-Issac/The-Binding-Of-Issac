@@ -103,6 +103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82d0964e96978e847a8338d56fbf11c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerPosition: {x: 0, y: 0, z: 0}
   shootSound: {fileID: 8300000, guid: 7d5a21a74964a254d95477cdb36378c1, type: 3}
   boomSound: {fileID: 8300000, guid: c1a6a979bebb05243b13e35cc8fa65ef, type: 3}
 --- !u!58 &6721163588340930790

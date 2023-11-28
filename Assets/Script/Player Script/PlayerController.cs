@@ -337,11 +337,29 @@ public class PlayerController : MonoBehaviour
         {
             DefaultTearObject = GetTearPooling();
         }
-
+        
         DefaultTearObject.transform.position = firePoint;
         //생성된 눈물에 눈물속도 곱해서 힘주기
         DefaultTearObject.GetComponent<Rigidbody2D>().velocity = new Vector3(x * tearSpeed, y * tearSpeed, 0);
-
+        if (ItemManager.instance.PassiveItems[9] && !ItemManager.instance.PassiveItems[16])
+        {
+            if (x > 0) //오른쪽
+            {
+                DefaultTearObject.transform.rotation = Quaternion.Euler(0, 0, -90);
+            }
+            else if (x < 0) //왼쪽
+            {
+                DefaultTearObject.transform.rotation = Quaternion.Euler(180, 0, 90);
+            }
+            if (y > 0) //위
+            {
+                DefaultTearObject.transform.rotation = Quaternion.Euler(0, 0, 0);
+            }
+            else if (y < 0) //아래
+            {
+                DefaultTearObject.transform.rotation = Quaternion.Euler(0, 0, 180);
+            }
+        }
         CheckedObject = null;
         if (y != 1) // 위 공격이 아닐때
         {
@@ -386,7 +404,25 @@ public class PlayerController : MonoBehaviour
         DefaultTearObject.transform.position = firePoint;
         //생성된 눈물에 눈물속도 곱해서 힘주기
         DefaultTearObject.GetComponent<Rigidbody2D>().velocity = new Vector3(x * tearSpeed, y * tearSpeed, 0);
-
+        if (ItemManager.instance.PassiveItems[9] && !ItemManager.instance.PassiveItems[16])
+        {
+            if (x > 0) //오른쪽
+            {
+                DefaultTearObject.transform.rotation = Quaternion.Euler(0, 0, -90);
+            }
+            else if (x < 0) //왼쪽
+            {
+                DefaultTearObject.transform.rotation = Quaternion.Euler(180, 0, 90);
+            }
+            if (y > 0) //위
+            {
+                DefaultTearObject.transform.rotation = Quaternion.Euler(0, 0, 0);
+            }
+            else if (y < 0) //아래
+            {
+                DefaultTearObject.transform.rotation = Quaternion.Euler(0, 0, 180);
+            }
+        }
         CheckedObject = null;
         if (y != 1) // 위 공격이 아닐때
         {
