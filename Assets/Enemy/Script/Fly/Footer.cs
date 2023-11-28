@@ -52,5 +52,4 @@ public class Footer : TEnemy
         Gizmos.DrawWireSphere(transform.position, sight);
     }
 
-    public override void e_ResetEnemy() { }
 }

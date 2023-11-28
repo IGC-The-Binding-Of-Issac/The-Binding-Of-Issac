@@ -44,5 +44,4 @@ public class Pacer : TEnemy
         E_Excute();                 // 상태 실행
     }
 
-    public override void e_ResetEnemy() { }
 }

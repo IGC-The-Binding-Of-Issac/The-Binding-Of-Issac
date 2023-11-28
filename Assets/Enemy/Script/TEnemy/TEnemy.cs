@@ -215,12 +215,14 @@ public class TEnemy : MonoBehaviour
     {
         if (transform.position.x > playerPosi.position.x && isFlipped)
         {
-            transform.Rotate(0f, 180f, 0f);
+            //transform.Rotate(0f, 180f, 0f);
+            gameObject.GetComponent<SpriteRenderer>().flipX = true;
             isFlipped = false;
         }
         else if (transform.position.x < playerPosi.position.x && !isFlipped)
         {
-            transform.Rotate(0f, 180f, 0f);
+            //transform.Rotate(0f, 180f, 0f);
+            gameObject.GetComponent<SpriteRenderer>().flipX = false;
             isFlipped = true;
         }
     }
@@ -374,16 +376,29 @@ public class TEnemy : MonoBehaviour
     }
 
     // 일반 몬스터 hp 바
-    public void CheckHp()
+    // 일반 몬스터 hp 바
+    //public void CheckHp()
+    //{
+    //    hpBarSlider.fillAmount = hp / maxhp;
+    //}
+    public IEnumerator CheckHp()
     {
-        hpBarSlider.fillAmount = hp / maxhp;
+        //hpBarSlider.fillAmount = Mathf.Lerp(hpBarSlider.fillAmount, hp / maxhp, Time.deltaTime * 1f);
+        while (hp <= maxhp)
+        {
+            float health = hp / maxhp;
+            float currentHp = Mathf.Lerp(hpBarSlider.fillAmount, hp / maxhp, Time.deltaTime * 3.5f);
+            hpBarSlider.fillAmount = currentHp;
+
+            yield return null;
+        }
     }
 
     // player 데미지 만큼 피 감소 (Tear 스크립트 에서 사용 )
-    public void GetDamage(float damage) 
+    public void GetDamage(float damage)
     {
         hp -= damage;
-        CheckHp();
+        StartCoroutine(CheckHp());
     }
 
     // enemy 죽음
@@ -401,18 +416,5 @@ public class TEnemy : MonoBehaviour
         Destroy(gameObject , waitforSecond);
     }
 
-    #region pooling
-    // 사망했을때 해당 함수 불러오면됨.
-    // EnemyGenerate의 enemyPool로 돌아감
-    public void e_ReturnEnemy()
-    {
-        if (enemyNumber >= 0)
-        {
-            e_ResetEnemy();
-            GameManager.instance.roomGenerate.enemyGenerate.P_ReturnEnemy(gameObject, enemyNumber);
-        }
-    }
 
-    public virtual void e_ResetEnemy() { }
-    #endregion
 }
