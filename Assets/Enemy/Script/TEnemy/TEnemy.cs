@@ -63,7 +63,7 @@ public class TEnemy : MonoBehaviour
     protected string shootParameter;            // 총쏘는 애니메이션 실행 파라미터
     protected string jumpParameter;             // 점프   애니메이션 실행 파라미터
     protected bool knockBackState = false;      // 넉백s
-    bool isFlipped = true;                      // 뒤집기
+    protected bool isFlipped = true;                      // 뒤집기
     bool isRaadyShoot;                          // shoot -  총 쏘는 조건
 
     // prowl

@@ -20,7 +20,7 @@ public class Gurdy : TEnemy
     [SerializeField] Animator childAni;
     public Transform[] Children;
 
-    [SerializeField] float  stateTime;            
+    [SerializeField] float  stateTime;
     [SerializeField] int    stateNum;
     [SerializeField] float  currTime;                // 현재 상태의 시간
     [SerializeField] bool chageState;               // 상태변환
@@ -127,8 +127,6 @@ public class Gurdy : TEnemy
             runningCoroutine = StartCoroutine(ShootBullets());
             coruState = false;
         }
-
-
     }
 
     IEnumerator ShootBullets()
@@ -196,6 +194,4 @@ public class Gurdy : TEnemy
     {
         stateNum = Random.Range(1, 3); // 1~2중
     }
-
-
 }
