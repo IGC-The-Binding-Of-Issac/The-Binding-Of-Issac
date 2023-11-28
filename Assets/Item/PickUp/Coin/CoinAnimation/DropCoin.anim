@@ -92,14 +92,14 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0.6666667
-    functionName: DropSound
+    functionName: DropCoinEnd
     data: 
     objectReferenceParameter: {fileID: 11500000, guid: 315ae463112142f4a82b8dff1d162d87, type: 3}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.75
-    functionName: DropCoinEnd
+  - time: 0.6666667
+    functionName: DropSound
     data: 
     objectReferenceParameter: {fileID: 11500000, guid: 315ae463112142f4a82b8dff1d162d87, type: 3}
     floatParameter: 0
