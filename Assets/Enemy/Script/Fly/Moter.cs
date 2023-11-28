@@ -68,5 +68,4 @@ public class Moter : TEnemy
         roomInfo.GetComponent<Room>().enemis.Add(obj);
     }
 
-    public override void e_ResetEnemy() { }
 }

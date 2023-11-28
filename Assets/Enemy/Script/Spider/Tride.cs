@@ -56,5 +56,4 @@ public class Tride : TEnemy
         audioSource.Play();
     }
 
-    public override void e_ResetEnemy() { }
 }

@@ -20,12 +20,13 @@ public class Monstro : TEnemy
     // Start is called before the first frame update
     void Start()
     {
+        animator = GetComponent<Animator>();
         isFlipped = true;
         playerInRoom = false;
         dieParameter = "isDie";
         // Enemy
         hp = 100f;
-        waitforSecond = 1f;   // 죽기전 시간
+        waitforSecond = 0.5f;   // 죽기전 시간
         attaackSpeed = 1.5f; // 총알 발사 하는 시간 
         bulletSpeed = 5f;
 
