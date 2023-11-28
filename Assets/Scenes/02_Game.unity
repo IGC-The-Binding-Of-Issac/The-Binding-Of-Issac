@@ -5442,10 +5442,9 @@ MonoBehaviour:
   - {fileID: 8121270031479538464, guid: 790d21798bb1011438e28300740a4ad7, type: 3}
   bossPrefabs:
   - {fileID: 3604114207680004072, guid: 4869447f38986524cb716d16648c3980, type: 3}
+  - {fileID: 6477440045133153712, guid: 0fed012bbf33b634d877c51346e07646, type: 3}
   - {fileID: 1775137408243754433, guid: 6f6f03e5385c3374ab52c21dc1879b38, type: 3}
-  - {fileID: 7229639532422697358, guid: 3913fec5d6b5d5e4ea56aca55f44a03e, type: 3}
   - {fileID: 189141935642926084, guid: 24a3ab701b2ac9049a8d85023ae57378, type: 3}
-  enemyPool_Transform: {fileID: 0}
 --- !u!1 &1892193211
 GameObject:
   m_ObjectHideFlags: 0
