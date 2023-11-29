@@ -11,6 +11,7 @@ public class Banner : MonoBehaviour
     [SerializeField] GameObject[] stageTEXT;
     [SerializeField] Text itemTitle;
     [SerializeField] Text itemInfo;
+    public string[] stageName = { "다락방", "방 지하", "하수도", "지옥" };
 
     bool bannerState;
     void Start()
@@ -37,7 +38,7 @@ public class Banner : MonoBehaviour
         {
             StageBannerControl(stage);
             itemTitle.text = "";
-            itemInfo.text = "";
+            itemInfo.text = stageName[stage-1];
             StartCoroutine(CallBanner());
         }
     }

@@ -32,7 +32,9 @@ public class BossRoom : MonoBehaviour
 
                 reward.GetComponent<GoldTable>().SpawnItem(true);
 
-                Destroy(this); 
+                //보스방 클리어 BGM 재생
+                SoundManager.instance.aft(1);
+                Destroy(this);
             }
         }
     }
@@ -44,6 +46,9 @@ public class BossRoom : MonoBehaviour
         {
             if(spawnBoss)
             {
+                //보스방 BGM 재생
+                SoundManager.instance.OnBossBGM(0);
+
                 gameObject.GetComponent<Room>().isClear = false;
 
                 // 보스 재생성 방지

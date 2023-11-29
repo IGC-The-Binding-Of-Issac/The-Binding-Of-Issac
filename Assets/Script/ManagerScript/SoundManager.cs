@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Jobs;
 
 public class SoundManager : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class SoundManager : MonoBehaviour
 
     [Header("Audio Cilps")]
     [SerializeField] AudioClip[] stageBGM;
+    [SerializeField] AudioClip[] bossRoomBGM;
     [SerializeField] AudioClip[] doorClip;
 
     [Header("Sound Object")]
@@ -123,7 +125,7 @@ public class SoundManager : MonoBehaviour
     {
         volumes = new int[3];
         volumes[0] = 5;
-        volumes[1] = 0;
+        volumes[1] = 2;
         volumes[2] = 3;
     }
     #endregion
@@ -144,6 +146,31 @@ public class SoundManager : MonoBehaviour
         bgmObject.Play();
     }
 
+    public void OnBossBGM(int clearBoss)
+    {
+        //clearBoss : 0 -> 보스방 입장
+        //clearBoss : 1 -> 보스방 퇴장
+        if (bgmObject.isPlaying)
+            bgmObject.Stop();
+
+        bgmObject.clip = bossRoomBGM[clearBoss];
+        if(clearBoss == 1)
+          bgmObject.loop = false;
+        
+        bgmObject.Play();
+    }
+    
+    public void aft(int clear)
+    {
+        StartCoroutine(AfterBossBGM(clear));
+    }
+
+    public IEnumerator AfterBossBGM(int clearBoss)
+    {
+        OnBossBGM(1);
+        yield return new WaitForSeconds(7f);
+        OnStageBGM();
+    }
     public AudioClip GetDoorClip(int mode)
     {
         switch(mode)
