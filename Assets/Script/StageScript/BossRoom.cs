@@ -65,6 +65,11 @@ public class BossRoom : MonoBehaviour
                 // 보스 오브젝트 위치를 0 0 0 으로 초기화
                 boss.transform.localPosition = new Vector3(0, 0, 0);
 
+                if(GameManager.instance.stageLevel == 4)
+                {
+                    boss.transform.localPosition = new Vector3(0, 2.5f, 0);
+                }
+
                 // 보스오브젝트를 보스방의 Room 스크립트의 enemis에 추가.
                 gameObject.GetComponent<Room>().enemis.Add(boss);
                 boss.GetComponent<TEnemy>().roomInfo = gameObject;
