@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,6 +16,8 @@ public class BossRoom : MonoBehaviour
     [SerializeField] GameObject nextStageDoor;
     [SerializeField] GameObject bossHpUI;
     [SerializeField] Image bossHP;
+    [SerializeField] GameObject BossCutScene;
+    
     private void Update()
     {
         // 보스가 생성된 이후
@@ -42,45 +46,61 @@ public class BossRoom : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // 플레이어 보스방 입장시
-        if(collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
-            if(spawnBoss)
-            {
-                //보스방 BGM 재생
-                SoundManager.instance.OnBossBGM(0);
+            BossCutScene = UIManager.instance.BossCutSceneUI;
+            StartCoroutine(WaitTime());
+        }
+    }
 
-                gameObject.GetComponent<Room>().isClear = false;
+    IEnumerator WaitTime()
+    {
+        float beforeMoveSpeed = PlayerManager.instance.playerMoveSpeed;
+        PlayerManager.instance.playerMoveSpeed = 0;
 
-                // 보스 재생성 방지
-                spawnBoss = false;
+        BossCutScene.gameObject.SetActive(true);
+        yield return new WaitForSeconds(3f);
 
-                GameObject boss;
-                // 보스생성
-                boss = GameManager.instance.roomGenerate.enemyGenerate.GetBoss();
-                GameManager.instance.roomGenerate.SetSFXDestoryObject(boss);
+        PlayerManager.instance.playerMoveSpeed = beforeMoveSpeed;
 
-                // 보스오브젝트를 보스방 자식오브젝트로 설정
-                boss.transform.SetParent(gameObject.transform);
+        BossSpawn();
+        BossCutScene.gameObject.SetActive(false);
 
-                // 보스 오브젝트 위치를 0 0 0 으로 초기화
-                boss.transform.localPosition = new Vector3(0, 0, 0);
+    }
 
-                if(GameManager.instance.stageLevel == 4)
-                {
-                    boss.transform.localPosition = new Vector3(0, 2.5f, 0);
-                }
+    void BossSpawn()
+    {
+        if (spawnBoss)
+        {
+            //보스방 BGM 재생
+            SoundManager.instance.OnBossBGM(0);
 
-                // 보스오브젝트를 보스방의 Room 스크립트의 enemis에 추가.
-                gameObject.GetComponent<Room>().enemis.Add(boss);
-                boss.GetComponent<TEnemy>().roomInfo = gameObject;
-                bossComponent = boss.GetComponent<TEnemy>();
-                bossComponent.hpBarSlider = bossHP;
+            gameObject.GetComponent<Room>().isClear = false;
+
+            // 보스 재생성 방지
+            spawnBoss = false;
+
+            GameObject boss;
+            // 보스생성
+            boss = GameManager.instance.roomGenerate.enemyGenerate.GetBoss();
+            GameManager.instance.roomGenerate.SetSFXDestoryObject(boss);
+
+            // 보스오브젝트를 보스방 자식오브젝트로 설정
+            boss.transform.SetParent(gameObject.transform);
+
+            // 보스 오브젝트 위치를 0 0 0 으로 초기화
+            boss.transform.localPosition = new Vector3(0, 0, 0);
+
+            // 보스오브젝트를 보스방의 Room 스크립트의 enemis에 추가.
+            gameObject.GetComponent<Room>().enemis.Add(boss);
+            boss.GetComponent<TEnemy>().roomInfo = gameObject;
+            bossComponent = boss.GetComponent<TEnemy>();
+            bossComponent.hpBarSlider = bossHP;
 
 
-                // 문닫기 / 보스 체력바 생성
-                nextStageDoor.SetActive(false);
-                bossHpUI.SetActive(true);
-            }
+            // 문닫기 / 보스 체력바 생성
+            nextStageDoor.SetActive(false);
+            bossHpUI.SetActive(true);
         }
     }
 }

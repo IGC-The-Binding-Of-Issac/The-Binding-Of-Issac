@@ -46,6 +46,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject pauseUI;
     [SerializeField] GameObject optionUI;
     [SerializeField] GameObject gameoverUI;
+    public GameObject BossCutSceneUI;
     [SerializeField] GameObject loadingImage;
     [SerializeField] Sprite[] volumeNum;
     [SerializeField] GameObject[] volumeObj;
