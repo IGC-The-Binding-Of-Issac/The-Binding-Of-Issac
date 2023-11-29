@@ -5873,6 +5873,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 99fba2c4b7362cf4b98ac4f917b4b32c, type: 3}
   - {fileID: 8300000, guid: 42c08347cb7f09e49b6459344f52b2ef, type: 3}
   - {fileID: 8300000, guid: 49f92d604b1ff6741bc19af64a44c9b0, type: 3}
+  bossRoomBGM:
+  - {fileID: 8300000, guid: fed4a460c9157e545bdcf0bb9dc2d0c2, type: 3}
+  - {fileID: 8300000, guid: 511dfe45bb5a4f246a91a6fc62bcdf2a, type: 3}
   doorClip:
   - {fileID: 8300000, guid: 17dab645281161343b8776e9ebd5ca62, type: 3}
   - {fileID: 8300000, guid: 52c1c60988afb46468a62e12700f5ccc, type: 3}
@@ -6424,6 +6427,11 @@ MonoBehaviour:
   - {fileID: 6945335323337785549}
   itemTitle: {fileID: 8204855622237119079}
   itemInfo: {fileID: 2627088877001793069}
+  stageName:
+  - "\uB2E4\uB77D\uBC29"
+  - "\uBC29 \uC9C0\uD558"
+  - "\uD558\uC218\uB3C4"
+  - "\uC9C0\uC625"
 --- !u!114 &316097620638180317
 MonoBehaviour:
   m_ObjectHideFlags: 0
