@@ -32,6 +32,7 @@ public class SnakeManager : TEnemy
 
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         //SnakeManager
         // bodyParts배열에 값 넣어주기
         larryLength = 12; //head 포함 12 개 
@@ -157,6 +158,7 @@ public class SnakeManager : TEnemy
                 deleSnake.GetComponent<Animator>().SetBool("isLarryBodyDie" , true);
                 snakeBody.Remove(deleSnake);
                 Destroy(deleSnake , waitforSecond);
+                DestorySound();
             }
         }
         // 피가 80 이하이고
@@ -169,6 +171,7 @@ public class SnakeManager : TEnemy
                 deleSnake.GetComponent<Animator>().SetBool("isLarryBodyDie", true);
                 snakeBody.Remove(deleSnake);
                 Destroy(deleSnake, waitforSecond);
+                DestorySound();
             }
         }
         // 피가 70 이하이고
@@ -181,6 +184,7 @@ public class SnakeManager : TEnemy
                 deleSnake.GetComponent<Animator>().SetBool("isLarryBodyDie", true);
                 snakeBody.Remove(deleSnake);
                 Destroy(deleSnake, waitforSecond);
+                DestorySound();
             }
         }
         if (hp <= 60f )
@@ -192,6 +196,7 @@ public class SnakeManager : TEnemy
                 deleSnake.GetComponent<Animator>().SetBool("isLarryBodyDie", true);
                 snakeBody.Remove(deleSnake);
                 Destroy(deleSnake, waitforSecond);
+                DestorySound();
             }
         }
         if (hp <= 50f )
@@ -203,6 +208,7 @@ public class SnakeManager : TEnemy
                 deleSnake.GetComponent<Animator>().SetBool("isLarryBodyDie", true);
                 snakeBody.Remove(deleSnake);
                 Destroy(deleSnake, waitforSecond);
+                DestorySound();
             }
         }
         if (hp <= 40f )
@@ -214,6 +220,7 @@ public class SnakeManager : TEnemy
                 deleSnake.GetComponent<Animator>().SetBool("isLarryBodyDie", true);
                 snakeBody.Remove(deleSnake);
                 Destroy(deleSnake, waitforSecond);
+                DestorySound();
             }
         }
         if (hp <= 30f )
@@ -241,6 +248,7 @@ public class SnakeManager : TEnemy
                 deleSnake.GetComponent<Animator>().SetBool("isLarryBodyDie", true);
                 snakeBody.Remove(deleSnake2);
                 Destroy(deleSnake2 , waitforSecond);
+                DestorySound();
             }
         }
 
@@ -254,6 +262,7 @@ public class SnakeManager : TEnemy
                 deleSnake.GetComponent<Animator>().SetBool("isLarryBodyDie", true);
                 snakeBody.Remove(deleSnake);
                 Destroy(deleSnake, waitforSecond);
+                DestorySound();
             }
         }
 
@@ -267,6 +276,7 @@ public class SnakeManager : TEnemy
                 deleSnake.GetComponent<Animator>().SetBool("isLarryBodyDie", true);
                 snakeBody.Remove(deleSnake);
                 Destroy(deleSnake, waitforSecond);
+                DestorySound();
             }
 
             // 죽는 애니메이션 실행
@@ -275,6 +285,13 @@ public class SnakeManager : TEnemy
             Destroy(gameObject , waitforSecond);
         }
 
+
+    }
+
+    void DestorySound()
+    {
+        audioSource.clip = SoundManager.instance.GetEnemyDeadClip();
+        audioSource.Play();
     }
 
     // 상태에 따른 애니메이션과 방향 전환

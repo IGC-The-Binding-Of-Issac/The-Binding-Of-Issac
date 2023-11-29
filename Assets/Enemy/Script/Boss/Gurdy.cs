@@ -27,6 +27,8 @@ public class Gurdy : TEnemy
     Coroutine runningCoroutine = null;
     bool isGene;
 
+
+    [SerializeField] AudioClip[] gurdySound;
     void Start()
     {
         // 나포함 , 자식 배열 받아오기
@@ -42,6 +44,7 @@ public class Gurdy : TEnemy
         Children = gameObject.GetComponentsInChildren<Transform>();
         animator = GetComponent<Animator>();
         childAni = Children[1].gameObject.GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
 
         playerInRoom        = false;
         dieParameter        = "isDie";
@@ -170,6 +173,8 @@ public class Gurdy : TEnemy
 
     void GenerateAttackFly()
     {
+        WhatIsThisSound();
+
         GameObject obj = Instantiate(pooter, Children[7].transform.position, Quaternion.identity) as GameObject;
 
         // SoundManage의 sfxObject로 추가.
@@ -180,6 +185,12 @@ public class Gurdy : TEnemy
         }
 
         roomInfo.GetComponent<Room>().enemis.Add(obj);
+    }
+
+    void WhatIsThisSound()
+    {
+        audioSource.clip = gurdySound[Random.Range(0, gurdySound.Length)];
+        audioSource.Play();
     }
 
     void randTime()

@@ -208,16 +208,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e58b215e4c2536f43898b6a925fcaa41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isTracking: 0
+  isProwl: 0
+  isDetective: 0
+  isShoot: 0
+  isJump: 0
   playerInRoom: 0
   hpBarSlider: {fileID: 2481089337826916390}
-  hp: 0
-  moveSpeed: 0
-  playerPos: {fileID: 0}
-  knockBackState: 0
-  roomInfo: {fileID: 0}
-  justTrackingPlayerPosi: {fileID: 0}
-  state: 0
   enemyBullet: {fileID: 5075845781784470873, guid: badefd297090b9f4098457860dee0ecc, type: 3}
+  roomInfo: {fileID: 0}
+  playerPosi: {fileID: 0}
+  eCurState: 0
+  ePreState: 0
 --- !u!82 &5449006876789961301
 AudioSource:
   m_ObjectHideFlags: 0
@@ -229,7 +231,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

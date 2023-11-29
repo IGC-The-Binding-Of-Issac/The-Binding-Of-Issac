@@ -17,9 +17,10 @@ public class SoundManager : MonoBehaviour
     #endregion
 
     [Header("Audio Cilps")]
-    [SerializeField] AudioClip[] stageBGM;
-    [SerializeField] AudioClip[] bossRoomBGM;
-    [SerializeField] AudioClip[] doorClip;
+    [SerializeField] AudioClip[] stageBGM;          // 스테이지 배경 clip
+    [SerializeField] AudioClip[] bossRoomBGM;       // 보스방   배경 clip
+    [SerializeField] AudioClip[] doorClip;          // 문            clip
+    [SerializeField] AudioClip[] enemyDeadClip;     // 몬스터   사망 clip
 
     [Header("Sound Object")]
     public AudioSource bgmObject; // BGM 사운드 오브젝트
@@ -183,5 +184,15 @@ public class SoundManager : MonoBehaviour
                 return doorClip[2];
         }
         return null;
+    }
+
+    public AudioClip GetEnemyDeadClip()
+    {
+        int rd = Random.Range(0,enemyDeadClip.Length);
+
+        if (enemyDeadClip[rd] == null)
+            return enemyDeadClip[0];
+
+        return enemyDeadClip[rd];
     }
 }

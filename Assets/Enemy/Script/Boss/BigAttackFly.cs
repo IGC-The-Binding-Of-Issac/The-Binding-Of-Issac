@@ -25,9 +25,11 @@ public class BigAttackFly : TEnemy
     bool coruState;
     Coroutine runningCoroutine  = null;
 
+    bool canDead = true;
     void Start()
     {         
         animator = GetComponent<Animator>();    
+        audioSource = GetComponent<AudioSource>();
 
         playerInRoom    = false;
         dieParameter    = "isBigFlyDie";
@@ -58,8 +60,12 @@ public class BigAttackFly : TEnemy
 
     public void Move()
     {
-        if (e_isDead())                     // hp가 0이하면
+        if (e_isDead() && canDead)// hp가 0이하면
+        {
+            canDead = false;
+            audioSource.loop = false;
             e_destroyEnemy();               // die
+        }
 
         e_findPlayer();                     // player 감지
 
