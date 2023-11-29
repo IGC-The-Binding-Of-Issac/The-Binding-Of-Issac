@@ -83,6 +83,7 @@ public class BossRoom : MonoBehaviour
             GameObject boss;
             // 보스생성
             boss = GameManager.instance.roomGenerate.enemyGenerate.GetBoss();
+            boss.GetComponent<AudioSource>().volume = SoundManager.instance.GetSFXVolume();
             GameManager.instance.roomGenerate.SetSFXDestoryObject(boss);
 
             // 보스오브젝트를 보스방 자식오브젝트로 설정

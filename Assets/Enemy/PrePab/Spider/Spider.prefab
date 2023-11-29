@@ -352,14 +352,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d933331b026daf24e9a429729cddd9f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isTracking: 0
+  isProwl: 0
+  isDetective: 0
+  isShoot: 0
+  isJump: 0
   playerInRoom: 0
   hpBarSlider: {fileID: 3285312253796057756}
-  hp: 0
-  moveSpeed: 0
-  playerPos: {fileID: 0}
-  knockBackState: 0
+  enemyBullet: {fileID: 0}
   roomInfo: {fileID: 0}
-  state: 0
+  playerPosi: {fileID: 0}
+  eCurState: 0
+  ePreState: 0
 --- !u!95 &2520517019498800104
 Animator:
   serializedVersion: 5
@@ -404,7 +408,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

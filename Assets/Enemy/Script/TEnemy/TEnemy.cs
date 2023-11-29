@@ -411,9 +411,20 @@ public class TEnemy : MonoBehaviour
     // enemy 삭제
     public void e_destroyEnemy()
     {
+        e_deadSound();
         animator.SetBool(dieParameter , true);
         Destroy(gameObject ,waitforSecond);
     }
 
+    public void e_deadSound()
+    {
+        // 예외처리 - 오디오가 없는 오브젝트
+        if (audioSource == null) 
+            return;
 
+        Debug.Log("dead");
+
+        audioSource.clip = SoundManager.instance.GetEnemyDeadClip();
+        audioSource.Play();
+    }
 }

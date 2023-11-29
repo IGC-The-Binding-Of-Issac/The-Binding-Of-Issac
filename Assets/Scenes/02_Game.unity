@@ -5997,6 +5997,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 17dab645281161343b8776e9ebd5ca62, type: 3}
   - {fileID: 8300000, guid: 52c1c60988afb46468a62e12700f5ccc, type: 3}
   - {fileID: 8300000, guid: fe59f576c4f1ae84a975d8c215f9598b, type: 3}
+  enemyDeadClip:
+  - {fileID: 8300000, guid: 98cf46d797d21e6438d4fb32d0f66fe2, type: 3}
+  - {fileID: 8300000, guid: b5fcd18c29f660d4fb8b7e0e798564a2, type: 3}
+  - {fileID: 8300000, guid: fed8417765d355748beaca8e21a2d20e, type: 3}
   bgmObject: {fileID: 209403519}
   playerObject: {fileID: 0}
   sfxObjects: []
