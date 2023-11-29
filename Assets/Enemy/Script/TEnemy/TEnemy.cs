@@ -353,17 +353,16 @@ public class TEnemy : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Tears"))               //눈물이랑 부딪히면 색 변화
         {
-            Color oriColor = gameObject.GetComponent<SpriteRenderer>().color;
-            StartCoroutine(Hit(oriColor));
+            StartCoroutine(Hit());
         }
     }
 
     // 색 변화 코루틴
-    IEnumerator Hit(Color oriColor)
+    IEnumerator Hit()
     {
         gameObject.GetComponent<SpriteRenderer>().color = Color.red;
         yield return new WaitForSeconds(0.1f);
-        gameObject.GetComponent<SpriteRenderer>().color = oriColor;
+        gameObject.GetComponent<SpriteRenderer>().color = Color.white;
     }
 
     // 넉백 코루틴 
@@ -413,7 +412,7 @@ public class TEnemy : MonoBehaviour
     public void e_destroyEnemy()
     {
         animator.SetBool(dieParameter , true);
-        Destroy(gameObject , waitforSecond);
+        Destroy(gameObject ,waitforSecond);
     }
 
 
