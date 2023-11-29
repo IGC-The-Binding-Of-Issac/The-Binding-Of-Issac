@@ -12,7 +12,8 @@ public class TheWafer : ItemInfo
                       "탄수화물 덩어리",
                       "습득 시 이동속도 - 1.3"
                     + "\n공격력 + 2"
-                    + "\n사거리 - 2");
+                    + "\n사거리 - 2"
+                    + "\n눈물 속도 - 1");
     }
     public override void UseItem()
     {
@@ -21,6 +22,7 @@ public class TheWafer : ItemInfo
         PlayerManager.instance.playerMoveSpeed -= 1.3f;
         PlayerManager.instance.playerDamage += 2f;
         PlayerManager.instance.playerRange -= 2f;
+        PlayerManager.instance.playerTearSpeed -= 1f;
         base.UseItem();
         bodySize.localScale = new Vector3(parentSize.localScale.x * 1.2f, parentSize.localScale.y, 0);
     }

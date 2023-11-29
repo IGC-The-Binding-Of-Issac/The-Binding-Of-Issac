@@ -158,6 +158,10 @@ public class PlayerManager : MonoBehaviour
         {
             playerRange = 0.5f;
         }
+        if (playerTearSpeed < 2.5f)
+        {
+            playerTearSpeed = 2.5f;
+        }
     }
     #region SkinChange
     public void SetHeadSkin(int index)
