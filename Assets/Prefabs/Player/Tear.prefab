@@ -104,8 +104,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPosition: {x: 0, y: 0, z: 0}
-  shootSound: {fileID: 8300000, guid: 7d5a21a74964a254d95477cdb36378c1, type: 3}
-  boomSound: {fileID: 8300000, guid: c1a6a979bebb05243b13e35cc8fa65ef, type: 3}
+  shootSound:
+  - {fileID: 8300000, guid: 7d5a21a74964a254d95477cdb36378c1, type: 3}
+  - {fileID: 8300000, guid: c1a6a979bebb05243b13e35cc8fa65ef, type: 3}
+  boomSound: {fileID: 8300000, guid: 02b33ec14ced2824c81a75aa9b7dce42, type: 3}
 --- !u!58 &6721163588340930790
 CircleCollider2D:
   m_ObjectHideFlags: 0

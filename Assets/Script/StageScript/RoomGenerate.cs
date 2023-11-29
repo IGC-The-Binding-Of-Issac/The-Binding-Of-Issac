@@ -515,6 +515,7 @@ public class RoomGenerate : MonoBehaviour
                 {
                     Transform pos = roomList[y, x].GetComponent<Room>().roomObjects[idx].transform;
                     GameManager.instance.playerObject.transform.position = pos.position;
+                    GameManager.instance.miniMapPosition = pos;
                 }
 
                 else if (pNum == 5) // 몬스터 오브젝트일때

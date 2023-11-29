@@ -20,10 +20,11 @@ public class Tear : MonoBehaviour
     float betweenDistance;
 
     [Header("Audio")]
-    public AudioClip shootSound;
+    public AudioClip[] shootSound;
     public AudioClip boomSound;
     AudioSource audioSource;
 
+    [SerializeField] static long soundIndex;
     void Start()
     {
         AudioInit();
@@ -152,7 +153,7 @@ public class Tear : MonoBehaviour
 
     void ShootSound()
     {
-        audioSource.clip = shootSound;
+        audioSource.clip = shootSound[soundIndex++ % 2];
         audioSource.Play();
     }
 
@@ -160,6 +161,7 @@ public class Tear : MonoBehaviour
     {
         if(audioSource == null)
             AudioInit();
+
         ShootSound();
     }
     #endregion
