@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 09dda7f24a067bb4d91d76c038f69f54
+guid: 0b4c08bdeb3bc2c44a6109afc0d5724c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,18 +43,18 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 0
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 2
+  textureType: 8
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
@@ -108,18 +108,40 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: bossname_20.0_monstro_0
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 13
+        width: 142
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c57cce3e477c148438a02c9e3417bc13
+      internalID: 1505764860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      bossname_20.0_monstro_0: 1505764860
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
