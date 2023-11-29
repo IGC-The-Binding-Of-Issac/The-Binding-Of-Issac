@@ -46,7 +46,7 @@ public class ItemTable : MonoBehaviour
         for (int i = 0; i < TrinketItems.Length; i++)
             trinket.Add(i);
 
-        for (int i = 0; i < ActiveItems.Length; i++)
+        for (int i = 0; i < ActiveItems.Length-1; i++)
             active.Add(i);
     }
 

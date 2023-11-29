@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     #region singleTon
@@ -21,11 +22,19 @@ public class GameManager : MonoBehaviour
     public GameObject playerObject; // 생성된 플레이어
     public int maxStage;
 
+    public Transform miniMapPosition;
+
     [Header("Unity Setup")]
     public StageGenerate stageGenerate;
     public RoomGenerate roomGenerate;
     public GameObject myCamera;
-    
+    public GameObject miniMapCamera;
+
+
+
+    [Header("reload")]
+    [SerializeField] private float curTime;
+
     private void Start()
     {
         SetStage(1); // 1stage create
@@ -40,10 +49,20 @@ public class GameManager : MonoBehaviour
     {
         // 스테이지 재생성
         // R키 누르기 -> 스테이지 시작시로 변경 할것. 
-        if(Input.GetKeyDown(KeyCode.R) && !UIManager.instance.LodingImage.activeSelf) 
+        if(Input.GetKey(KeyCode.R) && !UIManager.instance.LodingImage.activeSelf) 
         {
-            UIManager.instance.OnLoading();
-            StageStart();
+            curTime += Time.deltaTime;
+
+            if (curTime >= 2f) // 2초간 누르고있으면
+                SceneManager.LoadScene("02_Game"); // 1스테이지로 돌아가서 재시작합니당
+            
+            //UIManager.instance.OnLoading();
+            //StageStart();
+        }
+
+        if(Input.GetKeyUp(KeyCode.R) && curTime <= 2.4f) 
+        {
+            curTime = 0;
         }
     }
     public void StageStart()
@@ -61,6 +80,8 @@ public class GameManager : MonoBehaviour
         }
 
         myCamera.transform.SetParent(null); // 카메라의 위치를 초기화
+        miniMapCamera.transform.SetParent(myCamera.transform); // 카메라의 위치를 초기화
+        miniMapCamera.GetComponent<MiniMapController>().initCamera();
         // ** 이부분이 없으면 스테이지 생성될때 스테이지내 방들이 삭제되면서 카메라도 같이 사라집니다 **
 
 

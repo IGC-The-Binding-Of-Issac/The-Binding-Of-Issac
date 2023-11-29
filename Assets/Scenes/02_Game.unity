@@ -1767,9 +1767,12 @@ MonoBehaviour:
   stageMinimunRoom: 0
   playerObject: {fileID: 0}
   maxStage: 4
+  miniMapPosition: {fileID: 0}
   stageGenerate: {fileID: 1043015904}
   roomGenerate: {fileID: 351783603}
   myCamera: {fileID: 926169540}
+  miniMapCamera: {fileID: 1056556174}
+  curTime: 0
 --- !u!1 &543560690
 GameObject:
   m_ObjectHideFlags: 0
@@ -3362,8 +3365,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   miniMapScale: 0
   miniMapCameraSize: 0
+  miniMapLockTransform: {fileID: 0}
   miniMapUI: {fileID: 1313132076}
   miniMapCamera: {fileID: 1056556177}
+  mainCameraTransfrom: {fileID: 926169543}
 --- !u!1 &1110973888
 GameObject:
   m_ObjectHideFlags: 0
