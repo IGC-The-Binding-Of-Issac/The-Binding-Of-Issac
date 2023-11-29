@@ -5,7 +5,7 @@ using UnityEngine;
 public class EightInchNail : ItemInfo
 {
     // Start is called before the first frame update
-    void Start()
+    public override void Start()
     {
         base.Start();
         SetItemCode(9);

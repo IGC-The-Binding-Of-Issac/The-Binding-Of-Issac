@@ -23,7 +23,6 @@ public class Gurdy : TEnemy
     [SerializeField] float  stateTime;
     [SerializeField] int    stateNum;
     [SerializeField] float  currTime;                // 현재 상태의 시간
-    [SerializeField] bool chageState;               // 상태변환
     bool coruState;
     Coroutine runningCoroutine = null;
     bool isGene;
@@ -59,7 +58,6 @@ public class Gurdy : TEnemy
         randTime();
 
         currTime = stateTime;
-        chageState = true;
         coruState = true;
         isGene = true;
     }

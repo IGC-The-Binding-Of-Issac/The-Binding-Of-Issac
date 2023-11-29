@@ -12,39 +12,20 @@ public class CutScene : MonoBehaviour
     [SerializeField] Image vs;
     [SerializeField] Image isaac;
     [SerializeField] Image bossImage;
-    [SerializeField] Sprite bossChgSprite;
-    [SerializeField] Sprite Gurdy;
-    [SerializeField] Sprite GurdyFont;
-    [SerializeField] Sprite Larry;
-    [SerializeField] Sprite LarryFont;
-    [SerializeField] Sprite Gemini;
-    [SerializeField] Sprite GeminiFont;
-    [SerializeField] Sprite Monstro;
-    [SerializeField] Sprite MonstroFont;
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] RectTransform rectTransform;
+
+    [Header("Sprites")]
+    [SerializeField] Sprite[] bossSprite;
+    [SerializeField] Sprite[] fontSprite;
+
+    private void OnEnable() 
     {
-        RectTransform rectTransform = GetComponent<RectTransform>();
+        // ÄÆ¾À ÄÑÁú¶§
         if (gameObject.activeSelf)
         {
-            if(GameManager.instance.stageLevel == 1)
-            {
-                bossImage.sprite = Gemini;
-                bossFont.sprite = GeminiFont;
-            }
-            else if(GameManager.instance.stageLevel == 2)
-            {
-                bossImage.sprite = Monstro;
-                bossFont.sprite = MonstroFont;
-            }else if (GameManager.instance.stageLevel == 3)
-            {
-                bossImage.sprite = Larry;
-                bossFont.sprite = LarryFont;
-            }else if (GameManager.instance.stageLevel == 4)
-            {
-                bossImage.sprite = Gurdy;
-                bossFont.sprite = GurdyFont;
-            }
+            bossImage.sprite = bossSprite[GameManager.instance.stageLevel - 1];
+            bossFont.sprite = fontSprite[GameManager.instance.stageLevel - 1];
+
             isaacSpot.rectTransform.DOLocalMoveX(-250, 1f);
             isaac.rectTransform.DOShakePosition(4f, new Vector3(7f, 0, 0), 60);
             bossSpot.rectTransform.DOLocalMoveX(190, 1.2f);
@@ -55,9 +36,13 @@ public class CutScene : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnDisable()
     {
-        
+        // ÄÆ¾À ²¨Á³À»¶§ ÃÊ±âÈ­
+        isaacSpot.rectTransform.DOLocalMoveX(-1094, 1f);
+        bossSpot.rectTransform.DOLocalMoveX(2764, 1.2f);
+        isaacFont.rectTransform.DOLocalMoveX(-1746, 1.7f);
+        bossFont.rectTransform.DOLocalMoveX(2346, 2f);
+        vs.rectTransform.DOScale(Vector3.zero, 0f);
     }
 }

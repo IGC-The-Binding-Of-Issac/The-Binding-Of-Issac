@@ -2072,6 +2072,7 @@ MonoBehaviour:
   nextStageDoor: {fileID: 5143426752882456034}
   bossHpUI: {fileID: 4806860455453541446}
   bossHP: {fileID: 1407994168146371804}
+  BossCutScene: {fileID: 0}
 --- !u!82 &560823298520247011
 AudioSource:
   m_ObjectHideFlags: 0
