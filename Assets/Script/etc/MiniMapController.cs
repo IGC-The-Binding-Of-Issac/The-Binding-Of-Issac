@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MiniMapController : MonoBehaviour
 {
@@ -13,10 +15,13 @@ public class MiniMapController : MonoBehaviour
     [SerializeField] RectTransform miniMapUI;
     [SerializeField] Camera miniMapCamera;
     [SerializeField] Transform mainCameraTransfrom;
+    [SerializeField] GameObject timeStampObject; // 시간스탬프 오브젝트 on off
+    [SerializeField] Text timeText; // 진행시간 텍스트
 
     private void Start()
     {
         initCamera();
+        StartCoroutine(TimeCalculate());
     }
 
     public void initCamera()
@@ -33,10 +38,26 @@ public class MiniMapController : MonoBehaviour
         {
             SizeChanger();
             AdjustmentMiniMap();
+            timeStampObject.SetActive(!timeStampObject.activeSelf);
         }
     }
 
-
+    IEnumerator TimeCalculate()
+    {
+        int m = 0;
+        int s = 0;
+        while(true)
+        {
+            timeText.text = m.ToString("00") + " : " + s.ToString("00");
+            yield return new WaitForSeconds(1f);
+            s++;
+            if(s >= 60)
+            {
+                s = 0;
+                m++;
+            }
+        }
+    }
     void SizeChanger()
     {
         // 기본 사이즈 일때 ->  커짐
