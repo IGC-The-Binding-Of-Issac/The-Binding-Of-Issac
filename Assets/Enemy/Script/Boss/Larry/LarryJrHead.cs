@@ -24,7 +24,7 @@ public class LarryJrHead : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // Larry 个 + 赣府 , 传拱 面倒
-        if (collision.gameObject.CompareTag("Tears"))
+        if (collision.gameObject.CompareTag("Tears") || collision.gameObject.CompareTag("Knife"))
         {
             parent.getDamageLarry();
         }

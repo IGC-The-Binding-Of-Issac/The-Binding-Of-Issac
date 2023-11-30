@@ -147,7 +147,7 @@ public class KnifeObject : MonoBehaviour
     //Àû °ø°Ý
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Boss"))
+        if (collision.gameObject.CompareTag("Enemy"))
         {
             knifeAttack(collision);
         }
@@ -157,8 +157,8 @@ public class KnifeObject : MonoBehaviour
         GameObject enemyObject = enemy.gameObject;
         if (canAttack)
         {
-            enemyObject.GetComponent<TEnemy>().GetDamage(PlayerManager.instance.playerDamage);
-            enemyObject.GetComponent<TEnemy>().knockBack();
+            if (enemyObject.CompareTag("Enemy"))
+                enemyObject.GetComponent<TEnemy>().GetDamage(PlayerManager.instance.playerDamage);
             canAttack = false;
             Invoke("CanAttackChange", 0.2f);
         }
