@@ -16,7 +16,7 @@ public class MutantSpider : ItemInfo
 
     public override void UseItem()
     {
-        PlayerManager.instance.playerShotDelay /= 0.4f;
+        PlayerManager.instance.playerShotDelay /= 0.65f;
         base.UseItem();
         PlayerManager.instance.SetHeadSkin(2);
     }
