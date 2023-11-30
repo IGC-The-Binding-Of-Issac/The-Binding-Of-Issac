@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Data.Common;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -44,10 +45,12 @@ public class TEnemy : MonoBehaviour
     public bool getisShoot { get => isShoot; }
     public bool getisJump { get => isJump; }
 
+    // 스테이지
+    private int stage;
 
     // Enemy가 가지고 있을 기본 스탯들
     public bool playerInRoom;                   // 플레이어가 방에 들어왔는지 여부
-    protected float hp;                         // hp
+    [SerializeField] protected float hp;                         // hp
     protected float sight;                      // 시야 범위
     protected float moveSpeed;                  // 움직임 속도
     protected float waitforSecond;              // destroy 전 대기 시간 
@@ -164,6 +167,7 @@ public class TEnemy : MonoBehaviour
     public virtual void En_kindOfEnemy() { }      // Enemy의 종류 (isTracking , isProwl ,isDetective )
     public void En_Start()                        // 하위 몬스터 start에서 실행         
     {
+        e_chageHp();                              // hp 설정
         En_stateArray();                          // 초기 배열 설정
         E_Enter();                                // 현재 상태 (idle)의 begin 실행 
     }
@@ -187,7 +191,17 @@ public class TEnemy : MonoBehaviour
         headState.H_Exit(); ;
     }
 
+    // 스테이지별 hp 설정
+    public void e_chageHp() 
+    {
+        stage = GameManager.instance.stageLevel;    // 스테이지 level 가져오기
+        if (stage >= 2) 
+        {
+            hp = (stage * 2.5f) + hp;
+            maxhp = hp;
+        }
 
+    }
 
 
     /// <summary>
@@ -422,7 +436,7 @@ public class TEnemy : MonoBehaviour
         if (audioSource == null) 
             return;
 
-        Debug.Log("dead");
+        //Debug.Log("dead");
 
         audioSource.clip = SoundManager.instance.GetEnemyDeadClip();
         audioSource.Play();

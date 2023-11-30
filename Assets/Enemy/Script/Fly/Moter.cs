@@ -13,7 +13,7 @@ public class Moter : TEnemy
         playerInRoom     = false;
         dieParameter     = "isDie";
 
-        hp               = 2f;
+        hp               = 3f;
         sight            = 5f;
         moveSpeed        = 1.5f;
         waitforSecond    = 0.5f;

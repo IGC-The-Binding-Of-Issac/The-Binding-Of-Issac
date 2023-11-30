@@ -11,7 +11,7 @@ public class Footer : TEnemy
         dieParameter         = "isDie";
         shootParameter       = "isShoot";
 
-        hp                   = 2f;
+        hp                   = 3f;
         sight                = 4f;
         moveSpeed            = 1.5f;
         attaackSpeed         = 1f;

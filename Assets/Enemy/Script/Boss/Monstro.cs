@@ -28,19 +28,19 @@ public class Monstro : TEnemy
     bool canDead = true;
     void Start()
     {
-        animator = GetComponent<Animator>();
-        audioSource = GetComponent<AudioSource>();
+        animator        = GetComponent<Animator>();
+        audioSource     = GetComponent<AudioSource>();
 
-        isFlipped = true;
-        playerInRoom = false;
-        dieParameter = "isDie";
+        isFlipped       = true;
+        playerInRoom    = false;
+        dieParameter    = "isDie";
         // Enemy
-        hp = 100f;
-        waitforSecond = 0.5f;   // 죽기전 시간
-        attaackSpeed = 1.5f; // 총알 발사 하는 시간 
-        bulletSpeed = 5f;
+        hp              = 275f;
+        waitforSecond   = 0.5f;   // 죽기전 시간
+        attaackSpeed    = 1.5f; // 총알 발사 하는 시간 
+        bulletSpeed     = 5f;
 
-        maxhp = hp;
+        maxhp           = hp;
 
         //Monstro
         randTime();
