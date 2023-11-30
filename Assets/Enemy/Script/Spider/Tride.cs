@@ -15,7 +15,7 @@ public class Tride : TEnemy
         dieParameter    = "isDie";
         jumpParameter   = "isJump";
 
-        hp              = 2f;
+        hp              = 3f;
         sight           = 5f;
         moveSpeed       = 1f;
         waitforSecond   = 0.5f;
