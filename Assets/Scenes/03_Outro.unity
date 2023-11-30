@@ -688,6 +688,7 @@ MonoBehaviour:
   image8: {fileID: 136781714}
   image9: {fileID: 1395783409}
   image10: {fileID: 1379609404}
+  SkipBtn: {fileID: 0}
   waitTime: 8
   fadeDuration: 10
 --- !u!1 &730070187

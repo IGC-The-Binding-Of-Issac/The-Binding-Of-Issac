@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-
+using DG.Tweening;
 public class ImageController : MonoBehaviour
 {
     public Image image1;
@@ -16,6 +16,7 @@ public class ImageController : MonoBehaviour
     public Image image8;
     public Image image9;
     public Image image10;
+    public GameObject SkipBtn;
 
     public float waitTime; // 이미지의 불투명도를 변경하기 시작하기까지의 대기 시간 (초)
     public float fadeDuration; // 이미지의 불투명도가 0이 되는데 걸리는 시간 (초)
@@ -36,7 +37,7 @@ public class ImageController : MonoBehaviour
         StartCoroutine(WaitAndFadeOut(image8, waitTime, fadeDuration));
         StartCoroutine(WaitAndFadeOut(image9, waitTime, fadeDuration));
         StartCoroutine(WaitAndFadeOut(image10, waitTime, fadeDuration));
-
+        SkipBtn.GetComponent<RectTransform>().DOShakePosition(5,7,4);
         Invoke("ReturnIntro", waitTime + fadeDuration + 2f);
     }
 
