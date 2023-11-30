@@ -28,6 +28,8 @@ public class Enemy_Bullet : MonoBehaviour
         if (collision.gameObject.CompareTag("Player")) // 플레이어랑 닿이면 삭제
         {
             ani.SetTrigger("bulletDestroy");
+            gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+            gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
             PlayerManager.instance.GetDamage(); //플레이어랑 데미지
 
             enemyBulletIsBomb = false;
