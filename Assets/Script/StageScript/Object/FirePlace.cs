@@ -85,6 +85,7 @@ public class FirePlace : Obstacle
         int rd = Random.Range(0, 3);
         if (rd == 0)
         {
+            rd = Random.Range(0, 4);
             ItemManager.instance.itemTable.Dropitem(transform.position, rd);
         }
     }

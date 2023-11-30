@@ -58,8 +58,9 @@ public class Poop : Obstacle
     protected override void DropItem()
     {
         int rd = Random.Range(0, 3);
-        if (rd <= 0)
+        if (rd == 0)
         {
+            rd = Random.Range(0, 4);
             ItemManager.instance.itemTable.Dropitem(transform.position, rd);
         }
     }

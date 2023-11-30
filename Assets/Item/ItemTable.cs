@@ -179,6 +179,11 @@ public class ItemTable : MonoBehaviour
                 dropItem.transform.position = dropPosition;
                 dropItem.GetComponent<key>().DropKey();
                 break;
+            default:
+                dropItem = GetDropItem(itemCode); // 아이템 받아오기
+                dropItem.transform.position = dropPosition;
+                dropItem.GetComponent<Coin>().DropCoin();
+                break;
         }
     }
 
