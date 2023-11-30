@@ -55,7 +55,6 @@ public class TrinketInfo : MonoBehaviour
 
                 // 현재 드랍된 아이템 리스트에 등록.
                 GameManager.instance.roomGenerate.itemList.Add(beforeTrinket);
-
                 // 원래있던 아이템 제거.
                 Destroy(ItemManager.instance.TrinketItem);
                 TrinketGet(collision);
