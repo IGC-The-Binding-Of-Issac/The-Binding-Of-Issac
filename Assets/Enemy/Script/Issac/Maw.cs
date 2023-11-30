@@ -16,7 +16,7 @@ public class Maw : TEnemy
         sight           = 2f;
         moveSpeed       = 1.5f;
         attaackSpeed    = 1f;
-        waitforSecond   = 0.5f;
+        waitforSecond   = 0.3f;
         fTime           = 0.5f;
         randRange       = 1f;
 
