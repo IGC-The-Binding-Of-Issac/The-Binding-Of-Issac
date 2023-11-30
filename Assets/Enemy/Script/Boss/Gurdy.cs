@@ -50,7 +50,7 @@ public class Gurdy : TEnemy
         dieParameter        = "isDie";
 
         // Enemy
-        hp                  = 400f;
+        hp                  = 450f;
         waitforSecond       = 1f;   // 죽기전 시간
         attaackSpeed        = 1.5f; // 총알 발사 하는 시간 
         bulletSpeed         = 5f;
