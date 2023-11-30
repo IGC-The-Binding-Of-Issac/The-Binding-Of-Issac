@@ -35,7 +35,7 @@ public class Monstro : TEnemy
         playerInRoom    = false;
         dieParameter    = "isDie";
         // Enemy
-        hp              = 275f;
+        hp              = 335f;
         waitforSecond   = 0.5f;   // 죽기전 시간
         attaackSpeed    = 1.5f; // 총알 발사 하는 시간 
         bulletSpeed     = 5f;
