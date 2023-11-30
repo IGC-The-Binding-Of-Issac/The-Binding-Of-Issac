@@ -147,7 +147,7 @@ public class KnifeObject : MonoBehaviour
     //Рћ АјАн
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Boss"))
         {
             knifeAttack(collision);
         }
