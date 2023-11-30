@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 156889312670164546}
   - component: {fileID: 7547482608869600842}
   - component: {fileID: -283281953235764987}
-  m_Layer: 21
+  m_Layer: 0
   m_Name: Door_Boss
   m_TagString: door
   m_Icon: {fileID: 0}
@@ -96,7 +96,6 @@ MonoBehaviour:
   movePosition: {fileID: 0}
   roomInfo: {fileID: 0}
   doorDir: -1
-  doorDamage: 0
   closeDoor: {fileID: 7329769872951605806}
   openDoor: {fileID: 4026567365581991824}
   doorKey: 1

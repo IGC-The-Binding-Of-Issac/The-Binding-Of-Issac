@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 4463597407791011690}
   - component: {fileID: 981244746176661128}
   - component: {fileID: 7311722367315051639}
-  m_Layer: 21
+  m_Layer: 0
   m_Name: Door_Curse
   m_TagString: door
   m_Icon: {fileID: 0}

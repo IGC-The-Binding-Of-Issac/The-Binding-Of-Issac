@@ -811,7 +811,7 @@ GameObject:
   - component: {fileID: 4903051384914692604}
   - component: {fileID: 7004920304958996982}
   - component: {fileID: 4903488415990779368}
-  m_Layer: 20
+  m_Layer: 13
   m_Name: TearPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
