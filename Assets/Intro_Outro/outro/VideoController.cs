@@ -13,8 +13,12 @@ public class VideoController : MonoBehaviour
 
     public ImageController imageCon;
 
+    [SerializeField] int clearCnt = 0;
+
+
     void Start()
     {
+
         imageCon.ImageInvisible();
         videoPlayer.Play();
 
@@ -37,9 +41,27 @@ public class VideoController : MonoBehaviour
     void Update()
     {
         // 사용자가 화면을 클릭하면 동영상을 멈추고 이미지의 불투명도를 즉시 0으로 만듭니다.
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && videoPlayer.isPlaying)
         {
             imageCon.ImageVisible();
+            if (PlayerPrefs.HasKey("key"))
+            {
+                if (PlayerPrefs.GetInt("key") == 0)
+                {
+                    clearCnt++;
+                    PlayerPrefs.SetInt("key", clearCnt);
+                    return;
+                }
+                else
+                {
+                    StartCoroutine(imageCon.OnSkipbtn());
+                }
+            }
+            else
+            {
+                clearCnt++;
+                PlayerPrefs.SetInt("key", clearCnt);
+            }
             videoPlayer.Stop();
             if (fadeCoroutine != null)
             {
