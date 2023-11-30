@@ -1508,6 +1508,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6904753199373781677, guid: d4d64eb399a3b0f42ab8cd671fbd87ab, type: 3}
+      propertyPath: bossSprite.Array.data[1]
+      value: 
+      objectReference: {fileID: 1354802321, guid: b5ecad250515b9a4ca956f7fcfdceb5f, type: 3}
+    - target: {fileID: 6904753199373781677, guid: d4d64eb399a3b0f42ab8cd671fbd87ab, type: 3}
+      propertyPath: bossSprite.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 4a6d29de0e2127a409eee4bbb6e3af44, type: 3}
+    - target: {fileID: 6904753199373781677, guid: d4d64eb399a3b0f42ab8cd671fbd87ab, type: 3}
+      propertyPath: fontSprite.Array.data[1]
+      value: 
+      objectReference: {fileID: -95575894, guid: b5ecad250515b9a4ca956f7fcfdceb5f, type: 3}
+    - target: {fileID: 6904753199373781677, guid: d4d64eb399a3b0f42ab8cd671fbd87ab, type: 3}
+      propertyPath: fontSprite.Array.data[2]
+      value: 
+      objectReference: {fileID: 1505764860, guid: 0b4c08bdeb3bc2c44a6109afc0d5724c, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
