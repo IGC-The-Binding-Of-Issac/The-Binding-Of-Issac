@@ -18,35 +18,13 @@ public class ImageController : MonoBehaviour
     public Image image9;
     public Image image10;
     public GameObject SkipBtn;
-    [SerializeField] int clearCnt = 0;
 
     public float waitTime; // 이미지의 불투명도를 변경하기 시작하기까지의 대기 시간 (초)
     public float fadeDuration; // 이미지의 불투명도가 0이 되는데 걸리는 시간 (초)
 
     void Start()
     {
-        if (PlayerPrefs.HasKey("isClear"))
-        {
-            Debug.Log("key on");
-            if(PlayerPrefs.GetInt("isClear") == 0)
-            {
-                Debug.Log("NO clear");
-                clearCnt++;
-                PlayerPrefs.SetInt("isClear", clearCnt);
-                return;
-            }
-            else
-            {
-                Debug.Log("isClear");
-                ReturnIntro();
-            }
-        }
-        else
-        {
-            Debug.Log("key off");
-            clearCnt++;
-            PlayerPrefs.SetInt("isClear", clearCnt);
-        }
+        
 
         waitTime = 8;
         fadeDuration = 10;
@@ -62,7 +40,6 @@ public class ImageController : MonoBehaviour
         StartCoroutine(WaitAndFadeOut(image8, waitTime, fadeDuration));
         StartCoroutine(WaitAndFadeOut(image9, waitTime, fadeDuration));
         StartCoroutine(WaitAndFadeOut(image10, waitTime, fadeDuration));
-        //SkipBtn.GetComponent<RectTransform>().DOShakePosition(5,7,4);
         Invoke("ReturnIntro", waitTime + fadeDuration + 2f);
     }
 
@@ -92,6 +69,14 @@ public class ImageController : MonoBehaviour
         image8.color = new Color(image8.color.r, image8.color.g, image8.color.b, 1);
         image9.color = new Color(image9.color.r, image9.color.g, image9.color.b, 1);
         image10.color = new Color(image10.color.r, image10.color.g, image10.color.b, 1);
+        
+    }
+
+    public IEnumerator OnSkipbtn()
+    {
+        yield return new WaitForSeconds(2f);
+        SkipBtn.SetActive(true);
+        SkipBtn.GetComponent<RectTransform>().DOShakePosition(5, 7, 4);
     }
 
     IEnumerator WaitAndFadeOut(Image targetImage, float waitTime, float duration)
@@ -111,9 +96,8 @@ public class ImageController : MonoBehaviour
         targetImage.color = new Color(startColor.r, startColor.g, startColor.b, 0);
     }
 
-    void ReturnIntro()
+    public void ReturnIntro()
     {
-        Debug.Log(PlayerPrefs.GetInt("Clear"));
         SceneManager.LoadScene("01_Intro");
     }
 }
