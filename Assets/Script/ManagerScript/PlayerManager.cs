@@ -156,7 +156,7 @@ public class PlayerManager : MonoBehaviour
         //사거리 최소값
         if (playerRange < 0.5f)
         {
-            playerRange = 0.5f;
+            playerRange = 1.5f;
         }
         if (playerTearSpeed < 2.5f)
         {
