@@ -57,7 +57,6 @@ public class TheD6 : ActiveInfo
             if (col.GetComponent<ItemInfo>() != null)
             {
                 newItems = Instantiate(ItemManager.instance.itemTable.DropPassive(),colPos, Quaternion.identity) as GameObject;
-                
             }
             else if (col.GetComponent<ActiveInfo>() != null)
             {
@@ -73,7 +72,6 @@ public class TheD6 : ActiveInfo
                 GameManager.instance.roomGenerate.itemList.Add(newItems);
                 Destroy(col.gameObject);
             }
-            
         }
     }
 }
