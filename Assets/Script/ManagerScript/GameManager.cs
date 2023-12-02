@@ -47,9 +47,15 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+#if TEST_MODE
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            SceneManager.LoadScene("02_Game");
+        }
+#endif
         // 스테이지 재생성
         // R키 누르기 -> 스테이지 시작시로 변경 할것. 
-        if(Input.GetKey(KeyCode.R) && !UIManager.instance.LodingImage.activeSelf) 
+        if (Input.GetKey(KeyCode.R) && !UIManager.instance.LodingImage.activeSelf) 
         {
             curTime += Time.deltaTime;
 
@@ -85,12 +91,11 @@ public class GameManager : MonoBehaviour
         // ** 이부분이 없으면 스테이지 생성될때 스테이지내 방들이 삭제되면서 카메라도 같이 사라집니다 **
 
 
-        int cnt = 15; // 방 생성 실패 한계치
-        while (cnt-- > 0) 
+        // int cnt = 25; // 방 생성 실패 한계치
+        // 방생성시 오류발생시
+        // while cnt 로 횟수제한 줘야함! 
+        while (true) 
         {
-            // 스테이지 구조 생성 시도
-            // 정상적으로 구조가 생성되면 true
-            // 실패하면 false 리턴
             if (stageGenerate.CreateStage(stageSize, stageMinimunRoom))
             {
                 roomGenerate.ClearRoom(); // 현재 생성되어있는 방 / 오브젝트 / 몬스터 등등 전부 초기화
