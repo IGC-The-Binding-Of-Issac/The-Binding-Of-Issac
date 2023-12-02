@@ -129,15 +129,15 @@ public class GameManager : MonoBehaviour
                 break;
             case 2: // 2스테이지
                 stageSize = 5;
-                stageMinimunRoom = 8;
+                stageMinimunRoom = 10;
                 break;
             case 3: // 3스테이지
                 stageSize = 7;
-                stageMinimunRoom = 10;
+                stageMinimunRoom = 12;
                 break;
             case 4: // 4스테이지
                 stageSize = 7;
-                stageMinimunRoom = 12;
+                stageMinimunRoom = 14;
                 break;
             default:
                 stageSize = 5;
