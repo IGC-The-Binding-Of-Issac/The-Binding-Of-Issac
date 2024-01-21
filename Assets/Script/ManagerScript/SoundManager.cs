@@ -23,9 +23,13 @@ public class SoundManager : MonoBehaviour
     [SerializeField] AudioClip[] enemyDeadClip;     // 몬스터   사망 clip
 
     [Header("Sound Object")]
+    [SerializeField]
     public AudioSource bgmObject; // BGM 사운드 오브젝트
+    [SerializeField]
     public AudioSource playerObject;  // 플레이어 사운드 오브젝트
+    [SerializeField]
     public List<AudioSource> sfxObjects = new List<AudioSource>(); // SFX 사운드 오브젝트트 ( 풀링 적용된 오브젝트
+    [SerializeField]
     public List<AudioSource> sfxDestoryObjects = new List<AudioSource>(); // SFX 사운드 오브젝트트 ( 풀링 적용X 오브젝트
 
     [Header("Sound State")]

@@ -7,8 +7,9 @@ public class RoomGenerate : MonoBehaviour
     int[] dy = new int[4] { -1, 0, 1, 0 };
     int[] dx = new int[4] { 0, 1, 0, -1 };
 
-    List<GameObject> doors; // 생성된 문 오브젝트들
+    List<Door> doors; // 생성된 문 오브젝트들
 
+    private GameObject[,] roomlist;
     public GameObject[,] roomList; // 생성된 방 오브젝트들
     
     public GameObject[,] roomPrefabs; // 방생성에 사용할 프래핍
@@ -340,9 +341,9 @@ public class RoomGenerate : MonoBehaviour
     public void ClearRoom()
     {
         roomList = null; // 생성된 방 오브젝트 배열 초기화
-        doors = new List<GameObject>(); // 생성된 문 오브젝트 배열 초기화
+        doors = new List<Door>(); // 생성된 문 오브젝트 배열 초기화
 
-        AllReturnObject(); // 맵 오브젝트 리턴
+        AllReturnObject(); // 맵 오브젝트 초기화
 
         // 생성되어있는 모든 방들을 삭제
         for(int i = 0; i < roomPool.childCount; i++)
@@ -350,33 +351,31 @@ public class RoomGenerate : MonoBehaviour
             Destroy(roomPool.GetChild(i).gameObject);
         }
 
-        // 생성된 아이템 오브젝트 List 초기화
-        // 아이템 리스트가 비어있을때
+        // 생성된 아이템 오브젝트 List 초기화 ( 액티브 , 장신구, 패시브 아이템 )
         if (itemList == null)
         {
+            // LIst가 Null일때 
             itemList = new List<GameObject>();
         }
 
-        // 아이템 리스트가 비어있지않을때.
+        // List가 Null이 아닐대
         else 
         {
-            // 생성되어있는 아이템이있을때 전부 삭제 후 초기화
             for(int i = 0; i < itemList.Count; i++)
             {
+                // 생성되어있는 액티브,장신구,패시브 아이템을 삭제
                 Destroy(itemList[i]);
-                // 드랍아이템은 오브젝트 풀링적용시켜서 돌려주고,
-                // 그외 액티브,패시브,장신구 아이템은 삭제해야함.
             }
             itemList = new List<GameObject>();
         }
 
-        // 오브젝트 풀링이 적용된( 드랍 아이템 ) 초기화
-        ItemManager.instance.itemTable.AllReturnDropItem();
+        ItemManager.instance.itemTable.AllReturnDropItem(); // 픽업 아이템 초기화
         
     }
     public void CreateRoom(int stage, int size)
     {
-        roomList = new GameObject[size, size];
+        // 방 오브젝트들을 담는 배열을 구조에맞춰 2차원배열로 선언
+        roomList = new GameObject[size, size]; 
 
         Vector3 roomPos = new Vector3(0, 0, 0);
         for (int i = 0; i < size; i++)
@@ -397,16 +396,16 @@ public class RoomGenerate : MonoBehaviour
                 GameObject room = Instantiate(roomPrefabs[stage - 1, roomNum - 1], roomPos, Quaternion.identity) as GameObject; // 방 오브젝트를 생성.
                 SetSFXDestoryObject(room); // 해당 방을 Sound Manager의 SFXObject로 추가
                 roomList[i, j] = room; 
-                roomList[i, j].GetComponent<Room>().isClear = false; // 해당 방을 미클리어 상태로 전환
+                roomList[i, j].GetComponent<Room>().isClear = false; // 방을 미클리어 상태로 전환
 
-                // (4 상점) (5 황금) (6 저주) (7 시작) 인 경우 바로 클리어 상태로 전환
+                // (4 상점) (5 황금) (6 저주) (1 시작) 인 경우 바로 클리어 상태로 전환
                 if (roomNum == 4 || roomNum == 5 || roomNum == 6 || roomNum == 1)
                     roomList[i, j].GetComponent<Room>().isClear = true;
                 
 
                 // 방 오브젝트 생성
-                roomList[i, j].GetComponent<Room>().SetGrid(); //
-                CreateObstacle(i, j, roomNum);
+                roomList[i, j].GetComponent<Room>().SetGrid(); 
+                CreateObstacle(i, j, roomNum);  // 맵 오브젝트 / 몬스터 생성
                 room.transform.SetParent(roomPool);
 
                 roomPos += new Vector3(15, 0, 0);
@@ -420,11 +419,11 @@ public class RoomGenerate : MonoBehaviour
             for (int j = 0; j < size; j++)
             {
                 int roomNum = GameManager.instance.stageGenerate.stageArr[i, j];
-                if (roomNum == 0)
+                if (roomNum == 0) // 0 : 빈 방
                 {
                     continue;
                 }
-                CreateDoor(i, j);
+                CreateDoor(i, j); // 다음 방으로 넘어가는 문을 생성
             }
         }
     }
@@ -435,11 +434,11 @@ public class RoomGenerate : MonoBehaviour
             int ny = y + dy[i];
             int nx = x + dx[i];
 
-            // out of range
+            // 범위 밖
             if (ny < 0 || nx < 0 || ny >= GameManager.instance.stageSize || nx >= GameManager.instance.stageSize)
                 continue;
 
-            // nextRoom  Null 
+            // 다음방이 없을때.
             if (GameManager.instance.stageGenerate.stageArr[ny, nx] == 0)
                 continue;
 
@@ -447,26 +446,27 @@ public class RoomGenerate : MonoBehaviour
             int doorNumder = ChoiceDoor(y,x,ny,nx);
 
             GameObject door = Instantiate(doorPrefabs[doorNumder]);
+            Door doorComponent = door.GetComponent<Door>();
             door.transform.SetParent(roomList[y, x].GetComponent<Room>().doorPosition[i]);
             door.transform.localPosition = new Vector3(0, 0, 0);
             door.transform.localRotation = Quaternion.Euler(new Vector3(0, 0, 0));
 
-            door.GetComponent<Door>().doorDir = i; // door dir
+            doorComponent.doorDir = i; // 문 방향
 
-            door.GetComponent<Door>().roomInfo = roomList[y, x]; // door in Room Info
-            door.GetComponent<Door>().movePosition = roomList[ny, nx].GetComponent<Room>().movePosition[i]; // door MovePosition 
+            doorComponent.roomInfo = roomList[y, x]; // 생성된 문에 방 정보 추가.
+            doorComponent.movePosition = roomList[ny, nx].GetComponent<Room>().movePosition[i]; // 문을 사용했을때 이동하는 위치
 
             int roomNum = GameManager.instance.stageGenerate.stageArr[y, x];
             if (roomNum == 4 || roomNum == 5 || roomNum == 6)
-                door.GetComponent<Door>().UsingKey();
+                doorComponent.UsingKey();
 
-            doors.Add(door);
+            doors.Add(doorComponent);
 
             // 도어 입장 데미지.
             if (doorNumder == 4)
-                door.GetComponent<Door>().doorDamage = 1;
+                doorComponent.doorDamage = 1;
             else
-                door.GetComponent<Door>().doorDamage = 0;
+                doorComponent.doorDamage = 0;
         }
     }
     int ChoiceDoor(int y, int x, int ny, int nx)
@@ -499,8 +499,8 @@ public class RoomGenerate : MonoBehaviour
     void CreateObstacle(int y, int x, int roomNumber)
     {
         int idx = 0;
-        int[,] rdPattern = pattern.GetPattern(roomNumber);
-        for (int i = 0; i < rdPattern.GetLength(0); i++)
+        int[,] rdPattern = pattern.GetPattern(roomNumber); // 방 패턴을 반환받음.
+        for (int i = 0; i < rdPattern.GetLength(0); i++) 
         {
             for(int j = 0; j < rdPattern.GetLength(1); j++)
             {
@@ -513,6 +513,7 @@ public class RoomGenerate : MonoBehaviour
 
                 else if (pNum == 10) // 플레이어 오브젝트일때
                 {
+                    // 플레이어는 생성X , 이전에 생성해둔 플레이어 오브젝트를 이동시킴.
                     Transform pos = roomList[y, x].GetComponent<Room>().roomObjects[idx].transform;
                     GameManager.instance.playerObject.transform.position = pos.position;
                     GameManager.instance.miniMapPosition = pos;
@@ -564,9 +565,7 @@ public class RoomGenerate : MonoBehaviour
     {
         // sfx 사운드 조절을 위한 오브젝트 저장
         if (obj.GetComponent<AudioSource>() != null)
-        {
             SoundManager.instance.sfxObjects.Add(obj.GetComponent<AudioSource>());
-        }
     }
 
     public void SetSFXDestoryObject(GameObject obj)
@@ -582,7 +581,7 @@ public class RoomGenerate : MonoBehaviour
         {
             for(int i = 0; i < doors.Count; i++)
             {
-                doors[i].GetComponent<Door>().CheckedClear();
+                doors[i].CheckedClear();
             }
         }
     }

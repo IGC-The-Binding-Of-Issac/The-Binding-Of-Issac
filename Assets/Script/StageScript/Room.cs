@@ -28,7 +28,7 @@ public class Room : MonoBehaviour
             CameraSetting();
         }
 
-        if(!isClear)
+        if (!isClear)
         {
             CheckRoom();
         }
@@ -56,7 +56,7 @@ public class Room : MonoBehaviour
                 UIManager.instance.UpdateActiveEnergy();
             }
 
-            // 쉴드 추가.
+            // 쉴드 추가.  6,12 번 패시브 아이템을 가지고 있을때.
             if (ItemManager.instance.PassiveItems[6] && ItemManager.instance.PassiveItems[12])
             {
                 if (PlayerManager.instance.CanBlockDamage == 0)

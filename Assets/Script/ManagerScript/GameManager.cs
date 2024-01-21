@@ -81,7 +81,7 @@ public class GameManager : MonoBehaviour
             GameObject obj = Instantiate(roomGenerate.objectPrefabs[9]) as GameObject; // 플레이어를 생성
             playerObject = obj; // playerObject 초기화
             
-            // SoundManager의 플레이어 관련 사운드 오브젝트 초기화
+            // SoundManager의 플레이어 사운드 초기화
             SoundManager.instance.playerObject = playerObject.GetComponent<AudioSource>();
         }
 
@@ -91,9 +91,6 @@ public class GameManager : MonoBehaviour
         // ** 이부분이 없으면 스테이지 생성될때 스테이지내 방들이 삭제되면서 카메라도 같이 사라집니다 **
 
 
-        // int cnt = 25; // 방 생성 실패 한계치
-        // 방생성시 오류발생시
-        // while cnt 로 횟수제한 줘야함! 
         while (true) 
         {
             if (stageGenerate.CreateStage(stageSize, stageMinimunRoom))

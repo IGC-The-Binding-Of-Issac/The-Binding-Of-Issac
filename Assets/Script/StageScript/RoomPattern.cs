@@ -36,7 +36,7 @@ public class RoomPattern :MonoBehaviour
 
         // 위의 방에 전부 포함되어있지않으면 "일반방"
         int rand = Random.Range(5, patternList.Count);
-        return patternList[rand]; // 랜덤한 패턴을 리턴.
+        return patternList[rand]; // 랜덤한 패턴을 반환.
     }
 
     void SetPattern()
@@ -54,7 +54,7 @@ public class RoomPattern :MonoBehaviour
         // 7 : 아이템 테이블 ( 황금방 )
         // 8 : 일반 상자 ( 열쇠 X)
         // 9 : 황금 상자 ( 열쇠 O ) 
-        // 99 : 저주방 상자
+        // 11 : 저주방 상자
 
         // 10 : 플레이어 생성 위치
 
