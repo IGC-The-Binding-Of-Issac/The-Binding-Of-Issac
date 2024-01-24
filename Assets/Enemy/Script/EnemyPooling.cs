@@ -27,6 +27,7 @@ public class EnemyPooling : MonoBehaviour
     [SerializeField] private GameObject straightBullet;
     [SerializeField] private GameObject followBullet;
     [SerializeField] Sprite oriBulletImage;
+    [SerializeField] int cntBullet;
 
     [Header("pooliong queue")]
     Queue<GameObject> poolingStraightBullet     = new Queue<GameObject>();
@@ -35,9 +36,10 @@ public class EnemyPooling : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        cntBullet = 10;
 
         // 나중에 playermanager...? 에서 초기화하기
-        EnemyBullet_Initialize(30);
+        EnemyBullet_Initialize(cntBullet);
     }
 
     // 초기화 ,  queue에 미리 initCount 만큼 넣어둠
@@ -61,7 +63,7 @@ public class EnemyPooling : MonoBehaviour
         GameObject newObj = Instantiate(straightBullet) as GameObject;
         newObj.gameObject.SetActive(false);                         // queue에 있을 때는 안 보이게 
         newObj.transform.SetParent(straightPooling_parent);         // 부모설정
-        newObj.transform.localPosition = Vector3.zero;
+        newObj.transform.localPosition = Vector3.zero;              // 위치를 0,0,0
         return newObj;
     }
 

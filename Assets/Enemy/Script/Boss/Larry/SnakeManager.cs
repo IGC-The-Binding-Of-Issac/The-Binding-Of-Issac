@@ -18,7 +18,7 @@ public class SnakeManager : TEnemy
     [SerializeField] GameObject larryHead_;
     [SerializeField] GameObject larryBody_;
 
-    [SerializeField] List<GameObject> bodyParts = new List<GameObject>(); // Larry의 얼굴, 몸통 오브젝트
+    [SerializeField] List<GameObject> bodyParts = new List<GameObject>(); // Larry의 얼굴, 몸통 오브젝트를 저장
     public List<GameObject> snakeBody = new List<GameObject>();
 
     float countUp = 0;
@@ -33,34 +33,30 @@ public class SnakeManager : TEnemy
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
+
         //SnakeManager
         // bodyParts배열에 값 넣어주기
         larryLength = 12; //head 포함 12 개 
-        createBodyParts();
-
-        // 값 초기화
         countUp = 0;
         distanceBetween = 0.2f;
-        CreateBodyParts(); //초기 몸 생성 
+
+        CreateBodyParts();  // bodyPart List에 값 넣기
+        CreateSnakeBody(); //  SnakepPart List에 값 넣기 
 
         // Enemy
         hp = 110f;
         sight = 5f;
         moveSpeed = 5f; // 이거 바꾸면 distanceBetween도 바꿔서 생성 하는 타이밍 맞춰야함!!!
         waitforSecond = 0.3f;
-
         maxhp = hp;
 
         //Snake
-    
         stateNum = 0; //상태 번호
         stateTime = 3f;
         chageState = true;
-
+        isReadyDie = false;
         randTime(); //초기에 진행할 시간 한번 구해놓기
         currTime = stateTime; // 초기에 구한 시간
-        isReadyDie = false;
-
         iniHp = hp;
 
     }
@@ -69,7 +65,7 @@ public class SnakeManager : TEnemy
     {
         if (bodyParts.Count > 0)
         {
-            CreateBodyParts();
+            CreateSnakeBody();
         }
         Move();
     }
@@ -135,10 +131,10 @@ public class SnakeManager : TEnemy
     }
 
     //스크립트로 bodyParts배열에 오브젝트 넣기 (start에서 한번 실행)
-    public void createBodyParts() 
+    public void CreateBodyParts() 
     {
-        bodyParts.Add(larryHead_);
-        for(int i= 1;i<larryLength; i++) 
+        bodyParts.Add(larryHead_);          //머리넣고
+        for(int i= 1;i<larryLength; i++)    //갯수만큼 몸통
         {
             bodyParts.Add(larryBody_);
         }
@@ -386,7 +382,7 @@ public class SnakeManager : TEnemy
     }
 
     //몸통 생성 코드
-    void CreateBodyParts()
+    void CreateSnakeBody()
     {
         //머리 생성 (snakeBody에 아무것도 생성 되어있지 않을 때)
         if (snakeBody.Count == 0)
@@ -395,22 +391,11 @@ public class SnakeManager : TEnemy
             GameObject temp1 = Instantiate(bodyParts[0], transform.position, transform.rotation, transform);
             //첫번째 요소 (머리)의 애니메이터 가져오기
             animator = temp1.GetComponent<Animator>();
-            
-            // 충돌 감지하는 빈 오브젝트 생성
-            //Instantiate(detec , transform.position, transform.rotation, transform);
 
             // 컴포넌트 추가
             // MarkManager컴포넌트 , Rigidbody2D컴포넌트 (Rigidbody2D는 지금 안쓰지만 미리 넣어놓는다고 생각하자) 
             if (!temp1.GetComponent<MarkManager>())
                 temp1.AddComponent<MarkManager>();
-            /*
-            if (!temp1.GetComponent<Rigidbody2D>())
-            {
-                temp1.AddComponent<Rigidbody2D>();
-                temp1.GetComponent<Rigidbody2D>().gravityScale = 0;
-            }
-            */
-
 
             // snakeBody에 instance화 된 오브젝트 추가
             snakeBody.Add(temp1);
@@ -443,14 +428,6 @@ public class SnakeManager : TEnemy
             {
                 temp.AddComponent<MarkManager>();
             }
-            /*
-            if (!temp.GetComponent<Rigidbody2D>())
-            {
-                temp.AddComponent<Rigidbody2D>();
-                temp.GetComponent<Rigidbody2D>().gravityScale = 0;
-            }
-            */
-
 
             // snakeBody에 추가
             snakeBody.Add(temp);
