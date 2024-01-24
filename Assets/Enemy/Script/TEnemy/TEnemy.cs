@@ -22,13 +22,13 @@ public class TEnemy : MonoBehaviour
     /// </summary>
 
     // TEnemy를 넣을 머신
-    public TEnemy_HeadMachine<TEnemy> headState;
+    public HeadMachine<TEnemy> headState;
 
     /// <summary>
     /// 1. 좀비가 미리 가지고 있을 state배열
     /// 2. System.Enum.GetValues(typeof(state이름)).Length : enum 타입의 길이 구하기 ,  여기서는 5
     /// </summary>
-    public TEnemy_FSM<TEnemy>[] arrayState = new TEnemy_FSM<TEnemy>[System.Enum.GetValues(typeof(TENEMY_STATE)).Length];
+    public FSM<TEnemy>[] arrayState = new FSM<TEnemy>[System.Enum.GetValues(typeof(TENEMY_STATE)).Length];
 
     // 상속 받을 Enemy의 종류
     [SerializeField] protected bool isTracking;              // tracking 하는가?
@@ -132,14 +132,12 @@ public class TEnemy : MonoBehaviour
     private void init()
     {
         // Enemy_HeadMachine의 타입을 TEnemy로 지정 , 머신을 생성 (new 사용)
-        headState = new TEnemy_HeadMachine<TEnemy>();
+        headState = new HeadMachine<TEnemy>();
 
         /// <summary>
         /// 1. 해당 상태 (스크립트)의 생성자를 사용 -> Enemy 가 붙어있는 객체를 넘겨줌 
         /// 2. new 스크립트 이름 (매개변수) 
         /// 3. Enemy를 상속 하는 하위몬스터 또한 Enemy 타입(Enemy를 상속 받고 있기 때문)
-        ///     <!테스트 필요>
-        ///     -> 하위 몬스터에서 init을 실행하면 상태머신을 실행 하지 않을까?
         ///  
         /// Q. 왜 Enemy_Idle등의 스크립트를 FSM<TENemy> 배열에 넣을 수 있는가?
         ///     A. FSM<Zombie_FSM>를 가진 스크립트들의 FSM<Zombie_FSM>를 arr에 넣기때문 
@@ -168,6 +166,9 @@ public class TEnemy : MonoBehaviour
     {
         e_chageHp();                              // hp 설정
         En_stateArray();                          // 초기 배열 설정
+
+        // Head Machine의 Enter을 실행,
+        // 초기 상태값은 idle이므로 idle의 excute 를 실행한다. 
         E_Enter();                                // 현재 상태 (idle)의 begin 실행 
     }
 

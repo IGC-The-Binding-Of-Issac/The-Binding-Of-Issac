@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy_Tracking : TEnemy_FSM<TEnemy>
+public class Enemy_Tracking : FSM<TEnemy>
 {
     [SerializeField] TEnemy e_Owner;                          // 주인 변수
     bool isIsInvoke;
@@ -23,7 +23,7 @@ public class Enemy_Tracking : TEnemy_FSM<TEnemy>
     public override void Excute()                                   // 해당 상태를 업데이트 할 때 "매 프레임" 호출
     {
         e_Owner.e_findPlayer();                                     // player 탐색
-        e_Owner.e_Tracking(e_Owner.getMoveSpeed);                                       // tracking
+        e_Owner.e_Tracking(e_Owner.getMoveSpeed);                   // tracking
         e_Owner.e_Lookplayer();                                     // 플레이어 look
        
         if (e_Owner.playerPosi == null)
@@ -37,37 +37,42 @@ public class Enemy_Tracking : TEnemy_FSM<TEnemy>
         // 범위 감지 x
         if (!e_Owner.getisDetective) 
         {
-            if ((e_Owner.getisJump))                            // 점프를 하는 애면? 
+            if (!e_Owner.getisJump)                            // 점프를 하는 애면? 
             {
-                if (isIsInvoke)
-                {
-                    e_Owner.invokeJump();                          // 일정 시간후 점프로 넘어감
-                    isIsInvoke = false;
-                }
+                return;
+            }
+
+            if (isIsInvoke)
+            {
+                e_Owner.invokeJump();                          // 일정 시간후 점프로 넘어감
+                isIsInvoke = false;
             }
         }
 
         // 범위 감지 하는애면?
         // -> 총 쏘는지 아닌지에 따라 달라짐
-        if (e_Owner.getisDetective)                                
+        else                             
         {
             
             if (e_Owner.e_SearchingPlayer())                         // sight 범위 안에 들어오면
             {
-                if (e_Owner.getisShoot)                              // 총 쏘는 애면?
+                if (!e_Owner.getisShoot)                              
                 {
-                    if (isIsInvoke) 
-                    { 
-                        e_Owner.invokeShoot();                          // 일정 시간후 총 쏘기로 넘어감
-                        isIsInvoke = false;
-                    }
+                    return;
                 }
 
+                if (isIsInvoke)                                     // 총 쏘는 애면?
+                {
+                    e_Owner.invokeShoot();                          // 일정 시간후 총 쏘기로 넘어감
+                    isIsInvoke = false;
+                }
+
+                return;
             }
-            else if (!e_Owner.e_SearchingPlayer())                  // 범위 밖에 있으면
-            {
-                e_Owner.ChageFSM(TENEMY_STATE.Prowl);               // prowl로 상태 변화
-            }
+
+            // 범위안에 없으면
+            e_Owner.ChageFSM(TENEMY_STATE.Prowl);               // prowl로 상태 변화
+            
         }
 
     }

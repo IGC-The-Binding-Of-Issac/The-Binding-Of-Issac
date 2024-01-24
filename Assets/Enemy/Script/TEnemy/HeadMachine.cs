@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TEnemy_HeadMachine<T>
+public class HeadMachine<T>
 {
     /// <summary>
     /// 1. FSM을 상속 받은 함수들을 관리하기 위해서
@@ -15,8 +15,8 @@ public class TEnemy_HeadMachine<T>
 
     // 상태 
     // 지금 돌아가고 있는 Enemy 상태 (Idle , Tracking , Prowl , Die 스크립트(상태)) 
-    private TEnemy_FSM<TEnemy> currState = null; // 현재 상태
-    private TEnemy_FSM<TEnemy> prestate = null; // 과거 상태
+    private FSM<TEnemy> currState = null; // 현재 상태
+    private FSM<TEnemy> prestate = null; // 과거 상태
 
     // FSM의 Enter실행 , 처음 상태 시작
     public void H_Enter() // Enemy_HeadMachine에서 돌아가는 메서드
@@ -57,7 +57,7 @@ public class TEnemy_HeadMachine<T>
     }
 
     // FSM 안에서 state 바꾸기
-    public void Chage(TEnemy_FSM<TEnemy> _eState)
+    public void Chage(FSM<TEnemy> _eState)
     {
         //_eState : enemy의 상태를 나타내는 스크립트가 매개변수로
         //(Idle , Tracking , Prowl , Die 스크립트(상태)) 
@@ -78,7 +78,7 @@ public class TEnemy_HeadMachine<T>
     }
 
     // 상태값 세팅 (순서상, 상태값 세팅을 먼저 하고 , Idle,Attack 스크립트를 실행 해야할 듯?)
-    public void Setstate(TEnemy_FSM<TEnemy> _state, T _owner)
+    public void Setstate(FSM<TEnemy> _state, T _owner)
     {
         Owner = _owner;
         currState = _state;
