@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class TEnemy_FSM<T>
+public abstract class FSM<T>
 {
     // 상태가 상속 받을 부모 ( 해당 상태는 Begine , Run, Exit 상태를 꼭 가져야함)
 

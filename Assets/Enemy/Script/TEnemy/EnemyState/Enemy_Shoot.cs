@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy_Shoot : TEnemy_FSM<TEnemy>
+public class Enemy_Shoot : FSM<TEnemy>
 {
     [SerializeField] TEnemy e_Owner;
 
