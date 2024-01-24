@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Enemy_Jump : TEnemy_FSM<TEnemy>
+public class Enemy_Jump : FSM<TEnemy>
 {
     [SerializeField] TEnemy e_Owner;                          // 주인 변수
     float currTIme;

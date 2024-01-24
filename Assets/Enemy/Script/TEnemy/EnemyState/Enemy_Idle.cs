@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy_Idle : TEnemy_FSM<TEnemy>
+public class Enemy_Idle : FSM<TEnemy>
 {
     /// <summary>
     /// 1. Enemy의 idle 상태 구현
@@ -40,7 +40,8 @@ public class Enemy_Idle : TEnemy_FSM<TEnemy>
             {
                 e_Owner.ChageFSM(TENEMY_STATE.Tracking);        // tracking 으로 상태 변환
             }
-            if (!e_Owner.getIsTracking && e_Owner.getisProwl)   // prowl 만 하면?
+            //if (!e_Owner.getIsTracking && e_Owner.getisProwl)   // prowl 만 하면?
+            else
             {
                 e_Owner.ChageFSM(TENEMY_STATE.Prowl);           // prowl 으로 상태 변환
             }

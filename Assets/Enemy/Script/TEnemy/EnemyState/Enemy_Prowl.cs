@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy_Prowl : TEnemy_FSM<TEnemy>
+public class Enemy_Prowl : FSM<TEnemy>
 {
     [SerializeField] TEnemy e_Owner;                          // 주인 변수
 
@@ -29,15 +29,17 @@ public class Enemy_Prowl : TEnemy_FSM<TEnemy>
             e_Owner.ChageFSM(TENEMY_STATE.Die);                     // Die로 상태변화 
         }
 
-        //범위 감지 하는 애면?
-        if (e_Owner.getisDetective) 
+        if (!e_Owner.getisDetective) 
         {
-            if (e_Owner.e_SearchingPlayer())                         // sight 범위 안에 들어오면
+            return;
+        }
+
+                                                                    //범위 감지 하는 애면?
+        if (e_Owner.e_SearchingPlayer())                            // sight 범위 안에 들어오면
+        {
+            if (e_Owner.getIsTracking)                              // tracking 하는 애면
             {
-                if (e_Owner.getIsTracking)                          // tracking 하는 애면
-                {
-                    e_Owner.ChageFSM(TENEMY_STATE.Tracking);        // tracking으로 변화
-                }
+                e_Owner.ChageFSM(TENEMY_STATE.Tracking);            // tracking으로 변화
             }
         }
     }
