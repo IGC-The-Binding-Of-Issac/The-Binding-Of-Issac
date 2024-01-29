@@ -1441,7 +1441,6 @@ Transform:
   - {fileID: 1234341186}
   - {fileID: 1498093126}
   - {fileID: 1466785068}
-  - {fileID: 474690907}
   m_Father: {fileID: 1991369605}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &351783603
@@ -1504,7 +1503,6 @@ MonoBehaviour:
   - {fileID: 2481015437421042754, guid: 98df69f2f183cca43aaa5800a95d2885, type: 3}
   - {fileID: 5023763103856867615, guid: 99fe68da64dcf8b4aa453dcaef2063fd, type: 3}
   obstaclePool_Transform: {fileID: 1234341186}
-  chestPool_Transform: {fileID: 474690907}
   shopTable_Transform: {fileID: 1466785068}
   goldTable_Transform: {fileID: 1498093126}
 --- !u!1 &352254145
@@ -1899,37 +1897,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 468105191}
   m_CullTransparentMesh: 1
---- !u!1 &474690906
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 474690907}
-  m_Layer: 0
-  m_Name: ChestPool
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &474690907
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 474690906}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 351783602}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &485441646
 GameObject:
   m_ObjectHideFlags: 0

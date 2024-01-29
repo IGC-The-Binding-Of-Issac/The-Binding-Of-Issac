@@ -259,22 +259,24 @@ public class UIManager : MonoBehaviour
 
     public void SetPlayerCurrentHP()
     {
-        int tmp = PlayerManager.instance.playerHp;
+        int currentHP = PlayerManager.instance.playerHp;
         for(int i = 0; i < heartUI.childCount; i++)
         {
-            if(tmp >= 2)
+            UIHeart heart = heartUI.GetChild(i).GetComponent<UIHeart>();   
+
+            if(currentHP >= 2)
             {
-                heartUI.GetChild(i).GetComponent<UIHeart>().SetHeart(2);
-                tmp -= 2;
+                heart.SetHeart(2);
+                currentHP -= 2;
             }
-            else if(tmp >= 1)
+            else if(currentHP >= 1)
             {
-                heartUI.GetChild(i).GetComponent<UIHeart>().SetHeart(1);
-                tmp -= 1;
+                heart.SetHeart(1);
+                currentHP -= 1;
             }
             else
             {
-                heartUI.GetChild(i).GetComponent<UIHeart>().SetHeart(0);
+                heart.SetHeart(0);
             }
         }
     }
